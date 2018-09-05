@@ -22,19 +22,18 @@ Partial Class frmPopUp
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPopUp))
         Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.btn_buscar = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btn_salir = New System.Windows.Forms.PictureBox()
-        Me.btn_acep = New System.Windows.Forms.PictureBox()
         Me.txt_codi = New System.Windows.Forms.TextBox()
         Me.dgv_Pop = New System.Windows.Forms.DataGridView()
+        Me.btn_buscar = New System.Windows.Forms.Button()
+        Me.btn_salir = New System.Windows.Forms.PictureBox()
+        Me.btn_acep = New System.Windows.Forms.PictureBox()
         Me.Panel8.SuspendLayout()
+        CType(Me.dgv_Pop, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_salir, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_acep, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgv_Pop, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel8
@@ -53,22 +52,6 @@ Partial Class frmPopUp
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(407, 405)
         Me.Panel8.TabIndex = 40
-        '
-        'btn_buscar
-        '
-        Me.btn_buscar.BackColor = System.Drawing.Color.Transparent
-        Me.btn_buscar.BackgroundImage = Global.AdminEmpleados.My.Resources.Resources.Blue_button
-        Me.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_buscar.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_buscar.ForeColor = System.Drawing.Color.White
-        Me.btn_buscar.Location = New System.Drawing.Point(286, 16)
-        Me.btn_buscar.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_buscar.Name = "btn_buscar"
-        Me.btn_buscar.Size = New System.Drawing.Size(98, 41)
-        Me.btn_buscar.TabIndex = 51
-        Me.btn_buscar.Text = "Buscar"
-        Me.btn_buscar.UseVisualStyleBackColor = False
         '
         'Label3
         '
@@ -92,28 +75,6 @@ Partial Class frmPopUp
         Me.Label2.TabIndex = 41
         Me.Label2.Text = "ACEPTAR"
         '
-        'btn_salir
-        '
-        Me.btn_salir.Image = CType(resources.GetObject("btn_salir.Image"), System.Drawing.Image)
-        Me.btn_salir.Location = New System.Drawing.Point(348, 339)
-        Me.btn_salir.Name = "btn_salir"
-        Me.btn_salir.Size = New System.Drawing.Size(37, 36)
-        Me.btn_salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_salir.TabIndex = 40
-        Me.btn_salir.TabStop = False
-        Me.btn_salir.Tag = "CANCELAR"
-        '
-        'btn_acep
-        '
-        Me.btn_acep.Image = CType(resources.GetObject("btn_acep.Image"), System.Drawing.Image)
-        Me.btn_acep.Location = New System.Drawing.Point(286, 339)
-        Me.btn_acep.Name = "btn_acep"
-        Me.btn_acep.Size = New System.Drawing.Size(37, 36)
-        Me.btn_acep.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_acep.TabIndex = 39
-        Me.btn_acep.TabStop = False
-        Me.btn_acep.Tag = "ACEPTAR"
-        '
         'txt_codi
         '
         Me.txt_codi.Location = New System.Drawing.Point(22, 24)
@@ -136,6 +97,45 @@ Partial Class frmPopUp
         Me.dgv_Pop.Size = New System.Drawing.Size(363, 258)
         Me.dgv_Pop.TabIndex = 36
         '
+        'btn_buscar
+        '
+        Me.btn_buscar.BackColor = System.Drawing.Color.Transparent
+        Me.btn_buscar.BackgroundImage = Global.AdminEmpleados.My.Resources.Resources.Blue_button
+        Me.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_buscar.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_buscar.ForeColor = System.Drawing.Color.White
+        Me.btn_buscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_buscar.Location = New System.Drawing.Point(286, 16)
+        Me.btn_buscar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_buscar.Name = "btn_buscar"
+        Me.btn_buscar.Size = New System.Drawing.Size(98, 41)
+        Me.btn_buscar.TabIndex = 51
+        Me.btn_buscar.Text = "Buscar"
+        Me.btn_buscar.UseVisualStyleBackColor = False
+        '
+        'btn_salir
+        '
+        Me.btn_salir.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
+        Me.btn_salir.Location = New System.Drawing.Point(348, 339)
+        Me.btn_salir.Name = "btn_salir"
+        Me.btn_salir.Size = New System.Drawing.Size(37, 36)
+        Me.btn_salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_salir.TabIndex = 40
+        Me.btn_salir.TabStop = False
+        Me.btn_salir.Tag = "CANCELAR"
+        '
+        'btn_acep
+        '
+        Me.btn_acep.Image = Global.AdminEmpleados.My.Resources.Resources.Checked_80px
+        Me.btn_acep.Location = New System.Drawing.Point(286, 339)
+        Me.btn_acep.Name = "btn_acep"
+        Me.btn_acep.Size = New System.Drawing.Size(37, 36)
+        Me.btn_acep.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_acep.TabIndex = 39
+        Me.btn_acep.TabStop = False
+        Me.btn_acep.Tag = "ACEPTAR"
+        '
         'frmPopUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -149,9 +149,9 @@ Partial Class frmPopUp
         Me.Text = "frmPopUp"
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
+        CType(Me.dgv_Pop, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_salir, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_acep, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgv_Pop, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

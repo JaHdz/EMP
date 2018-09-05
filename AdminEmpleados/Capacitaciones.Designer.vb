@@ -226,7 +226,7 @@ Partial Class Capacitaciones
         '
         'SAVE
         '
-        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.disk_save_as_icon
+        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
         Me.SAVE.Location = New System.Drawing.Point(35, 55)
         Me.SAVE.Name = "SAVE"
         Me.SAVE.Size = New System.Drawing.Size(83, 83)
@@ -236,7 +236,7 @@ Partial Class Capacitaciones
         '
         'CANCEL
         '
-        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.cancel_icon
+        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
         Me.CANCEL.Location = New System.Drawing.Point(161, 55)
         Me.CANCEL.Name = "CANCEL"
         Me.CANCEL.Size = New System.Drawing.Size(83, 83)
