@@ -67,7 +67,7 @@ Partial Class frmPopUp
         Me.btn_buscar.Name = "btn_buscar"
         Me.btn_buscar.Size = New System.Drawing.Size(98, 41)
         Me.btn_buscar.TabIndex = 51
-        Me.btn_buscar.Text = "Buscar "
+        Me.btn_buscar.Text = "Buscar  "
         Me.btn_buscar.UseVisualStyleBackColor = False
         '
         'Label3
