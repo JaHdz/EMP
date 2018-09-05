@@ -1,0 +1,85 @@
+﻿Public Class Examenes_Medicos
+    Dim Emp As Integer = 40606
+    Dim objcon As New Consultas
+    Dim V1 As String
+    Dim V2 As String
+    Public Sub llenar_buscador(tipo As String)
+        Dim popup As New frmPopUp(tipo)
+        Dim dialogresult__1 As DialogResult = popup.ShowDialog()
+        V1 = popup.Variable
+        V2 = popup.Variable2
+        popup.Close()
+    End Sub
+    Private Sub txt_numero_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_numero.KeyPress
+        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    End Sub
+    Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
+        If (txt_numero.Text <> "") Then
+            Emp = objcon.Emp_Exist(txt_numero.Text)
+            If (Emp = 1) Then
+                Dim dt As DataTable
+                dt = objcon.consulta_empleado(txt_numero.Text)
+                lbl_emp.Text = txt_numero.Text + " | " + dt.Rows(0).Item("Emp_Name").ToString() + " " + dt.Rows(0).Item("Emp_APat").ToString() + " " + dt.Rows(0).Item("Emp_AMat").ToString()
+                dgv_equipo_Eval.DataSource = objcon.Consulta_Examenes_Medicos(txt_numero.Text)
+            Else
+                MessageBox.Show("Numero de empleado no existe")
+                txt_numero.Text = ""
+                lbl_emp.Text = ""
+            End If
+        End If
+    End Sub
+
+    Private Sub buscar_EN_Click(sender As Object, e As EventArgs) Handles buscar_EN.Click
+        llenar_buscador("EMP")
+        If (V1 <> "" And V2 <> "") Then
+            txt_numero.Focus()
+        Else
+            txt_numero.Focus()
+        End If
+        txt_numero.Text = V1
+    End Sub
+
+    Private Sub SAVE_Click(sender As Object, e As EventArgs) Handles SAVE.Click
+        If (TXT_EST.Text <> "" Or txt_numero.Text <> "") Then
+            objcon.Add_Examenes_Medicos(0, txt_numero.Text, TXT_EST.Text, txt_resultado.Text, TXT_FECHA.Text, txt_fp.Text)
+            dgv_equipo_Eval.DataSource = objcon.Consulta_Examenes_Medicos(txt_numero.Text)
+            txt_numero.Text = ""
+            txt_fp.Text = Date.Now.ToShortDateString
+            TXT_EST.Text = ""
+            txt_resultado.Text = ""
+            lbl_emp.Text = ""
+        Else
+            MessageBox.Show("Debe ingresar un numero de empleado valido, un resultado y un tipo de examen.")
+        End If
+    End Sub
+
+    Private Sub CANCEL_Click(sender As Object, e As EventArgs) Handles CANCEL.Click
+        Me.Close()
+    End Sub
+
+
+    Private Sub dgv_equipo_emp_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_equipo_Eval.CellClick
+        Dim id As Integer
+        Dim gr As New DataGridView
+        gr = sender
+        If e.RowIndex <> -1 Then
+            Select Case e.ColumnIndex
+                Case Is > -1
+                    Select Case gr.Columns(e.ColumnIndex).Name
+                        Case "DELETE"
+                            If MessageBox.Show("Seguro que desea eliminar este registro?", "Eliminar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+                                id = dgv_equipo_Eval.Rows(e.RowIndex).Cells(3).Value
+                                objcon.DELETE_EXAMENES_MEDICOS(dgv_equipo_Eval.Rows(e.RowIndex).Cells(1).Value)
+                            End If
+                    End Select
+            End Select
+            Dim dt As New DataTable
+            If txt_numero.Text <> "" Then
+                dt = objcon.Consulta_Examenes_Medicos(txt_numero.Text)
+            Else
+                dt = objcon.Consulta_Examenes_Medicos(id)
+            End If
+            dgv_equipo_Eval.DataSource = dt
+        End If
+    End Sub
+End Class
