@@ -24,7 +24,7 @@ Partial Class Empleados
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Estudio_SE = New System.Windows.Forms.TabPage()
         Me.Panel27 = New System.Windows.Forms.Panel()
@@ -91,17 +91,11 @@ Partial Class Empleados
         Me.txt_OIParen = New System.Windows.Forms.TextBox()
         Me.Label65 = New System.Windows.Forms.Label()
         Me.dgv_OI = New System.Windows.Forms.DataGridView()
-        Me.PARENTESCO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CANTIDAD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Label60 = New System.Windows.Forms.Label()
         Me.Label61 = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.dgv_Ref = New System.Windows.Forms.DataGridView()
-        Me.NOMBRE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TIPO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.OCUPACION = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TIEMPO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label52 = New System.Windows.Forms.Label()
         Me.txt_TC = New System.Windows.Forms.TextBox()
         Me.txt_RefOcu = New System.Windows.Forms.TextBox()
@@ -375,6 +369,12 @@ Partial Class Empleados
         Me.lbl_rfc = New System.Windows.Forms.Label()
         Me.MenuEmp = New System.Windows.Forms.TabControl()
         Me.datosFamiliaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NOMBRE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TIPO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.OCUPACION = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TIEMPO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PARENTESCO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CANTIDAD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estudio_SE.SuspendLayout()
         Me.Panel27.SuspendLayout()
         CType(Me.btn_SESave, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -456,10 +456,11 @@ Partial Class Empleados
         Me.Estudio_SE.Controls.Add(Me.Panel27)
         Me.Estudio_SE.Controls.Add(Me.Panel32)
         Me.Estudio_SE.Controls.Add(Me.Panel34)
-        Me.Estudio_SE.Location = New System.Drawing.Point(4, 30)
+        Me.Estudio_SE.Location = New System.Drawing.Point(4, 36)
+        Me.Estudio_SE.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Estudio_SE.Name = "Estudio_SE"
-        Me.Estudio_SE.Padding = New System.Windows.Forms.Padding(3)
-        Me.Estudio_SE.Size = New System.Drawing.Size(1280, 789)
+        Me.Estudio_SE.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Estudio_SE.Size = New System.Drawing.Size(1709, 973)
         Me.Estudio_SE.TabIndex = 6
         Me.Estudio_SE.Text = "Estudio SocioEconomico 2/2"
         Me.Estudio_SE.UseVisualStyleBackColor = True
@@ -473,10 +474,10 @@ Partial Class Empleados
         Me.Panel27.Controls.Add(Me.btn_SECancel)
         Me.Panel27.Controls.Add(Me.Panel28)
         Me.Panel27.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel27.Location = New System.Drawing.Point(721, 491)
-        Me.Panel27.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel27.Location = New System.Drawing.Point(961, 604)
+        Me.Panel27.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel27.Name = "Panel27"
-        Me.Panel27.Size = New System.Drawing.Size(509, 172)
+        Me.Panel27.Size = New System.Drawing.Size(677, 211)
         Me.Panel27.TabIndex = 69
         '
         'Label67
@@ -484,9 +485,10 @@ Partial Class Empleados
         Me.Label67.AutoSize = True
         Me.Label67.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label67.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label67.Location = New System.Drawing.Point(157, 131)
+        Me.Label67.Location = New System.Drawing.Point(209, 161)
+        Me.Label67.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label67.Name = "Label67"
-        Me.Label67.Size = New System.Drawing.Size(93, 22)
+        Me.Label67.Size = New System.Drawing.Size(117, 27)
         Me.Label67.TabIndex = 44
         Me.Label67.Text = "GUARDAR"
         '
@@ -495,26 +497,29 @@ Partial Class Empleados
         Me.Label69.AutoSize = True
         Me.Label69.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label69.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label69.Location = New System.Drawing.Point(281, 131)
+        Me.Label69.Location = New System.Drawing.Point(375, 161)
+        Me.Label69.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label69.Name = "Label69"
-        Me.Label69.Size = New System.Drawing.Size(99, 22)
+        Me.Label69.Size = New System.Drawing.Size(121, 27)
         Me.Label69.TabIndex = 43
         Me.Label69.Text = "CANCELAR"
         '
         'btn_SESave
         '
-        Me.btn_SESave.Location = New System.Drawing.Point(159, 45)
+        Me.btn_SESave.Location = New System.Drawing.Point(212, 55)
+        Me.btn_SESave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btn_SESave.Name = "btn_SESave"
-        Me.btn_SESave.Size = New System.Drawing.Size(83, 83)
+        Me.btn_SESave.Size = New System.Drawing.Size(111, 102)
         Me.btn_SESave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_SESave.TabIndex = 41
         Me.btn_SESave.TabStop = False
         '
         'btn_SECancel
         '
-        Me.btn_SECancel.Location = New System.Drawing.Point(285, 45)
+        Me.btn_SECancel.Location = New System.Drawing.Point(380, 55)
+        Me.btn_SECancel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btn_SECancel.Name = "btn_SECancel"
-        Me.btn_SECancel.Size = New System.Drawing.Size(83, 83)
+        Me.btn_SECancel.Size = New System.Drawing.Size(111, 102)
         Me.btn_SECancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_SECancel.TabIndex = 42
         Me.btn_SECancel.TabStop = False
@@ -523,10 +528,10 @@ Partial Class Empleados
         '
         Me.Panel28.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel28.Controls.Add(Me.Label68)
-        Me.Panel28.Location = New System.Drawing.Point(-2, -2)
-        Me.Panel28.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel28.Location = New System.Drawing.Point(-3, -2)
+        Me.Panel28.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel28.Name = "Panel28"
-        Me.Panel28.Size = New System.Drawing.Size(807, 35)
+        Me.Panel28.Size = New System.Drawing.Size(1076, 43)
         Me.Panel28.TabIndex = 0
         '
         'Label68
@@ -534,10 +539,9 @@ Partial Class Empleados
         Me.Label68.AutoSize = True
         Me.Label68.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label68.ForeColor = System.Drawing.Color.White
-        Me.Label68.Location = New System.Drawing.Point(13, 6)
-        Me.Label68.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label68.Location = New System.Drawing.Point(17, 7)
         Me.Label68.Name = "Label68"
-        Me.Label68.Size = New System.Drawing.Size(72, 21)
+        Me.Label68.Size = New System.Drawing.Size(90, 27)
         Me.Label68.TabIndex = 0
         Me.Label68.Text = "Guardar"
         '
@@ -549,10 +553,10 @@ Partial Class Empleados
         Me.Panel32.Controls.Add(Me.Button1)
         Me.Panel32.Controls.Add(Me.Panel33)
         Me.Panel32.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel32.Location = New System.Drawing.Point(721, 30)
-        Me.Panel32.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel32.Location = New System.Drawing.Point(961, 37)
+        Me.Panel32.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel32.Name = "Panel32"
-        Me.Panel32.Size = New System.Drawing.Size(509, 446)
+        Me.Panel32.Size = New System.Drawing.Size(677, 548)
         Me.Panel32.TabIndex = 52
         '
         'LB_IMAGEN_VIVIENDA
@@ -560,19 +564,20 @@ Partial Class Empleados
         Me.LB_IMAGEN_VIVIENDA.AutoSize = True
         Me.LB_IMAGEN_VIVIENDA.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_IMAGEN_VIVIENDA.LinkColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.LB_IMAGEN_VIVIENDA.Location = New System.Drawing.Point(204, 370)
-        Me.LB_IMAGEN_VIVIENDA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LB_IMAGEN_VIVIENDA.Location = New System.Drawing.Point(272, 455)
         Me.LB_IMAGEN_VIVIENDA.Name = "LB_IMAGEN_VIVIENDA"
-        Me.LB_IMAGEN_VIVIENDA.Size = New System.Drawing.Size(143, 22)
+        Me.LB_IMAGEN_VIVIENDA.Size = New System.Drawing.Size(179, 27)
         Me.LB_IMAGEN_VIVIENDA.TabIndex = 13
         Me.LB_IMAGEN_VIVIENDA.TabStop = True
         Me.LB_IMAGEN_VIVIENDA.Text = "Cambiar Imagen"
         '
         'PB_IMAGE_VIVIENDA
         '
-        Me.PB_IMAGE_VIVIENDA.Location = New System.Drawing.Point(125, 91)
+        Me.PB_IMAGE_VIVIENDA.Image = Global.AdminEmpleados.My.Resources.Resources.photoNobody120
+        Me.PB_IMAGE_VIVIENDA.Location = New System.Drawing.Point(167, 112)
+        Me.PB_IMAGE_VIVIENDA.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PB_IMAGE_VIVIENDA.Name = "PB_IMAGE_VIVIENDA"
-        Me.PB_IMAGE_VIVIENDA.Size = New System.Drawing.Size(287, 263)
+        Me.PB_IMAGE_VIVIENDA.Size = New System.Drawing.Size(383, 324)
         Me.PB_IMAGE_VIVIENDA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PB_IMAGE_VIVIENDA.TabIndex = 31
         Me.PB_IMAGE_VIVIENDA.TabStop = False
@@ -585,10 +590,10 @@ Partial Class Empleados
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(711, 44)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button1.Location = New System.Drawing.Point(948, 54)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(98, 41)
+        Me.Button1.Size = New System.Drawing.Size(131, 50)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "Agregar"
         Me.Button1.UseVisualStyleBackColor = False
@@ -597,10 +602,10 @@ Partial Class Empleados
         '
         Me.Panel33.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel33.Controls.Add(Me.Label82)
-        Me.Panel33.Location = New System.Drawing.Point(-2, -2)
-        Me.Panel33.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel33.Location = New System.Drawing.Point(-3, -2)
+        Me.Panel33.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel33.Name = "Panel33"
-        Me.Panel33.Size = New System.Drawing.Size(1103, 35)
+        Me.Panel33.Size = New System.Drawing.Size(1471, 43)
         Me.Panel33.TabIndex = 0
         '
         'Label82
@@ -608,10 +613,9 @@ Partial Class Empleados
         Me.Label82.AutoSize = True
         Me.Label82.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label82.ForeColor = System.Drawing.Color.White
-        Me.Label82.Location = New System.Drawing.Point(13, 6)
-        Me.Label82.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label82.Location = New System.Drawing.Point(17, 7)
         Me.Label82.Name = "Label82"
-        Me.Label82.Size = New System.Drawing.Size(180, 21)
+        Me.Label82.Size = New System.Drawing.Size(224, 27)
         Me.Label82.TabIndex = 0
         Me.Label82.Text = "Imagen de la Vivienda"
         '
@@ -642,196 +646,218 @@ Partial Class Empleados
         Me.Panel34.Controls.Add(Me.Label79)
         Me.Panel34.Controls.Add(Me.Panel36)
         Me.Panel34.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel34.Location = New System.Drawing.Point(53, 30)
-        Me.Panel34.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel34.Location = New System.Drawing.Point(71, 37)
+        Me.Panel34.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel34.Name = "Panel34"
-        Me.Panel34.Size = New System.Drawing.Size(632, 633)
+        Me.Panel34.Size = New System.Drawing.Size(841, 778)
         Me.Panel34.TabIndex = 51
         '
         'Label90
         '
         Me.Label90.AutoSize = True
-        Me.Label90.Location = New System.Drawing.Point(98, 531)
+        Me.Label90.Location = New System.Drawing.Point(131, 654)
+        Me.Label90.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label90.Name = "Label90"
-        Me.Label90.Size = New System.Drawing.Size(190, 21)
+        Me.Label90.Size = New System.Drawing.Size(238, 27)
         Me.Label90.TabIndex = 76
         Me.Label90.Text = "Parques de Diversiones:"
         '
         'txt_se_diversiones
         '
         Me.txt_se_diversiones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_se_diversiones.Location = New System.Drawing.Point(294, 524)
+        Me.txt_se_diversiones.Location = New System.Drawing.Point(392, 645)
+        Me.txt_se_diversiones.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_se_diversiones.Name = "txt_se_diversiones"
-        Me.txt_se_diversiones.Size = New System.Drawing.Size(209, 28)
+        Me.txt_se_diversiones.Size = New System.Drawing.Size(277, 33)
         Me.txt_se_diversiones.TabIndex = 12
         '
         'Label88
         '
         Me.Label88.AutoSize = True
-        Me.Label88.Location = New System.Drawing.Point(135, 311)
+        Me.Label88.Location = New System.Drawing.Point(180, 383)
+        Me.Label88.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label88.Name = "Label88"
-        Me.Label88.Size = New System.Drawing.Size(153, 21)
+        Me.Label88.Size = New System.Drawing.Size(189, 27)
         Me.Label88.TabIndex = 71
         Me.Label88.Text = "Parques Naturales:"
         '
         'txt_SE_NATURALES
         '
         Me.txt_SE_NATURALES.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE_NATURALES.Location = New System.Drawing.Point(294, 304)
+        Me.txt_SE_NATURALES.Location = New System.Drawing.Point(392, 374)
+        Me.txt_SE_NATURALES.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_SE_NATURALES.Name = "txt_SE_NATURALES"
-        Me.txt_SE_NATURALES.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE_NATURALES.Size = New System.Drawing.Size(277, 33)
         Me.txt_SE_NATURALES.TabIndex = 6
         '
         'txt_SE_PLAZAS
         '
         Me.txt_SE_PLAZAS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE_PLAZAS.Location = New System.Drawing.Point(294, 479)
+        Me.txt_SE_PLAZAS.Location = New System.Drawing.Point(392, 590)
+        Me.txt_SE_PLAZAS.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_SE_PLAZAS.Name = "txt_SE_PLAZAS"
-        Me.txt_SE_PLAZAS.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE_PLAZAS.Size = New System.Drawing.Size(277, 33)
         Me.txt_SE_PLAZAS.TabIndex = 10
         '
         'Label89
         '
         Me.Label89.AutoSize = True
-        Me.Label89.Location = New System.Drawing.Point(160, 486)
+        Me.Label89.Location = New System.Drawing.Point(213, 598)
+        Me.Label89.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label89.Name = "Label89"
-        Me.Label89.Size = New System.Drawing.Size(128, 21)
+        Me.Label89.Size = New System.Drawing.Size(158, 27)
         Me.Label89.TabIndex = 70
         Me.Label89.Text = "Plazas Publicas:"
         '
         'Label86
         '
         Me.Label86.AutoSize = True
-        Me.Label86.Location = New System.Drawing.Point(189, 268)
+        Me.Label86.Location = New System.Drawing.Point(252, 330)
+        Me.Label86.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label86.Name = "Label86"
-        Me.Label86.Size = New System.Drawing.Size(99, 21)
+        Me.Label86.Size = New System.Drawing.Size(123, 27)
         Me.Label86.TabIndex = 67
         Me.Label86.Text = "Vacaciones:"
         '
         'txt_SE_VACIONES
         '
         Me.txt_SE_VACIONES.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE_VACIONES.Location = New System.Drawing.Point(294, 261)
+        Me.txt_SE_VACIONES.Location = New System.Drawing.Point(392, 321)
+        Me.txt_SE_VACIONES.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_SE_VACIONES.Name = "txt_SE_VACIONES"
-        Me.txt_SE_VACIONES.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE_VACIONES.Size = New System.Drawing.Size(277, 33)
         Me.txt_SE_VACIONES.TabIndex = 5
         '
         'txt_SE_ZONAS
         '
         Me.txt_SE_ZONAS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE_ZONAS.Location = New System.Drawing.Point(294, 435)
+        Me.txt_SE_ZONAS.Location = New System.Drawing.Point(392, 535)
+        Me.txt_SE_ZONAS.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_SE_ZONAS.Name = "txt_SE_ZONAS"
-        Me.txt_SE_ZONAS.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE_ZONAS.Size = New System.Drawing.Size(277, 33)
         Me.txt_SE_ZONAS.TabIndex = 9
         '
         'Label87
         '
         Me.Label87.AutoSize = True
-        Me.Label87.Location = New System.Drawing.Point(115, 442)
+        Me.Label87.Location = New System.Drawing.Point(153, 544)
+        Me.Label87.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label87.Name = "Label87"
-        Me.Label87.Size = New System.Drawing.Size(173, 21)
+        Me.Label87.Size = New System.Drawing.Size(217, 27)
         Me.Label87.TabIndex = 66
         Me.Label87.Text = "Zonas Arqueologicas:"
         '
         'Label83
         '
         Me.Label83.AutoSize = True
-        Me.Label83.Location = New System.Drawing.Point(121, 221)
+        Me.Label83.Location = New System.Drawing.Point(161, 272)
+        Me.Label83.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label83.Name = "Label83"
-        Me.Label83.Size = New System.Drawing.Size(167, 21)
+        Me.Label83.Size = New System.Drawing.Size(206, 27)
         Me.Label83.TabIndex = 63
         Me.Label83.Text = "Festivales Culturales:"
         '
         'txt_SE_CULTURALES
         '
         Me.txt_SE_CULTURALES.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE_CULTURALES.Location = New System.Drawing.Point(294, 218)
+        Me.txt_SE_CULTURALES.Location = New System.Drawing.Point(392, 268)
+        Me.txt_SE_CULTURALES.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_SE_CULTURALES.Name = "txt_SE_CULTURALES"
-        Me.txt_SE_CULTURALES.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE_CULTURALES.Size = New System.Drawing.Size(277, 33)
         Me.txt_SE_CULTURALES.TabIndex = 4
         '
         'txt_SE_CINES
         '
         Me.txt_SE_CINES.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE_CINES.Location = New System.Drawing.Point(294, 392)
+        Me.txt_SE_CINES.Location = New System.Drawing.Point(392, 482)
+        Me.txt_SE_CINES.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_SE_CINES.Name = "txt_SE_CINES"
-        Me.txt_SE_CINES.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE_CINES.Size = New System.Drawing.Size(277, 33)
         Me.txt_SE_CINES.TabIndex = 8
         '
         'Label85
         '
         Me.Label85.AutoSize = True
-        Me.Label85.Location = New System.Drawing.Point(233, 399)
+        Me.Label85.Location = New System.Drawing.Point(311, 491)
+        Me.Label85.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label85.Name = "Label85"
-        Me.Label85.Size = New System.Drawing.Size(55, 21)
+        Me.Label85.Size = New System.Drawing.Size(67, 27)
         Me.Label85.TabIndex = 62
         Me.Label85.Text = "Cines:"
         '
         'Label80
         '
         Me.Label80.AutoSize = True
-        Me.Label80.Location = New System.Drawing.Point(218, 139)
+        Me.Label80.Location = New System.Drawing.Point(291, 171)
+        Me.Label80.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label80.Name = "Label80"
-        Me.Label80.Size = New System.Drawing.Size(70, 21)
+        Me.Label80.Size = New System.Drawing.Size(87, 27)
         Me.Label80.TabIndex = 59
         Me.Label80.Text = "Teatros:"
         '
         'txt_SE_TEATROS
         '
         Me.txt_SE_TEATROS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE_TEATROS.Location = New System.Drawing.Point(294, 132)
+        Me.txt_SE_TEATROS.Location = New System.Drawing.Point(392, 162)
+        Me.txt_SE_TEATROS.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_SE_TEATROS.Name = "txt_SE_TEATROS"
-        Me.txt_SE_TEATROS.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE_TEATROS.Size = New System.Drawing.Size(277, 33)
         Me.txt_SE_TEATROS.TabIndex = 2
         '
         'txt_SE_MUSEOS
         '
         Me.txt_SE_MUSEOS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE_MUSEOS.Location = New System.Drawing.Point(294, 347)
+        Me.txt_SE_MUSEOS.Location = New System.Drawing.Point(392, 427)
+        Me.txt_SE_MUSEOS.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_SE_MUSEOS.Name = "txt_SE_MUSEOS"
-        Me.txt_SE_MUSEOS.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE_MUSEOS.Size = New System.Drawing.Size(277, 33)
         Me.txt_SE_MUSEOS.TabIndex = 7
         '
         'Label81
         '
         Me.Label81.AutoSize = True
-        Me.Label81.Location = New System.Drawing.Point(215, 354)
+        Me.Label81.Location = New System.Drawing.Point(287, 436)
+        Me.Label81.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label81.Name = "Label81"
-        Me.Label81.Size = New System.Drawing.Size(73, 21)
+        Me.Label81.Size = New System.Drawing.Size(91, 27)
         Me.Label81.TabIndex = 58
         Me.Label81.Text = "Museos:"
         '
         'Label78
         '
         Me.Label78.AutoSize = True
-        Me.Label78.Location = New System.Drawing.Point(27, 182)
+        Me.Label78.Location = New System.Drawing.Point(36, 224)
+        Me.Label78.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label78.Name = "Label78"
-        Me.Label78.Size = New System.Drawing.Size(261, 21)
+        Me.Label78.Size = New System.Drawing.Size(329, 27)
         Me.Label78.TabIndex = 55
         Me.Label78.Text = "Eventos sociales (Fam o Amigos):"
         '
         'txt_SE__SOCIALE
         '
         Me.txt_SE__SOCIALE.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE__SOCIALE.Location = New System.Drawing.Point(294, 175)
+        Me.txt_SE__SOCIALE.Location = New System.Drawing.Point(392, 215)
+        Me.txt_SE__SOCIALE.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_SE__SOCIALE.Name = "txt_SE__SOCIALE"
-        Me.txt_SE__SOCIALE.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE__SOCIALE.Size = New System.Drawing.Size(277, 33)
         Me.txt_SE__SOCIALE.TabIndex = 3
         '
         'txt_SE_EVENTOS
         '
         Me.txt_SE_EVENTOS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE_EVENTOS.Location = New System.Drawing.Point(294, 91)
+        Me.txt_SE_EVENTOS.Location = New System.Drawing.Point(392, 112)
+        Me.txt_SE_EVENTOS.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_SE_EVENTOS.Name = "txt_SE_EVENTOS"
-        Me.txt_SE_EVENTOS.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE_EVENTOS.Size = New System.Drawing.Size(277, 33)
         Me.txt_SE_EVENTOS.TabIndex = 1
         '
         'Label79
         '
         Me.Label79.AutoSize = True
-        Me.Label79.Location = New System.Drawing.Point(108, 98)
+        Me.Label79.Location = New System.Drawing.Point(144, 121)
+        Me.Label79.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label79.Name = "Label79"
-        Me.Label79.Size = New System.Drawing.Size(180, 21)
+        Me.Label79.Size = New System.Drawing.Size(224, 27)
         Me.Label79.TabIndex = 54
         Me.Label79.Text = "Eventos Comunitarios:"
         '
@@ -839,10 +865,10 @@ Partial Class Empleados
         '
         Me.Panel36.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel36.Controls.Add(Me.Label84)
-        Me.Panel36.Location = New System.Drawing.Point(-2, 0)
-        Me.Panel36.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel36.Location = New System.Drawing.Point(-3, 0)
+        Me.Panel36.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel36.Name = "Panel36"
-        Me.Panel36.Size = New System.Drawing.Size(733, 35)
+        Me.Panel36.Size = New System.Drawing.Size(977, 43)
         Me.Panel36.TabIndex = 27
         '
         'Label84
@@ -850,10 +876,9 @@ Partial Class Empleados
         Me.Label84.AutoSize = True
         Me.Label84.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label84.ForeColor = System.Drawing.Color.White
-        Me.Label84.Location = New System.Drawing.Point(13, 6)
-        Me.Label84.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label84.Location = New System.Drawing.Point(17, 7)
         Me.Label84.Name = "Label84"
-        Me.Label84.Size = New System.Drawing.Size(96, 21)
+        Me.Label84.Size = New System.Drawing.Size(121, 27)
         Me.Label84.TabIndex = 0
         Me.Label84.Text = "Actividades"
         '
@@ -864,10 +889,11 @@ Partial Class Empleados
         Me.Tam_Es.Controls.Add(Me.Panel12)
         Me.Tam_Es.Controls.Add(Me.Panel8)
         Me.Tam_Es.Controls.Add(Me.Panel1)
-        Me.Tam_Es.Location = New System.Drawing.Point(4, 30)
+        Me.Tam_Es.Location = New System.Drawing.Point(4, 36)
+        Me.Tam_Es.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Tam_Es.Name = "Tam_Es"
-        Me.Tam_Es.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tam_Es.Size = New System.Drawing.Size(1280, 789)
+        Me.Tam_Es.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Tam_Es.Size = New System.Drawing.Size(1709, 973)
         Me.Tam_Es.TabIndex = 5
         Me.Tam_Es.Text = "Estudio SocioEconomico 1/2"
         Me.Tam_Es.UseVisualStyleBackColor = True
@@ -879,28 +905,30 @@ Partial Class Empleados
         Me.Panel25.Controls.Add(Me.txt_commen)
         Me.Panel25.Controls.Add(Me.Panel26)
         Me.Panel25.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel25.Location = New System.Drawing.Point(439, 630)
-        Me.Panel25.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel25.Location = New System.Drawing.Point(585, 775)
+        Me.Panel25.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel25.Name = "Panel25"
-        Me.Panel25.Size = New System.Drawing.Size(823, 166)
+        Me.Panel25.Size = New System.Drawing.Size(1096, 203)
         Me.Panel25.TabIndex = 67
         '
         'Label66
         '
         Me.Label66.AutoSize = True
-        Me.Label66.Location = New System.Drawing.Point(16, 47)
+        Me.Label66.Location = New System.Drawing.Point(21, 58)
+        Me.Label66.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label66.Name = "Label66"
-        Me.Label66.Size = New System.Drawing.Size(124, 21)
+        Me.Label66.Size = New System.Drawing.Size(156, 27)
         Me.Label66.TabIndex = 67
         Me.Label66.Text = "Observaciones:"
         '
         'txt_commen
         '
         Me.txt_commen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_commen.Location = New System.Drawing.Point(164, 52)
+        Me.txt_commen.Location = New System.Drawing.Point(219, 64)
+        Me.txt_commen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_commen.Multiline = True
         Me.txt_commen.Name = "txt_commen"
-        Me.txt_commen.Size = New System.Drawing.Size(645, 80)
+        Me.txt_commen.Size = New System.Drawing.Size(859, 98)
         Me.txt_commen.TabIndex = 31
         '
         'Panel26
@@ -908,10 +936,10 @@ Partial Class Empleados
         Me.Panel26.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel26.Controls.Add(Me.Label71)
         Me.Panel26.Controls.Add(Me.Label76)
-        Me.Panel26.Location = New System.Drawing.Point(-2, -2)
-        Me.Panel26.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel26.Location = New System.Drawing.Point(-3, -2)
+        Me.Panel26.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(869, 35)
+        Me.Panel26.Size = New System.Drawing.Size(1159, 43)
         Me.Panel26.TabIndex = 0
         '
         'Label71
@@ -919,10 +947,9 @@ Partial Class Empleados
         Me.Label71.AutoSize = True
         Me.Label71.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label71.ForeColor = System.Drawing.Color.White
-        Me.Label71.Location = New System.Drawing.Point(13, 6)
-        Me.Label71.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label71.Location = New System.Drawing.Point(17, 7)
         Me.Label71.Name = "Label71"
-        Me.Label71.Size = New System.Drawing.Size(120, 21)
+        Me.Label71.Size = New System.Drawing.Size(151, 27)
         Me.Label71.TabIndex = 1
         Me.Label71.Text = "Observaciones"
         '
@@ -931,10 +958,9 @@ Partial Class Empleados
         Me.Label76.AutoSize = True
         Me.Label76.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label76.ForeColor = System.Drawing.Color.White
-        Me.Label76.Location = New System.Drawing.Point(13, 6)
-        Me.Label76.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label76.Location = New System.Drawing.Point(17, 7)
         Me.Label76.Name = "Label76"
-        Me.Label76.Size = New System.Drawing.Size(0, 21)
+        Me.Label76.Size = New System.Drawing.Size(0, 27)
         Me.Label76.TabIndex = 0
         '
         'Panel29
@@ -950,77 +976,85 @@ Partial Class Empleados
         Me.Panel29.Controls.Add(Me.Label73)
         Me.Panel29.Controls.Add(Me.Panel30)
         Me.Panel29.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel29.Location = New System.Drawing.Point(439, 509)
-        Me.Panel29.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel29.Location = New System.Drawing.Point(585, 626)
+        Me.Panel29.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel29.Name = "Panel29"
-        Me.Panel29.Size = New System.Drawing.Size(823, 105)
+        Me.Panel29.Size = New System.Drawing.Size(1096, 128)
         Me.Panel29.TabIndex = 64
         '
         'Label64
         '
         Me.Label64.AutoSize = True
-        Me.Label64.Location = New System.Drawing.Point(605, 47)
+        Me.Label64.Location = New System.Drawing.Point(807, 58)
+        Me.Label64.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label64.Name = "Label64"
-        Me.Label64.Size = New System.Drawing.Size(79, 21)
+        Me.Label64.Size = New System.Drawing.Size(101, 27)
         Me.Label64.TabIndex = 66
         Me.Label64.Text = "Servicios:"
         '
         'txt_GFServ
         '
         Me.txt_GFServ.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_GFServ.Location = New System.Drawing.Point(690, 41)
+        Me.txt_GFServ.Location = New System.Drawing.Point(920, 50)
+        Me.txt_GFServ.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_GFServ.Name = "txt_GFServ"
-        Me.txt_GFServ.Size = New System.Drawing.Size(95, 28)
+        Me.txt_GFServ.Size = New System.Drawing.Size(125, 33)
         Me.txt_GFServ.TabIndex = 30
         '
         'Label62
         '
         Me.Label62.AutoSize = True
-        Me.Label62.Location = New System.Drawing.Point(393, 46)
+        Me.Label62.Location = New System.Drawing.Point(524, 57)
+        Me.Label62.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label62.Name = "Label62"
-        Me.Label62.Size = New System.Drawing.Size(87, 21)
+        Me.Label62.Size = New System.Drawing.Size(108, 27)
         Me.Label62.TabIndex = 64
         Me.Label62.Text = "Despensa:"
         '
         'Txt_GFDesp
         '
         Me.Txt_GFDesp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.Txt_GFDesp.Location = New System.Drawing.Point(486, 43)
+        Me.Txt_GFDesp.Location = New System.Drawing.Point(648, 53)
+        Me.Txt_GFDesp.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Txt_GFDesp.Name = "Txt_GFDesp"
-        Me.Txt_GFDesp.Size = New System.Drawing.Size(95, 28)
+        Me.Txt_GFDesp.Size = New System.Drawing.Size(125, 33)
         Me.Txt_GFDesp.TabIndex = 29
         '
         'Label72
         '
         Me.Label72.AutoSize = True
-        Me.Label72.Location = New System.Drawing.Point(174, 46)
+        Me.Label72.Location = New System.Drawing.Point(232, 57)
+        Me.Label72.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label72.Name = "Label72"
-        Me.Label72.Size = New System.Drawing.Size(109, 21)
+        Me.Label72.Size = New System.Drawing.Size(135, 27)
         Me.Label72.TabIndex = 62
         Me.Label72.Text = "Colegiaturas:"
         '
         'txt_GFRenta
         '
         Me.txt_GFRenta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_GFRenta.Location = New System.Drawing.Point(75, 43)
+        Me.txt_GFRenta.Location = New System.Drawing.Point(100, 53)
+        Me.txt_GFRenta.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_GFRenta.Name = "txt_GFRenta"
-        Me.txt_GFRenta.Size = New System.Drawing.Size(95, 28)
+        Me.txt_GFRenta.Size = New System.Drawing.Size(125, 33)
         Me.txt_GFRenta.TabIndex = 27
         '
         'txt_GFCole
         '
         Me.txt_GFCole.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_GFCole.Location = New System.Drawing.Point(289, 43)
+        Me.txt_GFCole.Location = New System.Drawing.Point(385, 53)
+        Me.txt_GFCole.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_GFCole.Name = "txt_GFCole"
-        Me.txt_GFCole.Size = New System.Drawing.Size(95, 28)
+        Me.txt_GFCole.Size = New System.Drawing.Size(125, 33)
         Me.txt_GFCole.TabIndex = 28
         '
         'Label73
         '
         Me.Label73.AutoSize = True
-        Me.Label73.Location = New System.Drawing.Point(11, 46)
+        Me.Label73.Location = New System.Drawing.Point(15, 57)
+        Me.Label73.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label73.Name = "Label73"
-        Me.Label73.Size = New System.Drawing.Size(58, 21)
+        Me.Label73.Size = New System.Drawing.Size(71, 27)
         Me.Label73.TabIndex = 57
         Me.Label73.Text = "Renta:"
         '
@@ -1029,10 +1063,10 @@ Partial Class Empleados
         Me.Panel30.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel30.Controls.Add(Me.Label74)
         Me.Panel30.Controls.Add(Me.Label75)
-        Me.Panel30.Location = New System.Drawing.Point(-2, -2)
-        Me.Panel30.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel30.Location = New System.Drawing.Point(-3, -2)
+        Me.Panel30.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(823, 35)
+        Me.Panel30.Size = New System.Drawing.Size(1097, 43)
         Me.Panel30.TabIndex = 0
         '
         'Label74
@@ -1040,10 +1074,9 @@ Partial Class Empleados
         Me.Label74.AutoSize = True
         Me.Label74.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label74.ForeColor = System.Drawing.Color.White
-        Me.Label74.Location = New System.Drawing.Point(13, 6)
-        Me.Label74.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label74.Location = New System.Drawing.Point(17, 7)
         Me.Label74.Name = "Label74"
-        Me.Label74.Size = New System.Drawing.Size(100, 21)
+        Me.Label74.Size = New System.Drawing.Size(125, 27)
         Me.Label74.TabIndex = 1
         Me.Label74.Text = "Gastos Fijos"
         '
@@ -1052,10 +1085,9 @@ Partial Class Empleados
         Me.Label75.AutoSize = True
         Me.Label75.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label75.ForeColor = System.Drawing.Color.White
-        Me.Label75.Location = New System.Drawing.Point(13, 6)
-        Me.Label75.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label75.Location = New System.Drawing.Point(17, 7)
         Me.Label75.Name = "Label75"
-        Me.Label75.Size = New System.Drawing.Size(0, 21)
+        Me.Label75.Size = New System.Drawing.Size(0, 27)
         Me.Label75.TabIndex = 0
         '
         'Panel12
@@ -1069,18 +1101,19 @@ Partial Class Empleados
         Me.Panel12.Controls.Add(Me.dgv_OI)
         Me.Panel12.Controls.Add(Me.Panel14)
         Me.Panel12.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel12.Location = New System.Drawing.Point(439, 280)
-        Me.Panel12.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel12.Location = New System.Drawing.Point(585, 345)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(823, 209)
+        Me.Panel12.Size = New System.Drawing.Size(1096, 256)
         Me.Panel12.TabIndex = 51
         '
         'Label63
         '
         Me.Label63.AutoSize = True
-        Me.Label63.Location = New System.Drawing.Point(398, 49)
+        Me.Label63.Location = New System.Drawing.Point(531, 60)
+        Me.Label63.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label63.Name = "Label63"
-        Me.Label63.Size = New System.Drawing.Size(83, 21)
+        Me.Label63.Size = New System.Drawing.Size(102, 27)
         Me.Label63.TabIndex = 62
         Me.Label63.Text = "Cantidad:"
         '
@@ -1092,10 +1125,10 @@ Partial Class Empleados
         Me.btn_OI.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_OI.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_OI.ForeColor = System.Drawing.Color.White
-        Me.btn_OI.Location = New System.Drawing.Point(711, 36)
-        Me.btn_OI.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_OI.Location = New System.Drawing.Point(948, 44)
+        Me.btn_OI.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_OI.Name = "btn_OI"
-        Me.btn_OI.Size = New System.Drawing.Size(98, 41)
+        Me.btn_OI.Size = New System.Drawing.Size(131, 50)
         Me.btn_OI.TabIndex = 17
         Me.btn_OI.Text = "Agregar"
         Me.btn_OI.UseVisualStyleBackColor = False
@@ -1103,25 +1136,28 @@ Partial Class Empleados
         'txt_OTCantidad
         '
         Me.txt_OTCantidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_OTCantidad.Location = New System.Drawing.Point(487, 46)
+        Me.txt_OTCantidad.Location = New System.Drawing.Point(649, 57)
+        Me.txt_OTCantidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_OTCantidad.Name = "txt_OTCantidad"
-        Me.txt_OTCantidad.Size = New System.Drawing.Size(208, 28)
+        Me.txt_OTCantidad.Size = New System.Drawing.Size(276, 33)
         Me.txt_OTCantidad.TabIndex = 16
         '
         'txt_OIParen
         '
         Me.txt_OIParen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_OIParen.Location = New System.Drawing.Point(109, 46)
+        Me.txt_OIParen.Location = New System.Drawing.Point(145, 57)
+        Me.txt_OIParen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_OIParen.Name = "txt_OIParen"
-        Me.txt_OIParen.Size = New System.Drawing.Size(212, 28)
+        Me.txt_OIParen.Size = New System.Drawing.Size(281, 33)
         Me.txt_OIParen.TabIndex = 15
         '
         'Label65
         '
         Me.Label65.AutoSize = True
-        Me.Label65.Location = New System.Drawing.Point(8, 49)
+        Me.Label65.Location = New System.Drawing.Point(11, 60)
+        Me.Label65.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label65.Name = "Label65"
-        Me.Label65.Size = New System.Drawing.Size(98, 21)
+        Me.Label65.Size = New System.Drawing.Size(121, 27)
         Me.Label65.TabIndex = 57
         Me.Label65.Text = "Parentesco:"
         '
@@ -1130,35 +1166,22 @@ Partial Class Empleados
         Me.dgv_OI.AllowUserToAddRows = False
         Me.dgv_OI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_OI.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PARENTESCO, Me.CANTIDAD})
-        Me.dgv_OI.Location = New System.Drawing.Point(7, 83)
+        Me.dgv_OI.Location = New System.Drawing.Point(9, 102)
+        Me.dgv_OI.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgv_OI.Name = "dgv_OI"
         Me.dgv_OI.RowHeadersVisible = False
-        Me.dgv_OI.Size = New System.Drawing.Size(802, 98)
+        Me.dgv_OI.Size = New System.Drawing.Size(1069, 121)
         Me.dgv_OI.TabIndex = 55
-        '
-        'PARENTESCO
-        '
-        Me.PARENTESCO.DataPropertyName = "OIng_Desc"
-        Me.PARENTESCO.HeaderText = "PARENTESCO"
-        Me.PARENTESCO.Name = "PARENTESCO"
-        Me.PARENTESCO.Width = 401
-        '
-        'CANTIDAD
-        '
-        Me.CANTIDAD.DataPropertyName = "OIng_Cantidad"
-        Me.CANTIDAD.HeaderText = "CANTIDAD"
-        Me.CANTIDAD.Name = "CANTIDAD"
-        Me.CANTIDAD.Width = 401
         '
         'Panel14
         '
         Me.Panel14.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel14.Controls.Add(Me.Label60)
         Me.Panel14.Controls.Add(Me.Label61)
-        Me.Panel14.Location = New System.Drawing.Point(-2, -2)
-        Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel14.Location = New System.Drawing.Point(-3, -2)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(823, 35)
+        Me.Panel14.Size = New System.Drawing.Size(1097, 43)
         Me.Panel14.TabIndex = 0
         '
         'Label60
@@ -1166,10 +1189,9 @@ Partial Class Empleados
         Me.Label60.AutoSize = True
         Me.Label60.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label60.ForeColor = System.Drawing.Color.White
-        Me.Label60.Location = New System.Drawing.Point(13, 6)
-        Me.Label60.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label60.Location = New System.Drawing.Point(17, 7)
         Me.Label60.Name = "Label60"
-        Me.Label60.Size = New System.Drawing.Size(121, 21)
+        Me.Label60.Size = New System.Drawing.Size(152, 27)
         Me.Label60.TabIndex = 1
         Me.Label60.Text = "Otros Ingresos"
         '
@@ -1178,10 +1200,9 @@ Partial Class Empleados
         Me.Label61.AutoSize = True
         Me.Label61.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label61.ForeColor = System.Drawing.Color.White
-        Me.Label61.Location = New System.Drawing.Point(13, 6)
-        Me.Label61.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label61.Location = New System.Drawing.Point(17, 7)
         Me.Label61.Name = "Label61"
-        Me.Label61.Size = New System.Drawing.Size(0, 21)
+        Me.Label61.Size = New System.Drawing.Size(0, 27)
         Me.Label61.TabIndex = 0
         '
         'Panel8
@@ -1199,10 +1220,10 @@ Partial Class Empleados
         Me.Panel8.Controls.Add(Me.Label48)
         Me.Panel8.Controls.Add(Me.Panel10)
         Me.Panel8.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel8.Location = New System.Drawing.Point(439, 40)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel8.Location = New System.Drawing.Point(585, 49)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(823, 223)
+        Me.Panel8.Size = New System.Drawing.Size(1096, 274)
         Me.Panel8.TabIndex = 50
         '
         'dgv_Ref
@@ -1210,80 +1231,58 @@ Partial Class Empleados
         Me.dgv_Ref.AllowUserToAddRows = False
         Me.dgv_Ref.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_Ref.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NOMBRE, Me.TIPO, Me.OCUPACION, Me.TIEMPO})
-        Me.dgv_Ref.Location = New System.Drawing.Point(10, 106)
+        Me.dgv_Ref.Location = New System.Drawing.Point(-2, 130)
+        Me.dgv_Ref.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgv_Ref.Name = "dgv_Ref"
         Me.dgv_Ref.RowHeadersVisible = False
-        Me.dgv_Ref.Size = New System.Drawing.Size(799, 98)
+        Me.dgv_Ref.Size = New System.Drawing.Size(1065, 121)
         Me.dgv_Ref.TabIndex = 54
-        '
-        'NOMBRE
-        '
-        Me.NOMBRE.DataPropertyName = "Ref_Nombre"
-        Me.NOMBRE.HeaderText = "NOMBRE"
-        Me.NOMBRE.Name = "NOMBRE"
-        Me.NOMBRE.Width = 200
-        '
-        'TIPO
-        '
-        Me.TIPO.DataPropertyName = "Ref_TRelacion"
-        Me.TIPO.HeaderText = "TIPO DE RELACION"
-        Me.TIPO.Name = "TIPO"
-        Me.TIPO.Width = 201
-        '
-        'OCUPACION
-        '
-        Me.OCUPACION.DataPropertyName = "Ref_Ocupacion"
-        Me.OCUPACION.HeaderText = "OCUPACION"
-        Me.OCUPACION.Name = "OCUPACION"
-        Me.OCUPACION.Width = 200
-        '
-        'TIEMPO
-        '
-        Me.TIEMPO.DataPropertyName = "Ref_TiempoC"
-        Me.TIEMPO.HeaderText = "TIEMPO DE CONOCERLO"
-        Me.TIEMPO.Name = "TIEMPO"
-        Me.TIEMPO.Width = 201
         '
         'Label52
         '
         Me.Label52.AutoSize = True
-        Me.Label52.Location = New System.Drawing.Point(409, 74)
+        Me.Label52.Location = New System.Drawing.Point(545, 91)
+        Me.Label52.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(71, 21)
+        Me.Label52.Size = New System.Drawing.Size(89, 27)
         Me.Label52.TabIndex = 53
         Me.Label52.Text = "Tiempo:"
         '
         'txt_TC
         '
         Me.txt_TC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_TC.Location = New System.Drawing.Point(487, 69)
+        Me.txt_TC.Location = New System.Drawing.Point(649, 85)
+        Me.txt_TC.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_TC.Name = "txt_TC"
-        Me.txt_TC.Size = New System.Drawing.Size(208, 28)
+        Me.txt_TC.Size = New System.Drawing.Size(276, 33)
         Me.txt_TC.TabIndex = 5
         '
         'txt_RefOcu
         '
         Me.txt_RefOcu.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_RefOcu.Location = New System.Drawing.Point(112, 72)
+        Me.txt_RefOcu.Location = New System.Drawing.Point(149, 89)
+        Me.txt_RefOcu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_RefOcu.Name = "txt_RefOcu"
-        Me.txt_RefOcu.Size = New System.Drawing.Size(209, 28)
+        Me.txt_RefOcu.Size = New System.Drawing.Size(277, 33)
         Me.txt_RefOcu.TabIndex = 4
         '
         'Label56
         '
         Me.Label56.AutoSize = True
-        Me.Label56.Location = New System.Drawing.Point(340, 40)
+        Me.Label56.Location = New System.Drawing.Point(453, 49)
+        Me.Label56.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(140, 21)
+        Me.Label56.Size = New System.Drawing.Size(175, 27)
         Me.Label56.TabIndex = 51
         Me.Label56.Text = "Tipo de Relacion:"
         '
         'Label46
         '
         Me.Label46.AutoSize = True
-        Me.Label46.Location = New System.Drawing.Point(16, 75)
+        Me.Label46.Location = New System.Drawing.Point(21, 92)
+        Me.Label46.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(96, 21)
+        Me.Label46.Size = New System.Drawing.Size(119, 27)
         Me.Label46.TabIndex = 44
         Me.Label46.Text = "Ocupacion:"
         '
@@ -1295,10 +1294,10 @@ Partial Class Empleados
         Me.Btn_AddRef.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_AddRef.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btn_AddRef.ForeColor = System.Drawing.Color.White
-        Me.Btn_AddRef.Location = New System.Drawing.Point(711, 44)
-        Me.Btn_AddRef.Margin = New System.Windows.Forms.Padding(2)
+        Me.Btn_AddRef.Location = New System.Drawing.Point(948, 54)
+        Me.Btn_AddRef.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Btn_AddRef.Name = "Btn_AddRef"
-        Me.Btn_AddRef.Size = New System.Drawing.Size(98, 41)
+        Me.Btn_AddRef.Size = New System.Drawing.Size(131, 50)
         Me.Btn_AddRef.TabIndex = 6
         Me.Btn_AddRef.Text = "Agregar"
         Me.Btn_AddRef.UseVisualStyleBackColor = False
@@ -1306,25 +1305,28 @@ Partial Class Empleados
         'Txt_TR
         '
         Me.Txt_TR.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.Txt_TR.Location = New System.Drawing.Point(486, 35)
+        Me.Txt_TR.Location = New System.Drawing.Point(648, 43)
+        Me.Txt_TR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Txt_TR.Name = "Txt_TR"
-        Me.Txt_TR.Size = New System.Drawing.Size(209, 28)
+        Me.Txt_TR.Size = New System.Drawing.Size(277, 33)
         Me.Txt_TR.TabIndex = 3
         '
         'txt_RefNom
         '
         Me.txt_RefNom.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_RefNom.Location = New System.Drawing.Point(112, 39)
+        Me.txt_RefNom.Location = New System.Drawing.Point(149, 48)
+        Me.txt_RefNom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_RefNom.Name = "txt_RefNom"
-        Me.txt_RefNom.Size = New System.Drawing.Size(209, 28)
+        Me.txt_RefNom.Size = New System.Drawing.Size(277, 33)
         Me.txt_RefNom.TabIndex = 2
         '
         'Label48
         '
         Me.Label48.AutoSize = True
-        Me.Label48.Location = New System.Drawing.Point(29, 42)
+        Me.Label48.Location = New System.Drawing.Point(39, 52)
+        Me.Label48.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(77, 21)
+        Me.Label48.Size = New System.Drawing.Size(97, 27)
         Me.Label48.TabIndex = 37
         Me.Label48.Text = "Nombre:"
         '
@@ -1332,10 +1334,10 @@ Partial Class Empleados
         '
         Me.Panel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel10.Controls.Add(Me.Label51)
-        Me.Panel10.Location = New System.Drawing.Point(-2, -2)
-        Me.Panel10.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel10.Location = New System.Drawing.Point(-3, -2)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(1103, 35)
+        Me.Panel10.Size = New System.Drawing.Size(1471, 43)
         Me.Panel10.TabIndex = 0
         '
         'Label51
@@ -1343,10 +1345,9 @@ Partial Class Empleados
         Me.Label51.AutoSize = True
         Me.Label51.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label51.ForeColor = System.Drawing.Color.White
-        Me.Label51.Location = New System.Drawing.Point(13, 6)
-        Me.Label51.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label51.Location = New System.Drawing.Point(17, 7)
         Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(97, 21)
+        Me.Label51.Size = New System.Drawing.Size(120, 27)
         Me.Label51.TabIndex = 0
         Me.Label51.Text = "Referencias"
         '
@@ -1384,18 +1385,19 @@ Partial Class Empleados
         Me.Panel1.Controls.Add(Me.Label50)
         Me.Panel1.Controls.Add(Me.Panel6)
         Me.Panel1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel1.Location = New System.Drawing.Point(5, 40)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel1.Location = New System.Drawing.Point(7, 49)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(420, 756)
+        Me.Panel1.Size = New System.Drawing.Size(559, 930)
         Me.Panel1.TabIndex = 2
         '
         'cb_block
         '
         Me.cb_block.AutoSize = True
-        Me.cb_block.Location = New System.Drawing.Point(51, 430)
+        Me.cb_block.Location = New System.Drawing.Point(68, 529)
+        Me.cb_block.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_block.Name = "cb_block"
-        Me.cb_block.Size = New System.Drawing.Size(70, 25)
+        Me.cb_block.Size = New System.Drawing.Size(86, 31)
         Me.cb_block.TabIndex = 48
         Me.cb_block.Text = "Block"
         Me.cb_block.UseVisualStyleBackColor = True
@@ -1404,10 +1406,10 @@ Partial Class Empleados
         '
         Me.Panel31.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel31.Controls.Add(Me.Label77)
-        Me.Panel31.Location = New System.Drawing.Point(-2, 353)
-        Me.Panel31.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel31.Location = New System.Drawing.Point(-3, 434)
+        Me.Panel31.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(420, 35)
+        Me.Panel31.Size = New System.Drawing.Size(560, 43)
         Me.Panel31.TabIndex = 45
         '
         'Label77
@@ -1415,19 +1417,19 @@ Partial Class Empleados
         Me.Label77.AutoSize = True
         Me.Label77.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label77.ForeColor = System.Drawing.Color.White
-        Me.Label77.Location = New System.Drawing.Point(13, 6)
-        Me.Label77.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label77.Location = New System.Drawing.Point(17, 7)
         Me.Label77.Name = "Label77"
-        Me.Label77.Size = New System.Drawing.Size(103, 21)
+        Me.Label77.Size = New System.Drawing.Size(128, 27)
         Me.Label77.TabIndex = 0
         Me.Label77.Text = "Condiciones"
         '
         'cb_ladrillo
         '
         Me.cb_ladrillo.AutoSize = True
-        Me.cb_ladrillo.Location = New System.Drawing.Point(211, 399)
+        Me.cb_ladrillo.Location = New System.Drawing.Point(281, 491)
+        Me.cb_ladrillo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_ladrillo.Name = "cb_ladrillo"
-        Me.cb_ladrillo.Size = New System.Drawing.Size(84, 25)
+        Me.cb_ladrillo.Size = New System.Drawing.Size(104, 31)
         Me.cb_ladrillo.TabIndex = 47
         Me.cb_ladrillo.Text = "Ladrillo"
         Me.cb_ladrillo.UseVisualStyleBackColor = True
@@ -1435,9 +1437,10 @@ Partial Class Empleados
         'cb_Madera
         '
         Me.cb_Madera.AutoSize = True
-        Me.cb_Madera.Location = New System.Drawing.Point(211, 430)
+        Me.cb_Madera.Location = New System.Drawing.Point(281, 529)
+        Me.cb_Madera.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_Madera.Name = "cb_Madera"
-        Me.cb_Madera.Size = New System.Drawing.Size(88, 25)
+        Me.cb_Madera.Size = New System.Drawing.Size(108, 31)
         Me.cb_Madera.TabIndex = 49
         Me.cb_Madera.Text = "Madera"
         Me.cb_Madera.UseVisualStyleBackColor = True
@@ -1445,9 +1448,10 @@ Partial Class Empleados
         'cb_adobe
         '
         Me.cb_adobe.AutoSize = True
-        Me.cb_adobe.Location = New System.Drawing.Point(51, 399)
+        Me.cb_adobe.Location = New System.Drawing.Point(68, 491)
+        Me.cb_adobe.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_adobe.Name = "cb_adobe"
-        Me.cb_adobe.Size = New System.Drawing.Size(79, 25)
+        Me.cb_adobe.Size = New System.Drawing.Size(98, 31)
         Me.cb_adobe.TabIndex = 46
         Me.cb_adobe.Text = "Adobe"
         Me.cb_adobe.UseVisualStyleBackColor = True
@@ -1456,17 +1460,19 @@ Partial Class Empleados
         '
         Me.txt_Religion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_Religion.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_Religion.Location = New System.Drawing.Point(133, 39)
+        Me.txt_Religion.Location = New System.Drawing.Point(177, 48)
+        Me.txt_Religion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_Religion.Name = "txt_Religion"
-        Me.txt_Religion.Size = New System.Drawing.Size(209, 28)
+        Me.txt_Religion.Size = New System.Drawing.Size(277, 33)
         Me.txt_Religion.TabIndex = 0
         '
         'cb_SisSeg
         '
         Me.cb_SisSeg.AutoSize = True
-        Me.cb_SisSeg.Location = New System.Drawing.Point(48, 681)
+        Me.cb_SisSeg.Location = New System.Drawing.Point(64, 838)
+        Me.cb_SisSeg.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_SisSeg.Name = "cb_SisSeg"
-        Me.cb_SisSeg.Size = New System.Drawing.Size(194, 25)
+        Me.cb_SisSeg.Size = New System.Drawing.Size(242, 31)
         Me.cb_SisSeg.TabIndex = 26
         Me.cb_SisSeg.Text = "Sistema de Seguridad"
         Me.cb_SisSeg.UseVisualStyleBackColor = True
@@ -1474,9 +1480,10 @@ Partial Class Empleados
         'cb_TV
         '
         Me.cb_TV.AutoSize = True
-        Me.cb_TV.Location = New System.Drawing.Point(48, 637)
+        Me.cb_TV.Location = New System.Drawing.Point(64, 784)
+        Me.cb_TV.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_TV.Name = "cb_TV"
-        Me.cb_TV.Size = New System.Drawing.Size(128, 25)
+        Me.cb_TV.Size = New System.Drawing.Size(158, 31)
         Me.cb_TV.TabIndex = 24
         Me.cb_TV.Text = "TV por Cable"
         Me.cb_TV.UseVisualStyleBackColor = True
@@ -1484,9 +1491,10 @@ Partial Class Empleados
         'cb_Basura
         '
         Me.cb_Basura.AutoSize = True
-        Me.cb_Basura.Location = New System.Drawing.Point(211, 598)
+        Me.cb_Basura.Location = New System.Drawing.Point(281, 736)
+        Me.cb_Basura.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_Basura.Name = "cb_Basura"
-        Me.cb_Basura.Size = New System.Drawing.Size(175, 25)
+        Me.cb_Basura.Size = New System.Drawing.Size(217, 31)
         Me.cb_Basura.TabIndex = 23
         Me.cb_Basura.Text = "Recoleccion Basura"
         Me.cb_Basura.UseVisualStyleBackColor = True
@@ -1494,9 +1502,10 @@ Partial Class Empleados
         'cb_Internet
         '
         Me.cb_Internet.AutoSize = True
-        Me.cb_Internet.Location = New System.Drawing.Point(211, 637)
+        Me.cb_Internet.Location = New System.Drawing.Point(281, 784)
+        Me.cb_Internet.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_Internet.Name = "cb_Internet"
-        Me.cb_Internet.Size = New System.Drawing.Size(90, 25)
+        Me.cb_Internet.Size = New System.Drawing.Size(108, 31)
         Me.cb_Internet.TabIndex = 25
         Me.cb_Internet.Text = "Internet"
         Me.cb_Internet.UseVisualStyleBackColor = True
@@ -1504,9 +1513,10 @@ Partial Class Empleados
         'cb_Trans
         '
         Me.cb_Trans.AutoSize = True
-        Me.cb_Trans.Location = New System.Drawing.Point(211, 161)
+        Me.cb_Trans.Location = New System.Drawing.Point(281, 198)
+        Me.cb_Trans.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_Trans.Name = "cb_Trans"
-        Me.cb_Trans.Size = New System.Drawing.Size(172, 25)
+        Me.cb_Trans.Size = New System.Drawing.Size(213, 31)
         Me.cb_Trans.TabIndex = 8
         Me.cb_Trans.Text = "Transporte Publico"
         Me.cb_Trans.UseVisualStyleBackColor = True
@@ -1514,9 +1524,10 @@ Partial Class Empleados
         'cb_Tuberia
         '
         Me.cb_Tuberia.AutoSize = True
-        Me.cb_Tuberia.Location = New System.Drawing.Point(48, 598)
+        Me.cb_Tuberia.Location = New System.Drawing.Point(64, 736)
+        Me.cb_Tuberia.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_Tuberia.Name = "cb_Tuberia"
-        Me.cb_Tuberia.Size = New System.Drawing.Size(143, 25)
+        Me.cb_Tuberia.Size = New System.Drawing.Size(176, 31)
         Me.cb_Tuberia.TabIndex = 22
         Me.cb_Tuberia.Text = "Tuberia de Gas"
         Me.cb_Tuberia.UseVisualStyleBackColor = True
@@ -1524,9 +1535,10 @@ Partial Class Empleados
         'cb_AguaP
         '
         Me.cb_AguaP.AutoSize = True
-        Me.cb_AguaP.Location = New System.Drawing.Point(48, 557)
+        Me.cb_AguaP.Location = New System.Drawing.Point(64, 686)
+        Me.cb_AguaP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_AguaP.Name = "cb_AguaP"
-        Me.cb_AguaP.Size = New System.Drawing.Size(132, 25)
+        Me.cb_AguaP.Size = New System.Drawing.Size(162, 31)
         Me.cb_AguaP.TabIndex = 20
         Me.cb_AguaP.Text = "Agua Potable"
         Me.cb_AguaP.UseVisualStyleBackColor = True
@@ -1534,9 +1546,10 @@ Partial Class Empleados
         'cb_LineaTel
         '
         Me.cb_LineaTel.AutoSize = True
-        Me.cb_LineaTel.Location = New System.Drawing.Point(211, 517)
+        Me.cb_LineaTel.Location = New System.Drawing.Point(281, 636)
+        Me.cb_LineaTel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_LineaTel.Name = "cb_LineaTel"
-        Me.cb_LineaTel.Size = New System.Drawing.Size(152, 25)
+        Me.cb_LineaTel.Size = New System.Drawing.Size(185, 31)
         Me.cb_LineaTel.TabIndex = 19
         Me.cb_LineaTel.Text = "Linea Telefonica"
         Me.cb_LineaTel.UseVisualStyleBackColor = True
@@ -1544,9 +1557,10 @@ Partial Class Empleados
         'cb_Drenaje
         '
         Me.cb_Drenaje.AutoSize = True
-        Me.cb_Drenaje.Location = New System.Drawing.Point(211, 557)
+        Me.cb_Drenaje.Location = New System.Drawing.Point(281, 686)
+        Me.cb_Drenaje.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_Drenaje.Name = "cb_Drenaje"
-        Me.cb_Drenaje.Size = New System.Drawing.Size(88, 25)
+        Me.cb_Drenaje.Size = New System.Drawing.Size(107, 31)
         Me.cb_Drenaje.TabIndex = 21
         Me.cb_Drenaje.Text = "Drenaje"
         Me.cb_Drenaje.UseVisualStyleBackColor = True
@@ -1554,9 +1568,10 @@ Partial Class Empleados
         'cb_Luz
         '
         Me.cb_Luz.AutoSize = True
-        Me.cb_Luz.Location = New System.Drawing.Point(48, 517)
+        Me.cb_Luz.Location = New System.Drawing.Point(64, 636)
+        Me.cb_Luz.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_Luz.Name = "cb_Luz"
-        Me.cb_Luz.Size = New System.Drawing.Size(55, 25)
+        Me.cb_Luz.Size = New System.Drawing.Size(66, 31)
         Me.cb_Luz.TabIndex = 18
         Me.cb_Luz.Text = "Luz"
         Me.cb_Luz.UseVisualStyleBackColor = True
@@ -1565,10 +1580,10 @@ Partial Class Empleados
         '
         Me.Panel24.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel24.Controls.Add(Me.Label59)
-        Me.Panel24.Location = New System.Drawing.Point(-2, 468)
-        Me.Panel24.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel24.Location = New System.Drawing.Point(-3, 576)
+        Me.Panel24.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel24.Name = "Panel24"
-        Me.Panel24.Size = New System.Drawing.Size(423, 35)
+        Me.Panel24.Size = New System.Drawing.Size(564, 43)
         Me.Panel24.TabIndex = 3
         '
         'Label59
@@ -1576,19 +1591,19 @@ Partial Class Empleados
         Me.Label59.AutoSize = True
         Me.Label59.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label59.ForeColor = System.Drawing.Color.White
-        Me.Label59.Location = New System.Drawing.Point(13, 6)
-        Me.Label59.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label59.Location = New System.Drawing.Point(17, 7)
         Me.Label59.Name = "Label59"
-        Me.Label59.Size = New System.Drawing.Size(75, 21)
+        Me.Label59.Size = New System.Drawing.Size(96, 27)
         Me.Label59.TabIndex = 0
         Me.Label59.Text = "Servicios"
         '
         'cb_Terreno
         '
         Me.cb_Terreno.AutoSize = True
-        Me.cb_Terreno.Location = New System.Drawing.Point(51, 315)
+        Me.cb_Terreno.Location = New System.Drawing.Point(68, 388)
+        Me.cb_Terreno.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_Terreno.Name = "cb_Terreno"
-        Me.cb_Terreno.Size = New System.Drawing.Size(88, 25)
+        Me.cb_Terreno.Size = New System.Drawing.Size(108, 31)
         Me.cb_Terreno.TabIndex = 13
         Me.cb_Terreno.Text = "Terreno"
         Me.cb_Terreno.UseVisualStyleBackColor = True
@@ -1597,10 +1612,10 @@ Partial Class Empleados
         '
         Me.Panel23.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel23.Controls.Add(Me.Label58)
-        Me.Panel23.Location = New System.Drawing.Point(-2, 238)
-        Me.Panel23.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel23.Location = New System.Drawing.Point(-3, 293)
+        Me.Panel23.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel23.Name = "Panel23"
-        Me.Panel23.Size = New System.Drawing.Size(420, 35)
+        Me.Panel23.Size = New System.Drawing.Size(560, 43)
         Me.Panel23.TabIndex = 2
         '
         'Label58
@@ -1608,19 +1623,19 @@ Partial Class Empleados
         Me.Label58.AutoSize = True
         Me.Label58.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label58.ForeColor = System.Drawing.Color.White
-        Me.Label58.Location = New System.Drawing.Point(13, 6)
-        Me.Label58.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label58.Location = New System.Drawing.Point(17, 7)
         Me.Label58.Name = "Label58"
-        Me.Label58.Size = New System.Drawing.Size(75, 21)
+        Me.Label58.Size = New System.Drawing.Size(94, 27)
         Me.Label58.TabIndex = 0
         Me.Label58.Text = "Vivienda"
         '
         'cb_Renta
         '
         Me.cb_Renta.AutoSize = True
-        Me.cb_Renta.Location = New System.Drawing.Point(211, 284)
+        Me.cb_Renta.Location = New System.Drawing.Point(281, 350)
+        Me.cb_Renta.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_Renta.Name = "cb_Renta"
-        Me.cb_Renta.Size = New System.Drawing.Size(73, 25)
+        Me.cb_Renta.Size = New System.Drawing.Size(88, 31)
         Me.cb_Renta.TabIndex = 12
         Me.cb_Renta.Text = "Renta"
         Me.cb_Renta.UseVisualStyleBackColor = True
@@ -1629,10 +1644,10 @@ Partial Class Empleados
         '
         Me.Panel22.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel22.Controls.Add(Me.Label57)
-        Me.Panel22.Location = New System.Drawing.Point(-2, 115)
-        Me.Panel22.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel22.Location = New System.Drawing.Point(-3, 142)
+        Me.Panel22.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(420, 35)
+        Me.Panel22.Size = New System.Drawing.Size(560, 43)
         Me.Panel22.TabIndex = 1
         '
         'Label57
@@ -1640,19 +1655,19 @@ Partial Class Empleados
         Me.Label57.AutoSize = True
         Me.Label57.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label57.ForeColor = System.Drawing.Color.White
-        Me.Label57.Location = New System.Drawing.Point(13, 6)
-        Me.Label57.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label57.Location = New System.Drawing.Point(17, 7)
         Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(92, 21)
+        Me.Label57.Size = New System.Drawing.Size(115, 27)
         Me.Label57.TabIndex = 0
         Me.Label57.Text = "Transporte"
         '
         'cb_Depto
         '
         Me.cb_Depto.AutoSize = True
-        Me.cb_Depto.Location = New System.Drawing.Point(211, 315)
+        Me.cb_Depto.Location = New System.Drawing.Point(281, 388)
+        Me.cb_Depto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_Depto.Name = "cb_Depto"
-        Me.cb_Depto.Size = New System.Drawing.Size(140, 25)
+        Me.cb_Depto.Size = New System.Drawing.Size(172, 31)
         Me.cb_Depto.TabIndex = 14
         Me.cb_Depto.Text = "Departamento"
         Me.cb_Depto.UseVisualStyleBackColor = True
@@ -1660,9 +1675,10 @@ Partial Class Empleados
         'cb_Vehi
         '
         Me.cb_Vehi.AutoSize = True
-        Me.cb_Vehi.Location = New System.Drawing.Point(212, 191)
+        Me.cb_Vehi.Location = New System.Drawing.Point(283, 235)
+        Me.cb_Vehi.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_Vehi.Name = "cb_Vehi"
-        Me.cb_Vehi.Size = New System.Drawing.Size(150, 25)
+        Me.cb_Vehi.Size = New System.Drawing.Size(186, 31)
         Me.cb_Vehi.TabIndex = 10
         Me.cb_Vehi.Text = "Vehiculo Propio"
         Me.cb_Vehi.UseVisualStyleBackColor = True
@@ -1670,9 +1686,10 @@ Partial Class Empleados
         'cb_CasaP
         '
         Me.cb_CasaP.AutoSize = True
-        Me.cb_CasaP.Location = New System.Drawing.Point(51, 284)
+        Me.cb_CasaP.Location = New System.Drawing.Point(68, 350)
+        Me.cb_CasaP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_CasaP.Name = "cb_CasaP"
-        Me.cb_CasaP.Size = New System.Drawing.Size(119, 25)
+        Me.cb_CasaP.Size = New System.Drawing.Size(146, 31)
         Me.cb_CasaP.TabIndex = 11
         Me.cb_CasaP.Text = "Casa Propia"
         Me.cb_CasaP.UseVisualStyleBackColor = True
@@ -1680,9 +1697,10 @@ Partial Class Empleados
         'cb_Taxi
         '
         Me.cb_Taxi.AutoSize = True
-        Me.cb_Taxi.Location = New System.Drawing.Point(51, 191)
+        Me.cb_Taxi.Location = New System.Drawing.Point(68, 235)
+        Me.cb_Taxi.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_Taxi.Name = "cb_Taxi"
-        Me.cb_Taxi.Size = New System.Drawing.Size(59, 25)
+        Me.cb_Taxi.Size = New System.Drawing.Size(71, 31)
         Me.cb_Taxi.TabIndex = 9
         Me.cb_Taxi.Text = "Taxi"
         Me.cb_Taxi.UseVisualStyleBackColor = True
@@ -1690,9 +1708,10 @@ Partial Class Empleados
         'cb_Metro
         '
         Me.cb_Metro.AutoSize = True
-        Me.cb_Metro.Location = New System.Drawing.Point(51, 161)
+        Me.cb_Metro.Location = New System.Drawing.Point(68, 198)
+        Me.cb_Metro.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_Metro.Name = "cb_Metro"
-        Me.cb_Metro.Size = New System.Drawing.Size(76, 25)
+        Me.cb_Metro.Size = New System.Drawing.Size(93, 31)
         Me.cb_Metro.TabIndex = 7
         Me.cb_Metro.Text = "Metro"
         Me.cb_Metro.UseVisualStyleBackColor = True
@@ -1701,9 +1720,10 @@ Partial Class Empleados
         '
         Me.Label49.AutoSize = True
         Me.Label49.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label49.Location = New System.Drawing.Point(17, 76)
+        Me.Label49.Location = New System.Drawing.Point(23, 94)
+        Me.Label49.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(110, 21)
+        Me.Label49.Size = New System.Drawing.Size(137, 27)
         Me.Label49.TabIndex = 44
         Me.Label49.Text = "Pasatiempos:"
         '
@@ -1711,18 +1731,20 @@ Partial Class Empleados
         '
         Me.Txt_pasatiempos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Txt_pasatiempos.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_pasatiempos.Location = New System.Drawing.Point(133, 71)
+        Me.Txt_pasatiempos.Location = New System.Drawing.Point(177, 87)
+        Me.Txt_pasatiempos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Txt_pasatiempos.Name = "Txt_pasatiempos"
-        Me.Txt_pasatiempos.Size = New System.Drawing.Size(209, 28)
+        Me.Txt_pasatiempos.Size = New System.Drawing.Size(277, 33)
         Me.Txt_pasatiempos.TabIndex = 1
         '
         'Label50
         '
         Me.Label50.AutoSize = True
         Me.Label50.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label50.Location = New System.Drawing.Point(52, 42)
+        Me.Label50.Location = New System.Drawing.Point(69, 52)
+        Me.Label50.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(75, 21)
+        Me.Label50.Size = New System.Drawing.Size(94, 27)
         Me.Label50.TabIndex = 37
         Me.Label50.Text = "Religion:"
         '
@@ -1730,10 +1752,10 @@ Partial Class Empleados
         '
         Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel6.Controls.Add(Me.Label53)
-        Me.Panel6.Location = New System.Drawing.Point(-2, -2)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel6.Location = New System.Drawing.Point(-3, -2)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1103, 35)
+        Me.Panel6.Size = New System.Drawing.Size(1471, 43)
         Me.Panel6.TabIndex = 0
         '
         'Label53
@@ -1741,21 +1763,20 @@ Partial Class Empleados
         Me.Label53.AutoSize = True
         Me.Label53.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label53.ForeColor = System.Drawing.Color.White
-        Me.Label53.Location = New System.Drawing.Point(13, 6)
-        Me.Label53.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label53.Location = New System.Drawing.Point(17, 7)
         Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(54, 21)
+        Me.Label53.Size = New System.Drawing.Size(67, 27)
         Me.Label53.TabIndex = 0
         Me.Label53.Text = "Datos"
         '
         'Tab_Enfer
         '
         Me.Tab_Enfer.Controls.Add(Me.panel20)
-        Me.Tab_Enfer.Location = New System.Drawing.Point(4, 30)
-        Me.Tab_Enfer.Margin = New System.Windows.Forms.Padding(2)
+        Me.Tab_Enfer.Location = New System.Drawing.Point(4, 36)
+        Me.Tab_Enfer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Tab_Enfer.Name = "Tab_Enfer"
-        Me.Tab_Enfer.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_Enfer.Size = New System.Drawing.Size(1280, 789)
+        Me.Tab_Enfer.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Tab_Enfer.Size = New System.Drawing.Size(1709, 973)
         Me.Tab_Enfer.TabIndex = 4
         Me.Tab_Enfer.Text = "Enfermedades"
         Me.Tab_Enfer.UseVisualStyleBackColor = True
@@ -1770,10 +1791,10 @@ Partial Class Empleados
         Me.panel20.Controls.Add(Me.panel21)
         Me.panel20.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.panel20.ForeColor = System.Drawing.Color.White
-        Me.panel20.Location = New System.Drawing.Point(222, 41)
-        Me.panel20.Margin = New System.Windows.Forms.Padding(2)
+        Me.panel20.Location = New System.Drawing.Point(296, 50)
+        Me.panel20.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.panel20.Name = "panel20"
-        Me.panel20.Size = New System.Drawing.Size(808, 431)
+        Me.panel20.Size = New System.Drawing.Size(1076, 530)
         Me.panel20.TabIndex = 1
         '
         'dgv_Enf
@@ -1781,13 +1802,13 @@ Partial Class Empleados
         Me.dgv_Enf.AllowUserToAddRows = False
         Me.dgv_Enf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_Enf.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_Enf, Me.Text})
-        Me.dgv_Enf.Location = New System.Drawing.Point(15, 112)
-        Me.dgv_Enf.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgv_Enf.Location = New System.Drawing.Point(20, 138)
+        Me.dgv_Enf.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgv_Enf.Name = "dgv_Enf"
         Me.dgv_Enf.ReadOnly = True
         Me.dgv_Enf.RowHeadersVisible = False
         Me.dgv_Enf.RowTemplate.Height = 24
-        Me.dgv_Enf.Size = New System.Drawing.Size(772, 215)
+        Me.dgv_Enf.Size = New System.Drawing.Size(1029, 265)
         Me.dgv_Enf.TabIndex = 34
         '
         'ID_Enf
@@ -1800,8 +1821,8 @@ Partial Class Empleados
         'Text
         '
         Me.Text.DataPropertyName = "Text"
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.Text.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.Text.DefaultCellStyle = DataGridViewCellStyle4
         Me.Text.HeaderText = "Enfermedad"
         Me.Text.Name = "Text"
         Me.Text.ReadOnly = True
@@ -1813,10 +1834,10 @@ Partial Class Empleados
         Me.btn_enfADD.BackgroundImage = CType(resources.GetObject("btn_enfADD.BackgroundImage"), System.Drawing.Image)
         Me.btn_enfADD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_enfADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_enfADD.Location = New System.Drawing.Point(364, 45)
-        Me.btn_enfADD.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_enfADD.Location = New System.Drawing.Point(485, 55)
+        Me.btn_enfADD.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_enfADD.Name = "btn_enfADD"
-        Me.btn_enfADD.Size = New System.Drawing.Size(86, 41)
+        Me.btn_enfADD.Size = New System.Drawing.Size(115, 50)
         Me.btn_enfADD.TabIndex = 30
         Me.btn_enfADD.Text = "Agregar"
         Me.btn_enfADD.UseVisualStyleBackColor = False
@@ -1824,9 +1845,10 @@ Partial Class Empleados
         'txt_enfNAME
         '
         Me.txt_enfNAME.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_enfNAME.Location = New System.Drawing.Point(134, 52)
+        Me.txt_enfNAME.Location = New System.Drawing.Point(179, 64)
+        Me.txt_enfNAME.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_enfNAME.Name = "txt_enfNAME"
-        Me.txt_enfNAME.Size = New System.Drawing.Size(209, 28)
+        Me.txt_enfNAME.Size = New System.Drawing.Size(277, 33)
         Me.txt_enfNAME.TabIndex = 28
         '
         'label47
@@ -1834,9 +1856,10 @@ Partial Class Empleados
         Me.label47.AutoSize = True
         Me.label47.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label47.ForeColor = System.Drawing.Color.Black
-        Me.label47.Location = New System.Drawing.Point(28, 57)
+        Me.label47.Location = New System.Drawing.Point(37, 70)
+        Me.label47.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label47.Name = "label47"
-        Me.label47.Size = New System.Drawing.Size(107, 21)
+        Me.label47.Size = New System.Drawing.Size(133, 27)
         Me.label47.TabIndex = 27
         Me.label47.Text = "Enfermedad:"
         '
@@ -1844,10 +1867,10 @@ Partial Class Empleados
         '
         Me.panel21.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel21.Controls.Add(Me.label19)
-        Me.panel21.Location = New System.Drawing.Point(-2, -2)
-        Me.panel21.Margin = New System.Windows.Forms.Padding(2)
+        Me.panel21.Location = New System.Drawing.Point(-3, -2)
+        Me.panel21.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.panel21.Name = "panel21"
-        Me.panel21.Size = New System.Drawing.Size(807, 35)
+        Me.panel21.Size = New System.Drawing.Size(1076, 43)
         Me.panel21.TabIndex = 0
         '
         'label19
@@ -1855,21 +1878,20 @@ Partial Class Empleados
         Me.label19.AutoSize = True
         Me.label19.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label19.ForeColor = System.Drawing.Color.White
-        Me.label19.Location = New System.Drawing.Point(13, 6)
-        Me.label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.label19.Location = New System.Drawing.Point(17, 7)
         Me.label19.Name = "label19"
-        Me.label19.Size = New System.Drawing.Size(54, 21)
+        Me.label19.Size = New System.Drawing.Size(67, 27)
         Me.label19.TabIndex = 0
         Me.label19.Text = "Datos"
         '
         'Tab_Cont
         '
         Me.Tab_Cont.Controls.Add(Me.panel18)
-        Me.Tab_Cont.Location = New System.Drawing.Point(4, 30)
-        Me.Tab_Cont.Margin = New System.Windows.Forms.Padding(2)
+        Me.Tab_Cont.Location = New System.Drawing.Point(4, 36)
+        Me.Tab_Cont.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Tab_Cont.Name = "Tab_Cont"
-        Me.Tab_Cont.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_Cont.Size = New System.Drawing.Size(1280, 789)
+        Me.Tab_Cont.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Tab_Cont.Size = New System.Drawing.Size(1709, 973)
         Me.Tab_Cont.TabIndex = 3
         Me.Tab_Cont.Text = "Contacto"
         Me.Tab_Cont.UseVisualStyleBackColor = True
@@ -1893,10 +1915,10 @@ Partial Class Empleados
         Me.panel18.Controls.Add(Me.label44)
         Me.panel18.Controls.Add(Me.panel19)
         Me.panel18.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.panel18.Location = New System.Drawing.Point(222, 41)
-        Me.panel18.Margin = New System.Windows.Forms.Padding(2)
+        Me.panel18.Location = New System.Drawing.Point(296, 50)
+        Me.panel18.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.panel18.Name = "panel18"
-        Me.panel18.Size = New System.Drawing.Size(808, 530)
+        Me.panel18.Size = New System.Drawing.Size(1076, 651)
         Me.panel18.TabIndex = 1
         '
         'dgv_contacto
@@ -1904,13 +1926,13 @@ Partial Class Empleados
         Me.dgv_contacto.AllowUserToAddRows = False
         Me.dgv_contacto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_contacto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9, Me.Column10})
-        Me.dgv_contacto.Location = New System.Drawing.Point(15, 218)
-        Me.dgv_contacto.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgv_contacto.Location = New System.Drawing.Point(20, 268)
+        Me.dgv_contacto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgv_contacto.Name = "dgv_contacto"
         Me.dgv_contacto.ReadOnly = True
         Me.dgv_contacto.RowHeadersVisible = False
         Me.dgv_contacto.RowTemplate.Height = 24
-        Me.dgv_contacto.Size = New System.Drawing.Size(763, 255)
+        Me.dgv_contacto.Size = New System.Drawing.Size(1017, 314)
         Me.dgv_contacto.TabIndex = 50
         '
         'Column3
@@ -1977,10 +1999,10 @@ Partial Class Empleados
         Me.btn_conADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_conADD.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_conADD.ForeColor = System.Drawing.Color.White
-        Me.btn_conADD.Location = New System.Drawing.Point(670, 173)
-        Me.btn_conADD.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_conADD.Location = New System.Drawing.Point(893, 213)
+        Me.btn_conADD.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_conADD.Name = "btn_conADD"
-        Me.btn_conADD.Size = New System.Drawing.Size(98, 41)
+        Me.btn_conADD.Size = New System.Drawing.Size(131, 50)
         Me.btn_conADD.TabIndex = 49
         Me.btn_conADD.Text = "Guardar"
         Me.btn_conADD.UseVisualStyleBackColor = False
@@ -1988,102 +2010,114 @@ Partial Class Empleados
         'label45
         '
         Me.label45.AutoSize = True
-        Me.label45.Location = New System.Drawing.Point(465, 135)
+        Me.label45.Location = New System.Drawing.Point(620, 166)
+        Me.label45.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label45.Name = "label45"
-        Me.label45.Size = New System.Drawing.Size(98, 21)
+        Me.label45.Size = New System.Drawing.Size(121, 27)
         Me.label45.TabIndex = 48
         Me.label45.Text = "Parentesco:"
         '
         'txt_conPAREN
         '
         Me.txt_conPAREN.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_conPAREN.Location = New System.Drawing.Point(569, 132)
+        Me.txt_conPAREN.Location = New System.Drawing.Point(759, 162)
+        Me.txt_conPAREN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_conPAREN.Name = "txt_conPAREN"
-        Me.txt_conPAREN.Size = New System.Drawing.Size(209, 28)
+        Me.txt_conPAREN.Size = New System.Drawing.Size(277, 33)
         Me.txt_conPAREN.TabIndex = 47
         '
         'label41
         '
         Me.label41.AutoSize = True
-        Me.label41.Location = New System.Drawing.Point(492, 102)
+        Me.label41.Location = New System.Drawing.Point(656, 126)
+        Me.label41.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label41.Name = "label41"
-        Me.label41.Size = New System.Drawing.Size(67, 21)
+        Me.label41.Size = New System.Drawing.Size(82, 27)
         Me.label41.TabIndex = 46
         Me.label41.Text = "Celular:"
         '
         'txt_conCEL
         '
         Me.txt_conCEL.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_conCEL.Location = New System.Drawing.Point(569, 99)
+        Me.txt_conCEL.Location = New System.Drawing.Point(759, 122)
+        Me.txt_conCEL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_conCEL.Name = "txt_conCEL"
-        Me.txt_conCEL.Size = New System.Drawing.Size(209, 28)
+        Me.txt_conCEL.Size = New System.Drawing.Size(277, 33)
         Me.txt_conCEL.TabIndex = 45
         '
         'label40
         '
         Me.label40.AutoSize = True
-        Me.label40.Location = New System.Drawing.Point(478, 68)
+        Me.label40.Location = New System.Drawing.Point(637, 84)
+        Me.label40.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label40.Name = "label40"
-        Me.label40.Size = New System.Drawing.Size(81, 21)
+        Me.label40.Size = New System.Drawing.Size(100, 27)
         Me.label40.TabIndex = 44
         Me.label40.Text = "Telefono:"
         '
         'txt_conTEL
         '
         Me.txt_conTEL.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_conTEL.Location = New System.Drawing.Point(569, 66)
+        Me.txt_conTEL.Location = New System.Drawing.Point(759, 81)
+        Me.txt_conTEL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_conTEL.Name = "txt_conTEL"
-        Me.txt_conTEL.Size = New System.Drawing.Size(209, 28)
+        Me.txt_conTEL.Size = New System.Drawing.Size(277, 33)
         Me.txt_conTEL.TabIndex = 43
         '
         'txt_conNAME
         '
         Me.txt_conNAME.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_conNAME.Location = New System.Drawing.Point(176, 128)
+        Me.txt_conNAME.Location = New System.Drawing.Point(235, 158)
+        Me.txt_conNAME.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_conNAME.Name = "txt_conNAME"
-        Me.txt_conNAME.Size = New System.Drawing.Size(209, 28)
+        Me.txt_conNAME.Size = New System.Drawing.Size(277, 33)
         Me.txt_conNAME.TabIndex = 35
         '
         'txt_conAM
         '
         Me.txt_conAM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_conAM.Location = New System.Drawing.Point(176, 94)
+        Me.txt_conAM.Location = New System.Drawing.Point(235, 116)
+        Me.txt_conAM.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_conAM.Name = "txt_conAM"
-        Me.txt_conAM.Size = New System.Drawing.Size(209, 28)
+        Me.txt_conAM.Size = New System.Drawing.Size(277, 33)
         Me.txt_conAM.TabIndex = 34
         '
         'txt_conAP
         '
         Me.txt_conAP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_conAP.Location = New System.Drawing.Point(176, 61)
+        Me.txt_conAP.Location = New System.Drawing.Point(235, 75)
+        Me.txt_conAP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_conAP.Name = "txt_conAP"
-        Me.txt_conAP.Size = New System.Drawing.Size(209, 28)
+        Me.txt_conAP.Size = New System.Drawing.Size(277, 33)
         Me.txt_conAP.TabIndex = 33
         '
         'label42
         '
         Me.label42.AutoSize = True
-        Me.label42.Location = New System.Drawing.Point(35, 66)
+        Me.label42.Location = New System.Drawing.Point(47, 81)
+        Me.label42.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label42.Name = "label42"
-        Me.label42.Size = New System.Drawing.Size(141, 21)
+        Me.label42.Size = New System.Drawing.Size(176, 27)
         Me.label42.TabIndex = 37
         Me.label42.Text = "Apellido Paterno:"
         '
         'label43
         '
         Me.label43.AutoSize = True
-        Me.label43.Location = New System.Drawing.Point(29, 99)
+        Me.label43.Location = New System.Drawing.Point(39, 122)
+        Me.label43.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label43.Name = "label43"
-        Me.label43.Size = New System.Drawing.Size(147, 21)
+        Me.label43.Size = New System.Drawing.Size(184, 27)
         Me.label43.TabIndex = 38
         Me.label43.Text = "Apellido Materno:"
         '
         'label44
         '
         Me.label44.AutoSize = True
-        Me.label44.Location = New System.Drawing.Point(77, 132)
+        Me.label44.Location = New System.Drawing.Point(103, 162)
+        Me.label44.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label44.Name = "label44"
-        Me.label44.Size = New System.Drawing.Size(94, 21)
+        Me.label44.Size = New System.Drawing.Size(120, 27)
         Me.label44.TabIndex = 39
         Me.label44.Text = "Nombre(s):"
         '
@@ -2091,10 +2125,10 @@ Partial Class Empleados
         '
         Me.panel19.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel19.Controls.Add(Me.label18)
-        Me.panel19.Location = New System.Drawing.Point(-2, -2)
-        Me.panel19.Margin = New System.Windows.Forms.Padding(2)
+        Me.panel19.Location = New System.Drawing.Point(-3, -2)
+        Me.panel19.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.panel19.Name = "panel19"
-        Me.panel19.Size = New System.Drawing.Size(807, 35)
+        Me.panel19.Size = New System.Drawing.Size(1076, 43)
         Me.panel19.TabIndex = 0
         '
         'label18
@@ -2102,21 +2136,20 @@ Partial Class Empleados
         Me.label18.AutoSize = True
         Me.label18.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label18.ForeColor = System.Drawing.Color.White
-        Me.label18.Location = New System.Drawing.Point(13, 6)
-        Me.label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.label18.Location = New System.Drawing.Point(17, 7)
         Me.label18.Name = "label18"
-        Me.label18.Size = New System.Drawing.Size(54, 21)
+        Me.label18.Size = New System.Drawing.Size(67, 27)
         Me.label18.TabIndex = 0
         Me.label18.Text = "Datos"
         '
         'Tab_AL
         '
         Me.Tab_AL.Controls.Add(Me.panel16)
-        Me.Tab_AL.Location = New System.Drawing.Point(4, 30)
-        Me.Tab_AL.Margin = New System.Windows.Forms.Padding(2)
+        Me.Tab_AL.Location = New System.Drawing.Point(4, 36)
+        Me.Tab_AL.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Tab_AL.Name = "Tab_AL"
-        Me.Tab_AL.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_AL.Size = New System.Drawing.Size(1280, 789)
+        Me.Tab_AL.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Tab_AL.Size = New System.Drawing.Size(1709, 973)
         Me.Tab_AL.TabIndex = 2
         Me.Tab_AL.Text = "Antecedentes Laborales"
         Me.Tab_AL.UseVisualStyleBackColor = True
@@ -2144,10 +2177,10 @@ Partial Class Empleados
         Me.panel16.Controls.Add(Me.label9)
         Me.panel16.Controls.Add(Me.panel17)
         Me.panel16.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.panel16.Location = New System.Drawing.Point(222, 41)
-        Me.panel16.Margin = New System.Windows.Forms.Padding(2)
+        Me.panel16.Location = New System.Drawing.Point(296, 50)
+        Me.panel16.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.panel16.Name = "panel16"
-        Me.panel16.Size = New System.Drawing.Size(808, 535)
+        Me.panel16.Size = New System.Drawing.Size(1076, 658)
         Me.panel16.TabIndex = 1
         '
         'dgv_ant
@@ -2155,10 +2188,11 @@ Partial Class Empleados
         Me.dgv_ant.AllowUserToAddRows = False
         Me.dgv_ant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_ant.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_Ant, Me.ID__Emp, Me.Ant_FInicio, Me.Ant_FFin, Me.Ant_NEmpresa, Me.Ant_Cargo, Me.Ant_Salario, Me.Ant_Tel, Me.Ant_Motivo, Me.Ant_Contacto})
-        Me.dgv_ant.Location = New System.Drawing.Point(15, 251)
+        Me.dgv_ant.Location = New System.Drawing.Point(20, 309)
+        Me.dgv_ant.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgv_ant.Name = "dgv_ant"
         Me.dgv_ant.RowHeadersVisible = False
-        Me.dgv_ant.Size = New System.Drawing.Size(774, 204)
+        Me.dgv_ant.Size = New System.Drawing.Size(1032, 251)
         Me.dgv_ant.TabIndex = 51
         '
         'ID_Ant
@@ -2229,10 +2263,10 @@ Partial Class Empleados
         Me.btn_antSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_antSave.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_antSave.ForeColor = System.Drawing.Color.White
-        Me.btn_antSave.Location = New System.Drawing.Point(626, 171)
-        Me.btn_antSave.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_antSave.Location = New System.Drawing.Point(835, 210)
+        Me.btn_antSave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_antSave.Name = "btn_antSave"
-        Me.btn_antSave.Size = New System.Drawing.Size(98, 41)
+        Me.btn_antSave.Size = New System.Drawing.Size(131, 50)
         Me.btn_antSave.TabIndex = 50
         Me.btn_antSave.Text = "Guardar"
         Me.btn_antSave.UseVisualStyleBackColor = False
@@ -2240,135 +2274,151 @@ Partial Class Empleados
         'txt_antMT
         '
         Me.txt_antMT.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_antMT.Location = New System.Drawing.Point(516, 119)
+        Me.txt_antMT.Location = New System.Drawing.Point(688, 146)
+        Me.txt_antMT.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_antMT.Multiline = True
         Me.txt_antMT.Name = "txt_antMT"
-        Me.txt_antMT.Size = New System.Drawing.Size(208, 47)
+        Me.txt_antMT.Size = New System.Drawing.Size(276, 57)
         Me.txt_antMT.TabIndex = 29
         '
         'txt_antNAME
         '
         Me.txt_antNAME.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_antNAME.Location = New System.Drawing.Point(515, 85)
+        Me.txt_antNAME.Location = New System.Drawing.Point(687, 105)
+        Me.txt_antNAME.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_antNAME.Name = "txt_antNAME"
-        Me.txt_antNAME.Size = New System.Drawing.Size(209, 28)
+        Me.txt_antNAME.Size = New System.Drawing.Size(277, 33)
         Me.txt_antNAME.TabIndex = 28
         '
         'txt_antTEL
         '
         Me.txt_antTEL.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_antTEL.Location = New System.Drawing.Point(515, 52)
+        Me.txt_antTEL.Location = New System.Drawing.Point(687, 64)
+        Me.txt_antTEL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_antTEL.Name = "txt_antTEL"
-        Me.txt_antTEL.Size = New System.Drawing.Size(209, 28)
+        Me.txt_antTEL.Size = New System.Drawing.Size(277, 33)
         Me.txt_antTEL.TabIndex = 27
         '
         'label37
         '
         Me.label37.AutoSize = True
-        Me.label37.Location = New System.Drawing.Point(434, 57)
+        Me.label37.Location = New System.Drawing.Point(579, 70)
+        Me.label37.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label37.Name = "label37"
-        Me.label37.Size = New System.Drawing.Size(81, 21)
+        Me.label37.Size = New System.Drawing.Size(100, 27)
         Me.label37.TabIndex = 30
         Me.label37.Text = "Telefono:"
         '
         'label38
         '
         Me.label38.AutoSize = True
-        Me.label38.Location = New System.Drawing.Point(433, 85)
+        Me.label38.Location = New System.Drawing.Point(577, 105)
+        Me.label38.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label38.Name = "label38"
-        Me.label38.Size = New System.Drawing.Size(84, 21)
+        Me.label38.Size = New System.Drawing.Size(103, 27)
         Me.label38.TabIndex = 31
         Me.label38.Text = "Contacto:"
         '
         'label39
         '
         Me.label39.AutoSize = True
-        Me.label39.Location = New System.Drawing.Point(445, 114)
+        Me.label39.Location = New System.Drawing.Point(593, 140)
+        Me.label39.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label39.Name = "label39"
-        Me.label39.Size = New System.Drawing.Size(68, 21)
+        Me.label39.Size = New System.Drawing.Size(86, 27)
         Me.label39.TabIndex = 32
         Me.label39.Text = "Motivo:"
         '
         'txt_antSALARIO
         '
         Me.txt_antSALARIO.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_antSALARIO.Location = New System.Drawing.Point(164, 185)
+        Me.txt_antSALARIO.Location = New System.Drawing.Point(219, 228)
+        Me.txt_antSALARIO.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_antSALARIO.Name = "txt_antSALARIO"
-        Me.txt_antSALARIO.Size = New System.Drawing.Size(208, 28)
+        Me.txt_antSALARIO.Size = New System.Drawing.Size(276, 33)
         Me.txt_antSALARIO.TabIndex = 23
         '
         'txt_antCARGO
         '
         Me.txt_antCARGO.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_antCARGO.Location = New System.Drawing.Point(164, 152)
+        Me.txt_antCARGO.Location = New System.Drawing.Point(219, 187)
+        Me.txt_antCARGO.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_antCARGO.Name = "txt_antCARGO"
-        Me.txt_antCARGO.Size = New System.Drawing.Size(209, 28)
+        Me.txt_antCARGO.Size = New System.Drawing.Size(277, 33)
         Me.txt_antCARGO.TabIndex = 22
         '
         'txt_antEMP
         '
         Me.txt_antEMP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_antEMP.Location = New System.Drawing.Point(164, 119)
+        Me.txt_antEMP.Location = New System.Drawing.Point(219, 146)
+        Me.txt_antEMP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_antEMP.Name = "txt_antEMP"
-        Me.txt_antEMP.Size = New System.Drawing.Size(209, 28)
+        Me.txt_antEMP.Size = New System.Drawing.Size(277, 33)
         Me.txt_antEMP.TabIndex = 21
         '
         'label34
         '
         Me.label34.AutoSize = True
-        Me.label34.Location = New System.Drawing.Point(82, 124)
+        Me.label34.Location = New System.Drawing.Point(109, 153)
+        Me.label34.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label34.Name = "label34"
-        Me.label34.Size = New System.Drawing.Size(79, 21)
+        Me.label34.Size = New System.Drawing.Size(99, 27)
         Me.label34.TabIndex = 24
         Me.label34.Text = "Empresa:"
         '
         'label35
         '
         Me.label35.AutoSize = True
-        Me.label35.Location = New System.Drawing.Point(100, 157)
+        Me.label35.Location = New System.Drawing.Point(133, 193)
+        Me.label35.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label35.Name = "label35"
-        Me.label35.Size = New System.Drawing.Size(60, 21)
+        Me.label35.Size = New System.Drawing.Size(75, 27)
         Me.label35.TabIndex = 25
         Me.label35.Text = "Cargo:"
         '
         'label36
         '
         Me.label36.AutoSize = True
-        Me.label36.Location = New System.Drawing.Point(95, 190)
+        Me.label36.Location = New System.Drawing.Point(127, 234)
+        Me.label36.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label36.Name = "label36"
-        Me.label36.Size = New System.Drawing.Size(65, 21)
+        Me.label36.Size = New System.Drawing.Size(82, 27)
         Me.label36.TabIndex = 26
         Me.label36.Text = "Salario:"
         '
         'txt_antFF
         '
-        Me.txt_antFF.Location = New System.Drawing.Point(164, 85)
+        Me.txt_antFF.Location = New System.Drawing.Point(219, 105)
+        Me.txt_antFF.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_antFF.Name = "txt_antFF"
-        Me.txt_antFF.Size = New System.Drawing.Size(209, 28)
+        Me.txt_antFF.Size = New System.Drawing.Size(277, 33)
         Me.txt_antFF.TabIndex = 19
         '
         'label33
         '
         Me.label33.AutoSize = True
-        Me.label33.Location = New System.Drawing.Point(43, 90)
+        Me.label33.Location = New System.Drawing.Point(57, 111)
+        Me.label33.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label33.Name = "label33"
-        Me.label33.Size = New System.Drawing.Size(124, 21)
+        Me.label33.Size = New System.Drawing.Size(152, 27)
         Me.label33.TabIndex = 20
         Me.label33.Text = "Fecha de Final:"
         '
         'txt_antFI
         '
-        Me.txt_antFI.Location = New System.Drawing.Point(164, 52)
+        Me.txt_antFI.Location = New System.Drawing.Point(219, 64)
+        Me.txt_antFI.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_antFI.Name = "txt_antFI"
-        Me.txt_antFI.Size = New System.Drawing.Size(209, 28)
+        Me.txt_antFI.Size = New System.Drawing.Size(277, 33)
         Me.txt_antFI.TabIndex = 17
         '
         'label9
         '
         Me.label9.AutoSize = True
-        Me.label9.Location = New System.Drawing.Point(38, 57)
+        Me.label9.Location = New System.Drawing.Point(51, 70)
+        Me.label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label9.Name = "label9"
-        Me.label9.Size = New System.Drawing.Size(129, 21)
+        Me.label9.Size = New System.Drawing.Size(159, 27)
         Me.label9.TabIndex = 18
         Me.label9.Text = "Fecha de Inicio:"
         '
@@ -2376,10 +2426,10 @@ Partial Class Empleados
         '
         Me.panel17.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel17.Controls.Add(Me.label17)
-        Me.panel17.Location = New System.Drawing.Point(-2, -2)
-        Me.panel17.Margin = New System.Windows.Forms.Padding(2)
+        Me.panel17.Location = New System.Drawing.Point(-3, -2)
+        Me.panel17.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.panel17.Name = "panel17"
-        Me.panel17.Size = New System.Drawing.Size(807, 35)
+        Me.panel17.Size = New System.Drawing.Size(1076, 43)
         Me.panel17.TabIndex = 0
         '
         'label17
@@ -2387,10 +2437,9 @@ Partial Class Empleados
         Me.label17.AutoSize = True
         Me.label17.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label17.ForeColor = System.Drawing.Color.White
-        Me.label17.Location = New System.Drawing.Point(13, 6)
-        Me.label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.label17.Location = New System.Drawing.Point(17, 7)
         Me.label17.Name = "label17"
-        Me.label17.Size = New System.Drawing.Size(147, 21)
+        Me.label17.Size = New System.Drawing.Size(185, 27)
         Me.label17.TabIndex = 0
         Me.label17.Text = "Datos por Empleo"
         '
@@ -2399,11 +2448,11 @@ Partial Class Empleados
         Me.Tab_Familia.Controls.Add(Me.panel4)
         Me.Tab_Familia.Controls.Add(Me.panel3)
         Me.Tab_Familia.Controls.Add(Me.panel2)
-        Me.Tab_Familia.Location = New System.Drawing.Point(4, 30)
-        Me.Tab_Familia.Margin = New System.Windows.Forms.Padding(2)
+        Me.Tab_Familia.Location = New System.Drawing.Point(4, 36)
+        Me.Tab_Familia.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Tab_Familia.Name = "Tab_Familia"
-        Me.Tab_Familia.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_Familia.Size = New System.Drawing.Size(1280, 789)
+        Me.Tab_Familia.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Tab_Familia.Size = New System.Drawing.Size(1709, 973)
         Me.Tab_Familia.TabIndex = 1
         Me.Tab_Familia.Text = "Familia"
         Me.Tab_Familia.UseVisualStyleBackColor = True
@@ -2412,20 +2461,19 @@ Partial Class Empleados
         '
         Me.panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel4.Controls.Add(Me.label10)
-        Me.panel4.Location = New System.Drawing.Point(223, 41)
-        Me.panel4.Margin = New System.Windows.Forms.Padding(2)
+        Me.panel4.Location = New System.Drawing.Point(297, 50)
+        Me.panel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.panel4.Name = "panel4"
-        Me.panel4.Size = New System.Drawing.Size(805, 35)
+        Me.panel4.Size = New System.Drawing.Size(1073, 43)
         Me.panel4.TabIndex = 1
         '
         'label10
         '
         Me.label10.AutoSize = True
         Me.label10.ForeColor = System.Drawing.Color.White
-        Me.label10.Location = New System.Drawing.Point(13, 7)
-        Me.label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.label10.Location = New System.Drawing.Point(17, 9)
         Me.label10.Name = "label10"
-        Me.label10.Size = New System.Drawing.Size(78, 21)
+        Me.label10.Size = New System.Drawing.Size(97, 27)
         Me.label10.TabIndex = 1
         Me.label10.Text = "Cónyuge"
         '
@@ -2449,10 +2497,10 @@ Partial Class Empleados
         Me.panel3.Controls.Add(Me.label30)
         Me.panel3.Controls.Add(Me.label31)
         Me.panel3.Controls.Add(Me.panel5)
-        Me.panel3.Location = New System.Drawing.Point(222, 375)
-        Me.panel3.Margin = New System.Windows.Forms.Padding(2)
+        Me.panel3.Location = New System.Drawing.Point(296, 462)
+        Me.panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.panel3.Name = "panel3"
-        Me.panel3.Size = New System.Drawing.Size(808, 396)
+        Me.panel3.Size = New System.Drawing.Size(1076, 486)
         Me.panel3.TabIndex = 1
         '
         'dgv_Hijos
@@ -2461,13 +2509,13 @@ Partial Class Empleados
         Me.dgv_Hijos.AllowUserToOrderColumns = True
         Me.dgv_Hijos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_Hijos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10})
-        Me.dgv_Hijos.Location = New System.Drawing.Point(8, 221)
-        Me.dgv_Hijos.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgv_Hijos.Location = New System.Drawing.Point(11, 272)
+        Me.dgv_Hijos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgv_Hijos.Name = "dgv_Hijos"
         Me.dgv_Hijos.ReadOnly = True
         Me.dgv_Hijos.RowHeadersVisible = False
         Me.dgv_Hijos.RowTemplate.Height = 24
-        Me.dgv_Hijos.Size = New System.Drawing.Size(775, 120)
+        Me.dgv_Hijos.Size = New System.Drawing.Size(1033, 148)
         Me.dgv_Hijos.TabIndex = 52
         '
         'DataGridViewTextBoxColumn1
@@ -2548,10 +2596,10 @@ Partial Class Empleados
         Me.btn_hijoADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_hijoADD.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_hijoADD.ForeColor = System.Drawing.Color.White
-        Me.btn_hijoADD.Location = New System.Drawing.Point(691, 156)
-        Me.btn_hijoADD.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_hijoADD.Location = New System.Drawing.Point(921, 192)
+        Me.btn_hijoADD.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_hijoADD.Name = "btn_hijoADD"
-        Me.btn_hijoADD.Size = New System.Drawing.Size(98, 41)
+        Me.btn_hijoADD.Size = New System.Drawing.Size(131, 50)
         Me.btn_hijoADD.TabIndex = 50
         Me.btn_hijoADD.Text = "Agregar"
         Me.btn_hijoADD.UseVisualStyleBackColor = False
@@ -2561,92 +2609,103 @@ Partial Class Empleados
         Me.txt_hijoEC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.txt_hijoEC.FormattingEnabled = True
         Me.txt_hijoEC.Items.AddRange(New Object() {"SOLTERO", "CASADO", "DIVORCIADO", "VIUDO", "UNION LIBRE"})
-        Me.txt_hijoEC.Location = New System.Drawing.Point(581, 51)
+        Me.txt_hijoEC.Location = New System.Drawing.Point(775, 63)
+        Me.txt_hijoEC.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_hijoEC.Name = "txt_hijoEC"
-        Me.txt_hijoEC.Size = New System.Drawing.Size(209, 29)
+        Me.txt_hijoEC.Size = New System.Drawing.Size(277, 35)
         Me.txt_hijoEC.TabIndex = 45
         '
         'label32
         '
         Me.label32.AutoSize = True
-        Me.label32.Location = New System.Drawing.Point(474, 59)
+        Me.label32.Location = New System.Drawing.Point(632, 73)
+        Me.label32.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label32.Name = "label32"
-        Me.label32.Size = New System.Drawing.Size(101, 21)
+        Me.label32.Size = New System.Drawing.Size(126, 27)
         Me.label32.TabIndex = 46
         Me.label32.Text = "Estado Civil:"
         '
         'label26
         '
         Me.label26.AutoSize = True
-        Me.label26.Location = New System.Drawing.Point(462, 128)
+        Me.label26.Location = New System.Drawing.Point(616, 158)
+        Me.label26.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label26.Name = "label26"
-        Me.label26.Size = New System.Drawing.Size(114, 21)
+        Me.label26.Size = New System.Drawing.Size(142, 27)
         Me.label26.TabIndex = 44
         Me.label26.Text = "Nacionalidad:"
         '
         'txt_hijoNACION
         '
         Me.txt_hijoNACION.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_hijoNACION.Location = New System.Drawing.Point(581, 121)
+        Me.txt_hijoNACION.Location = New System.Drawing.Point(775, 149)
+        Me.txt_hijoNACION.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_hijoNACION.Name = "txt_hijoNACION"
-        Me.txt_hijoNACION.Size = New System.Drawing.Size(209, 28)
+        Me.txt_hijoNACION.Size = New System.Drawing.Size(277, 33)
         Me.txt_hijoNACION.TabIndex = 43
         '
         'txt_hijoFN
         '
-        Me.txt_hijoFN.Location = New System.Drawing.Point(186, 153)
+        Me.txt_hijoFN.Location = New System.Drawing.Point(248, 188)
+        Me.txt_hijoFN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_hijoFN.Name = "txt_hijoFN"
-        Me.txt_hijoFN.Size = New System.Drawing.Size(209, 28)
+        Me.txt_hijoFN.Size = New System.Drawing.Size(277, 33)
         Me.txt_hijoFN.TabIndex = 41
         '
         'label27
         '
         Me.label27.AutoSize = True
-        Me.label27.Location = New System.Drawing.Point(4, 160)
+        Me.label27.Location = New System.Drawing.Point(5, 197)
+        Me.label27.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label27.Name = "label27"
-        Me.label27.Size = New System.Drawing.Size(176, 21)
+        Me.label27.Size = New System.Drawing.Size(217, 27)
         Me.label27.TabIndex = 42
         Me.label27.Text = "Fecha de Nacimiento:"
         '
         'txt_hijoNAME
         '
         Me.txt_hijoNAME.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_hijoNAME.Location = New System.Drawing.Point(186, 119)
+        Me.txt_hijoNAME.Location = New System.Drawing.Point(248, 146)
+        Me.txt_hijoNAME.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_hijoNAME.Name = "txt_hijoNAME"
-        Me.txt_hijoNAME.Size = New System.Drawing.Size(209, 28)
+        Me.txt_hijoNAME.Size = New System.Drawing.Size(277, 33)
         Me.txt_hijoNAME.TabIndex = 35
         '
         'txt_hijoAM
         '
         Me.txt_hijoAM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_hijoAM.Location = New System.Drawing.Point(186, 86)
+        Me.txt_hijoAM.Location = New System.Drawing.Point(248, 106)
+        Me.txt_hijoAM.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_hijoAM.Name = "txt_hijoAM"
-        Me.txt_hijoAM.Size = New System.Drawing.Size(209, 28)
+        Me.txt_hijoAM.Size = New System.Drawing.Size(277, 33)
         Me.txt_hijoAM.TabIndex = 34
         '
         'txt_hijoAP
         '
         Me.txt_hijoAP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_hijoAP.Location = New System.Drawing.Point(186, 53)
+        Me.txt_hijoAP.Location = New System.Drawing.Point(248, 65)
+        Me.txt_hijoAP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_hijoAP.Name = "txt_hijoAP"
-        Me.txt_hijoAP.Size = New System.Drawing.Size(209, 28)
+        Me.txt_hijoAP.Size = New System.Drawing.Size(277, 33)
         Me.txt_hijoAP.TabIndex = 33
         '
         'label28
         '
         Me.label28.AutoSize = True
-        Me.label28.Location = New System.Drawing.Point(39, 58)
+        Me.label28.Location = New System.Drawing.Point(52, 71)
+        Me.label28.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label28.Name = "label28"
-        Me.label28.Size = New System.Drawing.Size(141, 21)
+        Me.label28.Size = New System.Drawing.Size(176, 27)
         Me.label28.TabIndex = 37
         Me.label28.Text = "Apellido Paterno:"
         '
         'label29
         '
         Me.label29.AutoSize = True
-        Me.label29.Location = New System.Drawing.Point(33, 89)
+        Me.label29.Location = New System.Drawing.Point(44, 110)
+        Me.label29.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label29.Name = "label29"
-        Me.label29.Size = New System.Drawing.Size(147, 21)
+        Me.label29.Size = New System.Drawing.Size(184, 27)
         Me.label29.TabIndex = 38
         Me.label29.Text = "Apellido Materno:"
         '
@@ -2655,26 +2714,29 @@ Partial Class Empleados
         Me.txt_hijoSEXO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.txt_hijoSEXO.FormattingEnabled = True
         Me.txt_hijoSEXO.Items.AddRange(New Object() {"FEMENINO", "MASCULINO"})
-        Me.txt_hijoSEXO.Location = New System.Drawing.Point(581, 86)
+        Me.txt_hijoSEXO.Location = New System.Drawing.Point(775, 106)
+        Me.txt_hijoSEXO.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_hijoSEXO.Name = "txt_hijoSEXO"
-        Me.txt_hijoSEXO.Size = New System.Drawing.Size(209, 29)
+        Me.txt_hijoSEXO.Size = New System.Drawing.Size(277, 35)
         Me.txt_hijoSEXO.TabIndex = 36
         '
         'label30
         '
         Me.label30.AutoSize = True
-        Me.label30.Location = New System.Drawing.Point(86, 126)
+        Me.label30.Location = New System.Drawing.Point(115, 155)
+        Me.label30.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label30.Name = "label30"
-        Me.label30.Size = New System.Drawing.Size(94, 21)
+        Me.label30.Size = New System.Drawing.Size(120, 27)
         Me.label30.TabIndex = 39
         Me.label30.Text = "Nombre(s):"
         '
         'label31
         '
         Me.label31.AutoSize = True
-        Me.label31.Location = New System.Drawing.Point(526, 93)
+        Me.label31.Location = New System.Drawing.Point(701, 114)
+        Me.label31.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label31.Name = "label31"
-        Me.label31.Size = New System.Drawing.Size(50, 21)
+        Me.label31.Size = New System.Drawing.Size(63, 27)
         Me.label31.TabIndex = 40
         Me.label31.Text = "Sexo:"
         '
@@ -2683,19 +2745,18 @@ Partial Class Empleados
         Me.panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel5.Controls.Add(Me.label11)
         Me.panel5.Location = New System.Drawing.Point(-1, -2)
-        Me.panel5.Margin = New System.Windows.Forms.Padding(2)
+        Me.panel5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.panel5.Name = "panel5"
-        Me.panel5.Size = New System.Drawing.Size(806, 37)
+        Me.panel5.Size = New System.Drawing.Size(1075, 46)
         Me.panel5.TabIndex = 1
         '
         'label11
         '
         Me.label11.AutoSize = True
         Me.label11.ForeColor = System.Drawing.Color.White
-        Me.label11.Location = New System.Drawing.Point(13, 6)
-        Me.label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.label11.Location = New System.Drawing.Point(17, 7)
         Me.label11.Name = "label11"
-        Me.label11.Size = New System.Drawing.Size(47, 21)
+        Me.label11.Size = New System.Drawing.Size(59, 27)
         Me.label11.TabIndex = 2
         Me.label11.Text = "Hijos"
         '
@@ -2716,10 +2777,10 @@ Partial Class Empleados
         Me.panel2.Controls.Add(Me.cb_esSexo)
         Me.panel2.Controls.Add(Me.label22)
         Me.panel2.Controls.Add(Me.label23)
-        Me.panel2.Location = New System.Drawing.Point(222, 41)
-        Me.panel2.Margin = New System.Windows.Forms.Padding(2)
+        Me.panel2.Location = New System.Drawing.Point(296, 50)
+        Me.panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.panel2.Name = "panel2"
-        Me.panel2.Size = New System.Drawing.Size(808, 317)
+        Me.panel2.Size = New System.Drawing.Size(1076, 389)
         Me.panel2.TabIndex = 1
         '
         'dgv_esposa
@@ -2728,13 +2789,13 @@ Partial Class Empleados
         Me.dgv_esposa.AllowUserToOrderColumns = True
         Me.dgv_esposa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_esposa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_Persona, Me.ID_Emp, Me.Fam_Tipo, Me.Fam_Nombre, Me.Fam_APat, Me.Fam_AMat, Me.Fam_Nacion, Me.Fam_FNac, Me.Fam_Genero, Me.Fam_EdoCivil})
-        Me.dgv_esposa.Location = New System.Drawing.Point(15, 191)
-        Me.dgv_esposa.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgv_esposa.Location = New System.Drawing.Point(20, 235)
+        Me.dgv_esposa.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgv_esposa.Name = "dgv_esposa"
         Me.dgv_esposa.ReadOnly = True
         Me.dgv_esposa.RowHeadersVisible = False
         Me.dgv_esposa.RowTemplate.Height = 24
-        Me.dgv_esposa.Size = New System.Drawing.Size(775, 120)
+        Me.dgv_esposa.Size = New System.Drawing.Size(1033, 148)
         Me.dgv_esposa.TabIndex = 51
         '
         'ID_Persona
@@ -2815,10 +2876,10 @@ Partial Class Empleados
         Me.btn_esSAVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_esSAVE.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_esSAVE.ForeColor = System.Drawing.Color.White
-        Me.btn_esSAVE.Location = New System.Drawing.Point(691, 146)
-        Me.btn_esSAVE.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_esSAVE.Location = New System.Drawing.Point(921, 180)
+        Me.btn_esSAVE.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_esSAVE.Name = "btn_esSAVE"
-        Me.btn_esSAVE.Size = New System.Drawing.Size(98, 41)
+        Me.btn_esSAVE.Size = New System.Drawing.Size(131, 50)
         Me.btn_esSAVE.TabIndex = 50
         Me.btn_esSAVE.Text = "Guardar"
         Me.btn_esSAVE.UseVisualStyleBackColor = False
@@ -2826,75 +2887,84 @@ Partial Class Empleados
         'label25
         '
         Me.label25.AutoSize = True
-        Me.label25.Location = New System.Drawing.Point(461, 124)
+        Me.label25.Location = New System.Drawing.Point(615, 153)
+        Me.label25.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label25.Name = "label25"
-        Me.label25.Size = New System.Drawing.Size(114, 21)
+        Me.label25.Size = New System.Drawing.Size(142, 27)
         Me.label25.TabIndex = 32
         Me.label25.Text = "Nacionalidad:"
         '
         'txt_esNacion
         '
         Me.txt_esNacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_esNacion.Location = New System.Drawing.Point(581, 118)
+        Me.txt_esNacion.Location = New System.Drawing.Point(775, 145)
+        Me.txt_esNacion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_esNacion.Name = "txt_esNacion"
-        Me.txt_esNacion.Size = New System.Drawing.Size(209, 28)
+        Me.txt_esNacion.Size = New System.Drawing.Size(277, 33)
         Me.txt_esNacion.TabIndex = 31
         '
         'txt_esFN
         '
-        Me.txt_esFN.Location = New System.Drawing.Point(581, 85)
+        Me.txt_esFN.Location = New System.Drawing.Point(775, 105)
+        Me.txt_esFN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_esFN.Name = "txt_esFN"
-        Me.txt_esFN.Size = New System.Drawing.Size(209, 28)
+        Me.txt_esFN.Size = New System.Drawing.Size(277, 33)
         Me.txt_esFN.TabIndex = 24
         '
         'label24
         '
         Me.label24.AutoSize = True
-        Me.label24.Location = New System.Drawing.Point(399, 93)
+        Me.label24.Location = New System.Drawing.Point(532, 114)
+        Me.label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label24.Name = "label24"
-        Me.label24.Size = New System.Drawing.Size(176, 21)
+        Me.label24.Size = New System.Drawing.Size(217, 27)
         Me.label24.TabIndex = 25
         Me.label24.Text = "Fecha de Nacimiento:"
         '
         'txt_esName
         '
         Me.txt_esName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_esName.Location = New System.Drawing.Point(186, 121)
+        Me.txt_esName.Location = New System.Drawing.Point(248, 149)
+        Me.txt_esName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_esName.Name = "txt_esName"
-        Me.txt_esName.Size = New System.Drawing.Size(209, 28)
+        Me.txt_esName.Size = New System.Drawing.Size(277, 33)
         Me.txt_esName.TabIndex = 18
         '
         'txt_esAM
         '
         Me.txt_esAM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_esAM.Location = New System.Drawing.Point(186, 88)
+        Me.txt_esAM.Location = New System.Drawing.Point(248, 108)
+        Me.txt_esAM.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_esAM.Name = "txt_esAM"
-        Me.txt_esAM.Size = New System.Drawing.Size(209, 28)
+        Me.txt_esAM.Size = New System.Drawing.Size(277, 33)
         Me.txt_esAM.TabIndex = 17
         '
         'txt_esAP
         '
         Me.txt_esAP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_esAP.Location = New System.Drawing.Point(186, 55)
+        Me.txt_esAP.Location = New System.Drawing.Point(248, 68)
+        Me.txt_esAP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_esAP.Name = "txt_esAP"
-        Me.txt_esAP.Size = New System.Drawing.Size(209, 28)
+        Me.txt_esAP.Size = New System.Drawing.Size(277, 33)
         Me.txt_esAP.TabIndex = 16
         '
         'label20
         '
         Me.label20.AutoSize = True
-        Me.label20.Location = New System.Drawing.Point(39, 58)
+        Me.label20.Location = New System.Drawing.Point(52, 71)
+        Me.label20.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label20.Name = "label20"
-        Me.label20.Size = New System.Drawing.Size(141, 21)
+        Me.label20.Size = New System.Drawing.Size(176, 27)
         Me.label20.TabIndex = 20
         Me.label20.Text = "Apellido Paterno:"
         '
         'label21
         '
         Me.label21.AutoSize = True
-        Me.label21.Location = New System.Drawing.Point(33, 93)
+        Me.label21.Location = New System.Drawing.Point(44, 114)
+        Me.label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label21.Name = "label21"
-        Me.label21.Size = New System.Drawing.Size(147, 21)
+        Me.label21.Size = New System.Drawing.Size(184, 27)
         Me.label21.TabIndex = 21
         Me.label21.Text = "Apellido Materno:"
         '
@@ -2903,26 +2973,29 @@ Partial Class Empleados
         Me.cb_esSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cb_esSexo.FormattingEnabled = True
         Me.cb_esSexo.Items.AddRange(New Object() {"FEMENINO", "MASCULINO"})
-        Me.cb_esSexo.Location = New System.Drawing.Point(581, 50)
+        Me.cb_esSexo.Location = New System.Drawing.Point(775, 62)
+        Me.cb_esSexo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_esSexo.Name = "cb_esSexo"
-        Me.cb_esSexo.Size = New System.Drawing.Size(209, 29)
+        Me.cb_esSexo.Size = New System.Drawing.Size(277, 35)
         Me.cb_esSexo.TabIndex = 19
         '
         'label22
         '
         Me.label22.AutoSize = True
-        Me.label22.Location = New System.Drawing.Point(86, 125)
+        Me.label22.Location = New System.Drawing.Point(115, 154)
+        Me.label22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label22.Name = "label22"
-        Me.label22.Size = New System.Drawing.Size(94, 21)
+        Me.label22.Size = New System.Drawing.Size(120, 27)
         Me.label22.TabIndex = 22
         Me.label22.Text = "Nombre(s):"
         '
         'label23
         '
         Me.label23.AutoSize = True
-        Me.label23.Location = New System.Drawing.Point(525, 58)
+        Me.label23.Location = New System.Drawing.Point(700, 71)
+        Me.label23.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label23.Name = "label23"
-        Me.label23.Size = New System.Drawing.Size(50, 21)
+        Me.label23.Size = New System.Drawing.Size(63, 27)
         Me.label23.TabIndex = 23
         Me.label23.Text = "Sexo:"
         '
@@ -2936,11 +3009,11 @@ Partial Class Empleados
         Me.Tab_DP.Controls.Add(Me.pnl_foto)
         Me.Tab_DP.Controls.Add(Me.pnl_per)
         Me.Tab_DP.Font = New System.Drawing.Font("Microsoft YaHei UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tab_DP.Location = New System.Drawing.Point(4, 30)
-        Me.Tab_DP.Margin = New System.Windows.Forms.Padding(2)
+        Me.Tab_DP.Location = New System.Drawing.Point(4, 36)
+        Me.Tab_DP.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Tab_DP.Name = "Tab_DP"
-        Me.Tab_DP.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_DP.Size = New System.Drawing.Size(1280, 789)
+        Me.Tab_DP.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Tab_DP.Size = New System.Drawing.Size(1709, 973)
         Me.Tab_DP.TabIndex = 0
         Me.Tab_DP.Text = "Datos Personales"
         Me.Tab_DP.UseVisualStyleBackColor = True
@@ -2950,9 +3023,10 @@ Partial Class Empleados
         Me.lbl_emp.AutoSize = True
         Me.lbl_emp.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_emp.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.lbl_emp.Location = New System.Drawing.Point(842, 8)
+        Me.lbl_emp.Location = New System.Drawing.Point(1123, 10)
+        Me.lbl_emp.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_emp.Name = "lbl_emp"
-        Me.lbl_emp.Size = New System.Drawing.Size(0, 22)
+        Me.lbl_emp.Size = New System.Drawing.Size(0, 27)
         Me.lbl_emp.TabIndex = 40
         '
         'Empleado
@@ -2960,9 +3034,10 @@ Partial Class Empleados
         Me.Empleado.AutoSize = True
         Me.Empleado.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Empleado.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Empleado.Location = New System.Drawing.Point(735, 8)
+        Me.Empleado.Location = New System.Drawing.Point(980, 10)
+        Me.Empleado.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Empleado.Name = "Empleado"
-        Me.Empleado.Size = New System.Drawing.Size(101, 22)
+        Me.Empleado.Size = New System.Drawing.Size(124, 27)
         Me.Empleado.TabIndex = 39
         Me.Empleado.Text = "Empleado: "
         '
@@ -2975,10 +3050,10 @@ Partial Class Empleados
         Me.pnl_save.Controls.Add(Me.SAVE)
         Me.pnl_save.Controls.Add(Me.CANCEL)
         Me.pnl_save.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnl_save.Location = New System.Drawing.Point(990, 592)
-        Me.pnl_save.Margin = New System.Windows.Forms.Padding(2)
+        Me.pnl_save.Location = New System.Drawing.Point(1320, 729)
+        Me.pnl_save.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pnl_save.Name = "pnl_save"
-        Me.pnl_save.Size = New System.Drawing.Size(267, 182)
+        Me.pnl_save.Size = New System.Drawing.Size(355, 223)
         Me.pnl_save.TabIndex = 35
         '
         'LBL_GUARDAR
@@ -2986,9 +3061,10 @@ Partial Class Empleados
         Me.LBL_GUARDAR.AutoSize = True
         Me.LBL_GUARDAR.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBL_GUARDAR.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.LBL_GUARDAR.Location = New System.Drawing.Point(31, 141)
+        Me.LBL_GUARDAR.Location = New System.Drawing.Point(41, 174)
+        Me.LBL_GUARDAR.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LBL_GUARDAR.Name = "LBL_GUARDAR"
-        Me.LBL_GUARDAR.Size = New System.Drawing.Size(93, 22)
+        Me.LBL_GUARDAR.Size = New System.Drawing.Size(117, 27)
         Me.LBL_GUARDAR.TabIndex = 40
         Me.LBL_GUARDAR.Text = "GUARDAR"
         '
@@ -2996,10 +3072,10 @@ Partial Class Empleados
         '
         Me.panel15.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel15.Controls.Add(Me.label16)
-        Me.panel15.Location = New System.Drawing.Point(-2, -2)
-        Me.panel15.Margin = New System.Windows.Forms.Padding(2)
+        Me.panel15.Location = New System.Drawing.Point(-3, -2)
+        Me.panel15.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.panel15.Name = "panel15"
-        Me.panel15.Size = New System.Drawing.Size(807, 35)
+        Me.panel15.Size = New System.Drawing.Size(1076, 43)
         Me.panel15.TabIndex = 0
         '
         'label16
@@ -3007,10 +3083,9 @@ Partial Class Empleados
         Me.label16.AutoSize = True
         Me.label16.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label16.ForeColor = System.Drawing.Color.White
-        Me.label16.Location = New System.Drawing.Point(13, 6)
-        Me.label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.label16.Location = New System.Drawing.Point(17, 7)
         Me.label16.Name = "label16"
-        Me.label16.Size = New System.Drawing.Size(72, 21)
+        Me.label16.Size = New System.Drawing.Size(90, 27)
         Me.label16.TabIndex = 0
         Me.label16.Text = "Guardar"
         '
@@ -3019,18 +3094,20 @@ Partial Class Empleados
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(157, 141)
+        Me.Label5.Location = New System.Drawing.Point(209, 174)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(99, 22)
+        Me.Label5.Size = New System.Drawing.Size(121, 27)
         Me.Label5.TabIndex = 38
         Me.Label5.Text = "CANCELAR"
         '
         'SAVE
         '
         Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.SAVE.Location = New System.Drawing.Point(35, 55)
+        Me.SAVE.Location = New System.Drawing.Point(47, 68)
+        Me.SAVE.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.SAVE.Name = "SAVE"
-        Me.SAVE.Size = New System.Drawing.Size(83, 83)
+        Me.SAVE.Size = New System.Drawing.Size(111, 102)
         Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.SAVE.TabIndex = 0
         Me.SAVE.TabStop = False
@@ -3038,9 +3115,10 @@ Partial Class Empleados
         'CANCEL
         '
         Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(161, 55)
+        Me.CANCEL.Location = New System.Drawing.Point(215, 68)
+        Me.CANCEL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CANCEL.Name = "CANCEL"
-        Me.CANCEL.Size = New System.Drawing.Size(83, 83)
+        Me.CANCEL.Size = New System.Drawing.Size(111, 102)
         Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.CANCEL.TabIndex = 1
         Me.CANCEL.TabStop = False
@@ -3061,10 +3139,10 @@ Partial Class Empleados
         Me.pnl_estatus.Controls.Add(Me.Label7)
         Me.pnl_estatus.Controls.Add(Me.lbl_ALTA)
         Me.pnl_estatus.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnl_estatus.Location = New System.Drawing.Point(16, 592)
-        Me.pnl_estatus.Margin = New System.Windows.Forms.Padding(2)
+        Me.pnl_estatus.Location = New System.Drawing.Point(21, 729)
+        Me.pnl_estatus.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pnl_estatus.Name = "pnl_estatus"
-        Me.pnl_estatus.Size = New System.Drawing.Size(955, 182)
+        Me.pnl_estatus.Size = New System.Drawing.Size(1272, 223)
         Me.pnl_estatus.TabIndex = 34
         '
         'Label70
@@ -3072,9 +3150,10 @@ Partial Class Empleados
         Me.Label70.AutoSize = True
         Me.Label70.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label70.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label70.Location = New System.Drawing.Point(857, 141)
+        Me.Label70.Location = New System.Drawing.Point(1143, 174)
+        Me.Label70.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label70.Name = "Label70"
-        Me.Label70.Size = New System.Drawing.Size(53, 22)
+        Me.Label70.Size = New System.Drawing.Size(66, 27)
         Me.Label70.TabIndex = 42
         Me.Label70.Text = "ALTA"
         Me.Label70.Visible = False
@@ -3082,9 +3161,10 @@ Partial Class Empleados
         'BAJA
         '
         Me.BAJA.Image = Global.AdminEmpleados.My.Resources.Resources.Circle_icons_arrow_down_svg
-        Me.BAJA.Location = New System.Drawing.Point(844, 55)
+        Me.BAJA.Location = New System.Drawing.Point(1125, 68)
+        Me.BAJA.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BAJA.Name = "BAJA"
-        Me.BAJA.Size = New System.Drawing.Size(83, 83)
+        Me.BAJA.Size = New System.Drawing.Size(111, 102)
         Me.BAJA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.BAJA.TabIndex = 41
         Me.BAJA.TabStop = False
@@ -3093,10 +3173,10 @@ Partial Class Empleados
         'seg
         '
         Me.seg.AutoSize = True
-        Me.seg.Location = New System.Drawing.Point(140, 123)
-        Me.seg.Margin = New System.Windows.Forms.Padding(2)
+        Me.seg.Location = New System.Drawing.Point(187, 151)
+        Me.seg.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.seg.Name = "seg"
-        Me.seg.Size = New System.Drawing.Size(165, 25)
+        Me.seg.Size = New System.Drawing.Size(207, 31)
         Me.seg.TabIndex = 27
         Me.seg.Text = "Motivo Seguridad"
         Me.seg.UseVisualStyleBackColor = True
@@ -3105,10 +3185,10 @@ Partial Class Empleados
         '
         Me.panel13.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel13.Controls.Add(Me.label15)
-        Me.panel13.Location = New System.Drawing.Point(-2, -2)
-        Me.panel13.Margin = New System.Windows.Forms.Padding(2)
+        Me.panel13.Location = New System.Drawing.Point(-3, -2)
+        Me.panel13.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.panel13.Name = "panel13"
-        Me.panel13.Size = New System.Drawing.Size(955, 35)
+        Me.panel13.Size = New System.Drawing.Size(1273, 43)
         Me.panel13.TabIndex = 0
         '
         'label15
@@ -3116,46 +3196,48 @@ Partial Class Empleados
         Me.label15.AutoSize = True
         Me.label15.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label15.ForeColor = System.Drawing.Color.White
-        Me.label15.Location = New System.Drawing.Point(13, 6)
-        Me.label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.label15.Location = New System.Drawing.Point(17, 7)
         Me.label15.Name = "label15"
-        Me.label15.Size = New System.Drawing.Size(64, 21)
+        Me.label15.Size = New System.Drawing.Size(78, 27)
         Me.label15.TabIndex = 0
         Me.label15.Text = "Estatus"
         '
         'commen
         '
         Me.commen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.commen.Enabled = False
-        Me.commen.Location = New System.Drawing.Point(391, 55)
+        Me.commen.Location = New System.Drawing.Point(521, 68)
+        Me.commen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.commen.Multiline = True
         Me.commen.Name = "commen"
-        Me.commen.Size = New System.Drawing.Size(427, 83)
+        Me.commen.Size = New System.Drawing.Size(568, 101)
         Me.commen.TabIndex = 28
         '
         'txt_activo
         '
         Me.txt_activo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_activo.Enabled = False
-        Me.txt_activo.Location = New System.Drawing.Point(140, 56)
+        Me.txt_activo.Location = New System.Drawing.Point(187, 69)
+        Me.txt_activo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_activo.Name = "txt_activo"
-        Me.txt_activo.Size = New System.Drawing.Size(155, 28)
+        Me.txt_activo.Size = New System.Drawing.Size(205, 33)
         Me.txt_activo.TabIndex = 25
         '
         'label8
         '
         Me.label8.AutoSize = True
-        Me.label8.Location = New System.Drawing.Point(323, 59)
+        Me.label8.Location = New System.Drawing.Point(431, 73)
+        Me.label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label8.Name = "label8"
-        Me.label8.Size = New System.Drawing.Size(73, 21)
+        Me.label8.Size = New System.Drawing.Size(92, 27)
         Me.label8.TabIndex = 38
         Me.label8.Text = "Motivo: "
         '
         'ALTA
         '
-        Me.ALTA.Location = New System.Drawing.Point(844, 56)
+        Me.ALTA.Location = New System.Drawing.Point(1125, 69)
+        Me.ALTA.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ALTA.Name = "ALTA"
-        Me.ALTA.Size = New System.Drawing.Size(83, 83)
+        Me.ALTA.Size = New System.Drawing.Size(111, 102)
         Me.ALTA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.ALTA.TabIndex = 24
         Me.ALTA.TabStop = False
@@ -3165,26 +3247,29 @@ Partial Class Empleados
         '
         Me.txt_baja.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_baja.Enabled = False
-        Me.txt_baja.Location = New System.Drawing.Point(140, 90)
+        Me.txt_baja.Location = New System.Drawing.Point(187, 111)
+        Me.txt_baja.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_baja.Name = "txt_baja"
-        Me.txt_baja.Size = New System.Drawing.Size(155, 28)
+        Me.txt_baja.Size = New System.Drawing.Size(205, 33)
         Me.txt_baja.TabIndex = 26
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(68, 63)
+        Me.Label6.Location = New System.Drawing.Point(91, 78)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(66, 21)
+        Me.Label6.Size = New System.Drawing.Size(83, 27)
         Me.Label6.TabIndex = 12
         Me.Label6.Text = "Activo: "
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(11, 97)
+        Me.Label7.Location = New System.Drawing.Point(15, 119)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(125, 21)
+        Me.Label7.Size = New System.Drawing.Size(154, 27)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Fecha de Baja: "
         '
@@ -3193,9 +3278,10 @@ Partial Class Empleados
         Me.lbl_ALTA.AutoSize = True
         Me.lbl_ALTA.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_ALTA.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.lbl_ALTA.Location = New System.Drawing.Point(857, 141)
+        Me.lbl_ALTA.Location = New System.Drawing.Point(1143, 174)
+        Me.lbl_ALTA.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_ALTA.Name = "lbl_ALTA"
-        Me.lbl_ALTA.Size = New System.Drawing.Size(53, 22)
+        Me.lbl_ALTA.Size = New System.Drawing.Size(65, 27)
         Me.lbl_ALTA.TabIndex = 37
         Me.lbl_ALTA.Text = "BAJA"
         Me.lbl_ALTA.Visible = False
@@ -3227,36 +3313,39 @@ Partial Class Empleados
         Me.pnl_cont.Controls.Add(Me.txt_SUPER)
         Me.pnl_cont.Controls.Add(Me.lbl_depto)
         Me.pnl_cont.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnl_cont.Location = New System.Drawing.Point(437, 346)
-        Me.pnl_cont.Margin = New System.Windows.Forms.Padding(2)
+        Me.pnl_cont.Location = New System.Drawing.Point(583, 426)
+        Me.pnl_cont.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pnl_cont.Name = "pnl_cont"
-        Me.pnl_cont.Size = New System.Drawing.Size(820, 233)
+        Me.pnl_cont.Size = New System.Drawing.Size(1092, 286)
         Me.pnl_cont.TabIndex = 33
         '
         'buscar_depto
         '
         Me.buscar_depto.BackgroundImage = CType(resources.GetObject("buscar_depto.BackgroundImage"), System.Drawing.Image)
         Me.buscar_depto.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_depto.Location = New System.Drawing.Point(385, 150)
+        Me.buscar_depto.Location = New System.Drawing.Point(513, 185)
+        Me.buscar_depto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.buscar_depto.Name = "buscar_depto"
-        Me.buscar_depto.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_depto.Size = New System.Drawing.Size(40, 34)
         Me.buscar_depto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.buscar_depto.TabIndex = 60
         Me.buscar_depto.TabStop = False
         '
         'depto
         '
-        Me.depto.Location = New System.Drawing.Point(209, 150)
+        Me.depto.Location = New System.Drawing.Point(279, 185)
+        Me.depto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.depto.Name = "depto"
-        Me.depto.Size = New System.Drawing.Size(37, 28)
+        Me.depto.Size = New System.Drawing.Size(48, 33)
         Me.depto.TabIndex = 22
         '
         'depto2
         '
         Me.depto2.Enabled = False
-        Me.depto2.Location = New System.Drawing.Point(252, 150)
+        Me.depto2.Location = New System.Drawing.Point(336, 185)
+        Me.depto2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.depto2.Name = "depto2"
-        Me.depto2.Size = New System.Drawing.Size(127, 28)
+        Me.depto2.Size = New System.Drawing.Size(168, 33)
         Me.depto2.TabIndex = 59
         Me.depto2.TabStop = False
         '
@@ -3264,9 +3353,10 @@ Partial Class Empleados
         '
         Me.Buscar_PUESTO.BackgroundImage = CType(resources.GetObject("Buscar_PUESTO.BackgroundImage"), System.Drawing.Image)
         Me.Buscar_PUESTO.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.Buscar_PUESTO.Location = New System.Drawing.Point(385, 78)
+        Me.Buscar_PUESTO.Location = New System.Drawing.Point(513, 96)
+        Me.Buscar_PUESTO.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Buscar_PUESTO.Name = "Buscar_PUESTO"
-        Me.Buscar_PUESTO.Size = New System.Drawing.Size(30, 28)
+        Me.Buscar_PUESTO.Size = New System.Drawing.Size(40, 34)
         Me.Buscar_PUESTO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Buscar_PUESTO.TabIndex = 57
         Me.Buscar_PUESTO.TabStop = False
@@ -3275,10 +3365,10 @@ Partial Class Empleados
         '
         Me.panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel11.Controls.Add(Me.label14)
-        Me.panel11.Location = New System.Drawing.Point(-2, -2)
-        Me.panel11.Margin = New System.Windows.Forms.Padding(2)
+        Me.panel11.Location = New System.Drawing.Point(-3, -2)
+        Me.panel11.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.panel11.Name = "panel11"
-        Me.panel11.Size = New System.Drawing.Size(877, 35)
+        Me.panel11.Size = New System.Drawing.Size(1169, 43)
         Me.panel11.TabIndex = 0
         '
         'label14
@@ -3286,19 +3376,19 @@ Partial Class Empleados
         Me.label14.AutoSize = True
         Me.label14.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label14.ForeColor = System.Drawing.Color.White
-        Me.label14.Location = New System.Drawing.Point(13, 6)
-        Me.label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.label14.Location = New System.Drawing.Point(17, 7)
         Me.label14.Name = "label14"
-        Me.label14.Size = New System.Drawing.Size(109, 21)
+        Me.label14.Size = New System.Drawing.Size(134, 27)
         Me.label14.TabIndex = 0
         Me.label14.Text = "Contratacion"
         '
         'Buscar_tipo
         '
         Me.Buscar_tipo.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.Buscar_tipo.Location = New System.Drawing.Point(763, 77)
+        Me.Buscar_tipo.Location = New System.Drawing.Point(1017, 95)
+        Me.Buscar_tipo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Buscar_tipo.Name = "Buscar_tipo"
-        Me.Buscar_tipo.Size = New System.Drawing.Size(30, 28)
+        Me.Buscar_tipo.Size = New System.Drawing.Size(40, 34)
         Me.Buscar_tipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Buscar_tipo.TabIndex = 54
         Me.Buscar_tipo.TabStop = False
@@ -3306,146 +3396,163 @@ Partial Class Empleados
         'lbl_ingreso
         '
         Me.lbl_ingreso.AutoSize = True
-        Me.lbl_ingreso.Location = New System.Drawing.Point(132, 51)
+        Me.lbl_ingreso.Location = New System.Drawing.Point(176, 63)
+        Me.lbl_ingreso.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_ingreso.Name = "lbl_ingreso"
-        Me.lbl_ingreso.Size = New System.Drawing.Size(71, 21)
+        Me.lbl_ingreso.Size = New System.Drawing.Size(89, 27)
         Me.lbl_ingreso.TabIndex = 11
         Me.lbl_ingreso.Text = "Ingreso:"
         '
         'Txt_correo
         '
         Me.Txt_correo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.Txt_correo.Location = New System.Drawing.Point(208, 184)
+        Me.Txt_correo.Location = New System.Drawing.Point(277, 226)
+        Me.Txt_correo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Txt_correo.Name = "Txt_correo"
-        Me.Txt_correo.Size = New System.Drawing.Size(422, 28)
+        Me.Txt_correo.Size = New System.Drawing.Size(561, 33)
         Me.Txt_correo.TabIndex = 23
         '
         'lbl_clase
         '
         Me.lbl_clase.AutoSize = True
-        Me.lbl_clase.Location = New System.Drawing.Point(532, 84)
+        Me.lbl_clase.Location = New System.Drawing.Point(709, 103)
+        Me.lbl_clase.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_clase.Name = "lbl_clase"
-        Me.lbl_clase.Size = New System.Drawing.Size(47, 21)
+        Me.lbl_clase.Size = New System.Drawing.Size(59, 27)
         Me.lbl_clase.TabIndex = 24
         Me.lbl_clase.Text = "Tipo:"
         '
         'txt_tipo2
         '
         Me.txt_tipo2.Enabled = False
-        Me.txt_tipo2.Location = New System.Drawing.Point(628, 77)
+        Me.txt_tipo2.Location = New System.Drawing.Point(837, 95)
+        Me.txt_tipo2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_tipo2.Name = "txt_tipo2"
-        Me.txt_tipo2.Size = New System.Drawing.Size(130, 28)
+        Me.txt_tipo2.Size = New System.Drawing.Size(172, 33)
         Me.txt_tipo2.TabIndex = 56
         Me.txt_tipo2.TabStop = False
         '
         'lbl_super
         '
         Me.lbl_super.AutoSize = True
-        Me.lbl_super.Location = New System.Drawing.Point(469, 51)
+        Me.lbl_super.Location = New System.Drawing.Point(625, 63)
+        Me.lbl_super.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_super.Name = "lbl_super"
-        Me.lbl_super.Size = New System.Drawing.Size(109, 21)
+        Me.lbl_super.Size = New System.Drawing.Size(139, 27)
         Me.lbl_super.TabIndex = 23
         Me.lbl_super.Text = "Supervisores:"
         '
         'correo
         '
         Me.correo.AutoSize = True
-        Me.correo.Location = New System.Drawing.Point(46, 191)
+        Me.correo.Location = New System.Drawing.Point(61, 235)
+        Me.correo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.correo.Name = "correo"
-        Me.correo.Size = New System.Drawing.Size(155, 21)
+        Me.correo.Size = New System.Drawing.Size(194, 27)
         Me.correo.TabIndex = 55
         Me.correo.Text = "Correo Electronico:"
         '
         'txt_SALARY
         '
         Me.txt_SALARY.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SALARY.Location = New System.Drawing.Point(209, 112)
+        Me.txt_SALARY.Location = New System.Drawing.Point(279, 138)
+        Me.txt_SALARY.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_SALARY.Name = "txt_SALARY"
-        Me.txt_SALARY.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SALARY.Size = New System.Drawing.Size(277, 33)
         Me.txt_SALARY.TabIndex = 21
         '
         'lbl_puesto
         '
         Me.lbl_puesto.AutoSize = True
         Me.lbl_puesto.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lbl_puesto.Location = New System.Drawing.Point(136, 84)
+        Me.lbl_puesto.Location = New System.Drawing.Point(181, 103)
+        Me.lbl_puesto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_puesto.Name = "lbl_puesto"
-        Me.lbl_puesto.Size = New System.Drawing.Size(66, 21)
+        Me.lbl_puesto.Size = New System.Drawing.Size(81, 27)
         Me.lbl_puesto.TabIndex = 16
         Me.lbl_puesto.Text = "Puesto:"
         '
         'txt_tipo
         '
-        Me.txt_tipo.Location = New System.Drawing.Point(585, 77)
+        Me.txt_tipo.Location = New System.Drawing.Point(780, 95)
+        Me.txt_tipo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_tipo.Name = "txt_tipo"
-        Me.txt_tipo.Size = New System.Drawing.Size(37, 28)
+        Me.txt_tipo.Size = New System.Drawing.Size(48, 33)
         Me.txt_tipo.TabIndex = 25
         '
         'lbl_sali
         '
         Me.lbl_sali.AutoSize = True
-        Me.lbl_sali.Location = New System.Drawing.Point(137, 118)
+        Me.lbl_sali.Location = New System.Drawing.Point(183, 145)
+        Me.lbl_sali.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_sali.Name = "lbl_sali"
-        Me.lbl_sali.Size = New System.Drawing.Size(65, 21)
+        Me.lbl_sali.Size = New System.Drawing.Size(82, 27)
         Me.lbl_sali.TabIndex = 19
         Me.lbl_sali.Text = "Salario:"
         '
         'txt_FECHAINGRESO
         '
-        Me.txt_FECHAINGRESO.Location = New System.Drawing.Point(208, 44)
+        Me.txt_FECHAINGRESO.Location = New System.Drawing.Point(277, 54)
+        Me.txt_FECHAINGRESO.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_FECHAINGRESO.Name = "txt_FECHAINGRESO"
-        Me.txt_FECHAINGRESO.Size = New System.Drawing.Size(209, 28)
+        Me.txt_FECHAINGRESO.Size = New System.Drawing.Size(277, 33)
         Me.txt_FECHAINGRESO.TabIndex = 19
         '
         'Buscar_Super
         '
         Me.Buscar_Super.BackgroundImage = CType(resources.GetObject("Buscar_Super.BackgroundImage"), System.Drawing.Image)
         Me.Buscar_Super.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.Buscar_Super.Location = New System.Drawing.Point(763, 44)
+        Me.Buscar_Super.Location = New System.Drawing.Point(1017, 54)
+        Me.Buscar_Super.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Buscar_Super.Name = "Buscar_Super"
-        Me.Buscar_Super.Size = New System.Drawing.Size(30, 28)
+        Me.Buscar_Super.Size = New System.Drawing.Size(40, 34)
         Me.Buscar_Super.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Buscar_Super.TabIndex = 51
         Me.Buscar_Super.TabStop = False
         '
         'txt_PUESTO
         '
-        Me.txt_PUESTO.Location = New System.Drawing.Point(209, 78)
+        Me.txt_PUESTO.Location = New System.Drawing.Point(279, 96)
+        Me.txt_PUESTO.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_PUESTO.Name = "txt_PUESTO"
-        Me.txt_PUESTO.Size = New System.Drawing.Size(37, 28)
+        Me.txt_PUESTO.Size = New System.Drawing.Size(48, 33)
         Me.txt_PUESTO.TabIndex = 20
         '
         'txt_PUESTO2
         '
         Me.txt_PUESTO2.Enabled = False
-        Me.txt_PUESTO2.Location = New System.Drawing.Point(252, 78)
+        Me.txt_PUESTO2.Location = New System.Drawing.Point(336, 96)
+        Me.txt_PUESTO2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_PUESTO2.Name = "txt_PUESTO2"
-        Me.txt_PUESTO2.Size = New System.Drawing.Size(127, 28)
+        Me.txt_PUESTO2.Size = New System.Drawing.Size(168, 33)
         Me.txt_PUESTO2.TabIndex = 41
         Me.txt_PUESTO2.TabStop = False
         '
         'txt_SUPER2
         '
         Me.txt_SUPER2.Enabled = False
-        Me.txt_SUPER2.Location = New System.Drawing.Point(627, 45)
+        Me.txt_SUPER2.Location = New System.Drawing.Point(836, 55)
+        Me.txt_SUPER2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_SUPER2.Name = "txt_SUPER2"
-        Me.txt_SUPER2.Size = New System.Drawing.Size(130, 28)
+        Me.txt_SUPER2.Size = New System.Drawing.Size(172, 33)
         Me.txt_SUPER2.TabIndex = 53
         Me.txt_SUPER2.TabStop = False
         '
         'txt_SUPER
         '
-        Me.txt_SUPER.Location = New System.Drawing.Point(584, 44)
+        Me.txt_SUPER.Location = New System.Drawing.Point(779, 54)
+        Me.txt_SUPER.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_SUPER.Name = "txt_SUPER"
-        Me.txt_SUPER.Size = New System.Drawing.Size(37, 28)
+        Me.txt_SUPER.Size = New System.Drawing.Size(48, 33)
         Me.txt_SUPER.TabIndex = 24
         '
         'lbl_depto
         '
         Me.lbl_depto.AutoSize = True
-        Me.lbl_depto.Location = New System.Drawing.Point(77, 157)
+        Me.lbl_depto.Location = New System.Drawing.Point(103, 193)
+        Me.lbl_depto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_depto.Name = "lbl_depto"
-        Me.lbl_depto.Size = New System.Drawing.Size(125, 21)
+        Me.lbl_depto.Size = New System.Drawing.Size(155, 27)
         Me.lbl_depto.TabIndex = 18
         Me.lbl_depto.Text = "Departamento:"
         '
@@ -3456,10 +3563,10 @@ Partial Class Empleados
         Me.pnl_foto.Controls.Add(Me.panel9)
         Me.pnl_foto.Controls.Add(Me.foto)
         Me.pnl_foto.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnl_foto.Location = New System.Drawing.Point(16, 346)
-        Me.pnl_foto.Margin = New System.Windows.Forms.Padding(2)
+        Me.pnl_foto.Location = New System.Drawing.Point(21, 426)
+        Me.pnl_foto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pnl_foto.Name = "pnl_foto"
-        Me.pnl_foto.Size = New System.Drawing.Size(417, 233)
+        Me.pnl_foto.Size = New System.Drawing.Size(555, 286)
         Me.pnl_foto.TabIndex = 32
         '
         'ln_img
@@ -3467,10 +3574,9 @@ Partial Class Empleados
         Me.ln_img.AutoSize = True
         Me.ln_img.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ln_img.LinkColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.ln_img.Location = New System.Drawing.Point(136, 198)
-        Me.ln_img.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.ln_img.Location = New System.Drawing.Point(181, 244)
         Me.ln_img.Name = "ln_img"
-        Me.ln_img.Size = New System.Drawing.Size(143, 22)
+        Me.ln_img.Size = New System.Drawing.Size(179, 27)
         Me.ln_img.TabIndex = 30
         Me.ln_img.TabStop = True
         Me.ln_img.Text = "Cambiar Imagen"
@@ -3479,10 +3585,10 @@ Partial Class Empleados
         '
         Me.panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel9.Controls.Add(Me.label13)
-        Me.panel9.Location = New System.Drawing.Point(-2, -2)
-        Me.panel9.Margin = New System.Windows.Forms.Padding(2)
+        Me.panel9.Location = New System.Drawing.Point(-3, -2)
+        Me.panel9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.panel9.Name = "panel9"
-        Me.panel9.Size = New System.Drawing.Size(807, 35)
+        Me.panel9.Size = New System.Drawing.Size(1076, 43)
         Me.panel9.TabIndex = 0
         '
         'label13
@@ -3490,19 +3596,19 @@ Partial Class Empleados
         Me.label13.AutoSize = True
         Me.label13.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label13.ForeColor = System.Drawing.Color.White
-        Me.label13.Location = New System.Drawing.Point(13, 6)
-        Me.label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.label13.Location = New System.Drawing.Point(17, 7)
         Me.label13.Name = "label13"
-        Me.label13.Size = New System.Drawing.Size(45, 21)
+        Me.label13.Size = New System.Drawing.Size(56, 27)
         Me.label13.TabIndex = 0
         Me.label13.Text = "Foto"
         '
         'foto
         '
         Me.foto.Image = Global.AdminEmpleados.My.Resources.Resources.photoNobody120
-        Me.foto.Location = New System.Drawing.Point(140, 51)
+        Me.foto.Location = New System.Drawing.Point(187, 63)
+        Me.foto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.foto.Name = "foto"
-        Me.foto.Size = New System.Drawing.Size(139, 144)
+        Me.foto.Size = New System.Drawing.Size(185, 177)
         Me.foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.foto.TabIndex = 29
         Me.foto.TabStop = False
@@ -3554,45 +3660,49 @@ Partial Class Empleados
         Me.pnl_per.Controls.Add(Me.lbl_nac)
         Me.pnl_per.Controls.Add(Me.lbl_rfc)
         Me.pnl_per.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnl_per.Location = New System.Drawing.Point(16, 32)
-        Me.pnl_per.Margin = New System.Windows.Forms.Padding(2)
+        Me.pnl_per.Location = New System.Drawing.Point(21, 39)
+        Me.pnl_per.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pnl_per.Name = "pnl_per"
-        Me.pnl_per.Size = New System.Drawing.Size(1241, 298)
+        Me.pnl_per.Size = New System.Drawing.Size(1653, 366)
         Me.pnl_per.TabIndex = 31
         '
         'buscar_ciudad
         '
         Me.buscar_ciudad.BackgroundImage = CType(resources.GetObject("buscar_ciudad.BackgroundImage"), System.Drawing.Image)
         Me.buscar_ciudad.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_ciudad.Location = New System.Drawing.Point(807, 80)
+        Me.buscar_ciudad.Location = New System.Drawing.Point(1076, 98)
+        Me.buscar_ciudad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.buscar_ciudad.Name = "buscar_ciudad"
-        Me.buscar_ciudad.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_ciudad.Size = New System.Drawing.Size(40, 34)
         Me.buscar_ciudad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.buscar_ciudad.TabIndex = 61
         Me.buscar_ciudad.TabStop = False
         '
         'cuidad
         '
-        Me.cuidad.Location = New System.Drawing.Point(628, 80)
+        Me.cuidad.Location = New System.Drawing.Point(837, 98)
+        Me.cuidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cuidad.Name = "cuidad"
-        Me.cuidad.Size = New System.Drawing.Size(39, 28)
+        Me.cuidad.Size = New System.Drawing.Size(51, 33)
         Me.cuidad.TabIndex = 8
         '
         'cuidad2
         '
         Me.cuidad2.Enabled = False
-        Me.cuidad2.Location = New System.Drawing.Point(673, 81)
+        Me.cuidad2.Location = New System.Drawing.Point(897, 100)
+        Me.cuidad2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cuidad2.Name = "cuidad2"
-        Me.cuidad2.Size = New System.Drawing.Size(127, 28)
+        Me.cuidad2.Size = New System.Drawing.Size(168, 33)
         Me.cuidad2.TabIndex = 60
         Me.cuidad2.TabStop = False
         '
         'Label92
         '
         Me.Label92.AutoSize = True
-        Me.Label92.Location = New System.Drawing.Point(554, 85)
+        Me.Label92.Location = New System.Drawing.Point(739, 105)
+        Me.Label92.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label92.Name = "Label92"
-        Me.Label92.Size = New System.Drawing.Size(68, 21)
+        Me.Label92.Size = New System.Drawing.Size(84, 27)
         Me.Label92.TabIndex = 59
         Me.Label92.Text = "Ciudad:"
         '
@@ -3601,26 +3711,29 @@ Partial Class Empleados
         Me.EC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.EC.FormattingEnabled = True
         Me.EC.Items.AddRange(New Object() {"SOLTERO", "CASADO", "DIVORCIADO", "VIUDO", "UNION LIBRE"})
-        Me.EC.Location = New System.Drawing.Point(1005, 77)
+        Me.EC.Location = New System.Drawing.Point(1340, 95)
+        Me.EC.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.EC.Name = "EC"
-        Me.EC.Size = New System.Drawing.Size(209, 29)
+        Me.EC.Size = New System.Drawing.Size(277, 35)
         Me.EC.TabIndex = 14
         '
         'Label55
         '
         Me.Label55.AutoSize = True
-        Me.Label55.Location = New System.Drawing.Point(903, 51)
+        Me.Label55.Location = New System.Drawing.Point(1204, 63)
+        Me.Label55.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label55.Name = "Label55"
-        Me.Label55.Size = New System.Drawing.Size(96, 21)
+        Me.Label55.Size = New System.Drawing.Size(119, 27)
         Me.Label55.TabIndex = 57
         Me.Label55.Text = "# Telefono:"
         '
         'txt_telefono
         '
         Me.txt_telefono.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_telefono.Location = New System.Drawing.Point(1005, 44)
+        Me.txt_telefono.Location = New System.Drawing.Point(1340, 54)
+        Me.txt_telefono.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_telefono.Name = "txt_telefono"
-        Me.txt_telefono.Size = New System.Drawing.Size(209, 28)
+        Me.txt_telefono.Size = New System.Drawing.Size(277, 33)
         Me.txt_telefono.TabIndex = 13
         '
         'ddl_educacion
@@ -3628,17 +3741,19 @@ Partial Class Empleados
         Me.ddl_educacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ddl_educacion.FormattingEnabled = True
         Me.ddl_educacion.Items.AddRange(New Object() {"PRIMARIA", "SECUNDARIA", "PREPARATOIA", "LICENCIATURA"})
-        Me.ddl_educacion.Location = New System.Drawing.Point(187, 214)
+        Me.ddl_educacion.Location = New System.Drawing.Point(249, 263)
+        Me.ddl_educacion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ddl_educacion.Name = "ddl_educacion"
-        Me.ddl_educacion.Size = New System.Drawing.Size(208, 29)
+        Me.ddl_educacion.Size = New System.Drawing.Size(276, 35)
         Me.ddl_educacion.TabIndex = 5
         '
         'Label54
         '
         Me.Label54.AutoSize = True
-        Me.Label54.Location = New System.Drawing.Point(89, 222)
+        Me.Label54.Location = New System.Drawing.Point(119, 273)
+        Me.Label54.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label54.Name = "Label54"
-        Me.Label54.Size = New System.Drawing.Size(92, 21)
+        Me.Label54.Size = New System.Drawing.Size(114, 27)
         Me.Label54.TabIndex = 54
         Me.Label54.Text = "Educacion:"
         '
@@ -3646,9 +3761,10 @@ Partial Class Empleados
         '
         Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
         Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_EN.Location = New System.Drawing.Point(806, 48)
+        Me.buscar_EN.Location = New System.Drawing.Point(1075, 59)
+        Me.buscar_EN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.buscar_EN.Name = "buscar_EN"
-        Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_EN.Size = New System.Drawing.Size(40, 34)
         Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.buscar_EN.TabIndex = 52
         Me.buscar_EN.TabStop = False
@@ -3658,10 +3774,10 @@ Partial Class Empleados
         Me.panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel7.Controls.Add(Me.label12)
         Me.panel7.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.panel7.Location = New System.Drawing.Point(-2, -2)
-        Me.panel7.Margin = New System.Windows.Forms.Padding(2)
+        Me.panel7.Location = New System.Drawing.Point(-3, -2)
+        Me.panel7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.panel7.Name = "panel7"
-        Me.panel7.Size = New System.Drawing.Size(1241, 35)
+        Me.panel7.Size = New System.Drawing.Size(1655, 43)
         Me.panel7.TabIndex = 0
         '
         'label12
@@ -3669,200 +3785,222 @@ Partial Class Empleados
         Me.label12.AutoSize = True
         Me.label12.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label12.ForeColor = System.Drawing.Color.White
-        Me.label12.Location = New System.Drawing.Point(13, 6)
-        Me.label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.label12.Location = New System.Drawing.Point(17, 7)
         Me.label12.Name = "label12"
-        Me.label12.Size = New System.Drawing.Size(91, 21)
+        Me.label12.Size = New System.Drawing.Size(113, 27)
         Me.label12.TabIndex = 0
         Me.label12.Text = "Personales"
         '
         'LBL_CP
         '
         Me.LBL_CP.AutoSize = True
-        Me.LBL_CP.Location = New System.Drawing.Point(879, 222)
+        Me.LBL_CP.Location = New System.Drawing.Point(1172, 273)
+        Me.LBL_CP.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LBL_CP.Name = "LBL_CP"
-        Me.LBL_CP.Size = New System.Drawing.Size(120, 21)
+        Me.LBL_CP.Size = New System.Drawing.Size(150, 27)
         Me.LBL_CP.TabIndex = 34
         Me.LBL_CP.Text = "Codigo Postal:"
         '
         'txt_numero
         '
-        Me.txt_numero.Location = New System.Drawing.Point(187, 43)
+        Me.txt_numero.Location = New System.Drawing.Point(249, 53)
+        Me.txt_numero.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_numero.Name = "txt_numero"
-        Me.txt_numero.Size = New System.Drawing.Size(209, 28)
+        Me.txt_numero.Size = New System.Drawing.Size(277, 33)
         Me.txt_numero.TabIndex = 0
         '
         'CP
         '
         Me.CP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.CP.Location = New System.Drawing.Point(1005, 213)
+        Me.CP.Location = New System.Drawing.Point(1340, 262)
+        Me.CP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CP.Name = "CP"
-        Me.CP.Size = New System.Drawing.Size(209, 28)
+        Me.CP.Size = New System.Drawing.Size(277, 33)
         Me.CP.TabIndex = 18
         '
         'txt_NOM
         '
         Me.txt_NOM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_NOM.Location = New System.Drawing.Point(187, 145)
+        Me.txt_NOM.Location = New System.Drawing.Point(249, 178)
+        Me.txt_NOM.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_NOM.Name = "txt_NOM"
-        Me.txt_NOM.Size = New System.Drawing.Size(208, 28)
+        Me.txt_NOM.Size = New System.Drawing.Size(276, 33)
         Me.txt_NOM.TabIndex = 3
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(927, 186)
+        Me.Label1.Location = New System.Drawing.Point(1236, 229)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(72, 21)
+        Me.Label1.Size = New System.Drawing.Size(89, 27)
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Colonia:"
         '
         'txt_AM
         '
         Me.txt_AM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_AM.Location = New System.Drawing.Point(187, 111)
+        Me.txt_AM.Location = New System.Drawing.Point(249, 137)
+        Me.txt_AM.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_AM.Name = "txt_AM"
-        Me.txt_AM.Size = New System.Drawing.Size(209, 28)
+        Me.txt_AM.Size = New System.Drawing.Size(277, 33)
         Me.txt_AM.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(914, 147)
+        Me.Label2.Location = New System.Drawing.Point(1219, 181)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(85, 21)
+        Me.Label2.Size = New System.Drawing.Size(107, 27)
         Me.Label2.TabIndex = 31
         Me.Label2.Text = "Domicilio:"
         '
         'txt_AP
         '
         Me.txt_AP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_AP.Location = New System.Drawing.Point(187, 77)
+        Me.txt_AP.Location = New System.Drawing.Point(249, 95)
+        Me.txt_AP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_AP.Name = "txt_AP"
-        Me.txt_AP.Size = New System.Drawing.Size(209, 28)
+        Me.txt_AP.Size = New System.Drawing.Size(277, 33)
         Me.txt_AP.TabIndex = 1
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(885, 117)
+        Me.Label3.Location = New System.Drawing.Point(1180, 144)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(114, 21)
+        Me.Label3.Size = New System.Drawing.Size(142, 27)
         Me.Label3.TabIndex = 30
         Me.Label3.Text = "Nacionalidad:"
         '
         'txt_EN
         '
-        Me.txt_EN.Location = New System.Drawing.Point(628, 48)
+        Me.txt_EN.Location = New System.Drawing.Point(837, 59)
+        Me.txt_EN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_EN.Name = "txt_EN"
-        Me.txt_EN.Size = New System.Drawing.Size(39, 28)
+        Me.txt_EN.Size = New System.Drawing.Size(51, 33)
         Me.txt_EN.TabIndex = 7
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(541, 220)
+        Me.Label4.Location = New System.Drawing.Point(721, 271)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(82, 21)
+        Me.Label4.Size = New System.Drawing.Size(101, 27)
         Me.Label4.TabIndex = 54
         Me.Label4.Text = "# Celular:"
         '
         'colonia
         '
         Me.colonia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.colonia.Location = New System.Drawing.Point(1005, 179)
+        Me.colonia.Location = New System.Drawing.Point(1340, 220)
+        Me.colonia.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.colonia.Name = "colonia"
-        Me.colonia.Size = New System.Drawing.Size(209, 28)
+        Me.colonia.Size = New System.Drawing.Size(277, 33)
         Me.colonia.TabIndex = 17
         '
         'txt_RFC
         '
         Me.txt_RFC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_RFC.Location = New System.Drawing.Point(628, 114)
+        Me.txt_RFC.Location = New System.Drawing.Point(837, 140)
+        Me.txt_RFC.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_RFC.Name = "txt_RFC"
-        Me.txt_RFC.Size = New System.Drawing.Size(209, 28)
+        Me.txt_RFC.Size = New System.Drawing.Size(277, 33)
         Me.txt_RFC.TabIndex = 9
         '
         'domicilio
         '
         Me.domicilio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.domicilio.Location = New System.Drawing.Point(1005, 145)
+        Me.domicilio.Location = New System.Drawing.Point(1340, 178)
+        Me.domicilio.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.domicilio.Name = "domicilio"
-        Me.domicilio.Size = New System.Drawing.Size(209, 28)
+        Me.domicilio.Size = New System.Drawing.Size(277, 33)
         Me.domicilio.TabIndex = 16
         '
         'txt_SS
         '
         Me.txt_SS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SS.Location = New System.Drawing.Point(628, 148)
+        Me.txt_SS.Location = New System.Drawing.Point(837, 182)
+        Me.txt_SS.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_SS.Name = "txt_SS"
-        Me.txt_SS.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SS.Size = New System.Drawing.Size(277, 33)
         Me.txt_SS.TabIndex = 10
         '
         'Celular
         '
         Me.Celular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.Celular.Location = New System.Drawing.Point(629, 215)
+        Me.Celular.Location = New System.Drawing.Point(839, 265)
+        Me.Celular.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Celular.Name = "Celular"
-        Me.Celular.Size = New System.Drawing.Size(209, 28)
+        Me.Celular.Size = New System.Drawing.Size(277, 33)
         Me.Celular.TabIndex = 12
         '
         'nacion
         '
         Me.nacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.nacion.Location = New System.Drawing.Point(1005, 112)
+        Me.nacion.Location = New System.Drawing.Point(1340, 138)
+        Me.nacion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.nacion.Name = "nacion"
-        Me.nacion.Size = New System.Drawing.Size(209, 28)
+        Me.nacion.Size = New System.Drawing.Size(277, 33)
         Me.nacion.TabIndex = 15
         '
         'txt_CURP
         '
         Me.txt_CURP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_CURP.Location = New System.Drawing.Point(629, 181)
+        Me.txt_CURP.Location = New System.Drawing.Point(839, 223)
+        Me.txt_CURP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_CURP.Name = "txt_CURP"
-        Me.txt_CURP.Size = New System.Drawing.Size(209, 28)
+        Me.txt_CURP.Size = New System.Drawing.Size(277, 33)
         Me.txt_CURP.TabIndex = 11
         '
         'lbl_num
         '
         Me.lbl_num.AutoSize = True
-        Me.lbl_num.Location = New System.Drawing.Point(104, 50)
+        Me.lbl_num.Location = New System.Drawing.Point(139, 62)
+        Me.lbl_num.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_num.Name = "lbl_num"
-        Me.lbl_num.Size = New System.Drawing.Size(77, 21)
+        Me.lbl_num.Size = New System.Drawing.Size(96, 27)
         Me.lbl_num.TabIndex = 11
         Me.lbl_num.Text = "Numero:"
         '
         'LBL_ESTADOCIVIL
         '
         Me.LBL_ESTADOCIVIL.AutoSize = True
-        Me.LBL_ESTADOCIVIL.Location = New System.Drawing.Point(898, 81)
+        Me.LBL_ESTADOCIVIL.Location = New System.Drawing.Point(1197, 100)
+        Me.LBL_ESTADOCIVIL.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LBL_ESTADOCIVIL.Name = "LBL_ESTADOCIVIL"
-        Me.LBL_ESTADOCIVIL.Size = New System.Drawing.Size(101, 21)
+        Me.LBL_ESTADOCIVIL.Size = New System.Drawing.Size(126, 27)
         Me.LBL_ESTADOCIVIL.TabIndex = 25
         Me.LBL_ESTADOCIVIL.Text = "Estado Civil:"
         '
         'lbl_ap
         '
         Me.lbl_ap.AutoSize = True
-        Me.lbl_ap.Location = New System.Drawing.Point(40, 84)
+        Me.lbl_ap.Location = New System.Drawing.Point(53, 103)
+        Me.lbl_ap.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_ap.Name = "lbl_ap"
-        Me.lbl_ap.Size = New System.Drawing.Size(141, 21)
+        Me.lbl_ap.Size = New System.Drawing.Size(176, 27)
         Me.lbl_ap.TabIndex = 12
         Me.lbl_ap.Text = "Apellido Paterno:"
         '
         'txt_FECHA
         '
-        Me.txt_FECHA.Location = New System.Drawing.Point(186, 249)
+        Me.txt_FECHA.Location = New System.Drawing.Point(248, 306)
+        Me.txt_FECHA.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_FECHA.Name = "txt_FECHA"
-        Me.txt_FECHA.Size = New System.Drawing.Size(209, 28)
+        Me.txt_FECHA.Size = New System.Drawing.Size(277, 33)
         Me.txt_FECHA.TabIndex = 6
         '
         'lbl_am
         '
         Me.lbl_am.AutoSize = True
-        Me.lbl_am.Location = New System.Drawing.Point(34, 119)
+        Me.lbl_am.Location = New System.Drawing.Point(45, 146)
+        Me.lbl_am.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_am.Name = "lbl_am"
-        Me.lbl_am.Size = New System.Drawing.Size(147, 21)
+        Me.lbl_am.Size = New System.Drawing.Size(184, 27)
         Me.lbl_am.TabIndex = 13
         Me.lbl_am.Text = "Apellido Materno:"
         '
@@ -3871,80 +4009,89 @@ Partial Class Empleados
         Me.CB_SEXO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CB_SEXO.FormattingEnabled = True
         Me.CB_SEXO.Items.AddRange(New Object() {"FEMENINO", "MASCULINO"})
-        Me.CB_SEXO.Location = New System.Drawing.Point(187, 179)
+        Me.CB_SEXO.Location = New System.Drawing.Point(249, 220)
+        Me.CB_SEXO.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CB_SEXO.Name = "CB_SEXO"
-        Me.CB_SEXO.Size = New System.Drawing.Size(208, 29)
+        Me.CB_SEXO.Size = New System.Drawing.Size(276, 35)
         Me.CB_SEXO.TabIndex = 4
         '
         'lbl_nom
         '
         Me.lbl_nom.AutoSize = True
-        Me.lbl_nom.Location = New System.Drawing.Point(87, 151)
+        Me.lbl_nom.Location = New System.Drawing.Point(116, 186)
+        Me.lbl_nom.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_nom.Name = "lbl_nom"
-        Me.lbl_nom.Size = New System.Drawing.Size(94, 21)
+        Me.lbl_nom.Size = New System.Drawing.Size(120, 27)
         Me.lbl_nom.TabIndex = 14
         Me.lbl_nom.Text = "Nombre(s):"
         '
         'txt_EN2
         '
         Me.txt_EN2.Enabled = False
-        Me.txt_EN2.Location = New System.Drawing.Point(673, 48)
+        Me.txt_EN2.Location = New System.Drawing.Point(897, 59)
+        Me.txt_EN2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_EN2.Name = "txt_EN2"
-        Me.txt_EN2.Size = New System.Drawing.Size(127, 28)
+        Me.txt_EN2.Size = New System.Drawing.Size(168, 33)
         Me.txt_EN2.TabIndex = 22
         Me.txt_EN2.TabStop = False
         '
         'lbl_sex
         '
         Me.lbl_sex.AutoSize = True
-        Me.lbl_sex.Location = New System.Drawing.Point(131, 186)
+        Me.lbl_sex.Location = New System.Drawing.Point(175, 229)
+        Me.lbl_sex.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_sex.Name = "lbl_sex"
-        Me.lbl_sex.Size = New System.Drawing.Size(50, 21)
+        Me.lbl_sex.Size = New System.Drawing.Size(63, 27)
         Me.lbl_sex.TabIndex = 15
         Me.lbl_sex.Text = "Sexo:"
         '
         'lbl_curp
         '
         Me.lbl_curp.AutoSize = True
-        Me.lbl_curp.Location = New System.Drawing.Point(550, 188)
+        Me.lbl_curp.Location = New System.Drawing.Point(733, 231)
+        Me.lbl_curp.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_curp.Name = "lbl_curp"
-        Me.lbl_curp.Size = New System.Drawing.Size(73, 21)
+        Me.lbl_curp.Size = New System.Drawing.Size(90, 27)
         Me.lbl_curp.TabIndex = 21
         Me.lbl_curp.Text = "C.U.R.P.:"
         '
         'lbl_fn
         '
         Me.lbl_fn.AutoSize = True
-        Me.lbl_fn.Location = New System.Drawing.Point(5, 255)
+        Me.lbl_fn.Location = New System.Drawing.Point(7, 314)
+        Me.lbl_fn.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_fn.Name = "lbl_fn"
-        Me.lbl_fn.Size = New System.Drawing.Size(176, 21)
+        Me.lbl_fn.Size = New System.Drawing.Size(217, 27)
         Me.lbl_fn.TabIndex = 16
         Me.lbl_fn.Text = "Fecha de Nacimiento:"
         '
         'lbl_ss
         '
         Me.lbl_ss.AutoSize = True
-        Me.lbl_ss.Location = New System.Drawing.Point(490, 155)
+        Me.lbl_ss.Location = New System.Drawing.Point(653, 191)
+        Me.lbl_ss.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_ss.Name = "lbl_ss"
-        Me.lbl_ss.Size = New System.Drawing.Size(132, 21)
+        Me.lbl_ss.Size = New System.Drawing.Size(167, 27)
         Me.lbl_ss.TabIndex = 20
         Me.lbl_ss.Text = "# Seguro Social:"
         '
         'lbl_nac
         '
         Me.lbl_nac.AutoSize = True
-        Me.lbl_nac.Location = New System.Drawing.Point(433, 55)
+        Me.lbl_nac.Location = New System.Drawing.Point(577, 68)
+        Me.lbl_nac.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_nac.Name = "lbl_nac"
-        Me.lbl_nac.Size = New System.Drawing.Size(189, 21)
+        Me.lbl_nac.Size = New System.Drawing.Size(234, 27)
         Me.lbl_nac.TabIndex = 18
         Me.lbl_nac.Text = "Entidad de Nacimiento:"
         '
         'lbl_rfc
         '
         Me.lbl_rfc.AutoSize = True
-        Me.lbl_rfc.Location = New System.Drawing.Point(566, 121)
+        Me.lbl_rfc.Location = New System.Drawing.Point(755, 149)
+        Me.lbl_rfc.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_rfc.Name = "lbl_rfc"
-        Me.lbl_rfc.Size = New System.Drawing.Size(56, 21)
+        Me.lbl_rfc.Size = New System.Drawing.Size(69, 27)
         Me.lbl_rfc.TabIndex = 19
         Me.lbl_rfc.Text = "R.F.C.:"
         '
@@ -3958,25 +4105,67 @@ Partial Class Empleados
         Me.MenuEmp.Controls.Add(Me.Tam_Es)
         Me.MenuEmp.Controls.Add(Me.Estudio_SE)
         Me.MenuEmp.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuEmp.Location = New System.Drawing.Point(9, 43)
-        Me.MenuEmp.Margin = New System.Windows.Forms.Padding(2)
+        Me.MenuEmp.Location = New System.Drawing.Point(12, 53)
+        Me.MenuEmp.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MenuEmp.Name = "MenuEmp"
         Me.MenuEmp.SelectedIndex = 0
-        Me.MenuEmp.Size = New System.Drawing.Size(1288, 823)
+        Me.MenuEmp.Size = New System.Drawing.Size(1717, 1013)
         Me.MenuEmp.TabIndex = 1
         '
         'datosFamiliaBindingSource
         '
         Me.datosFamiliaBindingSource.DataMember = "Datos_Familia"
         '
+        'NOMBRE
+        '
+        Me.NOMBRE.DataPropertyName = "Ref_Nombre"
+        Me.NOMBRE.HeaderText = "NOMBRE"
+        Me.NOMBRE.Name = "NOMBRE"
+        Me.NOMBRE.Width = 200
+        '
+        'TIPO
+        '
+        Me.TIPO.DataPropertyName = "Ref_TRelacion"
+        Me.TIPO.HeaderText = "TIPO DE RELACION"
+        Me.TIPO.Name = "TIPO"
+        Me.TIPO.Width = 300
+        '
+        'OCUPACION
+        '
+        Me.OCUPACION.DataPropertyName = "Ref_Ocupacion"
+        Me.OCUPACION.HeaderText = "OCUPACION"
+        Me.OCUPACION.Name = "OCUPACION"
+        Me.OCUPACION.Width = 200
+        '
+        'TIEMPO
+        '
+        Me.TIEMPO.DataPropertyName = "Ref_TiempoC"
+        Me.TIEMPO.HeaderText = "TIEMPO DE CONOCERLO"
+        Me.TIEMPO.Name = "TIEMPO"
+        Me.TIEMPO.Width = 400
+        '
+        'PARENTESCO
+        '
+        Me.PARENTESCO.DataPropertyName = "OIng_Desc"
+        Me.PARENTESCO.HeaderText = "PARENTESCO"
+        Me.PARENTESCO.Name = "PARENTESCO"
+        Me.PARENTESCO.Width = 500
+        '
+        'CANTIDAD
+        '
+        Me.CANTIDAD.DataPropertyName = "OIng_Cantidad"
+        Me.CANTIDAD.HeaderText = "CANTIDAD"
+        Me.CANTIDAD.Name = "CANTIDAD"
+        Me.CANTIDAD.Width = 600
+        '
         'Empleados
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1308, 864)
+        Me.ClientSize = New System.Drawing.Size(1744, 1063)
         Me.Controls.Add(Me.MenuEmp)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Empleados"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Estudio_SE.ResumeLayout(False)
@@ -4162,17 +4351,11 @@ Partial Class Empleados
     Friend WithEvents txt_OIParen As TextBox
     Friend WithEvents Label65 As Label
     Friend WithEvents dgv_OI As DataGridView
-    Friend WithEvents PARENTESCO As DataGridViewTextBoxColumn
-    Friend WithEvents CANTIDAD As DataGridViewTextBoxColumn
     Private WithEvents Panel14 As Panel
     Private WithEvents Label60 As Label
     Private WithEvents Label61 As Label
     Private WithEvents Panel8 As Panel
     Friend WithEvents dgv_Ref As DataGridView
-    Friend WithEvents NOMBRE As DataGridViewTextBoxColumn
-    Friend WithEvents TIPO As DataGridViewTextBoxColumn
-    Friend WithEvents OCUPACION As DataGridViewTextBoxColumn
-    Friend WithEvents TIEMPO As DataGridViewTextBoxColumn
     Friend WithEvents Label52 As Label
     Friend WithEvents txt_TC As TextBox
     Friend WithEvents txt_RefOcu As TextBox
@@ -4445,4 +4628,10 @@ Partial Class Empleados
     Friend WithEvents lbl_nac As Label
     Friend WithEvents lbl_rfc As Label
     Private WithEvents MenuEmp As TabControl
+    Friend WithEvents PARENTESCO As DataGridViewTextBoxColumn
+    Friend WithEvents CANTIDAD As DataGridViewTextBoxColumn
+    Friend WithEvents NOMBRE As DataGridViewTextBoxColumn
+    Friend WithEvents TIPO As DataGridViewTextBoxColumn
+    Friend WithEvents OCUPACION As DataGridViewTextBoxColumn
+    Friend WithEvents TIEMPO As DataGridViewTextBoxColumn
 End Class

@@ -91,7 +91,7 @@ Public Class Empleados
             txt_SUPER.Text = dt.Rows(0).Item("Emp_Sup").ToString()
             cuidad.Text = dt.Rows(0).Item("Emp_Ciudad").ToString()
             depto.Text = dt.Rows(0).Item("ID_Depto").ToString()
-            If (dt.Rows(0).Item("Img_Emp").ToString() Is Nothing) Then
+            If (dt.Rows(0).Item("Img_Emp").ToString() Is Nothing Or dt.Rows(0).Item("Img_Emp").ToString() = "") Then
                 foto.Image = AdminEmpleados.My.Resources.Resources.photoNobody120
             Else
                 Dim bytes As [Byte]() = dt.Rows(0).Item("Img_Emp")
@@ -257,6 +257,7 @@ Public Class Empleados
                 If MessageBox.Show("SE VA A MODIFICAR ESTE EMPLEADO", "My Application",
                       MessageBoxButtons.YesNo, MessageBoxIcon.Question) _
                       = DialogResult.Yes Then
+                    InfoEmp.ID_Emp = txt_numero.Text
                     objEmp.UpInsert_colabora(InfoEmp)
                     limp()
                     MessageBox.Show("Empleado Actualizado Satisfactoriamente")
@@ -414,6 +415,7 @@ Public Class Empleados
         V2 = popup.Variable2
         popup.Close()
     End Sub
+
     Public Sub Limpiartxt(ByVal form As Windows.Forms.Form)
         Try
             txt_activo.Text = ""
@@ -544,7 +546,10 @@ Public Class Empleados
                 If EMPLEADO_ES = 0 Then
                     dgv_Ref.Rows.Add(txt_RefNom.Text, txt_RefOcu.Text, Txt_TR.Text, txt_TC.Text)
                 Else
-                    objcon.Add_Referencias(0, EMPLEADO_ES, txt_RefNom.Text, txt_RefOcu.Text, Txt_TR.Text, txt_TC.Text)
+                    If objcon.Add_Referencias(0, EMPLEADO_ES, txt_RefNom.Text, txt_RefOcu.Text, Txt_TR.Text, txt_TC.Text) = "0" Then
+                    Else
+                        MessageBox.Show("Este registro ya Existe.")
+                    End If
                     dgv_Ref.DataSource = objcon.Consulta_REF(EMPLEADO_ES)
                 End If
                 txt_RefOcu.Text = ""
@@ -562,7 +567,10 @@ Public Class Empleados
                 If EMPLEADO_ES = 0 Then
                     dgv_OI.Rows.Add(txt_OIParen.Text, txt_OTCantidad.Text)
                 Else
-                    objcon.Add_OtrosIngresos(0, EMPLEADO_ES, txt_OIParen.Text, txt_OTCantidad.Text)
+                    If objcon.Add_OtrosIngresos(0, EMPLEADO_ES, txt_OIParen.Text, txt_OTCantidad.Text) = "0" Then
+                    Else
+                        MessageBox.Show("Este registro ya Existe.")
+                    End If
                     dgv_OI.DataSource = objcon.Consulta_OI(EMPLEADO_ES)
                 End If
                 txt_RefOcu.Text = ""
@@ -648,18 +656,24 @@ Public Class Empleados
                 objcon.DELETE_OI(id)
                 objcon.DELETE_REF(id)
                 If id > 0 Then
-                    objcon.Add_Image(EMPLEADO_ID, PB_IMAGE_VIVIENDA.Image)
+                    objcon.Add_Image(EMPLEADO_ID, ES.IMG, foto.Image)
                     If dgv_Ref.Rows.Count > 0 Then
                         For Each row As DataGridViewRow In dgv_Ref.Rows
                             If Not row.IsNewRow Then
-                                objcon.Add_Referencias(0, id, row.Cells(0).Value.ToString, row.Cells(1).Value.ToString, row.Cells(2).Value.ToString, row.Cells(3).Value.ToString)
+                                If objcon.Add_Referencias(0, id, row.Cells(0).Value.ToString, row.Cells(1).Value.ToString, row.Cells(2).Value.ToString, row.Cells(3).Value.ToString) = "0" Then
+                                Else
+                                    MessageBox.Show("Este registro ya Existe.")
+                                End If
                             End If
                         Next
                     End If
                     If dgv_OI.Rows.Count > 0 Then
                         For Each row As DataGridViewRow In dgv_OI.Rows
                             If Not row.IsNewRow Then
-                                objcon.Add_OtrosIngresos(0, id, row.Cells(0).Value.ToString, Convert.ToDouble(row.Cells(1).Value.ToString))
+                                If objcon.Add_OtrosIngresos(0, id, row.Cells(0).Value.ToString, Convert.ToDouble(row.Cells(1).Value.ToString)) = "0" Then
+                                Else
+                                    MessageBox.Show("Este registro ya Existe.")
+                                End If
                             End If
                         Next
                     End If
@@ -677,7 +691,10 @@ Public Class Empleados
         If EXISTE = True Then
             If txt_enfNAME.Text = "" Then
             Else
-                objcon.Add_MEDCONDITIONS(0, EMPLEADO_ID, txt_enfNAME.Text)
+                If objcon.Add_MEDCONDITIONS(0, EMPLEADO_ID, txt_enfNAME.Text) = "0" Then
+                Else
+                    MessageBox.Show("Este registro ya Existe.")
+                End If
                 txt_enfNAME.Text = ""
                 llenarEnfermedades()
             End If
@@ -688,7 +705,10 @@ Public Class Empleados
             If txt_conAM.Text = "" Or txt_conAP.Text = "" Or txt_conCEL.Text = "" Or txt_conPAREN.Text = "" Or txt_conNAME.Text = "" Then
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
-                objcon.Add_CONTACTS(0, EMPLEADO_ID, txt_conNAME.Text, txt_conAP.Text, txt_conAM.Text, txt_conPAREN.Text, txt_conTEL.Text, txt_conCEL.Text)
+                If objcon.Add_CONTACTS(0, EMPLEADO_ID, txt_conNAME.Text, txt_conAP.Text, txt_conAM.Text, txt_conPAREN.Text, txt_conTEL.Text, txt_conCEL.Text) = "0" Then
+                Else
+                    MessageBox.Show("Este registro ya Existe.")
+                End If
                 txt_conAM.Text = ""
                 txt_conAP.Text = ""
                 txt_conCEL.Text = ""
@@ -705,8 +725,11 @@ Public Class Empleados
             txt_antNAME.Text = "" Or txt_antTEL.Text = "" Or txt_antSALARIO.Text = "" Then
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
-                objcon.Add_JOBHISTORY(0, EMPLEADO_ID, txt_antFI.Text, txt_antFF.Text, txt_antEMP.Text, txt_antCARGO.Text,
-                                      txt_antSALARIO.Text, txt_antTEL.Text, txt_antMT.Text, txt_antNAME.Text)
+                If objcon.Add_JOBHISTORY(0, EMPLEADO_ID, txt_antFI.Text, txt_antFF.Text, txt_antEMP.Text, txt_antCARGO.Text,
+                                      txt_antSALARIO.Text, txt_antTEL.Text, txt_antMT.Text, txt_antNAME.Text) = "0" Then
+                Else
+                    MessageBox.Show("Este registro ya Existe.")
+                End If
                 txt_antFI.Text = ""
                 txt_antFF.Text = ""
                 txt_antEMP.Text = ""
@@ -724,7 +747,10 @@ Public Class Empleados
             If txt_esAM.Text = "" Or cb_esSexo.SelectedIndex = -1 Or txt_esAP.Text = "" Or txt_esFN.Text = "" Or txt_esNacion.Text = "" Or txt_esName.Text = "" Then
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
-                objcon.Add_Family(0, EMPLEADO_ID, "CONYUGE", txt_esName.Text, txt_esAP.Text, txt_esAM.Text, txt_esNacion.Text, txt_esFN.Text, cb_esSexo.SelectedItem.ToString(), EC.SelectedItem.ToString)
+                If objcon.Add_Family(0, EMPLEADO_ID, "CONYUGE", txt_esName.Text, txt_esAP.Text, txt_esAM.Text, txt_esNacion.Text, txt_esFN.Text, cb_esSexo.SelectedItem.ToString(), EC.SelectedItem.ToString) = "0" Then
+                Else
+                    MessageBox.Show("Este registro ya Existe.")
+                End If
                 txt_esAM.Text = ""
                 txt_esAP.Text = ""
                 txt_esName.Text = ""
@@ -741,9 +767,12 @@ Public Class Empleados
            txt_hijoSEXO.SelectedIndex = -1 Or txt_hijoEC.SelectedIndex = -1 Then
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
-                objcon.Add_Family(0, EMPLEADO_ID, "HIJO", txt_hijoNAME.Text, txt_hijoAP.Text, txt_hijoAM.Text, txt_hijoNACION.Text,
-                                  txt_hijoFN.Text, txt_hijoSEXO.SelectedItem.ToString(), txt_hijoEC.SelectedItem.ToString)
-                txt_hijoAM.Text = ""
+                If objcon.Add_Family(0, EMPLEADO_ID, "HIJO", txt_hijoNAME.Text, txt_hijoAP.Text, txt_hijoAM.Text, txt_hijoNACION.Text,
+                                  txt_hijoFN.Text, txt_hijoSEXO.SelectedItem.ToString(), txt_hijoEC.SelectedItem.ToString) = "0" Then
+                Else
+                    MessageBox.Show("Este registro ya Existe.")
+                End If
+            txt_hijoAM.Text = ""
                 txt_hijoAP.Text = ""
                 txt_hijoNAME.Text = ""
                 txt_hijoFN.Text = ""
@@ -789,18 +818,23 @@ Public Class Empleados
         End If
     End Sub
     Private Sub buscar_ciudad_Click(sender As Object, e As EventArgs) Handles buscar_ciudad.Click
-        llenar_buscador("CI")
-        If (V1 <> "" And V2 <> "") Then
-            txt_RFC.Focus()
+        If txt_EN.Text = "" Then
+            MessageBox.Show("Primero debe elegir una entidad.")
         Else
-            cuidad.Focus()
+            llenar_buscador("CI," + txt_EN.Text)
+            If (V1 <> "" And V2 <> "") Then
+                txt_RFC.Focus()
+            Else
+                cuidad.Focus()
+            End If
+            cuidad.Text = V1
+            cuidad2.Text = V2
         End If
-        cuidad.Text = V1
-        cuidad2.Text = V2
+
     End Sub
     Private Sub llenarFamilia()
         dgv_esposa.DataSource = objcon.Consulta_FamEsp(EMPLEADO_ID)
-        dgv_hijos.DataSource = objcon.Consulta_FamHijos(EMPLEADO_ID)
+        dgv_Hijos.DataSource = objcon.Consulta_FamHijos(EMPLEADO_ID)
     End Sub
     Private Sub llenarAL()
         dgv_ant.DataSource = objcon.Consulta_AnteLab(EMPLEADO_ID)

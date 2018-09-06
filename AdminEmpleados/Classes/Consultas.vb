@@ -27,7 +27,7 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@EMPLOYEE", infoEmp.ID_Emp))
             cmd.Parameters.Add(New SqlParameter("@NAME", infoEmp.Emp_Name))
             cmd.Parameters.Add(New SqlParameter("@P_LASTNAME", infoEmp.Emp_APat))
-            cmd.Parameters.Add(New SqlParameter("@M_LASTNAME", infoEmp.Emp_APat))
+            cmd.Parameters.Add(New SqlParameter("@M_LASTNAME", infoEmp.Emp_AMat))
             cmd.Parameters.Add(New SqlParameter("@COL", infoEmp.Emp_Col))
             cmd.Parameters.Add(New SqlParameter("@CITY", infoEmp.Emp_Ciudad))
             cmd.Parameters.Add(New SqlParameter("@ZIP", infoEmp.Emp_CP))
@@ -166,7 +166,7 @@ Public Class Consultas
         End Using
     End Sub
 
-    Public Sub Add_Examenes_Medicos(ByVal id As Integer, Emp As Integer, EM_Estudio As String, EM_Resultado As String, EM_Fecha As DateTime, EM_FechaProximo As DateTime)
+    Public Function Add_Examenes_Medicos(ByVal id As Integer, Emp As Integer, EM_Estudio As String, EM_Resultado As String, EM_Fecha As DateTime, EM_FechaProximo As DateTime) As String
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -178,9 +178,13 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@EM_Fecha", EM_Fecha))
             cmd.Parameters.Add(New SqlParameter("@EM_FechaProximo", EM_FechaProximo))
             cmd.CommandText = "UDSP_EXAMENES_MED"
-            cmd.ExecuteNonQuery()
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Return lector("RESULT").ToString()
+            End If
         End Using
-    End Sub
+    End Function
 
     Public Sub Bajas(ByVal id As String, ACTIVO As Integer, comment As String, seguridad As Integer, user As Int64)
         Using con As New SqlConnection(conn())
@@ -265,7 +269,7 @@ Public Class Consultas
         End Using
     End Function
 
-    Public Sub Add_Referencias(ByVal REF As Integer, SES_ID As Integer, NAME As String, OCUPATION As String, RELATIONSHIP As String, TIME As String)
+    Public Function Add_Referencias(ByVal REF As Integer, SES_ID As Integer, NAME As String, OCUPATION As String, RELATIONSHIP As String, TIME As String) As String
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -277,11 +281,15 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@RELATIONSHIP", RELATIONSHIP))
             cmd.Parameters.Add(New SqlParameter("@TIME", TIME))
             cmd.CommandText = "UDSP_SES_REFERENCES"
-            cmd.ExecuteNonQuery()
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Return lector("RESULT").ToString()
+            End If
         End Using
-    End Sub
+    End Function
 
-    Public Sub Add_OtrosIngresos(ByVal INCOME_ID As Integer, SES_ID As Integer, DESC As String, AMOUNT As Double)
+    Public Function Add_OtrosIngresos(ByVal INCOME_ID As Integer, SES_ID As Integer, DESC As String, AMOUNT As Double) As String
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -291,11 +299,15 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@DESC", DESC))
             cmd.Parameters.Add(New SqlParameter("@AMOUNT", AMOUNT))
             cmd.CommandText = "UDSP_SES_OTHER_INCOMES"
-            cmd.ExecuteNonQuery()
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Return lector("RESULT").ToString()
+            End If
         End Using
-    End Sub
+    End Function
 
-    Public Sub Add_UDSP_EMPLOYEE_EVALUATION(ByVal ID As Integer, EMPLOYEE As Integer, STATUS As String, USER As Integer, ID_Codigo As String)
+    Public Function Add_UDSP_EMPLOYEE_EVALUATION(ByVal ID As Integer, EMPLOYEE As Integer, STATUS As String, USER As Integer, ID_Codigo As String) As String
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -306,12 +318,16 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@USER", USER))
             cmd.Parameters.Add(New SqlParameter("@ID_Codigo", ID_Codigo))
             cmd.CommandText = "UDSP_EMPLOYEE_EVALUATION"
-            cmd.ExecuteNonQuery()
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Return lector("RESULT").ToString()
+            End If
         End Using
-    End Sub
+    End Function
 
-    Public Sub Add_Family(ByVal FAM_ID As Integer, EMPLOYEE As Integer, TYPE As String, NAME As String, P_LASTNAME As String, M_LASTMANEM As String,
-                                 NATIONALITY As String, BIRTHDATE As DateTime, GENDER As String, C_STATUS As String)
+    Public Function Add_Family(ByVal FAM_ID As Integer, EMPLOYEE As Integer, TYPE As String, NAME As String, P_LASTNAME As String, M_LASTMANEM As String,
+                                 NATIONALITY As String, BIRTHDATE As DateTime, GENDER As String, C_STATUS As String) As String
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -327,26 +343,33 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@GENDER", GENDER))
             cmd.Parameters.Add(New SqlParameter("@C_STATUS", C_STATUS))
             cmd.CommandText = "UDSP_EMPLOYEE_FAMILY"
-            cmd.ExecuteNonQuery()
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Return lector("RESULT").ToString()
+            End If
         End Using
-    End Sub
+    End Function
 
-    Public Sub Add_Image(ByVal EMPLOYEE As Integer, HOU_IMAGE As Image)
+    Public Sub Add_Image(ByVal EMPLOYEE As Integer, HOU_IMAGE As Image, EMP As Image)
         Using con As New SqlConnection(conn())
             con.Open()
             Dim Imag As Byte()
             Imag = Imagen_Bytes(HOU_IMAGE)
+            Dim ImagEmp As Byte()
+            ImagEmp = Imagen_Bytes(EMP)
             Dim cmd As SqlCommand = con.CreateCommand
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.Add(New SqlParameter("@EMPLOYEE", EMPLOYEE))
-            cmd.Parameters.Add(New SqlParameter("@HOU_IMAGE", HOU_IMAGE))
+            cmd.Parameters.Add(New SqlParameter("@EMP_IMAGE", ImagEmp))
+            cmd.Parameters.Add(New SqlParameter("@HOU_IMAGE", Imag))
             cmd.CommandText = "UDSP_EMPLOYEE_IMAGE"
             cmd.ExecuteNonQuery()
         End Using
     End Sub
 
-    Public Sub Add_JOBHISTORY(ByVal PREV_ID As Integer, EMPLOYEE As Integer, START As DateTime, ENDD As DateTime, COMPANY As String, POSITION As String, WAGE As Decimal,
-            PHONE As String, REASON As String, CONTACT As String)
+    Public Function Add_JOBHISTORY(ByVal PREV_ID As Integer, EMPLOYEE As Integer, START As DateTime, ENDD As DateTime, COMPANY As String, POSITION As String, WAGE As Decimal,
+            PHONE As String, REASON As String, CONTACT As String) As String
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -362,11 +385,15 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@REASON", REASON))
             cmd.Parameters.Add(New SqlParameter("@CONTACT", CONTACT))
             cmd.CommandText = "UDSP_EMPLOYEE_JOBHISTORY"
-            cmd.ExecuteNonQuery()
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Return lector("RESULT").ToString()
+            End If
         End Using
-    End Sub
+    End Function
 
-    Public Sub Add_MEDCONDITIONS(ByVal CON_ID As Integer, EMPLOYEE As Integer, DESCRIPTION As String)
+    Public Function Add_MEDCONDITIONS(ByVal CON_ID As Integer, EMPLOYEE As Integer, DESCRIPTION As String) As String
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -375,11 +402,15 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@EMPLOYEE", EMPLOYEE))
             cmd.Parameters.Add(New SqlParameter("@DESCRIPTION", DESCRIPTION))
             cmd.CommandText = "UDSP_EMPLOYEE_MEDCONDITIONS"
-            cmd.ExecuteNonQuery()
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Return lector("RESULT").ToString()
+            End If
         End Using
-    End Sub
+    End Function
 
-    Public Sub Add_TRAINING(ByVal ID As Integer, TRAINING As Integer, EMPLOYEE As Integer, DATEE As DateTime)
+    Public Function Add_TRAINING(ByVal ID As Integer, TRAINING As Integer, EMPLOYEE As Integer, DATEE As DateTime) As String
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -389,11 +420,15 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@EMPLOYEE", EMPLOYEE))
             cmd.Parameters.Add(New SqlParameter("@DATEE", DATEE))
             cmd.CommandText = "UDSP_EMPLOYEE_TRAINING"
-            cmd.ExecuteNonQuery()
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Return lector("RESULT").ToString()
+            End If
         End Using
-    End Sub
+    End Function
 
-    Public Sub Add_EQUIPMENT(ByVal EQU_ID As Integer, NAME As String, DESCRIPTION As String, COST As Double)
+    Public Function Add_EQUIPMENT(ByVal EQU_ID As Integer, NAME As String, DESCRIPTION As String, COST As Double) As String
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -403,11 +438,16 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@DESCRIPTION", DESCRIPTION))
             cmd.Parameters.Add(New SqlParameter("@COST", COST))
             cmd.CommandText = "UDSP_EQUIPMENT"
-            cmd.ExecuteNonQuery()
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Return lector("RESULT").ToString()
+            End If
         End Using
-    End Sub
+    End Function
 
-    Public Sub Add_EQUIPMENT_ASSIGNED(ByVal ASSIGNED As Integer, EQUIPMENT As String, EMPLOYEE As Integer, DATEE As DateTime, ISRETURNED As Integer, DATE_R As DateTime, COMMENTS As String)
+    Public Function Add_EQUIPMENT_ASSIGNED(ByVal ASSIGNED As Integer, EQUIPMENT As String, EMPLOYEE As Integer, DATEE As DateTime, ISRETURNED As Integer,
+                                           DATE_R As DateTime, COMMENTS As String) As String
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -420,11 +460,15 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@DATE_R", DATE_R))
             cmd.Parameters.Add(New SqlParameter("@COMMENTS", COMMENTS))
             cmd.CommandText = "UDSP_EQUIPMENT_ASSIGNED"
-            cmd.ExecuteNonQuery()
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Return lector("RESULT").ToString()
+            End If
         End Using
-    End Sub
+    End Function
 
-    Public Sub Add_EVALUATIONS(ByVal EVAL_ID As Integer, CODE As String, DESCRIPTION As String, STATUS As Integer)
+    Public Function Add_EVALUATIONS(ByVal EVAL_ID As Integer, CODE As String, DESCRIPTION As String, STATUS As Integer) As String
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -434,11 +478,15 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@DESCRIPTION", DESCRIPTION))
             cmd.Parameters.Add(New SqlParameter("@STATUS", STATUS))
             cmd.CommandText = "UDSP_EVALUATIONS"
-            cmd.ExecuteNonQuery()
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Return lector("RESULT").ToString()
+            End If
         End Using
-    End Sub
+    End Function
 
-    Public Sub Add_POSITIONS(ByVal POSITION As Integer, NAME As String, DESCRIPTION As String, RISK As Integer)
+    Public Function Add_POSITIONS(ByVal POSITION As Integer, NAME As String, DESCRIPTION As String, RISK As Integer) As String
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -448,12 +496,16 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@DESCRIPTION", DESCRIPTION))
             cmd.Parameters.Add(New SqlParameter("@RISK", RISK))
             cmd.CommandText = "UDSP_POSITIONS"
-            cmd.ExecuteNonQuery()
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Return lector("RESULT").ToString()
+            End If
         End Using
-    End Sub
+    End Function
 
 
-    Public Sub Add_TRANINGS(ByVal ID As Integer, CODE As String, DESCRIPTION As String, STATUS As Integer)
+    Public Function Add_TRANINGS(ByVal ID As Integer, CODE As String, DESCRIPTION As String, STATUS As Integer) As String
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -463,11 +515,15 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@DESCRIPTION", DESCRIPTION))
             cmd.Parameters.Add(New SqlParameter("@STATUS", STATUS))
             cmd.CommandText = "UDSP_TRANINGS"
-            cmd.ExecuteNonQuery()
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Return lector("RESULT").ToString()
+            End If
         End Using
-    End Sub
+    End Function
 
-    Public Sub Add_USERS(ByVal ID As Integer, USERNAME As String, PASSWORD As String, ACTIVE As Integer, ACCESS As Integer)
+    Public Function Add_USERS(ByVal ID As Integer, USERNAME As String, PASSWORD As String, ACTIVE As Integer, ACCESS As Integer) As Integer
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -478,12 +534,16 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@ACTIVE", ACTIVE))
             cmd.Parameters.Add(New SqlParameter("@ACCESS", ACCESS))
             cmd.CommandText = "UDSP_USERS"
-            cmd.ExecuteNonQuery()
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Return lector("RESULT").ToString()
+            End If
         End Using
-    End Sub
+    End Function
 
-    Public Sub Add_CONTACTS(ByVal CONTACT As Integer, EMPLOYEE As Integer, NAME As String, P_LASTNAME As String, M_LASTNAME As String,
-        RELATIONSHIP As String, PHONE As String, CELLPHONE As String)
+    Public Function Add_CONTACTS(ByVal CONTACT As Integer, EMPLOYEE As Integer, NAME As String, P_LASTNAME As String, M_LASTNAME As String,
+        RELATIONSHIP As String, PHONE As String, CELLPHONE As String) As String
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -497,11 +557,15 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@PHONE", PHONE))
             cmd.Parameters.Add(New SqlParameter("@CELLPHONE", CELLPHONE))
             cmd.CommandText = "UDSP_EMPLOYEE_CONTACTS"
-            cmd.ExecuteNonQuery()
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Return lector("RESULT").ToString()
+            End If
         End Using
-    End Sub
+    End Function
 
-    Public Sub Add_DEPTO(ByVal CODIGO As String, DESCRIPCION As String)
+    Public Function Add_DEPTO(ByVal CODIGO As String, DESCRIPCION As String) As String
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -509,9 +573,13 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@CODIGO", CODIGO))
             cmd.Parameters.Add(New SqlParameter("@DESCRIPCION", DESCRIPCION))
             cmd.CommandText = "UDSP_DEPTO"
-            cmd.ExecuteNonQuery()
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Return lector("RESULT").ToString()
+            End If
         End Using
-    End Sub
+    End Function
 
     Public Function Consulta_AnteLab(ByVal ID As Integer) As DataTable
         Using con As New SqlConnection(conn())
@@ -623,6 +691,21 @@ Public Class Consultas
             Dim cmd As New SqlCommand("Consulta_Enf", con)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@ID", ID)
+            Dim dt As New DataTable()
+            Dim DataAdapter As SqlDataAdapter
+            DataAdapter = New SqlDataAdapter
+            DataAdapter.SelectCommand = cmd
+            DataAdapter.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+
+    Public Function Consulta_USER() As DataTable
+        Using con As New SqlConnection(conn())
+            con.Open()
+            Dim cmd As New SqlCommand("Consulta_users", con)
+            cmd.CommandType = CommandType.StoredProcedure
             Dim dt As New DataTable()
             Dim DataAdapter As SqlDataAdapter
             DataAdapter = New SqlDataAdapter

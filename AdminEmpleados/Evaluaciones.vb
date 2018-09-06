@@ -67,8 +67,11 @@
 
     Private Sub SAVE_Click(sender As Object, e As EventArgs) Handles SAVE.Click
         If (EV.Text <> "" Or txt_numero.Text <> "") Then
-            objcon.Add_UDSP_EMPLOYEE_EVALUATION(0, txt_numero.Text, TXT_commen.Text, Emp, EV.Text)
-            dgv_equipo_Eval.DataSource = objcon.Consulta_Evaluaciones(txt_numero.Text)
+            If objcon.Add_UDSP_EMPLOYEE_EVALUATION(0, txt_numero.Text, TXT_commen.Text, Emp, EV.Text) = "0" Then
+            Else
+                MessageBox.Show("Este registro ya Existe.")
+            End If
+        dgv_equipo_Eval.DataSource = objcon.Consulta_Evaluaciones(txt_numero.Text)
             txt_numero.Text = ""
             EV.Text = ""
             EV2.Text = ""
