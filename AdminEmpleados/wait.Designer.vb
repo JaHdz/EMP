@@ -30,7 +30,7 @@ Partial Class wait
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.AdminEmpleados.My.Resources.Resources.loading__2_
+        Me.PictureBox1.Image = Global.AdminEmpleados.My.Resources.Resources.loading
         Me.PictureBox1.Location = New System.Drawing.Point(554, 312)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(130, 158)
