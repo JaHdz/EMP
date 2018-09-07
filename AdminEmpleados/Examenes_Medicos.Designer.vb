@@ -327,14 +327,14 @@ Partial Class Examenes_Medicos
         'DataGridViewImageColumn1
         '
         Me.DataGridViewImageColumn1.HeaderText = "Eliminar"
-        Me.DataGridViewImageColumn1.Image = Global.AdminEmpleados.My.Resources.Resources.Delete_Icon_e1409122560423
+        Me.DataGridViewImageColumn1.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.Width = 50
         '
         'DELETE
         '
         Me.DELETE.HeaderText = "Eliminar"
-        Me.DELETE.Image = Global.AdminEmpleados.My.Resources.Resources.Delete_Icon_e1409122560423
+        Me.DELETE.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
         Me.DELETE.Name = "DELETE"
         '
         'ID_EM

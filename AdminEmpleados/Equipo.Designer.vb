@@ -26,6 +26,7 @@ Partial Class Equipo
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgv_equipo_emp = New System.Windows.Forms.DataGridView()
+        Me.UPDATE = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ID_Assig = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_Equipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -42,19 +43,18 @@ Partial Class Equipo
         Me.panel15 = New System.Windows.Forms.Panel()
         Me.label16 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.SAVE = New System.Windows.Forms.PictureBox()
+        Me.CANCEL = New System.Windows.Forms.PictureBox()
+        Me.buscar_eq = New System.Windows.Forms.PictureBox()
         Me.Eq = New System.Windows.Forms.TextBox()
         Me.eq2 = New System.Windows.Forms.TextBox()
         Me.Label92 = New System.Windows.Forms.Label()
         Me.lbl_emp = New System.Windows.Forms.Label()
         Me.Empleado = New System.Windows.Forms.Label()
+        Me.buscar_EN = New System.Windows.Forms.PictureBox()
         Me.txt_numero = New System.Windows.Forms.TextBox()
         Me.lbl_num = New System.Windows.Forms.Label()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.UPDATE = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.SAVE = New System.Windows.Forms.PictureBox()
-        Me.CANCEL = New System.Windows.Forms.PictureBox()
-        Me.buscar_eq = New System.Windows.Forms.PictureBox()
-        Me.buscar_EN = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -110,6 +110,11 @@ Partial Class Equipo
         Me.dgv_equipo_emp.RowHeadersVisible = False
         Me.dgv_equipo_emp.Size = New System.Drawing.Size(1133, 325)
         Me.dgv_equipo_emp.TabIndex = 71
+        '
+        'UPDATE
+        '
+        Me.UPDATE.HeaderText = "Regresar"
+        Me.UPDATE.Name = "UPDATE"
         '
         'ID_Assig
         '
@@ -202,7 +207,7 @@ Partial Class Equipo
         Me.pnl_save.Controls.Add(Me.CANCEL)
         Me.pnl_save.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pnl_save.Location = New System.Drawing.Point(887, 26)
-        Me.pnl_save.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnl_save.Margin = New System.Windows.Forms.Padding(2)
         Me.pnl_save.Name = "pnl_save"
         Me.pnl_save.Size = New System.Drawing.Size(267, 182)
         Me.pnl_save.TabIndex = 66
@@ -223,7 +228,7 @@ Partial Class Equipo
         Me.panel15.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel15.Controls.Add(Me.label16)
         Me.panel15.Location = New System.Drawing.Point(-2, -2)
-        Me.panel15.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panel15.Margin = New System.Windows.Forms.Padding(2)
         Me.panel15.Name = "panel15"
         Me.panel15.Size = New System.Drawing.Size(295, 35)
         Me.panel15.TabIndex = 0
@@ -250,6 +255,37 @@ Partial Class Equipo
         Me.Label5.Size = New System.Drawing.Size(99, 22)
         Me.Label5.TabIndex = 38
         Me.Label5.Text = "CANCELAR"
+        '
+        'SAVE
+        '
+        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
+        Me.SAVE.Location = New System.Drawing.Point(35, 55)
+        Me.SAVE.Name = "SAVE"
+        Me.SAVE.Size = New System.Drawing.Size(83, 83)
+        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.SAVE.TabIndex = 0
+        Me.SAVE.TabStop = False
+        '
+        'CANCEL
+        '
+        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
+        Me.CANCEL.Location = New System.Drawing.Point(161, 55)
+        Me.CANCEL.Name = "CANCEL"
+        Me.CANCEL.Size = New System.Drawing.Size(83, 83)
+        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.CANCEL.TabIndex = 1
+        Me.CANCEL.TabStop = False
+        '
+        'buscar_eq
+        '
+        Me.buscar_eq.BackgroundImage = CType(resources.GetObject("buscar_eq.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_eq.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_eq.Location = New System.Drawing.Point(334, 81)
+        Me.buscar_eq.Name = "buscar_eq"
+        Me.buscar_eq.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_eq.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_eq.TabIndex = 65
+        Me.buscar_eq.TabStop = False
         '
         'Eq
         '
@@ -297,6 +333,17 @@ Partial Class Equipo
         Me.Empleado.TabIndex = 54
         Me.Empleado.Text = "Empleado: "
         '
+        'buscar_EN
+        '
+        Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_EN.Location = New System.Drawing.Point(334, 37)
+        Me.buscar_EN.Name = "buscar_EN"
+        Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_EN.TabIndex = 53
+        Me.buscar_EN.TabStop = False
+        '
         'txt_numero
         '
         Me.txt_numero.Location = New System.Drawing.Point(119, 37)
@@ -317,50 +364,6 @@ Partial Class Equipo
         '
         Me.DataGridViewImageColumn1.HeaderText = ""
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
-        '
-        'UPDATE
-        '
-        Me.UPDATE.HeaderText = "Regresar"
-        Me.UPDATE.Name = "UPDATE"
-        '
-        'SAVE
-        '
-        Me.SAVE.Location = New System.Drawing.Point(35, 55)
-        Me.SAVE.Name = "SAVE"
-        Me.SAVE.Size = New System.Drawing.Size(83, 83)
-        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.SAVE.TabIndex = 0
-        Me.SAVE.TabStop = False
-        '
-        'CANCEL
-        '
-        Me.CANCEL.Location = New System.Drawing.Point(161, 55)
-        Me.CANCEL.Name = "CANCEL"
-        Me.CANCEL.Size = New System.Drawing.Size(83, 83)
-        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.CANCEL.TabIndex = 1
-        Me.CANCEL.TabStop = False
-        '
-        'buscar_eq
-        '
-        Me.buscar_eq.BackgroundImage = CType(resources.GetObject("buscar_eq.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_eq.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_eq.Location = New System.Drawing.Point(334, 81)
-        Me.buscar_eq.Name = "buscar_eq"
-        Me.buscar_eq.Size = New System.Drawing.Size(30, 28)
-        Me.buscar_eq.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_eq.TabIndex = 65
-        Me.buscar_eq.TabStop = False
-        '
-        'buscar_EN
-        '
-        Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_EN.Location = New System.Drawing.Point(334, 37)
-        Me.buscar_EN.Name = "buscar_EN"
-        Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
-        Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_EN.TabIndex = 53
-        Me.buscar_EN.TabStop = False
         '
         'Equipo
         '

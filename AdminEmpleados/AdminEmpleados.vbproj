@@ -92,7 +92,6 @@
     </Compile>
     <Compile Include="Classes\Cls_Emp.vb" />
     <Compile Include="Classes\Cls_ES.vb" />
-    <Compile Include="Classes\cnx.vb" />
     <Compile Include="Classes\Consultas.vb" />
     <Compile Include="Classes\CURP.vb" />
     <Compile Include="Empleados.Designer.vb">
@@ -288,6 +287,8 @@
     <Content Include="images\photoNobody120.gif" />
     <Content Include="images\tenor.gif" />
     <Content Include="images\Up1.png" />
+    <None Include="Resources\Undo_80px.png" />
+    <None Include="Resources\Trash Can_80px.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
