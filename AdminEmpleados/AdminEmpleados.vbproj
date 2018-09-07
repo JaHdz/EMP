@@ -47,10 +47,16 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -142,6 +148,32 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Classes\NSS.vb" />
+    <Compile Include="Reportes.Designer.vb">
+      <DependentUpon>Reportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Datasets\SES_INFO.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SES_INFO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\SES_REFERENCES.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SES_REFERENCES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\SES_OTHERINCOMES.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SES_OTHERINCOMES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\SES_FAMILY.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SES_FAMILY.xsd</DependentUpon>
+    </Compile>
     <Compile Include="wait.Designer.vb">
       <DependentUpon>wait.vb</DependentUpon>
     </Compile>
@@ -180,6 +212,12 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes.resx">
+      <DependentUpon>Reportes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EstudioSocioeconomico.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="wait.resx">
       <DependentUpon>wait.vb</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +233,51 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Reports\Datasets\SES_INFO.xsc">
+      <DependentUpon>SES_INFO.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\SES_INFO.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SES_INFO.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\SES_INFO.xss">
+      <DependentUpon>SES_INFO.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\SES_REFERENCES.xsc">
+      <DependentUpon>SES_REFERENCES.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\SES_REFERENCES.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SES_REFERENCES.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\SES_REFERENCES.xss">
+      <DependentUpon>SES_REFERENCES.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\SES_OTHERINCOMES.xsc">
+      <DependentUpon>SES_OTHERINCOMES.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\SES_OTHERINCOMES.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SES_OTHERINCOMES.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\SES_OTHERINCOMES.xss">
+      <DependentUpon>SES_OTHERINCOMES.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\SES_FAMILY.xsc">
+      <DependentUpon>SES_FAMILY.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\SES_FAMILY.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SES_FAMILY.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\SES_FAMILY.xss">
+      <DependentUpon>SES_FAMILY.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\1211782033.png" />
@@ -205,6 +288,20 @@
     <Content Include="images\photoNobody120.gif" />
     <Content Include="images\tenor.gif" />
     <Content Include="images\Up1.png" />
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\Search_80px.png" />
     <None Include="Resources\Save_80px.png" />
     <None Include="Resources\Plus_80px.png" />
@@ -216,5 +313,6 @@
     <None Include="Resources\disk-save-as-icon.png" />
     <None Include="Resources\cancel-icon.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -1,4 +1,7 @@
-﻿Public Class Cls_ES
+﻿Imports System.Data.SqlClient
+
+Public Class Cls_ES
+#Region "Properties"
     Public Property SES_ID As Integer
     Public Property EMP_ID As Integer
     Public Property H_TYPE As String
@@ -36,4 +39,55 @@
     Public Property SES_VERIFIER As String
     Public Property SES_OBSERVATIONS As String
     Public Property IMG As Image
+#End Region
+
+
+    Public Function GetInfo(Employee As Integer) As DataTable
+        GetInfo = New DataTable()
+        Using connection As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            connection.Open()
+            Dim cmd As SqlCommand = connection.CreateCommand()
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "UDSP_SES_RPT_1OF4"
+            cmd.Parameters.Add("@EMPLOYEE", SqlDbType.Int).Value = Employee
+            Dim dr As SqlDataReader = cmd.ExecuteReader(CommandBehavior.CloseConnection)
+            GetInfo.Load(dr)
+        End Using
+    End Function
+    Public Function GetReferences(SESID As Integer) As DataTable
+        GetReferences = New DataTable()
+        Using connection As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            connection.Open()
+            Dim cmd As SqlCommand = connection.CreateCommand()
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "UDSP_SES_RPT_2OF4"
+            cmd.Parameters.Add("@ID_SES", SqlDbType.Int).Value = SESID
+            Dim dr As SqlDataReader = cmd.ExecuteReader(CommandBehavior.CloseConnection)
+            GetReferences.Load(dr)
+        End Using
+    End Function
+    Public Function GetFamily(Employee As Integer) As DataTable
+        GetFamily = New DataTable()
+        Using connection As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            connection.Open()
+            Dim cmd As SqlCommand = connection.CreateCommand()
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "UDSP_SES_RPT_3OF4"
+            cmd.Parameters.Add("@EMPLOYEE", SqlDbType.Int).Value = Employee
+            Dim dr As SqlDataReader = cmd.ExecuteReader(CommandBehavior.CloseConnection)
+            GetFamily.Load(dr)
+        End Using
+    End Function
+    Public Function GetOtherIncomes(SESID As Integer) As DataTable
+        GetOtherIncomes = New DataTable()
+        Using connection As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            connection.Open()
+            Dim cmd As SqlCommand = connection.CreateCommand()
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "UDSP_SES_RPT_4OF4"
+            cmd.Parameters.Add("@ID_SES", SqlDbType.Int).Value = SESID
+            Dim dr As SqlDataReader = cmd.ExecuteReader(CommandBehavior.CloseConnection)
+            GetOtherIncomes.Load(dr)
+        End Using
+    End Function
 End Class
