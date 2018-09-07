@@ -200,6 +200,7 @@ Public Class Consultas
             cmd.ExecuteNonQuery()
         End Using
     End Sub
+
     Public Function NUMERO_EXISTS_NSS_CURP(X As String) As Integer
         Using con As New SqlConnection(conn())
             con.Open()
@@ -220,6 +221,7 @@ Public Class Consultas
         End Using
 
     End Function
+
     Public Function consulta_empleado(user As Integer) As DataTable
         Using con As New SqlConnection(conn())
             con.Open()
@@ -428,7 +430,7 @@ Public Class Consultas
         End Using
     End Function
 
-    Public Function Add_EQUIPMENT(ByVal EQU_ID As Integer, NAME As String, DESCRIPTION As String, COST As Double) As String
+    Public Function Add_EQUIPMENT(ByVal EQU_ID As Integer, NAME As String, DESCRIPTION As String, COST As Double, STATUS As Integer) As String
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -437,6 +439,7 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@NAME", NAME))
             cmd.Parameters.Add(New SqlParameter("@DESCRIPTION", DESCRIPTION))
             cmd.Parameters.Add(New SqlParameter("@COST", COST))
+            cmd.Parameters.Add(New SqlParameter("@STATUS", STATUS))
             cmd.CommandText = "UDSP_EQUIPMENT"
             Dim lector As SqlDataReader
             lector = cmd.ExecuteReader()
@@ -486,7 +489,7 @@ Public Class Consultas
         End Using
     End Function
 
-    Public Function Add_POSITIONS(ByVal POSITION As Integer, NAME As String, DESCRIPTION As String, RISK As Integer) As String
+    Public Function Add_POSITIONS(ByVal POSITION As Integer, NAME As String, DESCRIPTION As String, RISK As Integer, ESTATUS As Integer) As String
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -495,6 +498,7 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@NAME", NAME))
             cmd.Parameters.Add(New SqlParameter("@DESCRIPTION", DESCRIPTION))
             cmd.Parameters.Add(New SqlParameter("@RISK", RISK))
+            cmd.Parameters.Add(New SqlParameter("@STATUS", ESTATUS))
             cmd.CommandText = "UDSP_POSITIONS"
             Dim lector As SqlDataReader
             lector = cmd.ExecuteReader()
@@ -565,11 +569,13 @@ Public Class Consultas
         End Using
     End Function
 
-    Public Function Add_DEPTO(ByVal CODIGO As String, DESCRIPCION As String) As String
+    Public Function Add_DEPTO(ID As Integer, ByVal CODIGO As String, DESCRIPCION As String, STATUS As Integer) As String
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
             cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add(New SqlParameter("@ID", ID))
+            cmd.Parameters.Add(New SqlParameter("@STATUS", STATUS))
             cmd.Parameters.Add(New SqlParameter("@CODIGO", CODIGO))
             cmd.Parameters.Add(New SqlParameter("@DESCRIPCION", DESCRIPCION))
             cmd.CommandText = "UDSP_DEPTO"
@@ -705,6 +711,105 @@ Public Class Consultas
         Using con As New SqlConnection(conn())
             con.Open()
             Dim cmd As New SqlCommand("Consulta_users", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            Dim dt As New DataTable()
+            Dim DataAdapter As SqlDataAdapter
+            DataAdapter = New SqlDataAdapter
+            DataAdapter.SelectCommand = cmd
+            DataAdapter.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+    Public Function Consulta_depto() As DataTable
+        Using con As New SqlConnection(conn())
+            con.Open()
+            Dim cmd As New SqlCommand("Consulta_depto", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            Dim dt As New DataTable()
+            Dim DataAdapter As SqlDataAdapter
+            DataAdapter = New SqlDataAdapter
+            DataAdapter.SelectCommand = cmd
+            DataAdapter.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+    Public Function Consulta_Cap() As DataTable
+        Using con As New SqlConnection(conn())
+            con.Open()
+            Dim cmd As New SqlCommand("Consulta_CAP", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            Dim dt As New DataTable()
+            Dim DataAdapter As SqlDataAdapter
+            DataAdapter = New SqlDataAdapter
+            DataAdapter.SelectCommand = cmd
+            DataAdapter.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+    Public Function Consulta_EQ() As DataTable
+        Using con As New SqlConnection(conn())
+            con.Open()
+            Dim cmd As New SqlCommand("Consulta_EQ", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            Dim dt As New DataTable()
+            Dim DataAdapter As SqlDataAdapter
+            DataAdapter = New SqlDataAdapter
+            DataAdapter.SelectCommand = cmd
+            DataAdapter.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+    Public Function Consulta_EV() As DataTable
+        Using con As New SqlConnection(conn())
+            con.Open()
+            Dim cmd As New SqlCommand("Consulta_EV", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            Dim dt As New DataTable()
+            Dim DataAdapter As SqlDataAdapter
+            DataAdapter = New SqlDataAdapter
+            DataAdapter.SelectCommand = cmd
+            DataAdapter.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+
+    Public Function Consulta_PU() As DataTable
+        Using con As New SqlConnection(conn())
+            con.Open()
+            Dim cmd As New SqlCommand("Consulta_PU", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            Dim dt As New DataTable()
+            Dim DataAdapter As SqlDataAdapter
+            DataAdapter = New SqlDataAdapter
+            DataAdapter.SelectCommand = cmd
+            DataAdapter.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+    Public Function Consulta_TE() As DataTable
+        Using con As New SqlConnection(conn())
+            con.Open()
+            Dim cmd As New SqlCommand("Consulta_TE", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            Dim dt As New DataTable()
+            Dim DataAdapter As SqlDataAdapter
+            DataAdapter = New SqlDataAdapter
+            DataAdapter.SelectCommand = cmd
+            DataAdapter.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+    Public Function Consulta_SU() As DataTable
+        Using con As New SqlConnection(conn())
+            con.Open()
+            Dim cmd As New SqlCommand("Consulta_SU", con)
             cmd.CommandType = CommandType.StoredProcedure
             Dim dt As New DataTable()
             Dim DataAdapter As SqlDataAdapter
