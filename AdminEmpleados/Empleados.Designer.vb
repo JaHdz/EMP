@@ -3717,7 +3717,7 @@ Partial Class Empleados
         '
         'BAJA
         '
-        Me.BAJA.Image = Global.AdminEmpleados.My.Resources.Resources.Circle_icons_arrow_down_svg
+        Me.BAJA.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
         Me.BAJA.Location = New System.Drawing.Point(844, 55)
         Me.BAJA.Name = "BAJA"
         Me.BAJA.Size = New System.Drawing.Size(83, 83)
@@ -3728,7 +3728,8 @@ Partial Class Empleados
         '
         'ALTA
         '
-        Me.ALTA.Location = New System.Drawing.Point(844, 56)
+        Me.ALTA.Image = Global.AdminEmpleados.My.Resources.Resources.Alta_80px
+        Me.ALTA.Location = New System.Drawing.Point(844, 55)
         Me.ALTA.Name = "ALTA"
         Me.ALTA.Size = New System.Drawing.Size(83, 83)
         Me.ALTA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
