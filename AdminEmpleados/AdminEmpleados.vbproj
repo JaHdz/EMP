@@ -118,11 +118,11 @@
     <Compile Include="Examenes_Medicos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="Main.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Main.Designer.vb">
+      <DependentUpon>Main.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPopUp.Designer.vb">
@@ -199,8 +199,8 @@
     <EmbeddedResource Include="Examenes_Medicos.resx">
       <DependentUpon>Examenes_Medicos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPopUp.resx">
       <DependentUpon>frmPopUp.vb</DependentUpon>

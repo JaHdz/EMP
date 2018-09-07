@@ -1,5 +1,5 @@
 ﻿
-Public Class Form1
+Public Class Main
     Private bit As Boolean
     Private X As Integer
     Private Y As Integer
