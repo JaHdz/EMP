@@ -22,7 +22,7 @@
             NEmp = objcon.Emp_Exist(txt_numero.Text)
             If (NEmp = 1) Then
                 Dim dt As DataTable
-                dt = objcon.consulta_empleado(txt_numero.Text)
+                dt = objcon.Consulta_empleado(txt_numero.Text)
                 lbl_emp.Text = txt_numero.Text + " | " + dt.Rows(0).Item("Emp_Name").ToString() + " " + dt.Rows(0).Item("Emp_APat").ToString() + " " + dt.Rows(0).Item("Emp_AMat").ToString()
                 dgv_equipo_Eval.DataSource = objcon.Consulta_Examenes_Medicos(txt_numero.Text)
             Else

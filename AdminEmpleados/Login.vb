@@ -5,7 +5,7 @@
     Dim AUTENTICADO As Boolean = False
     Dim objcon As New Consultas
 
-    Private Sub cerrar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles cerrar.Click
+    Private Sub Cerrar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles cerrar.Click
         Me.Close()
     End Sub
 
@@ -39,18 +39,19 @@
             MessageBox.Show("Debe llenar todos los campos")
         Else
             Dim Wait As New wait()
-            Wait.Show()
-            Application.DoEvents()
+            Wait.ShowDialog()
             AUTENTICADO = objcon.Autenticar(user.Text, pass.Text)
             If AUTENTICADO = False Then
                 Wait.Close()
                 MessageBox.Show("Datos incorrectos")
             Else
-                Dim ObjEdit2 As New Main(Convert.ToInt64(objcon.user), objcon.name)
+                Dim Main As New Principal With {
+                    .NEmp = Convert.ToInt64(objcon.user),
+                    .NName = objcon.name
+                }
+                Main.Show()
                 Wait.Close()
-                Me.Hide()
-                ObjEdit2.ShowDialog(Me)
-                Me.Close()
+                Close()
             End If
         End If
     End Sub

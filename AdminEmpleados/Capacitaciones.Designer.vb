@@ -24,41 +24,41 @@ Partial Class Capacitaciones
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Capacitaciones))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lbl_ingreso = New System.Windows.Forms.Label()
-        Me.TXT_FECHA = New System.Windows.Forms.DateTimePicker()
-        Me.LBL_GUARDAR = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.SAVE = New System.Windows.Forms.PictureBox()
-        Me.CANCEL = New System.Windows.Forms.PictureBox()
-        Me.TXT_commen = New System.Windows.Forms.TextBox()
-        Me.label8 = New System.Windows.Forms.Label()
-        Me.buscar_CAP = New System.Windows.Forms.PictureBox()
-        Me.CAP = New System.Windows.Forms.TextBox()
-        Me.CAP2 = New System.Windows.Forms.TextBox()
-        Me.Label92 = New System.Windows.Forms.Label()
-        Me.lbl_emp = New System.Windows.Forms.Label()
-        Me.Empleado = New System.Windows.Forms.Label()
-        Me.buscar_EN = New System.Windows.Forms.PictureBox()
-        Me.txt_numero = New System.Windows.Forms.TextBox()
-        Me.lbl_num = New System.Windows.Forms.Label()
+        Me.dgv_equipo_Eval = New System.Windows.Forms.DataGridView()
+        Me.DELETE = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Cap_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Cap = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Comentario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.lbl_ingreso = New System.Windows.Forms.Label()
+        Me.LBL_GUARDAR = New System.Windows.Forms.Label()
+        Me.TXT_FECHA = New System.Windows.Forms.DateTimePicker()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label42 = New System.Windows.Forms.Label()
-        Me.dgv_equipo_Eval = New System.Windows.Forms.DataGridView()
-        Me.Comentario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Cap = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Cap_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DELETE = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.CANCEL = New System.Windows.Forms.PictureBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TXT_commen = New System.Windows.Forms.TextBox()
+        Me.SAVE = New System.Windows.Forms.PictureBox()
+        Me.label8 = New System.Windows.Forms.Label()
+        Me.Empleado = New System.Windows.Forms.Label()
+        Me.buscar_CAP = New System.Windows.Forms.PictureBox()
+        Me.lbl_num = New System.Windows.Forms.Label()
+        Me.CAP = New System.Windows.Forms.TextBox()
+        Me.txt_numero = New System.Windows.Forms.TextBox()
+        Me.CAP2 = New System.Windows.Forms.TextBox()
+        Me.buscar_EN = New System.Windows.Forms.PictureBox()
+        Me.Label92 = New System.Windows.Forms.Label()
+        Me.lbl_emp = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
-        CType(Me.SAVE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.buscar_CAP, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel14.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SAVE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.buscar_CAP, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -72,165 +72,57 @@ Partial Class Capacitaciones
         Me.Panel1.Size = New System.Drawing.Size(1287, 782)
         Me.Panel1.TabIndex = 1
         '
-        'lbl_ingreso
+        'dgv_equipo_Eval
         '
-        Me.lbl_ingreso.AutoSize = True
-        Me.lbl_ingreso.Location = New System.Drawing.Point(87, 137)
-        Me.lbl_ingreso.Name = "lbl_ingreso"
-        Me.lbl_ingreso.Size = New System.Drawing.Size(59, 21)
-        Me.lbl_ingreso.TabIndex = 91
-        Me.lbl_ingreso.Text = "Fecha:"
+        Me.dgv_equipo_Eval.AllowUserToAddRows = False
+        Me.dgv_equipo_Eval.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_equipo_Eval.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DELETE, Me.ID_Cap_Emp, Me.ID_Cap, Me.ID_Emp, Me.Fecha, Me.Comentario})
+        Me.dgv_equipo_Eval.Location = New System.Drawing.Point(14, 351)
+        Me.dgv_equipo_Eval.Name = "dgv_equipo_Eval"
+        Me.dgv_equipo_Eval.RowHeadersVisible = False
+        Me.dgv_equipo_Eval.Size = New System.Drawing.Size(1241, 372)
+        Me.dgv_equipo_Eval.TabIndex = 89
         '
-        'TXT_FECHA
+        'DELETE
         '
-        Me.TXT_FECHA.Location = New System.Drawing.Point(152, 131)
-        Me.TXT_FECHA.Name = "TXT_FECHA"
-        Me.TXT_FECHA.Size = New System.Drawing.Size(245, 28)
-        Me.TXT_FECHA.TabIndex = 2
+        Me.DELETE.HeaderText = "Eliminar"
+        Me.DELETE.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
+        Me.DELETE.Name = "DELETE"
         '
-        'LBL_GUARDAR
+        'ID_Cap_Emp
         '
-        Me.LBL_GUARDAR.AutoSize = True
-        Me.LBL_GUARDAR.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBL_GUARDAR.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.LBL_GUARDAR.Location = New System.Drawing.Point(966, 179)
-        Me.LBL_GUARDAR.Name = "LBL_GUARDAR"
-        Me.LBL_GUARDAR.Size = New System.Drawing.Size(93, 22)
-        Me.LBL_GUARDAR.TabIndex = 40
-        Me.LBL_GUARDAR.Text = "GUARDAR"
+        Me.ID_Cap_Emp.DataPropertyName = "ID_Cap_Emp"
+        Me.ID_Cap_Emp.HeaderText = "ID"
+        Me.ID_Cap_Emp.Name = "ID_Cap_Emp"
+        Me.ID_Cap_Emp.Width = 50
         '
-        'Label5
+        'ID_Cap
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(1092, 179)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(99, 22)
-        Me.Label5.TabIndex = 38
-        Me.Label5.Text = "CANCELAR"
+        Me.ID_Cap.DataPropertyName = "ID_Cap"
+        Me.ID_Cap.HeaderText = "CAPACITACION"
+        Me.ID_Cap.Name = "ID_Cap"
+        Me.ID_Cap.Width = 200
         '
-        'SAVE
+        'ID_Emp
         '
-        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.SAVE.Location = New System.Drawing.Point(970, 93)
-        Me.SAVE.Name = "SAVE"
-        Me.SAVE.Size = New System.Drawing.Size(83, 83)
-        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.SAVE.TabIndex = 0
-        Me.SAVE.TabStop = False
+        Me.ID_Emp.DataPropertyName = "ID_Emp"
+        Me.ID_Emp.HeaderText = "EMPLEADO"
+        Me.ID_Emp.Name = "ID_Emp"
+        Me.ID_Emp.Width = 200
         '
-        'CANCEL
+        'Fecha
         '
-        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(1096, 93)
-        Me.CANCEL.Name = "CANCEL"
-        Me.CANCEL.Size = New System.Drawing.Size(83, 83)
-        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.CANCEL.TabIndex = 1
-        Me.CANCEL.TabStop = False
+        Me.Fecha.DataPropertyName = "Fecha"
+        Me.Fecha.HeaderText = "FECHA"
+        Me.Fecha.Name = "Fecha"
+        Me.Fecha.Width = 200
         '
-        'TXT_commen
+        'Comentario
         '
-        Me.TXT_commen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TXT_commen.Location = New System.Drawing.Point(152, 174)
-        Me.TXT_commen.Multiline = True
-        Me.TXT_commen.Name = "TXT_commen"
-        Me.TXT_commen.Size = New System.Drawing.Size(427, 83)
-        Me.TXT_commen.TabIndex = 3
-        '
-        'label8
-        '
-        Me.label8.AutoSize = True
-        Me.label8.Location = New System.Drawing.Point(38, 174)
-        Me.label8.Name = "label8"
-        Me.label8.Size = New System.Drawing.Size(109, 21)
-        Me.label8.TabIndex = 87
-        Me.label8.Text = "Comentario: "
-        '
-        'buscar_CAP
-        '
-        Me.buscar_CAP.BackgroundImage = CType(resources.GetObject("buscar_CAP.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_CAP.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_CAP.Location = New System.Drawing.Point(366, 89)
-        Me.buscar_CAP.Name = "buscar_CAP"
-        Me.buscar_CAP.Size = New System.Drawing.Size(30, 28)
-        Me.buscar_CAP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_CAP.TabIndex = 85
-        Me.buscar_CAP.TabStop = False
-        '
-        'CAP
-        '
-        Me.CAP.Location = New System.Drawing.Point(152, 90)
-        Me.CAP.Name = "CAP"
-        Me.CAP.Size = New System.Drawing.Size(39, 28)
-        Me.CAP.TabIndex = 1
-        '
-        'CAP2
-        '
-        Me.CAP2.Enabled = False
-        Me.CAP2.Location = New System.Drawing.Point(197, 90)
-        Me.CAP2.Name = "CAP2"
-        Me.CAP2.Size = New System.Drawing.Size(164, 28)
-        Me.CAP2.TabIndex = 842
-        Me.CAP2.TabStop = False
-        '
-        'Label92
-        '
-        Me.Label92.AutoSize = True
-        Me.Label92.Location = New System.Drawing.Point(34, 93)
-        Me.Label92.Name = "Label92"
-        Me.Label92.Size = New System.Drawing.Size(112, 21)
-        Me.Label92.TabIndex = 83
-        Me.Label92.Text = "Capacitacion:"
-        '
-        'lbl_emp
-        '
-        Me.lbl_emp.AutoSize = True
-        Me.lbl_emp.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_emp.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.lbl_emp.Location = New System.Drawing.Point(523, 54)
-        Me.lbl_emp.Name = "lbl_emp"
-        Me.lbl_emp.Size = New System.Drawing.Size(0, 22)
-        Me.lbl_emp.TabIndex = 81
-        '
-        'Empleado
-        '
-        Me.Empleado.AutoSize = True
-        Me.Empleado.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Empleado.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Empleado.Location = New System.Drawing.Point(416, 54)
-        Me.Empleado.Name = "Empleado"
-        Me.Empleado.Size = New System.Drawing.Size(101, 22)
-        Me.Empleado.TabIndex = 80
-        Me.Empleado.Text = "Empleado: "
-        '
-        'buscar_EN
-        '
-        Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_EN.Location = New System.Drawing.Point(367, 49)
-        Me.buscar_EN.Name = "buscar_EN"
-        Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
-        Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_EN.TabIndex = 79
-        Me.buscar_EN.TabStop = False
-        '
-        'txt_numero
-        '
-        Me.txt_numero.Location = New System.Drawing.Point(152, 49)
-        Me.txt_numero.Name = "txt_numero"
-        Me.txt_numero.Size = New System.Drawing.Size(209, 28)
-        Me.txt_numero.TabIndex = 0
-        '
-        'lbl_num
-        '
-        Me.lbl_num.AutoSize = True
-        Me.lbl_num.Location = New System.Drawing.Point(69, 52)
-        Me.lbl_num.Name = "lbl_num"
-        Me.lbl_num.Size = New System.Drawing.Size(77, 21)
-        Me.lbl_num.TabIndex = 78
-        Me.lbl_num.Text = "Numero:"
+        Me.Comentario.DataPropertyName = "Comentario"
+        Me.Comentario.HeaderText = "COMENTARIO"
+        Me.Comentario.Name = "Comentario"
+        Me.Comentario.Width = 800
         '
         'Panel14
         '
@@ -260,6 +152,34 @@ Partial Class Capacitaciones
         Me.Panel14.Size = New System.Drawing.Size(1241, 297)
         Me.Panel14.TabIndex = 843
         '
+        'lbl_ingreso
+        '
+        Me.lbl_ingreso.AutoSize = True
+        Me.lbl_ingreso.Location = New System.Drawing.Point(87, 137)
+        Me.lbl_ingreso.Name = "lbl_ingreso"
+        Me.lbl_ingreso.Size = New System.Drawing.Size(59, 21)
+        Me.lbl_ingreso.TabIndex = 91
+        Me.lbl_ingreso.Text = "Fecha:"
+        '
+        'LBL_GUARDAR
+        '
+        Me.LBL_GUARDAR.AutoSize = True
+        Me.LBL_GUARDAR.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBL_GUARDAR.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
+        Me.LBL_GUARDAR.Location = New System.Drawing.Point(966, 179)
+        Me.LBL_GUARDAR.Name = "LBL_GUARDAR"
+        Me.LBL_GUARDAR.Size = New System.Drawing.Size(93, 22)
+        Me.LBL_GUARDAR.TabIndex = 40
+        Me.LBL_GUARDAR.Text = "GUARDAR"
+        '
+        'TXT_FECHA
+        '
+        Me.TXT_FECHA.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.TXT_FECHA.Location = New System.Drawing.Point(152, 131)
+        Me.TXT_FECHA.Name = "TXT_FECHA"
+        Me.TXT_FECHA.Size = New System.Drawing.Size(245, 28)
+        Me.TXT_FECHA.TabIndex = 2
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
@@ -283,57 +203,138 @@ Partial Class Capacitaciones
         Me.Label42.TabIndex = 0
         Me.Label42.Text = "Agregar Capacitaciones"
         '
-        'dgv_equipo_Eval
+        'CANCEL
         '
-        Me.dgv_equipo_Eval.AllowUserToAddRows = False
-        Me.dgv_equipo_Eval.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_equipo_Eval.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DELETE, Me.ID_Cap_Emp, Me.ID_Cap, Me.ID_Emp, Me.Fecha, Me.Comentario})
-        Me.dgv_equipo_Eval.Location = New System.Drawing.Point(14, 351)
-        Me.dgv_equipo_Eval.Name = "dgv_equipo_Eval"
-        Me.dgv_equipo_Eval.RowHeadersVisible = False
-        Me.dgv_equipo_Eval.Size = New System.Drawing.Size(1241, 372)
-        Me.dgv_equipo_Eval.TabIndex = 89
+        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
+        Me.CANCEL.Location = New System.Drawing.Point(1096, 93)
+        Me.CANCEL.Name = "CANCEL"
+        Me.CANCEL.Size = New System.Drawing.Size(83, 83)
+        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.CANCEL.TabIndex = 1
+        Me.CANCEL.TabStop = False
         '
-        'Comentario
+        'Label5
         '
-        Me.Comentario.DataPropertyName = "Comentario"
-        Me.Comentario.HeaderText = "COMENTARIO"
-        Me.Comentario.Name = "Comentario"
-        Me.Comentario.Width = 800
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(1092, 179)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(99, 22)
+        Me.Label5.TabIndex = 38
+        Me.Label5.Text = "CANCELAR"
         '
-        'Fecha
+        'TXT_commen
         '
-        Me.Fecha.DataPropertyName = "Fecha"
-        Me.Fecha.HeaderText = "FECHA"
-        Me.Fecha.Name = "Fecha"
-        Me.Fecha.Width = 200
+        Me.TXT_commen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TXT_commen.Location = New System.Drawing.Point(152, 174)
+        Me.TXT_commen.Multiline = True
+        Me.TXT_commen.Name = "TXT_commen"
+        Me.TXT_commen.Size = New System.Drawing.Size(427, 83)
+        Me.TXT_commen.TabIndex = 3
         '
-        'ID_Emp
+        'SAVE
         '
-        Me.ID_Emp.DataPropertyName = "ID_Emp"
-        Me.ID_Emp.HeaderText = "EMPLEADO"
-        Me.ID_Emp.Name = "ID_Emp"
-        Me.ID_Emp.Width = 200
+        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
+        Me.SAVE.Location = New System.Drawing.Point(970, 93)
+        Me.SAVE.Name = "SAVE"
+        Me.SAVE.Size = New System.Drawing.Size(83, 83)
+        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.SAVE.TabIndex = 0
+        Me.SAVE.TabStop = False
         '
-        'ID_Cap
+        'label8
         '
-        Me.ID_Cap.DataPropertyName = "ID_Cap"
-        Me.ID_Cap.HeaderText = "CAPACITACION"
-        Me.ID_Cap.Name = "ID_Cap"
-        Me.ID_Cap.Width = 200
+        Me.label8.AutoSize = True
+        Me.label8.Location = New System.Drawing.Point(38, 174)
+        Me.label8.Name = "label8"
+        Me.label8.Size = New System.Drawing.Size(109, 21)
+        Me.label8.TabIndex = 87
+        Me.label8.Text = "Comentario: "
         '
-        'ID_Cap_Emp
+        'Empleado
         '
-        Me.ID_Cap_Emp.DataPropertyName = "ID_Cap_Emp"
-        Me.ID_Cap_Emp.HeaderText = "ID"
-        Me.ID_Cap_Emp.Name = "ID_Cap_Emp"
-        Me.ID_Cap_Emp.Width = 50
+        Me.Empleado.AutoSize = True
+        Me.Empleado.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Empleado.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Empleado.Location = New System.Drawing.Point(416, 54)
+        Me.Empleado.Name = "Empleado"
+        Me.Empleado.Size = New System.Drawing.Size(101, 22)
+        Me.Empleado.TabIndex = 80
+        Me.Empleado.Text = "Empleado: "
         '
-        'DELETE
+        'buscar_CAP
         '
-        Me.DELETE.HeaderText = "Eliminar"
-        Me.DELETE.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
-        Me.DELETE.Name = "DELETE"
+        Me.buscar_CAP.BackgroundImage = CType(resources.GetObject("buscar_CAP.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_CAP.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_CAP.Location = New System.Drawing.Point(366, 89)
+        Me.buscar_CAP.Name = "buscar_CAP"
+        Me.buscar_CAP.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_CAP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_CAP.TabIndex = 85
+        Me.buscar_CAP.TabStop = False
+        '
+        'lbl_num
+        '
+        Me.lbl_num.AutoSize = True
+        Me.lbl_num.Location = New System.Drawing.Point(69, 52)
+        Me.lbl_num.Name = "lbl_num"
+        Me.lbl_num.Size = New System.Drawing.Size(77, 21)
+        Me.lbl_num.TabIndex = 78
+        Me.lbl_num.Text = "Numero:"
+        '
+        'CAP
+        '
+        Me.CAP.Location = New System.Drawing.Point(152, 90)
+        Me.CAP.Name = "CAP"
+        Me.CAP.Size = New System.Drawing.Size(39, 28)
+        Me.CAP.TabIndex = 1
+        '
+        'txt_numero
+        '
+        Me.txt_numero.Location = New System.Drawing.Point(152, 49)
+        Me.txt_numero.Name = "txt_numero"
+        Me.txt_numero.Size = New System.Drawing.Size(209, 28)
+        Me.txt_numero.TabIndex = 0
+        '
+        'CAP2
+        '
+        Me.CAP2.Enabled = False
+        Me.CAP2.Location = New System.Drawing.Point(197, 90)
+        Me.CAP2.Name = "CAP2"
+        Me.CAP2.Size = New System.Drawing.Size(164, 28)
+        Me.CAP2.TabIndex = 842
+        Me.CAP2.TabStop = False
+        '
+        'buscar_EN
+        '
+        Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_EN.Location = New System.Drawing.Point(367, 49)
+        Me.buscar_EN.Name = "buscar_EN"
+        Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_EN.TabIndex = 79
+        Me.buscar_EN.TabStop = False
+        '
+        'Label92
+        '
+        Me.Label92.AutoSize = True
+        Me.Label92.Location = New System.Drawing.Point(34, 93)
+        Me.Label92.Name = "Label92"
+        Me.Label92.Size = New System.Drawing.Size(112, 21)
+        Me.Label92.TabIndex = 83
+        Me.Label92.Text = "Capacitacion:"
+        '
+        'lbl_emp
+        '
+        Me.lbl_emp.AutoSize = True
+        Me.lbl_emp.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_emp.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.lbl_emp.Location = New System.Drawing.Point(523, 54)
+        Me.lbl_emp.Name = "lbl_emp"
+        Me.lbl_emp.Size = New System.Drawing.Size(0, 22)
+        Me.lbl_emp.TabIndex = 81
         '
         'Capacitaciones
         '
@@ -346,15 +347,15 @@ Partial Class Capacitaciones
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Capacitaciones"
         Me.Panel1.ResumeLayout(False)
-        CType(Me.SAVE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.buscar_CAP, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SAVE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.buscar_CAP, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

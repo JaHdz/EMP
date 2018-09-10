@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Main
+Partial Class Principal
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Principal))
         Me.PNL_INFO = New System.Windows.Forms.Panel()
         Me.header = New System.Windows.Forms.Panel()
         Me.min = New System.Windows.Forms.PictureBox()
@@ -109,10 +109,12 @@ Partial Class Main
         Me.BTN_ADMIN.Location = New System.Drawing.Point(2, 351)
         Me.BTN_ADMIN.Margin = New System.Windows.Forms.Padding(2)
         Me.BTN_ADMIN.Name = "BTN_ADMIN"
+        Me.BTN_ADMIN.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTN_ADMIN.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.BTN_ADMIN.Size = New System.Drawing.Size(224, 46)
         Me.BTN_ADMIN.TabIndex = 6
         Me.BTN_ADMIN.Text = "ADMIN"
+        Me.BTN_ADMIN.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTN_ADMIN.UseCompatibleTextRendering = True
         Me.BTN_ADMIN.UseVisualStyleBackColor = True
         '
@@ -126,10 +128,12 @@ Partial Class Main
         Me.BTN_MED.Location = New System.Drawing.Point(0, 301)
         Me.BTN_MED.Margin = New System.Windows.Forms.Padding(2)
         Me.BTN_MED.Name = "BTN_MED"
+        Me.BTN_MED.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTN_MED.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.BTN_MED.Size = New System.Drawing.Size(224, 46)
         Me.BTN_MED.TabIndex = 4
         Me.BTN_MED.Text = "EX. MEDICOS"
+        Me.BTN_MED.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTN_MED.UseCompatibleTextRendering = True
         Me.BTN_MED.UseVisualStyleBackColor = True
         '
@@ -143,10 +147,12 @@ Partial Class Main
         Me.BTN_EV.Location = New System.Drawing.Point(0, 250)
         Me.BTN_EV.Margin = New System.Windows.Forms.Padding(2)
         Me.BTN_EV.Name = "BTN_EV"
+        Me.BTN_EV.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTN_EV.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.BTN_EV.Size = New System.Drawing.Size(224, 46)
         Me.BTN_EV.TabIndex = 3
         Me.BTN_EV.Text = "EVALUACIONES"
+        Me.BTN_EV.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTN_EV.UseCompatibleTextRendering = True
         Me.BTN_EV.UseVisualStyleBackColor = True
         '
@@ -160,10 +166,12 @@ Partial Class Main
         Me.BTN_CAP.Location = New System.Drawing.Point(0, 200)
         Me.BTN_CAP.Margin = New System.Windows.Forms.Padding(2)
         Me.BTN_CAP.Name = "BTN_CAP"
+        Me.BTN_CAP.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTN_CAP.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.BTN_CAP.Size = New System.Drawing.Size(224, 46)
         Me.BTN_CAP.TabIndex = 2
         Me.BTN_CAP.Text = "CAPACITACIONES"
+        Me.BTN_CAP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTN_CAP.UseCompatibleTextRendering = True
         Me.BTN_CAP.UseVisualStyleBackColor = True
         '
@@ -177,10 +185,12 @@ Partial Class Main
         Me.BTN_EQ.Location = New System.Drawing.Point(0, 150)
         Me.BTN_EQ.Margin = New System.Windows.Forms.Padding(2)
         Me.BTN_EQ.Name = "BTN_EQ"
+        Me.BTN_EQ.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTN_EQ.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.BTN_EQ.Size = New System.Drawing.Size(224, 46)
         Me.BTN_EQ.TabIndex = 1
         Me.BTN_EQ.Text = "EQUIPO"
+        Me.BTN_EQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTN_EQ.UseCompatibleTextRendering = True
         Me.BTN_EQ.UseVisualStyleBackColor = True
         '
@@ -196,16 +206,19 @@ Partial Class Main
         Me.btn_emp.Location = New System.Drawing.Point(0, 99)
         Me.btn_emp.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_emp.Name = "btn_emp"
+        Me.btn_emp.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.btn_emp.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.btn_emp.Size = New System.Drawing.Size(224, 46)
         Me.btn_emp.TabIndex = 0
         Me.btn_emp.Text = "EMPLEADOS"
+        Me.btn_emp.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btn_emp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btn_emp.UseCompatibleTextRendering = True
         Me.btn_emp.UseVisualStyleBackColor = True
         '
         'lbl_user
         '
+        Me.lbl_user.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbl_user.AutoSize = True
         Me.lbl_user.Font = New System.Drawing.Font("Microsoft YaHei UI", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_user.Location = New System.Drawing.Point(227, 37)
@@ -215,7 +228,7 @@ Partial Class Main
         Me.lbl_user.TabIndex = 8
         Me.lbl_user.Text = "Usuario:"
         '
-        'Form1
+        'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -226,7 +239,7 @@ Partial Class Main
         Me.Controls.Add(Me.lbl_user)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.Name = "Form1"
+        Me.Name = "Principal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.header.ResumeLayout(False)

@@ -56,7 +56,7 @@ Public Class Empleados
     Public Sub llenar()
         Dim objCon As New Consultas()
         Dim objEmp As New Cls_Emp()
-        Dim dt As DataTable = objCon.consulta_empleado(Convert.ToInt64(txt_numero.Text))
+        Dim dt As DataTable = objCon.Consulta_empleado(Convert.ToInt64(txt_numero.Text))
         pnl_save.Text = ""
         If (dt.Rows.Count <= 0) Then
         Else

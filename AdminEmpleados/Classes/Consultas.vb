@@ -1,8 +1,5 @@
 ﻿Imports System.Data.SqlClient
 Imports System.IO
-Imports System
-Imports System.Net
-Imports System.Data.SqlDbType
 Public Class Consultas
     Public autenticado As Boolean
     Public user As String
@@ -267,7 +264,7 @@ Public Class Consultas
 
     End Function
 
-    Public Function consulta_empleado(user As Integer) As DataTable
+    Public Function Consulta_empleado(user As Integer) As DataTable
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As New SqlCommand("Consulta_Emp", con)

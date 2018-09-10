@@ -17,7 +17,7 @@
             NEmp = objcon.Emp_Exist(txt_numero.Text)
             If (NEmp = 1) Then
                 Dim dt As DataTable
-                dt = objcon.consulta_empleado(txt_numero.Text)
+                dt = objcon.Consulta_empleado(txt_numero.Text)
                 lbl_emp.Text = txt_numero.Text + " | " + dt.Rows(0).Item("Emp_Name").ToString() + " " + dt.Rows(0).Item("Emp_APat").ToString() + " " + dt.Rows(0).Item("Emp_AMat").ToString()
                 dgv_equipo_emp.DataSource = objcon.Consulta_USER()
             Else
@@ -339,7 +339,7 @@
             NEmp = objcon.Emp_Exist(TXT_EMP_SUPER.Text)
             If (NEmp = 1) Then
                 Dim dt As DataTable
-                dt = objcon.consulta_empleado(TXT_EMP_SUPER.Text)
+                dt = objcon.Consulta_empleado(TXT_EMP_SUPER.Text)
                 TXT_EMP_SUPERname.Text = TXT_EMP_SUPER.Text + " | " + dt.Rows(0).Item("Emp_Name").ToString() + " " + dt.Rows(0).Item("Emp_APat").ToString() + " " + dt.Rows(0).Item("Emp_AMat").ToString()
                 dgv_super.DataSource = objcon.Consulta_SU()
             Else
