@@ -46,12 +46,12 @@
                         Case "UPDATE"
                             If MessageBox.Show("Seguro que desea desactivar este usuario?", "Desactivar Usuario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
                                 If dgv_equipo_emp.Rows(e.RowIndex).Cells(3).Value.ToString = "False" Then
-                                    If objcon.Add_USERS(dgv_equipo_emp.Rows(e.RowIndex).Cells(1).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(2).Value, "", True, True) = "0" Then
+                                    If objcon.Add_USERS(dgv_equipo_emp.Rows(e.RowIndex).Cells(1).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(2).Value, "", True, True, dgv_equipo_emp.Rows(e.RowIndex).Cells(4).Value) = "0" Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
                                 Else
-                                    If objcon.Add_USERS(dgv_equipo_emp.Rows(e.RowIndex).Cells(1).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(2).Value, "", 0, 0) = "0" Then
+                                    If objcon.Add_USERS(dgv_equipo_emp.Rows(e.RowIndex).Cells(1).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(2).Value, "", 0, 0, dgv_equipo_emp.Rows(e.RowIndex).Cells(4).Value) = "0" Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
@@ -72,7 +72,7 @@
             If txt_pass.Text <> txt_pass2.Text Then
                 MessageBox.Show("Las conrasenas no coinciden.")
             Else
-                If objcon.Add_USERS(0, txt_user.Text, txt_pass.Text, 1, 1) = "0" Then
+                If objcon.Add_USERS(0, txt_user.Text, txt_pass.Text, 1, 1, txt_numero.Text) = "0" Then
                 Else
                     MessageBox.Show("Este registro ya Existe.")
                 End If

@@ -495,7 +495,7 @@ Public Class Consultas
     End Function
 
     Public Function Add_EQUIPMENT_ASSIGNED(ByVal ASSIGNED As Integer, EQUIPMENT As String, EMPLOYEE As Integer, DATEE As DateTime, ISRETURNED As Integer,
-                                           DATE_R As DateTime, COMMENTS As String) As String
+                                           DATE_R As DateTime, COMMENTS As String, USER As Integer) As String
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -507,6 +507,7 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@ISRETURNED", ISRETURNED))
             cmd.Parameters.Add(New SqlParameter("@DATE_R", DATE_R))
             cmd.Parameters.Add(New SqlParameter("@COMMENTS", COMMENTS))
+            cmd.Parameters.Add(New SqlParameter("@USER", USER))
             cmd.CommandText = "UDSP_EQUIPMENT_ASSIGNED"
             Dim lector As SqlDataReader
             lector = cmd.ExecuteReader()
@@ -572,7 +573,7 @@ Public Class Consultas
         End Using
     End Function
 
-    Public Function Add_USERS(ByVal ID As Integer, USERNAME As String, PASSWORD As String, ACTIVE As Integer, ACCESS As Integer) As Integer
+    Public Function Add_USERS(ByVal ID As Integer, USERNAME As String, PASSWORD As String, ACTIVE As Integer, ACCESS As Integer, EMP As Integer) As Integer
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -582,6 +583,7 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@PASSWORD", PASSWORD))
             cmd.Parameters.Add(New SqlParameter("@ACTIVE", ACTIVE))
             cmd.Parameters.Add(New SqlParameter("@ACCESS", ACCESS))
+            cmd.Parameters.Add(New SqlParameter("@ID_EMP", EMP))
             cmd.CommandText = "UDSP_USERS"
             Dim lector As SqlDataReader
             lector = cmd.ExecuteReader()
