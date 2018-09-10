@@ -118,43 +118,49 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Alta_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Alta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\loading (2).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Blue-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\Blue-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="photoNobody120" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\photoNobody120.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Cancel_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cancel_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Checked_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Checked_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Minus_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Minus_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Plus_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Plus_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Cancel_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cancel_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Save_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Save_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Search_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Search_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-customer-filled-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-customer-filled-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Trash_Can_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Trash Can_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Blue-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Blue-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Checked_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Checked_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Undo_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Undo_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Alta_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Alta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Baja_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Baja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="photoNobody120" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\photoNobody120.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Plus_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Plus_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-password-filled-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-password-filled-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

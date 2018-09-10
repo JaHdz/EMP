@@ -1,8 +1,13 @@
 ﻿Public Class Capacitaciones
-    Dim Emp As Integer = 40606
+
     Dim objcon As New Consultas
     Dim V1 As String
     Dim V2 As String
+    Dim NEmp As Integer
+    Sub New(ByVal emp As Integer)
+        InitializeComponent()
+        NEmp = emp
+    End Sub
     Public Sub llenar_buscador(tipo As String)
         Dim popup As New frmPopUp(tipo)
         Dim dialogresult__1 As DialogResult = popup.ShowDialog()
@@ -15,8 +20,8 @@
     End Sub
     Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
         If (txt_numero.Text <> "") Then
-            Emp = objcon.Emp_Exist(txt_numero.Text)
-            If (Emp = 1) Then
+            NEmp = objcon.Emp_Exist(txt_numero.Text)
+            If (NEmp = 1) Then
                 Dim dt As DataTable
                 dt = objcon.consulta_empleado(txt_numero.Text)
                 lbl_emp.Text = txt_numero.Text + " | " + dt.Rows(0).Item("Emp_Name").ToString() + " " + dt.Rows(0).Item("Emp_APat").ToString() + " " + dt.Rows(0).Item("Emp_AMat").ToString()

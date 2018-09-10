@@ -23,17 +23,21 @@ Partial Class Empleados
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Estudio_SE = New System.Windows.Forms.TabPage()
         Me.Panel27 = New System.Windows.Forms.Panel()
         Me.Label67 = New System.Windows.Forms.Label()
         Me.Label69 = New System.Windows.Forms.Label()
+        Me.btn_SESave = New System.Windows.Forms.PictureBox()
+        Me.btn_SECancel = New System.Windows.Forms.PictureBox()
         Me.Panel28 = New System.Windows.Forms.Panel()
         Me.Label68 = New System.Windows.Forms.Label()
         Me.Panel32 = New System.Windows.Forms.Panel()
         Me.LB_IMAGEN_VIVIENDA = New System.Windows.Forms.LinkLabel()
+        Me.PB_IMAGE_VIVIENDA = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel33 = New System.Windows.Forms.Panel()
         Me.Label82 = New System.Windows.Forms.Label()
         Me.Panel34 = New System.Windows.Forms.Panel()
@@ -82,6 +86,7 @@ Partial Class Empleados
         Me.Label75 = New System.Windows.Forms.Label()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Label63 = New System.Windows.Forms.Label()
+        Me.btn_OI = New System.Windows.Forms.Button()
         Me.txt_OTCantidad = New System.Windows.Forms.TextBox()
         Me.txt_OIParen = New System.Windows.Forms.TextBox()
         Me.Label65 = New System.Windows.Forms.Label()
@@ -102,6 +107,7 @@ Partial Class Empleados
         Me.txt_RefOcu = New System.Windows.Forms.TextBox()
         Me.Label56 = New System.Windows.Forms.Label()
         Me.Label46 = New System.Windows.Forms.Label()
+        Me.Btn_AddRef = New System.Windows.Forms.Button()
         Me.Txt_TR = New System.Windows.Forms.TextBox()
         Me.txt_RefNom = New System.Windows.Forms.TextBox()
         Me.Label48 = New System.Windows.Forms.Label()
@@ -146,8 +152,7 @@ Partial Class Empleados
         Me.Tab_Enfer = New System.Windows.Forms.TabPage()
         Me.panel20 = New System.Windows.Forms.Panel()
         Me.dgv_Enf = New System.Windows.Forms.DataGridView()
-        Me.ID_Enf = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Text = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btn_enfADD = New System.Windows.Forms.Button()
         Me.txt_enfNAME = New System.Windows.Forms.TextBox()
         Me.label47 = New System.Windows.Forms.Label()
         Me.panel21 = New System.Windows.Forms.Panel()
@@ -155,14 +160,7 @@ Partial Class Empleados
         Me.Tab_Cont = New System.Windows.Forms.TabPage()
         Me.panel18 = New System.Windows.Forms.Panel()
         Me.dgv_contacto = New System.Windows.Forms.DataGridView()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btn_conADD = New System.Windows.Forms.Button()
         Me.label45 = New System.Windows.Forms.Label()
         Me.txt_conPAREN = New System.Windows.Forms.TextBox()
         Me.label41 = New System.Windows.Forms.Label()
@@ -180,16 +178,7 @@ Partial Class Empleados
         Me.Tab_AL = New System.Windows.Forms.TabPage()
         Me.panel16 = New System.Windows.Forms.Panel()
         Me.dgv_ant = New System.Windows.Forms.DataGridView()
-        Me.ID_Ant = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID__Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_FInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_FFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_NEmpresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_Cargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_Salario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_Tel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_Motivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_Contacto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btn_antSave = New System.Windows.Forms.Button()
         Me.txt_antMT = New System.Windows.Forms.TextBox()
         Me.txt_antNAME = New System.Windows.Forms.TextBox()
         Me.txt_antTEL = New System.Windows.Forms.TextBox()
@@ -213,16 +202,7 @@ Partial Class Empleados
         Me.label10 = New System.Windows.Forms.Label()
         Me.panel3 = New System.Windows.Forms.Panel()
         Me.dgv_Hijos = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btn_hijoADD = New System.Windows.Forms.Button()
         Me.txt_hijoEC = New System.Windows.Forms.ComboBox()
         Me.label32 = New System.Windows.Forms.Label()
         Me.label26 = New System.Windows.Forms.Label()
@@ -241,16 +221,7 @@ Partial Class Empleados
         Me.label11 = New System.Windows.Forms.Label()
         Me.panel2 = New System.Windows.Forms.Panel()
         Me.dgv_esposa = New System.Windows.Forms.DataGridView()
-        Me.ID_Persona = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_APat = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_AMat = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_Nacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_FNac = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_Genero = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_EdoCivil = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btn_esSAVE = New System.Windows.Forms.Button()
         Me.label25 = New System.Windows.Forms.Label()
         Me.txt_esNacion = New System.Windows.Forms.TextBox()
         Me.txt_esFN = New System.Windows.Forms.DateTimePicker()
@@ -271,23 +242,30 @@ Partial Class Empleados
         Me.panel15 = New System.Windows.Forms.Panel()
         Me.label16 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.SAVE = New System.Windows.Forms.PictureBox()
+        Me.CANCEL = New System.Windows.Forms.PictureBox()
         Me.pnl_estatus = New System.Windows.Forms.Panel()
         Me.Label70 = New System.Windows.Forms.Label()
+        Me.BAJA = New System.Windows.Forms.PictureBox()
         Me.seg = New System.Windows.Forms.CheckBox()
         Me.panel13 = New System.Windows.Forms.Panel()
         Me.label15 = New System.Windows.Forms.Label()
         Me.commen = New System.Windows.Forms.TextBox()
         Me.txt_activo = New System.Windows.Forms.TextBox()
         Me.label8 = New System.Windows.Forms.Label()
+        Me.ALTA = New System.Windows.Forms.PictureBox()
         Me.txt_baja = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.lbl_ALTA = New System.Windows.Forms.Label()
         Me.pnl_cont = New System.Windows.Forms.Panel()
+        Me.buscar_depto = New System.Windows.Forms.PictureBox()
         Me.depto = New System.Windows.Forms.TextBox()
         Me.depto2 = New System.Windows.Forms.TextBox()
+        Me.Buscar_PUESTO = New System.Windows.Forms.PictureBox()
         Me.panel11 = New System.Windows.Forms.Panel()
         Me.label14 = New System.Windows.Forms.Label()
+        Me.Buscar_tipo = New System.Windows.Forms.PictureBox()
         Me.lbl_ingreso = New System.Windows.Forms.Label()
         Me.Txt_correo = New System.Windows.Forms.TextBox()
         Me.lbl_clase = New System.Windows.Forms.Label()
@@ -299,6 +277,7 @@ Partial Class Empleados
         Me.txt_tipo = New System.Windows.Forms.TextBox()
         Me.lbl_sali = New System.Windows.Forms.Label()
         Me.txt_FECHAINGRESO = New System.Windows.Forms.DateTimePicker()
+        Me.Buscar_Super = New System.Windows.Forms.PictureBox()
         Me.txt_PUESTO = New System.Windows.Forms.TextBox()
         Me.txt_PUESTO2 = New System.Windows.Forms.TextBox()
         Me.txt_SUPER2 = New System.Windows.Forms.TextBox()
@@ -308,7 +287,9 @@ Partial Class Empleados
         Me.ln_img = New System.Windows.Forms.LinkLabel()
         Me.panel9 = New System.Windows.Forms.Panel()
         Me.label13 = New System.Windows.Forms.Label()
+        Me.foto = New System.Windows.Forms.PictureBox()
         Me.pnl_per = New System.Windows.Forms.Panel()
+        Me.buscar_ciudad = New System.Windows.Forms.PictureBox()
         Me.cuidad = New System.Windows.Forms.TextBox()
         Me.cuidad2 = New System.Windows.Forms.TextBox()
         Me.Label92 = New System.Windows.Forms.Label()
@@ -317,6 +298,7 @@ Partial Class Empleados
         Me.txt_telefono = New System.Windows.Forms.TextBox()
         Me.ddl_educacion = New System.Windows.Forms.ComboBox()
         Me.Label54 = New System.Windows.Forms.Label()
+        Me.buscar_EN = New System.Windows.Forms.PictureBox()
         Me.panel7 = New System.Windows.Forms.Panel()
         Me.label12 = New System.Windows.Forms.Label()
         Me.LBL_CP = New System.Windows.Forms.Label()
@@ -352,33 +334,54 @@ Partial Class Empleados
         Me.lbl_nac = New System.Windows.Forms.Label()
         Me.lbl_rfc = New System.Windows.Forms.Label()
         Me.MenuEmp = New System.Windows.Forms.TabControl()
-        Me.SAVE = New System.Windows.Forms.PictureBox()
-        Me.CANCEL = New System.Windows.Forms.PictureBox()
-        Me.BAJA = New System.Windows.Forms.PictureBox()
-        Me.ALTA = New System.Windows.Forms.PictureBox()
-        Me.buscar_depto = New System.Windows.Forms.PictureBox()
-        Me.Buscar_PUESTO = New System.Windows.Forms.PictureBox()
-        Me.Buscar_tipo = New System.Windows.Forms.PictureBox()
-        Me.Buscar_Super = New System.Windows.Forms.PictureBox()
-        Me.foto = New System.Windows.Forms.PictureBox()
-        Me.buscar_ciudad = New System.Windows.Forms.PictureBox()
-        Me.buscar_EN = New System.Windows.Forms.PictureBox()
-        Me.btn_hijoADD = New System.Windows.Forms.Button()
-        Me.btn_esSAVE = New System.Windows.Forms.Button()
-        Me.btn_antSave = New System.Windows.Forms.Button()
-        Me.btn_conADD = New System.Windows.Forms.Button()
-        Me.btn_enfADD = New System.Windows.Forms.Button()
-        Me.btn_OI = New System.Windows.Forms.Button()
-        Me.Btn_AddRef = New System.Windows.Forms.Button()
-        Me.btn_SESave = New System.Windows.Forms.PictureBox()
-        Me.btn_SECancel = New System.Windows.Forms.PictureBox()
-        Me.PB_IMAGE_VIVIENDA = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.datosFamiliaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ID_Persona = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fam_Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fam_Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fam_APat = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fam_AMat = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fam_Nacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fam_FNac = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fam_Genero = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fam_EdoCivil = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Ant = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID__Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ant_FInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ant_FFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ant_NEmpresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ant_Cargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ant_Salario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ant_Tel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ant_Motivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ant_Contacto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Enf = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Text = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estudio_SE.SuspendLayout()
         Me.Panel27.SuspendLayout()
+        CType(Me.btn_SESave, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_SECancel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel28.SuspendLayout()
         Me.Panel32.SuspendLayout()
+        CType(Me.PB_IMAGE_VIVIENDA, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel33.SuspendLayout()
         Me.Panel34.SuspendLayout()
         Me.Panel36.SuspendLayout()
@@ -421,29 +424,26 @@ Partial Class Empleados
         Me.Tab_DP.SuspendLayout()
         Me.pnl_save.SuspendLayout()
         Me.panel15.SuspendLayout()
-        Me.pnl_estatus.SuspendLayout()
-        Me.panel13.SuspendLayout()
-        Me.pnl_cont.SuspendLayout()
-        Me.panel11.SuspendLayout()
-        Me.pnl_foto.SuspendLayout()
-        Me.panel9.SuspendLayout()
-        Me.pnl_per.SuspendLayout()
-        Me.panel7.SuspendLayout()
-        Me.MenuEmp.SuspendLayout()
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_estatus.SuspendLayout()
         CType(Me.BAJA, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panel13.SuspendLayout()
         CType(Me.ALTA, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_cont.SuspendLayout()
         CType(Me.buscar_depto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Buscar_PUESTO, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panel11.SuspendLayout()
         CType(Me.Buscar_tipo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Buscar_Super, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_foto.SuspendLayout()
+        Me.panel9.SuspendLayout()
         CType(Me.foto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_per.SuspendLayout()
         CType(Me.buscar_ciudad, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_SESave, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_SECancel, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PB_IMAGE_VIVIENDA, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panel7.SuspendLayout()
+        Me.MenuEmp.SuspendLayout()
         CType(Me.datosFamiliaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -458,7 +458,7 @@ Partial Class Empleados
         Me.Estudio_SE.Controls.Add(Me.Panel34)
         Me.Estudio_SE.Location = New System.Drawing.Point(4, 30)
         Me.Estudio_SE.Name = "Estudio_SE"
-        Me.Estudio_SE.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.Estudio_SE.Padding = New System.Windows.Forms.Padding(3)
         Me.Estudio_SE.Size = New System.Drawing.Size(1280, 789)
         Me.Estudio_SE.TabIndex = 6
         Me.Estudio_SE.Text = "Estudio SocioEconomico 2/2"
@@ -474,7 +474,7 @@ Partial Class Empleados
         Me.Panel27.Controls.Add(Me.Panel28)
         Me.Panel27.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel27.Location = New System.Drawing.Point(721, 491)
-        Me.Panel27.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel27.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel27.Name = "Panel27"
         Me.Panel27.Size = New System.Drawing.Size(509, 172)
         Me.Panel27.TabIndex = 69
@@ -501,12 +501,32 @@ Partial Class Empleados
         Me.Label69.TabIndex = 43
         Me.Label69.Text = "CANCELAR"
         '
+        'btn_SESave
+        '
+        Me.btn_SESave.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
+        Me.btn_SESave.Location = New System.Drawing.Point(159, 45)
+        Me.btn_SESave.Name = "btn_SESave"
+        Me.btn_SESave.Size = New System.Drawing.Size(83, 83)
+        Me.btn_SESave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_SESave.TabIndex = 41
+        Me.btn_SESave.TabStop = False
+        '
+        'btn_SECancel
+        '
+        Me.btn_SECancel.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
+        Me.btn_SECancel.Location = New System.Drawing.Point(285, 45)
+        Me.btn_SECancel.Name = "btn_SECancel"
+        Me.btn_SECancel.Size = New System.Drawing.Size(83, 83)
+        Me.btn_SECancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_SECancel.TabIndex = 42
+        Me.btn_SECancel.TabStop = False
+        '
         'Panel28
         '
         Me.Panel28.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel28.Controls.Add(Me.Label68)
         Me.Panel28.Location = New System.Drawing.Point(-2, -2)
-        Me.Panel28.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel28.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel28.Name = "Panel28"
         Me.Panel28.Size = New System.Drawing.Size(807, 35)
         Me.Panel28.TabIndex = 0
@@ -532,7 +552,7 @@ Partial Class Empleados
         Me.Panel32.Controls.Add(Me.Panel33)
         Me.Panel32.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel32.Location = New System.Drawing.Point(721, 30)
-        Me.Panel32.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel32.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel32.Name = "Panel32"
         Me.Panel32.Size = New System.Drawing.Size(509, 446)
         Me.Panel32.TabIndex = 52
@@ -550,12 +570,38 @@ Partial Class Empleados
         Me.LB_IMAGEN_VIVIENDA.TabStop = True
         Me.LB_IMAGEN_VIVIENDA.Text = "Cambiar Imagen"
         '
+        'PB_IMAGE_VIVIENDA
+        '
+        Me.PB_IMAGE_VIVIENDA.Image = Global.AdminEmpleados.My.Resources.Resources.photoNobody120
+        Me.PB_IMAGE_VIVIENDA.Location = New System.Drawing.Point(125, 91)
+        Me.PB_IMAGE_VIVIENDA.Name = "PB_IMAGE_VIVIENDA"
+        Me.PB_IMAGE_VIVIENDA.Size = New System.Drawing.Size(287, 263)
+        Me.PB_IMAGE_VIVIENDA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PB_IMAGE_VIVIENDA.TabIndex = 31
+        Me.PB_IMAGE_VIVIENDA.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(711, 44)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(98, 41)
+        Me.Button1.TabIndex = 6
+        Me.Button1.Text = "Agregar"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'Panel33
         '
         Me.Panel33.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel33.Controls.Add(Me.Label82)
         Me.Panel33.Location = New System.Drawing.Point(-2, -2)
-        Me.Panel33.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel33.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel33.Name = "Panel33"
         Me.Panel33.Size = New System.Drawing.Size(1103, 35)
         Me.Panel33.TabIndex = 0
@@ -600,7 +646,7 @@ Partial Class Empleados
         Me.Panel34.Controls.Add(Me.Panel36)
         Me.Panel34.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel34.Location = New System.Drawing.Point(53, 30)
-        Me.Panel34.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel34.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel34.Name = "Panel34"
         Me.Panel34.Size = New System.Drawing.Size(632, 633)
         Me.Panel34.TabIndex = 51
@@ -797,7 +843,7 @@ Partial Class Empleados
         Me.Panel36.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel36.Controls.Add(Me.Label84)
         Me.Panel36.Location = New System.Drawing.Point(-2, 0)
-        Me.Panel36.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel36.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel36.Name = "Panel36"
         Me.Panel36.Size = New System.Drawing.Size(733, 35)
         Me.Panel36.TabIndex = 27
@@ -823,7 +869,7 @@ Partial Class Empleados
         Me.Tam_Es.Controls.Add(Me.Panel1)
         Me.Tam_Es.Location = New System.Drawing.Point(4, 30)
         Me.Tam_Es.Name = "Tam_Es"
-        Me.Tam_Es.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.Tam_Es.Padding = New System.Windows.Forms.Padding(3)
         Me.Tam_Es.Size = New System.Drawing.Size(1280, 789)
         Me.Tam_Es.TabIndex = 5
         Me.Tam_Es.Text = "Estudio SocioEconomico 1/2"
@@ -837,7 +883,7 @@ Partial Class Empleados
         Me.Panel25.Controls.Add(Me.Panel26)
         Me.Panel25.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel25.Location = New System.Drawing.Point(439, 630)
-        Me.Panel25.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel25.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel25.Name = "Panel25"
         Me.Panel25.Size = New System.Drawing.Size(823, 166)
         Me.Panel25.TabIndex = 67
@@ -866,7 +912,7 @@ Partial Class Empleados
         Me.Panel26.Controls.Add(Me.Label71)
         Me.Panel26.Controls.Add(Me.Label76)
         Me.Panel26.Location = New System.Drawing.Point(-2, -2)
-        Me.Panel26.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel26.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel26.Name = "Panel26"
         Me.Panel26.Size = New System.Drawing.Size(869, 35)
         Me.Panel26.TabIndex = 0
@@ -908,7 +954,7 @@ Partial Class Empleados
         Me.Panel29.Controls.Add(Me.Panel30)
         Me.Panel29.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel29.Location = New System.Drawing.Point(439, 509)
-        Me.Panel29.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel29.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel29.Name = "Panel29"
         Me.Panel29.Size = New System.Drawing.Size(823, 105)
         Me.Panel29.TabIndex = 64
@@ -987,7 +1033,7 @@ Partial Class Empleados
         Me.Panel30.Controls.Add(Me.Label74)
         Me.Panel30.Controls.Add(Me.Label75)
         Me.Panel30.Location = New System.Drawing.Point(-2, -2)
-        Me.Panel30.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel30.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel30.Name = "Panel30"
         Me.Panel30.Size = New System.Drawing.Size(823, 35)
         Me.Panel30.TabIndex = 0
@@ -1027,7 +1073,7 @@ Partial Class Empleados
         Me.Panel12.Controls.Add(Me.Panel14)
         Me.Panel12.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel12.Location = New System.Drawing.Point(439, 280)
-        Me.Panel12.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(823, 209)
         Me.Panel12.TabIndex = 51
@@ -1040,6 +1086,22 @@ Partial Class Empleados
         Me.Label63.Size = New System.Drawing.Size(83, 21)
         Me.Label63.TabIndex = 62
         Me.Label63.Text = "Cantidad:"
+        '
+        'btn_OI
+        '
+        Me.btn_OI.BackColor = System.Drawing.Color.White
+        Me.btn_OI.BackgroundImage = CType(resources.GetObject("btn_OI.BackgroundImage"), System.Drawing.Image)
+        Me.btn_OI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_OI.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_OI.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_OI.ForeColor = System.Drawing.Color.White
+        Me.btn_OI.Location = New System.Drawing.Point(711, 36)
+        Me.btn_OI.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_OI.Name = "btn_OI"
+        Me.btn_OI.Size = New System.Drawing.Size(98, 41)
+        Me.btn_OI.TabIndex = 17
+        Me.btn_OI.Text = "Agregar"
+        Me.btn_OI.UseVisualStyleBackColor = False
         '
         'txt_OTCantidad
         '
@@ -1097,7 +1159,7 @@ Partial Class Empleados
         Me.Panel14.Controls.Add(Me.Label60)
         Me.Panel14.Controls.Add(Me.Label61)
         Me.Panel14.Location = New System.Drawing.Point(-2, -2)
-        Me.Panel14.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(823, 35)
         Me.Panel14.TabIndex = 0
@@ -1141,7 +1203,7 @@ Partial Class Empleados
         Me.Panel8.Controls.Add(Me.Panel10)
         Me.Panel8.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel8.Location = New System.Drawing.Point(439, 40)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(823, 223)
         Me.Panel8.TabIndex = 50
@@ -1228,6 +1290,22 @@ Partial Class Empleados
         Me.Label46.TabIndex = 44
         Me.Label46.Text = "Ocupacion:"
         '
+        'Btn_AddRef
+        '
+        Me.Btn_AddRef.BackColor = System.Drawing.Color.White
+        Me.Btn_AddRef.BackgroundImage = CType(resources.GetObject("Btn_AddRef.BackgroundImage"), System.Drawing.Image)
+        Me.Btn_AddRef.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btn_AddRef.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_AddRef.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_AddRef.ForeColor = System.Drawing.Color.White
+        Me.Btn_AddRef.Location = New System.Drawing.Point(711, 44)
+        Me.Btn_AddRef.Margin = New System.Windows.Forms.Padding(2)
+        Me.Btn_AddRef.Name = "Btn_AddRef"
+        Me.Btn_AddRef.Size = New System.Drawing.Size(98, 41)
+        Me.Btn_AddRef.TabIndex = 6
+        Me.Btn_AddRef.Text = "Agregar"
+        Me.Btn_AddRef.UseVisualStyleBackColor = False
+        '
         'Txt_TR
         '
         Me.Txt_TR.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
@@ -1258,7 +1336,7 @@ Partial Class Empleados
         Me.Panel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel10.Controls.Add(Me.Label51)
         Me.Panel10.Location = New System.Drawing.Point(-2, -2)
-        Me.Panel10.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(1103, 35)
         Me.Panel10.TabIndex = 0
@@ -1310,7 +1388,7 @@ Partial Class Empleados
         Me.Panel1.Controls.Add(Me.Panel6)
         Me.Panel1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(5, 40)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(420, 756)
         Me.Panel1.TabIndex = 2
@@ -1330,7 +1408,7 @@ Partial Class Empleados
         Me.Panel31.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel31.Controls.Add(Me.Label77)
         Me.Panel31.Location = New System.Drawing.Point(-2, 353)
-        Me.Panel31.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel31.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel31.Name = "Panel31"
         Me.Panel31.Size = New System.Drawing.Size(420, 35)
         Me.Panel31.TabIndex = 45
@@ -1491,7 +1569,7 @@ Partial Class Empleados
         Me.Panel24.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel24.Controls.Add(Me.Label59)
         Me.Panel24.Location = New System.Drawing.Point(-2, 468)
-        Me.Panel24.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel24.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel24.Name = "Panel24"
         Me.Panel24.Size = New System.Drawing.Size(423, 35)
         Me.Panel24.TabIndex = 3
@@ -1523,7 +1601,7 @@ Partial Class Empleados
         Me.Panel23.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel23.Controls.Add(Me.Label58)
         Me.Panel23.Location = New System.Drawing.Point(-2, 238)
-        Me.Panel23.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel23.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel23.Name = "Panel23"
         Me.Panel23.Size = New System.Drawing.Size(420, 35)
         Me.Panel23.TabIndex = 2
@@ -1555,7 +1633,7 @@ Partial Class Empleados
         Me.Panel22.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel22.Controls.Add(Me.Label57)
         Me.Panel22.Location = New System.Drawing.Point(-2, 115)
-        Me.Panel22.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel22.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel22.Name = "Panel22"
         Me.Panel22.Size = New System.Drawing.Size(420, 35)
         Me.Panel22.TabIndex = 1
@@ -1656,7 +1734,7 @@ Partial Class Empleados
         Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel6.Controls.Add(Me.Label53)
         Me.Panel6.Location = New System.Drawing.Point(-2, -2)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(1103, 35)
         Me.Panel6.TabIndex = 0
@@ -1677,9 +1755,9 @@ Partial Class Empleados
         '
         Me.Tab_Enfer.Controls.Add(Me.panel20)
         Me.Tab_Enfer.Location = New System.Drawing.Point(4, 30)
-        Me.Tab_Enfer.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Tab_Enfer.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_Enfer.Name = "Tab_Enfer"
-        Me.Tab_Enfer.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Tab_Enfer.Padding = New System.Windows.Forms.Padding(2)
         Me.Tab_Enfer.Size = New System.Drawing.Size(1280, 789)
         Me.Tab_Enfer.TabIndex = 4
         Me.Tab_Enfer.Text = "Enfermedades"
@@ -1695,10 +1773,10 @@ Partial Class Empleados
         Me.panel20.Controls.Add(Me.panel21)
         Me.panel20.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.panel20.ForeColor = System.Drawing.Color.White
-        Me.panel20.Location = New System.Drawing.Point(222, 41)
-        Me.panel20.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panel20.Location = New System.Drawing.Point(21, 41)
+        Me.panel20.Margin = New System.Windows.Forms.Padding(2)
         Me.panel20.Name = "panel20"
-        Me.panel20.Size = New System.Drawing.Size(808, 431)
+        Me.panel20.Size = New System.Drawing.Size(1227, 573)
         Me.panel20.TabIndex = 1
         '
         'dgv_Enf
@@ -1706,36 +1784,33 @@ Partial Class Empleados
         Me.dgv_Enf.AllowUserToAddRows = False
         Me.dgv_Enf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_Enf.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_Enf, Me.Text})
-        Me.dgv_Enf.Location = New System.Drawing.Point(15, 112)
-        Me.dgv_Enf.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgv_Enf.Location = New System.Drawing.Point(15, 218)
+        Me.dgv_Enf.Margin = New System.Windows.Forms.Padding(2)
         Me.dgv_Enf.Name = "dgv_Enf"
         Me.dgv_Enf.ReadOnly = True
         Me.dgv_Enf.RowHeadersVisible = False
         Me.dgv_Enf.RowTemplate.Height = 24
-        Me.dgv_Enf.Size = New System.Drawing.Size(772, 215)
+        Me.dgv_Enf.Size = New System.Drawing.Size(1187, 369)
         Me.dgv_Enf.TabIndex = 34
         '
-        'ID_Enf
+        'btn_enfADD
         '
-        Me.ID_Enf.DataPropertyName = "ID_Enf"
-        Me.ID_Enf.HeaderText = "ID"
-        Me.ID_Enf.Name = "ID_Enf"
-        Me.ID_Enf.ReadOnly = True
-        '
-        'Text
-        '
-        Me.Text.DataPropertyName = "Text"
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.Text.DefaultCellStyle = DataGridViewCellStyle1
-        Me.Text.HeaderText = "Enfermedad"
-        Me.Text.Name = "Text"
-        Me.Text.ReadOnly = True
-        Me.Text.Width = 700
+        Me.btn_enfADD.BackColor = System.Drawing.Color.White
+        Me.btn_enfADD.BackgroundImage = CType(resources.GetObject("btn_enfADD.BackgroundImage"), System.Drawing.Image)
+        Me.btn_enfADD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_enfADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_enfADD.Location = New System.Drawing.Point(370, 78)
+        Me.btn_enfADD.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_enfADD.Name = "btn_enfADD"
+        Me.btn_enfADD.Size = New System.Drawing.Size(86, 41)
+        Me.btn_enfADD.TabIndex = 30
+        Me.btn_enfADD.Text = "Agregar"
+        Me.btn_enfADD.UseVisualStyleBackColor = False
         '
         'txt_enfNAME
         '
         Me.txt_enfNAME.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_enfNAME.Location = New System.Drawing.Point(134, 52)
+        Me.txt_enfNAME.Location = New System.Drawing.Point(140, 85)
         Me.txt_enfNAME.Name = "txt_enfNAME"
         Me.txt_enfNAME.Size = New System.Drawing.Size(209, 28)
         Me.txt_enfNAME.TabIndex = 28
@@ -1745,7 +1820,7 @@ Partial Class Empleados
         Me.label47.AutoSize = True
         Me.label47.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label47.ForeColor = System.Drawing.Color.Black
-        Me.label47.Location = New System.Drawing.Point(28, 57)
+        Me.label47.Location = New System.Drawing.Point(34, 90)
         Me.label47.Name = "label47"
         Me.label47.Size = New System.Drawing.Size(107, 21)
         Me.label47.TabIndex = 27
@@ -1756,9 +1831,9 @@ Partial Class Empleados
         Me.panel21.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel21.Controls.Add(Me.label19)
         Me.panel21.Location = New System.Drawing.Point(-2, -2)
-        Me.panel21.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panel21.Margin = New System.Windows.Forms.Padding(2)
         Me.panel21.Name = "panel21"
-        Me.panel21.Size = New System.Drawing.Size(807, 35)
+        Me.panel21.Size = New System.Drawing.Size(1227, 35)
         Me.panel21.TabIndex = 0
         '
         'label19
@@ -1769,17 +1844,17 @@ Partial Class Empleados
         Me.label19.Location = New System.Drawing.Point(13, 6)
         Me.label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.label19.Name = "label19"
-        Me.label19.Size = New System.Drawing.Size(54, 21)
+        Me.label19.Size = New System.Drawing.Size(119, 21)
         Me.label19.TabIndex = 0
-        Me.label19.Text = "Datos"
+        Me.label19.Text = "Enfermedades"
         '
         'Tab_Cont
         '
         Me.Tab_Cont.Controls.Add(Me.panel18)
         Me.Tab_Cont.Location = New System.Drawing.Point(4, 30)
-        Me.Tab_Cont.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Tab_Cont.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_Cont.Name = "Tab_Cont"
-        Me.Tab_Cont.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Tab_Cont.Padding = New System.Windows.Forms.Padding(2)
         Me.Tab_Cont.Size = New System.Drawing.Size(1280, 789)
         Me.Tab_Cont.TabIndex = 3
         Me.Tab_Cont.Text = "Contacto"
@@ -1804,10 +1879,10 @@ Partial Class Empleados
         Me.panel18.Controls.Add(Me.label44)
         Me.panel18.Controls.Add(Me.panel19)
         Me.panel18.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.panel18.Location = New System.Drawing.Point(222, 41)
-        Me.panel18.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panel18.Location = New System.Drawing.Point(21, 41)
+        Me.panel18.Margin = New System.Windows.Forms.Padding(2)
         Me.panel18.Name = "panel18"
-        Me.panel18.Size = New System.Drawing.Size(808, 530)
+        Me.panel18.Size = New System.Drawing.Size(1227, 622)
         Me.panel18.TabIndex = 1
         '
         'dgv_contacto
@@ -1816,74 +1891,34 @@ Partial Class Empleados
         Me.dgv_contacto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_contacto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9, Me.Column10})
         Me.dgv_contacto.Location = New System.Drawing.Point(15, 218)
-        Me.dgv_contacto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgv_contacto.Margin = New System.Windows.Forms.Padding(2)
         Me.dgv_contacto.Name = "dgv_contacto"
         Me.dgv_contacto.ReadOnly = True
         Me.dgv_contacto.RowHeadersVisible = False
         Me.dgv_contacto.RowTemplate.Height = 24
-        Me.dgv_contacto.Size = New System.Drawing.Size(763, 255)
+        Me.dgv_contacto.Size = New System.Drawing.Size(1189, 353)
         Me.dgv_contacto.TabIndex = 50
         '
-        'Column3
+        'btn_conADD
         '
-        Me.Column3.DataPropertyName = "ID_CEmergencia"
-        Me.Column3.HeaderText = "ID"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.DataPropertyName = "ID_Emp"
-        Me.Column4.HeaderText = "Empleado"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column5
-        '
-        Me.Column5.DataPropertyName = "CE_Nombre"
-        Me.Column5.HeaderText = "Nombre"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.DataPropertyName = "CE_APat"
-        Me.Column6.HeaderText = "Apellido Paterno"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        '
-        'Column7
-        '
-        Me.Column7.DataPropertyName = "CE_AMat"
-        Me.Column7.HeaderText = "Apellido Materno"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        '
-        'Column8
-        '
-        Me.Column8.DataPropertyName = "CE_Parentesco"
-        Me.Column8.HeaderText = "Parentesco"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
-        '
-        'Column9
-        '
-        Me.Column9.DataPropertyName = "CE_Telefono"
-        Me.Column9.HeaderText = "Telefono"
-        Me.Column9.Name = "Column9"
-        Me.Column9.ReadOnly = True
-        '
-        'Column10
-        '
-        Me.Column10.DataPropertyName = "CE_Celular"
-        Me.Column10.HeaderText = "Celular"
-        Me.Column10.Name = "Column10"
-        Me.Column10.ReadOnly = True
+        Me.btn_conADD.BackColor = System.Drawing.Color.White
+        Me.btn_conADD.BackgroundImage = CType(resources.GetObject("btn_conADD.BackgroundImage"), System.Drawing.Image)
+        Me.btn_conADD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_conADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_conADD.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_conADD.ForeColor = System.Drawing.Color.White
+        Me.btn_conADD.Location = New System.Drawing.Point(989, 141)
+        Me.btn_conADD.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_conADD.Name = "btn_conADD"
+        Me.btn_conADD.Size = New System.Drawing.Size(98, 41)
+        Me.btn_conADD.TabIndex = 49
+        Me.btn_conADD.Text = "Guardar"
+        Me.btn_conADD.UseVisualStyleBackColor = False
         '
         'label45
         '
         Me.label45.AutoSize = True
-        Me.label45.Location = New System.Drawing.Point(465, 135)
+        Me.label45.Location = New System.Drawing.Point(774, 111)
         Me.label45.Name = "label45"
         Me.label45.Size = New System.Drawing.Size(98, 21)
         Me.label45.TabIndex = 48
@@ -1892,7 +1927,7 @@ Partial Class Empleados
         'txt_conPAREN
         '
         Me.txt_conPAREN.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_conPAREN.Location = New System.Drawing.Point(569, 132)
+        Me.txt_conPAREN.Location = New System.Drawing.Point(878, 108)
         Me.txt_conPAREN.Name = "txt_conPAREN"
         Me.txt_conPAREN.Size = New System.Drawing.Size(209, 28)
         Me.txt_conPAREN.TabIndex = 47
@@ -1900,7 +1935,7 @@ Partial Class Empleados
         'label41
         '
         Me.label41.AutoSize = True
-        Me.label41.Location = New System.Drawing.Point(492, 102)
+        Me.label41.Location = New System.Drawing.Point(801, 78)
         Me.label41.Name = "label41"
         Me.label41.Size = New System.Drawing.Size(67, 21)
         Me.label41.TabIndex = 46
@@ -1909,7 +1944,7 @@ Partial Class Empleados
         'txt_conCEL
         '
         Me.txt_conCEL.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_conCEL.Location = New System.Drawing.Point(569, 99)
+        Me.txt_conCEL.Location = New System.Drawing.Point(878, 75)
         Me.txt_conCEL.Name = "txt_conCEL"
         Me.txt_conCEL.Size = New System.Drawing.Size(209, 28)
         Me.txt_conCEL.TabIndex = 45
@@ -1917,7 +1952,7 @@ Partial Class Empleados
         'label40
         '
         Me.label40.AutoSize = True
-        Me.label40.Location = New System.Drawing.Point(478, 68)
+        Me.label40.Location = New System.Drawing.Point(791, 48)
         Me.label40.Name = "label40"
         Me.label40.Size = New System.Drawing.Size(81, 21)
         Me.label40.TabIndex = 44
@@ -1926,7 +1961,7 @@ Partial Class Empleados
         'txt_conTEL
         '
         Me.txt_conTEL.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_conTEL.Location = New System.Drawing.Point(569, 66)
+        Me.txt_conTEL.Location = New System.Drawing.Point(878, 41)
         Me.txt_conTEL.Name = "txt_conTEL"
         Me.txt_conTEL.Size = New System.Drawing.Size(209, 28)
         Me.txt_conTEL.TabIndex = 43
@@ -1934,7 +1969,7 @@ Partial Class Empleados
         'txt_conNAME
         '
         Me.txt_conNAME.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_conNAME.Location = New System.Drawing.Point(176, 128)
+        Me.txt_conNAME.Location = New System.Drawing.Point(249, 106)
         Me.txt_conNAME.Name = "txt_conNAME"
         Me.txt_conNAME.Size = New System.Drawing.Size(209, 28)
         Me.txt_conNAME.TabIndex = 35
@@ -1942,7 +1977,7 @@ Partial Class Empleados
         'txt_conAM
         '
         Me.txt_conAM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_conAM.Location = New System.Drawing.Point(176, 94)
+        Me.txt_conAM.Location = New System.Drawing.Point(249, 72)
         Me.txt_conAM.Name = "txt_conAM"
         Me.txt_conAM.Size = New System.Drawing.Size(209, 28)
         Me.txt_conAM.TabIndex = 34
@@ -1950,7 +1985,7 @@ Partial Class Empleados
         'txt_conAP
         '
         Me.txt_conAP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_conAP.Location = New System.Drawing.Point(176, 61)
+        Me.txt_conAP.Location = New System.Drawing.Point(249, 38)
         Me.txt_conAP.Name = "txt_conAP"
         Me.txt_conAP.Size = New System.Drawing.Size(209, 28)
         Me.txt_conAP.TabIndex = 33
@@ -1958,7 +1993,7 @@ Partial Class Empleados
         'label42
         '
         Me.label42.AutoSize = True
-        Me.label42.Location = New System.Drawing.Point(35, 66)
+        Me.label42.Location = New System.Drawing.Point(102, 45)
         Me.label42.Name = "label42"
         Me.label42.Size = New System.Drawing.Size(141, 21)
         Me.label42.TabIndex = 37
@@ -1967,7 +2002,7 @@ Partial Class Empleados
         'label43
         '
         Me.label43.AutoSize = True
-        Me.label43.Location = New System.Drawing.Point(29, 99)
+        Me.label43.Location = New System.Drawing.Point(96, 79)
         Me.label43.Name = "label43"
         Me.label43.Size = New System.Drawing.Size(147, 21)
         Me.label43.TabIndex = 38
@@ -1976,7 +2011,7 @@ Partial Class Empleados
         'label44
         '
         Me.label44.AutoSize = True
-        Me.label44.Location = New System.Drawing.Point(77, 132)
+        Me.label44.Location = New System.Drawing.Point(150, 110)
         Me.label44.Name = "label44"
         Me.label44.Size = New System.Drawing.Size(94, 21)
         Me.label44.TabIndex = 39
@@ -1987,9 +2022,9 @@ Partial Class Empleados
         Me.panel19.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel19.Controls.Add(Me.label18)
         Me.panel19.Location = New System.Drawing.Point(-2, -2)
-        Me.panel19.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panel19.Margin = New System.Windows.Forms.Padding(2)
         Me.panel19.Name = "panel19"
-        Me.panel19.Size = New System.Drawing.Size(807, 35)
+        Me.panel19.Size = New System.Drawing.Size(1227, 35)
         Me.panel19.TabIndex = 0
         '
         'label18
@@ -2000,17 +2035,17 @@ Partial Class Empleados
         Me.label18.Location = New System.Drawing.Point(13, 6)
         Me.label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.label18.Name = "label18"
-        Me.label18.Size = New System.Drawing.Size(54, 21)
+        Me.label18.Size = New System.Drawing.Size(198, 21)
         Me.label18.TabIndex = 0
-        Me.label18.Text = "Datos"
+        Me.label18.Text = "Contacto de Emergencia"
         '
         'Tab_AL
         '
         Me.Tab_AL.Controls.Add(Me.panel16)
         Me.Tab_AL.Location = New System.Drawing.Point(4, 30)
-        Me.Tab_AL.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Tab_AL.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_AL.Name = "Tab_AL"
-        Me.Tab_AL.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Tab_AL.Padding = New System.Windows.Forms.Padding(2)
         Me.Tab_AL.Size = New System.Drawing.Size(1280, 789)
         Me.Tab_AL.TabIndex = 2
         Me.Tab_AL.Text = "Antecedentes Laborales"
@@ -2039,10 +2074,10 @@ Partial Class Empleados
         Me.panel16.Controls.Add(Me.label9)
         Me.panel16.Controls.Add(Me.panel17)
         Me.panel16.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.panel16.Location = New System.Drawing.Point(222, 41)
-        Me.panel16.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panel16.Location = New System.Drawing.Point(21, 41)
+        Me.panel16.Margin = New System.Windows.Forms.Padding(2)
         Me.panel16.Name = "panel16"
-        Me.panel16.Size = New System.Drawing.Size(808, 535)
+        Me.panel16.Size = New System.Drawing.Size(1227, 653)
         Me.panel16.TabIndex = 1
         '
         'dgv_ant
@@ -2050,76 +2085,32 @@ Partial Class Empleados
         Me.dgv_ant.AllowUserToAddRows = False
         Me.dgv_ant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_ant.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_Ant, Me.ID__Emp, Me.Ant_FInicio, Me.Ant_FFin, Me.Ant_NEmpresa, Me.Ant_Cargo, Me.Ant_Salario, Me.Ant_Tel, Me.Ant_Motivo, Me.Ant_Contacto})
-        Me.dgv_ant.Location = New System.Drawing.Point(15, 251)
+        Me.dgv_ant.Location = New System.Drawing.Point(15, 218)
         Me.dgv_ant.Name = "dgv_ant"
         Me.dgv_ant.RowHeadersVisible = False
-        Me.dgv_ant.Size = New System.Drawing.Size(774, 204)
+        Me.dgv_ant.Size = New System.Drawing.Size(1192, 310)
         Me.dgv_ant.TabIndex = 51
         '
-        'ID_Ant
+        'btn_antSave
         '
-        Me.ID_Ant.DataPropertyName = "ID_Ant"
-        Me.ID_Ant.HeaderText = "ID"
-        Me.ID_Ant.Name = "ID_Ant"
-        '
-        'ID__Emp
-        '
-        Me.ID__Emp.DataPropertyName = "ID_Emp"
-        Me.ID__Emp.HeaderText = "Empleado"
-        Me.ID__Emp.Name = "ID__Emp"
-        '
-        'Ant_FInicio
-        '
-        Me.Ant_FInicio.DataPropertyName = "Ant_FInicio"
-        Me.Ant_FInicio.HeaderText = "Fecha Inicio"
-        Me.Ant_FInicio.Name = "Ant_FInicio"
-        '
-        'Ant_FFin
-        '
-        Me.Ant_FFin.DataPropertyName = "Ant_FFin"
-        Me.Ant_FFin.HeaderText = "Fecha Final"
-        Me.Ant_FFin.Name = "Ant_FFin"
-        '
-        'Ant_NEmpresa
-        '
-        Me.Ant_NEmpresa.DataPropertyName = "Ant_NEmpresa"
-        Me.Ant_NEmpresa.HeaderText = "Empresa"
-        Me.Ant_NEmpresa.Name = "Ant_NEmpresa"
-        '
-        'Ant_Cargo
-        '
-        Me.Ant_Cargo.DataPropertyName = "Ant_Cargo"
-        Me.Ant_Cargo.HeaderText = "Cargo"
-        Me.Ant_Cargo.Name = "Ant_Cargo"
-        '
-        'Ant_Salario
-        '
-        Me.Ant_Salario.DataPropertyName = "Ant_Salario"
-        Me.Ant_Salario.HeaderText = "Salario"
-        Me.Ant_Salario.Name = "Ant_Salario"
-        '
-        'Ant_Tel
-        '
-        Me.Ant_Tel.DataPropertyName = "Ant_Tel"
-        Me.Ant_Tel.HeaderText = "Telefono"
-        Me.Ant_Tel.Name = "Ant_Tel"
-        '
-        'Ant_Motivo
-        '
-        Me.Ant_Motivo.DataPropertyName = "Ant_Motivo"
-        Me.Ant_Motivo.HeaderText = "Motivo"
-        Me.Ant_Motivo.Name = "Ant_Motivo"
-        '
-        'Ant_Contacto
-        '
-        Me.Ant_Contacto.DataPropertyName = "Ant_Contacto"
-        Me.Ant_Contacto.HeaderText = "Contacto"
-        Me.Ant_Contacto.Name = "Ant_Contacto"
+        Me.btn_antSave.BackColor = System.Drawing.Color.White
+        Me.btn_antSave.BackgroundImage = CType(resources.GetObject("btn_antSave.BackgroundImage"), System.Drawing.Image)
+        Me.btn_antSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_antSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_antSave.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_antSave.ForeColor = System.Drawing.Color.White
+        Me.btn_antSave.Location = New System.Drawing.Point(989, 160)
+        Me.btn_antSave.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_antSave.Name = "btn_antSave"
+        Me.btn_antSave.Size = New System.Drawing.Size(98, 41)
+        Me.btn_antSave.TabIndex = 50
+        Me.btn_antSave.Text = "Guardar"
+        Me.btn_antSave.UseVisualStyleBackColor = False
         '
         'txt_antMT
         '
         Me.txt_antMT.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_antMT.Location = New System.Drawing.Point(516, 119)
+        Me.txt_antMT.Location = New System.Drawing.Point(879, 108)
         Me.txt_antMT.Multiline = True
         Me.txt_antMT.Name = "txt_antMT"
         Me.txt_antMT.Size = New System.Drawing.Size(208, 47)
@@ -2128,7 +2119,7 @@ Partial Class Empleados
         'txt_antNAME
         '
         Me.txt_antNAME.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_antNAME.Location = New System.Drawing.Point(515, 85)
+        Me.txt_antNAME.Location = New System.Drawing.Point(878, 74)
         Me.txt_antNAME.Name = "txt_antNAME"
         Me.txt_antNAME.Size = New System.Drawing.Size(209, 28)
         Me.txt_antNAME.TabIndex = 28
@@ -2136,7 +2127,7 @@ Partial Class Empleados
         'txt_antTEL
         '
         Me.txt_antTEL.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_antTEL.Location = New System.Drawing.Point(515, 52)
+        Me.txt_antTEL.Location = New System.Drawing.Point(878, 41)
         Me.txt_antTEL.Name = "txt_antTEL"
         Me.txt_antTEL.Size = New System.Drawing.Size(209, 28)
         Me.txt_antTEL.TabIndex = 27
@@ -2144,7 +2135,7 @@ Partial Class Empleados
         'label37
         '
         Me.label37.AutoSize = True
-        Me.label37.Location = New System.Drawing.Point(434, 57)
+        Me.label37.Location = New System.Drawing.Point(797, 46)
         Me.label37.Name = "label37"
         Me.label37.Size = New System.Drawing.Size(81, 21)
         Me.label37.TabIndex = 30
@@ -2153,7 +2144,7 @@ Partial Class Empleados
         'label38
         '
         Me.label38.AutoSize = True
-        Me.label38.Location = New System.Drawing.Point(433, 85)
+        Me.label38.Location = New System.Drawing.Point(796, 74)
         Me.label38.Name = "label38"
         Me.label38.Size = New System.Drawing.Size(84, 21)
         Me.label38.TabIndex = 31
@@ -2162,7 +2153,7 @@ Partial Class Empleados
         'label39
         '
         Me.label39.AutoSize = True
-        Me.label39.Location = New System.Drawing.Point(445, 114)
+        Me.label39.Location = New System.Drawing.Point(808, 103)
         Me.label39.Name = "label39"
         Me.label39.Size = New System.Drawing.Size(68, 21)
         Me.label39.TabIndex = 32
@@ -2171,7 +2162,7 @@ Partial Class Empleados
         'txt_antSALARIO
         '
         Me.txt_antSALARIO.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_antSALARIO.Location = New System.Drawing.Point(164, 185)
+        Me.txt_antSALARIO.Location = New System.Drawing.Point(249, 171)
         Me.txt_antSALARIO.Name = "txt_antSALARIO"
         Me.txt_antSALARIO.Size = New System.Drawing.Size(208, 28)
         Me.txt_antSALARIO.TabIndex = 23
@@ -2179,7 +2170,7 @@ Partial Class Empleados
         'txt_antCARGO
         '
         Me.txt_antCARGO.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_antCARGO.Location = New System.Drawing.Point(164, 152)
+        Me.txt_antCARGO.Location = New System.Drawing.Point(249, 138)
         Me.txt_antCARGO.Name = "txt_antCARGO"
         Me.txt_antCARGO.Size = New System.Drawing.Size(209, 28)
         Me.txt_antCARGO.TabIndex = 22
@@ -2187,7 +2178,7 @@ Partial Class Empleados
         'txt_antEMP
         '
         Me.txt_antEMP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_antEMP.Location = New System.Drawing.Point(164, 119)
+        Me.txt_antEMP.Location = New System.Drawing.Point(249, 105)
         Me.txt_antEMP.Name = "txt_antEMP"
         Me.txt_antEMP.Size = New System.Drawing.Size(209, 28)
         Me.txt_antEMP.TabIndex = 21
@@ -2195,7 +2186,7 @@ Partial Class Empleados
         'label34
         '
         Me.label34.AutoSize = True
-        Me.label34.Location = New System.Drawing.Point(82, 124)
+        Me.label34.Location = New System.Drawing.Point(167, 110)
         Me.label34.Name = "label34"
         Me.label34.Size = New System.Drawing.Size(79, 21)
         Me.label34.TabIndex = 24
@@ -2204,7 +2195,7 @@ Partial Class Empleados
         'label35
         '
         Me.label35.AutoSize = True
-        Me.label35.Location = New System.Drawing.Point(100, 157)
+        Me.label35.Location = New System.Drawing.Point(185, 143)
         Me.label35.Name = "label35"
         Me.label35.Size = New System.Drawing.Size(60, 21)
         Me.label35.TabIndex = 25
@@ -2213,7 +2204,7 @@ Partial Class Empleados
         'label36
         '
         Me.label36.AutoSize = True
-        Me.label36.Location = New System.Drawing.Point(95, 190)
+        Me.label36.Location = New System.Drawing.Point(180, 176)
         Me.label36.Name = "label36"
         Me.label36.Size = New System.Drawing.Size(65, 21)
         Me.label36.TabIndex = 26
@@ -2221,7 +2212,7 @@ Partial Class Empleados
         '
         'txt_antFF
         '
-        Me.txt_antFF.Location = New System.Drawing.Point(164, 85)
+        Me.txt_antFF.Location = New System.Drawing.Point(249, 71)
         Me.txt_antFF.Name = "txt_antFF"
         Me.txt_antFF.Size = New System.Drawing.Size(209, 28)
         Me.txt_antFF.TabIndex = 19
@@ -2229,7 +2220,7 @@ Partial Class Empleados
         'label33
         '
         Me.label33.AutoSize = True
-        Me.label33.Location = New System.Drawing.Point(43, 90)
+        Me.label33.Location = New System.Drawing.Point(128, 76)
         Me.label33.Name = "label33"
         Me.label33.Size = New System.Drawing.Size(124, 21)
         Me.label33.TabIndex = 20
@@ -2237,7 +2228,7 @@ Partial Class Empleados
         '
         'txt_antFI
         '
-        Me.txt_antFI.Location = New System.Drawing.Point(164, 52)
+        Me.txt_antFI.Location = New System.Drawing.Point(249, 38)
         Me.txt_antFI.Name = "txt_antFI"
         Me.txt_antFI.Size = New System.Drawing.Size(209, 28)
         Me.txt_antFI.TabIndex = 17
@@ -2245,7 +2236,7 @@ Partial Class Empleados
         'label9
         '
         Me.label9.AutoSize = True
-        Me.label9.Location = New System.Drawing.Point(38, 57)
+        Me.label9.Location = New System.Drawing.Point(123, 43)
         Me.label9.Name = "label9"
         Me.label9.Size = New System.Drawing.Size(129, 21)
         Me.label9.TabIndex = 18
@@ -2256,9 +2247,9 @@ Partial Class Empleados
         Me.panel17.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel17.Controls.Add(Me.label17)
         Me.panel17.Location = New System.Drawing.Point(-2, -2)
-        Me.panel17.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panel17.Margin = New System.Windows.Forms.Padding(2)
         Me.panel17.Name = "panel17"
-        Me.panel17.Size = New System.Drawing.Size(807, 35)
+        Me.panel17.Size = New System.Drawing.Size(1227, 35)
         Me.panel17.TabIndex = 0
         '
         'label17
@@ -2279,9 +2270,9 @@ Partial Class Empleados
         Me.Tab_Familia.Controls.Add(Me.panel3)
         Me.Tab_Familia.Controls.Add(Me.panel2)
         Me.Tab_Familia.Location = New System.Drawing.Point(4, 30)
-        Me.Tab_Familia.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Tab_Familia.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_Familia.Name = "Tab_Familia"
-        Me.Tab_Familia.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Tab_Familia.Padding = New System.Windows.Forms.Padding(2)
         Me.Tab_Familia.Size = New System.Drawing.Size(1280, 789)
         Me.Tab_Familia.TabIndex = 1
         Me.Tab_Familia.Text = "Familia"
@@ -2291,10 +2282,10 @@ Partial Class Empleados
         '
         Me.panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel4.Controls.Add(Me.label10)
-        Me.panel4.Location = New System.Drawing.Point(223, 41)
-        Me.panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panel4.Location = New System.Drawing.Point(21, 41)
+        Me.panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.panel4.Name = "panel4"
-        Me.panel4.Size = New System.Drawing.Size(805, 35)
+        Me.panel4.Size = New System.Drawing.Size(1227, 35)
         Me.panel4.TabIndex = 1
         '
         'label10
@@ -2328,10 +2319,10 @@ Partial Class Empleados
         Me.panel3.Controls.Add(Me.label30)
         Me.panel3.Controls.Add(Me.label31)
         Me.panel3.Controls.Add(Me.panel5)
-        Me.panel3.Location = New System.Drawing.Point(222, 375)
-        Me.panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panel3.Location = New System.Drawing.Point(21, 375)
+        Me.panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.panel3.Name = "panel3"
-        Me.panel3.Size = New System.Drawing.Size(808, 396)
+        Me.panel3.Size = New System.Drawing.Size(1227, 396)
         Me.panel3.TabIndex = 1
         '
         'dgv_Hijos
@@ -2341,90 +2332,36 @@ Partial Class Empleados
         Me.dgv_Hijos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_Hijos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10})
         Me.dgv_Hijos.Location = New System.Drawing.Point(8, 221)
-        Me.dgv_Hijos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgv_Hijos.Margin = New System.Windows.Forms.Padding(2)
         Me.dgv_Hijos.Name = "dgv_Hijos"
         Me.dgv_Hijos.ReadOnly = True
         Me.dgv_Hijos.RowHeadersVisible = False
         Me.dgv_Hijos.RowTemplate.Height = 24
-        Me.dgv_Hijos.Size = New System.Drawing.Size(775, 120)
+        Me.dgv_Hijos.Size = New System.Drawing.Size(1202, 149)
         Me.dgv_Hijos.TabIndex = 52
         '
-        'DataGridViewTextBoxColumn1
+        'btn_hijoADD
         '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ID_Persona"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "ID_Emp"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Empleado"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Fam_Tipo"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Tipo"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Fam_Nombre"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Nombre"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Fam_APat"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Apellido Paterno"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Fam_AMat"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Apellido Materno"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Fam_Nacion"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Nacionalidad"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "Fam_FNac"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Fecha Nacimiento"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "Fam_Genero"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Genero"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.DataPropertyName = "Fam_EdoCivil"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Estado Civil"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.ReadOnly = True
+        Me.btn_hijoADD.BackColor = System.Drawing.Color.White
+        Me.btn_hijoADD.BackgroundImage = CType(resources.GetObject("btn_hijoADD.BackgroundImage"), System.Drawing.Image)
+        Me.btn_hijoADD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_hijoADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_hijoADD.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_hijoADD.ForeColor = System.Drawing.Color.White
+        Me.btn_hijoADD.Location = New System.Drawing.Point(989, 158)
+        Me.btn_hijoADD.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_hijoADD.Name = "btn_hijoADD"
+        Me.btn_hijoADD.Size = New System.Drawing.Size(98, 41)
+        Me.btn_hijoADD.TabIndex = 50
+        Me.btn_hijoADD.Text = "Agregar"
+        Me.btn_hijoADD.UseVisualStyleBackColor = False
         '
         'txt_hijoEC
         '
         Me.txt_hijoEC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.txt_hijoEC.FormattingEnabled = True
         Me.txt_hijoEC.Items.AddRange(New Object() {"SOLTERO", "CASADO", "DIVORCIADO", "VIUDO", "UNION LIBRE"})
-        Me.txt_hijoEC.Location = New System.Drawing.Point(581, 51)
+        Me.txt_hijoEC.Location = New System.Drawing.Point(878, 58)
         Me.txt_hijoEC.Name = "txt_hijoEC"
         Me.txt_hijoEC.Size = New System.Drawing.Size(209, 29)
         Me.txt_hijoEC.TabIndex = 45
@@ -2432,7 +2369,7 @@ Partial Class Empleados
         'label32
         '
         Me.label32.AutoSize = True
-        Me.label32.Location = New System.Drawing.Point(474, 59)
+        Me.label32.Location = New System.Drawing.Point(771, 66)
         Me.label32.Name = "label32"
         Me.label32.Size = New System.Drawing.Size(101, 21)
         Me.label32.TabIndex = 46
@@ -2441,7 +2378,7 @@ Partial Class Empleados
         'label26
         '
         Me.label26.AutoSize = True
-        Me.label26.Location = New System.Drawing.Point(462, 128)
+        Me.label26.Location = New System.Drawing.Point(759, 135)
         Me.label26.Name = "label26"
         Me.label26.Size = New System.Drawing.Size(114, 21)
         Me.label26.TabIndex = 44
@@ -2450,14 +2387,14 @@ Partial Class Empleados
         'txt_hijoNACION
         '
         Me.txt_hijoNACION.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_hijoNACION.Location = New System.Drawing.Point(581, 121)
+        Me.txt_hijoNACION.Location = New System.Drawing.Point(878, 128)
         Me.txt_hijoNACION.Name = "txt_hijoNACION"
         Me.txt_hijoNACION.Size = New System.Drawing.Size(209, 28)
         Me.txt_hijoNACION.TabIndex = 43
         '
         'txt_hijoFN
         '
-        Me.txt_hijoFN.Location = New System.Drawing.Point(186, 153)
+        Me.txt_hijoFN.Location = New System.Drawing.Point(249, 158)
         Me.txt_hijoFN.Name = "txt_hijoFN"
         Me.txt_hijoFN.Size = New System.Drawing.Size(209, 28)
         Me.txt_hijoFN.TabIndex = 41
@@ -2465,7 +2402,7 @@ Partial Class Empleados
         'label27
         '
         Me.label27.AutoSize = True
-        Me.label27.Location = New System.Drawing.Point(4, 160)
+        Me.label27.Location = New System.Drawing.Point(67, 165)
         Me.label27.Name = "label27"
         Me.label27.Size = New System.Drawing.Size(176, 21)
         Me.label27.TabIndex = 42
@@ -2474,7 +2411,7 @@ Partial Class Empleados
         'txt_hijoNAME
         '
         Me.txt_hijoNAME.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_hijoNAME.Location = New System.Drawing.Point(186, 119)
+        Me.txt_hijoNAME.Location = New System.Drawing.Point(249, 124)
         Me.txt_hijoNAME.Name = "txt_hijoNAME"
         Me.txt_hijoNAME.Size = New System.Drawing.Size(209, 28)
         Me.txt_hijoNAME.TabIndex = 35
@@ -2482,7 +2419,7 @@ Partial Class Empleados
         'txt_hijoAM
         '
         Me.txt_hijoAM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_hijoAM.Location = New System.Drawing.Point(186, 86)
+        Me.txt_hijoAM.Location = New System.Drawing.Point(249, 91)
         Me.txt_hijoAM.Name = "txt_hijoAM"
         Me.txt_hijoAM.Size = New System.Drawing.Size(209, 28)
         Me.txt_hijoAM.TabIndex = 34
@@ -2490,7 +2427,7 @@ Partial Class Empleados
         'txt_hijoAP
         '
         Me.txt_hijoAP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_hijoAP.Location = New System.Drawing.Point(186, 53)
+        Me.txt_hijoAP.Location = New System.Drawing.Point(249, 58)
         Me.txt_hijoAP.Name = "txt_hijoAP"
         Me.txt_hijoAP.Size = New System.Drawing.Size(209, 28)
         Me.txt_hijoAP.TabIndex = 33
@@ -2498,7 +2435,7 @@ Partial Class Empleados
         'label28
         '
         Me.label28.AutoSize = True
-        Me.label28.Location = New System.Drawing.Point(39, 58)
+        Me.label28.Location = New System.Drawing.Point(102, 63)
         Me.label28.Name = "label28"
         Me.label28.Size = New System.Drawing.Size(141, 21)
         Me.label28.TabIndex = 37
@@ -2507,7 +2444,7 @@ Partial Class Empleados
         'label29
         '
         Me.label29.AutoSize = True
-        Me.label29.Location = New System.Drawing.Point(33, 89)
+        Me.label29.Location = New System.Drawing.Point(96, 94)
         Me.label29.Name = "label29"
         Me.label29.Size = New System.Drawing.Size(147, 21)
         Me.label29.TabIndex = 38
@@ -2518,7 +2455,7 @@ Partial Class Empleados
         Me.txt_hijoSEXO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.txt_hijoSEXO.FormattingEnabled = True
         Me.txt_hijoSEXO.Items.AddRange(New Object() {"FEMENINO", "MASCULINO"})
-        Me.txt_hijoSEXO.Location = New System.Drawing.Point(581, 86)
+        Me.txt_hijoSEXO.Location = New System.Drawing.Point(878, 93)
         Me.txt_hijoSEXO.Name = "txt_hijoSEXO"
         Me.txt_hijoSEXO.Size = New System.Drawing.Size(209, 29)
         Me.txt_hijoSEXO.TabIndex = 36
@@ -2526,7 +2463,7 @@ Partial Class Empleados
         'label30
         '
         Me.label30.AutoSize = True
-        Me.label30.Location = New System.Drawing.Point(86, 126)
+        Me.label30.Location = New System.Drawing.Point(149, 131)
         Me.label30.Name = "label30"
         Me.label30.Size = New System.Drawing.Size(94, 21)
         Me.label30.TabIndex = 39
@@ -2535,7 +2472,7 @@ Partial Class Empleados
         'label31
         '
         Me.label31.AutoSize = True
-        Me.label31.Location = New System.Drawing.Point(526, 93)
+        Me.label31.Location = New System.Drawing.Point(823, 100)
         Me.label31.Name = "label31"
         Me.label31.Size = New System.Drawing.Size(50, 21)
         Me.label31.TabIndex = 40
@@ -2546,9 +2483,9 @@ Partial Class Empleados
         Me.panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel5.Controls.Add(Me.label11)
         Me.panel5.Location = New System.Drawing.Point(-1, -2)
-        Me.panel5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panel5.Margin = New System.Windows.Forms.Padding(2)
         Me.panel5.Name = "panel5"
-        Me.panel5.Size = New System.Drawing.Size(806, 37)
+        Me.panel5.Size = New System.Drawing.Size(1226, 37)
         Me.panel5.TabIndex = 1
         '
         'label11
@@ -2579,10 +2516,10 @@ Partial Class Empleados
         Me.panel2.Controls.Add(Me.cb_esSexo)
         Me.panel2.Controls.Add(Me.label22)
         Me.panel2.Controls.Add(Me.label23)
-        Me.panel2.Location = New System.Drawing.Point(222, 41)
-        Me.panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panel2.Location = New System.Drawing.Point(21, 41)
+        Me.panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.panel2.Name = "panel2"
-        Me.panel2.Size = New System.Drawing.Size(808, 317)
+        Me.panel2.Size = New System.Drawing.Size(1227, 317)
         Me.panel2.TabIndex = 1
         '
         'dgv_esposa
@@ -2591,89 +2528,35 @@ Partial Class Empleados
         Me.dgv_esposa.AllowUserToOrderColumns = True
         Me.dgv_esposa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_esposa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_Persona, Me.ID_Emp, Me.Fam_Tipo, Me.Fam_Nombre, Me.Fam_APat, Me.Fam_AMat, Me.Fam_Nacion, Me.Fam_FNac, Me.Fam_Genero, Me.Fam_EdoCivil})
-        Me.dgv_esposa.Location = New System.Drawing.Point(15, 191)
-        Me.dgv_esposa.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgv_esposa.Location = New System.Drawing.Point(8, 191)
+        Me.dgv_esposa.Margin = New System.Windows.Forms.Padding(2)
         Me.dgv_esposa.Name = "dgv_esposa"
         Me.dgv_esposa.ReadOnly = True
         Me.dgv_esposa.RowHeadersVisible = False
         Me.dgv_esposa.RowTemplate.Height = 24
-        Me.dgv_esposa.Size = New System.Drawing.Size(775, 120)
+        Me.dgv_esposa.Size = New System.Drawing.Size(1202, 120)
         Me.dgv_esposa.TabIndex = 51
         '
-        'ID_Persona
+        'btn_esSAVE
         '
-        Me.ID_Persona.DataPropertyName = "ID_Persona"
-        Me.ID_Persona.HeaderText = "ID"
-        Me.ID_Persona.Name = "ID_Persona"
-        Me.ID_Persona.ReadOnly = True
-        '
-        'ID_Emp
-        '
-        Me.ID_Emp.DataPropertyName = "ID_Emp"
-        Me.ID_Emp.HeaderText = "Empleado"
-        Me.ID_Emp.Name = "ID_Emp"
-        Me.ID_Emp.ReadOnly = True
-        '
-        'Fam_Tipo
-        '
-        Me.Fam_Tipo.DataPropertyName = "Fam_Tipo"
-        Me.Fam_Tipo.HeaderText = "Tipo"
-        Me.Fam_Tipo.Name = "Fam_Tipo"
-        Me.Fam_Tipo.ReadOnly = True
-        '
-        'Fam_Nombre
-        '
-        Me.Fam_Nombre.DataPropertyName = "Fam_Nombre"
-        Me.Fam_Nombre.HeaderText = "Nombre"
-        Me.Fam_Nombre.Name = "Fam_Nombre"
-        Me.Fam_Nombre.ReadOnly = True
-        '
-        'Fam_APat
-        '
-        Me.Fam_APat.DataPropertyName = "Fam_APat"
-        Me.Fam_APat.HeaderText = "Apellido Paterno"
-        Me.Fam_APat.Name = "Fam_APat"
-        Me.Fam_APat.ReadOnly = True
-        '
-        'Fam_AMat
-        '
-        Me.Fam_AMat.DataPropertyName = "Fam_AMat"
-        Me.Fam_AMat.HeaderText = "Apellido Materno"
-        Me.Fam_AMat.Name = "Fam_AMat"
-        Me.Fam_AMat.ReadOnly = True
-        '
-        'Fam_Nacion
-        '
-        Me.Fam_Nacion.DataPropertyName = "Fam_Nacion"
-        Me.Fam_Nacion.HeaderText = "Nacionalidad"
-        Me.Fam_Nacion.Name = "Fam_Nacion"
-        Me.Fam_Nacion.ReadOnly = True
-        '
-        'Fam_FNac
-        '
-        Me.Fam_FNac.DataPropertyName = "Fam_FNac"
-        Me.Fam_FNac.HeaderText = "Fecha Nacimiento"
-        Me.Fam_FNac.Name = "Fam_FNac"
-        Me.Fam_FNac.ReadOnly = True
-        '
-        'Fam_Genero
-        '
-        Me.Fam_Genero.DataPropertyName = "Fam_Genero"
-        Me.Fam_Genero.HeaderText = "Genero"
-        Me.Fam_Genero.Name = "Fam_Genero"
-        Me.Fam_Genero.ReadOnly = True
-        '
-        'Fam_EdoCivil
-        '
-        Me.Fam_EdoCivil.DataPropertyName = "Fam_EdoCivil"
-        Me.Fam_EdoCivil.HeaderText = "Estado Civil"
-        Me.Fam_EdoCivil.Name = "Fam_EdoCivil"
-        Me.Fam_EdoCivil.ReadOnly = True
+        Me.btn_esSAVE.BackColor = System.Drawing.Color.White
+        Me.btn_esSAVE.BackgroundImage = CType(resources.GetObject("btn_esSAVE.BackgroundImage"), System.Drawing.Image)
+        Me.btn_esSAVE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_esSAVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_esSAVE.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_esSAVE.ForeColor = System.Drawing.Color.White
+        Me.btn_esSAVE.Location = New System.Drawing.Point(989, 139)
+        Me.btn_esSAVE.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_esSAVE.Name = "btn_esSAVE"
+        Me.btn_esSAVE.Size = New System.Drawing.Size(98, 41)
+        Me.btn_esSAVE.TabIndex = 50
+        Me.btn_esSAVE.Text = "Guardar"
+        Me.btn_esSAVE.UseVisualStyleBackColor = False
         '
         'label25
         '
         Me.label25.AutoSize = True
-        Me.label25.Location = New System.Drawing.Point(461, 124)
+        Me.label25.Location = New System.Drawing.Point(758, 112)
         Me.label25.Name = "label25"
         Me.label25.Size = New System.Drawing.Size(114, 21)
         Me.label25.TabIndex = 32
@@ -2682,14 +2565,14 @@ Partial Class Empleados
         'txt_esNacion
         '
         Me.txt_esNacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_esNacion.Location = New System.Drawing.Point(581, 118)
+        Me.txt_esNacion.Location = New System.Drawing.Point(878, 106)
         Me.txt_esNacion.Name = "txt_esNacion"
         Me.txt_esNacion.Size = New System.Drawing.Size(209, 28)
         Me.txt_esNacion.TabIndex = 31
         '
         'txt_esFN
         '
-        Me.txt_esFN.Location = New System.Drawing.Point(581, 85)
+        Me.txt_esFN.Location = New System.Drawing.Point(878, 73)
         Me.txt_esFN.Name = "txt_esFN"
         Me.txt_esFN.Size = New System.Drawing.Size(209, 28)
         Me.txt_esFN.TabIndex = 24
@@ -2697,7 +2580,7 @@ Partial Class Empleados
         'label24
         '
         Me.label24.AutoSize = True
-        Me.label24.Location = New System.Drawing.Point(399, 93)
+        Me.label24.Location = New System.Drawing.Point(696, 81)
         Me.label24.Name = "label24"
         Me.label24.Size = New System.Drawing.Size(176, 21)
         Me.label24.TabIndex = 25
@@ -2706,7 +2589,7 @@ Partial Class Empleados
         'txt_esName
         '
         Me.txt_esName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_esName.Location = New System.Drawing.Point(186, 121)
+        Me.txt_esName.Location = New System.Drawing.Point(249, 105)
         Me.txt_esName.Name = "txt_esName"
         Me.txt_esName.Size = New System.Drawing.Size(209, 28)
         Me.txt_esName.TabIndex = 18
@@ -2714,7 +2597,7 @@ Partial Class Empleados
         'txt_esAM
         '
         Me.txt_esAM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_esAM.Location = New System.Drawing.Point(186, 88)
+        Me.txt_esAM.Location = New System.Drawing.Point(249, 72)
         Me.txt_esAM.Name = "txt_esAM"
         Me.txt_esAM.Size = New System.Drawing.Size(209, 28)
         Me.txt_esAM.TabIndex = 17
@@ -2722,7 +2605,7 @@ Partial Class Empleados
         'txt_esAP
         '
         Me.txt_esAP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_esAP.Location = New System.Drawing.Point(186, 55)
+        Me.txt_esAP.Location = New System.Drawing.Point(249, 38)
         Me.txt_esAP.Name = "txt_esAP"
         Me.txt_esAP.Size = New System.Drawing.Size(209, 28)
         Me.txt_esAP.TabIndex = 16
@@ -2730,7 +2613,7 @@ Partial Class Empleados
         'label20
         '
         Me.label20.AutoSize = True
-        Me.label20.Location = New System.Drawing.Point(39, 58)
+        Me.label20.Location = New System.Drawing.Point(102, 45)
         Me.label20.Name = "label20"
         Me.label20.Size = New System.Drawing.Size(141, 21)
         Me.label20.TabIndex = 20
@@ -2739,7 +2622,7 @@ Partial Class Empleados
         'label21
         '
         Me.label21.AutoSize = True
-        Me.label21.Location = New System.Drawing.Point(33, 93)
+        Me.label21.Location = New System.Drawing.Point(96, 77)
         Me.label21.Name = "label21"
         Me.label21.Size = New System.Drawing.Size(147, 21)
         Me.label21.TabIndex = 21
@@ -2750,7 +2633,7 @@ Partial Class Empleados
         Me.cb_esSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cb_esSexo.FormattingEnabled = True
         Me.cb_esSexo.Items.AddRange(New Object() {"FEMENINO", "MASCULINO"})
-        Me.cb_esSexo.Location = New System.Drawing.Point(581, 50)
+        Me.cb_esSexo.Location = New System.Drawing.Point(878, 37)
         Me.cb_esSexo.Name = "cb_esSexo"
         Me.cb_esSexo.Size = New System.Drawing.Size(209, 29)
         Me.cb_esSexo.TabIndex = 19
@@ -2758,7 +2641,7 @@ Partial Class Empleados
         'label22
         '
         Me.label22.AutoSize = True
-        Me.label22.Location = New System.Drawing.Point(86, 125)
+        Me.label22.Location = New System.Drawing.Point(149, 109)
         Me.label22.Name = "label22"
         Me.label22.Size = New System.Drawing.Size(94, 21)
         Me.label22.TabIndex = 22
@@ -2767,7 +2650,7 @@ Partial Class Empleados
         'label23
         '
         Me.label23.AutoSize = True
-        Me.label23.Location = New System.Drawing.Point(525, 58)
+        Me.label23.Location = New System.Drawing.Point(822, 45)
         Me.label23.Name = "label23"
         Me.label23.Size = New System.Drawing.Size(50, 21)
         Me.label23.TabIndex = 23
@@ -2784,9 +2667,9 @@ Partial Class Empleados
         Me.Tab_DP.Controls.Add(Me.pnl_per)
         Me.Tab_DP.Font = New System.Drawing.Font("Microsoft YaHei UI", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tab_DP.Location = New System.Drawing.Point(4, 30)
-        Me.Tab_DP.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Tab_DP.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_DP.Name = "Tab_DP"
-        Me.Tab_DP.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Tab_DP.Padding = New System.Windows.Forms.Padding(2)
         Me.Tab_DP.Size = New System.Drawing.Size(1280, 789)
         Me.Tab_DP.TabIndex = 0
         Me.Tab_DP.Text = "Datos Personales"
@@ -2823,7 +2706,7 @@ Partial Class Empleados
         Me.pnl_save.Controls.Add(Me.CANCEL)
         Me.pnl_save.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pnl_save.Location = New System.Drawing.Point(990, 592)
-        Me.pnl_save.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnl_save.Margin = New System.Windows.Forms.Padding(2)
         Me.pnl_save.Name = "pnl_save"
         Me.pnl_save.Size = New System.Drawing.Size(267, 182)
         Me.pnl_save.TabIndex = 35
@@ -2844,7 +2727,7 @@ Partial Class Empleados
         Me.panel15.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel15.Controls.Add(Me.label16)
         Me.panel15.Location = New System.Drawing.Point(-2, -2)
-        Me.panel15.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panel15.Margin = New System.Windows.Forms.Padding(2)
         Me.panel15.Name = "panel15"
         Me.panel15.Size = New System.Drawing.Size(807, 35)
         Me.panel15.TabIndex = 0
@@ -2872,6 +2755,26 @@ Partial Class Empleados
         Me.Label5.TabIndex = 38
         Me.Label5.Text = "CANCELAR"
         '
+        'SAVE
+        '
+        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
+        Me.SAVE.Location = New System.Drawing.Point(35, 55)
+        Me.SAVE.Name = "SAVE"
+        Me.SAVE.Size = New System.Drawing.Size(83, 83)
+        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.SAVE.TabIndex = 0
+        Me.SAVE.TabStop = False
+        '
+        'CANCEL
+        '
+        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
+        Me.CANCEL.Location = New System.Drawing.Point(161, 55)
+        Me.CANCEL.Name = "CANCEL"
+        Me.CANCEL.Size = New System.Drawing.Size(83, 83)
+        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.CANCEL.TabIndex = 1
+        Me.CANCEL.TabStop = False
+        '
         'pnl_estatus
         '
         Me.pnl_estatus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
@@ -2889,7 +2792,7 @@ Partial Class Empleados
         Me.pnl_estatus.Controls.Add(Me.lbl_ALTA)
         Me.pnl_estatus.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pnl_estatus.Location = New System.Drawing.Point(16, 592)
-        Me.pnl_estatus.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnl_estatus.Margin = New System.Windows.Forms.Padding(2)
         Me.pnl_estatus.Name = "pnl_estatus"
         Me.pnl_estatus.Size = New System.Drawing.Size(955, 182)
         Me.pnl_estatus.TabIndex = 34
@@ -2906,11 +2809,22 @@ Partial Class Empleados
         Me.Label70.Text = "ALTA"
         Me.Label70.Visible = False
         '
+        'BAJA
+        '
+        Me.BAJA.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
+        Me.BAJA.Location = New System.Drawing.Point(844, 55)
+        Me.BAJA.Name = "BAJA"
+        Me.BAJA.Size = New System.Drawing.Size(83, 83)
+        Me.BAJA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.BAJA.TabIndex = 41
+        Me.BAJA.TabStop = False
+        Me.BAJA.Visible = False
+        '
         'seg
         '
         Me.seg.AutoSize = True
         Me.seg.Location = New System.Drawing.Point(140, 123)
-        Me.seg.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.seg.Margin = New System.Windows.Forms.Padding(2)
         Me.seg.Name = "seg"
         Me.seg.Size = New System.Drawing.Size(165, 25)
         Me.seg.TabIndex = 27
@@ -2922,7 +2836,7 @@ Partial Class Empleados
         Me.panel13.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel13.Controls.Add(Me.label15)
         Me.panel13.Location = New System.Drawing.Point(-2, -2)
-        Me.panel13.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panel13.Margin = New System.Windows.Forms.Padding(2)
         Me.panel13.Name = "panel13"
         Me.panel13.Size = New System.Drawing.Size(955, 35)
         Me.panel13.TabIndex = 0
@@ -2945,7 +2859,7 @@ Partial Class Empleados
         Me.commen.Location = New System.Drawing.Point(391, 55)
         Me.commen.Multiline = True
         Me.commen.Name = "commen"
-        Me.commen.Size = New System.Drawing.Size(427, 83)
+        Me.commen.Size = New System.Drawing.Size(427, 93)
         Me.commen.TabIndex = 28
         '
         'txt_activo
@@ -2965,6 +2879,17 @@ Partial Class Empleados
         Me.label8.Size = New System.Drawing.Size(73, 21)
         Me.label8.TabIndex = 38
         Me.label8.Text = "Motivo: "
+        '
+        'ALTA
+        '
+        Me.ALTA.Image = Global.AdminEmpleados.My.Resources.Resources.Alta_80px
+        Me.ALTA.Location = New System.Drawing.Point(844, 55)
+        Me.ALTA.Name = "ALTA"
+        Me.ALTA.Size = New System.Drawing.Size(83, 83)
+        Me.ALTA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ALTA.TabIndex = 24
+        Me.ALTA.TabStop = False
+        Me.ALTA.Visible = False
         '
         'txt_baja
         '
@@ -3033,10 +2958,21 @@ Partial Class Empleados
         Me.pnl_cont.Controls.Add(Me.lbl_depto)
         Me.pnl_cont.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pnl_cont.Location = New System.Drawing.Point(437, 346)
-        Me.pnl_cont.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnl_cont.Margin = New System.Windows.Forms.Padding(2)
         Me.pnl_cont.Name = "pnl_cont"
         Me.pnl_cont.Size = New System.Drawing.Size(820, 233)
         Me.pnl_cont.TabIndex = 33
+        '
+        'buscar_depto
+        '
+        Me.buscar_depto.BackgroundImage = CType(resources.GetObject("buscar_depto.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_depto.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_depto.Location = New System.Drawing.Point(385, 150)
+        Me.buscar_depto.Name = "buscar_depto"
+        Me.buscar_depto.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_depto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_depto.TabIndex = 60
+        Me.buscar_depto.TabStop = False
         '
         'depto
         '
@@ -3054,12 +2990,23 @@ Partial Class Empleados
         Me.depto2.TabIndex = 59
         Me.depto2.TabStop = False
         '
+        'Buscar_PUESTO
+        '
+        Me.Buscar_PUESTO.BackgroundImage = CType(resources.GetObject("Buscar_PUESTO.BackgroundImage"), System.Drawing.Image)
+        Me.Buscar_PUESTO.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.Buscar_PUESTO.Location = New System.Drawing.Point(385, 78)
+        Me.Buscar_PUESTO.Name = "Buscar_PUESTO"
+        Me.Buscar_PUESTO.Size = New System.Drawing.Size(30, 28)
+        Me.Buscar_PUESTO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Buscar_PUESTO.TabIndex = 57
+        Me.Buscar_PUESTO.TabStop = False
+        '
         'panel11
         '
         Me.panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel11.Controls.Add(Me.label14)
         Me.panel11.Location = New System.Drawing.Point(-2, -2)
-        Me.panel11.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panel11.Margin = New System.Windows.Forms.Padding(2)
         Me.panel11.Name = "panel11"
         Me.panel11.Size = New System.Drawing.Size(877, 35)
         Me.panel11.TabIndex = 0
@@ -3075,6 +3022,16 @@ Partial Class Empleados
         Me.label14.Size = New System.Drawing.Size(109, 21)
         Me.label14.TabIndex = 0
         Me.label14.Text = "Contratacion"
+        '
+        'Buscar_tipo
+        '
+        Me.Buscar_tipo.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.Buscar_tipo.Location = New System.Drawing.Point(763, 77)
+        Me.Buscar_tipo.Name = "Buscar_tipo"
+        Me.Buscar_tipo.Size = New System.Drawing.Size(30, 28)
+        Me.Buscar_tipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Buscar_tipo.TabIndex = 54
+        Me.Buscar_tipo.TabStop = False
         '
         'lbl_ingreso
         '
@@ -3170,6 +3127,17 @@ Partial Class Empleados
         Me.txt_FECHAINGRESO.Size = New System.Drawing.Size(209, 28)
         Me.txt_FECHAINGRESO.TabIndex = 19
         '
+        'Buscar_Super
+        '
+        Me.Buscar_Super.BackgroundImage = CType(resources.GetObject("Buscar_Super.BackgroundImage"), System.Drawing.Image)
+        Me.Buscar_Super.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.Buscar_Super.Location = New System.Drawing.Point(763, 44)
+        Me.Buscar_Super.Name = "Buscar_Super"
+        Me.Buscar_Super.Size = New System.Drawing.Size(30, 28)
+        Me.Buscar_Super.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Buscar_Super.TabIndex = 51
+        Me.Buscar_Super.TabStop = False
+        '
         'txt_PUESTO
         '
         Me.txt_PUESTO.Location = New System.Drawing.Point(209, 78)
@@ -3219,7 +3187,7 @@ Partial Class Empleados
         Me.pnl_foto.Controls.Add(Me.foto)
         Me.pnl_foto.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pnl_foto.Location = New System.Drawing.Point(16, 346)
-        Me.pnl_foto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnl_foto.Margin = New System.Windows.Forms.Padding(2)
         Me.pnl_foto.Name = "pnl_foto"
         Me.pnl_foto.Size = New System.Drawing.Size(417, 233)
         Me.pnl_foto.TabIndex = 32
@@ -3242,7 +3210,7 @@ Partial Class Empleados
         Me.panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel9.Controls.Add(Me.label13)
         Me.panel9.Location = New System.Drawing.Point(-2, -2)
-        Me.panel9.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panel9.Margin = New System.Windows.Forms.Padding(2)
         Me.panel9.Name = "panel9"
         Me.panel9.Size = New System.Drawing.Size(807, 35)
         Me.panel9.TabIndex = 0
@@ -3258,6 +3226,16 @@ Partial Class Empleados
         Me.label13.Size = New System.Drawing.Size(45, 21)
         Me.label13.TabIndex = 0
         Me.label13.Text = "Foto"
+        '
+        'foto
+        '
+        Me.foto.Image = Global.AdminEmpleados.My.Resources.Resources.photoNobody120
+        Me.foto.Location = New System.Drawing.Point(140, 51)
+        Me.foto.Name = "foto"
+        Me.foto.Size = New System.Drawing.Size(139, 144)
+        Me.foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.foto.TabIndex = 29
+        Me.foto.TabStop = False
         '
         'pnl_per
         '
@@ -3307,10 +3285,21 @@ Partial Class Empleados
         Me.pnl_per.Controls.Add(Me.lbl_rfc)
         Me.pnl_per.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pnl_per.Location = New System.Drawing.Point(16, 32)
-        Me.pnl_per.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnl_per.Margin = New System.Windows.Forms.Padding(2)
         Me.pnl_per.Name = "pnl_per"
         Me.pnl_per.Size = New System.Drawing.Size(1241, 298)
         Me.pnl_per.TabIndex = 31
+        '
+        'buscar_ciudad
+        '
+        Me.buscar_ciudad.BackgroundImage = CType(resources.GetObject("buscar_ciudad.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_ciudad.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_ciudad.Location = New System.Drawing.Point(807, 80)
+        Me.buscar_ciudad.Name = "buscar_ciudad"
+        Me.buscar_ciudad.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_ciudad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_ciudad.TabIndex = 61
+        Me.buscar_ciudad.TabStop = False
         '
         'cuidad
         '
@@ -3383,13 +3372,24 @@ Partial Class Empleados
         Me.Label54.TabIndex = 54
         Me.Label54.Text = "Educacion:"
         '
+        'buscar_EN
+        '
+        Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_EN.Location = New System.Drawing.Point(806, 48)
+        Me.buscar_EN.Name = "buscar_EN"
+        Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_EN.TabIndex = 52
+        Me.buscar_EN.TabStop = False
+        '
         'panel7
         '
         Me.panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel7.Controls.Add(Me.label12)
         Me.panel7.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.panel7.Location = New System.Drawing.Point(-2, -2)
-        Me.panel7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panel7.Margin = New System.Windows.Forms.Padding(2)
         Me.panel7.Name = "panel7"
         Me.panel7.Size = New System.Drawing.Size(1241, 35)
         Me.panel7.TabIndex = 0
@@ -3689,288 +3689,302 @@ Partial Class Empleados
         Me.MenuEmp.Controls.Add(Me.Estudio_SE)
         Me.MenuEmp.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuEmp.Location = New System.Drawing.Point(9, 43)
-        Me.MenuEmp.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MenuEmp.Margin = New System.Windows.Forms.Padding(2)
         Me.MenuEmp.Name = "MenuEmp"
         Me.MenuEmp.SelectedIndex = 0
         Me.MenuEmp.Size = New System.Drawing.Size(1288, 823)
         Me.MenuEmp.TabIndex = 1
         '
-        'SAVE
-        '
-        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.SAVE.Location = New System.Drawing.Point(35, 55)
-        Me.SAVE.Name = "SAVE"
-        Me.SAVE.Size = New System.Drawing.Size(83, 83)
-        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.SAVE.TabIndex = 0
-        Me.SAVE.TabStop = False
-        '
-        'CANCEL
-        '
-        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(161, 55)
-        Me.CANCEL.Name = "CANCEL"
-        Me.CANCEL.Size = New System.Drawing.Size(83, 83)
-        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.CANCEL.TabIndex = 1
-        Me.CANCEL.TabStop = False
-        '
-        'BAJA
-        '
-        Me.BAJA.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
-        Me.BAJA.Location = New System.Drawing.Point(844, 55)
-        Me.BAJA.Name = "BAJA"
-        Me.BAJA.Size = New System.Drawing.Size(83, 83)
-        Me.BAJA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.BAJA.TabIndex = 41
-        Me.BAJA.TabStop = False
-        Me.BAJA.Visible = False
-        '
-        'ALTA
-        '
-        Me.ALTA.Image = Global.AdminEmpleados.My.Resources.Resources.Alta_80px
-        Me.ALTA.Location = New System.Drawing.Point(844, 55)
-        Me.ALTA.Name = "ALTA"
-        Me.ALTA.Size = New System.Drawing.Size(83, 83)
-        Me.ALTA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ALTA.TabIndex = 24
-        Me.ALTA.TabStop = False
-        Me.ALTA.Visible = False
-        '
-        'buscar_depto
-        '
-        Me.buscar_depto.BackgroundImage = CType(resources.GetObject("buscar_depto.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_depto.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_depto.Location = New System.Drawing.Point(385, 150)
-        Me.buscar_depto.Name = "buscar_depto"
-        Me.buscar_depto.Size = New System.Drawing.Size(30, 28)
-        Me.buscar_depto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_depto.TabIndex = 60
-        Me.buscar_depto.TabStop = False
-        '
-        'Buscar_PUESTO
-        '
-        Me.Buscar_PUESTO.BackgroundImage = CType(resources.GetObject("Buscar_PUESTO.BackgroundImage"), System.Drawing.Image)
-        Me.Buscar_PUESTO.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.Buscar_PUESTO.Location = New System.Drawing.Point(385, 78)
-        Me.Buscar_PUESTO.Name = "Buscar_PUESTO"
-        Me.Buscar_PUESTO.Size = New System.Drawing.Size(30, 28)
-        Me.Buscar_PUESTO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Buscar_PUESTO.TabIndex = 57
-        Me.Buscar_PUESTO.TabStop = False
-        '
-        'Buscar_tipo
-        '
-        Me.Buscar_tipo.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.Buscar_tipo.Location = New System.Drawing.Point(763, 77)
-        Me.Buscar_tipo.Name = "Buscar_tipo"
-        Me.Buscar_tipo.Size = New System.Drawing.Size(30, 28)
-        Me.Buscar_tipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Buscar_tipo.TabIndex = 54
-        Me.Buscar_tipo.TabStop = False
-        '
-        'Buscar_Super
-        '
-        Me.Buscar_Super.BackgroundImage = CType(resources.GetObject("Buscar_Super.BackgroundImage"), System.Drawing.Image)
-        Me.Buscar_Super.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.Buscar_Super.Location = New System.Drawing.Point(763, 44)
-        Me.Buscar_Super.Name = "Buscar_Super"
-        Me.Buscar_Super.Size = New System.Drawing.Size(30, 28)
-        Me.Buscar_Super.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Buscar_Super.TabIndex = 51
-        Me.Buscar_Super.TabStop = False
-        '
-        'foto
-        '
-        Me.foto.Image = Global.AdminEmpleados.My.Resources.Resources.photoNobody120
-        Me.foto.Location = New System.Drawing.Point(140, 51)
-        Me.foto.Name = "foto"
-        Me.foto.Size = New System.Drawing.Size(139, 144)
-        Me.foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.foto.TabIndex = 29
-        Me.foto.TabStop = False
-        '
-        'buscar_ciudad
-        '
-        Me.buscar_ciudad.BackgroundImage = CType(resources.GetObject("buscar_ciudad.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_ciudad.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_ciudad.Location = New System.Drawing.Point(807, 80)
-        Me.buscar_ciudad.Name = "buscar_ciudad"
-        Me.buscar_ciudad.Size = New System.Drawing.Size(30, 28)
-        Me.buscar_ciudad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_ciudad.TabIndex = 61
-        Me.buscar_ciudad.TabStop = False
-        '
-        'buscar_EN
-        '
-        Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_EN.Location = New System.Drawing.Point(806, 48)
-        Me.buscar_EN.Name = "buscar_EN"
-        Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
-        Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_EN.TabIndex = 52
-        Me.buscar_EN.TabStop = False
-        '
-        'btn_hijoADD
-        '
-        Me.btn_hijoADD.BackColor = System.Drawing.Color.White
-        Me.btn_hijoADD.BackgroundImage = CType(resources.GetObject("btn_hijoADD.BackgroundImage"), System.Drawing.Image)
-        Me.btn_hijoADD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_hijoADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_hijoADD.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_hijoADD.ForeColor = System.Drawing.Color.White
-        Me.btn_hijoADD.Location = New System.Drawing.Point(691, 156)
-        Me.btn_hijoADD.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_hijoADD.Name = "btn_hijoADD"
-        Me.btn_hijoADD.Size = New System.Drawing.Size(98, 41)
-        Me.btn_hijoADD.TabIndex = 50
-        Me.btn_hijoADD.Text = "Agregar"
-        Me.btn_hijoADD.UseVisualStyleBackColor = False
-        '
-        'btn_esSAVE
-        '
-        Me.btn_esSAVE.BackColor = System.Drawing.Color.White
-        Me.btn_esSAVE.BackgroundImage = CType(resources.GetObject("btn_esSAVE.BackgroundImage"), System.Drawing.Image)
-        Me.btn_esSAVE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_esSAVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_esSAVE.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_esSAVE.ForeColor = System.Drawing.Color.White
-        Me.btn_esSAVE.Location = New System.Drawing.Point(691, 146)
-        Me.btn_esSAVE.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_esSAVE.Name = "btn_esSAVE"
-        Me.btn_esSAVE.Size = New System.Drawing.Size(98, 41)
-        Me.btn_esSAVE.TabIndex = 50
-        Me.btn_esSAVE.Text = "Guardar"
-        Me.btn_esSAVE.UseVisualStyleBackColor = False
-        '
-        'btn_antSave
-        '
-        Me.btn_antSave.BackColor = System.Drawing.Color.White
-        Me.btn_antSave.BackgroundImage = CType(resources.GetObject("btn_antSave.BackgroundImage"), System.Drawing.Image)
-        Me.btn_antSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_antSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_antSave.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_antSave.ForeColor = System.Drawing.Color.White
-        Me.btn_antSave.Location = New System.Drawing.Point(626, 171)
-        Me.btn_antSave.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_antSave.Name = "btn_antSave"
-        Me.btn_antSave.Size = New System.Drawing.Size(98, 41)
-        Me.btn_antSave.TabIndex = 50
-        Me.btn_antSave.Text = "Guardar"
-        Me.btn_antSave.UseVisualStyleBackColor = False
-        '
-        'btn_conADD
-        '
-        Me.btn_conADD.BackColor = System.Drawing.Color.White
-        Me.btn_conADD.BackgroundImage = CType(resources.GetObject("btn_conADD.BackgroundImage"), System.Drawing.Image)
-        Me.btn_conADD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_conADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_conADD.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_conADD.ForeColor = System.Drawing.Color.White
-        Me.btn_conADD.Location = New System.Drawing.Point(670, 173)
-        Me.btn_conADD.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_conADD.Name = "btn_conADD"
-        Me.btn_conADD.Size = New System.Drawing.Size(98, 41)
-        Me.btn_conADD.TabIndex = 49
-        Me.btn_conADD.Text = "Guardar"
-        Me.btn_conADD.UseVisualStyleBackColor = False
-        '
-        'btn_enfADD
-        '
-        Me.btn_enfADD.BackColor = System.Drawing.Color.White
-        Me.btn_enfADD.BackgroundImage = CType(resources.GetObject("btn_enfADD.BackgroundImage"), System.Drawing.Image)
-        Me.btn_enfADD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_enfADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_enfADD.Location = New System.Drawing.Point(364, 45)
-        Me.btn_enfADD.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_enfADD.Name = "btn_enfADD"
-        Me.btn_enfADD.Size = New System.Drawing.Size(86, 41)
-        Me.btn_enfADD.TabIndex = 30
-        Me.btn_enfADD.Text = "Agregar"
-        Me.btn_enfADD.UseVisualStyleBackColor = False
-        '
-        'btn_OI
-        '
-        Me.btn_OI.BackColor = System.Drawing.Color.White
-        Me.btn_OI.BackgroundImage = CType(resources.GetObject("btn_OI.BackgroundImage"), System.Drawing.Image)
-        Me.btn_OI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_OI.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_OI.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_OI.ForeColor = System.Drawing.Color.White
-        Me.btn_OI.Location = New System.Drawing.Point(711, 36)
-        Me.btn_OI.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_OI.Name = "btn_OI"
-        Me.btn_OI.Size = New System.Drawing.Size(98, 41)
-        Me.btn_OI.TabIndex = 17
-        Me.btn_OI.Text = "Agregar"
-        Me.btn_OI.UseVisualStyleBackColor = False
-        '
-        'Btn_AddRef
-        '
-        Me.Btn_AddRef.BackColor = System.Drawing.Color.White
-        Me.Btn_AddRef.BackgroundImage = CType(resources.GetObject("Btn_AddRef.BackgroundImage"), System.Drawing.Image)
-        Me.Btn_AddRef.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btn_AddRef.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btn_AddRef.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_AddRef.ForeColor = System.Drawing.Color.White
-        Me.Btn_AddRef.Location = New System.Drawing.Point(711, 44)
-        Me.Btn_AddRef.Margin = New System.Windows.Forms.Padding(2)
-        Me.Btn_AddRef.Name = "Btn_AddRef"
-        Me.Btn_AddRef.Size = New System.Drawing.Size(98, 41)
-        Me.Btn_AddRef.TabIndex = 6
-        Me.Btn_AddRef.Text = "Agregar"
-        Me.Btn_AddRef.UseVisualStyleBackColor = False
-        '
-        'btn_SESave
-        '
-        Me.btn_SESave.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.btn_SESave.Location = New System.Drawing.Point(159, 45)
-        Me.btn_SESave.Name = "btn_SESave"
-        Me.btn_SESave.Size = New System.Drawing.Size(83, 83)
-        Me.btn_SESave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_SESave.TabIndex = 41
-        Me.btn_SESave.TabStop = False
-        '
-        'btn_SECancel
-        '
-        Me.btn_SECancel.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.btn_SECancel.Location = New System.Drawing.Point(285, 45)
-        Me.btn_SECancel.Name = "btn_SECancel"
-        Me.btn_SECancel.Size = New System.Drawing.Size(83, 83)
-        Me.btn_SECancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_SECancel.TabIndex = 42
-        Me.btn_SECancel.TabStop = False
-        '
-        'PB_IMAGE_VIVIENDA
-        '
-        Me.PB_IMAGE_VIVIENDA.Image = Global.AdminEmpleados.My.Resources.Resources.photoNobody120
-        Me.PB_IMAGE_VIVIENDA.Location = New System.Drawing.Point(125, 91)
-        Me.PB_IMAGE_VIVIENDA.Name = "PB_IMAGE_VIVIENDA"
-        Me.PB_IMAGE_VIVIENDA.Size = New System.Drawing.Size(287, 263)
-        Me.PB_IMAGE_VIVIENDA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PB_IMAGE_VIVIENDA.TabIndex = 31
-        Me.PB_IMAGE_VIVIENDA.TabStop = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(711, 44)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(98, 41)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Agregar"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'datosFamiliaBindingSource
         '
         Me.datosFamiliaBindingSource.DataMember = "Datos_Familia"
+        '
+        'ID_Persona
+        '
+        Me.ID_Persona.DataPropertyName = "ID_Persona"
+        Me.ID_Persona.HeaderText = "ID"
+        Me.ID_Persona.Name = "ID_Persona"
+        Me.ID_Persona.ReadOnly = True
+        '
+        'ID_Emp
+        '
+        Me.ID_Emp.DataPropertyName = "ID_Emp"
+        Me.ID_Emp.HeaderText = "Empleado"
+        Me.ID_Emp.Name = "ID_Emp"
+        Me.ID_Emp.ReadOnly = True
+        '
+        'Fam_Tipo
+        '
+        Me.Fam_Tipo.DataPropertyName = "Fam_Tipo"
+        Me.Fam_Tipo.HeaderText = "Tipo"
+        Me.Fam_Tipo.Name = "Fam_Tipo"
+        Me.Fam_Tipo.ReadOnly = True
+        '
+        'Fam_Nombre
+        '
+        Me.Fam_Nombre.DataPropertyName = "Fam_Nombre"
+        Me.Fam_Nombre.HeaderText = "Nombre"
+        Me.Fam_Nombre.Name = "Fam_Nombre"
+        Me.Fam_Nombre.ReadOnly = True
+        '
+        'Fam_APat
+        '
+        Me.Fam_APat.DataPropertyName = "Fam_APat"
+        Me.Fam_APat.HeaderText = "Apellido Paterno"
+        Me.Fam_APat.Name = "Fam_APat"
+        Me.Fam_APat.ReadOnly = True
+        Me.Fam_APat.Width = 150
+        '
+        'Fam_AMat
+        '
+        Me.Fam_AMat.DataPropertyName = "Fam_AMat"
+        Me.Fam_AMat.HeaderText = "Apellido Materno"
+        Me.Fam_AMat.Name = "Fam_AMat"
+        Me.Fam_AMat.ReadOnly = True
+        Me.Fam_AMat.Width = 150
+        '
+        'Fam_Nacion
+        '
+        Me.Fam_Nacion.DataPropertyName = "Fam_Nacion"
+        Me.Fam_Nacion.HeaderText = "Nacionalidad"
+        Me.Fam_Nacion.Name = "Fam_Nacion"
+        Me.Fam_Nacion.ReadOnly = True
+        '
+        'Fam_FNac
+        '
+        Me.Fam_FNac.DataPropertyName = "Fam_FNac"
+        Me.Fam_FNac.HeaderText = "Fecha Nacimiento"
+        Me.Fam_FNac.Name = "Fam_FNac"
+        Me.Fam_FNac.ReadOnly = True
+        Me.Fam_FNac.Width = 150
+        '
+        'Fam_Genero
+        '
+        Me.Fam_Genero.DataPropertyName = "Fam_Genero"
+        Me.Fam_Genero.HeaderText = "Genero"
+        Me.Fam_Genero.Name = "Fam_Genero"
+        Me.Fam_Genero.ReadOnly = True
+        '
+        'Fam_EdoCivil
+        '
+        Me.Fam_EdoCivil.DataPropertyName = "Fam_EdoCivil"
+        Me.Fam_EdoCivil.HeaderText = "Estado Civil"
+        Me.Fam_EdoCivil.Name = "Fam_EdoCivil"
+        Me.Fam_EdoCivil.ReadOnly = True
+        Me.Fam_EdoCivil.Width = 200
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ID_Persona"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "ID_Emp"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Empleado"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Fam_Tipo"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Tipo"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Fam_Nombre"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Nombre"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Fam_APat"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Apellido Paterno"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        Me.DataGridViewTextBoxColumn5.Width = 150
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Fam_AMat"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Apellido Materno"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        Me.DataGridViewTextBoxColumn6.Width = 150
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Fam_Nacion"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Nacionalidad"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "Fam_FNac"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Fecha Nacimiento"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
+        Me.DataGridViewTextBoxColumn8.Width = 150
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.DataPropertyName = "Fam_Genero"
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Genero"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.DataPropertyName = "Fam_EdoCivil"
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Estado Civil"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.ReadOnly = True
+        Me.DataGridViewTextBoxColumn10.Width = 150
+        '
+        'ID_Ant
+        '
+        Me.ID_Ant.DataPropertyName = "ID_Ant"
+        Me.ID_Ant.HeaderText = "ID"
+        Me.ID_Ant.Name = "ID_Ant"
+        '
+        'ID__Emp
+        '
+        Me.ID__Emp.DataPropertyName = "ID_Emp"
+        Me.ID__Emp.HeaderText = "Empleado"
+        Me.ID__Emp.Name = "ID__Emp"
+        '
+        'Ant_FInicio
+        '
+        Me.Ant_FInicio.DataPropertyName = "Ant_FInicio"
+        Me.Ant_FInicio.HeaderText = "Fecha Inicio"
+        Me.Ant_FInicio.Name = "Ant_FInicio"
+        Me.Ant_FInicio.Width = 200
+        '
+        'Ant_FFin
+        '
+        Me.Ant_FFin.DataPropertyName = "Ant_FFin"
+        Me.Ant_FFin.HeaderText = "Fecha Final"
+        Me.Ant_FFin.Name = "Ant_FFin"
+        Me.Ant_FFin.Width = 200
+        '
+        'Ant_NEmpresa
+        '
+        Me.Ant_NEmpresa.DataPropertyName = "Ant_NEmpresa"
+        Me.Ant_NEmpresa.HeaderText = "Empresa"
+        Me.Ant_NEmpresa.Name = "Ant_NEmpresa"
+        '
+        'Ant_Cargo
+        '
+        Me.Ant_Cargo.DataPropertyName = "Ant_Cargo"
+        Me.Ant_Cargo.HeaderText = "Cargo"
+        Me.Ant_Cargo.Name = "Ant_Cargo"
+        '
+        'Ant_Salario
+        '
+        Me.Ant_Salario.DataPropertyName = "Ant_Salario"
+        Me.Ant_Salario.HeaderText = "Salario"
+        Me.Ant_Salario.Name = "Ant_Salario"
+        '
+        'Ant_Tel
+        '
+        Me.Ant_Tel.DataPropertyName = "Ant_Tel"
+        Me.Ant_Tel.HeaderText = "Telefono"
+        Me.Ant_Tel.Name = "Ant_Tel"
+        '
+        'Ant_Motivo
+        '
+        Me.Ant_Motivo.DataPropertyName = "Ant_Motivo"
+        Me.Ant_Motivo.HeaderText = "Motivo"
+        Me.Ant_Motivo.Name = "Ant_Motivo"
+        '
+        'Ant_Contacto
+        '
+        Me.Ant_Contacto.DataPropertyName = "Ant_Contacto"
+        Me.Ant_Contacto.HeaderText = "Contacto"
+        Me.Ant_Contacto.Name = "Ant_Contacto"
+        '
+        'ID_Enf
+        '
+        Me.ID_Enf.DataPropertyName = "ID_Enf"
+        Me.ID_Enf.HeaderText = "ID"
+        Me.ID_Enf.Name = "ID_Enf"
+        Me.ID_Enf.ReadOnly = True
+        '
+        'Text
+        '
+        Me.Text.DataPropertyName = "Text"
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
+        Me.Text.DefaultCellStyle = DataGridViewCellStyle7
+        Me.Text.HeaderText = "Enfermedad"
+        Me.Text.Name = "Text"
+        Me.Text.ReadOnly = True
+        Me.Text.Width = 1400
+        '
+        'Column3
+        '
+        Me.Column3.DataPropertyName = "ID_CEmergencia"
+        Me.Column3.HeaderText = "ID"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column4
+        '
+        Me.Column4.DataPropertyName = "ID_Emp"
+        Me.Column4.HeaderText = "Empleado"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.DataPropertyName = "CE_Nombre"
+        Me.Column5.HeaderText = "Nombre"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        '
+        'Column6
+        '
+        Me.Column6.DataPropertyName = "CE_APat"
+        Me.Column6.HeaderText = "Apellido Paterno"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 200
+        '
+        'Column7
+        '
+        Me.Column7.DataPropertyName = "CE_AMat"
+        Me.Column7.HeaderText = "Apellido Materno"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 200
+        '
+        'Column8
+        '
+        Me.Column8.DataPropertyName = "CE_Parentesco"
+        Me.Column8.HeaderText = "Parentesco"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        '
+        'Column9
+        '
+        Me.Column9.DataPropertyName = "CE_Telefono"
+        Me.Column9.HeaderText = "Telefono"
+        Me.Column9.Name = "Column9"
+        Me.Column9.ReadOnly = True
+        Me.Column9.Width = 200
+        '
+        'Column10
+        '
+        Me.Column10.DataPropertyName = "CE_Celular"
+        Me.Column10.HeaderText = "Celular"
+        Me.Column10.Name = "Column10"
+        Me.Column10.ReadOnly = True
+        Me.Column10.Width = 200
         '
         'Empleados
         '
@@ -3979,16 +3993,19 @@ Partial Class Empleados
         Me.ClientSize = New System.Drawing.Size(1308, 864)
         Me.Controls.Add(Me.MenuEmp)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Empleados"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Estudio_SE.ResumeLayout(False)
         Me.Panel27.ResumeLayout(False)
         Me.Panel27.PerformLayout()
+        CType(Me.btn_SESave, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_SECancel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel28.ResumeLayout(False)
         Me.Panel28.PerformLayout()
         Me.Panel32.ResumeLayout(False)
         Me.Panel32.PerformLayout()
+        CType(Me.PB_IMAGE_VIVIENDA, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel33.ResumeLayout(False)
         Me.Panel33.PerformLayout()
         Me.Panel34.ResumeLayout(False)
@@ -4061,37 +4078,34 @@ Partial Class Empleados
         Me.pnl_save.PerformLayout()
         Me.panel15.ResumeLayout(False)
         Me.panel15.PerformLayout()
+        CType(Me.SAVE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_estatus.ResumeLayout(False)
         Me.pnl_estatus.PerformLayout()
+        CType(Me.BAJA, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel13.ResumeLayout(False)
         Me.panel13.PerformLayout()
+        CType(Me.ALTA, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_cont.ResumeLayout(False)
         Me.pnl_cont.PerformLayout()
+        CType(Me.buscar_depto, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Buscar_PUESTO, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel11.ResumeLayout(False)
         Me.panel11.PerformLayout()
+        CType(Me.Buscar_tipo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Buscar_Super, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_foto.ResumeLayout(False)
         Me.pnl_foto.PerformLayout()
         Me.panel9.ResumeLayout(False)
         Me.panel9.PerformLayout()
+        CType(Me.foto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_per.ResumeLayout(False)
         Me.pnl_per.PerformLayout()
+        CType(Me.buscar_ciudad, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel7.ResumeLayout(False)
         Me.panel7.PerformLayout()
         Me.MenuEmp.ResumeLayout(False)
-        CType(Me.SAVE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BAJA, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ALTA, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.buscar_depto, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Buscar_PUESTO, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Buscar_tipo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Buscar_Super, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.foto, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.buscar_ciudad, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_SESave, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_SECancel, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PB_IMAGE_VIVIENDA, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.datosFamiliaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -4220,8 +4234,6 @@ Partial Class Empleados
     Private WithEvents Tab_Enfer As TabPage
     Private WithEvents panel20 As Panel
     Private WithEvents dgv_Enf As DataGridView
-    Friend WithEvents ID_Enf As DataGridViewTextBoxColumn
-    Friend WithEvents Text As DataGridViewTextBoxColumn
     Private WithEvents btn_enfADD As Button
     Friend WithEvents txt_enfNAME As TextBox
     Friend WithEvents label47 As Label
@@ -4230,14 +4242,6 @@ Partial Class Empleados
     Private WithEvents Tab_Cont As TabPage
     Private WithEvents panel18 As Panel
     Private WithEvents dgv_contacto As DataGridView
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
-    Friend WithEvents Column9 As DataGridViewTextBoxColumn
-    Friend WithEvents Column10 As DataGridViewTextBoxColumn
     Private WithEvents btn_conADD As Button
     Friend WithEvents label45 As Label
     Friend WithEvents txt_conPAREN As TextBox
@@ -4256,16 +4260,6 @@ Partial Class Empleados
     Private WithEvents Tab_AL As TabPage
     Private WithEvents panel16 As Panel
     Friend WithEvents dgv_ant As DataGridView
-    Friend WithEvents ID_Ant As DataGridViewTextBoxColumn
-    Friend WithEvents ID__Emp As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_FInicio As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_FFin As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_NEmpresa As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Cargo As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Salario As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Tel As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Motivo As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Contacto As DataGridViewTextBoxColumn
     Private WithEvents btn_antSave As Button
     Friend WithEvents txt_antMT As TextBox
     Friend WithEvents txt_antNAME As TextBox
@@ -4290,16 +4284,6 @@ Partial Class Empleados
     Private WithEvents label10 As Label
     Private WithEvents panel3 As Panel
     Private WithEvents dgv_Hijos As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
     Private WithEvents btn_hijoADD As Button
     Friend WithEvents txt_hijoEC As ComboBox
     Friend WithEvents label32 As Label
@@ -4319,16 +4303,6 @@ Partial Class Empleados
     Private WithEvents label11 As Label
     Private WithEvents panel2 As Panel
     Private WithEvents dgv_esposa As DataGridView
-    Friend WithEvents ID_Persona As DataGridViewTextBoxColumn
-    Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_Tipo As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_APat As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_AMat As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_Nacion As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_FNac As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_Genero As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_EdoCivil As DataGridViewTextBoxColumn
     Private WithEvents btn_esSAVE As Button
     Friend WithEvents label25 As Label
     Friend WithEvents txt_esNacion As TextBox
@@ -4448,4 +4422,44 @@ Partial Class Empleados
     Friend WithEvents TIPO As DataGridViewTextBoxColumn
     Friend WithEvents OCUPACION As DataGridViewTextBoxColumn
     Friend WithEvents TIEMPO As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
+    Friend WithEvents ID_Persona As DataGridViewTextBoxColumn
+    Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_Tipo As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_Nombre As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_APat As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_AMat As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_Nacion As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_FNac As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_Genero As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_EdoCivil As DataGridViewTextBoxColumn
+    Friend WithEvents ID_Ant As DataGridViewTextBoxColumn
+    Friend WithEvents ID__Emp As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_FInicio As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_FFin As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_NEmpresa As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_Cargo As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_Salario As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_Tel As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_Motivo As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_Contacto As DataGridViewTextBoxColumn
+    Friend WithEvents ID_Enf As DataGridViewTextBoxColumn
+    Friend WithEvents Text As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents Column10 As DataGridViewTextBoxColumn
 End Class

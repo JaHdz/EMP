@@ -3,15 +3,23 @@ Public Class Main
     Private bit As Boolean
     Private X As Integer
     Private Y As Integer
+    Public NEmp As String
+    Public NName As String
 
     Private Sub cerrar_Click(ByVal sender As Object, ByVal e As EventArgs)
         Me.Close()
     End Sub
 
+    Sub New(ByVal emp As Integer, ByVal name As String)
+        InitializeComponent()
+        NEmp = emp
+        NName = name
+        lbl_user.Text = lbl_user.Text = " | " + NName
+    End Sub
+
     Private Sub header_MouseMove(ByVal sender As Object, ByVal e As MouseEventArgs) Handles header.MouseMove
         If bit Then
             Me.WindowState = FormWindowState.Normal
-
             If Me.Left + e.X - X >= 0 AndAlso Me.Top + e.Y - Y > 10 Then
                 Me.Location = New Point(Me.Left + e.X - X, Me.Top + e.Y - Y)
             Else
@@ -41,7 +49,7 @@ Public Class Main
         If PNL_INFO.Controls.Count > 0 Then
             PNL_INFO.Controls.RemoveAt(PNL_INFO.Controls.Count - 1)
         End If
-        Dim f As New Empleados() With {.TopLevel = False, .AutoSize = False}
+        Dim f As New Empleados(NEmp) With {.TopLevel = False, .AutoSize = False}
         PNL_INFO.Controls.Add(f)
         f.Show()
         Wait.Close()
@@ -58,7 +66,7 @@ Public Class Main
         If PNL_INFO.Controls.Count > 0 Then
             PNL_INFO.Controls.RemoveAt(PNL_INFO.Controls.Count - 1)
         End If
-        Dim f As New Equipo() With {.TopLevel = False, .AutoSize = False}
+        Dim f As New Equipo(NEmp) With {.TopLevel = False, .AutoSize = False}
         PNL_INFO.Controls.Add(f)
         f.Show()
         Wait.Close()
@@ -71,7 +79,7 @@ Public Class Main
         If PNL_INFO.Controls.Count > 0 Then
             PNL_INFO.Controls.RemoveAt(PNL_INFO.Controls.Count - 1)
         End If
-        Dim f As New Capacitaciones() With {.TopLevel = False, .AutoSize = False}
+        Dim f As New Capacitaciones(NEmp) With {.TopLevel = False, .AutoSize = False}
         PNL_INFO.Controls.Add(f)
         f.Show()
         Wait.Close()
@@ -84,7 +92,7 @@ Public Class Main
         If PNL_INFO.Controls.Count > 0 Then
             PNL_INFO.Controls.RemoveAt(PNL_INFO.Controls.Count - 1)
         End If
-        Dim f As New Evaluaciones() With {.TopLevel = False, .AutoSize = False}
+        Dim f As New Evaluaciones(NEmp) With {.TopLevel = False, .AutoSize = False}
         PNL_INFO.Controls.Add(f)
         f.Show()
         Wait.Close()
@@ -97,7 +105,7 @@ Public Class Main
         If PNL_INFO.Controls.Count > 0 Then
             PNL_INFO.Controls.RemoveAt(PNL_INFO.Controls.Count - 1)
         End If
-        Dim f As New Examenes_Medicos() With {.TopLevel = False, .AutoSize = False}
+        Dim f As New Examenes_Medicos(NEmp) With {.TopLevel = False, .AutoSize = False}
         PNL_INFO.Controls.Add(f)
         f.Show()
         Wait.Close()
@@ -110,7 +118,7 @@ Public Class Main
         If PNL_INFO.Controls.Count > 0 Then
             PNL_INFO.Controls.RemoveAt(PNL_INFO.Controls.Count - 1)
         End If
-        Dim f As New Admin() With {.TopLevel = False, .AutoSize = False}
+        Dim f As New Admin(NEmp) With {.TopLevel = False, .AutoSize = False}
         PNL_INFO.Controls.Add(f)
         f.Show()
         Wait.Close()

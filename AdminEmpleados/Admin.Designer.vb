@@ -86,12 +86,6 @@ Partial Class Admin
         Me.Label19 = New System.Windows.Forms.Label()
         Me.tab_Equipo = New System.Windows.Forms.TabPage()
         Me.dgv_eq = New System.Windows.Forms.DataGridView()
-        Me.UPDATEEQ = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Equipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcione = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Costo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estatuse = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.txt_eqcost = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -107,11 +101,6 @@ Partial Class Admin
         Me.Label7 = New System.Windows.Forms.Label()
         Me.tab_evaluacion = New System.Windows.Forms.TabPage()
         Me.dgv_eval = New System.Windows.Forms.DataGridView()
-        Me.UPDATEE = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Evalua = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EV_Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EV_Descipcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EV_Estatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.txt_eval_des = New System.Windows.Forms.TextBox()
         Me.Label22 = New System.Windows.Forms.Label()
@@ -126,6 +115,71 @@ Partial Class Admin
         Me.tab_puesto = New System.Windows.Forms.TabPage()
         Me.tsb_super = New System.Windows.Forms.TabPage()
         Me.tab_tipo = New System.Windows.Forms.TabPage()
+        Me.dgv_Puesto = New System.Windows.Forms.DataGridView()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.txt_PuestoDescripcion = New System.Windows.Forms.TextBox()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.btn_SavePuesto = New System.Windows.Forms.PictureBox()
+        Me.btn_CancelPuesto = New System.Windows.Forms.PictureBox()
+        Me.txt_PuestoNombre = New System.Windows.Forms.TextBox()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.cb_PuestoRiesgo = New System.Windows.Forms.CheckBox()
+        Me.UPDATEE = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Evalua = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EV_Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EV_Descipcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EV_Estatus = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.UPDATEEQ = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Equipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcione = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Costo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estatuse = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgv_super = New System.Windows.Forms.DataGridView()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.btn_savesuper = New System.Windows.Forms.PictureBox()
+        Me.btn_cancelsuper = New System.Windows.Forms.PictureBox()
+        Me.TXT_EMP_SUPERname = New System.Windows.Forms.Label()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.BUSCAR_EMP_SUPER = New System.Windows.Forms.PictureBox()
+        Me.TXT_EMP_SUPER = New System.Windows.Forms.TextBox()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.dgv_te = New System.Windows.Forms.DataGridView()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.txt_DescTE = New System.Windows.Forms.TextBox()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.pb_saveTE = New System.Windows.Forms.PictureBox()
+        Me.pb_cancelTE = New System.Windows.Forms.PictureBox()
+        Me.txt_codigoTE = New System.Windows.Forms.TextBox()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Panel15 = New System.Windows.Forms.Panel()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.UPDATEPU = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Puesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombrep = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcionp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Riesgo = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Estatusp = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.UPDATESU = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Super = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ActivoS = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.UPDATETE = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_TE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Codigote = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcionte = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estatuste = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.tab_admin.SuspendLayout()
         Me.tab_users.SuspendLayout()
         CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -158,6 +212,25 @@ Partial Class Admin
         CType(Me.SAVE_EVAL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CANCEL_EVAL, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel9.SuspendLayout()
+        Me.tab_puesto.SuspendLayout()
+        Me.tsb_super.SuspendLayout()
+        Me.tab_tipo.SuspendLayout()
+        CType(Me.dgv_Puesto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel10.SuspendLayout()
+        CType(Me.btn_SavePuesto, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_CancelPuesto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel11.SuspendLayout()
+        CType(Me.dgv_super, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel12.SuspendLayout()
+        CType(Me.btn_savesuper, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_cancelsuper, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BUSCAR_EMP_SUPER, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel13.SuspendLayout()
+        CType(Me.dgv_te, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel14.SuspendLayout()
+        CType(Me.pb_saveTE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_cancelTE, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel15.SuspendLayout()
         Me.SuspendLayout()
         '
         'tab_admin
@@ -171,7 +244,7 @@ Partial Class Admin
         Me.tab_admin.Controls.Add(Me.tsb_super)
         Me.tab_admin.Controls.Add(Me.tab_tipo)
         Me.tab_admin.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!)
-        Me.tab_admin.Location = New System.Drawing.Point(9, 43)
+        Me.tab_admin.Location = New System.Drawing.Point(15, 24)
         Me.tab_admin.Margin = New System.Windows.Forms.Padding(2)
         Me.tab_admin.Name = "tab_admin"
         Me.tab_admin.SelectedIndex = 0
@@ -440,7 +513,7 @@ Partial Class Admin
         Me.DGV_CAT.AllowUserToAddRows = False
         Me.DGV_CAT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_CAT.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATEC, Me.ID_Cap, Me.CA_Codigo, Me.CA_Desc, Me.CA_Status})
-        Me.DGV_CAT.Location = New System.Drawing.Point(13, 260)
+        Me.DGV_CAT.Location = New System.Drawing.Point(14, 258)
         Me.DGV_CAT.Name = "DGV_CAT"
         Me.DGV_CAT.RowHeadersVisible = False
         Me.DGV_CAT.Size = New System.Drawing.Size(1240, 401)
@@ -491,7 +564,7 @@ Partial Class Admin
         Me.Panel1.Controls.Add(Me.Label16)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel1.Location = New System.Drawing.Point(14, 26)
+        Me.Panel1.Location = New System.Drawing.Point(15, 24)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1241, 217)
@@ -616,7 +689,7 @@ Partial Class Admin
         Me.dgv_depto.AllowUserToAddRows = False
         Me.dgv_depto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_depto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATED, Me.ID_Depto, Me.Codigo, Me.Descripcion, Me.Estatus})
-        Me.dgv_depto.Location = New System.Drawing.Point(15, 254)
+        Me.dgv_depto.Location = New System.Drawing.Point(14, 258)
         Me.dgv_depto.Name = "dgv_depto"
         Me.dgv_depto.RowHeadersVisible = False
         Me.dgv_depto.Size = New System.Drawing.Size(1240, 401)
@@ -667,7 +740,7 @@ Partial Class Admin
         Me.Panel3.Controls.Add(Me.Label18)
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel3.Location = New System.Drawing.Point(15, 20)
+        Me.Panel3.Location = New System.Drawing.Point(15, 24)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1241, 217)
@@ -792,49 +865,11 @@ Partial Class Admin
         Me.dgv_eq.AllowUserToAddRows = False
         Me.dgv_eq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_eq.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATEEQ, Me.ID_Equipo, Me.Nombre, Me.Descripcione, Me.Costo, Me.Estatuse})
-        Me.dgv_eq.Location = New System.Drawing.Point(18, 261)
+        Me.dgv_eq.Location = New System.Drawing.Point(14, 258)
         Me.dgv_eq.Name = "dgv_eq"
         Me.dgv_eq.RowHeadersVisible = False
         Me.dgv_eq.Size = New System.Drawing.Size(1240, 401)
         Me.dgv_eq.TabIndex = 77
-        '
-        'UPDATEEQ
-        '
-        Me.UPDATEEQ.HeaderText = "Baja"
-        Me.UPDATEEQ.Name = "UPDATEEQ"
-        '
-        'ID_Equipo
-        '
-        Me.ID_Equipo.DataPropertyName = "ID_Equipo"
-        Me.ID_Equipo.HeaderText = "ID"
-        Me.ID_Equipo.Name = "ID_Equipo"
-        '
-        'Nombre
-        '
-        Me.Nombre.DataPropertyName = "Nombre"
-        Me.Nombre.HeaderText = "CODIGO"
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.Width = 200
-        '
-        'Descripcione
-        '
-        Me.Descripcione.DataPropertyName = "Descripcion"
-        Me.Descripcione.HeaderText = "DESCRIPCION"
-        Me.Descripcione.Name = "Descripcione"
-        Me.Descripcione.Width = 500
-        '
-        'Costo
-        '
-        Me.Costo.DataPropertyName = "Costo"
-        Me.Costo.HeaderText = "COSTO"
-        Me.Costo.Name = "Costo"
-        '
-        'Estatuse
-        '
-        Me.Estatuse.DataPropertyName = "Estatus"
-        Me.Estatuse.HeaderText = "ESTATUS"
-        Me.Estatuse.Name = "Estatuse"
-        Me.Estatuse.Width = 700
         '
         'Panel5
         '
@@ -851,7 +886,7 @@ Partial Class Admin
         Me.Panel5.Controls.Add(Me.Label6)
         Me.Panel5.Controls.Add(Me.Panel6)
         Me.Panel5.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel5.Location = New System.Drawing.Point(17, 24)
+        Me.Panel5.Location = New System.Drawing.Point(15, 24)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1241, 217)
@@ -994,43 +1029,11 @@ Partial Class Admin
         Me.dgv_eval.AllowUserToAddRows = False
         Me.dgv_eval.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_eval.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATEE, Me.ID_Evalua, Me.EV_Codigo, Me.EV_Descipcion, Me.EV_Estatus})
-        Me.dgv_eval.Location = New System.Drawing.Point(12, 250)
+        Me.dgv_eval.Location = New System.Drawing.Point(14, 258)
         Me.dgv_eval.Name = "dgv_eval"
         Me.dgv_eval.RowHeadersVisible = False
         Me.dgv_eval.Size = New System.Drawing.Size(1240, 401)
         Me.dgv_eval.TabIndex = 76
-        '
-        'UPDATEE
-        '
-        Me.UPDATEE.HeaderText = "Baja"
-        Me.UPDATEE.Name = "UPDATEE"
-        '
-        'ID_Evalua
-        '
-        Me.ID_Evalua.DataPropertyName = "ID_Evalua"
-        Me.ID_Evalua.HeaderText = "ID"
-        Me.ID_Evalua.Name = "ID_Evalua"
-        '
-        'EV_Codigo
-        '
-        Me.EV_Codigo.DataPropertyName = "EV_Codigo"
-        Me.EV_Codigo.HeaderText = "CODIGO"
-        Me.EV_Codigo.Name = "EV_Codigo"
-        Me.EV_Codigo.Width = 200
-        '
-        'EV_Descipcion
-        '
-        Me.EV_Descipcion.DataPropertyName = "EV_Descipcion"
-        Me.EV_Descipcion.HeaderText = "DESCRIPCION"
-        Me.EV_Descipcion.Name = "EV_Descipcion"
-        Me.EV_Descipcion.Width = 700
-        '
-        'EV_Estatus
-        '
-        Me.EV_Estatus.DataPropertyName = "EV_Estatus"
-        Me.EV_Estatus.HeaderText = "ESTATUS"
-        Me.EV_Estatus.Name = "EV_Estatus"
-        Me.EV_Estatus.Width = 700
         '
         'Panel8
         '
@@ -1045,7 +1048,7 @@ Partial Class Admin
         Me.Panel8.Controls.Add(Me.Label25)
         Me.Panel8.Controls.Add(Me.Panel9)
         Me.Panel8.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel8.Location = New System.Drawing.Point(13, 16)
+        Me.Panel8.Location = New System.Drawing.Point(15, 24)
         Me.Panel8.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(1241, 217)
@@ -1154,6 +1157,8 @@ Partial Class Admin
         '
         'tab_puesto
         '
+        Me.tab_puesto.Controls.Add(Me.dgv_Puesto)
+        Me.tab_puesto.Controls.Add(Me.Panel10)
         Me.tab_puesto.Location = New System.Drawing.Point(4, 30)
         Me.tab_puesto.Margin = New System.Windows.Forms.Padding(2)
         Me.tab_puesto.Name = "tab_puesto"
@@ -1165,6 +1170,8 @@ Partial Class Admin
         '
         'tsb_super
         '
+        Me.tsb_super.Controls.Add(Me.dgv_super)
+        Me.tsb_super.Controls.Add(Me.Panel12)
         Me.tsb_super.Location = New System.Drawing.Point(4, 30)
         Me.tsb_super.Margin = New System.Windows.Forms.Padding(2)
         Me.tsb_super.Name = "tsb_super"
@@ -1176,6 +1183,8 @@ Partial Class Admin
         '
         'tab_tipo
         '
+        Me.tab_tipo.Controls.Add(Me.dgv_te)
+        Me.tab_tipo.Controls.Add(Me.Panel14)
         Me.tab_tipo.Location = New System.Drawing.Point(4, 30)
         Me.tab_tipo.Margin = New System.Windows.Forms.Padding(2)
         Me.tab_tipo.Name = "tab_tipo"
@@ -1185,6 +1194,609 @@ Partial Class Admin
         Me.tab_tipo.Text = "Tipo de Empleados"
         Me.tab_tipo.UseVisualStyleBackColor = True
         '
+        'dgv_Puesto
+        '
+        Me.dgv_Puesto.AllowUserToAddRows = False
+        Me.dgv_Puesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_Puesto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATEPU, Me.ID_Puesto, Me.Nombrep, Me.Descripcionp, Me.Riesgo, Me.Estatusp})
+        Me.dgv_Puesto.Location = New System.Drawing.Point(14, 258)
+        Me.dgv_Puesto.Name = "dgv_Puesto"
+        Me.dgv_Puesto.RowHeadersVisible = False
+        Me.dgv_Puesto.Size = New System.Drawing.Size(1240, 401)
+        Me.dgv_Puesto.TabIndex = 78
+        '
+        'Panel10
+        '
+        Me.Panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel10.Controls.Add(Me.cb_PuestoRiesgo)
+        Me.Panel10.Controls.Add(Me.txt_PuestoDescripcion)
+        Me.Panel10.Controls.Add(Me.Label27)
+        Me.Panel10.Controls.Add(Me.Label28)
+        Me.Panel10.Controls.Add(Me.btn_SavePuesto)
+        Me.Panel10.Controls.Add(Me.btn_CancelPuesto)
+        Me.Panel10.Controls.Add(Me.txt_PuestoNombre)
+        Me.Panel10.Controls.Add(Me.Label29)
+        Me.Panel10.Controls.Add(Me.Label30)
+        Me.Panel10.Controls.Add(Me.Panel11)
+        Me.Panel10.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel10.Location = New System.Drawing.Point(15, 24)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(1241, 217)
+        Me.Panel10.TabIndex = 77
+        '
+        'txt_PuestoDescripcion
+        '
+        Me.txt_PuestoDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_PuestoDescripcion.Location = New System.Drawing.Point(588, 102)
+        Me.txt_PuestoDescripcion.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_PuestoDescripcion.Name = "txt_PuestoDescripcion"
+        Me.txt_PuestoDescripcion.Size = New System.Drawing.Size(252, 28)
+        Me.txt_PuestoDescripcion.TabIndex = 1
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
+        Me.Label27.Location = New System.Drawing.Point(988, 147)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(93, 22)
+        Me.Label27.TabIndex = 95
+        Me.Label27.Text = "GUARDAR"
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
+        Me.Label28.Location = New System.Drawing.Point(1114, 147)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(99, 22)
+        Me.Label28.TabIndex = 94
+        Me.Label28.Text = "CANCELAR"
+        '
+        'btn_SavePuesto
+        '
+        Me.btn_SavePuesto.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
+        Me.btn_SavePuesto.Location = New System.Drawing.Point(992, 61)
+        Me.btn_SavePuesto.Name = "btn_SavePuesto"
+        Me.btn_SavePuesto.Size = New System.Drawing.Size(83, 83)
+        Me.btn_SavePuesto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_SavePuesto.TabIndex = 92
+        Me.btn_SavePuesto.TabStop = False
+        '
+        'btn_CancelPuesto
+        '
+        Me.btn_CancelPuesto.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
+        Me.btn_CancelPuesto.Location = New System.Drawing.Point(1118, 61)
+        Me.btn_CancelPuesto.Name = "btn_CancelPuesto"
+        Me.btn_CancelPuesto.Size = New System.Drawing.Size(83, 83)
+        Me.btn_CancelPuesto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_CancelPuesto.TabIndex = 93
+        Me.btn_CancelPuesto.TabStop = False
+        '
+        'txt_PuestoNombre
+        '
+        Me.txt_PuestoNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_PuestoNombre.Location = New System.Drawing.Point(147, 102)
+        Me.txt_PuestoNombre.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_PuestoNombre.Name = "txt_PuestoNombre"
+        Me.txt_PuestoNombre.Size = New System.Drawing.Size(252, 28)
+        Me.txt_PuestoNombre.TabIndex = 0
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(471, 109)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(102, 21)
+        Me.Label29.TabIndex = 88
+        Me.Label29.Text = "Descripcion:"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(59, 109)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(69, 21)
+        Me.Label30.TabIndex = 87
+        Me.Label30.Text = "Codigo:"
+        '
+        'Panel11
+        '
+        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Panel11.Controls.Add(Me.Label31)
+        Me.Panel11.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel11.Location = New System.Drawing.Point(-2, -2)
+        Me.Panel11.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(1241, 35)
+        Me.Panel11.TabIndex = 0
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.ForeColor = System.Drawing.Color.White
+        Me.Label31.Location = New System.Drawing.Point(13, 6)
+        Me.Label31.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(54, 21)
+        Me.Label31.TabIndex = 0
+        Me.Label31.Text = "Datos"
+        '
+        'cb_PuestoRiesgo
+        '
+        Me.cb_PuestoRiesgo.AutoSize = True
+        Me.cb_PuestoRiesgo.Location = New System.Drawing.Point(147, 147)
+        Me.cb_PuestoRiesgo.Name = "cb_PuestoRiesgo"
+        Me.cb_PuestoRiesgo.Size = New System.Drawing.Size(125, 25)
+        Me.cb_PuestoRiesgo.TabIndex = 96
+        Me.cb_PuestoRiesgo.Text = "Es Riesgoso?"
+        Me.cb_PuestoRiesgo.UseVisualStyleBackColor = True
+        '
+        'UPDATEE
+        '
+        Me.UPDATEE.HeaderText = "Baja"
+        Me.UPDATEE.Name = "UPDATEE"
+        '
+        'ID_Evalua
+        '
+        Me.ID_Evalua.DataPropertyName = "ID_Evalua"
+        Me.ID_Evalua.HeaderText = "ID"
+        Me.ID_Evalua.Name = "ID_Evalua"
+        '
+        'EV_Codigo
+        '
+        Me.EV_Codigo.DataPropertyName = "EV_Codigo"
+        Me.EV_Codigo.HeaderText = "CODIGO"
+        Me.EV_Codigo.Name = "EV_Codigo"
+        Me.EV_Codigo.Width = 200
+        '
+        'EV_Descipcion
+        '
+        Me.EV_Descipcion.DataPropertyName = "EV_Descipcion"
+        Me.EV_Descipcion.HeaderText = "DESCRIPCION"
+        Me.EV_Descipcion.Name = "EV_Descipcion"
+        Me.EV_Descipcion.Width = 700
+        '
+        'EV_Estatus
+        '
+        Me.EV_Estatus.DataPropertyName = "EV_Estatus"
+        Me.EV_Estatus.HeaderText = "ESTATUS"
+        Me.EV_Estatus.Name = "EV_Estatus"
+        Me.EV_Estatus.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.EV_Estatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.EV_Estatus.Width = 200
+        '
+        'UPDATEEQ
+        '
+        Me.UPDATEEQ.HeaderText = "Baja"
+        Me.UPDATEEQ.Name = "UPDATEEQ"
+        '
+        'ID_Equipo
+        '
+        Me.ID_Equipo.DataPropertyName = "ID_Equipo"
+        Me.ID_Equipo.HeaderText = "ID"
+        Me.ID_Equipo.Name = "ID_Equipo"
+        '
+        'Nombre
+        '
+        Me.Nombre.DataPropertyName = "Nombre"
+        Me.Nombre.HeaderText = "CODIGO"
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.Width = 200
+        '
+        'Descripcione
+        '
+        Me.Descripcione.DataPropertyName = "Descripcion"
+        Me.Descripcione.HeaderText = "DESCRIPCION"
+        Me.Descripcione.Name = "Descripcione"
+        Me.Descripcione.Width = 500
+        '
+        'Costo
+        '
+        Me.Costo.DataPropertyName = "Costo"
+        Me.Costo.HeaderText = "COSTO"
+        Me.Costo.Name = "Costo"
+        Me.Costo.Width = 200
+        '
+        'Estatuse
+        '
+        Me.Estatuse.DataPropertyName = "Estatus"
+        Me.Estatuse.HeaderText = "ESTATUS"
+        Me.Estatuse.Name = "Estatuse"
+        Me.Estatuse.Width = 200
+        '
+        'dgv_super
+        '
+        Me.dgv_super.AllowUserToAddRows = False
+        Me.dgv_super.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_super.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATESU, Me.ID_Super, Me.ID_Emp, Me.Name, Me.ActivoS})
+        Me.dgv_super.Location = New System.Drawing.Point(14, 258)
+        Me.dgv_super.Name = "dgv_super"
+        Me.dgv_super.RowHeadersVisible = False
+        Me.dgv_super.Size = New System.Drawing.Size(1240, 401)
+        Me.dgv_super.TabIndex = 74
+        '
+        'Panel12
+        '
+        Me.Panel12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel12.Controls.Add(Me.Label32)
+        Me.Panel12.Controls.Add(Me.Label33)
+        Me.Panel12.Controls.Add(Me.btn_savesuper)
+        Me.Panel12.Controls.Add(Me.btn_cancelsuper)
+        Me.Panel12.Controls.Add(Me.TXT_EMP_SUPERname)
+        Me.Panel12.Controls.Add(Me.Label38)
+        Me.Panel12.Controls.Add(Me.BUSCAR_EMP_SUPER)
+        Me.Panel12.Controls.Add(Me.TXT_EMP_SUPER)
+        Me.Panel12.Controls.Add(Me.Label39)
+        Me.Panel12.Controls.Add(Me.Panel13)
+        Me.Panel12.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel12.Location = New System.Drawing.Point(15, 24)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(1241, 217)
+        Me.Panel12.TabIndex = 73
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label32.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
+        Me.Label32.Location = New System.Drawing.Point(996, 147)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(93, 22)
+        Me.Label32.TabIndex = 95
+        Me.Label32.Text = "GUARDAR"
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label33.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
+        Me.Label33.Location = New System.Drawing.Point(1114, 147)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(99, 22)
+        Me.Label33.TabIndex = 94
+        Me.Label33.Text = "CANCELAR"
+        '
+        'btn_savesuper
+        '
+        Me.btn_savesuper.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btn_savesuper.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
+        Me.btn_savesuper.Location = New System.Drawing.Point(1000, 61)
+        Me.btn_savesuper.Name = "btn_savesuper"
+        Me.btn_savesuper.Size = New System.Drawing.Size(83, 83)
+        Me.btn_savesuper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_savesuper.TabIndex = 92
+        Me.btn_savesuper.TabStop = False
+        '
+        'btn_cancelsuper
+        '
+        Me.btn_cancelsuper.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
+        Me.btn_cancelsuper.Location = New System.Drawing.Point(1118, 61)
+        Me.btn_cancelsuper.Name = "btn_cancelsuper"
+        Me.btn_cancelsuper.Size = New System.Drawing.Size(83, 83)
+        Me.btn_cancelsuper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_cancelsuper.TabIndex = 93
+        Me.btn_cancelsuper.TabStop = False
+        '
+        'TXT_EMP_SUPERname
+        '
+        Me.TXT_EMP_SUPERname.AutoSize = True
+        Me.TXT_EMP_SUPERname.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_EMP_SUPERname.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.TXT_EMP_SUPERname.Location = New System.Drawing.Point(539, 53)
+        Me.TXT_EMP_SUPERname.Name = "TXT_EMP_SUPERname"
+        Me.TXT_EMP_SUPERname.Size = New System.Drawing.Size(0, 22)
+        Me.TXT_EMP_SUPERname.TabIndex = 86
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label38.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Label38.Location = New System.Drawing.Point(432, 53)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(101, 22)
+        Me.Label38.TabIndex = 85
+        Me.Label38.Text = "Empleado: "
+        '
+        'BUSCAR_EMP_SUPER
+        '
+        Me.BUSCAR_EMP_SUPER.BackgroundImage = CType(resources.GetObject("BUSCAR_EMP_SUPER.BackgroundImage"), System.Drawing.Image)
+        Me.BUSCAR_EMP_SUPER.Image = CType(resources.GetObject("BUSCAR_EMP_SUPER.Image"), System.Drawing.Image)
+        Me.BUSCAR_EMP_SUPER.Location = New System.Drawing.Point(383, 48)
+        Me.BUSCAR_EMP_SUPER.Name = "BUSCAR_EMP_SUPER"
+        Me.BUSCAR_EMP_SUPER.Size = New System.Drawing.Size(30, 28)
+        Me.BUSCAR_EMP_SUPER.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.BUSCAR_EMP_SUPER.TabIndex = 84
+        Me.BUSCAR_EMP_SUPER.TabStop = False
+        '
+        'TXT_EMP_SUPER
+        '
+        Me.TXT_EMP_SUPER.Location = New System.Drawing.Point(168, 48)
+        Me.TXT_EMP_SUPER.Name = "TXT_EMP_SUPER"
+        Me.TXT_EMP_SUPER.Size = New System.Drawing.Size(209, 28)
+        Me.TXT_EMP_SUPER.TabIndex = 0
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Location = New System.Drawing.Point(90, 54)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(77, 21)
+        Me.Label39.TabIndex = 83
+        Me.Label39.Text = "Numero:"
+        '
+        'Panel13
+        '
+        Me.Panel13.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Panel13.Controls.Add(Me.Label40)
+        Me.Panel13.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel13.Location = New System.Drawing.Point(-2, -2)
+        Me.Panel13.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(1241, 35)
+        Me.Panel13.TabIndex = 0
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.ForeColor = System.Drawing.Color.White
+        Me.Label40.Location = New System.Drawing.Point(13, 6)
+        Me.Label40.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(54, 21)
+        Me.Label40.TabIndex = 0
+        Me.Label40.Text = "Datos"
+        '
+        'dgv_te
+        '
+        Me.dgv_te.AllowUserToAddRows = False
+        Me.dgv_te.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_te.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATETE, Me.ID_TE, Me.Codigote, Me.Descripcionte, Me.Estatuste})
+        Me.dgv_te.Location = New System.Drawing.Point(14, 258)
+        Me.dgv_te.Name = "dgv_te"
+        Me.dgv_te.RowHeadersVisible = False
+        Me.dgv_te.Size = New System.Drawing.Size(1240, 401)
+        Me.dgv_te.TabIndex = 80
+        '
+        'Panel14
+        '
+        Me.Panel14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel14.Controls.Add(Me.txt_DescTE)
+        Me.Panel14.Controls.Add(Me.Label34)
+        Me.Panel14.Controls.Add(Me.Label35)
+        Me.Panel14.Controls.Add(Me.pb_saveTE)
+        Me.Panel14.Controls.Add(Me.pb_cancelTE)
+        Me.Panel14.Controls.Add(Me.txt_codigoTE)
+        Me.Panel14.Controls.Add(Me.Label36)
+        Me.Panel14.Controls.Add(Me.Label41)
+        Me.Panel14.Controls.Add(Me.Panel15)
+        Me.Panel14.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel14.Location = New System.Drawing.Point(15, 24)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(1241, 217)
+        Me.Panel14.TabIndex = 79
+        '
+        'txt_DescTE
+        '
+        Me.txt_DescTE.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_DescTE.Location = New System.Drawing.Point(588, 102)
+        Me.txt_DescTE.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_DescTE.Name = "txt_DescTE"
+        Me.txt_DescTE.Size = New System.Drawing.Size(252, 28)
+        Me.txt_DescTE.TabIndex = 1
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label34.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
+        Me.Label34.Location = New System.Drawing.Point(988, 147)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(93, 22)
+        Me.Label34.TabIndex = 95
+        Me.Label34.Text = "GUARDAR"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
+        Me.Label35.Location = New System.Drawing.Point(1114, 147)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(99, 22)
+        Me.Label35.TabIndex = 94
+        Me.Label35.Text = "CANCELAR"
+        '
+        'pb_saveTE
+        '
+        Me.pb_saveTE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
+        Me.pb_saveTE.Location = New System.Drawing.Point(992, 61)
+        Me.pb_saveTE.Name = "pb_saveTE"
+        Me.pb_saveTE.Size = New System.Drawing.Size(83, 83)
+        Me.pb_saveTE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pb_saveTE.TabIndex = 92
+        Me.pb_saveTE.TabStop = False
+        '
+        'pb_cancelTE
+        '
+        Me.pb_cancelTE.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
+        Me.pb_cancelTE.Location = New System.Drawing.Point(1118, 61)
+        Me.pb_cancelTE.Name = "pb_cancelTE"
+        Me.pb_cancelTE.Size = New System.Drawing.Size(83, 83)
+        Me.pb_cancelTE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pb_cancelTE.TabIndex = 93
+        Me.pb_cancelTE.TabStop = False
+        '
+        'txt_codigoTE
+        '
+        Me.txt_codigoTE.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_codigoTE.Location = New System.Drawing.Point(147, 102)
+        Me.txt_codigoTE.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_codigoTE.Name = "txt_codigoTE"
+        Me.txt_codigoTE.Size = New System.Drawing.Size(252, 28)
+        Me.txt_codigoTE.TabIndex = 0
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(471, 109)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(102, 21)
+        Me.Label36.TabIndex = 88
+        Me.Label36.Text = "Descripcion:"
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Location = New System.Drawing.Point(59, 109)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(69, 21)
+        Me.Label41.TabIndex = 87
+        Me.Label41.Text = "Codigo:"
+        '
+        'Panel15
+        '
+        Me.Panel15.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Panel15.Controls.Add(Me.Label42)
+        Me.Panel15.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel15.Location = New System.Drawing.Point(-2, -2)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(1241, 35)
+        Me.Panel15.TabIndex = 0
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label42.ForeColor = System.Drawing.Color.White
+        Me.Label42.Location = New System.Drawing.Point(13, 6)
+        Me.Label42.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(54, 21)
+        Me.Label42.TabIndex = 0
+        Me.Label42.Text = "Datos"
+        '
+        'UPDATEPU
+        '
+        Me.UPDATEPU.HeaderText = "Baja"
+        Me.UPDATEPU.Name = "UPDATEPU"
+        '
+        'ID_Puesto
+        '
+        Me.ID_Puesto.DataPropertyName = "ID_Puesto"
+        Me.ID_Puesto.HeaderText = "ID"
+        Me.ID_Puesto.Name = "ID_Puesto"
+        '
+        'Nombrep
+        '
+        Me.Nombrep.DataPropertyName = "Nombre"
+        Me.Nombrep.HeaderText = "CODIGO"
+        Me.Nombrep.Name = "Nombrep"
+        Me.Nombrep.Width = 200
+        '
+        'Descripcionp
+        '
+        Me.Descripcionp.DataPropertyName = "Descripcion"
+        Me.Descripcionp.HeaderText = "DESCRIPCION"
+        Me.Descripcionp.Name = "Descripcionp"
+        Me.Descripcionp.Width = 500
+        '
+        'Riesgo
+        '
+        Me.Riesgo.DataPropertyName = "Riesgo"
+        Me.Riesgo.HeaderText = "RIESGO"
+        Me.Riesgo.Name = "Riesgo"
+        Me.Riesgo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Riesgo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Riesgo.Width = 200
+        '
+        'Estatusp
+        '
+        Me.Estatusp.DataPropertyName = "Estatus"
+        Me.Estatusp.HeaderText = "ESTATUS"
+        Me.Estatusp.Name = "Estatusp"
+        Me.Estatusp.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Estatusp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Estatusp.Width = 200
+        '
+        'UPDATESU
+        '
+        Me.UPDATESU.HeaderText = "Baja"
+        Me.UPDATESU.Name = "UPDATESU"
+        '
+        'ID_Super
+        '
+        Me.ID_Super.DataPropertyName = "ID_Super"
+        Me.ID_Super.HeaderText = "ID"
+        Me.ID_Super.Name = "ID_Super"
+        Me.ID_Super.Width = 200
+        '
+        'ID_Emp
+        '
+        Me.ID_Emp.DataPropertyName = "ID_Emp"
+        Me.ID_Emp.HeaderText = "NO.EMPLEADO"
+        Me.ID_Emp.Name = "ID_Emp"
+        Me.ID_Emp.Width = 200
+        '
+        'Name
+        '
+        Me.Name.DataPropertyName = "Name"
+        Me.Name.HeaderText = "NOMBRE"
+        Me.Name.Name = "Name"
+        Me.Name.Width = 600
+        '
+        'ActivoS
+        '
+        Me.ActivoS.DataPropertyName = "Activo"
+        Me.ActivoS.HeaderText = "ESTATUS"
+        Me.ActivoS.Name = "ActivoS"
+        Me.ActivoS.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ActivoS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.ActivoS.Width = 200
+        '
+        'UPDATETE
+        '
+        Me.UPDATETE.HeaderText = "Baja"
+        Me.UPDATETE.Name = "UPDATETE"
+        '
+        'ID_TE
+        '
+        Me.ID_TE.DataPropertyName = "ID_TE"
+        Me.ID_TE.HeaderText = "ID"
+        Me.ID_TE.Name = "ID_TE"
+        '
+        'Codigote
+        '
+        Me.Codigote.DataPropertyName = "Codigo"
+        Me.Codigote.HeaderText = "CODIGO"
+        Me.Codigote.Name = "Codigote"
+        Me.Codigote.Width = 200
+        '
+        'Descripcionte
+        '
+        Me.Descripcionte.DataPropertyName = "Descripcion"
+        Me.Descripcionte.HeaderText = "DESCRIPCION"
+        Me.Descripcionte.Name = "Descripcionte"
+        Me.Descripcionte.Width = 700
+        '
+        'Estatuste
+        '
+        Me.Estatuste.DataPropertyName = "Estatus"
+        Me.Estatuste.HeaderText = "ESTATUS"
+        Me.Estatuste.Name = "Estatuste"
+        Me.Estatuste.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Estatuste.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Estatuste.Width = 200
+        '
         'Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1192,7 +1804,6 @@ Partial Class Admin
         Me.ClientSize = New System.Drawing.Size(1308, 864)
         Me.Controls.Add(Me.tab_admin)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Admin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Admin"
         Me.tab_admin.ResumeLayout(False)
@@ -1237,6 +1848,31 @@ Partial Class Admin
         CType(Me.CANCEL_EVAL, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel9.ResumeLayout(False)
         Me.Panel9.PerformLayout()
+        Me.tab_puesto.ResumeLayout(False)
+        Me.tsb_super.ResumeLayout(False)
+        Me.tab_tipo.ResumeLayout(False)
+        CType(Me.dgv_Puesto, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel10.ResumeLayout(False)
+        Me.Panel10.PerformLayout()
+        CType(Me.btn_SavePuesto, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_CancelPuesto, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel11.ResumeLayout(False)
+        Me.Panel11.PerformLayout()
+        CType(Me.dgv_super, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel12.ResumeLayout(False)
+        Me.Panel12.PerformLayout()
+        CType(Me.btn_savesuper, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_cancelsuper, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BUSCAR_EMP_SUPER, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel13.ResumeLayout(False)
+        Me.Panel13.PerformLayout()
+        CType(Me.dgv_te, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel14.ResumeLayout(False)
+        Me.Panel14.PerformLayout()
+        CType(Me.pb_saveTE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_cancelTE, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel15.ResumeLayout(False)
+        Me.Panel15.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1326,11 +1962,6 @@ Partial Class Admin
     Friend WithEvents CA_Codigo As DataGridViewTextBoxColumn
     Friend WithEvents CA_Desc As DataGridViewTextBoxColumn
     Friend WithEvents CA_Status As DataGridViewTextBoxColumn
-    Friend WithEvents UPDATEE As DataGridViewImageColumn
-    Friend WithEvents ID_Evalua As DataGridViewTextBoxColumn
-    Friend WithEvents EV_Codigo As DataGridViewTextBoxColumn
-    Friend WithEvents EV_Descipcion As DataGridViewTextBoxColumn
-    Friend WithEvents EV_Estatus As DataGridViewTextBoxColumn
     Friend WithEvents dgv_depto As DataGridView
     Friend WithEvents UPDATED As DataGridViewImageColumn
     Friend WithEvents ID_Depto As DataGridViewTextBoxColumn
@@ -1338,10 +1969,69 @@ Partial Class Admin
     Friend WithEvents Descripcion As DataGridViewTextBoxColumn
     Friend WithEvents Estatus As DataGridViewTextBoxColumn
     Friend WithEvents dgv_eq As DataGridView
+    Friend WithEvents dgv_Puesto As DataGridView
+    Private WithEvents Panel10 As Panel
+    Friend WithEvents txt_PuestoDescripcion As TextBox
+    Friend WithEvents Label27 As Label
+    Friend WithEvents Label28 As Label
+    Friend WithEvents btn_SavePuesto As PictureBox
+    Friend WithEvents btn_CancelPuesto As PictureBox
+    Friend WithEvents txt_PuestoNombre As TextBox
+    Friend WithEvents Label29 As Label
+    Friend WithEvents Label30 As Label
+    Private WithEvents Panel11 As Panel
+    Private WithEvents Label31 As Label
+    Friend WithEvents cb_PuestoRiesgo As CheckBox
     Friend WithEvents UPDATEEQ As DataGridViewImageColumn
     Friend WithEvents ID_Equipo As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents Descripcione As DataGridViewTextBoxColumn
     Friend WithEvents Costo As DataGridViewTextBoxColumn
     Friend WithEvents Estatuse As DataGridViewTextBoxColumn
+    Friend WithEvents UPDATEE As DataGridViewImageColumn
+    Friend WithEvents ID_Evalua As DataGridViewTextBoxColumn
+    Friend WithEvents EV_Codigo As DataGridViewTextBoxColumn
+    Friend WithEvents EV_Descipcion As DataGridViewTextBoxColumn
+    Friend WithEvents EV_Estatus As DataGridViewCheckBoxColumn
+    Friend WithEvents dgv_super As DataGridView
+    Private WithEvents Panel12 As Panel
+    Friend WithEvents Label32 As Label
+    Friend WithEvents Label33 As Label
+    Friend WithEvents btn_savesuper As PictureBox
+    Friend WithEvents btn_cancelsuper As PictureBox
+    Friend WithEvents TXT_EMP_SUPERname As Label
+    Friend WithEvents Label38 As Label
+    Friend WithEvents BUSCAR_EMP_SUPER As PictureBox
+    Friend WithEvents TXT_EMP_SUPER As TextBox
+    Friend WithEvents Label39 As Label
+    Private WithEvents Panel13 As Panel
+    Private WithEvents Label40 As Label
+    Friend WithEvents dgv_te As DataGridView
+    Private WithEvents Panel14 As Panel
+    Friend WithEvents txt_DescTE As TextBox
+    Friend WithEvents Label34 As Label
+    Friend WithEvents Label35 As Label
+    Friend WithEvents pb_saveTE As PictureBox
+    Friend WithEvents pb_cancelTE As PictureBox
+    Friend WithEvents txt_codigoTE As TextBox
+    Friend WithEvents Label36 As Label
+    Friend WithEvents Label41 As Label
+    Private WithEvents Panel15 As Panel
+    Private WithEvents Label42 As Label
+    Friend WithEvents UPDATEPU As DataGridViewImageColumn
+    Friend WithEvents ID_Puesto As DataGridViewTextBoxColumn
+    Friend WithEvents Nombrep As DataGridViewTextBoxColumn
+    Friend WithEvents Descripcionp As DataGridViewTextBoxColumn
+    Friend WithEvents Riesgo As DataGridViewCheckBoxColumn
+    Friend WithEvents Estatusp As DataGridViewCheckBoxColumn
+    Friend WithEvents UPDATESU As DataGridViewImageColumn
+    Friend WithEvents ID_Super As DataGridViewTextBoxColumn
+    Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
+    Friend WithEvents Name As DataGridViewTextBoxColumn
+    Friend WithEvents ActivoS As DataGridViewCheckBoxColumn
+    Friend WithEvents UPDATETE As DataGridViewImageColumn
+    Friend WithEvents ID_TE As DataGridViewTextBoxColumn
+    Friend WithEvents Codigote As DataGridViewTextBoxColumn
+    Friend WithEvents Descripcionte As DataGridViewTextBoxColumn
+    Friend WithEvents Estatuste As DataGridViewCheckBoxColumn
 End Class

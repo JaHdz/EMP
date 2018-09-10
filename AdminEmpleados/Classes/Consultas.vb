@@ -4,6 +4,9 @@ Imports System
 Imports System.Net
 Imports System.Data.SqlDbType
 Public Class Consultas
+    Public autenticado As Boolean
+    Public user As String
+    Public name As String
 
     'Empleados_________________________________________________________________________________________________________
     Private Function Imagen_Bytes(ByVal Imagen As Image) As Byte()
@@ -14,6 +17,49 @@ Public Class Consultas
         Else
             Return Nothing
         End If
+    End Function
+
+    Public Function Autenticar(sUsr As String, sPass As String) As Boolean
+        Dim sentencia As String
+        Dim lector As SqlDataReader
+        Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            con.Open()
+            sentencia = "SP_UserandPass '" & sUsr & "'"
+            Dim cmd As New SqlCommand(sentencia, con)
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Dim pass As String
+                pass = DesEncripta(lector("pass").ToString)
+                If pass = sPass Then
+                    user = lector("NoEmp").ToString
+                    name = lector("name").ToString
+                    autenticado = True
+                    Return True
+                Else
+                    autenticado = False
+                    Return False
+                End If
+            Else
+                autenticado = False
+                Return False
+            End If
+        End Using
+    End Function
+
+    Function DesEncripta(ByVal Pass As String) As String
+        Dim Clave As String, i As Integer, Pass2 As String
+        Dim CAR As String, Codigo As String
+        Dim j As Integer
+        Clave = "%ü&/@#$A"
+        Pass2 = ""
+        j = 1
+        For i = 1 To Len(Pass) Step 2
+            CAR = Mid(Pass, i, 2)
+            Codigo = Mid(Clave, ((j - 1) Mod Len(Clave)) + 1, 1)
+            Pass2 = Pass2 & Chr(Asc(Codigo) Xor Val("&h" + CAR))
+            j = j + 1
+        Next i
+        DesEncripta = Pass2
     End Function
 
     Public Sub UpInsert_colabora(ByVal infoEmp As Cls_Emp)
@@ -537,6 +583,42 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@ACTIVE", ACTIVE))
             cmd.Parameters.Add(New SqlParameter("@ACCESS", ACCESS))
             cmd.CommandText = "UDSP_USERS"
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Return lector("RESULT").ToString()
+            End If
+        End Using
+    End Function
+
+    Public Function Add_SUPER(ByVal ID As Integer, ID_EMP As Integer, NAME As String, ESTATUS As Integer) As Integer
+        Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            con.Open()
+            Dim cmd As SqlCommand = con.CreateCommand
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add(New SqlParameter("@ID", ID))
+            cmd.Parameters.Add(New SqlParameter("@ID_Emp", ID_EMP))
+            cmd.Parameters.Add(New SqlParameter("@NAME", NAME))
+            cmd.Parameters.Add(New SqlParameter("@ESTATUS", ESTATUS))
+            cmd.CommandText = "UDSP_EMPLOYEE_SUPER"
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Return lector("RESULT").ToString()
+            End If
+        End Using
+    End Function
+
+    Public Function Add_TE(ByVal ID As Integer, CODE As String, DESC As String, ESTATUS As Integer) As Integer
+        Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            con.Open()
+            Dim cmd As SqlCommand = con.CreateCommand
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add(New SqlParameter("@ID", ID))
+            cmd.Parameters.Add(New SqlParameter("@CODE", CODE))
+            cmd.Parameters.Add(New SqlParameter("@DESCRIPTION", DESC))
+            cmd.Parameters.Add(New SqlParameter("@ESTATUS", ESTATUS))
+            cmd.CommandText = "UDSP_EMPLOYEE_TYPE"
             Dim lector As SqlDataReader
             lector = cmd.ExecuteReader()
             If lector.Read() Then

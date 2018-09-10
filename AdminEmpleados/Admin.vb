@@ -1,5 +1,5 @@
 ﻿Public Class Admin
-    Dim Emp As Integer = 40606
+    Dim NEmp As Integer
     Dim objcon As New Consultas
     Dim V1 As String
     Dim V2 As String
@@ -8,10 +8,14 @@
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
 
+    Sub New(ByVal emp As Integer)
+        InitializeComponent()
+        NEmp = emp
+    End Sub
     Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
         If (txt_numero.Text <> "") Then
-            Emp = objcon.Emp_Exist(txt_numero.Text)
-            If (Emp = 1) Then
+            NEmp = objcon.Emp_Exist(txt_numero.Text)
+            If (NEmp = 1) Then
                 Dim dt As DataTable
                 dt = objcon.consulta_empleado(txt_numero.Text)
                 lbl_emp.Text = txt_numero.Text + " | " + dt.Rows(0).Item("Emp_Name").ToString() + " " + dt.Rows(0).Item("Emp_APat").ToString() + " " + dt.Rows(0).Item("Emp_AMat").ToString()
@@ -270,6 +274,193 @@
             Dim dt As New DataTable
             dt = objcon.Consulta_EQ()
             dgv_eq.DataSource = dt
+        End If
+    End Sub
+
+    Private Sub btn_SavePuesto_Click(sender As Object, e As EventArgs) Handles btn_SavePuesto.Click
+        If txt_PuestoNombre.Text = "" Or txt_PuestoDescripcion.Text = "" Then
+            MessageBox.Show("Debe llenar todos los campos")
+        Else
+            If objcon.Add_POSITIONS(0, txt_PuestoNombre.Text, txt_PuestoDescripcion.Text, cb_PuestoRiesgo.CheckState, 1) = "0" Then
+            Else
+                MessageBox.Show("Este registro ya Existe.")
+            End If
+            dgv_Puesto.DataSource = objcon.Consulta_PU()
+            txt_PuestoDescripcion.Text = ""
+            txt_PuestoNombre.Text = ""
+        End If
+    End Sub
+
+    Private Sub btn_CancelPuesto_Click(sender As Object, e As EventArgs) Handles btn_CancelPuesto.Click
+        Me.Close()
+    End Sub
+
+    Private Sub dgv_Puesto_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_Puesto.CellClick
+        Dim gr As New DataGridView
+        gr = sender
+        If e.RowIndex <> -1 Then
+            Select Case e.ColumnIndex
+                Case Is > -1
+                    Select Case gr.Columns(e.ColumnIndex).Name
+                        Case "UPDATEPU"
+                            If MessageBox.Show("Seguro que desea dar de baja este puesto?", "Baja Puesto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+                                If dgv_eq.Rows(e.RowIndex).Cells(5).Value.ToString = "False" Then
+                                    If objcon.Add_POSITIONS(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, dgv_eq.Rows(e.RowIndex).Cells(4).Value, 0) = "0" Then
+                                    Else
+                                        MessageBox.Show("Este registro ya Existe.")
+                                    End If
+                                Else
+                                    If objcon.Add_POSITIONS(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, dgv_eq.Rows(e.RowIndex).Cells(4).Value, 1) = "0" Then
+                                    Else
+                                        MessageBox.Show("Este registro ya Existe.")
+                                    End If
+                                End If
+                            End If
+                    End Select
+            End Select
+            Dim dt As New DataTable
+            dt = objcon.Consulta_PU()
+            dgv_Puesto.DataSource = dt
+        End If
+    End Sub
+
+    Private Sub buscar_EN_Click(sender As Object, e As EventArgs) Handles buscar_EN.Click
+        llenar_buscador("EMP")
+        If (V1 <> "" And V2 <> "") Then
+            txt_numero.Focus()
+        Else
+            txt_numero.Focus()
+        End If
+        txt_numero.Text = V1
+    End Sub
+
+    Private Sub TXT_EMP_SUPER_Leave(sender As Object, e As EventArgs) Handles TXT_EMP_SUPER.Leave
+        If (TXT_EMP_SUPER.Text <> "") Then
+            NEmp = objcon.Emp_Exist(TXT_EMP_SUPER.Text)
+            If (NEmp = 1) Then
+                Dim dt As DataTable
+                dt = objcon.consulta_empleado(TXT_EMP_SUPER.Text)
+                TXT_EMP_SUPERname.Text = TXT_EMP_SUPER.Text + " | " + dt.Rows(0).Item("Emp_Name").ToString() + " " + dt.Rows(0).Item("Emp_APat").ToString() + " " + dt.Rows(0).Item("Emp_AMat").ToString()
+                dgv_super.DataSource = objcon.Consulta_SU()
+            Else
+                MessageBox.Show("Numero de empleado no existe")
+                TXT_EMP_SUPER.Text = ""
+                TXT_EMP_SUPERname.Text = ""
+            End If
+        End If
+    End Sub
+
+    Public Sub llenar_buscador(tipo As String)
+        Dim popup As New frmPopUp(tipo)
+        Dim dialogresult__1 As DialogResult = popup.ShowDialog()
+        V1 = popup.Variable
+        V2 = popup.Variable2
+        popup.Close()
+    End Sub
+    Private Sub BUSCAR_EMP_SUPER_Click(sender As Object, e As EventArgs) Handles BUSCAR_EMP_SUPER.Click
+        llenar_buscador("EMP")
+        If (V1 <> "" And V2 <> "") Then
+            TXT_EMP_SUPER.Focus()
+        Else
+            TXT_EMP_SUPER.Focus()
+        End If
+        TXT_EMP_SUPER.Text = V1
+    End Sub
+
+    Private Sub TXT_EMP_SUPER_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXT_EMP_SUPER.KeyPress
+        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    End Sub
+
+    Private Sub btn_savesuper_Click(sender As Object, e As EventArgs) Handles btn_savesuper.Click
+        If TXT_EMP_SUPER.Text = "" Then
+            MessageBox.Show("Debe llenar todos los campos")
+        Else
+            If objcon.Add_SUPER(0, TXT_EMP_SUPER.Text, " ", 1) = "0" Then
+            Else
+                MessageBox.Show("Este registro ya Existe.")
+            End If
+            dgv_super.DataSource = objcon.Consulta_SU()
+            TXT_EMP_SUPER.Text = ""
+        End If
+    End Sub
+
+    Private Sub btn_cancelsuper_Click(sender As Object, e As EventArgs) Handles btn_cancelsuper.Click
+        Me.Close()
+    End Sub
+
+    Private Sub dgv_super_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_super.CellClick
+        Dim gr As New DataGridView
+        gr = sender
+        If e.RowIndex <> -1 Then
+            Select Case e.ColumnIndex
+                Case Is > -1
+                    Select Case gr.Columns(e.ColumnIndex).Name
+                        Case "UPDATESU"
+                            If MessageBox.Show("Seguro que desea dar de baja a este supervisor?", "Baja Supervisor", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+                                If dgv_eq.Rows(e.RowIndex).Cells(4).Value.ToString = "False" Then
+                                    If objcon.Add_SUPER(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, 0) = "0" Then
+                                    Else
+                                        MessageBox.Show("Este registro ya Existe.")
+                                    End If
+                                Else
+                                    If objcon.Add_SUPER(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, 1) = "0" Then
+                                    Else
+                                        MessageBox.Show("Este registro ya Existe.")
+                                    End If
+                                End If
+                            End If
+                    End Select
+            End Select
+            Dim dt As New DataTable
+            dt = objcon.Consulta_SU()
+            dgv_super.DataSource = dt
+        End If
+    End Sub
+
+    Private Sub pb_saveTE_Click(sender As Object, e As EventArgs) Handles pb_saveTE.Click
+        If txt_codigoTE.Text = "" Or txt_DescTE.Text = "" Then
+            MessageBox.Show("Debe llenar todos los campos")
+        Else
+            If objcon.Add_TE(0, txt_codigoTE.Text, txt_DescTE.Text, 1) = "0" Then
+            Else
+                MessageBox.Show("Este registro ya Existe.")
+            End If
+            dgv_te.DataSource = objcon.Consulta_TE()
+            txt_codigoTE.Text = ""
+            txt_DescTE.Text = ""
+        End If
+    End Sub
+
+    Private Sub pb_cancelTE_Click(sender As Object, e As EventArgs) Handles pb_cancelTE.Click
+        Me.Close()
+    End Sub
+
+    Private Sub dgv_te_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_te.CellClick
+        Dim gr As New DataGridView
+        gr = sender
+        If e.RowIndex <> -1 Then
+            Select Case e.ColumnIndex
+                Case Is > -1
+                    Select Case gr.Columns(e.ColumnIndex).Name
+                        Case "UPDATETE"
+                            If MessageBox.Show("Seguro que desea dar de baja a esta Categoria?", "Baja Categoria", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+                                If dgv_eq.Rows(e.RowIndex).Cells(4).Value.ToString = "False" Then
+                                    If objcon.Add_TE(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, 0) = "0" Then
+                                    Else
+                                        MessageBox.Show("Este registro ya Existe.")
+                                    End If
+                                Else
+                                    If objcon.Add_TE(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, 1) = "0" Then
+                                    Else
+                                        MessageBox.Show("Este registro ya Existe.")
+                                    End If
+                                End If
+                            End If
+                    End Select
+            End Select
+            Dim dt As New DataTable
+            dt = objcon.Consulta_TE()
+            dgv_te.DataSource = dt
         End If
     End Sub
 End Class

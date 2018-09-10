@@ -6,11 +6,15 @@ Public Class Empleados
     Dim V2 As String
     Dim aux As Integer
     Dim EXISTE As Boolean = False
-    Dim Emp As Int64 = 40606
     Dim objcon As New Consultas
     Dim EMPLEADO_ID As Int64
     Dim EMPLEADO_ES As Int64
     Dim id As Integer
+    Dim NEmp As Integer
+    Sub New(ByVal emp As Integer)
+        InitializeComponent()
+        NEmp = emp
+    End Sub
     Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
         Try
             numeroleave()
@@ -301,6 +305,90 @@ Public Class Empleados
         lbl_ALTA.Visible = False
         foto.Image = AdminEmpleados.My.Resources.Resources.photoNobody120
         foto.Visible = True
+        txt_esAM.Text = ""
+        txt_esAP.Text = ""
+        txt_esName.Text = ""
+        txt_esFN.Text = ""
+        txt_esNacion.Text = ""
+        cb_esSexo.SelectedIndex = -1
+        llenarFamilia()
+        txt_hijoAM.Text = ""
+        txt_hijoAP.Text = ""
+        txt_hijoNAME.Text = ""
+        txt_hijoFN.Text = ""
+        txt_hijoNACION.Text = ""
+        txt_hijoSEXO.SelectedIndex = -1
+        txt_hijoEC.SelectedIndex = -1
+        llenarFamilia()
+        txt_antFI.Text = ""
+        txt_antFF.Text = ""
+        txt_antEMP.Text = ""
+        txt_antCARGO.Text = ""
+        txt_antSALARIO.Text = ""
+        txt_antTEL.Text = ""
+        txt_antMT.Text = ""
+        txt_antNAME.Text = ""
+        llenarAL()
+        txt_conAM.Text = ""
+        txt_conAP.Text = ""
+        txt_conCEL.Text = ""
+        txt_conPAREN.Text = ""
+        txt_conNAME.Text = ""
+        txt_conTEL.Text = ""
+        llenarContacto()
+        txt_enfNAME.Text = ""
+        llenarEnfermedades()
+        txt_RefOcu.Text = ""
+        txt_RefNom.Text = ""
+        txt_TC.Text = ""
+        Txt_TR.Text = ""
+        txt_RefOcu.Text = ""
+        txt_RefNom.Text = ""
+        txt_TC.Text = ""
+        Txt_TR.Text = ""
+        cb_CasaP.Checked = False
+        cb_Depto.Checked = False
+        cb_Renta.Checked = False
+        cb_Terreno.Checked = False
+        cb_adobe.Checked = False
+        cb_block.Checked = False
+        cb_Madera.Checked = False
+        cb_ladrillo.Checked = False
+        cb_Luz.Checked = False
+        cb_LineaTel.Checked = False
+        cb_AguaP.Checked = False
+        cb_Drenaje.Checked = False
+        cb_Tuberia.Checked = False
+        cb_Basura.Checked = False
+        cb_TV.Checked = False
+        cb_Internet.Checked = False
+        cb_SisSeg.Checked = False
+        cb_Metro.Checked = False
+        cb_Trans.Checked = False
+        cb_Taxi.Checked = False
+        cb_Vehi.Checked = False
+        txt_SE__SOCIALE.Text = ""
+        txt_SE_EVENTOS.Text = ""
+        txt_SE_MUSEOS.Text = ""
+        txt_SE_TEATROS.Text = ""
+        txt_SE_CINES.Text = ""
+        txt_SE_CULTURALES.Text = ""
+        txt_SE_ZONAS.Text = ""
+        txt_SE_VACIONES.Text = ""
+        txt_SE_PLAZAS.Text = ""
+        txt_SE_NATURALES.Text = ""
+        txt_se_diversiones.Text = ""
+        txt_GFRenta.Text = ""
+        txt_GFCole.Text = ""
+        Txt_GFDesp.Text = ""
+        txt_GFServ.Text = ""
+        Txt_pasatiempos.Text = ""
+        txt_Religion.Text = ""
+        txt_commen.Text = ""
+        PB_IMAGE_VIVIENDA.Image = AdminEmpleados.My.Resources.Resources.photoNobody120
+        EMPLEADO_ES = 0
+        dgv_OI.DataSource = objcon.Consulta_OI(0)
+        dgv_Ref.DataSource = objcon.Consulta_REF(0)
     End Sub
     Private Sub Altas_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = 13 Then My.Computer.Keyboard.SendKeys("{tab}")
@@ -358,7 +446,7 @@ Public Class Empleados
             If (txt_numero.Text = "") Then
             Else
                 objcon.Altas(txt_numero.Text, 0)
-                objcon.Bajas(txt_numero.Text, 0, commen.Text, seg.Checked, Emp)
+                objcon.Bajas(txt_numero.Text, 0, commen.Text, seg.Checked, NEmp)
                 MessageBox.Show("Se dio de Baja correctamente a este Empleado")
                 txt_activo.Text = ""
                 txt_baja.Text = ""
@@ -415,7 +503,6 @@ Public Class Empleados
         V2 = popup.Variable2
         popup.Close()
     End Sub
-
     Public Sub Limpiartxt(ByVal form As Windows.Forms.Form)
         Try
             txt_activo.Text = ""
@@ -649,7 +736,7 @@ Public Class Empleados
                 ES.FS_SERVICES = txt_GFServ.Text
                 ES.SES_HOBBIES = Txt_pasatiempos.Text
                 ES.SES_RELIGION = txt_Religion.Text
-                ES.SES_VERIFIER = Emp
+                ES.SES_VERIFIER = NEmp
                 ES.SES_OBSERVATIONS = txt_commen.Text
                 ES.IMG = PB_IMAGE_VIVIENDA.Image
                 id = objcon.Add_ES(ES)
@@ -772,7 +859,7 @@ Public Class Empleados
                 Else
                     MessageBox.Show("Este registro ya Existe.")
                 End If
-            txt_hijoAM.Text = ""
+                txt_hijoAM.Text = ""
                 txt_hijoAP.Text = ""
                 txt_hijoNAME.Text = ""
                 txt_hijoFN.Text = ""
