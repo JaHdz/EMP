@@ -5,6 +5,7 @@ Imports System.Net
 Imports System.Data.SqlDbType
 
 Public Class Cls_Emp
+#Region "Properties"
     Public Property ID_Emp As Integer
     Public Property Emp_Name As String
     Public Property Emp_APat As String
@@ -35,7 +36,18 @@ Public Class Cls_Emp
     Public Property ID_User As Int64
     Public Property Img As Image
     Public Property Emp_EN As String
+#End Region
 
-
-
+    Public Function GetAssignedEquipment(Employee As Integer) As DataTable
+        GetAssignedEquipment = New DataTable()
+        Using connection As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            connection.Open()
+            Dim cmd As SqlCommand = connection.CreateCommand()
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = "SELECT * FROM ASSIGNED_EQUIPMENT WHERE ID_EMPLEADO=@EMPLOYEE"
+            cmd.Parameters.Add("@EMPLOYEE", SqlDbType.Int).Value = Employee
+            Dim dr As SqlDataReader = cmd.ExecuteReader(CommandBehavior.CloseConnection)
+            GetAssignedEquipment.Load(dr)
+        End Using
+    End Function
 End Class

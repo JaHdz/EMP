@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ASSIGNED_EQUIPMENT" targetNamespace="http://tempuri.org/ASSIGNED_EQUIPMENT.xsd" xmlns:mstns="http://tempuri.org/ASSIGNED_EQUIPMENT.xsd" xmlns="http://tempuri.org/ASSIGNED_EQUIPMENT.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="EmpleadosDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="EmpleadosDBConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.AdminEmpleados.My.MySettings.GlobalReference.Default.EmpleadosDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ASSIGNED_EQUIPMENTTableAdapter" GeneratorDataComponentClassName="ASSIGNED_EQUIPMENTTableAdapter" Name="ASSIGNED_EQUIPMENT" UserDataComponentName="ASSIGNED_EQUIPMENTTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EmpleadosDBConnectionString (MySettings)" DbObjectName="EmpleadosDB.dbo.ASSIGNED_EQUIPMENT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_EMPLEADO, NOMBRE, DEPARTAMENTO, PUESTO, EQUIPO, COSTO, Descripcion, ASIGNADO, ENTREGA FROM dbo.ASSIGNED_EQUIPMENT</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_EMPLEADO" DataSetColumn="ID_EMPLEADO" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+              <Mapping SourceColumn="DEPARTAMENTO" DataSetColumn="DEPARTAMENTO" />
+              <Mapping SourceColumn="PUESTO" DataSetColumn="PUESTO" />
+              <Mapping SourceColumn="EQUIPO" DataSetColumn="EQUIPO" />
+              <Mapping SourceColumn="COSTO" DataSetColumn="COSTO" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="ASIGNADO" DataSetColumn="ASIGNADO" />
+              <Mapping SourceColumn="ENTREGA" DataSetColumn="ENTREGA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ASSIGNED_EQUIPMENT" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ASSIGNED_EQUIPMENT" msprop:Generator_UserDSName="ASSIGNED_EQUIPMENT">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ASSIGNED_EQUIPMENT" msprop:Generator_TableClassName="ASSIGNED_EQUIPMENTDataTable" msprop:Generator_TableVarName="tableASSIGNED_EQUIPMENT" msprop:Generator_TablePropName="_ASSIGNED_EQUIPMENT" msprop:Generator_RowDeletingName="ASSIGNED_EQUIPMENTRowDeleting" msprop:Generator_RowChangingName="ASSIGNED_EQUIPMENTRowChanging" msprop:Generator_RowEvHandlerName="ASSIGNED_EQUIPMENTRowChangeEventHandler" msprop:Generator_RowDeletedName="ASSIGNED_EQUIPMENTRowDeleted" msprop:Generator_UserTableName="ASSIGNED_EQUIPMENT" msprop:Generator_RowChangedName="ASSIGNED_EQUIPMENTRowChanged" msprop:Generator_RowEvArgName="ASSIGNED_EQUIPMENTRowChangeEvent" msprop:Generator_RowClassName="ASSIGNED_EQUIPMENTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_EMPLEADO" msprop:Generator_ColumnVarNameInTable="columnID_EMPLEADO" msprop:Generator_ColumnPropNameInRow="ID_EMPLEADO" msprop:Generator_ColumnPropNameInTable="ID_EMPLEADOColumn" msprop:Generator_UserColumnName="ID_EMPLEADO" type="xs:int" minOccurs="0" />
+              <xs:element name="NOMBRE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="152" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DEPARTAMENTO" msprop:Generator_ColumnVarNameInTable="columnDEPARTAMENTO" msprop:Generator_ColumnPropNameInRow="DEPARTAMENTO" msprop:Generator_ColumnPropNameInTable="DEPARTAMENTOColumn" msprop:Generator_UserColumnName="DEPARTAMENTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PUESTO" msprop:Generator_ColumnVarNameInTable="columnPUESTO" msprop:Generator_ColumnPropNameInRow="PUESTO" msprop:Generator_ColumnPropNameInTable="PUESTOColumn" msprop:Generator_UserColumnName="PUESTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EQUIPO" msprop:Generator_ColumnVarNameInTable="columnEQUIPO" msprop:Generator_ColumnPropNameInRow="EQUIPO" msprop:Generator_ColumnPropNameInTable="EQUIPOColumn" msprop:Generator_UserColumnName="EQUIPO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COSTO" msprop:Generator_ColumnVarNameInTable="columnCOSTO" msprop:Generator_ColumnPropNameInRow="COSTO" msprop:Generator_ColumnPropNameInTable="COSTOColumn" msprop:Generator_UserColumnName="COSTO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ASIGNADO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnASIGNADO" msprop:Generator_ColumnPropNameInRow="ASIGNADO" msprop:Generator_ColumnPropNameInTable="ASIGNADOColumn" msprop:Generator_UserColumnName="ASIGNADO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ENTREGA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnENTREGA" msprop:Generator_ColumnPropNameInRow="ENTREGA" msprop:Generator_ColumnPropNameInTable="ENTREGAColumn" msprop:Generator_UserColumnName="ENTREGA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
