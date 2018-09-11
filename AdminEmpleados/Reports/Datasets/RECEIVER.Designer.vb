@@ -20,12 +20,12 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("ASSIGNED_EQUIPMENT"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("RECEIVER"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class ASSIGNED_EQUIPMENT
+Partial Public Class RECEIVER
     Inherits Global.System.Data.DataSet
     
-    Private tableASSIGNED_EQUIPMENT As ASSIGNED_EQUIPMENTDataTable
+    Private tableEmp_Datos As Emp_DatosDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +56,8 @@ Partial Public Class ASSIGNED_EQUIPMENT
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("ASSIGNED_EQUIPMENT")) Is Nothing) Then
-                MyBase.Tables.Add(New ASSIGNED_EQUIPMENTDataTable(ds.Tables("ASSIGNED_EQUIPMENT")))
+            If (Not (ds.Tables("Emp_Datos")) Is Nothing) Then
+                MyBase.Tables.Add(New Emp_DatosDataTable(ds.Tables("Emp_Datos")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +80,9 @@ Partial Public Class ASSIGNED_EQUIPMENT
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property _ASSIGNED_EQUIPMENT() As ASSIGNED_EQUIPMENTDataTable
+    Public ReadOnly Property Emp_Datos() As Emp_DatosDataTable
         Get
-            Return Me.tableASSIGNED_EQUIPMENT
+            Return Me.tableEmp_Datos
         End Get
     End Property
     
@@ -128,7 +128,7 @@ Partial Public Class ASSIGNED_EQUIPMENT
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As ASSIGNED_EQUIPMENT = CType(MyBase.Clone,ASSIGNED_EQUIPMENT)
+        Dim cln As RECEIVER = CType(MyBase.Clone,RECEIVER)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -153,8 +153,8 @@ Partial Public Class ASSIGNED_EQUIPMENT
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("ASSIGNED_EQUIPMENT")) Is Nothing) Then
-                MyBase.Tables.Add(New ASSIGNED_EQUIPMENTDataTable(ds.Tables("ASSIGNED_EQUIPMENT")))
+            If (Not (ds.Tables("Emp_Datos")) Is Nothing) Then
+                MyBase.Tables.Add(New Emp_DatosDataTable(ds.Tables("Emp_Datos")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +188,10 @@ Partial Public Class ASSIGNED_EQUIPMENT
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tableASSIGNED_EQUIPMENT = CType(MyBase.Tables("ASSIGNED_EQUIPMENT"),ASSIGNED_EQUIPMENTDataTable)
+        Me.tableEmp_Datos = CType(MyBase.Tables("Emp_Datos"),Emp_DatosDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableASSIGNED_EQUIPMENT) Is Nothing) Then
-                Me.tableASSIGNED_EQUIPMENT.InitVars
+            If (Not (Me.tableEmp_Datos) Is Nothing) Then
+                Me.tableEmp_Datos.InitVars
             End If
         End If
     End Sub
@@ -199,18 +199,18 @@ Partial Public Class ASSIGNED_EQUIPMENT
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "ASSIGNED_EQUIPMENT"
+        Me.DataSetName = "RECEIVER"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/ASSIGNED_EQUIPMENT.xsd"
+        Me.Namespace = "http://tempuri.org/RECEIVER.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tableASSIGNED_EQUIPMENT = New ASSIGNED_EQUIPMENTDataTable()
-        MyBase.Tables.Add(Me.tableASSIGNED_EQUIPMENT)
+        Me.tableEmp_Datos = New Emp_DatosDataTable()
+        MyBase.Tables.Add(Me.tableEmp_Datos)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerialize_ASSIGNED_EQUIPMENT() As Boolean
+    Private Function ShouldSerializeEmp_Datos() As Boolean
         Return false
     End Function
     
@@ -225,7 +225,7 @@ Partial Public Class ASSIGNED_EQUIPMENT
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As ASSIGNED_EQUIPMENT = New ASSIGNED_EQUIPMENT()
+        Dim ds As RECEIVER = New RECEIVER()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -273,39 +273,25 @@ Partial Public Class ASSIGNED_EQUIPMENT
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub ASSIGNED_EQUIPMENTRowChangeEventHandler(ByVal sender As Object, ByVal e As ASSIGNED_EQUIPMENTRowChangeEvent)
+    Public Delegate Sub Emp_DatosRowChangeEventHandler(ByVal sender As Object, ByVal e As Emp_DatosRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class ASSIGNED_EQUIPMENTDataTable
-        Inherits Global.System.Data.TypedTableBase(Of ASSIGNED_EQUIPMENTRow)
+    Partial Public Class Emp_DatosDataTable
+        Inherits Global.System.Data.TypedTableBase(Of Emp_DatosRow)
         
-        Private columnID_EMPLEADO As Global.System.Data.DataColumn
+        Private columnID_Emp As Global.System.Data.DataColumn
         
-        Private columnNOMBRE As Global.System.Data.DataColumn
-        
-        Private columnDEPARTAMENTO As Global.System.Data.DataColumn
-        
-        Private columnPUESTO As Global.System.Data.DataColumn
-        
-        Private columnEQUIPO As Global.System.Data.DataColumn
-        
-        Private columnCOSTO As Global.System.Data.DataColumn
-        
-        Private columnDescripcion As Global.System.Data.DataColumn
-        
-        Private columnASIGNADO As Global.System.Data.DataColumn
-        
-        Private columnENTREGA As Global.System.Data.DataColumn
+        Private columnEmp_Name As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "ASSIGNED_EQUIPMENT"
+            Me.TableName = "Emp_Datos"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -338,73 +324,17 @@ Partial Public Class ASSIGNED_EQUIPMENT
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property ID_EMPLEADOColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property ID_EmpColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnID_EMPLEADO
+                Return Me.columnID_Emp
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property NOMBREColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property Emp_NameColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnNOMBRE
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property DEPARTAMENTOColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnDEPARTAMENTO
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property PUESTOColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnPUESTO
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property EQUIPOColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnEQUIPO
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property COSTOColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCOSTO
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property DescripcionColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnDescripcion
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property ASIGNADOColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnASIGNADO
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property ENTREGAColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnENTREGA
+                Return Me.columnEmp_Name
             End Get
         End Property
         
@@ -419,44 +349,50 @@ Partial Public Class ASSIGNED_EQUIPMENT
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As ASSIGNED_EQUIPMENTRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As Emp_DatosRow
             Get
-                Return CType(Me.Rows(index),ASSIGNED_EQUIPMENTRow)
+                Return CType(Me.Rows(index),Emp_DatosRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event ASSIGNED_EQUIPMENTRowChanging As ASSIGNED_EQUIPMENTRowChangeEventHandler
+        Public Event Emp_DatosRowChanging As Emp_DatosRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event ASSIGNED_EQUIPMENTRowChanged As ASSIGNED_EQUIPMENTRowChangeEventHandler
+        Public Event Emp_DatosRowChanged As Emp_DatosRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event ASSIGNED_EQUIPMENTRowDeleting As ASSIGNED_EQUIPMENTRowChangeEventHandler
+        Public Event Emp_DatosRowDeleting As Emp_DatosRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event ASSIGNED_EQUIPMENTRowDeleted As ASSIGNED_EQUIPMENTRowChangeEventHandler
+        Public Event Emp_DatosRowDeleted As Emp_DatosRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddASSIGNED_EQUIPMENTRow(ByVal row As ASSIGNED_EQUIPMENTRow)
+        Public Overloads Sub AddEmp_DatosRow(ByVal row As Emp_DatosRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddASSIGNED_EQUIPMENTRow(ByVal ID_EMPLEADO As Integer, ByVal NOMBRE As String, ByVal DEPARTAMENTO As String, ByVal PUESTO As String, ByVal EQUIPO As String, ByVal COSTO As Decimal, ByVal Descripcion As String, ByVal ASIGNADO As String, ByVal ENTREGA As String) As ASSIGNED_EQUIPMENTRow
-            Dim rowASSIGNED_EQUIPMENTRow As ASSIGNED_EQUIPMENTRow = CType(Me.NewRow,ASSIGNED_EQUIPMENTRow)
-            Dim columnValuesArray() As Object = New Object() {ID_EMPLEADO, NOMBRE, DEPARTAMENTO, PUESTO, EQUIPO, COSTO, Descripcion, ASIGNADO, ENTREGA}
-            rowASSIGNED_EQUIPMENTRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowASSIGNED_EQUIPMENTRow)
-            Return rowASSIGNED_EQUIPMENTRow
+        Public Overloads Function AddEmp_DatosRow(ByVal Emp_Name As String) As Emp_DatosRow
+            Dim rowEmp_DatosRow As Emp_DatosRow = CType(Me.NewRow,Emp_DatosRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, Emp_Name}
+            rowEmp_DatosRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowEmp_DatosRow)
+            Return rowEmp_DatosRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function FindByID_Emp(ByVal ID_Emp As Integer) As Emp_DatosRow
+            Return CType(Me.Rows.Find(New Object() {ID_Emp}),Emp_DatosRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As ASSIGNED_EQUIPMENTDataTable = CType(MyBase.Clone,ASSIGNED_EQUIPMENTDataTable)
+            Dim cln As Emp_DatosDataTable = CType(MyBase.Clone,Emp_DatosDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -464,82 +400,57 @@ Partial Public Class ASSIGNED_EQUIPMENT
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New ASSIGNED_EQUIPMENTDataTable()
+            Return New Emp_DatosDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnID_EMPLEADO = MyBase.Columns("ID_EMPLEADO")
-            Me.columnNOMBRE = MyBase.Columns("NOMBRE")
-            Me.columnDEPARTAMENTO = MyBase.Columns("DEPARTAMENTO")
-            Me.columnPUESTO = MyBase.Columns("PUESTO")
-            Me.columnEQUIPO = MyBase.Columns("EQUIPO")
-            Me.columnCOSTO = MyBase.Columns("COSTO")
-            Me.columnDescripcion = MyBase.Columns("Descripcion")
-            Me.columnASIGNADO = MyBase.Columns("ASIGNADO")
-            Me.columnENTREGA = MyBase.Columns("ENTREGA")
+            Me.columnID_Emp = MyBase.Columns("ID_Emp")
+            Me.columnEmp_Name = MyBase.Columns("Emp_Name")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnID_EMPLEADO = New Global.System.Data.DataColumn("ID_EMPLEADO", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnID_EMPLEADO)
-            Me.columnNOMBRE = New Global.System.Data.DataColumn("NOMBRE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNOMBRE)
-            Me.columnDEPARTAMENTO = New Global.System.Data.DataColumn("DEPARTAMENTO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDEPARTAMENTO)
-            Me.columnPUESTO = New Global.System.Data.DataColumn("PUESTO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPUESTO)
-            Me.columnEQUIPO = New Global.System.Data.DataColumn("EQUIPO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnEQUIPO)
-            Me.columnCOSTO = New Global.System.Data.DataColumn("COSTO", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCOSTO)
-            Me.columnDescripcion = New Global.System.Data.DataColumn("Descripcion", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDescripcion)
-            Me.columnASIGNADO = New Global.System.Data.DataColumn("ASIGNADO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnASIGNADO)
-            Me.columnENTREGA = New Global.System.Data.DataColumn("ENTREGA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnENTREGA)
-            Me.columnNOMBRE.ReadOnly = true
-            Me.columnNOMBRE.MaxLength = 152
-            Me.columnDEPARTAMENTO.MaxLength = 50
-            Me.columnPUESTO.MaxLength = 50
-            Me.columnEQUIPO.MaxLength = 20
-            Me.columnDescripcion.MaxLength = 30
-            Me.columnASIGNADO.ReadOnly = true
-            Me.columnASIGNADO.MaxLength = 8000
-            Me.columnENTREGA.ReadOnly = true
-            Me.columnENTREGA.MaxLength = 8000
-            Me.ExtendedProperties.Add("Generator_TablePropName", "_ASSIGNED_EQUIPMENT")
-            Me.ExtendedProperties.Add("Generator_UserTableName", "ASSIGNED_EQUIPMENT")
+            Me.columnID_Emp = New Global.System.Data.DataColumn("ID_Emp", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnID_Emp)
+            Me.columnEmp_Name = New Global.System.Data.DataColumn("Emp_Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEmp_Name)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID_Emp}, true))
+            Me.columnID_Emp.AutoIncrement = true
+            Me.columnID_Emp.AutoIncrementSeed = -1
+            Me.columnID_Emp.AutoIncrementStep = -1
+            Me.columnID_Emp.AllowDBNull = false
+            Me.columnID_Emp.ReadOnly = true
+            Me.columnID_Emp.Unique = true
+            Me.columnEmp_Name.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewASSIGNED_EQUIPMENTRow() As ASSIGNED_EQUIPMENTRow
-            Return CType(Me.NewRow,ASSIGNED_EQUIPMENTRow)
+        Public Function NewEmp_DatosRow() As Emp_DatosRow
+            Return CType(Me.NewRow,Emp_DatosRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New ASSIGNED_EQUIPMENTRow(builder)
+            Return New Emp_DatosRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(ASSIGNED_EQUIPMENTRow)
+            Return GetType(Emp_DatosRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.ASSIGNED_EQUIPMENTRowChangedEvent) Is Nothing) Then
-                RaiseEvent ASSIGNED_EQUIPMENTRowChanged(Me, New ASSIGNED_EQUIPMENTRowChangeEvent(CType(e.Row,ASSIGNED_EQUIPMENTRow), e.Action))
+            If (Not (Me.Emp_DatosRowChangedEvent) Is Nothing) Then
+                RaiseEvent Emp_DatosRowChanged(Me, New Emp_DatosRowChangeEvent(CType(e.Row,Emp_DatosRow), e.Action))
             End If
         End Sub
         
@@ -547,8 +458,8 @@ Partial Public Class ASSIGNED_EQUIPMENT
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.ASSIGNED_EQUIPMENTRowChangingEvent) Is Nothing) Then
-                RaiseEvent ASSIGNED_EQUIPMENTRowChanging(Me, New ASSIGNED_EQUIPMENTRowChangeEvent(CType(e.Row,ASSIGNED_EQUIPMENTRow), e.Action))
+            If (Not (Me.Emp_DatosRowChangingEvent) Is Nothing) Then
+                RaiseEvent Emp_DatosRowChanging(Me, New Emp_DatosRowChangeEvent(CType(e.Row,Emp_DatosRow), e.Action))
             End If
         End Sub
         
@@ -556,8 +467,8 @@ Partial Public Class ASSIGNED_EQUIPMENT
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.ASSIGNED_EQUIPMENTRowDeletedEvent) Is Nothing) Then
-                RaiseEvent ASSIGNED_EQUIPMENTRowDeleted(Me, New ASSIGNED_EQUIPMENTRowChangeEvent(CType(e.Row,ASSIGNED_EQUIPMENTRow), e.Action))
+            If (Not (Me.Emp_DatosRowDeletedEvent) Is Nothing) Then
+                RaiseEvent Emp_DatosRowDeleted(Me, New Emp_DatosRowChangeEvent(CType(e.Row,Emp_DatosRow), e.Action))
             End If
         End Sub
         
@@ -565,14 +476,14 @@ Partial Public Class ASSIGNED_EQUIPMENT
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.ASSIGNED_EQUIPMENTRowDeletingEvent) Is Nothing) Then
-                RaiseEvent ASSIGNED_EQUIPMENTRowDeleting(Me, New ASSIGNED_EQUIPMENTRowChangeEvent(CType(e.Row,ASSIGNED_EQUIPMENTRow), e.Action))
+            If (Not (Me.Emp_DatosRowDeletingEvent) Is Nothing) Then
+                RaiseEvent Emp_DatosRowDeleting(Me, New Emp_DatosRowChangeEvent(CType(e.Row,Emp_DatosRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveASSIGNED_EQUIPMENTRow(ByVal row As ASSIGNED_EQUIPMENTRow)
+        Public Sub RemoveEmp_DatosRow(ByVal row As Emp_DatosRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -581,7 +492,7 @@ Partial Public Class ASSIGNED_EQUIPMENT
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As ASSIGNED_EQUIPMENT = New ASSIGNED_EQUIPMENT()
+            Dim ds As RECEIVER = New RECEIVER()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -599,7 +510,7 @@ Partial Public Class ASSIGNED_EQUIPMENT
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "ASSIGNED_EQUIPMENTDataTable"
+            attribute2.FixedValue = "Emp_DatosDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -646,259 +557,54 @@ Partial Public Class ASSIGNED_EQUIPMENT
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class ASSIGNED_EQUIPMENTRow
+    Partial Public Class Emp_DatosRow
         Inherits Global.System.Data.DataRow
         
-        Private tableASSIGNED_EQUIPMENT As ASSIGNED_EQUIPMENTDataTable
+        Private tableEmp_Datos As Emp_DatosDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableASSIGNED_EQUIPMENT = CType(Me.Table,ASSIGNED_EQUIPMENTDataTable)
+            Me.tableEmp_Datos = CType(Me.Table,Emp_DatosDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ID_EMPLEADO() As Integer
+        Public Property ID_Emp() As Integer
             Get
-                Try 
-                    Return CType(Me(Me.tableASSIGNED_EQUIPMENT.ID_EMPLEADOColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ID_EMPLEADO' in table 'ASSIGNED_EQUIPMENT' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableEmp_Datos.ID_EmpColumn),Integer)
             End Get
             Set
-                Me(Me.tableASSIGNED_EQUIPMENT.ID_EMPLEADOColumn) = value
+                Me(Me.tableEmp_Datos.ID_EmpColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property NOMBRE() As String
+        Public Property Emp_Name() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableASSIGNED_EQUIPMENT.NOMBREColumn),String)
+                    Return CType(Me(Me.tableEmp_Datos.Emp_NameColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'NOMBRE' in table 'ASSIGNED_EQUIPMENT' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Emp_Name' in table 'Emp_Datos' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableASSIGNED_EQUIPMENT.NOMBREColumn) = value
+                Me(Me.tableEmp_Datos.Emp_NameColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property DEPARTAMENTO() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableASSIGNED_EQUIPMENT.DEPARTAMENTOColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'DEPARTAMENTO' in table 'ASSIGNED_EQUIPMENT' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableASSIGNED_EQUIPMENT.DEPARTAMENTOColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property PUESTO() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableASSIGNED_EQUIPMENT.PUESTOColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'PUESTO' in table 'ASSIGNED_EQUIPMENT' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableASSIGNED_EQUIPMENT.PUESTOColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property EQUIPO() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableASSIGNED_EQUIPMENT.EQUIPOColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'EQUIPO' in table 'ASSIGNED_EQUIPMENT' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableASSIGNED_EQUIPMENT.EQUIPOColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property COSTO() As Decimal
-            Get
-                Try 
-                    Return CType(Me(Me.tableASSIGNED_EQUIPMENT.COSTOColumn),Decimal)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'COSTO' in table 'ASSIGNED_EQUIPMENT' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableASSIGNED_EQUIPMENT.COSTOColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Descripcion() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableASSIGNED_EQUIPMENT.DescripcionColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Descripcion' in table 'ASSIGNED_EQUIPMENT' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableASSIGNED_EQUIPMENT.DescripcionColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ASIGNADO() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableASSIGNED_EQUIPMENT.ASIGNADOColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ASIGNADO' in table 'ASSIGNED_EQUIPMENT' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableASSIGNED_EQUIPMENT.ASIGNADOColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ENTREGA() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableASSIGNED_EQUIPMENT.ENTREGAColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ENTREGA' in table 'ASSIGNED_EQUIPMENT' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableASSIGNED_EQUIPMENT.ENTREGAColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsID_EMPLEADONull() As Boolean
-            Return Me.IsNull(Me.tableASSIGNED_EQUIPMENT.ID_EMPLEADOColumn)
+        Public Function IsEmp_NameNull() As Boolean
+            Return Me.IsNull(Me.tableEmp_Datos.Emp_NameColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetID_EMPLEADONull()
-            Me(Me.tableASSIGNED_EQUIPMENT.ID_EMPLEADOColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsNOMBRENull() As Boolean
-            Return Me.IsNull(Me.tableASSIGNED_EQUIPMENT.NOMBREColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetNOMBRENull()
-            Me(Me.tableASSIGNED_EQUIPMENT.NOMBREColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsDEPARTAMENTONull() As Boolean
-            Return Me.IsNull(Me.tableASSIGNED_EQUIPMENT.DEPARTAMENTOColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetDEPARTAMENTONull()
-            Me(Me.tableASSIGNED_EQUIPMENT.DEPARTAMENTOColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsPUESTONull() As Boolean
-            Return Me.IsNull(Me.tableASSIGNED_EQUIPMENT.PUESTOColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetPUESTONull()
-            Me(Me.tableASSIGNED_EQUIPMENT.PUESTOColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsEQUIPONull() As Boolean
-            Return Me.IsNull(Me.tableASSIGNED_EQUIPMENT.EQUIPOColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetEQUIPONull()
-            Me(Me.tableASSIGNED_EQUIPMENT.EQUIPOColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsCOSTONull() As Boolean
-            Return Me.IsNull(Me.tableASSIGNED_EQUIPMENT.COSTOColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetCOSTONull()
-            Me(Me.tableASSIGNED_EQUIPMENT.COSTOColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsDescripcionNull() As Boolean
-            Return Me.IsNull(Me.tableASSIGNED_EQUIPMENT.DescripcionColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetDescripcionNull()
-            Me(Me.tableASSIGNED_EQUIPMENT.DescripcionColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsASIGNADONull() As Boolean
-            Return Me.IsNull(Me.tableASSIGNED_EQUIPMENT.ASIGNADOColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetASIGNADONull()
-            Me(Me.tableASSIGNED_EQUIPMENT.ASIGNADOColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsENTREGANull() As Boolean
-            Return Me.IsNull(Me.tableASSIGNED_EQUIPMENT.ENTREGAColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetENTREGANull()
-            Me(Me.tableASSIGNED_EQUIPMENT.ENTREGAColumn) = Global.System.Convert.DBNull
+        Public Sub SetEmp_NameNull()
+            Me(Me.tableEmp_Datos.Emp_NameColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -906,16 +612,16 @@ Partial Public Class ASSIGNED_EQUIPMENT
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class ASSIGNED_EQUIPMENTRowChangeEvent
+    Public Class Emp_DatosRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As ASSIGNED_EQUIPMENTRow
+        Private eventRow As Emp_DatosRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As ASSIGNED_EQUIPMENTRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As Emp_DatosRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -923,7 +629,7 @@ Partial Public Class ASSIGNED_EQUIPMENT
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As ASSIGNED_EQUIPMENTRow
+        Public ReadOnly Property Row() As Emp_DatosRow
             Get
                 Return Me.eventRow
             End Get
@@ -939,7 +645,7 @@ Partial Public Class ASSIGNED_EQUIPMENT
     End Class
 End Class
 
-Namespace ASSIGNED_EQUIPMENTTableAdapters
+Namespace RECEIVERTableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -950,7 +656,7 @@ Namespace ASSIGNED_EQUIPMENTTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class ASSIGNED_EQUIPMENTTableAdapter
+    Partial Public Class Emp_DatosTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -1067,17 +773,35 @@ Namespace ASSIGNED_EQUIPMENTTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "ASSIGNED_EQUIPMENT"
-            tableMapping.ColumnMappings.Add("ID_EMPLEADO", "ID_EMPLEADO")
-            tableMapping.ColumnMappings.Add("NOMBRE", "NOMBRE")
-            tableMapping.ColumnMappings.Add("DEPARTAMENTO", "DEPARTAMENTO")
-            tableMapping.ColumnMappings.Add("PUESTO", "PUESTO")
-            tableMapping.ColumnMappings.Add("EQUIPO", "EQUIPO")
-            tableMapping.ColumnMappings.Add("COSTO", "COSTO")
-            tableMapping.ColumnMappings.Add("Descripcion", "Descripcion")
-            tableMapping.ColumnMappings.Add("ASIGNADO", "ASIGNADO")
-            tableMapping.ColumnMappings.Add("ENTREGA", "ENTREGA")
+            tableMapping.DataSetTable = "Emp_Datos"
+            tableMapping.ColumnMappings.Add("ID_Emp", "ID_Emp")
+            tableMapping.ColumnMappings.Add("Emp_Name", "Emp_Name")
             Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Emp_Datos] WHERE (([ID_Emp] = @Original_ID_Emp) AND ((@IsNull_Emp_Na"& _ 
+                "me = 1 AND [Emp_Name] IS NULL) OR ([Emp_Name] = @Original_Emp_Name)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID_Emp", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID_Emp", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Emp_Name", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Emp_Name", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Emp_Name", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Emp_Name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Emp_Datos] ([Emp_Name]) VALUES (@Emp_Name);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID_Emp, Emp_Name"& _ 
+                " FROM Emp_Datos WHERE (ID_Emp = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Emp_Name", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Emp_Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Emp_Datos] SET [Emp_Name] = @Emp_Name WHERE (([ID_Emp] = @Original_ID_Emp"& _ 
+                ") AND ((@IsNull_Emp_Name = 1 AND [Emp_Name] IS NULL) OR ([Emp_Name] = @Original_"& _ 
+                "Emp_Name)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID_Emp, Emp_Name FROM Emp_Datos WHERE (ID_Emp = @ID_Emp)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Emp_Name", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Emp_Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID_Emp", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID_Emp", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Emp_Name", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Emp_Name", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Emp_Name", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Emp_Name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID_Emp", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ID_Emp", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1093,8 +817,7 @@ Namespace ASSIGNED_EQUIPMENTTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID_EMPLEADO, NOMBRE, DEPARTAMENTO, PUESTO, EQUIPO, COSTO, Descripcion, ASI"& _ 
-                "GNADO, ENTREGA FROM ASSIGNED_EQUIPMENT"
+            Me._commandCollection(0).CommandText = "SELECT ID_Emp, Emp_Name FROM Emp_Datos"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -1102,7 +825,7 @@ Namespace ASSIGNED_EQUIPMENTTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As ASSIGNED_EQUIPMENT.ASSIGNED_EQUIPMENTDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As RECEIVER.Emp_DatosDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -1115,11 +838,134 @@ Namespace ASSIGNED_EQUIPMENTTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As ASSIGNED_EQUIPMENT.ASSIGNED_EQUIPMENTDataTable
+        Public Overloads Overridable Function GetData() As RECEIVER.Emp_DatosDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As ASSIGNED_EQUIPMENT.ASSIGNED_EQUIPMENTDataTable = New ASSIGNED_EQUIPMENT.ASSIGNED_EQUIPMENTDataTable()
+            Dim dataTable As RECEIVER.Emp_DatosDataTable = New RECEIVER.Emp_DatosDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As RECEIVER.Emp_DatosDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As RECEIVER) As Integer
+            Return Me.Adapter.Update(dataSet, "Emp_Datos")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_ID_Emp As Integer, ByVal Original_Emp_Name As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ID_Emp,Integer)
+            If (Original_Emp_Name Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Emp_Name,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal Emp_Name As String) As Integer
+            If (Emp_Name Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Emp_Name,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal Emp_Name As String, ByVal Original_ID_Emp As Integer, ByVal Original_Emp_Name As String, ByVal ID_Emp As Integer) As Integer
+            If (Emp_Name Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Emp_Name,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Original_ID_Emp,Integer)
+            If (Original_Emp_Name Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_Emp_Name,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(ID_Emp,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal Emp_Name As String, ByVal Original_ID_Emp As Integer, ByVal Original_Emp_Name As String) As Integer
+            Return Me.Update(Emp_Name, Original_ID_Emp, Original_Emp_Name, Original_ID_Emp)
         End Function
     End Class
     
@@ -1136,6 +982,8 @@ Namespace ASSIGNED_EQUIPMENTTableAdapters
         
         Private _updateOrder As UpdateOrderOption
         
+        Private _emp_DatosTableAdapter As Emp_DatosTableAdapter
+        
         Private _backupDataSetBeforeUpdate As Boolean
         
         Private _connection As Global.System.Data.IDbConnection
@@ -1148,6 +996,20 @@ Namespace ASSIGNED_EQUIPMENTTableAdapters
             End Get
             Set
                 Me._updateOrder = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property Emp_DatosTableAdapter() As Emp_DatosTableAdapter
+            Get
+                Return Me._emp_DatosTableAdapter
+            End Get
+            Set
+                Me._emp_DatosTableAdapter = value
             End Set
         End Property
         
@@ -1170,6 +1032,10 @@ Namespace ASSIGNED_EQUIPMENTTableAdapters
                 If (Not (Me._connection) Is Nothing) Then
                     Return Me._connection
                 End If
+                If ((Not (Me._emp_DatosTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._emp_DatosTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._emp_DatosTableAdapter.Connection
+                End If
                 Return Nothing
             End Get
             Set
@@ -1183,6 +1049,9 @@ Namespace ASSIGNED_EQUIPMENTTableAdapters
         Public ReadOnly Property TableAdapterInstanceCount() As Integer
             Get
                 Dim count As Integer = 0
+                If (Not (Me._emp_DatosTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
                 Return count
             End Get
         End Property
@@ -1192,8 +1061,17 @@ Namespace ASSIGNED_EQUIPMENTTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As ASSIGNED_EQUIPMENT, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As RECEIVER, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._emp_DatosTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Emp_Datos.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._emp_DatosTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -1202,8 +1080,16 @@ Namespace ASSIGNED_EQUIPMENTTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As ASSIGNED_EQUIPMENT, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As RECEIVER, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._emp_DatosTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Emp_Datos.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._emp_DatosTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -1212,8 +1098,16 @@ Namespace ASSIGNED_EQUIPMENTTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As ASSIGNED_EQUIPMENT, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As RECEIVER, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._emp_DatosTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Emp_Datos.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._emp_DatosTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -1248,12 +1142,17 @@ Namespace ASSIGNED_EQUIPMENTTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As ASSIGNED_EQUIPMENT) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As RECEIVER) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If
             If (dataSet.HasChanges = false) Then
                 Return 0
+            End If
+            If ((Not (Me._emp_DatosTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._emp_DatosTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
             End If
             Dim workConnection As Global.System.Data.IDbConnection = Me.Connection
             If (workConnection Is Nothing) Then
@@ -1287,6 +1186,15 @@ Namespace ASSIGNED_EQUIPMENTTableAdapters
             Try 
                 '---- Prepare for update -----------
                 '
+                If (Not (Me._emp_DatosTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._emp_DatosTableAdapter, Me._emp_DatosTableAdapter.Connection)
+                    Me._emp_DatosTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._emp_DatosTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._emp_DatosTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._emp_DatosTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._emp_DatosTableAdapter.Adapter)
+                    End If
+                End If
                 '
                 '---- Perform updates -----------
                 '
@@ -1346,6 +1254,10 @@ Namespace ASSIGNED_EQUIPMENTTableAdapters
             Finally
                 If workConnOpened Then
                     workConnection.Close
+                End If
+                If (Not (Me._emp_DatosTableAdapter) Is Nothing) Then
+                    Me._emp_DatosTableAdapter.Connection = CType(revertConnections(Me._emp_DatosTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._emp_DatosTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

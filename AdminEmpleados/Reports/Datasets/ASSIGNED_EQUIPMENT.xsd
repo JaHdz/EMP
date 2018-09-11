@@ -9,10 +9,10 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ASSIGNED_EQUIPMENTTableAdapter" GeneratorDataComponentClassName="ASSIGNED_EQUIPMENTTableAdapter" Name="ASSIGNED_EQUIPMENT" UserDataComponentName="ASSIGNED_EQUIPMENTTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="EmpleadosDBConnectionString (MySettings)" DbObjectName="EmpleadosDB.dbo.ASSIGNED_EQUIPMENT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="EmpleadosDBConnectionString (MySettings)" DbObjectName="EmpleadosDB.dbo.ASSIGNED_EQUIPMENT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID_EMPLEADO, NOMBRE, DEPARTAMENTO, PUESTO, EQUIPO, COSTO, Descripcion, ASIGNADO, ENTREGA FROM dbo.ASSIGNED_EQUIPMENT</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ID_EMPLEADO, NOMBRE, DEPARTAMENTO, PUESTO, EQUIPO, COSTO, Descripcion, ASIGNADO, ENTREGA FROM ASSIGNED_EQUIPMENT</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -39,7 +39,7 @@
   <xs:element name="ASSIGNED_EQUIPMENT" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ASSIGNED_EQUIPMENT" msprop:Generator_UserDSName="ASSIGNED_EQUIPMENT">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ASSIGNED_EQUIPMENT" msprop:Generator_TableClassName="ASSIGNED_EQUIPMENTDataTable" msprop:Generator_TableVarName="tableASSIGNED_EQUIPMENT" msprop:Generator_TablePropName="_ASSIGNED_EQUIPMENT" msprop:Generator_RowDeletingName="ASSIGNED_EQUIPMENTRowDeleting" msprop:Generator_RowChangingName="ASSIGNED_EQUIPMENTRowChanging" msprop:Generator_RowEvHandlerName="ASSIGNED_EQUIPMENTRowChangeEventHandler" msprop:Generator_RowDeletedName="ASSIGNED_EQUIPMENTRowDeleted" msprop:Generator_UserTableName="ASSIGNED_EQUIPMENT" msprop:Generator_RowChangedName="ASSIGNED_EQUIPMENTRowChanged" msprop:Generator_RowEvArgName="ASSIGNED_EQUIPMENTRowChangeEvent" msprop:Generator_RowClassName="ASSIGNED_EQUIPMENTRow">
+        <xs:element name="ASSIGNED_EQUIPMENT" msprop:Generator_TableClassName="ASSIGNED_EQUIPMENTDataTable" msprop:Generator_TableVarName="tableASSIGNED_EQUIPMENT" msprop:Generator_RowChangedName="ASSIGNED_EQUIPMENTRowChanged" msprop:Generator_TablePropName="_ASSIGNED_EQUIPMENT" msprop:Generator_RowDeletingName="ASSIGNED_EQUIPMENTRowDeleting" msprop:Generator_RowChangingName="ASSIGNED_EQUIPMENTRowChanging" msprop:Generator_RowEvHandlerName="ASSIGNED_EQUIPMENTRowChangeEventHandler" msprop:Generator_RowDeletedName="ASSIGNED_EQUIPMENTRowDeleted" msprop:Generator_RowClassName="ASSIGNED_EQUIPMENTRow" msprop:Generator_UserTableName="ASSIGNED_EQUIPMENT" msprop:Generator_RowEvArgName="ASSIGNED_EQUIPMENTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_EMPLEADO" msprop:Generator_ColumnVarNameInTable="columnID_EMPLEADO" msprop:Generator_ColumnPropNameInRow="ID_EMPLEADO" msprop:Generator_ColumnPropNameInTable="ID_EMPLEADOColumn" msprop:Generator_UserColumnName="ID_EMPLEADO" type="xs:int" minOccurs="0" />

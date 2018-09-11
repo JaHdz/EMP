@@ -19,9 +19,12 @@ Public Class Reportes
                 RvReports.LocalReport.DataSources.Add(New ReportDataSource("SES_FAMILY", New Cls_ES().GetFamily(1)))
                 RvReports.LocalReport.DataSources.Add(New ReportDataSource("SES_OTHERINCOMES", New Cls_ES().GetOtherIncomes(SESID)))
             Case ReportOptions.AssignedEquipment
+                Dim name = "Javier Arturo Hernandez Munguia"
                 RvReports.LocalReport.ReportEmbeddedResource = "AdminEmpleados.EquipoEntregado.rdlc"
                 RvReports.LocalReport.DataSources.Clear()
                 RvReports.LocalReport.DataSources.Add(New ReportDataSource("ASSIGNED_EQUIPMENT", New Cls_Emp().GetAssignedEquipment(1)))
+                RvReports.LocalReport.DataSources.Add(New ReportDataSource("RECEIVER", New Cls_Emp().GetEquipmentReceiver(1, name)))
+
         End Select
         RvReports.RefreshReport()
     End Sub

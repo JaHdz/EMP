@@ -50,4 +50,12 @@ Public Class Cls_Emp
             GetAssignedEquipment.Load(dr)
         End Using
     End Function
+    Public Function GetEquipmentReceiver(ID As Integer, Name As String) As DataTable
+        GetEquipmentReceiver = New DataTable("RECEIVER")
+        GetEquipmentReceiver.Columns.AddRange(New DataColumn() {
+            New DataColumn("ID_Emp"),
+            New DataColumn("Emp_Name")
+            })
+        GetEquipmentReceiver.Rows.Add({ID, Name.ToUpper()})
+    End Function
 End Class
