@@ -11,9 +11,11 @@ Public Class Empleados
     Dim EMPLEADO_ES As Int64
     Dim id As Integer
     Dim NEmp As Integer
-    Sub New(ByVal emp As Integer)
+    Dim NName As Integer
+    Sub New(ByVal emp As Integer, name As String)
         InitializeComponent()
         NEmp = emp
+        NName = name
     End Sub
     Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
         Try
@@ -1128,4 +1130,18 @@ Public Class Empleados
         End If
     End Sub
 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        If txt_numero.Text = "" Then
+        Else
+            Dim Wait As New wait()
+            Wait.ShowDialog()
+            Dim Reportes As New Reportes With {
+                    .ReportOption = Convert.ToInt64(1),
+                    .Emp = Convert.ToInt64(txt_numero.Text),
+                    .User = NName
+                }
+            Reportes.Show()
+            Wait.Close()
+        End If
+    End Sub
 End Class

@@ -40,10 +40,12 @@ Partial Class Reportes
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(575, 726)
         Me.Controls.Add(Me.RvReports)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Name = "Reportes"
         Me.Text = "Reportes"
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents RvReports As Microsoft.Reporting.WinForms.ReportViewer
+
+    Private WithEvents RvReports As Microsoft.Reporting.WinForms.ReportViewer
 End Class

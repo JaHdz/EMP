@@ -4,9 +4,11 @@
     Dim V1 As String
     Dim V2 As String
     Dim NEmp As Integer
-    Sub New(ByVal emp As Integer)
+    Dim NName As String
+    Sub New(ByVal emp As Integer, name As String)
         InitializeComponent()
         NEmp = emp
+        NName = name
     End Sub
     Public Sub llenar_buscador(tipo As String)
         Dim popup As New frmPopUp(tipo)
@@ -121,6 +123,21 @@
                 dt = objcon.Consulta_EAsignado(Id)
             End If
             dgv_equipo_emp.DataSource = dt
+        End If
+    End Sub
+
+    Private Sub pb_Report_Click(sender As Object, e As EventArgs) Handles pb_Report.Click
+        If txt_numero.Text = "" Then
+        Else
+            Dim Wait As New wait()
+            Wait.ShowDialog()
+            Dim Reportes As New Reportes With {
+                    .ReportOption = Convert.ToInt64(2),
+                    .Emp = Convert.ToInt64(txt_numero.Text),
+                    .User = NName
+                }
+            Reportes.Show()
+            Wait.Close()
         End If
     End Sub
 End Class

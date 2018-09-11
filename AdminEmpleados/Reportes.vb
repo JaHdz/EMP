@@ -1,9 +1,11 @@
 ﻿Imports Microsoft.Reporting.WinForms
 
 Public Class Reportes
-    Dim ReportOption As Integer = 0
+    Public ReportOption As Integer
+    Public Emp As Integer
+    Public User As String
     Private Sub Reportes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ReportOption = 2
+
 
         RvReports.Reset()
         RvReports.ProcessingMode = ProcessingMode.Local
@@ -12,18 +14,18 @@ Public Class Reportes
             Case ReportOptions.SocialeconomicStudy
                 RvReports.LocalReport.ReportEmbeddedResource = "AdminEmpleados.EstudioSocioeconomico.rdlc"
                 RvReports.LocalReport.DataSources.Clear()
-                Dim INFO As DataTable = New Cls_ES().GetInfo(1)
+                Dim INFO As DataTable = New Cls_ES().GetInfo(Emp)
                 Dim SESID = INFO.Rows(0).Item(0).ToString()
                 RvReports.LocalReport.DataSources.Add(New ReportDataSource("SES_INFO", INFO))
                 RvReports.LocalReport.DataSources.Add(New ReportDataSource("SES_REFERENCES", New Cls_ES().GetReferences(SESID)))
-                RvReports.LocalReport.DataSources.Add(New ReportDataSource("SES_FAMILY", New Cls_ES().GetFamily(1)))
+                RvReports.LocalReport.DataSources.Add(New ReportDataSource("SES_FAMILY", New Cls_ES().GetFamily(Emp)))
                 RvReports.LocalReport.DataSources.Add(New ReportDataSource("SES_OTHERINCOMES", New Cls_ES().GetOtherIncomes(SESID)))
             Case ReportOptions.AssignedEquipment
-                Dim name = "Javier Arturo Hernandez Munguia"
+
                 RvReports.LocalReport.ReportEmbeddedResource = "AdminEmpleados.EquipoEntregado.rdlc"
                 RvReports.LocalReport.DataSources.Clear()
-                RvReports.LocalReport.DataSources.Add(New ReportDataSource("ASSIGNED_EQUIPMENT", New Cls_Emp().GetAssignedEquipment(1)))
-                RvReports.LocalReport.DataSources.Add(New ReportDataSource("RECEIVER", New Cls_Emp().GetEquipmentReceiver(1, name)))
+                RvReports.LocalReport.DataSources.Add(New ReportDataSource("ASSIGNED_EQUIPMENT", New Cls_Emp().GetAssignedEquipment(Emp)))
+                RvReports.LocalReport.DataSources.Add(New ReportDataSource("RECEIVER", New Cls_Emp().GetEquipmentReceiver(0, User)))
 
         End Select
         RvReports.RefreshReport()

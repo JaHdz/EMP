@@ -45,7 +45,6 @@ Partial Class Equipo
         Me.Empleado = New System.Windows.Forms.Label()
         Me.lbl_emp = New System.Windows.Forms.Label()
         Me.dgv_equipo_emp = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.UPDATE = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ID_Assig = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_Equipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -55,6 +54,8 @@ Partial Class Equipo
         Me.Fecha_R = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Comentario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_User = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.pb_Report = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -63,6 +64,7 @@ Partial Class Equipo
         CType(Me.buscar_eq, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_Report, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -79,6 +81,7 @@ Partial Class Equipo
         'Panel14
         '
         Me.Panel14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel14.Controls.Add(Me.pb_Report)
         Me.Panel14.Controls.Add(Me.TXT_commen)
         Me.Panel14.Controls.Add(Me.LBL_GUARDAR)
         Me.Panel14.Controls.Add(Me.label8)
@@ -298,11 +301,6 @@ Partial Class Equipo
         Me.dgv_equipo_emp.Size = New System.Drawing.Size(1241, 348)
         Me.dgv_equipo_emp.TabIndex = 71
         '
-        'DataGridViewImageColumn1
-        '
-        Me.DataGridViewImageColumn1.HeaderText = ""
-        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
-        '
         'UPDATE
         '
         Me.UPDATE.HeaderText = "Regresar"
@@ -362,6 +360,21 @@ Partial Class Equipo
         Me.ID_User.Name = "ID_User"
         Me.ID_User.Width = 150
         '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.HeaderText = ""
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        '
+        'pb_Report
+        '
+        Me.pb_Report.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
+        Me.pb_Report.Location = New System.Drawing.Point(868, 92)
+        Me.pb_Report.Name = "pb_Report"
+        Me.pb_Report.Size = New System.Drawing.Size(83, 83)
+        Me.pb_Report.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pb_Report.TabIndex = 71
+        Me.pb_Report.TabStop = False
+        '
         'Equipo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -382,6 +395,7 @@ Partial Class Equipo
         CType(Me.buscar_eq, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_Report, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -418,4 +432,5 @@ Partial Class Equipo
     Friend WithEvents Fecha_R As DataGridViewTextBoxColumn
     Friend WithEvents Comentario As DataGridViewTextBoxColumn
     Friend WithEvents ID_User As DataGridViewTextBoxColumn
+    Friend WithEvents pb_Report As PictureBox
 End Class
