@@ -63,9 +63,139 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Accounting_80px() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Accounting_80px", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Add_checkup_80px() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Add_checkup_80px", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Add_Contact_80px() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Add_Contact_80px", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Add_Eval_80px() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Add_Eval_80px", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Add_Family_80px() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Add_Family_80px", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Add_Income_80px() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Add_Income_80px", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Add_Job_80px() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Add_Job_80px", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Add_marriage_80px() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Add_marriage_80px", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Add_MedicalCondition_80px() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Add_MedicalCondition_80px", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Add_Reference_80px() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Add_Reference_80px", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Add_Tools_80px() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Add_Tools_80px", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Add_Training_80px() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Add_Training_80px", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Alta_80px() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Alta_80px", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property AssignedTools_80px() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("AssignedTools_80px", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

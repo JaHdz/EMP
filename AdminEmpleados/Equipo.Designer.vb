@@ -26,21 +26,15 @@ Partial Class Equipo
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.TXT_commen = New System.Windows.Forms.TextBox()
-        Me.LBL_GUARDAR = New System.Windows.Forms.Label()
         Me.label8 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label42 = New System.Windows.Forms.Label()
         Me.lbl_ingreso = New System.Windows.Forms.Label()
-        Me.CANCEL = New System.Windows.Forms.PictureBox()
         Me.TXT_FECHA = New System.Windows.Forms.DateTimePicker()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.SAVE = New System.Windows.Forms.PictureBox()
-        Me.buscar_eq = New System.Windows.Forms.PictureBox()
         Me.txt_numero = New System.Windows.Forms.TextBox()
         Me.Eq = New System.Windows.Forms.TextBox()
         Me.lbl_num = New System.Windows.Forms.Label()
         Me.eq2 = New System.Windows.Forms.TextBox()
-        Me.buscar_EN = New System.Windows.Forms.PictureBox()
         Me.Label92 = New System.Windows.Forms.Label()
         Me.Empleado = New System.Windows.Forms.Label()
         Me.lbl_emp = New System.Windows.Forms.Label()
@@ -56,15 +50,19 @@ Partial Class Equipo
         Me.ID_User = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.pb_Report = New System.Windows.Forms.PictureBox()
+        Me.CANCEL = New System.Windows.Forms.PictureBox()
+        Me.SAVE = New System.Windows.Forms.PictureBox()
+        Me.buscar_eq = New System.Windows.Forms.PictureBox()
+        Me.buscar_EN = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_Report, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_eq, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pb_Report, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -83,13 +81,11 @@ Partial Class Equipo
         Me.Panel14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel14.Controls.Add(Me.pb_Report)
         Me.Panel14.Controls.Add(Me.TXT_commen)
-        Me.Panel14.Controls.Add(Me.LBL_GUARDAR)
         Me.Panel14.Controls.Add(Me.label8)
         Me.Panel14.Controls.Add(Me.Panel2)
         Me.Panel14.Controls.Add(Me.lbl_ingreso)
         Me.Panel14.Controls.Add(Me.CANCEL)
         Me.Panel14.Controls.Add(Me.TXT_FECHA)
-        Me.Panel14.Controls.Add(Me.Label5)
         Me.Panel14.Controls.Add(Me.SAVE)
         Me.Panel14.Controls.Add(Me.buscar_eq)
         Me.Panel14.Controls.Add(Me.txt_numero)
@@ -115,17 +111,6 @@ Partial Class Equipo
         Me.TXT_commen.Name = "TXT_commen"
         Me.TXT_commen.Size = New System.Drawing.Size(427, 83)
         Me.TXT_commen.TabIndex = 3
-        '
-        'LBL_GUARDAR
-        '
-        Me.LBL_GUARDAR.AutoSize = True
-        Me.LBL_GUARDAR.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBL_GUARDAR.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.LBL_GUARDAR.Location = New System.Drawing.Point(972, 178)
-        Me.LBL_GUARDAR.Name = "LBL_GUARDAR"
-        Me.LBL_GUARDAR.Size = New System.Drawing.Size(93, 22)
-        Me.LBL_GUARDAR.TabIndex = 40
-        Me.LBL_GUARDAR.Text = "GUARDAR"
         '
         'label8
         '
@@ -168,54 +153,12 @@ Partial Class Equipo
         Me.lbl_ingreso.TabIndex = 67
         Me.lbl_ingreso.Text = "Ingreso:"
         '
-        'CANCEL
-        '
-        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(1102, 92)
-        Me.CANCEL.Name = "CANCEL"
-        Me.CANCEL.Size = New System.Drawing.Size(83, 83)
-        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.CANCEL.TabIndex = 1
-        Me.CANCEL.TabStop = False
-        '
         'TXT_FECHA
         '
         Me.TXT_FECHA.Location = New System.Drawing.Point(151, 145)
         Me.TXT_FECHA.Name = "TXT_FECHA"
         Me.TXT_FECHA.Size = New System.Drawing.Size(245, 28)
         Me.TXT_FECHA.TabIndex = 2
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(1098, 178)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(99, 22)
-        Me.Label5.TabIndex = 38
-        Me.Label5.Text = "CANCELAR"
-        '
-        'SAVE
-        '
-        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.SAVE.Location = New System.Drawing.Point(976, 92)
-        Me.SAVE.Name = "SAVE"
-        Me.SAVE.Size = New System.Drawing.Size(83, 83)
-        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.SAVE.TabIndex = 0
-        Me.SAVE.TabStop = False
-        '
-        'buscar_eq
-        '
-        Me.buscar_eq.BackgroundImage = CType(resources.GetObject("buscar_eq.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_eq.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_eq.Location = New System.Drawing.Point(366, 98)
-        Me.buscar_eq.Name = "buscar_eq"
-        Me.buscar_eq.Size = New System.Drawing.Size(30, 28)
-        Me.buscar_eq.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_eq.TabIndex = 65
-        Me.buscar_eq.TabStop = False
         '
         'txt_numero
         '
@@ -248,17 +191,6 @@ Partial Class Equipo
         Me.eq2.Size = New System.Drawing.Size(164, 28)
         Me.eq2.TabIndex = 64
         Me.eq2.TabStop = False
-        '
-        'buscar_EN
-        '
-        Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_EN.Location = New System.Drawing.Point(366, 54)
-        Me.buscar_EN.Name = "buscar_EN"
-        Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
-        Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_EN.TabIndex = 53
-        Me.buscar_EN.TabStop = False
         '
         'Label92
         '
@@ -367,13 +299,55 @@ Partial Class Equipo
         '
         'pb_Report
         '
-        Me.pb_Report.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
+        Me.pb_Report.Image = Global.AdminEmpleados.My.Resources.Resources.AssignedTools_80px
         Me.pb_Report.Location = New System.Drawing.Point(868, 92)
         Me.pb_Report.Name = "pb_Report"
         Me.pb_Report.Size = New System.Drawing.Size(83, 83)
         Me.pb_Report.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pb_Report.TabIndex = 71
         Me.pb_Report.TabStop = False
+        '
+        'CANCEL
+        '
+        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
+        Me.CANCEL.Location = New System.Drawing.Point(1102, 92)
+        Me.CANCEL.Name = "CANCEL"
+        Me.CANCEL.Size = New System.Drawing.Size(83, 83)
+        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.CANCEL.TabIndex = 1
+        Me.CANCEL.TabStop = False
+        '
+        'SAVE
+        '
+        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Tools_80px
+        Me.SAVE.Location = New System.Drawing.Point(976, 92)
+        Me.SAVE.Name = "SAVE"
+        Me.SAVE.Size = New System.Drawing.Size(83, 83)
+        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.SAVE.TabIndex = 0
+        Me.SAVE.TabStop = False
+        '
+        'buscar_eq
+        '
+        Me.buscar_eq.BackgroundImage = CType(resources.GetObject("buscar_eq.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_eq.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_eq.Location = New System.Drawing.Point(366, 98)
+        Me.buscar_eq.Name = "buscar_eq"
+        Me.buscar_eq.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_eq.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_eq.TabIndex = 65
+        Me.buscar_eq.TabStop = False
+        '
+        'buscar_EN
+        '
+        Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_EN.Location = New System.Drawing.Point(366, 54)
+        Me.buscar_EN.Name = "buscar_EN"
+        Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_EN.TabIndex = 53
+        Me.buscar_EN.TabStop = False
         '
         'Equipo
         '
@@ -390,12 +364,12 @@ Partial Class Equipo
         Me.Panel14.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_Report, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_eq, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pb_Report, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -410,8 +384,6 @@ Partial Class Equipo
     Friend WithEvents Eq As TextBox
     Friend WithEvents eq2 As TextBox
     Friend WithEvents Label92 As Label
-    Friend WithEvents LBL_GUARDAR As Label
-    Friend WithEvents Label5 As Label
     Friend WithEvents SAVE As PictureBox
     Friend WithEvents CANCEL As PictureBox
     Friend WithEvents lbl_ingreso As Label

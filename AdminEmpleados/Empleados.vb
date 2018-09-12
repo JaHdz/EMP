@@ -1130,7 +1130,7 @@ Public Class Empleados
         End If
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+    Private Sub btn_SERPT_Click(sender As Object, e As EventArgs) Handles btn_SERPT.Click
         If txt_numero.Text = "" Then
         Else
             Dim Wait As New wait()

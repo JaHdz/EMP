@@ -32,8 +32,6 @@ Partial Class Admin
         Me.Activo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_Emp_US = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnl_per = New System.Windows.Forms.Panel()
-        Me.LBL_GUARDAR = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.SAVE = New System.Windows.Forms.PictureBox()
         Me.CANCEL = New System.Windows.Forms.PictureBox()
         Me.txt_pass2 = New System.Windows.Forms.TextBox()
@@ -58,8 +56,6 @@ Partial Class Admin
         Me.CA_Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TXT_CAP_DESC = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.TXT_CAPCODIGO = New System.Windows.Forms.TextBox()
@@ -76,8 +72,6 @@ Partial Class Admin
         Me.Estatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.txt_coddes = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.save_cod = New System.Windows.Forms.PictureBox()
         Me.cancel_code = New System.Windows.Forms.PictureBox()
         Me.txt_depcod = New System.Windows.Forms.TextBox()
@@ -97,8 +91,6 @@ Partial Class Admin
         Me.txt_eqcost = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.txt_eqdesc = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.save_eq = New System.Windows.Forms.PictureBox()
         Me.cancel_eq = New System.Windows.Forms.PictureBox()
         Me.txt_eqcod = New System.Windows.Forms.TextBox()
@@ -108,10 +100,13 @@ Partial Class Admin
         Me.Label7 = New System.Windows.Forms.Label()
         Me.tab_evaluacion = New System.Windows.Forms.TabPage()
         Me.dgv_eval = New System.Windows.Forms.DataGridView()
+        Me.UPDATEE = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Evalua = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EV_Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EV_Descipcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EV_Estatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.txt_eval_des = New System.Windows.Forms.TextBox()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
         Me.SAVE_EVAL = New System.Windows.Forms.PictureBox()
         Me.CANCEL_EVAL = New System.Windows.Forms.PictureBox()
         Me.txt_evalcod = New System.Windows.Forms.TextBox()
@@ -121,11 +116,15 @@ Partial Class Admin
         Me.Label26 = New System.Windows.Forms.Label()
         Me.tab_puesto = New System.Windows.Forms.TabPage()
         Me.dgv_Puesto = New System.Windows.Forms.DataGridView()
+        Me.UPDATEPU = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Puesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombrep = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcionp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Riesgo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estatusp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.cb_PuestoRiesgo = New System.Windows.Forms.CheckBox()
         Me.txt_PuestoDescripcion = New System.Windows.Forms.TextBox()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.Label28 = New System.Windows.Forms.Label()
         Me.btn_SavePuesto = New System.Windows.Forms.PictureBox()
         Me.btn_CancelPuesto = New System.Windows.Forms.PictureBox()
         Me.txt_PuestoNombre = New System.Windows.Forms.TextBox()
@@ -135,9 +134,12 @@ Partial Class Admin
         Me.Label31 = New System.Windows.Forms.Label()
         Me.tsb_super = New System.Windows.Forms.TabPage()
         Me.dgv_super = New System.Windows.Forms.DataGridView()
+        Me.UPDATESU = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Super = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ActivoS = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label33 = New System.Windows.Forms.Label()
         Me.btn_savesuper = New System.Windows.Forms.PictureBox()
         Me.btn_cancelsuper = New System.Windows.Forms.PictureBox()
         Me.TXT_EMP_SUPERname = New System.Windows.Forms.Label()
@@ -149,10 +151,13 @@ Partial Class Admin
         Me.Label40 = New System.Windows.Forms.Label()
         Me.tab_tipo = New System.Windows.Forms.TabPage()
         Me.dgv_te = New System.Windows.Forms.DataGridView()
+        Me.UPDATETE = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_TE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Codigote = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcionte = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estatuste = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.txt_DescTE = New System.Windows.Forms.TextBox()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.Label35 = New System.Windows.Forms.Label()
         Me.pb_saveTE = New System.Windows.Forms.PictureBox()
         Me.pb_cancelTE = New System.Windows.Forms.PictureBox()
         Me.txt_codigoTE = New System.Windows.Forms.TextBox()
@@ -160,27 +165,6 @@ Partial Class Admin
         Me.Label41 = New System.Windows.Forms.Label()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Label42 = New System.Windows.Forms.Label()
-        Me.UPDATETE = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_TE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Codigote = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcionte = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estatuste = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UPDATESU = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Super = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ActivoS = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UPDATEPU = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Puesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombrep = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcionp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Riesgo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estatusp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UPDATEE = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Evalua = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EV_Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EV_Descipcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EV_Estatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tab_admin.SuspendLayout()
         Me.tab_users.SuspendLayout()
         CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -270,7 +254,7 @@ Partial Class Admin
         Me.dgv_equipo_emp.AllowUserToAddRows = False
         Me.dgv_equipo_emp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_equipo_emp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATE, Me.ID_User, Me.UserName, Me.Activo, Me.ID_Emp_US})
-        Me.dgv_equipo_emp.Location = New System.Drawing.Point(14, 258)
+        Me.dgv_equipo_emp.Location = New System.Drawing.Point(-4, 258)
         Me.dgv_equipo_emp.Name = "dgv_equipo_emp"
         Me.dgv_equipo_emp.RowHeadersVisible = False
         Me.dgv_equipo_emp.Size = New System.Drawing.Size(1240, 401)
@@ -312,8 +296,6 @@ Partial Class Admin
         'pnl_per
         '
         Me.pnl_per.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.pnl_per.Controls.Add(Me.LBL_GUARDAR)
-        Me.pnl_per.Controls.Add(Me.Label11)
         Me.pnl_per.Controls.Add(Me.SAVE)
         Me.pnl_per.Controls.Add(Me.CANCEL)
         Me.pnl_per.Controls.Add(Me.txt_pass2)
@@ -335,35 +317,13 @@ Partial Class Admin
         Me.pnl_per.Size = New System.Drawing.Size(1241, 217)
         Me.pnl_per.TabIndex = 32
         '
-        'LBL_GUARDAR
-        '
-        Me.LBL_GUARDAR.AutoSize = True
-        Me.LBL_GUARDAR.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBL_GUARDAR.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.LBL_GUARDAR.Location = New System.Drawing.Point(988, 147)
-        Me.LBL_GUARDAR.Name = "LBL_GUARDAR"
-        Me.LBL_GUARDAR.Size = New System.Drawing.Size(93, 22)
-        Me.LBL_GUARDAR.TabIndex = 95
-        Me.LBL_GUARDAR.Text = "GUARDAR"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(1114, 147)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(99, 22)
-        Me.Label11.TabIndex = 94
-        Me.Label11.Text = "CANCELAR"
-        '
         'SAVE
         '
         Me.SAVE.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.SAVE.Location = New System.Drawing.Point(992, 61)
+        Me.SAVE.Location = New System.Drawing.Point(1138, 38)
         Me.SAVE.Name = "SAVE"
-        Me.SAVE.Size = New System.Drawing.Size(83, 83)
+        Me.SAVE.Size = New System.Drawing.Size(45, 40)
         Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.SAVE.TabIndex = 92
         Me.SAVE.TabStop = False
@@ -371,9 +331,9 @@ Partial Class Admin
         'CANCEL
         '
         Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(1118, 61)
+        Me.CANCEL.Location = New System.Drawing.Point(1189, 38)
         Me.CANCEL.Name = "CANCEL"
-        Me.CANCEL.Size = New System.Drawing.Size(83, 83)
+        Me.CANCEL.Size = New System.Drawing.Size(45, 40)
         Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.CANCEL.TabIndex = 93
         Me.CANCEL.TabStop = False
@@ -457,7 +417,7 @@ Partial Class Admin
         '
         Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
         Me.buscar_EN.Image = CType(resources.GetObject("buscar_EN.Image"), System.Drawing.Image)
-        Me.buscar_EN.Location = New System.Drawing.Point(383, 48)
+        Me.buscar_EN.Location = New System.Drawing.Point(390, 48)
         Me.buscar_EN.Name = "buscar_EN"
         Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
         Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -468,7 +428,7 @@ Partial Class Admin
         '
         Me.txt_numero.Location = New System.Drawing.Point(168, 48)
         Me.txt_numero.Name = "txt_numero"
-        Me.txt_numero.Size = New System.Drawing.Size(209, 28)
+        Me.txt_numero.Size = New System.Drawing.Size(216, 28)
         Me.txt_numero.TabIndex = 0
         '
         'lbl_num
@@ -563,8 +523,6 @@ Partial Class Admin
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.TXT_CAP_DESC)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.Label13)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.TXT_CAPCODIGO)
@@ -587,34 +545,12 @@ Partial Class Admin
         Me.TXT_CAP_DESC.Size = New System.Drawing.Size(252, 28)
         Me.TXT_CAP_DESC.TabIndex = 1
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(988, 147)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(93, 22)
-        Me.Label1.TabIndex = 95
-        Me.Label1.Text = "GUARDAR"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label13.Location = New System.Drawing.Point(1114, 147)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(99, 22)
-        Me.Label13.TabIndex = 94
-        Me.Label13.Text = "CANCELAR"
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.PictureBox1.Location = New System.Drawing.Point(992, 61)
+        Me.PictureBox1.Location = New System.Drawing.Point(1138, 38)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(83, 83)
+        Me.PictureBox1.Size = New System.Drawing.Size(45, 40)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 92
         Me.PictureBox1.TabStop = False
@@ -622,9 +558,9 @@ Partial Class Admin
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.PictureBox2.Location = New System.Drawing.Point(1118, 61)
+        Me.PictureBox2.Location = New System.Drawing.Point(1189, 38)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(83, 83)
+        Me.PictureBox2.Size = New System.Drawing.Size(45, 40)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 93
         Me.PictureBox2.TabStop = False
@@ -739,8 +675,6 @@ Partial Class Admin
         '
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel3.Controls.Add(Me.txt_coddes)
-        Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Controls.Add(Me.Label14)
         Me.Panel3.Controls.Add(Me.save_cod)
         Me.Panel3.Controls.Add(Me.cancel_code)
         Me.Panel3.Controls.Add(Me.txt_depcod)
@@ -763,34 +697,12 @@ Partial Class Admin
         Me.txt_coddes.Size = New System.Drawing.Size(252, 28)
         Me.txt_coddes.TabIndex = 1
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(988, 147)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(93, 22)
-        Me.Label2.TabIndex = 95
-        Me.Label2.Text = "GUARDAR"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(1114, 147)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(99, 22)
-        Me.Label14.TabIndex = 94
-        Me.Label14.Text = "CANCELAR"
-        '
         'save_cod
         '
         Me.save_cod.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.save_cod.Location = New System.Drawing.Point(992, 61)
+        Me.save_cod.Location = New System.Drawing.Point(1138, 38)
         Me.save_cod.Name = "save_cod"
-        Me.save_cod.Size = New System.Drawing.Size(83, 83)
+        Me.save_cod.Size = New System.Drawing.Size(45, 40)
         Me.save_cod.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.save_cod.TabIndex = 92
         Me.save_cod.TabStop = False
@@ -798,9 +710,9 @@ Partial Class Admin
         'cancel_code
         '
         Me.cancel_code.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.cancel_code.Location = New System.Drawing.Point(1118, 61)
+        Me.cancel_code.Location = New System.Drawing.Point(1189, 38)
         Me.cancel_code.Name = "cancel_code"
-        Me.cancel_code.Size = New System.Drawing.Size(83, 83)
+        Me.cancel_code.Size = New System.Drawing.Size(45, 40)
         Me.cancel_code.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.cancel_code.TabIndex = 93
         Me.cancel_code.TabStop = False
@@ -924,8 +836,6 @@ Partial Class Admin
         Me.Panel5.Controls.Add(Me.txt_eqcost)
         Me.Panel5.Controls.Add(Me.Label21)
         Me.Panel5.Controls.Add(Me.txt_eqdesc)
-        Me.Panel5.Controls.Add(Me.Label3)
-        Me.Panel5.Controls.Add(Me.Label4)
         Me.Panel5.Controls.Add(Me.save_eq)
         Me.Panel5.Controls.Add(Me.cancel_eq)
         Me.Panel5.Controls.Add(Me.txt_eqcod)
@@ -966,34 +876,12 @@ Partial Class Admin
         Me.txt_eqdesc.Size = New System.Drawing.Size(252, 28)
         Me.txt_eqdesc.TabIndex = 1
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(988, 147)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(93, 22)
-        Me.Label3.TabIndex = 95
-        Me.Label3.Text = "GUARDAR"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(1114, 147)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(99, 22)
-        Me.Label4.TabIndex = 94
-        Me.Label4.Text = "CANCELAR"
-        '
         'save_eq
         '
         Me.save_eq.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.save_eq.Location = New System.Drawing.Point(992, 61)
+        Me.save_eq.Location = New System.Drawing.Point(1138, 38)
         Me.save_eq.Name = "save_eq"
-        Me.save_eq.Size = New System.Drawing.Size(83, 83)
+        Me.save_eq.Size = New System.Drawing.Size(45, 40)
         Me.save_eq.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.save_eq.TabIndex = 92
         Me.save_eq.TabStop = False
@@ -1001,9 +889,9 @@ Partial Class Admin
         'cancel_eq
         '
         Me.cancel_eq.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.cancel_eq.Location = New System.Drawing.Point(1118, 61)
+        Me.cancel_eq.Location = New System.Drawing.Point(1189, 38)
         Me.cancel_eq.Name = "cancel_eq"
-        Me.cancel_eq.Size = New System.Drawing.Size(83, 83)
+        Me.cancel_eq.Size = New System.Drawing.Size(45, 40)
         Me.cancel_eq.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.cancel_eq.TabIndex = 93
         Me.cancel_eq.TabStop = False
@@ -1082,12 +970,43 @@ Partial Class Admin
         Me.dgv_eval.Size = New System.Drawing.Size(1240, 401)
         Me.dgv_eval.TabIndex = 76
         '
+        'UPDATEE
+        '
+        Me.UPDATEE.HeaderText = "Baja"
+        Me.UPDATEE.Name = "UPDATEE"
+        '
+        'ID_Evalua
+        '
+        Me.ID_Evalua.DataPropertyName = "ID_Evalua"
+        Me.ID_Evalua.HeaderText = "ID"
+        Me.ID_Evalua.Name = "ID_Evalua"
+        '
+        'EV_Codigo
+        '
+        Me.EV_Codigo.DataPropertyName = "EV_Codigo"
+        Me.EV_Codigo.HeaderText = "CODIGO"
+        Me.EV_Codigo.Name = "EV_Codigo"
+        Me.EV_Codigo.Width = 200
+        '
+        'EV_Descipcion
+        '
+        Me.EV_Descipcion.DataPropertyName = "EV_Descipcion"
+        Me.EV_Descipcion.HeaderText = "DESCRIPCION"
+        Me.EV_Descipcion.Name = "EV_Descipcion"
+        Me.EV_Descipcion.Width = 700
+        '
+        'EV_Estatus
+        '
+        Me.EV_Estatus.DataPropertyName = "EV_Estatus"
+        Me.EV_Estatus.HeaderText = "ESTATUS"
+        Me.EV_Estatus.Name = "EV_Estatus"
+        Me.EV_Estatus.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.EV_Estatus.Width = 200
+        '
         'Panel8
         '
         Me.Panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel8.Controls.Add(Me.txt_eval_des)
-        Me.Panel8.Controls.Add(Me.Label22)
-        Me.Panel8.Controls.Add(Me.Label23)
         Me.Panel8.Controls.Add(Me.SAVE_EVAL)
         Me.Panel8.Controls.Add(Me.CANCEL_EVAL)
         Me.Panel8.Controls.Add(Me.txt_evalcod)
@@ -1110,34 +1029,12 @@ Partial Class Admin
         Me.txt_eval_des.Size = New System.Drawing.Size(252, 28)
         Me.txt_eval_des.TabIndex = 1
         '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label22.Location = New System.Drawing.Point(988, 147)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(93, 22)
-        Me.Label22.TabIndex = 95
-        Me.Label22.Text = "GUARDAR"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label23.Location = New System.Drawing.Point(1114, 147)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(99, 22)
-        Me.Label23.TabIndex = 94
-        Me.Label23.Text = "CANCELAR"
-        '
         'SAVE_EVAL
         '
         Me.SAVE_EVAL.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.SAVE_EVAL.Location = New System.Drawing.Point(992, 61)
+        Me.SAVE_EVAL.Location = New System.Drawing.Point(1138, 38)
         Me.SAVE_EVAL.Name = "SAVE_EVAL"
-        Me.SAVE_EVAL.Size = New System.Drawing.Size(83, 83)
+        Me.SAVE_EVAL.Size = New System.Drawing.Size(45, 40)
         Me.SAVE_EVAL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.SAVE_EVAL.TabIndex = 92
         Me.SAVE_EVAL.TabStop = False
@@ -1145,9 +1042,9 @@ Partial Class Admin
         'CANCEL_EVAL
         '
         Me.CANCEL_EVAL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL_EVAL.Location = New System.Drawing.Point(1118, 61)
+        Me.CANCEL_EVAL.Location = New System.Drawing.Point(1189, 38)
         Me.CANCEL_EVAL.Name = "CANCEL_EVAL"
-        Me.CANCEL_EVAL.Size = New System.Drawing.Size(83, 83)
+        Me.CANCEL_EVAL.Size = New System.Drawing.Size(45, 40)
         Me.CANCEL_EVAL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.CANCEL_EVAL.TabIndex = 93
         Me.CANCEL_EVAL.TabStop = False
@@ -1226,13 +1123,52 @@ Partial Class Admin
         Me.dgv_Puesto.Size = New System.Drawing.Size(1240, 401)
         Me.dgv_Puesto.TabIndex = 78
         '
+        'UPDATEPU
+        '
+        Me.UPDATEPU.HeaderText = "Baja"
+        Me.UPDATEPU.Name = "UPDATEPU"
+        '
+        'ID_Puesto
+        '
+        Me.ID_Puesto.DataPropertyName = "ID_Puesto"
+        Me.ID_Puesto.HeaderText = "ID"
+        Me.ID_Puesto.Name = "ID_Puesto"
+        '
+        'Nombrep
+        '
+        Me.Nombrep.DataPropertyName = "Nombre"
+        Me.Nombrep.HeaderText = "CODIGO"
+        Me.Nombrep.Name = "Nombrep"
+        Me.Nombrep.Width = 200
+        '
+        'Descripcionp
+        '
+        Me.Descripcionp.DataPropertyName = "Descripcion"
+        Me.Descripcionp.HeaderText = "DESCRIPCION"
+        Me.Descripcionp.Name = "Descripcionp"
+        Me.Descripcionp.Width = 500
+        '
+        'Riesgo
+        '
+        Me.Riesgo.DataPropertyName = "Riesgo"
+        Me.Riesgo.HeaderText = "RIESGO"
+        Me.Riesgo.Name = "Riesgo"
+        Me.Riesgo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Riesgo.Width = 200
+        '
+        'Estatusp
+        '
+        Me.Estatusp.DataPropertyName = "Estatus"
+        Me.Estatusp.HeaderText = "ESTATUS"
+        Me.Estatusp.Name = "Estatusp"
+        Me.Estatusp.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Estatusp.Width = 200
+        '
         'Panel10
         '
         Me.Panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel10.Controls.Add(Me.cb_PuestoRiesgo)
         Me.Panel10.Controls.Add(Me.txt_PuestoDescripcion)
-        Me.Panel10.Controls.Add(Me.Label27)
-        Me.Panel10.Controls.Add(Me.Label28)
         Me.Panel10.Controls.Add(Me.btn_SavePuesto)
         Me.Panel10.Controls.Add(Me.btn_CancelPuesto)
         Me.Panel10.Controls.Add(Me.txt_PuestoNombre)
@@ -1265,34 +1201,12 @@ Partial Class Admin
         Me.txt_PuestoDescripcion.Size = New System.Drawing.Size(252, 28)
         Me.txt_PuestoDescripcion.TabIndex = 1
         '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label27.Location = New System.Drawing.Point(988, 147)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(93, 22)
-        Me.Label27.TabIndex = 95
-        Me.Label27.Text = "GUARDAR"
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label28.Location = New System.Drawing.Point(1114, 147)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(99, 22)
-        Me.Label28.TabIndex = 94
-        Me.Label28.Text = "CANCELAR"
-        '
         'btn_SavePuesto
         '
         Me.btn_SavePuesto.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.btn_SavePuesto.Location = New System.Drawing.Point(992, 61)
+        Me.btn_SavePuesto.Location = New System.Drawing.Point(1138, 38)
         Me.btn_SavePuesto.Name = "btn_SavePuesto"
-        Me.btn_SavePuesto.Size = New System.Drawing.Size(83, 83)
+        Me.btn_SavePuesto.Size = New System.Drawing.Size(45, 40)
         Me.btn_SavePuesto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_SavePuesto.TabIndex = 92
         Me.btn_SavePuesto.TabStop = False
@@ -1300,9 +1214,9 @@ Partial Class Admin
         'btn_CancelPuesto
         '
         Me.btn_CancelPuesto.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.btn_CancelPuesto.Location = New System.Drawing.Point(1118, 61)
+        Me.btn_CancelPuesto.Location = New System.Drawing.Point(1189, 38)
         Me.btn_CancelPuesto.Name = "btn_CancelPuesto"
-        Me.btn_CancelPuesto.Size = New System.Drawing.Size(83, 83)
+        Me.btn_CancelPuesto.Size = New System.Drawing.Size(45, 40)
         Me.btn_CancelPuesto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_CancelPuesto.TabIndex = 93
         Me.btn_CancelPuesto.TabStop = False
@@ -1381,11 +1295,43 @@ Partial Class Admin
         Me.dgv_super.Size = New System.Drawing.Size(1240, 401)
         Me.dgv_super.TabIndex = 74
         '
+        'UPDATESU
+        '
+        Me.UPDATESU.HeaderText = "Baja"
+        Me.UPDATESU.Name = "UPDATESU"
+        '
+        'ID_Super
+        '
+        Me.ID_Super.DataPropertyName = "ID_Super"
+        Me.ID_Super.HeaderText = "ID"
+        Me.ID_Super.Name = "ID_Super"
+        Me.ID_Super.Width = 200
+        '
+        'ID_Emp
+        '
+        Me.ID_Emp.DataPropertyName = "ID_Emp"
+        Me.ID_Emp.HeaderText = "NO.EMPLEADO"
+        Me.ID_Emp.Name = "ID_Emp"
+        Me.ID_Emp.Width = 200
+        '
+        'Name
+        '
+        Me.Name.DataPropertyName = "Name"
+        Me.Name.HeaderText = "NOMBRE"
+        Me.Name.Name = "Name"
+        Me.Name.Width = 600
+        '
+        'ActivoS
+        '
+        Me.ActivoS.DataPropertyName = "Activo"
+        Me.ActivoS.HeaderText = "ESTATUS"
+        Me.ActivoS.Name = "ActivoS"
+        Me.ActivoS.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ActivoS.Width = 200
+        '
         'Panel12
         '
         Me.Panel12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel12.Controls.Add(Me.Label32)
-        Me.Panel12.Controls.Add(Me.Label33)
         Me.Panel12.Controls.Add(Me.btn_savesuper)
         Me.Panel12.Controls.Add(Me.btn_cancelsuper)
         Me.Panel12.Controls.Add(Me.TXT_EMP_SUPERname)
@@ -1401,35 +1347,13 @@ Partial Class Admin
         Me.Panel12.Size = New System.Drawing.Size(1241, 217)
         Me.Panel12.TabIndex = 73
         '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label32.Location = New System.Drawing.Point(996, 147)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(93, 22)
-        Me.Label32.TabIndex = 95
-        Me.Label32.Text = "GUARDAR"
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label33.Location = New System.Drawing.Point(1114, 147)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(99, 22)
-        Me.Label33.TabIndex = 94
-        Me.Label33.Text = "CANCELAR"
-        '
         'btn_savesuper
         '
         Me.btn_savesuper.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btn_savesuper.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.btn_savesuper.Location = New System.Drawing.Point(1000, 61)
+        Me.btn_savesuper.Location = New System.Drawing.Point(1138, 38)
         Me.btn_savesuper.Name = "btn_savesuper"
-        Me.btn_savesuper.Size = New System.Drawing.Size(83, 83)
+        Me.btn_savesuper.Size = New System.Drawing.Size(45, 40)
         Me.btn_savesuper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_savesuper.TabIndex = 92
         Me.btn_savesuper.TabStop = False
@@ -1437,9 +1361,9 @@ Partial Class Admin
         'btn_cancelsuper
         '
         Me.btn_cancelsuper.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.btn_cancelsuper.Location = New System.Drawing.Point(1118, 61)
+        Me.btn_cancelsuper.Location = New System.Drawing.Point(1189, 38)
         Me.btn_cancelsuper.Name = "btn_cancelsuper"
-        Me.btn_cancelsuper.Size = New System.Drawing.Size(83, 83)
+        Me.btn_cancelsuper.Size = New System.Drawing.Size(45, 40)
         Me.btn_cancelsuper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_cancelsuper.TabIndex = 93
         Me.btn_cancelsuper.TabStop = False
@@ -1539,12 +1463,43 @@ Partial Class Admin
         Me.dgv_te.Size = New System.Drawing.Size(1240, 401)
         Me.dgv_te.TabIndex = 80
         '
+        'UPDATETE
+        '
+        Me.UPDATETE.HeaderText = "Baja"
+        Me.UPDATETE.Name = "UPDATETE"
+        '
+        'ID_TE
+        '
+        Me.ID_TE.DataPropertyName = "ID_TE"
+        Me.ID_TE.HeaderText = "ID"
+        Me.ID_TE.Name = "ID_TE"
+        '
+        'Codigote
+        '
+        Me.Codigote.DataPropertyName = "Codigo"
+        Me.Codigote.HeaderText = "CODIGO"
+        Me.Codigote.Name = "Codigote"
+        Me.Codigote.Width = 200
+        '
+        'Descripcionte
+        '
+        Me.Descripcionte.DataPropertyName = "Descripcion"
+        Me.Descripcionte.HeaderText = "DESCRIPCION"
+        Me.Descripcionte.Name = "Descripcionte"
+        Me.Descripcionte.Width = 700
+        '
+        'Estatuste
+        '
+        Me.Estatuste.DataPropertyName = "Estatus"
+        Me.Estatuste.HeaderText = "ESTATUS"
+        Me.Estatuste.Name = "Estatuste"
+        Me.Estatuste.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Estatuste.Width = 200
+        '
         'Panel14
         '
         Me.Panel14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel14.Controls.Add(Me.txt_DescTE)
-        Me.Panel14.Controls.Add(Me.Label34)
-        Me.Panel14.Controls.Add(Me.Label35)
         Me.Panel14.Controls.Add(Me.pb_saveTE)
         Me.Panel14.Controls.Add(Me.pb_cancelTE)
         Me.Panel14.Controls.Add(Me.txt_codigoTE)
@@ -1567,34 +1522,12 @@ Partial Class Admin
         Me.txt_DescTE.Size = New System.Drawing.Size(252, 28)
         Me.txt_DescTE.TabIndex = 1
         '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label34.Location = New System.Drawing.Point(988, 147)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(93, 22)
-        Me.Label34.TabIndex = 95
-        Me.Label34.Text = "GUARDAR"
-        '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label35.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label35.Location = New System.Drawing.Point(1114, 147)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(99, 22)
-        Me.Label35.TabIndex = 94
-        Me.Label35.Text = "CANCELAR"
-        '
         'pb_saveTE
         '
         Me.pb_saveTE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.pb_saveTE.Location = New System.Drawing.Point(992, 61)
+        Me.pb_saveTE.Location = New System.Drawing.Point(1138, 38)
         Me.pb_saveTE.Name = "pb_saveTE"
-        Me.pb_saveTE.Size = New System.Drawing.Size(83, 83)
+        Me.pb_saveTE.Size = New System.Drawing.Size(45, 40)
         Me.pb_saveTE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pb_saveTE.TabIndex = 92
         Me.pb_saveTE.TabStop = False
@@ -1602,9 +1535,9 @@ Partial Class Admin
         'pb_cancelTE
         '
         Me.pb_cancelTE.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.pb_cancelTE.Location = New System.Drawing.Point(1118, 61)
+        Me.pb_cancelTE.Location = New System.Drawing.Point(1189, 38)
         Me.pb_cancelTE.Name = "pb_cancelTE"
-        Me.pb_cancelTE.Size = New System.Drawing.Size(83, 83)
+        Me.pb_cancelTE.Size = New System.Drawing.Size(45, 40)
         Me.pb_cancelTE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pb_cancelTE.TabIndex = 93
         Me.pb_cancelTE.TabStop = False
@@ -1659,147 +1592,6 @@ Partial Class Admin
         Me.Label42.TabIndex = 0
         Me.Label42.Text = "Datos"
         '
-        'UPDATETE
-        '
-        Me.UPDATETE.HeaderText = "Baja"
-        Me.UPDATETE.Name = "UPDATETE"
-        '
-        'ID_TE
-        '
-        Me.ID_TE.DataPropertyName = "ID_TE"
-        Me.ID_TE.HeaderText = "ID"
-        Me.ID_TE.Name = "ID_TE"
-        '
-        'Codigote
-        '
-        Me.Codigote.DataPropertyName = "Codigo"
-        Me.Codigote.HeaderText = "CODIGO"
-        Me.Codigote.Name = "Codigote"
-        Me.Codigote.Width = 200
-        '
-        'Descripcionte
-        '
-        Me.Descripcionte.DataPropertyName = "Descripcion"
-        Me.Descripcionte.HeaderText = "DESCRIPCION"
-        Me.Descripcionte.Name = "Descripcionte"
-        Me.Descripcionte.Width = 700
-        '
-        'Estatuste
-        '
-        Me.Estatuste.DataPropertyName = "Estatus"
-        Me.Estatuste.HeaderText = "ESTATUS"
-        Me.Estatuste.Name = "Estatuste"
-        Me.Estatuste.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Estatuste.Width = 200
-        '
-        'UPDATESU
-        '
-        Me.UPDATESU.HeaderText = "Baja"
-        Me.UPDATESU.Name = "UPDATESU"
-        '
-        'ID_Super
-        '
-        Me.ID_Super.DataPropertyName = "ID_Super"
-        Me.ID_Super.HeaderText = "ID"
-        Me.ID_Super.Name = "ID_Super"
-        Me.ID_Super.Width = 200
-        '
-        'ID_Emp
-        '
-        Me.ID_Emp.DataPropertyName = "ID_Emp"
-        Me.ID_Emp.HeaderText = "NO.EMPLEADO"
-        Me.ID_Emp.Name = "ID_Emp"
-        Me.ID_Emp.Width = 200
-        '
-        'Name
-        '
-        Me.Name.DataPropertyName = "Name"
-        Me.Name.HeaderText = "NOMBRE"
-        Me.Name.Name = "Name"
-        Me.Name.Width = 600
-        '
-        'ActivoS
-        '
-        Me.ActivoS.DataPropertyName = "Activo"
-        Me.ActivoS.HeaderText = "ESTATUS"
-        Me.ActivoS.Name = "ActivoS"
-        Me.ActivoS.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ActivoS.Width = 200
-        '
-        'UPDATEPU
-        '
-        Me.UPDATEPU.HeaderText = "Baja"
-        Me.UPDATEPU.Name = "UPDATEPU"
-        '
-        'ID_Puesto
-        '
-        Me.ID_Puesto.DataPropertyName = "ID_Puesto"
-        Me.ID_Puesto.HeaderText = "ID"
-        Me.ID_Puesto.Name = "ID_Puesto"
-        '
-        'Nombrep
-        '
-        Me.Nombrep.DataPropertyName = "Nombre"
-        Me.Nombrep.HeaderText = "CODIGO"
-        Me.Nombrep.Name = "Nombrep"
-        Me.Nombrep.Width = 200
-        '
-        'Descripcionp
-        '
-        Me.Descripcionp.DataPropertyName = "Descripcion"
-        Me.Descripcionp.HeaderText = "DESCRIPCION"
-        Me.Descripcionp.Name = "Descripcionp"
-        Me.Descripcionp.Width = 500
-        '
-        'Riesgo
-        '
-        Me.Riesgo.DataPropertyName = "Riesgo"
-        Me.Riesgo.HeaderText = "RIESGO"
-        Me.Riesgo.Name = "Riesgo"
-        Me.Riesgo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Riesgo.Width = 200
-        '
-        'Estatusp
-        '
-        Me.Estatusp.DataPropertyName = "Estatus"
-        Me.Estatusp.HeaderText = "ESTATUS"
-        Me.Estatusp.Name = "Estatusp"
-        Me.Estatusp.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Estatusp.Width = 200
-        '
-        'UPDATEE
-        '
-        Me.UPDATEE.HeaderText = "Baja"
-        Me.UPDATEE.Name = "UPDATEE"
-        '
-        'ID_Evalua
-        '
-        Me.ID_Evalua.DataPropertyName = "ID_Evalua"
-        Me.ID_Evalua.HeaderText = "ID"
-        Me.ID_Evalua.Name = "ID_Evalua"
-        '
-        'EV_Codigo
-        '
-        Me.EV_Codigo.DataPropertyName = "EV_Codigo"
-        Me.EV_Codigo.HeaderText = "CODIGO"
-        Me.EV_Codigo.Name = "EV_Codigo"
-        Me.EV_Codigo.Width = 200
-        '
-        'EV_Descipcion
-        '
-        Me.EV_Descipcion.DataPropertyName = "EV_Descipcion"
-        Me.EV_Descipcion.HeaderText = "DESCRIPCION"
-        Me.EV_Descipcion.Name = "EV_Descipcion"
-        Me.EV_Descipcion.Width = 700
-        '
-        'EV_Estatus
-        '
-        Me.EV_Estatus.DataPropertyName = "EV_Estatus"
-        Me.EV_Estatus.HeaderText = "ESTATUS"
-        Me.EV_Estatus.Name = "EV_Estatus"
-        Me.EV_Estatus.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.EV_Estatus.Width = 200
-        '
         'Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1807,6 +1599,7 @@ Partial Class Admin
         Me.ClientSize = New System.Drawing.Size(1308, 864)
         Me.Controls.Add(Me.tab_admin)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Name = "Admin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Admin"
         Me.tab_admin.ResumeLayout(False)
@@ -1903,16 +1696,12 @@ Partial Class Admin
     Friend WithEvents txt_user As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents LBL_GUARDAR As Label
-    Friend WithEvents Label11 As Label
     Friend WithEvents SAVE As PictureBox
     Friend WithEvents CANCEL As PictureBox
     Friend WithEvents dgv_equipo_emp As DataGridView
     Friend WithEvents DGV_CAT As DataGridView
     Private WithEvents Panel1 As Panel
     Friend WithEvents TXT_CAP_DESC As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label13 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents TXT_CAPCODIGO As TextBox
@@ -1922,8 +1711,6 @@ Partial Class Admin
     Private WithEvents Label20 As Label
     Private WithEvents Panel3 As Panel
     Friend WithEvents txt_coddes As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label14 As Label
     Friend WithEvents save_cod As PictureBox
     Friend WithEvents cancel_code As PictureBox
     Friend WithEvents txt_depcod As TextBox
@@ -1935,8 +1722,6 @@ Partial Class Admin
     Friend WithEvents txt_eqcost As TextBox
     Friend WithEvents Label21 As Label
     Friend WithEvents txt_eqdesc As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents save_eq As PictureBox
     Friend WithEvents cancel_eq As PictureBox
     Friend WithEvents txt_eqcod As TextBox
@@ -1947,8 +1732,6 @@ Partial Class Admin
     Friend WithEvents dgv_eval As DataGridView
     Private WithEvents Panel8 As Panel
     Friend WithEvents txt_eval_des As TextBox
-    Friend WithEvents Label22 As Label
-    Friend WithEvents Label23 As Label
     Friend WithEvents SAVE_EVAL As PictureBox
     Friend WithEvents CANCEL_EVAL As PictureBox
     Friend WithEvents txt_evalcod As TextBox
@@ -1971,8 +1754,6 @@ Partial Class Admin
     Friend WithEvents dgv_Puesto As DataGridView
     Private WithEvents Panel10 As Panel
     Friend WithEvents txt_PuestoDescripcion As TextBox
-    Friend WithEvents Label27 As Label
-    Friend WithEvents Label28 As Label
     Friend WithEvents btn_SavePuesto As PictureBox
     Friend WithEvents btn_CancelPuesto As PictureBox
     Friend WithEvents txt_PuestoNombre As TextBox
@@ -1989,8 +1770,6 @@ Partial Class Admin
     Friend WithEvents Estatuse As DataGridViewTextBoxColumn
     Friend WithEvents dgv_super As DataGridView
     Private WithEvents Panel12 As Panel
-    Friend WithEvents Label32 As Label
-    Friend WithEvents Label33 As Label
     Friend WithEvents btn_savesuper As PictureBox
     Friend WithEvents btn_cancelsuper As PictureBox
     Friend WithEvents TXT_EMP_SUPERname As Label
@@ -2003,8 +1782,6 @@ Partial Class Admin
     Friend WithEvents dgv_te As DataGridView
     Private WithEvents Panel14 As Panel
     Friend WithEvents txt_DescTE As TextBox
-    Friend WithEvents Label34 As Label
-    Friend WithEvents Label35 As Label
     Friend WithEvents pb_saveTE As PictureBox
     Friend WithEvents pb_cancelTE As PictureBox
     Friend WithEvents txt_codigoTE As TextBox

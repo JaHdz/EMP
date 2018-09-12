@@ -25,7 +25,6 @@ Partial Class Capacitaciones
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Capacitaciones))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dgv_equipo_Eval = New System.Windows.Forms.DataGridView()
-        Me.DELETE = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ID_Cap_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_Cap = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -33,24 +32,24 @@ Partial Class Capacitaciones
         Me.Comentario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.lbl_ingreso = New System.Windows.Forms.Label()
-        Me.LBL_GUARDAR = New System.Windows.Forms.Label()
         Me.TXT_FECHA = New System.Windows.Forms.DateTimePicker()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label42 = New System.Windows.Forms.Label()
-        Me.CANCEL = New System.Windows.Forms.PictureBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.TXT_commen = New System.Windows.Forms.TextBox()
-        Me.SAVE = New System.Windows.Forms.PictureBox()
         Me.label8 = New System.Windows.Forms.Label()
         Me.Empleado = New System.Windows.Forms.Label()
-        Me.buscar_CAP = New System.Windows.Forms.PictureBox()
         Me.lbl_num = New System.Windows.Forms.Label()
         Me.CAP = New System.Windows.Forms.TextBox()
         Me.txt_numero = New System.Windows.Forms.TextBox()
         Me.CAP2 = New System.Windows.Forms.TextBox()
-        Me.buscar_EN = New System.Windows.Forms.PictureBox()
         Me.Label92 = New System.Windows.Forms.Label()
         Me.lbl_emp = New System.Windows.Forms.Label()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.DELETE = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.CANCEL = New System.Windows.Forms.PictureBox()
+        Me.SAVE = New System.Windows.Forms.PictureBox()
+        Me.buscar_CAP = New System.Windows.Forms.PictureBox()
+        Me.buscar_EN = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel14.SuspendLayout()
@@ -82,12 +81,6 @@ Partial Class Capacitaciones
         Me.dgv_equipo_Eval.RowHeadersVisible = False
         Me.dgv_equipo_Eval.Size = New System.Drawing.Size(1241, 372)
         Me.dgv_equipo_Eval.TabIndex = 89
-        '
-        'DELETE
-        '
-        Me.DELETE.HeaderText = "Eliminar"
-        Me.DELETE.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
-        Me.DELETE.Name = "DELETE"
         '
         'ID_Cap_Emp
         '
@@ -128,11 +121,9 @@ Partial Class Capacitaciones
         '
         Me.Panel14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel14.Controls.Add(Me.lbl_ingreso)
-        Me.Panel14.Controls.Add(Me.LBL_GUARDAR)
         Me.Panel14.Controls.Add(Me.TXT_FECHA)
         Me.Panel14.Controls.Add(Me.Panel2)
         Me.Panel14.Controls.Add(Me.CANCEL)
-        Me.Panel14.Controls.Add(Me.Label5)
         Me.Panel14.Controls.Add(Me.TXT_commen)
         Me.Panel14.Controls.Add(Me.SAVE)
         Me.Panel14.Controls.Add(Me.label8)
@@ -160,17 +151,6 @@ Partial Class Capacitaciones
         Me.lbl_ingreso.Size = New System.Drawing.Size(59, 21)
         Me.lbl_ingreso.TabIndex = 91
         Me.lbl_ingreso.Text = "Fecha:"
-        '
-        'LBL_GUARDAR
-        '
-        Me.LBL_GUARDAR.AutoSize = True
-        Me.LBL_GUARDAR.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBL_GUARDAR.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.LBL_GUARDAR.Location = New System.Drawing.Point(966, 179)
-        Me.LBL_GUARDAR.Name = "LBL_GUARDAR"
-        Me.LBL_GUARDAR.Size = New System.Drawing.Size(93, 22)
-        Me.LBL_GUARDAR.TabIndex = 40
-        Me.LBL_GUARDAR.Text = "GUARDAR"
         '
         'TXT_FECHA
         '
@@ -203,27 +183,6 @@ Partial Class Capacitaciones
         Me.Label42.TabIndex = 0
         Me.Label42.Text = "Agregar Capacitaciones"
         '
-        'CANCEL
-        '
-        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(1096, 93)
-        Me.CANCEL.Name = "CANCEL"
-        Me.CANCEL.Size = New System.Drawing.Size(83, 83)
-        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.CANCEL.TabIndex = 1
-        Me.CANCEL.TabStop = False
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(1092, 179)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(99, 22)
-        Me.Label5.TabIndex = 38
-        Me.Label5.Text = "CANCELAR"
-        '
         'TXT_commen
         '
         Me.TXT_commen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
@@ -232,16 +191,6 @@ Partial Class Capacitaciones
         Me.TXT_commen.Name = "TXT_commen"
         Me.TXT_commen.Size = New System.Drawing.Size(427, 83)
         Me.TXT_commen.TabIndex = 3
-        '
-        'SAVE
-        '
-        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.SAVE.Location = New System.Drawing.Point(970, 93)
-        Me.SAVE.Name = "SAVE"
-        Me.SAVE.Size = New System.Drawing.Size(83, 83)
-        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.SAVE.TabIndex = 0
-        Me.SAVE.TabStop = False
         '
         'label8
         '
@@ -262,17 +211,6 @@ Partial Class Capacitaciones
         Me.Empleado.Size = New System.Drawing.Size(101, 22)
         Me.Empleado.TabIndex = 80
         Me.Empleado.Text = "Empleado: "
-        '
-        'buscar_CAP
-        '
-        Me.buscar_CAP.BackgroundImage = CType(resources.GetObject("buscar_CAP.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_CAP.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_CAP.Location = New System.Drawing.Point(366, 89)
-        Me.buscar_CAP.Name = "buscar_CAP"
-        Me.buscar_CAP.Size = New System.Drawing.Size(30, 28)
-        Me.buscar_CAP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_CAP.TabIndex = 85
-        Me.buscar_CAP.TabStop = False
         '
         'lbl_num
         '
@@ -306,17 +244,6 @@ Partial Class Capacitaciones
         Me.CAP2.TabIndex = 842
         Me.CAP2.TabStop = False
         '
-        'buscar_EN
-        '
-        Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_EN.Location = New System.Drawing.Point(367, 49)
-        Me.buscar_EN.Name = "buscar_EN"
-        Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
-        Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_EN.TabIndex = 79
-        Me.buscar_EN.TabStop = False
-        '
         'Label92
         '
         Me.Label92.AutoSize = True
@@ -335,6 +262,60 @@ Partial Class Capacitaciones
         Me.lbl_emp.Name = "lbl_emp"
         Me.lbl_emp.Size = New System.Drawing.Size(0, 22)
         Me.lbl_emp.TabIndex = 81
+        '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.HeaderText = "Eliminar"
+        Me.DataGridViewImageColumn1.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        '
+        'DELETE
+        '
+        Me.DELETE.HeaderText = "Eliminar"
+        Me.DELETE.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
+        Me.DELETE.Name = "DELETE"
+        '
+        'CANCEL
+        '
+        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
+        Me.CANCEL.Location = New System.Drawing.Point(1189, 38)
+        Me.CANCEL.Name = "CANCEL"
+        Me.CANCEL.Size = New System.Drawing.Size(45, 40)
+        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.CANCEL.TabIndex = 1
+        Me.CANCEL.TabStop = False
+        '
+        'SAVE
+        '
+        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Training_80px
+        Me.SAVE.Location = New System.Drawing.Point(1138, 38)
+        Me.SAVE.Name = "SAVE"
+        Me.SAVE.Size = New System.Drawing.Size(45, 40)
+        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.SAVE.TabIndex = 0
+        Me.SAVE.TabStop = False
+        '
+        'buscar_CAP
+        '
+        Me.buscar_CAP.BackgroundImage = CType(resources.GetObject("buscar_CAP.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_CAP.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_CAP.Location = New System.Drawing.Point(366, 89)
+        Me.buscar_CAP.Name = "buscar_CAP"
+        Me.buscar_CAP.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_CAP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_CAP.TabIndex = 85
+        Me.buscar_CAP.TabStop = False
+        '
+        'buscar_EN
+        '
+        Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_EN.Location = New System.Drawing.Point(367, 49)
+        Me.buscar_EN.Name = "buscar_EN"
+        Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_EN.TabIndex = 79
+        Me.buscar_EN.TabStop = False
         '
         'Capacitaciones
         '
@@ -361,8 +342,6 @@ Partial Class Capacitaciones
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents LBL_GUARDAR As Label
-    Friend WithEvents Label5 As Label
     Friend WithEvents SAVE As PictureBox
     Friend WithEvents CANCEL As PictureBox
     Friend WithEvents TXT_commen As TextBox
@@ -388,4 +367,5 @@ Partial Class Capacitaciones
     Private WithEvents Panel14 As Panel
     Private WithEvents Panel2 As Panel
     Private WithEvents Label42 As Label
+    Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
 End Class
