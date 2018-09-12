@@ -24,19 +24,19 @@ Partial Class Login
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.header = New System.Windows.Forms.Panel()
-        Me.min = New System.Windows.Forms.PictureBox()
-        Me.cerrar = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btn_login = New System.Windows.Forms.Button()
         Me.user = New System.Windows.Forms.TextBox()
         Me.pass = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.min = New System.Windows.Forms.PictureBox()
+        Me.cerrar = New System.Windows.Forms.PictureBox()
         Me.header.SuspendLayout()
-        CType(Me.min, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.min, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'header
@@ -51,28 +51,6 @@ Partial Class Login
         Me.header.Name = "header"
         Me.header.Size = New System.Drawing.Size(390, 39)
         Me.header.TabIndex = 6
-        '
-        'min
-        '
-        Me.min.Image = CType(resources.GetObject("min.Image"), System.Drawing.Image)
-        Me.min.Location = New System.Drawing.Point(317, 8)
-        Me.min.Margin = New System.Windows.Forms.Padding(2)
-        Me.min.Name = "min"
-        Me.min.Size = New System.Drawing.Size(25, 22)
-        Me.min.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.min.TabIndex = 1
-        Me.min.TabStop = False
-        '
-        'cerrar
-        '
-        Me.cerrar.Image = CType(resources.GetObject("cerrar.Image"), System.Drawing.Image)
-        Me.cerrar.Location = New System.Drawing.Point(346, 8)
-        Me.cerrar.Margin = New System.Windows.Forms.Padding(2)
-        Me.cerrar.Name = "cerrar"
-        Me.cerrar.Size = New System.Drawing.Size(25, 22)
-        Me.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.cerrar.TabIndex = 0
-        Me.cerrar.TabStop = False
         '
         'Panel1
         '
@@ -117,7 +95,7 @@ Partial Class Login
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.AdminEmpleados.My.Resources.Resources.icons8_password_filled_50
+        Me.PictureBox1.Image = Global.AdminEmpleados.My.Resources.Resources.Password_80px
         Me.PictureBox1.Location = New System.Drawing.Point(56, 186)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(44, 35)
@@ -127,13 +105,35 @@ Partial Class Login
         '
         'PictureBox2
         '
-        Me.PictureBox2.Image = Global.AdminEmpleados.My.Resources.Resources.icons8_customer_filled_50
+        Me.PictureBox2.Image = Global.AdminEmpleados.My.Resources.Resources.User_80px
         Me.PictureBox2.Location = New System.Drawing.Point(56, 138)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(44, 35)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 16
         Me.PictureBox2.TabStop = False
+        '
+        'min
+        '
+        Me.min.Image = CType(resources.GetObject("min.Image"), System.Drawing.Image)
+        Me.min.Location = New System.Drawing.Point(317, 8)
+        Me.min.Margin = New System.Windows.Forms.Padding(2)
+        Me.min.Name = "min"
+        Me.min.Size = New System.Drawing.Size(25, 22)
+        Me.min.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.min.TabIndex = 1
+        Me.min.TabStop = False
+        '
+        'cerrar
+        '
+        Me.cerrar.Image = CType(resources.GetObject("cerrar.Image"), System.Drawing.Image)
+        Me.cerrar.Location = New System.Drawing.Point(346, 8)
+        Me.cerrar.Margin = New System.Windows.Forms.Padding(2)
+        Me.cerrar.Name = "cerrar"
+        Me.cerrar.Size = New System.Drawing.Size(25, 22)
+        Me.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.cerrar.TabIndex = 0
+        Me.cerrar.TabStop = False
         '
         'Login
         '
@@ -152,10 +152,10 @@ Partial Class Login
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
         Me.header.ResumeLayout(False)
-        CType(Me.min, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cerrar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.min, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

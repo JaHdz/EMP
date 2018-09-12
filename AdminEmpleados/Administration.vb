@@ -1,4 +1,4 @@
-﻿Public Class Admin
+﻿Public Class Administration
     Dim NEmp As Integer
     Dim objcon As New Consultas
     Dim V1 As String

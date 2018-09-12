@@ -78,10 +78,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.Designer.vb">
-      <DependentUpon>Admin.vb</DependentUpon>
+    <Compile Include="Administration.Designer.vb">
+      <DependentUpon>Administration.vb</DependentUpon>
     </Compile>
-    <Compile Include="Admin.vb">
+    <Compile Include="Administration.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\Datasets\RECEIVER.Designer.vb">
@@ -197,8 +197,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Admin.resx">
-      <DependentUpon>Admin.vb</DependentUpon>
+    <EmbeddedResource Include="Administration.resx">
+      <DependentUpon>Administration.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capacitaciones.resx">
       <DependentUpon>Capacitaciones.vb</DependentUpon>
@@ -332,8 +332,6 @@
     <Content Include="images\photoNobody120.gif" />
     <Content Include="images\tenor.gif" />
     <Content Include="images\Up1.png" />
-    <None Include="Resources\icons8-customer-filled-50.png" />
-    <None Include="Resources\icons8-password-filled-50.png" />
     <None Include="Resources\Accounting_80px.png" />
     <None Include="Resources\Add_MedicalCondition_80px.png" />
     <None Include="Resources\Add_Income_80px.png" />
@@ -347,6 +345,8 @@
     <None Include="Resources\Add_checkup_80px.png" />
     <None Include="Resources\Add_Eval_80px.png" />
     <None Include="Resources\Add_Training_80px.png" />
+    <None Include="Resources\Password_80px.png" />
+    <None Include="Resources\User_80px.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -371,10 +371,6 @@
     <None Include="Resources\Minus_80px.png" />
     <None Include="Resources\Checked_80px.png" />
     <None Include="Resources\Cancel_80px.png" />
-    <None Include="Resources\return.png" />
-    <None Include="Resources\Delete_Icon-e1409122560423.png" />
-    <None Include="Resources\disk-save-as-icon.png" />
-    <None Include="Resources\cancel-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

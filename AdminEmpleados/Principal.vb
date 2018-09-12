@@ -121,7 +121,7 @@ Public Class Principal
         If PNL_INFO.Controls.Count > 0 Then
             PNL_INFO.Controls.RemoveAt(PNL_INFO.Controls.Count - 1)
         End If
-        Dim f As New Admin(NEmp) With {.TopLevel = False, .AutoSize = False}
+        Dim f As New Administration(NEmp) With {.TopLevel = False, .AutoSize = False}
         PNL_INFO.Controls.Add(f)
         f.Show()
         Wait.Close()

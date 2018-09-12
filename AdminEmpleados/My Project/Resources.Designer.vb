@@ -243,26 +243,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property icons8_customer_filled_50() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("icons8-customer-filled-50", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property icons8_password_filled_50() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("icons8-password-filled-50", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
         Friend ReadOnly Property loading() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("loading", resourceCulture)
@@ -276,6 +256,16 @@ Namespace My.Resources
         Friend ReadOnly Property Minus_80px() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Minus_80px", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Password_80px() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Password_80px", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -336,6 +326,16 @@ Namespace My.Resources
         Friend ReadOnly Property Undo_80px() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Undo_80px", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property User_80px() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("User_80px", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
