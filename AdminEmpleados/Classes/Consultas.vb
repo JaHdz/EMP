@@ -29,7 +29,7 @@ Public Class Consultas
                 pass = DesEncripta(lector("pass").ToString)
                 If pass = sPass Then
                     user = lector("NoEmp").ToString
-                    name = lector("name").ToString
+                    name = lector("Nom").ToString
                     autenticado = True
                     Return True
                 Else
@@ -570,7 +570,7 @@ Public Class Consultas
         End Using
     End Function
 
-    Public Function Add_USERS(ByVal ID As Integer, USERNAME As String, PASSWORD As String, ACTIVE As Integer, ACCESS As Integer, EMP As Integer) As Integer
+    Public Function Add_USERS(ByVal ID As Integer, USERNAME As String, PASSWORD As String, ACTIVE As Integer, ACCESS As Integer, EMP As Integer) As String
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -590,7 +590,7 @@ Public Class Consultas
         End Using
     End Function
 
-    Public Function Add_SUPER(ByVal ID As Integer, ID_EMP As Integer, NAME As String, ESTATUS As Integer) As Integer
+    Public Function Add_SUPER(ByVal ID As Integer, ID_EMP As Integer, NAME As String, ESTATUS As Integer) As String
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -608,7 +608,7 @@ Public Class Consultas
         End Using
     End Function
 
-    Public Function Add_TE(ByVal ID As Integer, CODE As String, DESC As String, ESTATUS As Integer) As Integer
+    Public Function Add_TE(ByVal ID As Integer, CODE As String, DESC As String, ESTATUS As Integer) As String
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -657,7 +657,7 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@ID", ID))
             cmd.Parameters.Add(New SqlParameter("@STATUS", STATUS))
             cmd.Parameters.Add(New SqlParameter("@CODIGO", CODIGO))
-            cmd.Parameters.Add(New SqlParameter("@DESCRIPCION", DESCRIPCION))
+            cmd.Parameters.Add(New SqlParameter("@DESCRIPTION", DESCRIPCION))
             cmd.CommandText = "UDSP_DEPTO"
             Dim lector As SqlDataReader
             lector = cmd.ExecuteReader()

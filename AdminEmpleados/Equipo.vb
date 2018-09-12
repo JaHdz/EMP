@@ -72,7 +72,7 @@
 
     Private Sub SAVE_Click(sender As Object, e As EventArgs) Handles SAVE.Click
         If (Eq.Text <> "" Or txt_numero.Text <> "") Then
-            If objcon.Add_EQUIPMENT_ASSIGNED(0, Eq.Text, txt_numero.Text, TXT_FECHA.Text, 0, "01/01/1900", TXT_commen.Text, NEmp) = "0" Then
+            If objcon.Add_EQUIPMENT_ASSIGNED(0, Eq.Text, txt_numero.Text, TXT_FECHA.Text, 0, "01/01/1900", TXT_commen.Text, NEmp) = True Then
             Else
                 MessageBox.Show("Este registro ya Existe.")
             End If
@@ -83,7 +83,7 @@
             TXT_FECHA.Text = ""
             TXT_commen.Text = ""
             lbl_emp.Text = ""
-        Else
+            txt_numero.Focus()
             MessageBox.Show("Debe ingresar un numero de empleado valido y un equipo.")
         End If
     End Sub
@@ -108,7 +108,7 @@
                             If MessageBox.Show("Seguro que desea regresar el equipo?", "Regresar Equipo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
                                 Id = dgv_equipo_emp.Rows(e.RowIndex).Cells(3).Value
                                 If dgv_equipo_emp.Rows(e.RowIndex).Cells(5).Value.ToString = "False" Then
-                                    If objcon.Add_EQUIPMENT_ASSIGNED(dgv_equipo_emp.Rows(e.RowIndex).Cells(1).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(2).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(3).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(4).Value, True, Date.Now, dgv_equipo_emp.Rows(e.RowIndex).Cells(7).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(8).Value) = "0" Then
+                                    If objcon.Add_EQUIPMENT_ASSIGNED(dgv_equipo_emp.Rows(e.RowIndex).Cells(1).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(2).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(3).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(4).Value, True, Date.Now, dgv_equipo_emp.Rows(e.RowIndex).Cells(7).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(8).Value) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If

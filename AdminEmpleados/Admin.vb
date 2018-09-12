@@ -24,6 +24,7 @@
                 MessageBox.Show("Numero de empleado no existe")
                 txt_numero.Text = ""
                 lbl_emp.Text = ""
+                txt_numero.Focus()
             End If
         End If
     End Sub
@@ -45,13 +46,13 @@
                     Select Case gr.Columns(e.ColumnIndex).Name
                         Case "UPDATE"
                             If MessageBox.Show("Seguro que desea desactivar este usuario?", "Desactivar Usuario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                If dgv_equipo_emp.Rows(e.RowIndex).Cells(3).Value.ToString = "False" Then
-                                    If objcon.Add_USERS(dgv_equipo_emp.Rows(e.RowIndex).Cells(1).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(2).Value, "", True, True, dgv_equipo_emp.Rows(e.RowIndex).Cells(4).Value) = "0" Then
+                                If dgv_equipo_emp.Rows(e.RowIndex).Cells(5).Value.ToString = "False" Then
+                                    If objcon.Add_USERS(dgv_equipo_emp.Rows(e.RowIndex).Cells(1).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(3).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(4).Value, 1, 1, dgv_equipo_emp.Rows(e.RowIndex).Cells(2).Value) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
                                 Else
-                                    If objcon.Add_USERS(dgv_equipo_emp.Rows(e.RowIndex).Cells(1).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(2).Value, "", 0, 0, dgv_equipo_emp.Rows(e.RowIndex).Cells(4).Value) = "0" Then
+                                    If objcon.Add_USERS(dgv_equipo_emp.Rows(e.RowIndex).Cells(1).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(3).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(4).Value, 0, 0, dgv_equipo_emp.Rows(e.RowIndex).Cells(2).Value) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
@@ -72,15 +73,16 @@
             If txt_pass.Text <> txt_pass2.Text Then
                 MessageBox.Show("Las conrasenas no coinciden.")
             Else
-                If objcon.Add_USERS(0, txt_user.Text, txt_pass.Text, 1, 1, txt_numero.Text) = "0" Then
+                If objcon.Add_USERS(0, txt_user.Text, txt_pass.Text, 1, 1, txt_numero.Text) = True Then
                 Else
                     MessageBox.Show("Este registro ya Existe.")
                 End If
                 dgv_equipo_emp.DataSource = objcon.Consulta_USER()
                 txt_pass.Text = ""
                 txt_pass2.Text = ""
-                txt_numero.Enabled = ""
+                txt_numero.Text = ""
                 txt_user.Text = ""
+                txt_numero.Focus()
             End If
         End If
     End Sub
@@ -89,13 +91,14 @@
         If TXT_CAPCODIGO.Text = "" Or TXT_CAP_DESC.Text = "" Then
             MessageBox.Show("Debe llenar todos los campos")
         Else
-            If objcon.Add_TRANINGS(0, TXT_CAPCODIGO.Text, TXT_CAP_DESC.Text, 1) = "0" Then
+            If objcon.Add_TRANINGS(0, TXT_CAPCODIGO.Text, TXT_CAP_DESC.Text, 1) = True Then
             Else
                 MessageBox.Show("Este registro ya Existe.")
             End If
             DGV_CAT.DataSource = objcon.Consulta_Cap()
             TXT_CAPCODIGO.Text = ""
             TXT_CAP_DESC.Text = ""
+            TXT_CAPCODIGO.Focus()
         End If
     End Sub
 
@@ -113,12 +116,12 @@
                         Case "UPDATEC"
                             If MessageBox.Show("Seguro que desea dar de baja esta capacitacion?", "Baja Capacitacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
                                 If DGV_CAT.Rows(e.RowIndex).Cells(4).Value.ToString = "False" Then
-                                    If objcon.Add_TRANINGS(DGV_CAT.Rows(e.RowIndex).Cells(1).Value, DGV_CAT.Rows(e.RowIndex).Cells(2).Value, DGV_CAT.Rows(e.RowIndex).Cells(3).Value, 1) = "0" Then
+                                    If objcon.Add_TRANINGS(DGV_CAT.Rows(e.RowIndex).Cells(1).Value, DGV_CAT.Rows(e.RowIndex).Cells(2).Value, DGV_CAT.Rows(e.RowIndex).Cells(3).Value, 1) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
                                 Else
-                                    If objcon.Add_TRANINGS(DGV_CAT.Rows(e.RowIndex).Cells(1).Value, DGV_CAT.Rows(e.RowIndex).Cells(2).Value, DGV_CAT.Rows(e.RowIndex).Cells(3).Value, 0) = "0" Then
+                                    If objcon.Add_TRANINGS(DGV_CAT.Rows(e.RowIndex).Cells(1).Value, DGV_CAT.Rows(e.RowIndex).Cells(2).Value, DGV_CAT.Rows(e.RowIndex).Cells(3).Value, 0) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
@@ -136,13 +139,14 @@
         If txt_depcod.Text = "" Or txt_coddes.Text = "" Then
             MessageBox.Show("Debe llenar todos los campos")
         Else
-            If objcon.Add_DEPTO(0, txt_depcod.Text, txt_coddes.Text, 1) = "0" Then
+            If (objcon.Add_DEPTO(0, txt_depcod.Text, txt_coddes.Text, 1) = True) Then
             Else
                 MessageBox.Show("Este registro ya Existe.")
             End If
             dgv_depto.DataSource = objcon.Consulta_depto()
             txt_depcod.Text = ""
             txt_coddes.Text = ""
+            txt_depcod.Focus()
         End If
     End Sub
 
@@ -158,13 +162,15 @@
         If txt_eqcod.Text = "" Or txt_eqdesc.Text = "" Or txt_eqcost.Text = "" Then
             MessageBox.Show("Debe llenar todos los campos")
         Else
-            If objcon.Add_EQUIPMENT(0, txt_eqcod.Text, txt_eqdesc.Text, txt_eqcost.Text, 1) = "0" Then
+            If objcon.Add_EQUIPMENT(0, txt_eqcod.Text, txt_eqdesc.Text, txt_eqcost.Text, 1) = True Then
             Else
                 MessageBox.Show("Este registro ya Existe.")
             End If
             dgv_eq.DataSource = objcon.Consulta_EQ()
             txt_eqdesc.Text = ""
             txt_eqcost.Text = ""
+            txt_eqcod.Text = ""
+            txt_eqcod.Focus()
         End If
     End Sub
 
@@ -172,13 +178,14 @@
         If txt_evalcod.Text = "" Or txt_eval_des.Text = "" Then
             MessageBox.Show("Debe llenar todos los campos")
         Else
-            If objcon.Add_EVALUATIONS(0, txt_evalcod.Text, txt_eval_des.Text, 1) = "0" Then
+            If objcon.Add_EVALUATIONS(0, txt_evalcod.Text, txt_eval_des.Text, 1) = True Then
             Else
                 MessageBox.Show("Este registro ya Existe.")
             End If
             dgv_eval.DataSource = objcon.Consulta_EV()
             txt_evalcod.Text = ""
             txt_eval_des.Text = ""
+            txt_evalcod.Focus()
         End If
     End Sub
 
@@ -196,12 +203,12 @@
                         Case "UPDATEE"
                             If MessageBox.Show("Seguro que desea dar de baja esta Evaluacion?", "Baja Evaluacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
                                 If dgv_eval.Rows(e.RowIndex).Cells(4).Value.ToString = "False" Then
-                                    If objcon.Add_EVALUATIONS(dgv_eval.Rows(e.RowIndex).Cells(1).Value, dgv_eval.Rows(e.RowIndex).Cells(2).Value, dgv_eval.Rows(e.RowIndex).Cells(3).Value, 1) = "0" Then
+                                    If objcon.Add_EVALUATIONS(dgv_eval.Rows(e.RowIndex).Cells(1).Value, dgv_eval.Rows(e.RowIndex).Cells(2).Value, dgv_eval.Rows(e.RowIndex).Cells(3).Value, 1) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
                                 Else
-                                    If objcon.Add_EVALUATIONS(dgv_eval.Rows(e.RowIndex).Cells(1).Value, dgv_eval.Rows(e.RowIndex).Cells(2).Value, dgv_eval.Rows(e.RowIndex).Cells(3).Value, 0) = "0" Then
+                                    If objcon.Add_EVALUATIONS(dgv_eval.Rows(e.RowIndex).Cells(1).Value, dgv_eval.Rows(e.RowIndex).Cells(2).Value, dgv_eval.Rows(e.RowIndex).Cells(3).Value, 0) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
@@ -229,12 +236,12 @@
                         Case "UPDATED"
                             If MessageBox.Show("Seguro que desea dar de baja esta Evaluacion?", "Baja Evaluacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
                                 If dgv_depto.Rows(e.RowIndex).Cells(4).Value.ToString = "False" Then
-                                    If objcon.Add_DEPTO(dgv_depto.Rows(e.RowIndex).Cells(1).Value, dgv_depto.Rows(e.RowIndex).Cells(2).Value, dgv_depto.Rows(e.RowIndex).Cells(3).Value, 1) = "0" Then
+                                    If objcon.Add_DEPTO(dgv_depto.Rows(e.RowIndex).Cells(1).Value, dgv_depto.Rows(e.RowIndex).Cells(2).Value, dgv_depto.Rows(e.RowIndex).Cells(3).Value, 1) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
                                 Else
-                                    If objcon.Add_DEPTO(dgv_depto.Rows(e.RowIndex).Cells(1).Value, dgv_depto.Rows(e.RowIndex).Cells(2).Value, dgv_depto.Rows(e.RowIndex).Cells(3).Value, 0) = "0" Then
+                                    If objcon.Add_DEPTO(dgv_depto.Rows(e.RowIndex).Cells(1).Value, dgv_depto.Rows(e.RowIndex).Cells(2).Value, dgv_depto.Rows(e.RowIndex).Cells(3).Value, 0) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
@@ -258,12 +265,12 @@
                         Case "UPDATEEQ"
                             If MessageBox.Show("Seguro que desea dar de baja esta Evaluacion?", "Baja Evaluacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
                                 If dgv_eq.Rows(e.RowIndex).Cells(5).Value.ToString = "False" Then
-                                    If objcon.Add_EQUIPMENT(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, dgv_eq.Rows(e.RowIndex).Cells(4).Value, 0) = "0" Then
+                                    If objcon.Add_EQUIPMENT(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, dgv_eq.Rows(e.RowIndex).Cells(4).Value, 1) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
                                 Else
-                                    If objcon.Add_EQUIPMENT(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, dgv_eq.Rows(e.RowIndex).Cells(4).Value, 1) = "0" Then
+                                    If objcon.Add_EQUIPMENT(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, dgv_eq.Rows(e.RowIndex).Cells(4).Value, 0) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
@@ -281,13 +288,14 @@
         If txt_PuestoNombre.Text = "" Or txt_PuestoDescripcion.Text = "" Then
             MessageBox.Show("Debe llenar todos los campos")
         Else
-            If objcon.Add_POSITIONS(0, txt_PuestoNombre.Text, txt_PuestoDescripcion.Text, cb_PuestoRiesgo.CheckState, 1) = "0" Then
+            If objcon.Add_POSITIONS(0, txt_PuestoNombre.Text, txt_PuestoDescripcion.Text, cb_PuestoRiesgo.CheckState, 1) = True Then
             Else
                 MessageBox.Show("Este registro ya Existe.")
             End If
             dgv_Puesto.DataSource = objcon.Consulta_PU()
             txt_PuestoDescripcion.Text = ""
             txt_PuestoNombre.Text = ""
+            txt_PuestoNombre.Focus()
         End If
     End Sub
 
@@ -304,13 +312,13 @@
                     Select Case gr.Columns(e.ColumnIndex).Name
                         Case "UPDATEPU"
                             If MessageBox.Show("Seguro que desea dar de baja este puesto?", "Baja Puesto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                If dgv_eq.Rows(e.RowIndex).Cells(5).Value.ToString = "False" Then
-                                    If objcon.Add_POSITIONS(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, dgv_eq.Rows(e.RowIndex).Cells(4).Value, 0) = "0" Then
+                                If dgv_Puesto.Rows(e.RowIndex).Cells(5).Value.ToString = "False" Then
+                                    If objcon.Add_POSITIONS(dgv_Puesto.Rows(e.RowIndex).Cells(1).Value, dgv_Puesto.Rows(e.RowIndex).Cells(2).Value, dgv_Puesto.Rows(e.RowIndex).Cells(3).Value, dgv_Puesto.Rows(e.RowIndex).Cells(4).Value, 1) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
                                 Else
-                                    If objcon.Add_POSITIONS(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, dgv_eq.Rows(e.RowIndex).Cells(4).Value, 1) = "0" Then
+                                    If objcon.Add_POSITIONS(dgv_Puesto.Rows(e.RowIndex).Cells(1).Value, dgv_Puesto.Rows(e.RowIndex).Cells(2).Value, dgv_Puesto.Rows(e.RowIndex).Cells(3).Value, dgv_Puesto.Rows(e.RowIndex).Cells(4).Value, 0) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
@@ -375,12 +383,13 @@
         If TXT_EMP_SUPER.Text = "" Then
             MessageBox.Show("Debe llenar todos los campos")
         Else
-            If objcon.Add_SUPER(0, TXT_EMP_SUPER.Text, " ", 1) = "0" Then
+            If objcon.Add_SUPER(0, TXT_EMP_SUPER.Text, " ", 1) = True Then
             Else
                 MessageBox.Show("Este registro ya Existe.")
             End If
             dgv_super.DataSource = objcon.Consulta_SU()
             TXT_EMP_SUPER.Text = ""
+            TXT_EMP_SUPER.Focus()
         End If
     End Sub
 
@@ -397,13 +406,13 @@
                     Select Case gr.Columns(e.ColumnIndex).Name
                         Case "UPDATESU"
                             If MessageBox.Show("Seguro que desea dar de baja a este supervisor?", "Baja Supervisor", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                If dgv_eq.Rows(e.RowIndex).Cells(4).Value.ToString = "False" Then
-                                    If objcon.Add_SUPER(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, 0) = "0" Then
+                                If dgv_super.Rows(e.RowIndex).Cells(3).Value.ToString = "False" Then
+                                    If objcon.Add_SUPER(dgv_super.Rows(e.RowIndex).Cells(1).Value, dgv_super.Rows(e.RowIndex).Cells(2).Value, dgv_super.Rows(e.RowIndex).Cells(3).Value, 1) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
                                 Else
-                                    If objcon.Add_SUPER(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, 1) = "0" Then
+                                    If objcon.Add_SUPER(dgv_super.Rows(e.RowIndex).Cells(1).Value, dgv_super.Rows(e.RowIndex).Cells(2).Value, dgv_super.Rows(e.RowIndex).Cells(3).Value, 0) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
@@ -421,13 +430,14 @@
         If txt_codigoTE.Text = "" Or txt_DescTE.Text = "" Then
             MessageBox.Show("Debe llenar todos los campos")
         Else
-            If objcon.Add_TE(0, txt_codigoTE.Text, txt_DescTE.Text, 1) = "0" Then
+            If objcon.Add_TE(0, txt_codigoTE.Text, txt_DescTE.Text, 1) = True Then
             Else
                 MessageBox.Show("Este registro ya Existe.")
             End If
             dgv_te.DataSource = objcon.Consulta_TE()
             txt_codigoTE.Text = ""
             txt_DescTE.Text = ""
+            txt_codigoTE.Focus()
         End If
     End Sub
 
@@ -444,13 +454,13 @@
                     Select Case gr.Columns(e.ColumnIndex).Name
                         Case "UPDATETE"
                             If MessageBox.Show("Seguro que desea dar de baja a esta Categoria?", "Baja Categoria", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                If dgv_eq.Rows(e.RowIndex).Cells(4).Value.ToString = "False" Then
-                                    If objcon.Add_TE(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, 0) = "0" Then
+                                If dgv_te.Rows(e.RowIndex).Cells(4).Value.ToString = "False" Then
+                                    If objcon.Add_TE(dgv_te.Rows(e.RowIndex).Cells(1).Value, dgv_te.Rows(e.RowIndex).Cells(2).Value, dgv_te.Rows(e.RowIndex).Cells(3).Value, 1) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
                                 Else
-                                    If objcon.Add_TE(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, 1) = "0" Then
+                                    If objcon.Add_TE(dgv_te.Rows(e.RowIndex).Cells(1).Value, dgv_te.Rows(e.RowIndex).Cells(2).Value, dgv_te.Rows(e.RowIndex).Cells(3).Value, 0) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
@@ -462,5 +472,19 @@
             dt = objcon.Consulta_TE()
             dgv_te.DataSource = dt
         End If
+    End Sub
+
+    Private Sub tab_admin_Click(sender As Object, e As EventArgs) Handles tab_admin.Click
+        DGV_CAT.DataSource = objcon.Consulta_Cap()
+        dgv_depto.DataSource = objcon.Consulta_depto()
+        dgv_eq.DataSource = objcon.Consulta_EQ()
+        dgv_eval.DataSource = objcon.Consulta_EV()
+        dgv_Puesto.DataSource = objcon.Consulta_PU()
+        dgv_super.DataSource = objcon.Consulta_SU()
+        dgv_te.DataSource = objcon.Consulta_TE()
+    End Sub
+
+    Private Sub Admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        dgv_equipo_emp.DataSource = objcon.Consulta_USER()
     End Sub
 End Class

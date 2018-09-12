@@ -31,9 +31,9 @@ Partial Class wait
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.AdminEmpleados.My.Resources.Resources.loading
-        Me.PictureBox1.Location = New System.Drawing.Point(554, 312)
+        Me.PictureBox1.Location = New System.Drawing.Point(564, 292)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(130, 158)
+        Me.PictureBox1.Size = New System.Drawing.Size(159, 178)
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
@@ -53,7 +53,7 @@ Partial Class wait
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1257, 746)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "wait"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "wait"

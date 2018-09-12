@@ -11,7 +11,7 @@ Public Class Empleados
     Dim EMPLEADO_ES As Int64
     Dim id As Integer
     Dim NEmp As Integer
-    Dim NName As Integer
+    Dim NName As String
     Sub New(ByVal emp As Integer, name As String)
         InitializeComponent()
         NEmp = emp
@@ -635,7 +635,7 @@ Public Class Empleados
                 If EMPLEADO_ES = 0 Then
                     dgv_Ref.Rows.Add(txt_RefNom.Text, txt_RefOcu.Text, Txt_TR.Text, txt_TC.Text)
                 Else
-                    If objcon.Add_Referencias(0, EMPLEADO_ES, txt_RefNom.Text, txt_RefOcu.Text, Txt_TR.Text, txt_TC.Text) = "0" Then
+                    If objcon.Add_Referencias(0, EMPLEADO_ES, txt_RefNom.Text, txt_RefOcu.Text, Txt_TR.Text, txt_TC.Text) = True Then
                     Else
                         MessageBox.Show("Este registro ya Existe.")
                     End If
@@ -656,7 +656,7 @@ Public Class Empleados
                 If EMPLEADO_ES = 0 Then
                     dgv_OI.Rows.Add(txt_OIParen.Text, txt_OTCantidad.Text)
                 Else
-                    If objcon.Add_OtrosIngresos(0, EMPLEADO_ES, txt_OIParen.Text, txt_OTCantidad.Text) = "0" Then
+                    If objcon.Add_OtrosIngresos(0, EMPLEADO_ES, txt_OIParen.Text, txt_OTCantidad.Text) = True Then
                     Else
                         MessageBox.Show("Este registro ya Existe.")
                     End If
@@ -749,7 +749,7 @@ Public Class Empleados
                     If dgv_Ref.Rows.Count > 0 Then
                         For Each row As DataGridViewRow In dgv_Ref.Rows
                             If Not row.IsNewRow Then
-                                If objcon.Add_Referencias(0, id, row.Cells(0).Value.ToString, row.Cells(1).Value.ToString, row.Cells(2).Value.ToString, row.Cells(3).Value.ToString) = "0" Then
+                                If objcon.Add_Referencias(0, id, row.Cells(0).Value.ToString, row.Cells(1).Value.ToString, row.Cells(2).Value.ToString, row.Cells(3).Value.ToString) = True Then
                                 Else
                                     MessageBox.Show("Este registro ya Existe.")
                                 End If
@@ -759,7 +759,7 @@ Public Class Empleados
                     If dgv_OI.Rows.Count > 0 Then
                         For Each row As DataGridViewRow In dgv_OI.Rows
                             If Not row.IsNewRow Then
-                                If objcon.Add_OtrosIngresos(0, id, row.Cells(0).Value.ToString, Convert.ToDouble(row.Cells(1).Value.ToString)) = "0" Then
+                                If objcon.Add_OtrosIngresos(0, id, row.Cells(0).Value.ToString, Convert.ToDouble(row.Cells(1).Value.ToString)) = True Then
                                 Else
                                     MessageBox.Show("Este registro ya Existe.")
                                 End If
@@ -780,7 +780,7 @@ Public Class Empleados
         If EXISTE = True Then
             If txt_enfNAME.Text = "" Then
             Else
-                If objcon.Add_MEDCONDITIONS(0, EMPLEADO_ID, txt_enfNAME.Text) = "0" Then
+                If objcon.Add_MEDCONDITIONS(0, EMPLEADO_ID, txt_enfNAME.Text) = True Then
                 Else
                     MessageBox.Show("Este registro ya Existe.")
                 End If
@@ -794,7 +794,7 @@ Public Class Empleados
             If txt_conAM.Text = "" Or txt_conAP.Text = "" Or txt_conCEL.Text = "" Or txt_conPAREN.Text = "" Or txt_conNAME.Text = "" Then
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
-                If objcon.Add_CONTACTS(0, EMPLEADO_ID, txt_conNAME.Text, txt_conAP.Text, txt_conAM.Text, txt_conPAREN.Text, txt_conTEL.Text, txt_conCEL.Text) = "0" Then
+                If objcon.Add_CONTACTS(0, EMPLEADO_ID, txt_conNAME.Text, txt_conAP.Text, txt_conAM.Text, txt_conPAREN.Text, txt_conTEL.Text, txt_conCEL.Text) = True Then
                 Else
                     MessageBox.Show("Este registro ya Existe.")
                 End If
@@ -815,7 +815,7 @@ Public Class Empleados
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
                 If objcon.Add_JOBHISTORY(0, EMPLEADO_ID, txt_antFI.Text, txt_antFF.Text, txt_antEMP.Text, txt_antCARGO.Text,
-                                      txt_antSALARIO.Text, txt_antTEL.Text, txt_antMT.Text, txt_antNAME.Text) = "0" Then
+                                      txt_antSALARIO.Text, txt_antTEL.Text, txt_antMT.Text, txt_antNAME.Text) = True Then
                 Else
                     MessageBox.Show("Este registro ya Existe.")
                 End If
@@ -836,7 +836,7 @@ Public Class Empleados
             If txt_esAM.Text = "" Or cb_esSexo.SelectedIndex = -1 Or txt_esAP.Text = "" Or txt_esFN.Text = "" Or txt_esNacion.Text = "" Or txt_esName.Text = "" Then
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
-                If objcon.Add_Family(0, EMPLEADO_ID, "CONYUGE", txt_esName.Text, txt_esAP.Text, txt_esAM.Text, txt_esNacion.Text, txt_esFN.Text, cb_esSexo.SelectedItem.ToString(), EC.SelectedItem.ToString) = "0" Then
+                If objcon.Add_Family(0, EMPLEADO_ID, "CONYUGE", txt_esName.Text, txt_esAP.Text, txt_esAM.Text, txt_esNacion.Text, txt_esFN.Text, cb_esSexo.SelectedItem.ToString(), EC.SelectedItem.ToString) = True Then
                 Else
                     MessageBox.Show("Este registro ya Existe.")
                 End If
@@ -857,7 +857,7 @@ Public Class Empleados
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
                 If objcon.Add_Family(0, EMPLEADO_ID, "HIJO", txt_hijoNAME.Text, txt_hijoAP.Text, txt_hijoAM.Text, txt_hijoNACION.Text,
-                                  txt_hijoFN.Text, txt_hijoSEXO.SelectedItem.ToString(), txt_hijoEC.SelectedItem.ToString) = "0" Then
+                                  txt_hijoFN.Text, txt_hijoSEXO.SelectedItem.ToString(), txt_hijoEC.SelectedItem.ToString) = True Then
                 Else
                     MessageBox.Show("Este registro ya Existe.")
                 End If

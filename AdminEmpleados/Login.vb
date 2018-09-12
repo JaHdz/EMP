@@ -39,19 +39,21 @@
             MessageBox.Show("Debe llenar todos los campos")
         Else
             Dim Wait As New wait()
-            Wait.ShowDialog()
+            Wait.Show()
+            Application.DoEvents()
             AUTENTICADO = objcon.Autenticar(user.Text, pass.Text)
             If AUTENTICADO = False Then
                 Wait.Close()
                 MessageBox.Show("Datos incorrectos")
             Else
-                Dim Main As New Principal With {
+                Dim ObjEdit2 As New Principal With {
                     .NEmp = Convert.ToInt64(objcon.user),
                     .NName = objcon.name
                 }
-                Main.Show()
                 Wait.Close()
-                Close()
+                Me.Hide()
+                ObjEdit2.ShowDialog(Me)
+                Me.Close()
             End If
         End If
     End Sub

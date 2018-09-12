@@ -26,6 +26,11 @@ Partial Class Admin
         Me.tab_admin = New System.Windows.Forms.TabControl()
         Me.tab_users = New System.Windows.Forms.TabPage()
         Me.dgv_equipo_emp = New System.Windows.Forms.DataGridView()
+        Me.UPDATE = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_User = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UserName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Activo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Emp_US = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnl_per = New System.Windows.Forms.Panel()
         Me.LBL_GUARDAR = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -103,11 +108,6 @@ Partial Class Admin
         Me.Label7 = New System.Windows.Forms.Label()
         Me.tab_evaluacion = New System.Windows.Forms.TabPage()
         Me.dgv_eval = New System.Windows.Forms.DataGridView()
-        Me.UPDATEE = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Evalua = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EV_Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EV_Descipcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EV_Estatus = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.txt_eval_des = New System.Windows.Forms.TextBox()
         Me.Label22 = New System.Windows.Forms.Label()
@@ -121,12 +121,6 @@ Partial Class Admin
         Me.Label26 = New System.Windows.Forms.Label()
         Me.tab_puesto = New System.Windows.Forms.TabPage()
         Me.dgv_Puesto = New System.Windows.Forms.DataGridView()
-        Me.UPDATEPU = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Puesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombrep = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcionp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Riesgo = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Estatusp = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.cb_PuestoRiesgo = New System.Windows.Forms.CheckBox()
         Me.txt_PuestoDescripcion = New System.Windows.Forms.TextBox()
@@ -141,11 +135,6 @@ Partial Class Admin
         Me.Label31 = New System.Windows.Forms.Label()
         Me.tsb_super = New System.Windows.Forms.TabPage()
         Me.dgv_super = New System.Windows.Forms.DataGridView()
-        Me.UPDATESU = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Super = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ActivoS = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
@@ -160,11 +149,6 @@ Partial Class Admin
         Me.Label40 = New System.Windows.Forms.Label()
         Me.tab_tipo = New System.Windows.Forms.TabPage()
         Me.dgv_te = New System.Windows.Forms.DataGridView()
-        Me.UPDATETE = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_TE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Codigote = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcionte = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estatuste = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.txt_DescTE = New System.Windows.Forms.TextBox()
         Me.Label34 = New System.Windows.Forms.Label()
@@ -176,11 +160,27 @@ Partial Class Admin
         Me.Label41 = New System.Windows.Forms.Label()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Label42 = New System.Windows.Forms.Label()
-        Me.UPDATE = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_User = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UserName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Activo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Emp_US = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UPDATETE = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_TE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Codigote = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcionte = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estatuste = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UPDATESU = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Super = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ActivoS = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UPDATEPU = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Puesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombrep = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcionp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Riesgo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estatusp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UPDATEE = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Evalua = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EV_Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EV_Descipcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EV_Estatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tab_admin.SuspendLayout()
         Me.tab_users.SuspendLayout()
         CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -275,6 +275,39 @@ Partial Class Admin
         Me.dgv_equipo_emp.RowHeadersVisible = False
         Me.dgv_equipo_emp.Size = New System.Drawing.Size(1240, 401)
         Me.dgv_equipo_emp.TabIndex = 72
+        '
+        'UPDATE
+        '
+        Me.UPDATE.HeaderText = "Baja"
+        Me.UPDATE.Name = "UPDATE"
+        '
+        'ID_User
+        '
+        Me.ID_User.DataPropertyName = "ID_User"
+        Me.ID_User.HeaderText = "ID"
+        Me.ID_User.Name = "ID_User"
+        Me.ID_User.Width = 200
+        '
+        'UserName
+        '
+        Me.UserName.DataPropertyName = "UserName"
+        Me.UserName.HeaderText = "USUARIO"
+        Me.UserName.Name = "UserName"
+        Me.UserName.Width = 500
+        '
+        'Activo
+        '
+        Me.Activo.DataPropertyName = "Activo"
+        Me.Activo.HeaderText = "ESTATUS"
+        Me.Activo.Name = "Activo"
+        Me.Activo.Width = 200
+        '
+        'ID_Emp_US
+        '
+        Me.ID_Emp_US.DataPropertyName = "ID_Emp"
+        Me.ID_Emp_US.HeaderText = "NO EMPLEADO"
+        Me.ID_Emp_US.Name = "ID_Emp_US"
+        Me.ID_Emp_US.Width = 300
         '
         'pnl_per
         '
@@ -1049,40 +1082,6 @@ Partial Class Admin
         Me.dgv_eval.Size = New System.Drawing.Size(1240, 401)
         Me.dgv_eval.TabIndex = 76
         '
-        'UPDATEE
-        '
-        Me.UPDATEE.HeaderText = "Baja"
-        Me.UPDATEE.Name = "UPDATEE"
-        '
-        'ID_Evalua
-        '
-        Me.ID_Evalua.DataPropertyName = "ID_Evalua"
-        Me.ID_Evalua.HeaderText = "ID"
-        Me.ID_Evalua.Name = "ID_Evalua"
-        '
-        'EV_Codigo
-        '
-        Me.EV_Codigo.DataPropertyName = "EV_Codigo"
-        Me.EV_Codigo.HeaderText = "CODIGO"
-        Me.EV_Codigo.Name = "EV_Codigo"
-        Me.EV_Codigo.Width = 200
-        '
-        'EV_Descipcion
-        '
-        Me.EV_Descipcion.DataPropertyName = "EV_Descipcion"
-        Me.EV_Descipcion.HeaderText = "DESCRIPCION"
-        Me.EV_Descipcion.Name = "EV_Descipcion"
-        Me.EV_Descipcion.Width = 700
-        '
-        'EV_Estatus
-        '
-        Me.EV_Estatus.DataPropertyName = "EV_Estatus"
-        Me.EV_Estatus.HeaderText = "ESTATUS"
-        Me.EV_Estatus.Name = "EV_Estatus"
-        Me.EV_Estatus.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.EV_Estatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.EV_Estatus.Width = 200
-        '
         'Panel8
         '
         Me.Panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
@@ -1226,49 +1225,6 @@ Partial Class Admin
         Me.dgv_Puesto.RowHeadersVisible = False
         Me.dgv_Puesto.Size = New System.Drawing.Size(1240, 401)
         Me.dgv_Puesto.TabIndex = 78
-        '
-        'UPDATEPU
-        '
-        Me.UPDATEPU.HeaderText = "Baja"
-        Me.UPDATEPU.Name = "UPDATEPU"
-        '
-        'ID_Puesto
-        '
-        Me.ID_Puesto.DataPropertyName = "ID_Puesto"
-        Me.ID_Puesto.HeaderText = "ID"
-        Me.ID_Puesto.Name = "ID_Puesto"
-        '
-        'Nombrep
-        '
-        Me.Nombrep.DataPropertyName = "Nombre"
-        Me.Nombrep.HeaderText = "CODIGO"
-        Me.Nombrep.Name = "Nombrep"
-        Me.Nombrep.Width = 200
-        '
-        'Descripcionp
-        '
-        Me.Descripcionp.DataPropertyName = "Descripcion"
-        Me.Descripcionp.HeaderText = "DESCRIPCION"
-        Me.Descripcionp.Name = "Descripcionp"
-        Me.Descripcionp.Width = 500
-        '
-        'Riesgo
-        '
-        Me.Riesgo.DataPropertyName = "Riesgo"
-        Me.Riesgo.HeaderText = "RIESGO"
-        Me.Riesgo.Name = "Riesgo"
-        Me.Riesgo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Riesgo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Riesgo.Width = 200
-        '
-        'Estatusp
-        '
-        Me.Estatusp.DataPropertyName = "Estatus"
-        Me.Estatusp.HeaderText = "ESTATUS"
-        Me.Estatusp.Name = "Estatusp"
-        Me.Estatusp.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Estatusp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Estatusp.Width = 200
         '
         'Panel10
         '
@@ -1424,41 +1380,6 @@ Partial Class Admin
         Me.dgv_super.RowHeadersVisible = False
         Me.dgv_super.Size = New System.Drawing.Size(1240, 401)
         Me.dgv_super.TabIndex = 74
-        '
-        'UPDATESU
-        '
-        Me.UPDATESU.HeaderText = "Baja"
-        Me.UPDATESU.Name = "UPDATESU"
-        '
-        'ID_Super
-        '
-        Me.ID_Super.DataPropertyName = "ID_Super"
-        Me.ID_Super.HeaderText = "ID"
-        Me.ID_Super.Name = "ID_Super"
-        Me.ID_Super.Width = 200
-        '
-        'ID_Emp
-        '
-        Me.ID_Emp.DataPropertyName = "ID_Emp"
-        Me.ID_Emp.HeaderText = "NO.EMPLEADO"
-        Me.ID_Emp.Name = "ID_Emp"
-        Me.ID_Emp.Width = 200
-        '
-        'Name
-        '
-        Me.Name.DataPropertyName = "Name"
-        Me.Name.HeaderText = "NOMBRE"
-        Me.Name.Name = "Name"
-        Me.Name.Width = 600
-        '
-        'ActivoS
-        '
-        Me.ActivoS.DataPropertyName = "Activo"
-        Me.ActivoS.HeaderText = "ESTATUS"
-        Me.ActivoS.Name = "ActivoS"
-        Me.ActivoS.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ActivoS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.ActivoS.Width = 200
         '
         'Panel12
         '
@@ -1618,40 +1539,6 @@ Partial Class Admin
         Me.dgv_te.Size = New System.Drawing.Size(1240, 401)
         Me.dgv_te.TabIndex = 80
         '
-        'UPDATETE
-        '
-        Me.UPDATETE.HeaderText = "Baja"
-        Me.UPDATETE.Name = "UPDATETE"
-        '
-        'ID_TE
-        '
-        Me.ID_TE.DataPropertyName = "ID_TE"
-        Me.ID_TE.HeaderText = "ID"
-        Me.ID_TE.Name = "ID_TE"
-        '
-        'Codigote
-        '
-        Me.Codigote.DataPropertyName = "Codigo"
-        Me.Codigote.HeaderText = "CODIGO"
-        Me.Codigote.Name = "Codigote"
-        Me.Codigote.Width = 200
-        '
-        'Descripcionte
-        '
-        Me.Descripcionte.DataPropertyName = "Descripcion"
-        Me.Descripcionte.HeaderText = "DESCRIPCION"
-        Me.Descripcionte.Name = "Descripcionte"
-        Me.Descripcionte.Width = 700
-        '
-        'Estatuste
-        '
-        Me.Estatuste.DataPropertyName = "Estatus"
-        Me.Estatuste.HeaderText = "ESTATUS"
-        Me.Estatuste.Name = "Estatuste"
-        Me.Estatuste.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Estatuste.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Estatuste.Width = 200
-        '
         'Panel14
         '
         Me.Panel14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
@@ -1772,38 +1659,146 @@ Partial Class Admin
         Me.Label42.TabIndex = 0
         Me.Label42.Text = "Datos"
         '
-        'UPDATE
+        'UPDATETE
         '
-        Me.UPDATE.HeaderText = "Baja"
-        Me.UPDATE.Name = "UPDATE"
+        Me.UPDATETE.HeaderText = "Baja"
+        Me.UPDATETE.Name = "UPDATETE"
         '
-        'ID_User
+        'ID_TE
         '
-        Me.ID_User.DataPropertyName = "ID_User"
-        Me.ID_User.HeaderText = "ID"
-        Me.ID_User.Name = "ID_User"
-        Me.ID_User.Width = 200
+        Me.ID_TE.DataPropertyName = "ID_TE"
+        Me.ID_TE.HeaderText = "ID"
+        Me.ID_TE.Name = "ID_TE"
         '
-        'UserName
+        'Codigote
         '
-        Me.UserName.DataPropertyName = "UserName"
-        Me.UserName.HeaderText = "USUARIO"
-        Me.UserName.Name = "UserName"
-        Me.UserName.Width = 500
+        Me.Codigote.DataPropertyName = "Codigo"
+        Me.Codigote.HeaderText = "CODIGO"
+        Me.Codigote.Name = "Codigote"
+        Me.Codigote.Width = 200
         '
-        'Activo
+        'Descripcionte
         '
-        Me.Activo.DataPropertyName = "Activo"
-        Me.Activo.HeaderText = "ESTATUS"
-        Me.Activo.Name = "Activo"
-        Me.Activo.Width = 200
+        Me.Descripcionte.DataPropertyName = "Descripcion"
+        Me.Descripcionte.HeaderText = "DESCRIPCION"
+        Me.Descripcionte.Name = "Descripcionte"
+        Me.Descripcionte.Width = 700
         '
-        'ID_Emp_US
+        'Estatuste
         '
-        Me.ID_Emp_US.DataPropertyName = "ID_Emp"
-        Me.ID_Emp_US.HeaderText = "NO EMPLEADO"
-        Me.ID_Emp_US.Name = "ID_Emp_US"
-        Me.ID_Emp_US.Width = 300
+        Me.Estatuste.DataPropertyName = "Estatus"
+        Me.Estatuste.HeaderText = "ESTATUS"
+        Me.Estatuste.Name = "Estatuste"
+        Me.Estatuste.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Estatuste.Width = 200
+        '
+        'UPDATESU
+        '
+        Me.UPDATESU.HeaderText = "Baja"
+        Me.UPDATESU.Name = "UPDATESU"
+        '
+        'ID_Super
+        '
+        Me.ID_Super.DataPropertyName = "ID_Super"
+        Me.ID_Super.HeaderText = "ID"
+        Me.ID_Super.Name = "ID_Super"
+        Me.ID_Super.Width = 200
+        '
+        'ID_Emp
+        '
+        Me.ID_Emp.DataPropertyName = "ID_Emp"
+        Me.ID_Emp.HeaderText = "NO.EMPLEADO"
+        Me.ID_Emp.Name = "ID_Emp"
+        Me.ID_Emp.Width = 200
+        '
+        'Name
+        '
+        Me.Name.DataPropertyName = "Name"
+        Me.Name.HeaderText = "NOMBRE"
+        Me.Name.Name = "Name"
+        Me.Name.Width = 600
+        '
+        'ActivoS
+        '
+        Me.ActivoS.DataPropertyName = "Activo"
+        Me.ActivoS.HeaderText = "ESTATUS"
+        Me.ActivoS.Name = "ActivoS"
+        Me.ActivoS.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ActivoS.Width = 200
+        '
+        'UPDATEPU
+        '
+        Me.UPDATEPU.HeaderText = "Baja"
+        Me.UPDATEPU.Name = "UPDATEPU"
+        '
+        'ID_Puesto
+        '
+        Me.ID_Puesto.DataPropertyName = "ID_Puesto"
+        Me.ID_Puesto.HeaderText = "ID"
+        Me.ID_Puesto.Name = "ID_Puesto"
+        '
+        'Nombrep
+        '
+        Me.Nombrep.DataPropertyName = "Nombre"
+        Me.Nombrep.HeaderText = "CODIGO"
+        Me.Nombrep.Name = "Nombrep"
+        Me.Nombrep.Width = 200
+        '
+        'Descripcionp
+        '
+        Me.Descripcionp.DataPropertyName = "Descripcion"
+        Me.Descripcionp.HeaderText = "DESCRIPCION"
+        Me.Descripcionp.Name = "Descripcionp"
+        Me.Descripcionp.Width = 500
+        '
+        'Riesgo
+        '
+        Me.Riesgo.DataPropertyName = "Riesgo"
+        Me.Riesgo.HeaderText = "RIESGO"
+        Me.Riesgo.Name = "Riesgo"
+        Me.Riesgo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Riesgo.Width = 200
+        '
+        'Estatusp
+        '
+        Me.Estatusp.DataPropertyName = "Estatus"
+        Me.Estatusp.HeaderText = "ESTATUS"
+        Me.Estatusp.Name = "Estatusp"
+        Me.Estatusp.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Estatusp.Width = 200
+        '
+        'UPDATEE
+        '
+        Me.UPDATEE.HeaderText = "Baja"
+        Me.UPDATEE.Name = "UPDATEE"
+        '
+        'ID_Evalua
+        '
+        Me.ID_Evalua.DataPropertyName = "ID_Evalua"
+        Me.ID_Evalua.HeaderText = "ID"
+        Me.ID_Evalua.Name = "ID_Evalua"
+        '
+        'EV_Codigo
+        '
+        Me.EV_Codigo.DataPropertyName = "EV_Codigo"
+        Me.EV_Codigo.HeaderText = "CODIGO"
+        Me.EV_Codigo.Name = "EV_Codigo"
+        Me.EV_Codigo.Width = 200
+        '
+        'EV_Descipcion
+        '
+        Me.EV_Descipcion.DataPropertyName = "EV_Descipcion"
+        Me.EV_Descipcion.HeaderText = "DESCRIPCION"
+        Me.EV_Descipcion.Name = "EV_Descipcion"
+        Me.EV_Descipcion.Width = 700
+        '
+        'EV_Estatus
+        '
+        Me.EV_Estatus.DataPropertyName = "EV_Estatus"
+        Me.EV_Estatus.HeaderText = "ESTATUS"
+        Me.EV_Estatus.Name = "EV_Estatus"
+        Me.EV_Estatus.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.EV_Estatus.Width = 200
         '
         'Admin
         '
@@ -1992,11 +1987,6 @@ Partial Class Admin
     Friend WithEvents Descripcione As DataGridViewTextBoxColumn
     Friend WithEvents Costo As DataGridViewTextBoxColumn
     Friend WithEvents Estatuse As DataGridViewTextBoxColumn
-    Friend WithEvents UPDATEE As DataGridViewImageColumn
-    Friend WithEvents ID_Evalua As DataGridViewTextBoxColumn
-    Friend WithEvents EV_Codigo As DataGridViewTextBoxColumn
-    Friend WithEvents EV_Descipcion As DataGridViewTextBoxColumn
-    Friend WithEvents EV_Estatus As DataGridViewCheckBoxColumn
     Friend WithEvents dgv_super As DataGridView
     Private WithEvents Panel12 As Panel
     Friend WithEvents Label32 As Label
@@ -2022,25 +2012,30 @@ Partial Class Admin
     Friend WithEvents Label41 As Label
     Private WithEvents Panel15 As Panel
     Private WithEvents Label42 As Label
-    Friend WithEvents UPDATEPU As DataGridViewImageColumn
-    Friend WithEvents ID_Puesto As DataGridViewTextBoxColumn
-    Friend WithEvents Nombrep As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcionp As DataGridViewTextBoxColumn
-    Friend WithEvents Riesgo As DataGridViewCheckBoxColumn
-    Friend WithEvents Estatusp As DataGridViewCheckBoxColumn
-    Friend WithEvents UPDATESU As DataGridViewImageColumn
-    Friend WithEvents ID_Super As DataGridViewTextBoxColumn
-    Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
-    Friend WithEvents Name As DataGridViewTextBoxColumn
-    Friend WithEvents ActivoS As DataGridViewCheckBoxColumn
-    Friend WithEvents UPDATETE As DataGridViewImageColumn
-    Friend WithEvents ID_TE As DataGridViewTextBoxColumn
-    Friend WithEvents Codigote As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcionte As DataGridViewTextBoxColumn
-    Friend WithEvents Estatuste As DataGridViewCheckBoxColumn
     Friend WithEvents UPDATE As DataGridViewImageColumn
     Friend WithEvents ID_User As DataGridViewTextBoxColumn
     Friend WithEvents UserName As DataGridViewTextBoxColumn
     Friend WithEvents Activo As DataGridViewTextBoxColumn
     Friend WithEvents ID_Emp_US As DataGridViewTextBoxColumn
+    Friend WithEvents UPDATEE As DataGridViewImageColumn
+    Friend WithEvents ID_Evalua As DataGridViewTextBoxColumn
+    Friend WithEvents EV_Codigo As DataGridViewTextBoxColumn
+    Friend WithEvents EV_Descipcion As DataGridViewTextBoxColumn
+    Friend WithEvents EV_Estatus As DataGridViewTextBoxColumn
+    Friend WithEvents UPDATEPU As DataGridViewImageColumn
+    Friend WithEvents ID_Puesto As DataGridViewTextBoxColumn
+    Friend WithEvents Nombrep As DataGridViewTextBoxColumn
+    Friend WithEvents Descripcionp As DataGridViewTextBoxColumn
+    Friend WithEvents Riesgo As DataGridViewTextBoxColumn
+    Friend WithEvents Estatusp As DataGridViewTextBoxColumn
+    Friend WithEvents UPDATESU As DataGridViewImageColumn
+    Friend WithEvents ID_Super As DataGridViewTextBoxColumn
+    Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
+    Friend WithEvents Name As DataGridViewTextBoxColumn
+    Friend WithEvents ActivoS As DataGridViewTextBoxColumn
+    Friend WithEvents UPDATETE As DataGridViewImageColumn
+    Friend WithEvents ID_TE As DataGridViewTextBoxColumn
+    Friend WithEvents Codigote As DataGridViewTextBoxColumn
+    Friend WithEvents Descripcionte As DataGridViewTextBoxColumn
+    Friend WithEvents Estatuste As DataGridViewTextBoxColumn
 End Class

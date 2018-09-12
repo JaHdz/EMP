@@ -45,7 +45,7 @@
 
     Private Sub SAVE_Click(sender As Object, e As EventArgs) Handles SAVE.Click
         If (TXT_EST.Text <> "" Or txt_numero.Text <> "") Then
-            If objcon.Add_Examenes_Medicos(0, txt_numero.Text, TXT_EST.Text, txt_resultado.Text, TXT_FECHA.Text, txt_fp.Text) = "0" Then
+            If objcon.Add_Examenes_Medicos(0, txt_numero.Text, TXT_EST.Text, txt_resultado.Text, TXT_FECHA.Text, txt_fp.Text) = True Then
             Else
                 MessageBox.Show("Este registro ya Existe.")
             End If
