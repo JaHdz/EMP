@@ -1599,7 +1599,6 @@ Partial Class Administration
         Me.ClientSize = New System.Drawing.Size(1308, 864)
         Me.Controls.Add(Me.tab_admin)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Admin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Admin"
         Me.tab_admin.ResumeLayout(False)

@@ -25,8 +25,6 @@ Partial Class Principal
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Principal))
         Me.PNL_INFO = New System.Windows.Forms.Panel()
         Me.header = New System.Windows.Forms.Panel()
-        Me.min = New System.Windows.Forms.PictureBox()
-        Me.cerrar = New System.Windows.Forms.PictureBox()
         Me.Menu = New System.Windows.Forms.Panel()
         Me.BTN_ADMIN = New System.Windows.Forms.Button()
         Me.BTN_MED = New System.Windows.Forms.Button()
@@ -35,10 +33,17 @@ Partial Class Principal
         Me.BTN_EQ = New System.Windows.Forms.Button()
         Me.btn_emp = New System.Windows.Forms.Button()
         Me.lbl_user = New System.Windows.Forms.Label()
+        Me.Lbl_Title = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.min = New System.Windows.Forms.PictureBox()
+        Me.cerrar = New System.Windows.Forms.PictureBox()
+        Me.Pb_Logo = New System.Windows.Forms.PictureBox()
         Me.header.SuspendLayout()
+        Me.Menu.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.min, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Menu.SuspendLayout()
+        CType(Me.Pb_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PNL_INFO
@@ -52,41 +57,22 @@ Partial Class Principal
         'header
         '
         Me.header.AutoSize = True
-        Me.header.BackColor = System.Drawing.Color.Black
+        Me.header.BackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.header.Controls.Add(Me.Lbl_Title)
+        Me.header.Controls.Add(Me.PictureBox1)
         Me.header.Controls.Add(Me.min)
         Me.header.Controls.Add(Me.cerrar)
         Me.header.Location = New System.Drawing.Point(0, 0)
         Me.header.Margin = New System.Windows.Forms.Padding(2)
         Me.header.Name = "header"
-        Me.header.Size = New System.Drawing.Size(1535, 29)
+        Me.header.Size = New System.Drawing.Size(1535, 30)
         Me.header.TabIndex = 5
-        '
-        'min
-        '
-        Me.min.Image = CType(resources.GetObject("min.Image"), System.Drawing.Image)
-        Me.min.Location = New System.Drawing.Point(1477, 2)
-        Me.min.Margin = New System.Windows.Forms.Padding(2)
-        Me.min.Name = "min"
-        Me.min.Size = New System.Drawing.Size(25, 22)
-        Me.min.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.min.TabIndex = 1
-        Me.min.TabStop = False
-        '
-        'cerrar
-        '
-        Me.cerrar.Image = CType(resources.GetObject("cerrar.Image"), System.Drawing.Image)
-        Me.cerrar.Location = New System.Drawing.Point(1506, 2)
-        Me.cerrar.Margin = New System.Windows.Forms.Padding(2)
-        Me.cerrar.Name = "cerrar"
-        Me.cerrar.Size = New System.Drawing.Size(25, 22)
-        Me.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.cerrar.TabIndex = 0
-        Me.cerrar.TabStop = False
         '
         'Menu
         '
-        Me.Menu.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Menu.BackColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(209, Byte), Integer), CType(CType(210, Byte), Integer))
+        Me.Menu.Controls.Add(Me.Pb_Logo)
         Me.Menu.Controls.Add(Me.BTN_ADMIN)
         Me.Menu.Controls.Add(Me.BTN_MED)
         Me.Menu.Controls.Add(Me.BTN_EV)
@@ -105,7 +91,7 @@ Partial Class Principal
         Me.BTN_ADMIN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
         Me.BTN_ADMIN.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTN_ADMIN.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_ADMIN.ForeColor = System.Drawing.Color.White
+        Me.BTN_ADMIN.ForeColor = System.Drawing.Color.Black
         Me.BTN_ADMIN.Location = New System.Drawing.Point(2, 351)
         Me.BTN_ADMIN.Margin = New System.Windows.Forms.Padding(2)
         Me.BTN_ADMIN.Name = "BTN_ADMIN"
@@ -124,7 +110,7 @@ Partial Class Principal
         Me.BTN_MED.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
         Me.BTN_MED.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTN_MED.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_MED.ForeColor = System.Drawing.Color.White
+        Me.BTN_MED.ForeColor = System.Drawing.Color.Black
         Me.BTN_MED.Location = New System.Drawing.Point(0, 301)
         Me.BTN_MED.Margin = New System.Windows.Forms.Padding(2)
         Me.BTN_MED.Name = "BTN_MED"
@@ -143,7 +129,7 @@ Partial Class Principal
         Me.BTN_EV.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
         Me.BTN_EV.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTN_EV.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_EV.ForeColor = System.Drawing.Color.White
+        Me.BTN_EV.ForeColor = System.Drawing.Color.Black
         Me.BTN_EV.Location = New System.Drawing.Point(0, 250)
         Me.BTN_EV.Margin = New System.Windows.Forms.Padding(2)
         Me.BTN_EV.Name = "BTN_EV"
@@ -162,7 +148,7 @@ Partial Class Principal
         Me.BTN_CAP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
         Me.BTN_CAP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTN_CAP.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_CAP.ForeColor = System.Drawing.Color.White
+        Me.BTN_CAP.ForeColor = System.Drawing.Color.Black
         Me.BTN_CAP.Location = New System.Drawing.Point(0, 200)
         Me.BTN_CAP.Margin = New System.Windows.Forms.Padding(2)
         Me.BTN_CAP.Name = "BTN_CAP"
@@ -181,7 +167,7 @@ Partial Class Principal
         Me.BTN_EQ.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
         Me.BTN_EQ.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTN_EQ.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_EQ.ForeColor = System.Drawing.Color.White
+        Me.BTN_EQ.ForeColor = System.Drawing.Color.Black
         Me.BTN_EQ.Location = New System.Drawing.Point(0, 150)
         Me.BTN_EQ.Margin = New System.Windows.Forms.Padding(2)
         Me.BTN_EQ.Name = "BTN_EQ"
@@ -201,7 +187,7 @@ Partial Class Principal
         Me.btn_emp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
         Me.btn_emp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_emp.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_emp.ForeColor = System.Drawing.Color.White
+        Me.btn_emp.ForeColor = System.Drawing.Color.Black
         Me.btn_emp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btn_emp.Location = New System.Drawing.Point(0, 99)
         Me.btn_emp.Margin = New System.Windows.Forms.Padding(2)
@@ -228,6 +214,59 @@ Partial Class Principal
         Me.lbl_user.TabIndex = 8
         Me.lbl_user.Text = "Usuario:"
         '
+        'Lbl_Title
+        '
+        Me.Lbl_Title.AutoSize = True
+        Me.Lbl_Title.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Title.ForeColor = System.Drawing.Color.White
+        Me.Lbl_Title.Location = New System.Drawing.Point(33, 3)
+        Me.Lbl_Title.Name = "Lbl_Title"
+        Me.Lbl_Title.Size = New System.Drawing.Size(306, 23)
+        Me.Lbl_Title.TabIndex = 0
+        Me.Lbl_Title.Text = "EASY - Employee Administrator System"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.AdminEmpleados.My.Resources.Resources.EASY_Small
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(24, 22)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
+        '
+        'min
+        '
+        Me.min.Image = Global.AdminEmpleados.My.Resources.Resources.Minimize_80px
+        Me.min.Location = New System.Drawing.Point(1477, 2)
+        Me.min.Margin = New System.Windows.Forms.Padding(2)
+        Me.min.Name = "min"
+        Me.min.Size = New System.Drawing.Size(25, 22)
+        Me.min.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.min.TabIndex = 1
+        Me.min.TabStop = False
+        '
+        'cerrar
+        '
+        Me.cerrar.Image = Global.AdminEmpleados.My.Resources.Resources.Close_80px
+        Me.cerrar.Location = New System.Drawing.Point(1506, 2)
+        Me.cerrar.Margin = New System.Windows.Forms.Padding(2)
+        Me.cerrar.Name = "cerrar"
+        Me.cerrar.Size = New System.Drawing.Size(25, 22)
+        Me.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.cerrar.TabIndex = 0
+        Me.cerrar.TabStop = False
+        '
+        'Pb_Logo
+        '
+        Me.Pb_Logo.Image = Global.AdminEmpleados.My.Resources.Resources.EASY_Full
+        Me.Pb_Logo.Location = New System.Drawing.Point(2, 0)
+        Me.Pb_Logo.Name = "Pb_Logo"
+        Me.Pb_Logo.Size = New System.Drawing.Size(222, 94)
+        Me.Pb_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Pb_Logo.TabIndex = 7
+        Me.Pb_Logo.TabStop = False
+        '
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -238,14 +277,18 @@ Partial Class Principal
         Me.Controls.Add(Me.Menu)
         Me.Controls.Add(Me.lbl_user)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Principal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.header.ResumeLayout(False)
+        Me.header.PerformLayout()
+        Me.Menu.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.min, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cerrar, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Menu.ResumeLayout(False)
+        CType(Me.Pb_Logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -263,4 +306,7 @@ Partial Class Principal
     Private WithEvents BTN_EQ As Button
     Private WithEvents btn_emp As Button
     Private WithEvents lbl_user As Label
+    Friend WithEvents Pb_Logo As PictureBox
+    Friend WithEvents Lbl_Title As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

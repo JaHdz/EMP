@@ -129,14 +129,17 @@ Public Class Principal
     End Sub
 
     Private Sub SelectButton(btn As Button)
-        For Each notSelected As Button In Menu.Controls
-            If notSelected.Name <> btn.Name Then
-                notSelected.BackColor = Color.FromArgb(0, 73, 141)
-                notSelected.Font = New Font(notSelected.Font, FontStyle.Regular)
-            Else
-                notSelected.BackColor = Color.FromArgb(177, 197, 222)
-                notSelected.Font = New Font(notSelected.Font, FontStyle.Bold)
+        For Each ctrl As Control In Menu.Controls
+            If TypeOf ctrl Is Button Then
+                If ctrl.Name <> btn.Name Then
+                    ctrl.BackColor = Color.FromArgb(207, 209, 210)
+                    ctrl.Font = New Font(ctrl.Font, FontStyle.Regular)
+                Else
+                    ctrl.BackColor = SystemColors.Control
+                    ctrl.Font = New Font(ctrl.Font, FontStyle.Bold)
+                End If
             End If
+
         Next
     End Sub
 
