@@ -15,10 +15,10 @@
         V2 = popup.Variable2
         popup.Close()
     End Sub
-    Private Sub txt_numero_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_numero.KeyPress
+    Private Sub txt_numero_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
-    Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
+    Private Sub txt_numero_Leave(sender As Object, e As EventArgs)
         If (txt_numero.Text <> "") Then
             NEmp = objcon.Emp_Exist(txt_numero.Text)
             If (NEmp = 1) Then
@@ -34,7 +34,7 @@
         End If
     End Sub
 
-    Private Sub buscar_EN_Click(sender As Object, e As EventArgs) Handles buscar_EN.Click
+    Private Sub buscar_EN_Click(sender As Object, e As EventArgs)
         llenar_buscador("EMP")
         If (V1 <> "" And V2 <> "") Then
             txt_numero.Focus()
@@ -44,7 +44,7 @@
         txt_numero.Text = V1
     End Sub
 
-    Private Sub Eq_Leave(sender As Object, e As EventArgs) Handles CAP.Leave
+    Private Sub Eq_Leave(sender As Object, e As EventArgs)
         If (CAP.Text <> "") Then
             V2 = objcon.S_catalago(CAP.Text, "CAP")
             If (V2 = "" Or V2 Is Nothing) Then
@@ -57,7 +57,7 @@
         End If
     End Sub
 
-    Private Sub buscar_eq_Click(sender As Object, e As EventArgs) Handles buscar_CAP.Click
+    Private Sub buscar_eq_Click(sender As Object, e As EventArgs)
         llenar_buscador("CAP")
         If (V1 <> "" And V2 <> "") Then
             CAP.Focus()
@@ -69,7 +69,7 @@
 
     End Sub
 
-    Private Sub SAVE_Click(sender As Object, e As EventArgs) Handles SAVE.Click
+    Private Sub SAVE_Click(sender As Object, e As EventArgs)
         If (CAP.Text <> "" Or txt_numero.Text <> "") Then
             If objcon.Add_TRAINING(0, CAP.Text, txt_numero.Text, TXT_FECHA.Text) = True Then
             Else
@@ -87,12 +87,12 @@
         End If
     End Sub
 
-    Private Sub CANCEL_Click(sender As Object, e As EventArgs) Handles CANCEL.Click
+    Private Sub CANCEL_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
 
-    Private Sub dgv_equipo_emp_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_equipo_Eval.CellClick
+    Private Sub dgv_equipo_emp_CellClick(sender As Object, e As DataGridViewCellEventArgs)
         Dim id As Integer
         Dim gr As New DataGridView
         gr = sender

@@ -17,7 +17,7 @@
         V2 = popup.Variable2
         popup.Close()
     End Sub
-    Private Sub txt_numero_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_numero.KeyPress
+    Private Sub txt_numero_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
     Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
@@ -46,7 +46,7 @@
         txt_numero.Text = V1
     End Sub
 
-    Private Sub Eq_Leave(sender As Object, e As EventArgs) Handles Eq.Leave
+    Private Sub Eq_Leave(sender As Object, e As EventArgs) Handles eq2.Leave
         If (Eq.Text <> "") Then
             V2 = objcon.S_catalago(Eq.Text, "EQ")
             If (V2 = "" Or V2 Is Nothing) Then
@@ -112,7 +112,7 @@
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
-                            End If
+                                End If
                             End If
                     End Select
             End Select
