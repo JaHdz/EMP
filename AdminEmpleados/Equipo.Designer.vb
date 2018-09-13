@@ -25,9 +25,10 @@ Partial Class Equipo
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Equipo))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.pb_Report = New System.Windows.Forms.PictureBox()
+        Me.pnl_comen = New System.Windows.Forms.Panel()
         Me.TXT_commen = New System.Windows.Forms.TextBox()
         Me.label8 = New System.Windows.Forms.Label()
+        Me.pb_Report = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label42 = New System.Windows.Forms.Label()
         Me.lbl_ingreso = New System.Windows.Forms.Label()
@@ -44,6 +45,7 @@ Partial Class Equipo
         Me.Empleado = New System.Windows.Forms.Label()
         Me.lbl_emp = New System.Windows.Forms.Label()
         Me.dgv_equipo_emp = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.UPDATE = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ID_Assig = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_Equipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -53,10 +55,9 @@ Partial Class Equipo
         Me.Fecha_R = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Comentario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_User = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.pnl_comen = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.Panel14.SuspendLayout()
+        Me.pnl_comen.SuspendLayout()
         CType(Me.pb_Report, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,7 +65,6 @@ Partial Class Equipo
         CType(Me.buscar_eq, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnl_comen.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -104,15 +104,15 @@ Partial Class Equipo
         Me.Panel14.Size = New System.Drawing.Size(1241, 313)
         Me.Panel14.TabIndex = 80
         '
-        'pb_Report
+        'pnl_comen
         '
-        Me.pb_Report.Image = Global.AdminEmpleados.My.Resources.Resources.AssignedTools_80px
-        Me.pb_Report.Location = New System.Drawing.Point(868, 92)
-        Me.pb_Report.Name = "pb_Report"
-        Me.pb_Report.Size = New System.Drawing.Size(83, 83)
-        Me.pb_Report.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pb_Report.TabIndex = 71
-        Me.pb_Report.TabStop = False
+        Me.pnl_comen.Controls.Add(Me.TXT_commen)
+        Me.pnl_comen.Controls.Add(Me.label8)
+        Me.pnl_comen.Location = New System.Drawing.Point(803, 193)
+        Me.pnl_comen.Name = "pnl_comen"
+        Me.pnl_comen.Size = New System.Drawing.Size(413, 113)
+        Me.pnl_comen.TabIndex = 72
+        Me.pnl_comen.Visible = False
         '
         'TXT_commen
         '
@@ -131,6 +131,16 @@ Partial Class Equipo
         Me.label8.Size = New System.Drawing.Size(105, 21)
         Me.label8.TabIndex = 70
         Me.label8.Text = "Comenarios:"
+        '
+        'pb_Report
+        '
+        Me.pb_Report.Image = Global.AdminEmpleados.My.Resources.Resources.AssignedTools_80px
+        Me.pb_Report.Location = New System.Drawing.Point(868, 92)
+        Me.pb_Report.Name = "pb_Report"
+        Me.pb_Report.Size = New System.Drawing.Size(83, 83)
+        Me.pb_Report.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pb_Report.TabIndex = 71
+        Me.pb_Report.TabStop = False
         '
         'Panel2
         '
@@ -286,6 +296,11 @@ Partial Class Equipo
         Me.dgv_equipo_emp.Size = New System.Drawing.Size(1241, 348)
         Me.dgv_equipo_emp.TabIndex = 71
         '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.HeaderText = ""
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        '
         'UPDATE
         '
         Me.UPDATE.HeaderText = "Regresar"
@@ -296,6 +311,7 @@ Partial Class Equipo
         Me.ID_Assig.DataPropertyName = "ID_Assig"
         Me.ID_Assig.HeaderText = "ID"
         Me.ID_Assig.Name = "ID_Assig"
+        Me.ID_Assig.Visible = False
         Me.ID_Assig.Width = 50
         '
         'ID_Equipo
@@ -345,21 +361,6 @@ Partial Class Equipo
         Me.ID_User.Name = "ID_User"
         Me.ID_User.Width = 150
         '
-        'DataGridViewImageColumn1
-        '
-        Me.DataGridViewImageColumn1.HeaderText = ""
-        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
-        '
-        'pnl_comen
-        '
-        Me.pnl_comen.Controls.Add(Me.TXT_commen)
-        Me.pnl_comen.Controls.Add(Me.label8)
-        Me.pnl_comen.Location = New System.Drawing.Point(803, 193)
-        Me.pnl_comen.Name = "pnl_comen"
-        Me.pnl_comen.Size = New System.Drawing.Size(413, 113)
-        Me.pnl_comen.TabIndex = 72
-        Me.pnl_comen.Visible = False
-        '
         'Equipo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -373,6 +374,8 @@ Partial Class Equipo
         Me.Panel1.ResumeLayout(False)
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
+        Me.pnl_comen.ResumeLayout(False)
+        Me.pnl_comen.PerformLayout()
         CType(Me.pb_Report, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
@@ -381,8 +384,6 @@ Partial Class Equipo
         CType(Me.buscar_eq, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnl_comen.ResumeLayout(False)
-        Me.pnl_comen.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -408,6 +409,8 @@ Partial Class Equipo
     Private WithEvents Panel14 As Panel
     Private WithEvents Panel2 As Panel
     Private WithEvents Label42 As Label
+    Friend WithEvents pb_Report As PictureBox
+    Friend WithEvents pnl_comen As Panel
     Friend WithEvents UPDATE As DataGridViewImageColumn
     Friend WithEvents ID_Assig As DataGridViewTextBoxColumn
     Friend WithEvents ID_Equipo As DataGridViewTextBoxColumn
@@ -417,6 +420,4 @@ Partial Class Equipo
     Friend WithEvents Fecha_R As DataGridViewTextBoxColumn
     Friend WithEvents Comentario As DataGridViewTextBoxColumn
     Friend WithEvents ID_User As DataGridViewTextBoxColumn
-    Friend WithEvents pb_Report As PictureBox
-    Friend WithEvents pnl_comen As Panel
 End Class
