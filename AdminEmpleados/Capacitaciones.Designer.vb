@@ -25,31 +25,31 @@ Partial Class Capacitaciones
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Capacitaciones))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dgv_equipo_Eval = New System.Windows.Forms.DataGridView()
-        Me.ID_Cap_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Cap = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Comentario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.lbl_ingreso = New System.Windows.Forms.Label()
         Me.TXT_FECHA = New System.Windows.Forms.DateTimePicker()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label42 = New System.Windows.Forms.Label()
+        Me.CANCEL = New System.Windows.Forms.PictureBox()
         Me.TXT_commen = New System.Windows.Forms.TextBox()
+        Me.SAVE = New System.Windows.Forms.PictureBox()
         Me.label8 = New System.Windows.Forms.Label()
         Me.Empleado = New System.Windows.Forms.Label()
+        Me.buscar_CAP = New System.Windows.Forms.PictureBox()
         Me.lbl_num = New System.Windows.Forms.Label()
         Me.CAP = New System.Windows.Forms.TextBox()
         Me.txt_numero = New System.Windows.Forms.TextBox()
         Me.CAP2 = New System.Windows.Forms.TextBox()
+        Me.buscar_EN = New System.Windows.Forms.PictureBox()
         Me.Label92 = New System.Windows.Forms.Label()
         Me.lbl_emp = New System.Windows.Forms.Label()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.DELETE = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.CANCEL = New System.Windows.Forms.PictureBox()
-        Me.SAVE = New System.Windows.Forms.PictureBox()
-        Me.buscar_CAP = New System.Windows.Forms.PictureBox()
-        Me.buscar_EN = New System.Windows.Forms.PictureBox()
+        Me.ID_Cap_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Cap = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Comentario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel14.SuspendLayout()
@@ -81,41 +81,6 @@ Partial Class Capacitaciones
         Me.dgv_equipo_Eval.RowHeadersVisible = False
         Me.dgv_equipo_Eval.Size = New System.Drawing.Size(1241, 372)
         Me.dgv_equipo_Eval.TabIndex = 89
-        '
-        'ID_Cap_Emp
-        '
-        Me.ID_Cap_Emp.DataPropertyName = "ID_Cap_Emp"
-        Me.ID_Cap_Emp.HeaderText = "ID"
-        Me.ID_Cap_Emp.Name = "ID_Cap_Emp"
-        Me.ID_Cap_Emp.Width = 50
-        '
-        'ID_Cap
-        '
-        Me.ID_Cap.DataPropertyName = "ID_Cap"
-        Me.ID_Cap.HeaderText = "CAPACITACION"
-        Me.ID_Cap.Name = "ID_Cap"
-        Me.ID_Cap.Width = 200
-        '
-        'ID_Emp
-        '
-        Me.ID_Emp.DataPropertyName = "ID_Emp"
-        Me.ID_Emp.HeaderText = "EMPLEADO"
-        Me.ID_Emp.Name = "ID_Emp"
-        Me.ID_Emp.Width = 200
-        '
-        'Fecha
-        '
-        Me.Fecha.DataPropertyName = "Fecha"
-        Me.Fecha.HeaderText = "FECHA"
-        Me.Fecha.Name = "Fecha"
-        Me.Fecha.Width = 200
-        '
-        'Comentario
-        '
-        Me.Comentario.DataPropertyName = "Comentario"
-        Me.Comentario.HeaderText = "COMENTARIO"
-        Me.Comentario.Name = "Comentario"
-        Me.Comentario.Width = 800
         '
         'Panel14
         '
@@ -183,6 +148,16 @@ Partial Class Capacitaciones
         Me.Label42.TabIndex = 0
         Me.Label42.Text = "Agregar Capacitaciones"
         '
+        'CANCEL
+        '
+        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
+        Me.CANCEL.Location = New System.Drawing.Point(1189, 38)
+        Me.CANCEL.Name = "CANCEL"
+        Me.CANCEL.Size = New System.Drawing.Size(45, 40)
+        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.CANCEL.TabIndex = 1
+        Me.CANCEL.TabStop = False
+        '
         'TXT_commen
         '
         Me.TXT_commen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
@@ -191,6 +166,16 @@ Partial Class Capacitaciones
         Me.TXT_commen.Name = "TXT_commen"
         Me.TXT_commen.Size = New System.Drawing.Size(427, 83)
         Me.TXT_commen.TabIndex = 3
+        '
+        'SAVE
+        '
+        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Training_80px
+        Me.SAVE.Location = New System.Drawing.Point(1138, 38)
+        Me.SAVE.Name = "SAVE"
+        Me.SAVE.Size = New System.Drawing.Size(45, 40)
+        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.SAVE.TabIndex = 0
+        Me.SAVE.TabStop = False
         '
         'label8
         '
@@ -211,6 +196,17 @@ Partial Class Capacitaciones
         Me.Empleado.Size = New System.Drawing.Size(101, 22)
         Me.Empleado.TabIndex = 80
         Me.Empleado.Text = "Empleado: "
+        '
+        'buscar_CAP
+        '
+        Me.buscar_CAP.BackgroundImage = CType(resources.GetObject("buscar_CAP.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_CAP.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_CAP.Location = New System.Drawing.Point(366, 89)
+        Me.buscar_CAP.Name = "buscar_CAP"
+        Me.buscar_CAP.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_CAP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_CAP.TabIndex = 85
+        Me.buscar_CAP.TabStop = False
         '
         'lbl_num
         '
@@ -244,6 +240,17 @@ Partial Class Capacitaciones
         Me.CAP2.TabIndex = 842
         Me.CAP2.TabStop = False
         '
+        'buscar_EN
+        '
+        Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_EN.Location = New System.Drawing.Point(367, 49)
+        Me.buscar_EN.Name = "buscar_EN"
+        Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_EN.TabIndex = 79
+        Me.buscar_EN.TabStop = False
+        '
         'Label92
         '
         Me.Label92.AutoSize = True
@@ -275,47 +282,41 @@ Partial Class Capacitaciones
         Me.DELETE.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
         Me.DELETE.Name = "DELETE"
         '
-        'CANCEL
+        'ID_Cap_Emp
         '
-        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(1189, 38)
-        Me.CANCEL.Name = "CANCEL"
-        Me.CANCEL.Size = New System.Drawing.Size(45, 40)
-        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.CANCEL.TabIndex = 1
-        Me.CANCEL.TabStop = False
+        Me.ID_Cap_Emp.DataPropertyName = "ID_Cap_Emp"
+        Me.ID_Cap_Emp.HeaderText = "ID"
+        Me.ID_Cap_Emp.Name = "ID_Cap_Emp"
+        Me.ID_Cap_Emp.Visible = False
+        Me.ID_Cap_Emp.Width = 50
         '
-        'SAVE
+        'ID_Cap
         '
-        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Training_80px
-        Me.SAVE.Location = New System.Drawing.Point(1138, 38)
-        Me.SAVE.Name = "SAVE"
-        Me.SAVE.Size = New System.Drawing.Size(45, 40)
-        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.SAVE.TabIndex = 0
-        Me.SAVE.TabStop = False
+        Me.ID_Cap.DataPropertyName = "ID_Cap"
+        Me.ID_Cap.HeaderText = "CAPACITACION"
+        Me.ID_Cap.Name = "ID_Cap"
+        Me.ID_Cap.Width = 200
         '
-        'buscar_CAP
+        'ID_Emp
         '
-        Me.buscar_CAP.BackgroundImage = CType(resources.GetObject("buscar_CAP.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_CAP.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_CAP.Location = New System.Drawing.Point(366, 89)
-        Me.buscar_CAP.Name = "buscar_CAP"
-        Me.buscar_CAP.Size = New System.Drawing.Size(30, 28)
-        Me.buscar_CAP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_CAP.TabIndex = 85
-        Me.buscar_CAP.TabStop = False
+        Me.ID_Emp.DataPropertyName = "ID_Emp"
+        Me.ID_Emp.HeaderText = "EMPLEADO"
+        Me.ID_Emp.Name = "ID_Emp"
+        Me.ID_Emp.Width = 200
         '
-        'buscar_EN
+        'Fecha
         '
-        Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_EN.Location = New System.Drawing.Point(367, 49)
-        Me.buscar_EN.Name = "buscar_EN"
-        Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
-        Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_EN.TabIndex = 79
-        Me.buscar_EN.TabStop = False
+        Me.Fecha.DataPropertyName = "Fecha"
+        Me.Fecha.HeaderText = "FECHA"
+        Me.Fecha.Name = "Fecha"
+        Me.Fecha.Width = 200
+        '
+        'Comentario
+        '
+        Me.Comentario.DataPropertyName = "Comentario"
+        Me.Comentario.HeaderText = "COMENTARIO"
+        Me.Comentario.Name = "Comentario"
+        Me.Comentario.Width = 800
         '
         'Capacitaciones
         '
@@ -358,14 +359,14 @@ Partial Class Capacitaciones
     Friend WithEvents lbl_ingreso As Label
     Friend WithEvents TXT_FECHA As DateTimePicker
     Friend WithEvents dgv_equipo_Eval As DataGridView
+    Private WithEvents Panel14 As Panel
+    Private WithEvents Panel2 As Panel
+    Private WithEvents Label42 As Label
+    Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents DELETE As DataGridViewImageColumn
     Friend WithEvents ID_Cap_Emp As DataGridViewTextBoxColumn
     Friend WithEvents ID_Cap As DataGridViewTextBoxColumn
     Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
     Friend WithEvents Fecha As DataGridViewTextBoxColumn
     Friend WithEvents Comentario As DataGridViewTextBoxColumn
-    Private WithEvents Panel14 As Panel
-    Private WithEvents Panel2 As Panel
-    Private WithEvents Label42 As Label
-    Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
 End Class

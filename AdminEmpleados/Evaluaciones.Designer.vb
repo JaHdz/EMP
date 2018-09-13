@@ -29,36 +29,36 @@ Partial Class Evaluaciones
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label42 = New System.Windows.Forms.Label()
         Me.TXT_commen = New System.Windows.Forms.TextBox()
+        Me.SAVE = New System.Windows.Forms.PictureBox()
         Me.label8 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.buscar_EV = New System.Windows.Forms.PictureBox()
+        Me.CANCEL = New System.Windows.Forms.PictureBox()
         Me.EV = New System.Windows.Forms.TextBox()
         Me.txt_numero = New System.Windows.Forms.TextBox()
         Me.EV2 = New System.Windows.Forms.TextBox()
         Me.lbl_num = New System.Windows.Forms.Label()
         Me.Label92 = New System.Windows.Forms.Label()
+        Me.buscar_EN = New System.Windows.Forms.PictureBox()
         Me.lbl_emp = New System.Windows.Forms.Label()
         Me.Empleado = New System.Windows.Forms.Label()
         Me.dgv_equipo_Eval = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.DELETE = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ID_EvEmp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_User = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.SAVE = New System.Windows.Forms.PictureBox()
-        Me.buscar_EV = New System.Windows.Forms.PictureBox()
-        Me.CANCEL = New System.Windows.Forms.PictureBox()
-        Me.buscar_EN = New System.Windows.Forms.PictureBox()
-        Me.DELETE = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_EV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -141,6 +141,16 @@ Partial Class Evaluaciones
         Me.TXT_commen.Size = New System.Drawing.Size(427, 83)
         Me.TXT_commen.TabIndex = 2
         '
+        'SAVE
+        '
+        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
+        Me.SAVE.Location = New System.Drawing.Point(986, 89)
+        Me.SAVE.Name = "SAVE"
+        Me.SAVE.Size = New System.Drawing.Size(83, 83)
+        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.SAVE.TabIndex = 0
+        Me.SAVE.TabStop = False
+        '
         'label8
         '
         Me.label8.AutoSize = True
@@ -160,6 +170,27 @@ Partial Class Evaluaciones
         Me.Label5.Size = New System.Drawing.Size(99, 22)
         Me.Label5.TabIndex = 38
         Me.Label5.Text = "CANCELAR"
+        '
+        'buscar_EV
+        '
+        Me.buscar_EV.BackgroundImage = CType(resources.GetObject("buscar_EV.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_EV.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_EV.Location = New System.Drawing.Point(361, 89)
+        Me.buscar_EV.Name = "buscar_EV"
+        Me.buscar_EV.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_EV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_EV.TabIndex = 69
+        Me.buscar_EV.TabStop = False
+        '
+        'CANCEL
+        '
+        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
+        Me.CANCEL.Location = New System.Drawing.Point(1112, 89)
+        Me.CANCEL.Name = "CANCEL"
+        Me.CANCEL.Size = New System.Drawing.Size(83, 83)
+        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.CANCEL.TabIndex = 1
+        Me.CANCEL.TabStop = False
         '
         'EV
         '
@@ -202,6 +233,17 @@ Partial Class Evaluaciones
         Me.Label92.TabIndex = 67
         Me.Label92.Text = "Evaluacion:"
         '
+        'buscar_EN
+        '
+        Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_EN.Location = New System.Drawing.Point(362, 49)
+        Me.buscar_EN.Name = "buscar_EN"
+        Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_EN.TabIndex = 58
+        Me.buscar_EN.TabStop = False
+        '
         'lbl_emp
         '
         Me.lbl_emp.AutoSize = True
@@ -234,11 +276,24 @@ Partial Class Evaluaciones
         Me.dgv_equipo_Eval.Size = New System.Drawing.Size(1241, 360)
         Me.dgv_equipo_Eval.TabIndex = 76
         '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.HeaderText = "Eliminar"
+        Me.DataGridViewImageColumn1.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        '
+        'DELETE
+        '
+        Me.DELETE.HeaderText = "Eliminar"
+        Me.DELETE.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
+        Me.DELETE.Name = "DELETE"
+        '
         'ID_EvEmp
         '
         Me.ID_EvEmp.DataPropertyName = "ID_EvEmp"
         Me.ID_EvEmp.HeaderText = "ID"
         Me.ID_EvEmp.Name = "ID_EvEmp"
+        Me.ID_EvEmp.Visible = False
         Me.ID_EvEmp.Width = 50
         '
         'ID_Codigo
@@ -276,60 +331,6 @@ Partial Class Evaluaciones
         Me.ID_User.Name = "ID_User"
         Me.ID_User.Width = 200
         '
-        'DataGridViewImageColumn1
-        '
-        Me.DataGridViewImageColumn1.HeaderText = "Eliminar"
-        Me.DataGridViewImageColumn1.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
-        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
-        '
-        'SAVE
-        '
-        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.SAVE.Location = New System.Drawing.Point(986, 89)
-        Me.SAVE.Name = "SAVE"
-        Me.SAVE.Size = New System.Drawing.Size(83, 83)
-        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.SAVE.TabIndex = 0
-        Me.SAVE.TabStop = False
-        '
-        'buscar_EV
-        '
-        Me.buscar_EV.BackgroundImage = CType(resources.GetObject("buscar_EV.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_EV.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_EV.Location = New System.Drawing.Point(361, 89)
-        Me.buscar_EV.Name = "buscar_EV"
-        Me.buscar_EV.Size = New System.Drawing.Size(30, 28)
-        Me.buscar_EV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_EV.TabIndex = 69
-        Me.buscar_EV.TabStop = False
-        '
-        'CANCEL
-        '
-        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(1112, 89)
-        Me.CANCEL.Name = "CANCEL"
-        Me.CANCEL.Size = New System.Drawing.Size(83, 83)
-        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.CANCEL.TabIndex = 1
-        Me.CANCEL.TabStop = False
-        '
-        'buscar_EN
-        '
-        Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_EN.Location = New System.Drawing.Point(362, 49)
-        Me.buscar_EN.Name = "buscar_EN"
-        Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
-        Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_EN.TabIndex = 58
-        Me.buscar_EN.TabStop = False
-        '
-        'DELETE
-        '
-        Me.DELETE.HeaderText = "Eliminar"
-        Me.DELETE.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
-        Me.DELETE.Name = "DELETE"
-        '
         'Evaluaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -345,11 +346,11 @@ Partial Class Evaluaciones
         Me.Panel14.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_EV, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
