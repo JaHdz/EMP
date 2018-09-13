@@ -293,13 +293,17 @@ Partial Public Class ASSIGNED_EQUIPMENT
         
         Private columnEQUIPO As Global.System.Data.DataColumn
         
-        Private columnCOSTO As Global.System.Data.DataColumn
-        
         Private columnDescripcion As Global.System.Data.DataColumn
         
-        Private columnASIGNADO As Global.System.Data.DataColumn
+        Private columnDEVOLUCIÓN As Global.System.Data.DataColumn
         
-        Private columnENTREGA As Global.System.Data.DataColumn
+        Private columnExpr1 As Global.System.Data.DataColumn
+        
+        Private columnCOMENTARIO As Global.System.Data.DataColumn
+        
+        Private columnBAJA As Global.System.Data.DataColumn
+        
+        Private columnMOTIVO As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
@@ -378,14 +382,6 @@ Partial Public Class ASSIGNED_EQUIPMENT
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property COSTOColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCOSTO
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public ReadOnly Property DescripcionColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnDescripcion
@@ -394,17 +390,41 @@ Partial Public Class ASSIGNED_EQUIPMENT
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property ASIGNADOColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property DEVOLUCIÓNColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnASIGNADO
+                Return Me.columnDEVOLUCIÓN
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property ENTREGAColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property Expr1Column() As Global.System.Data.DataColumn
             Get
-                Return Me.columnENTREGA
+                Return Me.columnExpr1
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property COMENTARIOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCOMENTARIO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property BAJAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnBAJA
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property MOTIVOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMOTIVO
             End Get
         End Property
         
@@ -445,9 +465,9 @@ Partial Public Class ASSIGNED_EQUIPMENT
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddASSIGNED_EQUIPMENTRow(ByVal ID_EMPLEADO As Integer, ByVal NOMBRE As String, ByVal DEPARTAMENTO As String, ByVal PUESTO As String, ByVal EQUIPO As String, ByVal COSTO As Decimal, ByVal Descripcion As String, ByVal ASIGNADO As String, ByVal ENTREGA As String) As ASSIGNED_EQUIPMENTRow
+        Public Overloads Function AddASSIGNED_EQUIPMENTRow(ByVal ID_EMPLEADO As Integer, ByVal NOMBRE As String, ByVal DEPARTAMENTO As String, ByVal PUESTO As String, ByVal EQUIPO As String, ByVal Descripcion As String, ByVal DEVOLUCIÓN As String, ByVal Expr1 As String, ByVal COMENTARIO As String, ByVal BAJA As Date, ByVal MOTIVO As String) As ASSIGNED_EQUIPMENTRow
             Dim rowASSIGNED_EQUIPMENTRow As ASSIGNED_EQUIPMENTRow = CType(Me.NewRow,ASSIGNED_EQUIPMENTRow)
-            Dim columnValuesArray() As Object = New Object() {ID_EMPLEADO, NOMBRE, DEPARTAMENTO, PUESTO, EQUIPO, COSTO, Descripcion, ASIGNADO, ENTREGA}
+            Dim columnValuesArray() As Object = New Object() {ID_EMPLEADO, NOMBRE, DEPARTAMENTO, PUESTO, EQUIPO, Descripcion, DEVOLUCIÓN, Expr1, COMENTARIO, BAJA, MOTIVO}
             rowASSIGNED_EQUIPMENTRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowASSIGNED_EQUIPMENTRow)
             Return rowASSIGNED_EQUIPMENTRow
@@ -475,10 +495,12 @@ Partial Public Class ASSIGNED_EQUIPMENT
             Me.columnDEPARTAMENTO = MyBase.Columns("DEPARTAMENTO")
             Me.columnPUESTO = MyBase.Columns("PUESTO")
             Me.columnEQUIPO = MyBase.Columns("EQUIPO")
-            Me.columnCOSTO = MyBase.Columns("COSTO")
             Me.columnDescripcion = MyBase.Columns("Descripcion")
-            Me.columnASIGNADO = MyBase.Columns("ASIGNADO")
-            Me.columnENTREGA = MyBase.Columns("ENTREGA")
+            Me.columnDEVOLUCIÓN = MyBase.Columns("DEVOLUCIÓN")
+            Me.columnExpr1 = MyBase.Columns("Expr1")
+            Me.columnCOMENTARIO = MyBase.Columns("COMENTARIO")
+            Me.columnBAJA = MyBase.Columns("BAJA")
+            Me.columnMOTIVO = MyBase.Columns("MOTIVO")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -494,24 +516,37 @@ Partial Public Class ASSIGNED_EQUIPMENT
             MyBase.Columns.Add(Me.columnPUESTO)
             Me.columnEQUIPO = New Global.System.Data.DataColumn("EQUIPO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnEQUIPO)
-            Me.columnCOSTO = New Global.System.Data.DataColumn("COSTO", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCOSTO)
             Me.columnDescripcion = New Global.System.Data.DataColumn("Descripcion", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDescripcion)
-            Me.columnASIGNADO = New Global.System.Data.DataColumn("ASIGNADO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnASIGNADO)
-            Me.columnENTREGA = New Global.System.Data.DataColumn("ENTREGA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnENTREGA)
+            Me.columnDEVOLUCIÓN = New Global.System.Data.DataColumn("DEVOLUCIÓN", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDEVOLUCIÓN)
+            Me.columnExpr1 = New Global.System.Data.DataColumn("Expr1", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnExpr1)
+            Me.columnCOMENTARIO = New Global.System.Data.DataColumn("COMENTARIO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCOMENTARIO)
+            Me.columnBAJA = New Global.System.Data.DataColumn("BAJA", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBAJA)
+            Me.columnMOTIVO = New Global.System.Data.DataColumn("MOTIVO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMOTIVO)
             Me.columnNOMBRE.ReadOnly = true
             Me.columnNOMBRE.MaxLength = 152
+            Me.columnDEPARTAMENTO.ReadOnly = true
             Me.columnDEPARTAMENTO.MaxLength = 50
+            Me.columnPUESTO.ReadOnly = true
             Me.columnPUESTO.MaxLength = 50
+            Me.columnEQUIPO.ReadOnly = true
             Me.columnEQUIPO.MaxLength = 20
+            Me.columnDescripcion.ReadOnly = true
             Me.columnDescripcion.MaxLength = 30
-            Me.columnASIGNADO.ReadOnly = true
-            Me.columnASIGNADO.MaxLength = 8000
-            Me.columnENTREGA.ReadOnly = true
-            Me.columnENTREGA.MaxLength = 8000
+            Me.columnDEVOLUCIÓN.ReadOnly = true
+            Me.columnDEVOLUCIÓN.MaxLength = 12
+            Me.columnExpr1.ReadOnly = true
+            Me.columnExpr1.MaxLength = 50
+            Me.columnCOMENTARIO.ReadOnly = true
+            Me.columnCOMENTARIO.MaxLength = 2147483647
+            Me.columnBAJA.ReadOnly = true
+            Me.columnMOTIVO.ReadOnly = true
+            Me.columnMOTIVO.MaxLength = 50
             Me.ExtendedProperties.Add("Generator_TablePropName", "_ASSIGNED_EQUIPMENT")
             Me.ExtendedProperties.Add("Generator_UserTableName", "ASSIGNED_EQUIPMENT")
         End Sub
@@ -735,21 +770,6 @@ Partial Public Class ASSIGNED_EQUIPMENT
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property COSTO() As Decimal
-            Get
-                Try 
-                    Return CType(Me(Me.tableASSIGNED_EQUIPMENT.COSTOColumn),Decimal)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'COSTO' in table 'ASSIGNED_EQUIPMENT' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableASSIGNED_EQUIPMENT.COSTOColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property Descripcion() As String
             Get
                 Try 
@@ -765,31 +785,76 @@ Partial Public Class ASSIGNED_EQUIPMENT
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ASIGNADO() As String
+        Public Property DEVOLUCIÓN() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableASSIGNED_EQUIPMENT.ASIGNADOColumn),String)
+                    Return CType(Me(Me.tableASSIGNED_EQUIPMENT.DEVOLUCIÓNColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ASIGNADO' in table 'ASSIGNED_EQUIPMENT' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DEVOLUCIÓN' in table 'ASSIGNED_EQUIPMENT' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableASSIGNED_EQUIPMENT.ASIGNADOColumn) = value
+                Me(Me.tableASSIGNED_EQUIPMENT.DEVOLUCIÓNColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ENTREGA() As String
+        Public Property Expr1() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableASSIGNED_EQUIPMENT.ENTREGAColumn),String)
+                    Return CType(Me(Me.tableASSIGNED_EQUIPMENT.Expr1Column),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ENTREGA' in table 'ASSIGNED_EQUIPMENT' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Expr1' in table 'ASSIGNED_EQUIPMENT' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableASSIGNED_EQUIPMENT.ENTREGAColumn) = value
+                Me(Me.tableASSIGNED_EQUIPMENT.Expr1Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property COMENTARIO() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableASSIGNED_EQUIPMENT.COMENTARIOColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'COMENTARIO' in table 'ASSIGNED_EQUIPMENT' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableASSIGNED_EQUIPMENT.COMENTARIOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property BAJA() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableASSIGNED_EQUIPMENT.BAJAColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'BAJA' in table 'ASSIGNED_EQUIPMENT' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableASSIGNED_EQUIPMENT.BAJAColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property MOTIVO() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableASSIGNED_EQUIPMENT.MOTIVOColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MOTIVO' in table 'ASSIGNED_EQUIPMENT' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableASSIGNED_EQUIPMENT.MOTIVOColumn) = value
             End Set
         End Property
         
@@ -855,18 +920,6 @@ Partial Public Class ASSIGNED_EQUIPMENT
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsCOSTONull() As Boolean
-            Return Me.IsNull(Me.tableASSIGNED_EQUIPMENT.COSTOColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetCOSTONull()
-            Me(Me.tableASSIGNED_EQUIPMENT.COSTOColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsDescripcionNull() As Boolean
             Return Me.IsNull(Me.tableASSIGNED_EQUIPMENT.DescripcionColumn)
         End Function
@@ -879,26 +932,62 @@ Partial Public Class ASSIGNED_EQUIPMENT
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsASIGNADONull() As Boolean
-            Return Me.IsNull(Me.tableASSIGNED_EQUIPMENT.ASIGNADOColumn)
+        Public Function IsDEVOLUCIÓNNull() As Boolean
+            Return Me.IsNull(Me.tableASSIGNED_EQUIPMENT.DEVOLUCIÓNColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetASIGNADONull()
-            Me(Me.tableASSIGNED_EQUIPMENT.ASIGNADOColumn) = Global.System.Convert.DBNull
+        Public Sub SetDEVOLUCIÓNNull()
+            Me(Me.tableASSIGNED_EQUIPMENT.DEVOLUCIÓNColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsENTREGANull() As Boolean
-            Return Me.IsNull(Me.tableASSIGNED_EQUIPMENT.ENTREGAColumn)
+        Public Function IsExpr1Null() As Boolean
+            Return Me.IsNull(Me.tableASSIGNED_EQUIPMENT.Expr1Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetENTREGANull()
-            Me(Me.tableASSIGNED_EQUIPMENT.ENTREGAColumn) = Global.System.Convert.DBNull
+        Public Sub SetExpr1Null()
+            Me(Me.tableASSIGNED_EQUIPMENT.Expr1Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsCOMENTARIONull() As Boolean
+            Return Me.IsNull(Me.tableASSIGNED_EQUIPMENT.COMENTARIOColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetCOMENTARIONull()
+            Me(Me.tableASSIGNED_EQUIPMENT.COMENTARIOColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsBAJANull() As Boolean
+            Return Me.IsNull(Me.tableASSIGNED_EQUIPMENT.BAJAColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetBAJANull()
+            Me(Me.tableASSIGNED_EQUIPMENT.BAJAColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsMOTIVONull() As Boolean
+            Return Me.IsNull(Me.tableASSIGNED_EQUIPMENT.MOTIVOColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetMOTIVONull()
+            Me(Me.tableASSIGNED_EQUIPMENT.MOTIVOColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1073,10 +1162,12 @@ Namespace ASSIGNED_EQUIPMENTTableAdapters
             tableMapping.ColumnMappings.Add("DEPARTAMENTO", "DEPARTAMENTO")
             tableMapping.ColumnMappings.Add("PUESTO", "PUESTO")
             tableMapping.ColumnMappings.Add("EQUIPO", "EQUIPO")
-            tableMapping.ColumnMappings.Add("COSTO", "COSTO")
             tableMapping.ColumnMappings.Add("Descripcion", "Descripcion")
-            tableMapping.ColumnMappings.Add("ASIGNADO", "ASIGNADO")
-            tableMapping.ColumnMappings.Add("ENTREGA", "ENTREGA")
+            tableMapping.ColumnMappings.Add("DEVOLUCIÓN", "DEVOLUCIÓN")
+            tableMapping.ColumnMappings.Add("Expr1", "Expr1")
+            tableMapping.ColumnMappings.Add("COMENTARIO", "COMENTARIO")
+            tableMapping.ColumnMappings.Add("BAJA", "BAJA")
+            tableMapping.ColumnMappings.Add("MOTIVO", "MOTIVO")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -1093,8 +1184,8 @@ Namespace ASSIGNED_EQUIPMENTTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID_EMPLEADO, NOMBRE, DEPARTAMENTO, PUESTO, EQUIPO, COSTO, Descripcion, ASI"& _ 
-                "GNADO, ENTREGA FROM ASSIGNED_EQUIPMENT"
+            Me._commandCollection(0).CommandText = "SELECT ID_EMPLEADO, NOMBRE, DEPARTAMENTO, PUESTO, EQUIPO, Descripcion, DEVOLUCIÓN"& _ 
+                ", Expr1, COMENTARIO, BAJA, MOTIVO FROM dbo.ASSIGNED_EQUIPMENT"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
