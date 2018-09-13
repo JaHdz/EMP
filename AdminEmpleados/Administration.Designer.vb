@@ -81,13 +81,11 @@ Partial Class Administration
         Me.Label19 = New System.Windows.Forms.Label()
         Me.tab_Equipo = New System.Windows.Forms.TabPage()
         Me.dgv_eq = New System.Windows.Forms.DataGridView()
-        Me.UPDATEEQ = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Equipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcione = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Costo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estatuse = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.buscar_depto = New System.Windows.Forms.PictureBox()
+        Me.depto = New System.Windows.Forms.TextBox()
+        Me.depto2 = New System.Windows.Forms.TextBox()
+        Me.lbl_depto = New System.Windows.Forms.Label()
         Me.txt_eqcost = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.txt_eqdesc = New System.Windows.Forms.TextBox()
@@ -165,6 +163,14 @@ Partial Class Administration
         Me.Label41 = New System.Windows.Forms.Label()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Label42 = New System.Windows.Forms.Label()
+        Me.UPDATEEQ = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Equipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcione = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Costo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estatuse = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_DeptoC = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Deptoo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tab_admin.SuspendLayout()
         Me.tab_users.SuspendLayout()
         CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -188,6 +194,7 @@ Partial Class Administration
         Me.tab_Equipo.SuspendLayout()
         CType(Me.dgv_eq, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
+        CType(Me.buscar_depto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.save_eq, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cancel_eq, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
@@ -784,55 +791,20 @@ Partial Class Administration
         '
         Me.dgv_eq.AllowUserToAddRows = False
         Me.dgv_eq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_eq.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATEEQ, Me.ID_Equipo, Me.Nombre, Me.Descripcione, Me.Costo, Me.Estatuse})
+        Me.dgv_eq.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATEEQ, Me.ID_Equipo, Me.Nombre, Me.Descripcione, Me.Costo, Me.Estatuse, Me.ID_DeptoC, Me.Deptoo})
         Me.dgv_eq.Location = New System.Drawing.Point(14, 258)
         Me.dgv_eq.Name = "dgv_eq"
         Me.dgv_eq.RowHeadersVisible = False
         Me.dgv_eq.Size = New System.Drawing.Size(1240, 401)
         Me.dgv_eq.TabIndex = 77
         '
-        'UPDATEEQ
-        '
-        Me.UPDATEEQ.HeaderText = "Baja"
-        Me.UPDATEEQ.Name = "UPDATEEQ"
-        '
-        'ID_Equipo
-        '
-        Me.ID_Equipo.DataPropertyName = "ID_Equipo"
-        Me.ID_Equipo.HeaderText = "ID"
-        Me.ID_Equipo.Name = "ID_Equipo"
-        '
-        'Nombre
-        '
-        Me.Nombre.DataPropertyName = "Nombre"
-        Me.Nombre.HeaderText = "CODIGO"
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.Width = 200
-        '
-        'Descripcione
-        '
-        Me.Descripcione.DataPropertyName = "Descripcion"
-        Me.Descripcione.HeaderText = "DESCRIPCION"
-        Me.Descripcione.Name = "Descripcione"
-        Me.Descripcione.Width = 500
-        '
-        'Costo
-        '
-        Me.Costo.DataPropertyName = "Costo"
-        Me.Costo.HeaderText = "COSTO"
-        Me.Costo.Name = "Costo"
-        Me.Costo.Width = 200
-        '
-        'Estatuse
-        '
-        Me.Estatuse.DataPropertyName = "Estatus"
-        Me.Estatuse.HeaderText = "ESTATUS"
-        Me.Estatuse.Name = "Estatuse"
-        Me.Estatuse.Width = 200
-        '
         'Panel5
         '
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel5.Controls.Add(Me.buscar_depto)
+        Me.Panel5.Controls.Add(Me.depto)
+        Me.Panel5.Controls.Add(Me.depto2)
+        Me.Panel5.Controls.Add(Me.lbl_depto)
         Me.Panel5.Controls.Add(Me.txt_eqcost)
         Me.Panel5.Controls.Add(Me.Label21)
         Me.Panel5.Controls.Add(Me.txt_eqdesc)
@@ -849,10 +821,46 @@ Partial Class Administration
         Me.Panel5.Size = New System.Drawing.Size(1241, 217)
         Me.Panel5.TabIndex = 75
         '
+        'buscar_depto
+        '
+        Me.buscar_depto.BackgroundImage = CType(resources.GetObject("buscar_depto.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_depto.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_depto.Location = New System.Drawing.Point(368, 90)
+        Me.buscar_depto.Name = "buscar_depto"
+        Me.buscar_depto.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_depto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_depto.TabIndex = 101
+        Me.buscar_depto.TabStop = False
+        '
+        'depto
+        '
+        Me.depto.Location = New System.Drawing.Point(145, 90)
+        Me.depto.Name = "depto"
+        Me.depto.Size = New System.Drawing.Size(37, 28)
+        Me.depto.TabIndex = 99
+        '
+        'depto2
+        '
+        Me.depto2.Enabled = False
+        Me.depto2.Location = New System.Drawing.Point(188, 90)
+        Me.depto2.Name = "depto2"
+        Me.depto2.Size = New System.Drawing.Size(174, 28)
+        Me.depto2.TabIndex = 100
+        Me.depto2.TabStop = False
+        '
+        'lbl_depto
+        '
+        Me.lbl_depto.AutoSize = True
+        Me.lbl_depto.Location = New System.Drawing.Point(2, 93)
+        Me.lbl_depto.Name = "lbl_depto"
+        Me.lbl_depto.Size = New System.Drawing.Size(125, 21)
+        Me.lbl_depto.TabIndex = 98
+        Me.lbl_depto.Text = "Departamento:"
+        '
         'txt_eqcost
         '
         Me.txt_eqcost.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_eqcost.Location = New System.Drawing.Point(146, 147)
+        Me.txt_eqcost.Location = New System.Drawing.Point(146, 172)
         Me.txt_eqcost.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_eqcost.Name = "txt_eqcost"
         Me.txt_eqcost.Size = New System.Drawing.Size(252, 28)
@@ -861,7 +869,7 @@ Partial Class Administration
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(69, 150)
+        Me.Label21.Location = New System.Drawing.Point(69, 175)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(58, 21)
         Me.Label21.TabIndex = 97
@@ -870,7 +878,7 @@ Partial Class Administration
         'txt_eqdesc
         '
         Me.txt_eqdesc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_eqdesc.Location = New System.Drawing.Point(146, 105)
+        Me.txt_eqdesc.Location = New System.Drawing.Point(146, 130)
         Me.txt_eqdesc.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_eqdesc.Name = "txt_eqdesc"
         Me.txt_eqdesc.Size = New System.Drawing.Size(252, 28)
@@ -899,7 +907,7 @@ Partial Class Administration
         'txt_eqcod
         '
         Me.txt_eqcod.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_eqcod.Location = New System.Drawing.Point(146, 61)
+        Me.txt_eqcod.Location = New System.Drawing.Point(146, 50)
         Me.txt_eqcod.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_eqcod.Name = "txt_eqcod"
         Me.txt_eqcod.Size = New System.Drawing.Size(252, 28)
@@ -908,7 +916,7 @@ Partial Class Administration
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(29, 112)
+        Me.Label5.Location = New System.Drawing.Point(29, 137)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(102, 21)
         Me.Label5.TabIndex = 88
@@ -917,7 +925,7 @@ Partial Class Administration
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(58, 68)
+        Me.Label6.Location = New System.Drawing.Point(58, 57)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(69, 21)
         Me.Label6.TabIndex = 87
@@ -1592,7 +1600,60 @@ Partial Class Administration
         Me.Label42.TabIndex = 0
         Me.Label42.Text = "Datos"
         '
-        'Admin
+        'UPDATEEQ
+        '
+        Me.UPDATEEQ.HeaderText = "Baja"
+        Me.UPDATEEQ.Name = "UPDATEEQ"
+        '
+        'ID_Equipo
+        '
+        Me.ID_Equipo.DataPropertyName = "ID_Equipo"
+        Me.ID_Equipo.HeaderText = "ID"
+        Me.ID_Equipo.Name = "ID_Equipo"
+        Me.ID_Equipo.Visible = False
+        '
+        'Nombre
+        '
+        Me.Nombre.DataPropertyName = "Nombre"
+        Me.Nombre.HeaderText = "CODIGO"
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.Width = 200
+        '
+        'Descripcione
+        '
+        Me.Descripcione.DataPropertyName = "Descripcion"
+        Me.Descripcione.HeaderText = "DESCRIPCION"
+        Me.Descripcione.Name = "Descripcione"
+        Me.Descripcione.Width = 500
+        '
+        'Costo
+        '
+        Me.Costo.DataPropertyName = "Costo"
+        Me.Costo.HeaderText = "COSTO"
+        Me.Costo.Name = "Costo"
+        Me.Costo.Width = 200
+        '
+        'Estatuse
+        '
+        Me.Estatuse.DataPropertyName = "Estatus"
+        Me.Estatuse.HeaderText = "ESTATUS"
+        Me.Estatuse.Name = "Estatuse"
+        '
+        'ID_DeptoC
+        '
+        Me.ID_DeptoC.DataPropertyName = "ID_Depto"
+        Me.ID_DeptoC.HeaderText = "ID_Depto"
+        Me.ID_DeptoC.Name = "ID_DeptoC"
+        Me.ID_DeptoC.Visible = False
+        '
+        'Deptoo
+        '
+        Me.Deptoo.DataPropertyName = "Deptoo"
+        Me.Deptoo.HeaderText = "DEPTO"
+        Me.Deptoo.Name = "Deptoo"
+        Me.Deptoo.Width = 200
+        '
+        'Administration
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -1631,6 +1692,7 @@ Partial Class Administration
         CType(Me.dgv_eq, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
+        CType(Me.buscar_depto, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.save_eq, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cancel_eq, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
@@ -1761,12 +1823,6 @@ Partial Class Administration
     Private WithEvents Panel11 As Panel
     Private WithEvents Label31 As Label
     Friend WithEvents cb_PuestoRiesgo As CheckBox
-    Friend WithEvents UPDATEEQ As DataGridViewImageColumn
-    Friend WithEvents ID_Equipo As DataGridViewTextBoxColumn
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcione As DataGridViewTextBoxColumn
-    Friend WithEvents Costo As DataGridViewTextBoxColumn
-    Friend WithEvents Estatuse As DataGridViewTextBoxColumn
     Friend WithEvents dgv_super As DataGridView
     Private WithEvents Panel12 As Panel
     Friend WithEvents btn_savesuper As PictureBox
@@ -1814,4 +1870,16 @@ Partial Class Administration
     Friend WithEvents Codigote As DataGridViewTextBoxColumn
     Friend WithEvents Descripcionte As DataGridViewTextBoxColumn
     Friend WithEvents Estatuste As DataGridViewTextBoxColumn
+    Friend WithEvents buscar_depto As PictureBox
+    Friend WithEvents depto As TextBox
+    Friend WithEvents depto2 As TextBox
+    Friend WithEvents lbl_depto As Label
+    Friend WithEvents UPDATEEQ As DataGridViewImageColumn
+    Friend WithEvents ID_Equipo As DataGridViewTextBoxColumn
+    Friend WithEvents Nombre As DataGridViewTextBoxColumn
+    Friend WithEvents Descripcione As DataGridViewTextBoxColumn
+    Friend WithEvents Costo As DataGridViewTextBoxColumn
+    Friend WithEvents Estatuse As DataGridViewTextBoxColumn
+    Friend WithEvents ID_DeptoC As DataGridViewTextBoxColumn
+    Friend WithEvents Deptoo As DataGridViewTextBoxColumn
 End Class

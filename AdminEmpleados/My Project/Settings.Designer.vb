@@ -57,8 +57,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=EmpleadosDB;Integrated Securit"& _ 
-            "y=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=EmpleadosDB;Persist Security I"& _ 
+            "nfo=True;")>  _
         Public ReadOnly Property EmpleadosDBConnectionString() As String
             Get
                 Return CType(Me("EmpleadosDBConnectionString"),String)

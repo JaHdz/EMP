@@ -228,16 +228,19 @@ Public Class Consultas
         End Using
     End Function
 
-    Public Sub Bajas(ByVal id As String, ACTIVO As Integer, comment As String, seguridad As Integer, user As Int64)
+    Public Sub Bajas(ByVal id As String, ACTIVO As Integer, comment As String, seguridad As Integer, user As Int64, PROV As Integer, CLIENTE As Integer)
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
             cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add(New SqlParameter("@DISCHARGE", 0))
             cmd.Parameters.Add(New SqlParameter("@EMPLOYEE", id))
             cmd.Parameters.Add(New SqlParameter("@DIS_DATE", Date.Now))
             cmd.Parameters.Add(New SqlParameter("@REASON", comment))
             cmd.Parameters.Add(New SqlParameter("@ALERT", seguridad))
             cmd.Parameters.Add(New SqlParameter("@USER", user))
+            cmd.Parameters.Add(New SqlParameter("@PROV", PROV))
+            cmd.Parameters.Add(New SqlParameter("@CLIENTE", CLIENTE))
             cmd.CommandText = "UDSP_EMPLOYEE_DISCHARGE"
             cmd.ExecuteNonQuery()
         End Using
@@ -276,6 +279,19 @@ Public Class Consultas
             DataAdapter.SelectCommand = cmd
             DataAdapter.Fill(dt)
             Return dt
+        End Using
+    End Function
+
+    Public Function Add_commen(user As Integer, text As String)
+        Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            con.Open()
+            Dim cmd As SqlCommand = con.CreateCommand
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add(New SqlParameter("@ID_Emp", user))
+            cmd.Parameters.Add(New SqlParameter("@Observaciones", text))
+            cmd.Parameters.Add(New SqlParameter("@Fecha", Date.Now))
+            cmd.CommandText = "UDSP_OBSERVACIONES"
+            cmd.ExecuteNonQuery()
         End Using
     End Function
 
@@ -454,7 +470,7 @@ Public Class Consultas
         End Using
     End Function
 
-    Public Function Add_TRAINING(ByVal ID As Integer, TRAINING As Integer, EMPLOYEE As Integer, DATEE As DateTime) As String
+    Public Function Add_TRAINING(ByVal ID As Integer, TRAINING As Integer, EMPLOYEE As Integer, DATEE As DateTime, COME As String) As String
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -462,7 +478,8 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@ID", ID))
             cmd.Parameters.Add(New SqlParameter("@TRAINING", TRAINING))
             cmd.Parameters.Add(New SqlParameter("@EMPLOYEE", EMPLOYEE))
-            cmd.Parameters.Add(New SqlParameter("@DATEE", DATEE))
+            cmd.Parameters.Add(New SqlParameter("@DATE", DATEE))
+            cmd.Parameters.Add(New SqlParameter("@COMENTARIO", COME))
             cmd.CommandText = "UDSP_EMPLOYEE_TRAINING"
             Dim lector As SqlDataReader
             lector = cmd.ExecuteReader()
@@ -472,7 +489,7 @@ Public Class Consultas
         End Using
     End Function
 
-    Public Function Add_EQUIPMENT(ByVal EQU_ID As Integer, NAME As String, DESCRIPTION As String, COST As Double, STATUS As Integer) As String
+    Public Function Add_EQUIPMENT(ByVal EQU_ID As Integer, NAME As String, DESCRIPTION As String, COST As Double, STATUS As Integer, depto As Integer) As String
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -482,6 +499,7 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@DESCRIPTION", DESCRIPTION))
             cmd.Parameters.Add(New SqlParameter("@COST", COST))
             cmd.Parameters.Add(New SqlParameter("@STATUS", STATUS))
+            cmd.Parameters.Add(New SqlParameter("@DEPTO", depto))
             cmd.CommandText = "UDSP_EQUIPMENT"
             Dim lector As SqlDataReader
             lector = cmd.ExecuteReader()
@@ -492,7 +510,7 @@ Public Class Consultas
     End Function
 
     Public Function Add_EQUIPMENT_ASSIGNED(ByVal ASSIGNED As Integer, EQUIPMENT As String, EMPLOYEE As Integer, DATEE As DateTime, ISRETURNED As Integer,
-                                           DATE_R As DateTime, COMMENTS As String, USER As Integer) As String
+                                           DATE_R As DateTime, USER As Integer) As String
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -503,7 +521,6 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@DATE", DATEE))
             cmd.Parameters.Add(New SqlParameter("@ISRETURNED", ISRETURNED))
             cmd.Parameters.Add(New SqlParameter("@DATE_R", DATE_R))
-            cmd.Parameters.Add(New SqlParameter("@COMMENTS", COMMENTS))
             cmd.Parameters.Add(New SqlParameter("@USER", USER))
             cmd.CommandText = "UDSP_EQUIPMENT_ASSIGNED"
             Dim lector As SqlDataReader

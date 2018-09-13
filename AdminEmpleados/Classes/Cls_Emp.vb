@@ -36,6 +36,8 @@ Public Class Cls_Emp
     Public Property ID_User As Int64
     Public Property Img As Image
     Public Property Emp_EN As String
+    Public Property NProv As Boolean
+    Public Property NClientes As Boolean
 #End Region
 
     Public Function GetAssignedEquipment(Employee As Integer) As DataTable

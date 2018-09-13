@@ -162,7 +162,7 @@
         If txt_eqcod.Text = "" Or txt_eqdesc.Text = "" Or txt_eqcost.Text = "" Then
             MessageBox.Show("Debe llenar todos los campos")
         Else
-            If objcon.Add_EQUIPMENT(0, txt_eqcod.Text, txt_eqdesc.Text, txt_eqcost.Text, 1) = True Then
+            If objcon.Add_EQUIPMENT(0, txt_eqcod.Text, txt_eqdesc.Text, txt_eqcost.Text, 1, depto.Text) = True Then
             Else
                 MessageBox.Show("Este registro ya Existe.")
             End If
@@ -171,6 +171,8 @@
             txt_eqcost.Text = ""
             txt_eqcod.Text = ""
             txt_eqcod.Focus()
+            depto.Text = ""
+            depto2.Text = ""
         End If
     End Sub
 
@@ -265,12 +267,12 @@
                         Case "UPDATEEQ"
                             If MessageBox.Show("Seguro que desea dar de baja esta Evaluacion?", "Baja Evaluacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
                                 If dgv_eq.Rows(e.RowIndex).Cells(5).Value.ToString = "False" Then
-                                    If objcon.Add_EQUIPMENT(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, dgv_eq.Rows(e.RowIndex).Cells(4).Value, 1) = True Then
+                                    If objcon.Add_EQUIPMENT(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, dgv_eq.Rows(e.RowIndex).Cells(4).Value, 1, dgv_eq.Rows(e.RowIndex).Cells(6).Value) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
                                 Else
-                                    If objcon.Add_EQUIPMENT(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, dgv_eq.Rows(e.RowIndex).Cells(4).Value, 0) = True Then
+                                    If objcon.Add_EQUIPMENT(dgv_eq.Rows(e.RowIndex).Cells(1).Value, dgv_eq.Rows(e.RowIndex).Cells(2).Value, dgv_eq.Rows(e.RowIndex).Cells(3).Value, dgv_eq.Rows(e.RowIndex).Cells(4).Value, 0, dgv_eq.Rows(e.RowIndex).Cells(6).Value) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
@@ -486,5 +488,29 @@
 
     Private Sub Admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgv_equipo_emp.DataSource = objcon.Consulta_USER()
+    End Sub
+
+    Private Sub buscar_depto_Click(sender As Object, e As EventArgs) Handles buscar_depto.Click
+        llenar_buscador("DE")
+        If (V1 <> "" And V2 <> "") Then
+            txt_eqdesc.Focus()
+        Else
+            depto.Focus()
+        End If
+        depto.Text = V1
+        depto2.Text = V2
+    End Sub
+
+    Private Sub depto_Leave(sender As Object, e As EventArgs) Handles depto.Leave
+        If (depto.Text <> "") Then
+            V2 = objcon.S_catalago(depto.Text, "DE")
+            If (V2 = "" Or V2 Is Nothing) Then
+                MessageBox.Show("No existe")
+                depto.Text = ""
+                depto.Focus()
+            Else
+                depto2.Text = V2
+            End If
+        End If
     End Sub
 End Class

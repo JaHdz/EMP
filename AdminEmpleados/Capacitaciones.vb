@@ -46,7 +46,7 @@
 
     Private Sub Eq_Leave(sender As Object, e As EventArgs) Handles CAP.Leave
         If (CAP.Text <> "") Then
-            V2 = objcon.S_catalago(CAP.Text, "CAP")
+            V2 = objcon.S_catalago(CAP.Text, "CAT")
             If (V2 = "" Or V2 Is Nothing) Then
                 MessageBox.Show("No existe")
                 CAP.Text = ""
@@ -58,7 +58,7 @@
     End Sub
 
     Private Sub buscar_eq_Click(sender As Object, e As EventArgs) Handles buscar_CAP.Click
-        llenar_buscador("CAP")
+        llenar_buscador("CAT")
         If (V1 <> "" And V2 <> "") Then
             CAP.Focus()
         Else
@@ -71,7 +71,7 @@
 
     Private Sub SAVE_Click(sender As Object, e As EventArgs) Handles SAVE.Click
         If (CAP.Text <> "" Or txt_numero.Text <> "") Then
-            If objcon.Add_TRAINING(0, CAP.Text, txt_numero.Text, TXT_FECHA.Text) = True Then
+            If objcon.Add_TRAINING(0, CAP.Text, txt_numero.Text, TXT_FECHA.Text, TXT_commen.Text) = True Then
             Else
                 MessageBox.Show("Este registro ya Existe.")
             End If
