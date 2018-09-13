@@ -15,10 +15,10 @@
         V2 = popup.Variable2
         popup.Close()
     End Sub
-    Private Sub txt_numero_KeyPress(sender As Object, e As KeyPressEventArgs)
+    Private Sub txt_numero_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_numero.KeyPress
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
-    Private Sub txt_numero_Leave(sender As Object, e As EventArgs)
+    Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
         If (txt_numero.Text <> "") Then
             NEmp = objcon.Emp_Exist(txt_numero.Text)
             If (NEmp = 1) Then
@@ -34,7 +34,7 @@
         End If
     End Sub
 
-    Private Sub buscar_EN_Click(sender As Object, e As EventArgs)
+    Private Sub buscar_EN_Click(sender As Object, e As EventArgs) Handles buscar_EN.Click
         llenar_buscador("EMP")
         If (V1 <> "" And V2 <> "") Then
             txt_numero.Focus()
@@ -44,9 +44,9 @@
         txt_numero.Text = V1
     End Sub
 
-    Private Sub Eq_Leave(sender As Object, e As EventArgs)
+    Private Sub Eq_Leave(sender As Object, e As EventArgs) Handles CAP.Leave
         If (CAP.Text <> "") Then
-            V2 = objcon.S_catalago(CAP.Text, "CAP")
+            V2 = objcon.S_catalago(CAP.Text, "CAT")
             If (V2 = "" Or V2 Is Nothing) Then
                 MessageBox.Show("No existe")
                 CAP.Text = ""
@@ -57,8 +57,8 @@
         End If
     End Sub
 
-    Private Sub buscar_eq_Click(sender As Object, e As EventArgs)
-        llenar_buscador("CAP")
+    Private Sub buscar_eq_Click(sender As Object, e As EventArgs) Handles buscar_CAP.Click
+        llenar_buscador("CAT")
         If (V1 <> "" And V2 <> "") Then
             CAP.Focus()
         Else
@@ -69,9 +69,9 @@
 
     End Sub
 
-    Private Sub SAVE_Click(sender As Object, e As EventArgs)
+    Private Sub SAVE_Click(sender As Object, e As EventArgs) Handles SAVE.Click
         If (CAP.Text <> "" Or txt_numero.Text <> "") Then
-            If objcon.Add_TRAINING(0, CAP.Text, txt_numero.Text, TXT_FECHA.Text) = True Then
+            If objcon.Add_TRAINING(0, CAP.Text, txt_numero.Text, TXT_FECHA.Text, TXT_commen.Text) = True Then
             Else
                 MessageBox.Show("Este registro ya Existe.")
             End If
@@ -87,12 +87,12 @@
         End If
     End Sub
 
-    Private Sub CANCEL_Click(sender As Object, e As EventArgs)
+    Private Sub CANCEL_Click(sender As Object, e As EventArgs) Handles CANCEL.Click
         Me.Close()
     End Sub
 
 
-    Private Sub dgv_equipo_emp_CellClick(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub dgv_equipo_emp_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_equipo_Eval.CellClick
         Dim id As Integer
         Dim gr As New DataGridView
         gr = sender

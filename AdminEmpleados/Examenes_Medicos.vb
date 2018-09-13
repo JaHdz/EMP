@@ -75,7 +75,7 @@
                     Select Case gr.Columns(e.ColumnIndex).Name
                         Case "DELETE"
                             If MessageBox.Show("Seguro que desea eliminar este registro?", "Eliminar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                id = dgv_equipo_Eval.Rows(e.RowIndex).Cells(3).Value
+                                id = dgv_equipo_Eval.Rows(e.RowIndex).Cells(2).Value
                                 objcon.DELETE_EXAMENES_MEDICOS(dgv_equipo_Eval.Rows(e.RowIndex).Cells(1).Value)
                             End If
                     End Select

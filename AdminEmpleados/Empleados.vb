@@ -85,10 +85,20 @@ Public Class Empleados
             Else
                 txt_baja.Text = dt.Rows(0).Item("Emp_Activo").ToString()
             End If
-            If dt.Rows(0).Item("Alerta").ToString() = "1" Then
+            If dt.Rows(0).Item("Alerta").ToString() = True Then
                 seg.Checked = True
             Else
                 seg.Checked = False
+            End If
+            If dt.Rows(0).Item("NProv").ToString() = True Then
+                CB_PROV.Checked = True
+            Else
+                CB_PROV.Checked = False
+            End If
+            If dt.Rows(0).Item("NClientes").ToString() = True Then
+                CB_CLIENTE.Checked = True
+            Else
+                CB_CLIENTE.Checked = False
             End If
             commen.Text = dt.Rows(0).Item("Motivo").ToString()
             txt_EN.Text = dt.Rows(0).Item("Emp_EN").ToString()
@@ -161,7 +171,7 @@ Public Class Empleados
             If (dt.Rows(0).Item("Emp_Sexo").ToString() = "F") Then
                 CB_SEXO.SelectedIndex = 0
             End If
-            If dt.Rows(0).Item("Emp_Activo").ToString() = "1" Then
+            If dt.Rows(0).Item("Emp_Activo").ToString() = True Then
                 txt_activo.Text = "SI"
             Else
                 txt_activo.Text = "NO"
@@ -169,13 +179,19 @@ Public Class Empleados
             If (dt.Rows(0).Item("Emp_Activo").ToString() = True) Then
                 txt_baja.Text = "NULL"
                 seg.Checked = False
+                CB_CLIENTE.Checked = False
+                CB_PROV.Checked = False
                 commen.Text = ""
                 ALTA.Visible = False
                 lbl_ALTA.Visible = False
+                BAJA.Visible = True
+                LBL_BAJA.Visible = True
             Else
                 txt_baja.Text = dt.Rows(0).Item("Fecha_Baja").ToString
                 ALTA.Visible = True
                 lbl_ALTA.Visible = True
+                BAJA.Visible = False
+                LBL_BAJA.Visible = False
             End If
         End If
     End Sub
@@ -250,6 +266,8 @@ Public Class Empleados
             InfoEmp.Emp_Ciudad = cuidad.Text
             InfoEmp.Emp_Email = Txt_correo.Text
             InfoEmp.Img = foto.Image
+            InfoEmp.NClientes = CB_CLIENTE.Checked
+            InfoEmp.NProv = CB_PROV.Checked
             If (EXISTE = False) Then
                 If (txt_numero.Text = "" Or txt_AP.Text = "" Or txt_NOM.Text = "" Or txt_EN.Text = "" Or txt_RFC.Text = "" Or txt_SS.Text = "" Or
                   txt_SALARY.Text = "" Or txt_CURP.Text = "" Or txt_FECHAINGRESO.Text = "" Or txt_tipo.Text = "" Or txt_PUESTO.Text = "" Or depto.Text = "" Or txt_SUPER.Text = "" Or txt_FECHA.Text = "") Then
@@ -369,6 +387,8 @@ Public Class Empleados
         cb_Trans.Checked = False
         cb_Taxi.Checked = False
         cb_Vehi.Checked = False
+        CB_PROV.Checked = False
+        CB_CLIENTE.Checked = False
         txt_SE__SOCIALE.Text = ""
         txt_SE_EVENTOS.Text = ""
         txt_SE_MUSEOS.Text = ""
@@ -387,6 +407,8 @@ Public Class Empleados
         Txt_pasatiempos.Text = ""
         txt_Religion.Text = ""
         txt_commen.Text = ""
+        commen.Text = ""
+        seg.Checked = False
         PB_IMAGE_VIVIENDA.Image = AdminEmpleados.My.Resources.Resources.photoNobody120
         EMPLEADO_ES = 0
         dgv_OI.DataSource = objcon.Consulta_OI(0)
@@ -438,6 +460,9 @@ Public Class Empleados
                 llenar()
                 txt_activo.Text = ""
                 txt_baja.Text = ""
+                seg.Checked = True
+                CB_CLIENTE.Checked = False
+                CB_PROV.Checked = False
             End If
         Catch ex As Exception
             MsgBox(ex.Message.ToString, MsgBoxStyle.Critical)
@@ -448,7 +473,7 @@ Public Class Empleados
             If (txt_numero.Text = "") Then
             Else
                 objcon.Altas(txt_numero.Text, 0)
-                objcon.Bajas(txt_numero.Text, 0, commen.Text, seg.Checked, NEmp)
+                objcon.Bajas(txt_numero.Text, 0, commen.Text, seg.Checked, NEmp, CB_PROV.Checked, CB_CLIENTE.Checked)
                 MessageBox.Show("Se dio de Baja correctamente a este Empleado")
                 txt_activo.Text = ""
                 txt_baja.Text = ""

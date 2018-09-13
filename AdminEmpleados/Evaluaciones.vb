@@ -71,7 +71,7 @@
 
     Private Sub SAVE_Click(sender As Object, e As EventArgs)
         If (EV.Text <> "" Or txt_numero.Text <> "") Then
-            If objcon.Add_UDSP_EMPLOYEE_EVALUATION(0, txt_numero.Text, TXT_commen.Text, NEmp, EV.Text) = "0" Then
+            If objcon.Add_UDSP_EMPLOYEE_EVALUATION(0, txt_numero.Text, TXT_commen.Text, NEmp, EV.Text) = True Then
             Else
                 MessageBox.Show("Este registro ya Existe.")
             End If
