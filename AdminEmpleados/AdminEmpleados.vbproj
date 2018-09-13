@@ -79,7 +79,7 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Resources\EASY.ico</ApplicationIcon>
@@ -122,15 +122,15 @@
     <Compile Include="Administration.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ASSIGNED_EQUIPMENT.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ASSIGNED_EQUIPMENT.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reports\Datasets\RECEIVER.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RECEIVER.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\Datasets\ASSIGNED_EQUIPMENT.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ASSIGNED_EQUIPMENT.xsd</DependentUpon>
     </Compile>
     <Compile Include="Capacitaciones.Designer.vb">
       <DependentUpon>Capacitaciones.vb</DependentUpon>
@@ -281,6 +281,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ASSIGNED_EQUIPMENT.xsc">
+      <DependentUpon>ASSIGNED_EQUIPMENT.xsd</DependentUpon>
+    </None>
+    <None Include="ASSIGNED_EQUIPMENT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ASSIGNED_EQUIPMENT.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ASSIGNED_EQUIPMENT.xss">
+      <DependentUpon>ASSIGNED_EQUIPMENT.xsd</DependentUpon>
+    </None>
     <None Include="My Project\app.manifest" />
     <None Include="Reports\Datasets\RECEIVER.xsc">
       <DependentUpon>RECEIVER.xsd</DependentUpon>
@@ -292,17 +303,6 @@
     </None>
     <None Include="Reports\Datasets\RECEIVER.xss">
       <DependentUpon>RECEIVER.xsd</DependentUpon>
-    </None>
-    <None Include="Reports\Datasets\ASSIGNED_EQUIPMENT.xsc">
-      <DependentUpon>ASSIGNED_EQUIPMENT.xsd</DependentUpon>
-    </None>
-    <None Include="Reports\Datasets\ASSIGNED_EQUIPMENT.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ASSIGNED_EQUIPMENT.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Reports\Datasets\ASSIGNED_EQUIPMENT.xss">
-      <DependentUpon>ASSIGNED_EQUIPMENT.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

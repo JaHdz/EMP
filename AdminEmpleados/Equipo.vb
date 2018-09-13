@@ -130,7 +130,7 @@
         If txt_numero.Text = "" Then
         Else
             Dim Wait As New wait()
-            Wait.ShowDialog()
+            Wait.Show()
             Dim Reportes As New Reportes With {
                     .ReportOption = Convert.ToInt64(2),
                     .Emp = Convert.ToInt64(txt_numero.Text),
