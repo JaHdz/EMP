@@ -71,7 +71,7 @@
             MessageBox.Show("Debe llenar todos los campos")
         Else
             If txt_pass.Text <> txt_pass2.Text Then
-                MessageBox.Show("Las conrasenas no coinciden.")
+                MessageBox.Show("Las conraseñas no coinciden.")
             Else
                 If objcon.Add_USERS(0, txt_user.Text, txt_pass.Text, 1, 1, txt_numero.Text) = True Then
                 Else

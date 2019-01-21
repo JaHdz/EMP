@@ -1,9 +1,13 @@
 ﻿Imports System.Data.SqlClient
 Imports System.IO
+
 Public Class Consultas
+    Implements IDisposable
+
     Public autenticado As Boolean
     Public user As String
     Public name As String
+
 
     'Empleados_________________________________________________________________________________________________________
     Private Function Imagen_Bytes(ByVal Imagen As Image) As Byte()
@@ -25,9 +29,7 @@ Public Class Consultas
             Dim cmd As New SqlCommand(sentencia, con)
             lector = cmd.ExecuteReader()
             If lector.Read() Then
-                Dim pass As String
-                pass = DesEncripta(lector("pass").ToString)
-                If pass = sPass Then
+                If Encriptar(sPass) = lector("pass").ToString Then
                     user = lector("NoEmp").ToString
                     name = lector("Nom").ToString
                     autenticado = True
@@ -43,20 +45,15 @@ Public Class Consultas
         End Using
     End Function
 
-    Function DesEncripta(ByVal Pass As String) As String
-        Dim Clave As String, i As Integer, Pass2 As String
-        Dim CAR As String, Codigo As String
-        Dim j As Integer
-        Clave = "%ü&/@#$A"
-        Pass2 = ""
-        j = 1
-        For i = 1 To Len(Pass) Step 2
-            CAR = Mid(Pass, i, 2)
-            Codigo = Mid(Clave, ((j - 1) Mod Len(Clave)) + 1, 1)
-            Pass2 = Pass2 & Chr(Asc(Codigo) Xor Val("&h" + CAR))
-            j = j + 1
+    Public Function Encriptar(ByVal Pass As String) As String
+        Dim Clave As String = "%ü&/@#$A"
+        Dim Pass2 = ""
+        For i = 1 To Len(Pass)
+            Dim CAR = Mid(Pass, i, 1)
+            Dim Codigo = Mid(Clave, ((i - 1) Mod Len(Clave)) + 1, 1)
+            Pass2 = Pass2 & Right("0" & Hex(Asc(Codigo) Xor Asc(CAR)), 2)
         Next i
-        DesEncripta = Pass2
+        Return Pass2
     End Function
 
     Public Sub UpInsert_colabora(ByVal infoEmp As Cls_Emp)
@@ -1061,4 +1058,93 @@ Public Class Consultas
             cmd.ExecuteNonQuery()
         End Using
     End Sub
+
+    Public Function GetEmail(Username As String) As String
+        GetEmail = Nothing
+        Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            con.Open()
+            Dim cmd As SqlCommand = con.CreateCommand
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add(New SqlParameter("@USERNAME", Username))
+            cmd.CommandText = "SP_GETUSEREMAIL"
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                GetEmail = lector("EMP_EMAIL").ToString()
+            End If
+        End Using
+    End Function
+
+    Public Sub SetResetKey(Username As String, Resetkey As String)
+        Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            con.Open()
+            Dim cmd As SqlCommand = con.CreateCommand
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add(New SqlParameter("@USERNAME", Username))
+            cmd.Parameters.Add(New SqlParameter("@RESETKEY", Resetkey))
+            cmd.CommandText = "SP_SETRESETKEY"
+            cmd.ExecuteNonQuery()
+        End Using
+    End Sub
+
+    Public Function ValidResetKey(Username As String, Resetkey As String) As Boolean
+        ValidResetKey = New Boolean
+        Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            con.Open()
+            Dim cmd As SqlCommand = con.CreateCommand
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add(New SqlParameter("@USERNAME", Username))
+            cmd.Parameters.Add(New SqlParameter("@RESETKEY", Resetkey))
+            cmd.CommandText = "SP_VALIDRESETKEY"
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                ValidResetKey = Convert.ToBoolean(lector("RESULT"))
+            End If
+        End Using
+    End Function
+
+    Public Sub ResetPassword(Username As String, Password As String)
+        Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            con.Open()
+            Dim cmd As SqlCommand = con.CreateCommand
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add(New SqlParameter("@USERNAME", Username))
+            cmd.Parameters.Add(New SqlParameter("@PASSWORD", Password))
+            cmd.CommandText = "SP_RESETPASSWORD"
+            cmd.ExecuteNonQuery()
+        End Using
+    End Sub
+
+#Region "IDisposable Support"
+    Private disposedValue As Boolean ' To detect redundant calls
+
+    ' IDisposable
+    Protected Overridable Sub Dispose(disposing As Boolean)
+        If Not disposedValue Then
+            If disposing Then
+                ' TODO: dispose managed state (managed objects).
+            End If
+
+            ' TODO: free unmanaged resources (unmanaged objects) and override Finalize() below.
+            ' TODO: set large fields to null.
+        End If
+        disposedValue = True
+    End Sub
+
+    ' TODO: override Finalize() only if Dispose(disposing As Boolean) above has code to free unmanaged resources.
+    'Protected Overrides Sub Finalize()
+    '    ' Do not change this code.  Put cleanup code in Dispose(disposing As Boolean) above.
+    '    Dispose(False)
+    '    MyBase.Finalize()
+    'End Sub
+
+    ' This code added by Visual Basic to correctly implement the disposable pattern.
+    Public Sub Dispose() Implements IDisposable.Dispose
+        ' Do not change this code.  Put cleanup code in Dispose(disposing As Boolean) above.
+        Dispose(True)
+        ' TODO: uncomment the following line if Finalize() is overridden above.
+        ' GC.SuppressFinalize(Me)
+    End Sub
+#End Region
 End Class
