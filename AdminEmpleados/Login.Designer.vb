@@ -37,6 +37,7 @@ Partial Class Login
         Me.pass = New System.Windows.Forms.TextBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PnlNewPassword = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnCambiar = New System.Windows.Forms.PictureBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.TxtOlvPass2 = New System.Windows.Forms.TextBox()
@@ -49,7 +50,7 @@ Partial Class Login
         Me.BtnCancel = New System.Windows.Forms.PictureBox()
         Me.BtnNext = New System.Windows.Forms.PictureBox()
         Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.chkRecordar = New System.Windows.Forms.CheckBox()
         Me.header.SuspendLayout()
         CType(Me.min, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,7 +81,7 @@ Partial Class Login
         Me.header.Location = New System.Drawing.Point(0, 0)
         Me.header.Margin = New System.Windows.Forms.Padding(2)
         Me.header.Name = "header"
-        Me.header.Size = New System.Drawing.Size(1114, 34)
+        Me.header.Size = New System.Drawing.Size(384, 34)
         Me.header.TabIndex = 6
         '
         'Lbl_Title
@@ -98,7 +99,7 @@ Partial Class Login
         '
         Me.min.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.min.Image = Global.AdminEmpleados.My.Resources.Resources.Minimize_80px
-        Me.min.Location = New System.Drawing.Point(1052, 8)
+        Me.min.Location = New System.Drawing.Point(322, 8)
         Me.min.Margin = New System.Windows.Forms.Padding(2)
         Me.min.Name = "min"
         Me.min.Size = New System.Drawing.Size(25, 22)
@@ -110,7 +111,7 @@ Partial Class Login
         '
         Me.cerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cerrar.Image = Global.AdminEmpleados.My.Resources.Resources.Close_80px
-        Me.cerrar.Location = New System.Drawing.Point(1081, 8)
+        Me.cerrar.Location = New System.Drawing.Point(351, 8)
         Me.cerrar.Margin = New System.Windows.Forms.Padding(2)
         Me.cerrar.Name = "cerrar"
         Me.cerrar.Size = New System.Drawing.Size(25, 22)
@@ -120,6 +121,7 @@ Partial Class Login
         '
         'PnlLogin
         '
+        Me.PnlLogin.Controls.Add(Me.chkRecordar)
         Me.PnlLogin.Controls.Add(Me.lnk_Password)
         Me.PnlLogin.Controls.Add(Me.btn_login)
         Me.PnlLogin.Controls.Add(Me.user)
@@ -218,6 +220,16 @@ Partial Class Login
         Me.PnlNewPassword.Size = New System.Drawing.Size(363, 241)
         Me.PnlNewPassword.TabIndex = 33
         Me.PnlNewPassword.Visible = False
+        '
+        'Label1
+        '
+        Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(3, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(357, 81)
+        Me.Label1.TabIndex = 46
+        Me.Label1.Text = "Introduzca una nueva contraseña en el primer campo y repitala en el segundo." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'BtnCambiar
         '
@@ -337,21 +349,22 @@ Partial Class Login
         '
         Me.ErrorProvider.ContainerControl = Me
         '
-        'Label1
+        'chkRecordar
         '
-        Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(3, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(357, 81)
-        Me.Label1.TabIndex = 46
-        Me.Label1.Text = "Introduzca una nueva contraseña en el primer campo y repitala en el segundo." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.chkRecordar.AutoSize = True
+        Me.chkRecordar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.chkRecordar.Location = New System.Drawing.Point(91, 110)
+        Me.chkRecordar.Name = "chkRecordar"
+        Me.chkRecordar.Size = New System.Drawing.Size(197, 21)
+        Me.chkRecordar.TabIndex = 33
+        Me.chkRecordar.Text = "¿Recordar datos de inicio?"
+        Me.chkRecordar.UseVisualStyleBackColor = True
         '
         'Login
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(1114, 379)
+        Me.ClientSize = New System.Drawing.Size(384, 379)
         Me.Controls.Add(Me.PnlResetKey)
         Me.Controls.Add(Me.PnlNewPassword)
         Me.Controls.Add(Me.PnlLogin)
@@ -413,4 +426,5 @@ Partial Class Login
     Friend WithEvents lblInstructions As Label
     Friend WithEvents ErrorProvider As ErrorProvider
     Friend WithEvents Label1 As Label
+    Friend WithEvents chkRecordar As CheckBox
 End Class

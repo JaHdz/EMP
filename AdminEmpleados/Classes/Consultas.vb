@@ -56,6 +56,19 @@ Public Class Consultas
         Return Pass2
     End Function
 
+    Public Function Desencriptar(ByVal Pass As String) As String
+        Dim Clave As String = "%ü&/@#$A"
+        Dim Pass2 = ""
+        Dim j = 1
+        For i = 1 To Len(Pass) Step 2
+            Dim CAR = Mid(Pass, i, 2)
+            Dim Codigo = Mid(Clave, ((j - 1) Mod Len(Clave)) + 1, 1)
+            Pass2 = Pass2 & Chr(Asc(Codigo) Xor Val("&h" + CAR))
+            j = j + 1
+        Next i
+        Return Pass2
+    End Function
+
     Public Sub UpInsert_colabora(ByVal infoEmp As Cls_Emp)
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()

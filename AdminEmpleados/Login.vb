@@ -50,6 +50,15 @@
                     .NEmp = Convert.ToInt64(objcon.user),
                     .NName = objcon.name
                 }
+                If chkRecordar.Checked Then
+                    If My.Settings.LastDate = Date.MinValue Then
+                        My.Settings.Username = user.Text
+                        My.Settings.Password = New Consultas().Encriptar(pass.Text)
+                        My.Settings.LastDate = Now.ToShortDateString()
+                        My.Settings.RememberMe = True
+                        My.Settings.Save()
+                    End If
+                End If
                 Wait.Close()
                 Me.Hide()
                 ObjEdit2.ShowDialog(Me)
@@ -98,7 +107,25 @@
     End Sub
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Size = New Size(384, 379)
+        If My.Settings.RememberMe = True Then
+            Dim LastDate = CType(My.Settings.LastDate, Date)
+            If LastDate <> Date.MinValue Then
+                If DateDiff(DateInterval.Day, LastDate, Now) <= 30 Then
+                    user.Text = My.Settings.Username
+                    pass.Text = New Consultas().Desencriptar(My.Settings.Password)
+                    chkRecordar.Checked = True
+                Else
+                    My.Settings.Username = ""
+                    My.Settings.Password = ""
+                    My.Settings.LastDate = Date.MinValue
+                    My.Settings.RememberMe = False
+                    My.Settings.Save()
+                End If
+            End If
+        Else
+            user.Text = ""
+            pass.Text = ""
+        End If
     End Sub
 
     Private Sub BtnNext_Click(sender As Object, e As EventArgs) Handles BtnNext.Click
@@ -154,5 +181,9 @@
             ErrorProvider.SetError(TxtOlvPass1, "El campo no puede estar vacio.")
         End If
 
+    End Sub
+
+    Private Sub Pass_KeyDown(sender As Object, e As KeyEventArgs) Handles pass.KeyDown, user.KeyDown, Me.KeyDown
+        btn_login.PerformClick()
     End Sub
 End Class

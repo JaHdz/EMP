@@ -37,9 +37,9 @@ Partial Class Capacitaciones
         Me.TXT_FECHA = New System.Windows.Forms.DateTimePicker()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label42 = New System.Windows.Forms.Label()
+        Me.SAVE = New System.Windows.Forms.PictureBox()
         Me.CANCEL = New System.Windows.Forms.PictureBox()
         Me.TXT_commen = New System.Windows.Forms.TextBox()
-        Me.SAVE = New System.Windows.Forms.PictureBox()
         Me.label8 = New System.Windows.Forms.Label()
         Me.Empleado = New System.Windows.Forms.Label()
         Me.buscar_CAP = New System.Windows.Forms.PictureBox()
@@ -54,8 +54,8 @@ Partial Class Capacitaciones
         CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel14.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_CAP, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -197,6 +197,16 @@ Partial Class Capacitaciones
         Me.Label42.TabIndex = 0
         Me.Label42.Text = "Agregar Capacitaciones"
         '
+        'SAVE
+        '
+        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Training_80px
+        Me.SAVE.Location = New System.Drawing.Point(854, 0)
+        Me.SAVE.Name = "SAVE"
+        Me.SAVE.Size = New System.Drawing.Size(45, 40)
+        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.SAVE.TabIndex = 0
+        Me.SAVE.TabStop = False
+        '
         'CANCEL
         '
         Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
@@ -215,16 +225,6 @@ Partial Class Capacitaciones
         Me.TXT_commen.Name = "TXT_commen"
         Me.TXT_commen.Size = New System.Drawing.Size(427, 83)
         Me.TXT_commen.TabIndex = 3
-        '
-        'SAVE
-        '
-        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Training_80px
-        Me.SAVE.Location = New System.Drawing.Point(854, 0)
-        Me.SAVE.Name = "SAVE"
-        Me.SAVE.Size = New System.Drawing.Size(45, 40)
-        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.SAVE.TabIndex = 0
-        Me.SAVE.TabStop = False
         '
         'label8
         '
@@ -337,8 +337,8 @@ Partial Class Capacitaciones
         Me.Panel14.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_CAP, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -64,6 +64,53 @@ Namespace My
                 Return CType(Me("EmpleadosDBConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Username() As String
+            Get
+                Return CType(Me("Username"),String)
+            End Get
+            Set
+                Me("Username") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Password() As String
+            Get
+                Return CType(Me("Password"),String)
+            End Get
+            Set
+                Me("Password") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property LastDate() As Date
+            Get
+                Return CType(Me("LastDate"),Date)
+            End Get
+            Set
+                Me("LastDate") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property RememberMe() As Boolean
+            Get
+                Return CType(Me("RememberMe"),Boolean)
+            End Get
+            Set
+                Me("RememberMe") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

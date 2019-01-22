@@ -49,7 +49,7 @@ Public Class Empleados
                 EMPLEADO_ID = ""
                 txt_numero.Text = numero
                 EXISTE = False
-                pnl_save.Text = "GUARDAR"
+                'pnl_save.Text = "GUARDAR"
             End If
         Else
             txt_numero.Focus()
@@ -571,7 +571,7 @@ Public Class Empleados
         End If
 
     End Sub
-    Private Sub ln_img_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles ln_img.LinkClicked
+    Private Sub ln_img_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         cargarImagen(foto)
     End Sub
     Private Sub txt_antSALARIO_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_antSALARIO.KeyPress
@@ -1169,4 +1169,9 @@ Public Class Empleados
             Wait.Close()
         End If
     End Sub
+
+    Private Sub foto_DoubleClick(sender As Object, e As EventArgs) Handles foto.DoubleClick
+        cargarImagen(foto)
+    End Sub
+
 End Class
