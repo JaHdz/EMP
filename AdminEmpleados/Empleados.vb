@@ -580,16 +580,16 @@ Public Class Empleados
     Private Sub txt_OTCantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_OTCantidad.KeyPress
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
-    Private Sub txt_GFRenta_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_GFRenta.KeyPress
+    Private Sub txt_GFRenta_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
-    Private Sub txt_GFCole_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_GFCole.KeyPress
+    Private Sub txt_GFCole_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
-    Private Sub Txt_GFDesp_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_GFDesp.KeyPress
+    Private Sub Txt_GFDesp_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
-    Private Sub txt_GFServ_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_GFServ.KeyPress
+    Private Sub txt_GFServ_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
     Private Sub CP_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CP.KeyPress
@@ -798,9 +798,7 @@ Public Class Empleados
     Private Sub btn_SECancel_Click(sender As Object, e As EventArgs) Handles btn_SECancel.Click
         Me.Close()
     End Sub
-    Private Sub LB_IMAGEN_VIVIENDA_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LB_IMAGEN_VIVIENDA.LinkClicked
-        cargarImagen(PB_IMAGE_VIVIENDA)
-    End Sub
+
     Private Sub btn_enfADD_Click(sender As Object, e As EventArgs) Handles btn_enfADD.Click
         If EXISTE = True Then
             If txt_enfNAME.Text = "" Then
@@ -1174,4 +1172,7 @@ Public Class Empleados
         cargarImagen(foto)
     End Sub
 
+    Private Sub PB_IMAGE_VIVIENDA_DoubleClick(sender As Object, e As EventArgs) Handles PB_IMAGE_VIVIENDA.DoubleClick
+        cargarImagen(PB_IMAGE_VIVIENDA)
+    End Sub
 End Class

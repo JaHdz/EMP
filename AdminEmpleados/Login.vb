@@ -108,7 +108,7 @@
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If My.Settings.RememberMe = True Then
-            Dim LastDate = CType(My.Settings.LastDate, Date)
+            Dim LastDate = My.Settings.LastDate
             If LastDate <> Date.MinValue Then
                 If DateDiff(DateInterval.Day, LastDate, Now) <= 30 Then
                     user.Text = My.Settings.Username
