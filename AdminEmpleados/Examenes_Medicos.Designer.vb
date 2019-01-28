@@ -25,6 +25,13 @@ Partial Class Examenes_Medicos
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Examenes_Medicos))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dgv_equipo_Eval = New System.Windows.Forms.DataGridView()
+        Me.DELETE = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_EM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EM_Estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EM_Resultado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EM_Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EM_FechaProximo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.TXT_EST = New System.Windows.Forms.TextBox()
         Me.txt_resultado = New System.Windows.Forms.TextBox()
@@ -44,13 +51,7 @@ Partial Class Examenes_Medicos
         Me.Label92 = New System.Windows.Forms.Label()
         Me.lbl_emp = New System.Windows.Forms.Label()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.DELETE = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_EM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EM_Estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EM_Resultado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EM_Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EM_FechaProximo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PnlExamenes = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel14.SuspendLayout()
@@ -58,17 +59,19 @@ Partial Class Examenes_Medicos
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PnlExamenes.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Panel1.Controls.Add(Me.dgv_equipo_Eval)
+        Me.Panel1.Controls.Add(Me.PnlExamenes)
         Me.Panel1.Controls.Add(Me.Panel14)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!)
-        Me.Panel1.Location = New System.Drawing.Point(9, 43)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1287, 782)
+        Me.Panel1.Size = New System.Drawing.Size(962, 730)
         Me.Panel1.TabIndex = 1
         '
         'dgv_equipo_Eval
@@ -76,11 +79,60 @@ Partial Class Examenes_Medicos
         Me.dgv_equipo_Eval.AllowUserToAddRows = False
         Me.dgv_equipo_Eval.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_equipo_Eval.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DELETE, Me.ID_EM, Me.ID_Emp, Me.EM_Estudio, Me.EM_Resultado, Me.EM_Fecha, Me.EM_FechaProximo})
-        Me.dgv_equipo_Eval.Location = New System.Drawing.Point(15, 300)
+        Me.dgv_equipo_Eval.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgv_equipo_Eval.Location = New System.Drawing.Point(0, 0)
         Me.dgv_equipo_Eval.Name = "dgv_equipo_Eval"
         Me.dgv_equipo_Eval.RowHeadersVisible = False
-        Me.dgv_equipo_Eval.Size = New System.Drawing.Size(1241, 370)
+        Me.dgv_equipo_Eval.Size = New System.Drawing.Size(962, 475)
         Me.dgv_equipo_Eval.TabIndex = 89
+        '
+        'DELETE
+        '
+        Me.DELETE.HeaderText = "Eliminar"
+        Me.DELETE.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
+        Me.DELETE.Name = "DELETE"
+        '
+        'ID_EM
+        '
+        Me.ID_EM.DataPropertyName = "ID_EM"
+        Me.ID_EM.HeaderText = "ID"
+        Me.ID_EM.Name = "ID_EM"
+        Me.ID_EM.Visible = False
+        '
+        'ID_Emp
+        '
+        Me.ID_Emp.DataPropertyName = "ID_Emp"
+        Me.ID_Emp.HeaderText = "EMPLEADO"
+        Me.ID_Emp.Name = "ID_Emp"
+        Me.ID_Emp.Width = 200
+        '
+        'EM_Estudio
+        '
+        Me.EM_Estudio.DataPropertyName = "EM_Estudio"
+        Me.EM_Estudio.HeaderText = "ESTUDIO"
+        Me.EM_Estudio.Name = "EM_Estudio"
+        Me.EM_Estudio.Width = 200
+        '
+        'EM_Resultado
+        '
+        Me.EM_Resultado.DataPropertyName = "EM_Resultado"
+        Me.EM_Resultado.HeaderText = "RESULTADO"
+        Me.EM_Resultado.Name = "EM_Resultado"
+        Me.EM_Resultado.Width = 400
+        '
+        'EM_Fecha
+        '
+        Me.EM_Fecha.DataPropertyName = "EM_Fecha"
+        Me.EM_Fecha.HeaderText = "FECHA"
+        Me.EM_Fecha.Name = "EM_Fecha"
+        Me.EM_Fecha.Width = 300
+        '
+        'EM_FechaProximo
+        '
+        Me.EM_FechaProximo.DataPropertyName = "EM_FechaProximo"
+        Me.EM_FechaProximo.HeaderText = "FECHA PROXIMA"
+        Me.EM_FechaProximo.Name = "EM_FechaProximo"
+        Me.EM_FechaProximo.Width = 300
         '
         'Panel14
         '
@@ -89,9 +141,7 @@ Partial Class Examenes_Medicos
         Me.Panel14.Controls.Add(Me.txt_resultado)
         Me.Panel14.Controls.Add(Me.Panel2)
         Me.Panel14.Controls.Add(Me.Label2)
-        Me.Panel14.Controls.Add(Me.SAVE)
         Me.Panel14.Controls.Add(Me.Label1)
-        Me.Panel14.Controls.Add(Me.CANCEL)
         Me.Panel14.Controls.Add(Me.txt_fp)
         Me.Panel14.Controls.Add(Me.txt_numero)
         Me.Panel14.Controls.Add(Me.lbl_ingreso)
@@ -101,11 +151,12 @@ Partial Class Examenes_Medicos
         Me.Panel14.Controls.Add(Me.Empleado)
         Me.Panel14.Controls.Add(Me.Label92)
         Me.Panel14.Controls.Add(Me.lbl_emp)
+        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel14.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel14.Location = New System.Drawing.Point(15, 22)
+        Me.Panel14.Location = New System.Drawing.Point(0, 0)
         Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(1241, 250)
+        Me.Panel14.Size = New System.Drawing.Size(962, 250)
         Me.Panel14.TabIndex = 91
         '
         'TXT_EST
@@ -128,11 +179,14 @@ Partial Class Examenes_Medicos
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Label42)
+        Me.Panel2.Controls.Add(Me.CANCEL)
+        Me.Panel2.Controls.Add(Me.SAVE)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel2.Location = New System.Drawing.Point(-2, -2)
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1241, 35)
+        Me.Panel2.Size = New System.Drawing.Size(958, 40)
         Me.Panel2.TabIndex = 0
         '
         'Label42
@@ -159,9 +213,9 @@ Partial Class Examenes_Medicos
         'SAVE
         '
         Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_checkup_80px
-        Me.SAVE.Location = New System.Drawing.Point(981, 66)
+        Me.SAVE.Location = New System.Drawing.Point(864, 0)
         Me.SAVE.Name = "SAVE"
-        Me.SAVE.Size = New System.Drawing.Size(83, 83)
+        Me.SAVE.Size = New System.Drawing.Size(40, 40)
         Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.SAVE.TabIndex = 0
         Me.SAVE.TabStop = False
@@ -178,9 +232,9 @@ Partial Class Examenes_Medicos
         'CANCEL
         '
         Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(1107, 66)
+        Me.CANCEL.Location = New System.Drawing.Point(910, 0)
         Me.CANCEL.Name = "CANCEL"
-        Me.CANCEL.Size = New System.Drawing.Size(83, 83)
+        Me.CANCEL.Size = New System.Drawing.Size(40, 40)
         Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.CANCEL.TabIndex = 1
         Me.CANCEL.TabStop = False
@@ -274,59 +328,20 @@ Partial Class Examenes_Medicos
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.Width = 50
         '
-        'DELETE
+        'PnlExamenes
         '
-        Me.DELETE.HeaderText = "Eliminar"
-        Me.DELETE.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
-        Me.DELETE.Name = "DELETE"
-        '
-        'ID_EM
-        '
-        Me.ID_EM.DataPropertyName = "ID_EM"
-        Me.ID_EM.HeaderText = "ID"
-        Me.ID_EM.Name = "ID_EM"
-        Me.ID_EM.Visible = False
-        '
-        'ID_Emp
-        '
-        Me.ID_Emp.DataPropertyName = "ID_Emp"
-        Me.ID_Emp.HeaderText = "EMPLEADO"
-        Me.ID_Emp.Name = "ID_Emp"
-        Me.ID_Emp.Width = 200
-        '
-        'EM_Estudio
-        '
-        Me.EM_Estudio.DataPropertyName = "EM_Estudio"
-        Me.EM_Estudio.HeaderText = "ESTUDIO"
-        Me.EM_Estudio.Name = "EM_Estudio"
-        Me.EM_Estudio.Width = 200
-        '
-        'EM_Resultado
-        '
-        Me.EM_Resultado.DataPropertyName = "EM_Resultado"
-        Me.EM_Resultado.HeaderText = "RESULTADO"
-        Me.EM_Resultado.Name = "EM_Resultado"
-        Me.EM_Resultado.Width = 400
-        '
-        'EM_Fecha
-        '
-        Me.EM_Fecha.DataPropertyName = "EM_Fecha"
-        Me.EM_Fecha.HeaderText = "FECHA"
-        Me.EM_Fecha.Name = "EM_Fecha"
-        Me.EM_Fecha.Width = 300
-        '
-        'EM_FechaProximo
-        '
-        Me.EM_FechaProximo.DataPropertyName = "EM_FechaProximo"
-        Me.EM_FechaProximo.HeaderText = "FECHA PROXIMA"
-        Me.EM_FechaProximo.Name = "EM_FechaProximo"
-        Me.EM_FechaProximo.Width = 300
+        Me.PnlExamenes.Controls.Add(Me.dgv_equipo_Eval)
+        Me.PnlExamenes.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.PnlExamenes.Location = New System.Drawing.Point(0, 255)
+        Me.PnlExamenes.Name = "PnlExamenes"
+        Me.PnlExamenes.Size = New System.Drawing.Size(962, 475)
+        Me.PnlExamenes.TabIndex = 92
         '
         'Examenes_Medicos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1308, 864)
+        Me.ClientSize = New System.Drawing.Size(962, 730)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Examenes_Medicos"
@@ -341,6 +356,7 @@ Partial Class Examenes_Medicos
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PnlExamenes.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -373,4 +389,5 @@ Partial Class Examenes_Medicos
     Friend WithEvents EM_Resultado As DataGridViewTextBoxColumn
     Friend WithEvents EM_Fecha As DataGridViewTextBoxColumn
     Friend WithEvents EM_FechaProximo As DataGridViewTextBoxColumn
+    Friend WithEvents PnlExamenes As Panel
 End Class

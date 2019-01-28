@@ -27,7 +27,6 @@ Partial Class Equipo
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.pnl_comen = New System.Windows.Forms.Panel()
         Me.TXT_commen = New System.Windows.Forms.TextBox()
-        Me.label8 = New System.Windows.Forms.Label()
         Me.pb_Report = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label42 = New System.Windows.Forms.Label()
@@ -45,7 +44,6 @@ Partial Class Equipo
         Me.Empleado = New System.Windows.Forms.Label()
         Me.lbl_emp = New System.Windows.Forms.Label()
         Me.dgv_equipo_emp = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.UPDATE = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ID_Assig = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_Equipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -55,6 +53,9 @@ Partial Class Equipo
         Me.Fecha_R = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Comentario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_User = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.gbComentarios = New System.Windows.Forms.GroupBox()
+        Me.pnlEquipo = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.pnl_comen.SuspendLayout()
@@ -65,29 +66,29 @@ Partial Class Equipo
         CType(Me.buscar_eq, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbComentarios.SuspendLayout()
+        Me.pnlEquipo.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Panel1.Controls.Add(Me.pnlEquipo)
         Me.Panel1.Controls.Add(Me.Panel14)
-        Me.Panel1.Controls.Add(Me.dgv_equipo_emp)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!)
-        Me.Panel1.Location = New System.Drawing.Point(9, 43)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1287, 782)
+        Me.Panel1.Size = New System.Drawing.Size(962, 730)
         Me.Panel1.TabIndex = 1
         '
         'Panel14
         '
         Me.Panel14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel14.Controls.Add(Me.pnl_comen)
-        Me.Panel14.Controls.Add(Me.pb_Report)
         Me.Panel14.Controls.Add(Me.Panel2)
         Me.Panel14.Controls.Add(Me.lbl_ingreso)
-        Me.Panel14.Controls.Add(Me.CANCEL)
         Me.Panel14.Controls.Add(Me.TXT_FECHA)
-        Me.Panel14.Controls.Add(Me.SAVE)
         Me.Panel14.Controls.Add(Me.buscar_eq)
         Me.Panel14.Controls.Add(Me.txt_numero)
         Me.Panel14.Controls.Add(Me.Eq)
@@ -97,47 +98,39 @@ Partial Class Equipo
         Me.Panel14.Controls.Add(Me.Label92)
         Me.Panel14.Controls.Add(Me.Empleado)
         Me.Panel14.Controls.Add(Me.lbl_emp)
+        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel14.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel14.Location = New System.Drawing.Point(15, 24)
+        Me.Panel14.Location = New System.Drawing.Point(0, 0)
         Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(1241, 313)
+        Me.Panel14.Size = New System.Drawing.Size(962, 326)
         Me.Panel14.TabIndex = 80
         '
         'pnl_comen
         '
-        Me.pnl_comen.Controls.Add(Me.TXT_commen)
-        Me.pnl_comen.Controls.Add(Me.label8)
-        Me.pnl_comen.Location = New System.Drawing.Point(803, 193)
+        Me.pnl_comen.Controls.Add(Me.gbComentarios)
+        Me.pnl_comen.Location = New System.Drawing.Point(17, 193)
         Me.pnl_comen.Name = "pnl_comen"
-        Me.pnl_comen.Size = New System.Drawing.Size(413, 113)
+        Me.pnl_comen.Size = New System.Drawing.Size(931, 130)
         Me.pnl_comen.TabIndex = 72
         Me.pnl_comen.Visible = False
         '
         'TXT_commen
         '
         Me.TXT_commen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TXT_commen.Location = New System.Drawing.Point(116, 18)
+        Me.TXT_commen.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TXT_commen.Location = New System.Drawing.Point(3, 24)
         Me.TXT_commen.Multiline = True
         Me.TXT_commen.Name = "TXT_commen"
-        Me.TXT_commen.Size = New System.Drawing.Size(283, 83)
+        Me.TXT_commen.Size = New System.Drawing.Size(925, 103)
         Me.TXT_commen.TabIndex = 3
-        '
-        'label8
-        '
-        Me.label8.AutoSize = True
-        Me.label8.Location = New System.Drawing.Point(8, 21)
-        Me.label8.Name = "label8"
-        Me.label8.Size = New System.Drawing.Size(105, 21)
-        Me.label8.TabIndex = 70
-        Me.label8.Text = "Comenarios:"
         '
         'pb_Report
         '
         Me.pb_Report.Image = Global.AdminEmpleados.My.Resources.Resources.AssignedTools_80px
-        Me.pb_Report.Location = New System.Drawing.Point(868, 92)
+        Me.pb_Report.Location = New System.Drawing.Point(818, 0)
         Me.pb_Report.Name = "pb_Report"
-        Me.pb_Report.Size = New System.Drawing.Size(83, 83)
+        Me.pb_Report.Size = New System.Drawing.Size(40, 40)
         Me.pb_Report.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pb_Report.TabIndex = 71
         Me.pb_Report.TabStop = False
@@ -146,11 +139,15 @@ Partial Class Equipo
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Label42)
+        Me.Panel2.Controls.Add(Me.pb_Report)
+        Me.Panel2.Controls.Add(Me.CANCEL)
+        Me.Panel2.Controls.Add(Me.SAVE)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel2.Location = New System.Drawing.Point(-2, -2)
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1241, 35)
+        Me.Panel2.Size = New System.Drawing.Size(958, 40)
         Me.Panel2.TabIndex = 0
         '
         'Label42
@@ -168,7 +165,7 @@ Partial Class Equipo
         'lbl_ingreso
         '
         Me.lbl_ingreso.AutoSize = True
-        Me.lbl_ingreso.Location = New System.Drawing.Point(57, 200)
+        Me.lbl_ingreso.Location = New System.Drawing.Point(19, 152)
         Me.lbl_ingreso.Name = "lbl_ingreso"
         Me.lbl_ingreso.Size = New System.Drawing.Size(71, 21)
         Me.lbl_ingreso.TabIndex = 67
@@ -177,16 +174,17 @@ Partial Class Equipo
         'CANCEL
         '
         Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(1102, 92)
+        Me.CANCEL.Location = New System.Drawing.Point(910, 0)
         Me.CANCEL.Name = "CANCEL"
-        Me.CANCEL.Size = New System.Drawing.Size(83, 83)
+        Me.CANCEL.Size = New System.Drawing.Size(40, 40)
         Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.CANCEL.TabIndex = 1
         Me.CANCEL.TabStop = False
         '
         'TXT_FECHA
         '
-        Me.TXT_FECHA.Location = New System.Drawing.Point(140, 194)
+        Me.TXT_FECHA.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.TXT_FECHA.Location = New System.Drawing.Point(102, 146)
         Me.TXT_FECHA.Name = "TXT_FECHA"
         Me.TXT_FECHA.Size = New System.Drawing.Size(245, 28)
         Me.TXT_FECHA.TabIndex = 2
@@ -194,9 +192,9 @@ Partial Class Equipo
         'SAVE
         '
         Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Tools_80px
-        Me.SAVE.Location = New System.Drawing.Point(976, 92)
+        Me.SAVE.Location = New System.Drawing.Point(864, 0)
         Me.SAVE.Name = "SAVE"
-        Me.SAVE.Size = New System.Drawing.Size(83, 83)
+        Me.SAVE.Size = New System.Drawing.Size(40, 40)
         Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.SAVE.TabIndex = 0
         Me.SAVE.TabStop = False
@@ -205,7 +203,7 @@ Partial Class Equipo
         '
         Me.buscar_eq.BackgroundImage = CType(resources.GetObject("buscar_eq.BackgroundImage"), System.Drawing.Image)
         Me.buscar_eq.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_eq.Location = New System.Drawing.Point(355, 147)
+        Me.buscar_eq.Location = New System.Drawing.Point(317, 99)
         Me.buscar_eq.Name = "buscar_eq"
         Me.buscar_eq.Size = New System.Drawing.Size(30, 28)
         Me.buscar_eq.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -214,14 +212,14 @@ Partial Class Equipo
         '
         'txt_numero
         '
-        Me.txt_numero.Location = New System.Drawing.Point(140, 103)
+        Me.txt_numero.Location = New System.Drawing.Point(102, 55)
         Me.txt_numero.Name = "txt_numero"
         Me.txt_numero.Size = New System.Drawing.Size(209, 28)
         Me.txt_numero.TabIndex = 0
         '
         'Eq
         '
-        Me.Eq.Location = New System.Drawing.Point(140, 148)
+        Me.Eq.Location = New System.Drawing.Point(102, 100)
         Me.Eq.Name = "Eq"
         Me.Eq.Size = New System.Drawing.Size(39, 28)
         Me.Eq.TabIndex = 1
@@ -229,7 +227,7 @@ Partial Class Equipo
         'lbl_num
         '
         Me.lbl_num.AutoSize = True
-        Me.lbl_num.Location = New System.Drawing.Point(51, 110)
+        Me.lbl_num.Location = New System.Drawing.Point(13, 58)
         Me.lbl_num.Name = "lbl_num"
         Me.lbl_num.Size = New System.Drawing.Size(77, 21)
         Me.lbl_num.TabIndex = 13
@@ -238,7 +236,7 @@ Partial Class Equipo
         'eq2
         '
         Me.eq2.Enabled = False
-        Me.eq2.Location = New System.Drawing.Point(185, 148)
+        Me.eq2.Location = New System.Drawing.Point(147, 100)
         Me.eq2.Name = "eq2"
         Me.eq2.Size = New System.Drawing.Size(164, 28)
         Me.eq2.TabIndex = 64
@@ -248,7 +246,7 @@ Partial Class Equipo
         '
         Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
         Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_EN.Location = New System.Drawing.Point(355, 103)
+        Me.buscar_EN.Location = New System.Drawing.Point(317, 55)
         Me.buscar_EN.Name = "buscar_EN"
         Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
         Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -258,7 +256,7 @@ Partial Class Equipo
         'Label92
         '
         Me.Label92.AutoSize = True
-        Me.Label92.Location = New System.Drawing.Point(61, 155)
+        Me.Label92.Location = New System.Drawing.Point(23, 107)
         Me.Label92.Name = "Label92"
         Me.Label92.Size = New System.Drawing.Size(67, 21)
         Me.Label92.TabIndex = 63
@@ -269,7 +267,7 @@ Partial Class Equipo
         Me.Empleado.AutoSize = True
         Me.Empleado.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Empleado.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Empleado.Location = New System.Drawing.Point(409, 106)
+        Me.Empleado.Location = New System.Drawing.Point(371, 58)
         Me.Empleado.Name = "Empleado"
         Me.Empleado.Size = New System.Drawing.Size(101, 22)
         Me.Empleado.TabIndex = 54
@@ -280,7 +278,7 @@ Partial Class Equipo
         Me.lbl_emp.AutoSize = True
         Me.lbl_emp.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_emp.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.lbl_emp.Location = New System.Drawing.Point(516, 106)
+        Me.lbl_emp.Location = New System.Drawing.Point(478, 58)
         Me.lbl_emp.Name = "lbl_emp"
         Me.lbl_emp.Size = New System.Drawing.Size(0, 22)
         Me.lbl_emp.TabIndex = 55
@@ -290,16 +288,12 @@ Partial Class Equipo
         Me.dgv_equipo_emp.AllowUserToAddRows = False
         Me.dgv_equipo_emp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_equipo_emp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATE, Me.ID_Assig, Me.ID_Equipo, Me.ID_Emp, Me.Fecha, Me.Regreso, Me.Fecha_R, Me.Comentario, Me.ID_User})
-        Me.dgv_equipo_emp.Location = New System.Drawing.Point(15, 352)
+        Me.dgv_equipo_emp.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgv_equipo_emp.Location = New System.Drawing.Point(0, 0)
         Me.dgv_equipo_emp.Name = "dgv_equipo_emp"
         Me.dgv_equipo_emp.RowHeadersVisible = False
-        Me.dgv_equipo_emp.Size = New System.Drawing.Size(1241, 348)
+        Me.dgv_equipo_emp.Size = New System.Drawing.Size(962, 399)
         Me.dgv_equipo_emp.TabIndex = 71
-        '
-        'DataGridViewImageColumn1
-        '
-        Me.DataGridViewImageColumn1.HeaderText = ""
-        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         '
         'UPDATE
         '
@@ -361,11 +355,36 @@ Partial Class Equipo
         Me.ID_User.Name = "ID_User"
         Me.ID_User.Width = 150
         '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.HeaderText = ""
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        '
+        'gbComentarios
+        '
+        Me.gbComentarios.Controls.Add(Me.TXT_commen)
+        Me.gbComentarios.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gbComentarios.Location = New System.Drawing.Point(0, 0)
+        Me.gbComentarios.Name = "gbComentarios"
+        Me.gbComentarios.Size = New System.Drawing.Size(931, 130)
+        Me.gbComentarios.TabIndex = 73
+        Me.gbComentarios.TabStop = False
+        Me.gbComentarios.Text = "Comentarios"
+        '
+        'pnlEquipo
+        '
+        Me.pnlEquipo.Controls.Add(Me.dgv_equipo_emp)
+        Me.pnlEquipo.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pnlEquipo.Location = New System.Drawing.Point(0, 331)
+        Me.pnlEquipo.Name = "pnlEquipo"
+        Me.pnlEquipo.Size = New System.Drawing.Size(962, 399)
+        Me.pnlEquipo.TabIndex = 81
+        '
         'Equipo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1308, 864)
+        Me.ClientSize = New System.Drawing.Size(962, 730)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Equipo"
@@ -375,7 +394,6 @@ Partial Class Equipo
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
         Me.pnl_comen.ResumeLayout(False)
-        Me.pnl_comen.PerformLayout()
         CType(Me.pb_Report, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
@@ -384,6 +402,9 @@ Partial Class Equipo
         CType(Me.buscar_eq, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbComentarios.ResumeLayout(False)
+        Me.gbComentarios.PerformLayout()
+        Me.pnlEquipo.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -404,7 +425,6 @@ Partial Class Equipo
     Friend WithEvents TXT_FECHA As DateTimePicker
     Friend WithEvents dgv_equipo_emp As DataGridView
     Friend WithEvents TXT_commen As TextBox
-    Friend WithEvents label8 As Label
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Private WithEvents Panel14 As Panel
     Private WithEvents Panel2 As Panel
@@ -420,4 +440,6 @@ Partial Class Equipo
     Friend WithEvents Fecha_R As DataGridViewTextBoxColumn
     Friend WithEvents Comentario As DataGridViewTextBoxColumn
     Friend WithEvents ID_User As DataGridViewTextBoxColumn
+    Friend WithEvents pnlEquipo As Panel
+    Friend WithEvents gbComentarios As GroupBox
 End Class

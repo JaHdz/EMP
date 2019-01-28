@@ -23,17 +23,73 @@ Partial Class Empleados
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Tam_Es = New System.Windows.Forms.TabPage()
-        Me.PnlDatos = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Label53 = New System.Windows.Forms.Label()
-        Me.txt_Religion = New System.Windows.Forms.TextBox()
-        Me.Label50 = New System.Windows.Forms.Label()
-        Me.Txt_pasatiempos = New System.Windows.Forms.TextBox()
-        Me.Label49 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btn_SERPT = New System.Windows.Forms.PictureBox()
+        Me.btn_SESave = New System.Windows.Forms.PictureBox()
+        Me.btn_SECancel = New System.Windows.Forms.PictureBox()
+        Me.PnlObservaciones = New System.Windows.Forms.Panel()
+        Me.txt_commen = New System.Windows.Forms.TextBox()
+        Me.Panel26 = New System.Windows.Forms.Panel()
+        Me.Label71 = New System.Windows.Forms.Label()
+        Me.Label76 = New System.Windows.Forms.Label()
+        Me.PnlGastos = New System.Windows.Forms.Panel()
+        Me.Label64 = New System.Windows.Forms.Label()
+        Me.txt_GFServ = New System.Windows.Forms.TextBox()
+        Me.Label73 = New System.Windows.Forms.Label()
+        Me.Panel30 = New System.Windows.Forms.Panel()
+        Me.Label74 = New System.Windows.Forms.Label()
+        Me.Label75 = New System.Windows.Forms.Label()
+        Me.txt_GFRenta = New System.Windows.Forms.TextBox()
+        Me.Label72 = New System.Windows.Forms.Label()
+        Me.Label62 = New System.Windows.Forms.Label()
+        Me.Txt_GFDesp = New System.Windows.Forms.TextBox()
+        Me.txt_GFCole = New System.Windows.Forms.TextBox()
+        Me.PnlReferencias = New System.Windows.Forms.Panel()
+        Me.dgv_Ref = New System.Windows.Forms.DataGridView()
+        Me.NOMBRE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TIPO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.OCUPACION = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TIEMPO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label52 = New System.Windows.Forms.Label()
+        Me.txt_TC = New System.Windows.Forms.TextBox()
+        Me.txt_RefOcu = New System.Windows.Forms.TextBox()
+        Me.Label56 = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.Txt_TR = New System.Windows.Forms.TextBox()
+        Me.txt_RefNom = New System.Windows.Forms.TextBox()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Btn_AddRef = New System.Windows.Forms.PictureBox()
+        Me.Label51 = New System.Windows.Forms.Label()
+        Me.PnlActividades = New System.Windows.Forms.Panel()
+        Me.Label90 = New System.Windows.Forms.Label()
+        Me.Label88 = New System.Windows.Forms.Label()
+        Me.txt_se_diversiones = New System.Windows.Forms.TextBox()
+        Me.txt_SE_NATURALES = New System.Windows.Forms.TextBox()
+        Me.Label89 = New System.Windows.Forms.Label()
+        Me.txt_SE_PLAZAS = New System.Windows.Forms.TextBox()
+        Me.Label83 = New System.Windows.Forms.Label()
+        Me.txt_SE_CINES = New System.Windows.Forms.TextBox()
+        Me.txt_SE_ZONAS = New System.Windows.Forms.TextBox()
+        Me.Label85 = New System.Windows.Forms.Label()
+        Me.Label87 = New System.Windows.Forms.Label()
+        Me.txt_SE_CULTURALES = New System.Windows.Forms.TextBox()
+        Me.Label80 = New System.Windows.Forms.Label()
+        Me.txt_SE_TEATROS = New System.Windows.Forms.TextBox()
+        Me.Label86 = New System.Windows.Forms.Label()
+        Me.Label81 = New System.Windows.Forms.Label()
+        Me.txt_SE_MUSEOS = New System.Windows.Forms.TextBox()
+        Me.txt_SE_VACIONES = New System.Windows.Forms.TextBox()
+        Me.Label78 = New System.Windows.Forms.Label()
+        Me.txt_SE__SOCIALE = New System.Windows.Forms.TextBox()
+        Me.txt_SE_EVENTOS = New System.Windows.Forms.TextBox()
+        Me.Label79 = New System.Windows.Forms.Label()
+        Me.Panel36 = New System.Windows.Forms.Panel()
+        Me.Label84 = New System.Windows.Forms.Label()
         Me.PnlIngresos = New System.Windows.Forms.Panel()
         Me.Label63 = New System.Windows.Forms.Label()
         Me.txt_OTCantidad = New System.Windows.Forms.TextBox()
@@ -43,20 +99,35 @@ Partial Class Empleados
         Me.PARENTESCO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CANTIDAD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.btn_OI = New System.Windows.Forms.PictureBox()
         Me.Label60 = New System.Windows.Forms.Label()
         Me.Label61 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PnlDatos = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label53 = New System.Windows.Forms.Label()
+        Me.txt_Religion = New System.Windows.Forms.TextBox()
+        Me.Label50 = New System.Windows.Forms.Label()
+        Me.Txt_pasatiempos = New System.Windows.Forms.TextBox()
+        Me.Label49 = New System.Windows.Forms.Label()
+        Me.PnlTransporte = New System.Windows.Forms.Panel()
+        Me.Panel22 = New System.Windows.Forms.Panel()
+        Me.Label57 = New System.Windows.Forms.Label()
+        Me.cb_Metro = New System.Windows.Forms.CheckBox()
+        Me.cb_Trans = New System.Windows.Forms.CheckBox()
+        Me.cb_Taxi = New System.Windows.Forms.CheckBox()
+        Me.cb_Vehi = New System.Windows.Forms.CheckBox()
+        Me.PnlVivienda = New System.Windows.Forms.Panel()
         Me.GrpServicios = New System.Windows.Forms.GroupBox()
         Me.cb_Luz = New System.Windows.Forms.CheckBox()
         Me.cb_Drenaje = New System.Windows.Forms.CheckBox()
-        Me.cb_AguaP = New System.Windows.Forms.CheckBox()
         Me.cb_SisSeg = New System.Windows.Forms.CheckBox()
-        Me.cb_Tuberia = New System.Windows.Forms.CheckBox()
-        Me.cb_Basura = New System.Windows.Forms.CheckBox()
+        Me.cb_LineaTel = New System.Windows.Forms.CheckBox()
         Me.cb_TV = New System.Windows.Forms.CheckBox()
         Me.cb_Internet = New System.Windows.Forms.CheckBox()
-        Me.cb_LineaTel = New System.Windows.Forms.CheckBox()
-        Me.PnlVivienda = New System.Windows.Forms.Panel()
+        Me.cb_AguaP = New System.Windows.Forms.CheckBox()
+        Me.cb_Tuberia = New System.Windows.Forms.CheckBox()
+        Me.cb_Basura = New System.Windows.Forms.CheckBox()
+        Me.PB_IMAGE_VIVIENDA = New System.Windows.Forms.PictureBox()
         Me.GrpMaterial = New System.Windows.Forms.GroupBox()
         Me.cb_block = New System.Windows.Forms.CheckBox()
         Me.cb_adobe = New System.Windows.Forms.CheckBox()
@@ -69,10 +140,6 @@ Partial Class Empleados
         Me.cb_Terreno = New System.Windows.Forms.CheckBox()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.cb_Metro = New System.Windows.Forms.CheckBox()
-        Me.cb_Taxi = New System.Windows.Forms.CheckBox()
-        Me.cb_Trans = New System.Windows.Forms.CheckBox()
-        Me.cb_Vehi = New System.Windows.Forms.CheckBox()
         Me.Tab_Enfer = New System.Windows.Forms.TabPage()
         Me.panel20 = New System.Windows.Forms.Panel()
         Me.dgv_Enf = New System.Windows.Forms.DataGridView()
@@ -81,6 +148,7 @@ Partial Class Empleados
         Me.txt_enfNAME = New System.Windows.Forms.TextBox()
         Me.label47 = New System.Windows.Forms.Label()
         Me.panel21 = New System.Windows.Forms.Panel()
+        Me.btn_enfADD = New System.Windows.Forms.PictureBox()
         Me.label19 = New System.Windows.Forms.Label()
         Me.Tab_Cont = New System.Windows.Forms.TabPage()
         Me.panel18 = New System.Windows.Forms.Panel()
@@ -106,6 +174,7 @@ Partial Class Empleados
         Me.label43 = New System.Windows.Forms.Label()
         Me.label44 = New System.Windows.Forms.Label()
         Me.panel19 = New System.Windows.Forms.Panel()
+        Me.btn_conADD = New System.Windows.Forms.PictureBox()
         Me.label18 = New System.Windows.Forms.Label()
         Me.Tab_AL = New System.Windows.Forms.TabPage()
         Me.panel16 = New System.Windows.Forms.Panel()
@@ -137,6 +206,7 @@ Partial Class Empleados
         Me.txt_antFI = New System.Windows.Forms.DateTimePicker()
         Me.label9 = New System.Windows.Forms.Label()
         Me.panel17 = New System.Windows.Forms.Panel()
+        Me.btn_antSave = New System.Windows.Forms.PictureBox()
         Me.label17 = New System.Windows.Forms.Label()
         Me.Tab_Familia = New System.Windows.Forms.TabPage()
         Me.panel3 = New System.Windows.Forms.Panel()
@@ -166,10 +236,12 @@ Partial Class Empleados
         Me.label30 = New System.Windows.Forms.Label()
         Me.label31 = New System.Windows.Forms.Label()
         Me.panel5 = New System.Windows.Forms.Panel()
+        Me.btn_hijoADD = New System.Windows.Forms.PictureBox()
         Me.label11 = New System.Windows.Forms.Label()
         Me.panel2 = New System.Windows.Forms.Panel()
         Me.panel4 = New System.Windows.Forms.Panel()
         Me.label10 = New System.Windows.Forms.Label()
+        Me.btn_esSAVE = New System.Windows.Forms.PictureBox()
         Me.label25 = New System.Windows.Forms.Label()
         Me.txt_esNacion = New System.Windows.Forms.TextBox()
         Me.dgv_esposa = New System.Windows.Forms.DataGridView()
@@ -200,9 +272,11 @@ Partial Class Empleados
         Me.CB_PROV = New System.Windows.Forms.CheckBox()
         Me.seg = New System.Windows.Forms.CheckBox()
         Me.panel13 = New System.Windows.Forms.Panel()
-        Me.LBL_BAJA = New System.Windows.Forms.Label()
         Me.label15 = New System.Windows.Forms.Label()
+        Me.ALTA = New System.Windows.Forms.PictureBox()
+        Me.BAJA = New System.Windows.Forms.PictureBox()
         Me.lbl_ALTA = New System.Windows.Forms.Label()
+        Me.LBL_BAJA = New System.Windows.Forms.Label()
         Me.commen = New System.Windows.Forms.TextBox()
         Me.txt_activo = New System.Windows.Forms.TextBox()
         Me.label8 = New System.Windows.Forms.Label()
@@ -210,10 +284,13 @@ Partial Class Empleados
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.pnl_cont = New System.Windows.Forms.Panel()
+        Me.buscar_depto = New System.Windows.Forms.PictureBox()
         Me.depto = New System.Windows.Forms.TextBox()
         Me.depto2 = New System.Windows.Forms.TextBox()
+        Me.Buscar_PUESTO = New System.Windows.Forms.PictureBox()
         Me.panel11 = New System.Windows.Forms.Panel()
         Me.label14 = New System.Windows.Forms.Label()
+        Me.Buscar_tipo = New System.Windows.Forms.PictureBox()
         Me.lbl_ingreso = New System.Windows.Forms.Label()
         Me.Txt_correo = New System.Windows.Forms.TextBox()
         Me.lbl_clase = New System.Windows.Forms.Label()
@@ -225,12 +302,15 @@ Partial Class Empleados
         Me.txt_tipo = New System.Windows.Forms.TextBox()
         Me.lbl_sali = New System.Windows.Forms.Label()
         Me.txt_FECHAINGRESO = New System.Windows.Forms.DateTimePicker()
+        Me.Buscar_Super = New System.Windows.Forms.PictureBox()
         Me.txt_PUESTO = New System.Windows.Forms.TextBox()
         Me.txt_PUESTO2 = New System.Windows.Forms.TextBox()
         Me.txt_SUPER2 = New System.Windows.Forms.TextBox()
         Me.txt_SUPER = New System.Windows.Forms.TextBox()
         Me.lbl_depto = New System.Windows.Forms.Label()
         Me.pnl_per = New System.Windows.Forms.Panel()
+        Me.buscar_ciudad = New System.Windows.Forms.PictureBox()
+        Me.foto = New System.Windows.Forms.PictureBox()
         Me.cuidad = New System.Windows.Forms.TextBox()
         Me.lbl_rfc = New System.Windows.Forms.Label()
         Me.lbl_ss = New System.Windows.Forms.Label()
@@ -264,110 +344,47 @@ Partial Class Empleados
         Me.panel7 = New System.Windows.Forms.Panel()
         Me.label12 = New System.Windows.Forms.Label()
         Me.pnl_save = New System.Windows.Forms.Panel()
+        Me.CANCEL = New System.Windows.Forms.PictureBox()
+        Me.SAVE = New System.Windows.Forms.PictureBox()
         Me.txt_EN2 = New System.Windows.Forms.TextBox()
         Me.txt_numero = New System.Windows.Forms.TextBox()
         Me.txt_EN = New System.Windows.Forms.TextBox()
         Me.txt_NOM = New System.Windows.Forms.TextBox()
         Me.txt_AM = New System.Windows.Forms.TextBox()
         Me.txt_AP = New System.Windows.Forms.TextBox()
+        Me.buscar_EN = New System.Windows.Forms.PictureBox()
         Me.lbl_num = New System.Windows.Forms.Label()
         Me.lbl_ap = New System.Windows.Forms.Label()
         Me.lbl_am = New System.Windows.Forms.Label()
         Me.lbl_nom = New System.Windows.Forms.Label()
         Me.MenuEmp = New System.Windows.Forms.TabControl()
-        Me.PnlTransporte = New System.Windows.Forms.Panel()
-        Me.Panel22 = New System.Windows.Forms.Panel()
-        Me.Label57 = New System.Windows.Forms.Label()
-        Me.ALTA = New System.Windows.Forms.PictureBox()
-        Me.BAJA = New System.Windows.Forms.PictureBox()
-        Me.buscar_depto = New System.Windows.Forms.PictureBox()
-        Me.Buscar_PUESTO = New System.Windows.Forms.PictureBox()
-        Me.Buscar_tipo = New System.Windows.Forms.PictureBox()
-        Me.Buscar_Super = New System.Windows.Forms.PictureBox()
-        Me.buscar_ciudad = New System.Windows.Forms.PictureBox()
-        Me.foto = New System.Windows.Forms.PictureBox()
-        Me.CANCEL = New System.Windows.Forms.PictureBox()
-        Me.SAVE = New System.Windows.Forms.PictureBox()
-        Me.buscar_EN = New System.Windows.Forms.PictureBox()
-        Me.btn_hijoADD = New System.Windows.Forms.PictureBox()
-        Me.btn_esSAVE = New System.Windows.Forms.PictureBox()
-        Me.btn_antSave = New System.Windows.Forms.PictureBox()
-        Me.btn_conADD = New System.Windows.Forms.PictureBox()
-        Me.btn_enfADD = New System.Windows.Forms.PictureBox()
-        Me.btn_OI = New System.Windows.Forms.PictureBox()
-        Me.PB_IMAGE_VIVIENDA = New System.Windows.Forms.PictureBox()
         Me.datosFamiliaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PnlActividades = New System.Windows.Forms.Panel()
-        Me.Panel36 = New System.Windows.Forms.Panel()
-        Me.Label84 = New System.Windows.Forms.Label()
-        Me.Label83 = New System.Windows.Forms.Label()
-        Me.txt_SE_CULTURALES = New System.Windows.Forms.TextBox()
-        Me.Label80 = New System.Windows.Forms.Label()
-        Me.txt_SE_TEATROS = New System.Windows.Forms.TextBox()
-        Me.Label78 = New System.Windows.Forms.Label()
-        Me.txt_SE__SOCIALE = New System.Windows.Forms.TextBox()
-        Me.txt_SE_EVENTOS = New System.Windows.Forms.TextBox()
-        Me.Label79 = New System.Windows.Forms.Label()
-        Me.Label88 = New System.Windows.Forms.Label()
-        Me.txt_SE_NATURALES = New System.Windows.Forms.TextBox()
-        Me.Label86 = New System.Windows.Forms.Label()
-        Me.txt_SE_VACIONES = New System.Windows.Forms.TextBox()
-        Me.txt_SE_CINES = New System.Windows.Forms.TextBox()
-        Me.Label85 = New System.Windows.Forms.Label()
-        Me.txt_SE_MUSEOS = New System.Windows.Forms.TextBox()
-        Me.Label81 = New System.Windows.Forms.Label()
-        Me.Label90 = New System.Windows.Forms.Label()
-        Me.txt_se_diversiones = New System.Windows.Forms.TextBox()
-        Me.txt_SE_PLAZAS = New System.Windows.Forms.TextBox()
-        Me.Label89 = New System.Windows.Forms.Label()
-        Me.txt_SE_ZONAS = New System.Windows.Forms.TextBox()
-        Me.Label87 = New System.Windows.Forms.Label()
-        Me.PnlReferencias = New System.Windows.Forms.Panel()
-        Me.Btn_AddRef = New System.Windows.Forms.PictureBox()
-        Me.dgv_Ref = New System.Windows.Forms.DataGridView()
-        Me.NOMBRE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TIPO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.OCUPACION = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TIEMPO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label52 = New System.Windows.Forms.Label()
-        Me.txt_TC = New System.Windows.Forms.TextBox()
-        Me.txt_RefOcu = New System.Windows.Forms.TextBox()
-        Me.Label56 = New System.Windows.Forms.Label()
-        Me.Label46 = New System.Windows.Forms.Label()
-        Me.Txt_TR = New System.Windows.Forms.TextBox()
-        Me.txt_RefNom = New System.Windows.Forms.TextBox()
-        Me.Label48 = New System.Windows.Forms.Label()
-        Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.Label51 = New System.Windows.Forms.Label()
-        Me.PnlGastos = New System.Windows.Forms.Panel()
-        Me.Label64 = New System.Windows.Forms.Label()
-        Me.txt_GFServ = New System.Windows.Forms.TextBox()
-        Me.Label62 = New System.Windows.Forms.Label()
-        Me.Txt_GFDesp = New System.Windows.Forms.TextBox()
-        Me.Label72 = New System.Windows.Forms.Label()
-        Me.txt_GFRenta = New System.Windows.Forms.TextBox()
-        Me.txt_GFCole = New System.Windows.Forms.TextBox()
-        Me.Label73 = New System.Windows.Forms.Label()
-        Me.Panel30 = New System.Windows.Forms.Panel()
-        Me.Label74 = New System.Windows.Forms.Label()
-        Me.Label75 = New System.Windows.Forms.Label()
-        Me.PnlObservaciones = New System.Windows.Forms.Panel()
-        Me.txt_commen = New System.Windows.Forms.TextBox()
-        Me.Panel26 = New System.Windows.Forms.Panel()
-        Me.Label71 = New System.Windows.Forms.Label()
-        Me.Label76 = New System.Windows.Forms.Label()
-        Me.btn_SERPT = New System.Windows.Forms.PictureBox()
-        Me.btn_SESave = New System.Windows.Forms.PictureBox()
-        Me.btn_SECancel = New System.Windows.Forms.PictureBox()
         Me.Tam_Es.SuspendLayout()
-        Me.PnlDatos.SuspendLayout()
-        Me.Panel6.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.btn_SERPT, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_SESave, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_SECancel, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PnlObservaciones.SuspendLayout()
+        Me.Panel26.SuspendLayout()
+        Me.PnlGastos.SuspendLayout()
+        Me.Panel30.SuspendLayout()
+        Me.PnlReferencias.SuspendLayout()
+        CType(Me.dgv_Ref, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel10.SuspendLayout()
+        CType(Me.Btn_AddRef, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PnlActividades.SuspendLayout()
+        Me.Panel36.SuspendLayout()
         Me.PnlIngresos.SuspendLayout()
         CType(Me.dgv_OI, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel14.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.GrpServicios.SuspendLayout()
+        CType(Me.btn_OI, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PnlDatos.SuspendLayout()
+        Me.Panel6.SuspendLayout()
+        Me.PnlTransporte.SuspendLayout()
+        Me.Panel22.SuspendLayout()
         Me.PnlVivienda.SuspendLayout()
+        Me.GrpServicios.SuspendLayout()
+        CType(Me.PB_IMAGE_VIVIENDA, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GrpMaterial.SuspendLayout()
         Me.GrpTIpo.SuspendLayout()
         Me.Panel15.SuspendLayout()
@@ -375,64 +392,47 @@ Partial Class Empleados
         Me.panel20.SuspendLayout()
         CType(Me.dgv_Enf, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel21.SuspendLayout()
+        CType(Me.btn_enfADD, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Tab_Cont.SuspendLayout()
         Me.panel18.SuspendLayout()
         CType(Me.dgv_contacto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel19.SuspendLayout()
+        CType(Me.btn_conADD, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Tab_AL.SuspendLayout()
         Me.panel16.SuspendLayout()
         CType(Me.dgv_ant, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel17.SuspendLayout()
+        CType(Me.btn_antSave, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Tab_Familia.SuspendLayout()
         Me.panel3.SuspendLayout()
         CType(Me.dgv_Hijos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel5.SuspendLayout()
+        CType(Me.btn_hijoADD, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel2.SuspendLayout()
         Me.panel4.SuspendLayout()
+        CType(Me.btn_esSAVE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_esposa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Tab_DP.SuspendLayout()
         Me.pnl_estatus.SuspendLayout()
         Me.panel13.SuspendLayout()
-        Me.pnl_cont.SuspendLayout()
-        Me.panel11.SuspendLayout()
-        Me.pnl_per.SuspendLayout()
-        Me.panel7.SuspendLayout()
-        Me.pnl_save.SuspendLayout()
-        Me.MenuEmp.SuspendLayout()
-        Me.PnlTransporte.SuspendLayout()
-        Me.Panel22.SuspendLayout()
         CType(Me.ALTA, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BAJA, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_cont.SuspendLayout()
         CType(Me.buscar_depto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Buscar_PUESTO, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panel11.SuspendLayout()
         CType(Me.Buscar_tipo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Buscar_Super, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_per.SuspendLayout()
         CType(Me.buscar_ciudad, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.foto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panel7.SuspendLayout()
+        Me.pnl_save.SuspendLayout()
         CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_hijoADD, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_esSAVE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_antSave, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_conADD, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_enfADD, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_OI, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PB_IMAGE_VIVIENDA, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuEmp.SuspendLayout()
         CType(Me.datosFamiliaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PnlActividades.SuspendLayout()
-        Me.Panel36.SuspendLayout()
-        Me.PnlReferencias.SuspendLayout()
-        CType(Me.Btn_AddRef, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgv_Ref, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel10.SuspendLayout()
-        Me.PnlGastos.SuspendLayout()
-        Me.Panel30.SuspendLayout()
-        Me.PnlObservaciones.SuspendLayout()
-        Me.Panel26.SuspendLayout()
-        CType(Me.btn_SERPT, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_SESave, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_SECancel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'OpenFileDialog1
@@ -446,83 +446,642 @@ Partial Class Empleados
         Me.Tam_Es.Location = New System.Drawing.Point(4, 30)
         Me.Tam_Es.Name = "Tam_Es"
         Me.Tam_Es.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tam_Es.Size = New System.Drawing.Size(950, 1066)
+        Me.Tam_Es.Size = New System.Drawing.Size(950, 696)
         Me.Tam_Es.TabIndex = 5
         Me.Tam_Es.Text = "Estudio SocioEconomico"
         Me.Tam_Es.UseVisualStyleBackColor = True
         '
-        'PnlDatos
+        'Panel1
         '
-        Me.PnlDatos.Controls.Add(Me.Panel6)
-        Me.PnlDatos.Controls.Add(Me.txt_Religion)
-        Me.PnlDatos.Controls.Add(Me.Label50)
-        Me.PnlDatos.Controls.Add(Me.Txt_pasatiempos)
-        Me.PnlDatos.Controls.Add(Me.Label49)
-        Me.PnlDatos.Location = New System.Drawing.Point(491, 314)
-        Me.PnlDatos.Name = "PnlDatos"
-        Me.PnlDatos.Size = New System.Drawing.Size(429, 110)
-        Me.PnlDatos.TabIndex = 50
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.btn_SERPT)
+        Me.Panel1.Controls.Add(Me.btn_SESave)
+        Me.Panel1.Controls.Add(Me.btn_SECancel)
+        Me.Panel1.Controls.Add(Me.PnlObservaciones)
+        Me.Panel1.Controls.Add(Me.PnlGastos)
+        Me.Panel1.Controls.Add(Me.PnlReferencias)
+        Me.Panel1.Controls.Add(Me.PnlActividades)
+        Me.Panel1.Controls.Add(Me.PnlIngresos)
+        Me.Panel1.Controls.Add(Me.PnlDatos)
+        Me.Panel1.Controls.Add(Me.PnlTransporte)
+        Me.Panel1.Controls.Add(Me.PnlVivienda)
+        Me.Panel1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(930, 1400)
+        Me.Panel1.TabIndex = 2
         '
-        'Panel6
+        'btn_SERPT
         '
-        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Panel6.Controls.Add(Me.Label53)
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel6.Location = New System.Drawing.Point(0, 0)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(429, 35)
-        Me.Panel6.TabIndex = 0
+        Me.btn_SERPT.Image = Global.AdminEmpleados.My.Resources.Resources.Accounting_80px
+        Me.btn_SERPT.Location = New System.Drawing.Point(769, 1346)
+        Me.btn_SERPT.Name = "btn_SERPT"
+        Me.btn_SERPT.Size = New System.Drawing.Size(45, 40)
+        Me.btn_SERPT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_SERPT.TabIndex = 76
+        Me.btn_SERPT.TabStop = False
         '
-        'Label53
+        'btn_SESave
         '
-        Me.Label53.AutoSize = True
-        Me.Label53.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label53.ForeColor = System.Drawing.Color.White
-        Me.Label53.Location = New System.Drawing.Point(13, 6)
-        Me.Label53.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(54, 21)
-        Me.Label53.TabIndex = 0
-        Me.Label53.Text = "Datos"
+        Me.btn_SESave.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
+        Me.btn_SESave.Location = New System.Drawing.Point(820, 1346)
+        Me.btn_SESave.Name = "btn_SESave"
+        Me.btn_SESave.Size = New System.Drawing.Size(45, 40)
+        Me.btn_SESave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_SESave.TabIndex = 74
+        Me.btn_SESave.TabStop = False
         '
-        'txt_Religion
+        'btn_SECancel
         '
-        Me.txt_Religion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_Religion.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_Religion.Location = New System.Drawing.Point(124, 40)
-        Me.txt_Religion.Name = "txt_Religion"
-        Me.txt_Religion.Size = New System.Drawing.Size(293, 28)
-        Me.txt_Religion.TabIndex = 0
+        Me.btn_SECancel.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
+        Me.btn_SECancel.Location = New System.Drawing.Point(871, 1346)
+        Me.btn_SECancel.Name = "btn_SECancel"
+        Me.btn_SECancel.Size = New System.Drawing.Size(45, 40)
+        Me.btn_SECancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_SECancel.TabIndex = 75
+        Me.btn_SECancel.TabStop = False
         '
-        'Label50
+        'PnlObservaciones
         '
-        Me.Label50.AutoSize = True
-        Me.Label50.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label50.Location = New System.Drawing.Point(43, 43)
-        Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(75, 21)
-        Me.Label50.TabIndex = 37
-        Me.Label50.Text = "Religion:"
+        Me.PnlObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PnlObservaciones.Controls.Add(Me.txt_commen)
+        Me.PnlObservaciones.Controls.Add(Me.Panel26)
+        Me.PnlObservaciones.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PnlObservaciones.Location = New System.Drawing.Point(0, 1176)
+        Me.PnlObservaciones.Margin = New System.Windows.Forms.Padding(2)
+        Me.PnlObservaciones.Name = "PnlObservaciones"
+        Me.PnlObservaciones.Size = New System.Drawing.Size(918, 166)
+        Me.PnlObservaciones.TabIndex = 73
         '
-        'Txt_pasatiempos
+        'txt_commen
         '
-        Me.Txt_pasatiempos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.Txt_pasatiempos.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_pasatiempos.Location = New System.Drawing.Point(124, 72)
-        Me.Txt_pasatiempos.Name = "Txt_pasatiempos"
-        Me.Txt_pasatiempos.Size = New System.Drawing.Size(293, 28)
-        Me.Txt_pasatiempos.TabIndex = 1
+        Me.txt_commen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_commen.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txt_commen.Location = New System.Drawing.Point(0, 40)
+        Me.txt_commen.Multiline = True
+        Me.txt_commen.Name = "txt_commen"
+        Me.txt_commen.Size = New System.Drawing.Size(914, 122)
+        Me.txt_commen.TabIndex = 31
         '
-        'Label49
+        'Panel26
         '
-        Me.Label49.AutoSize = True
-        Me.Label49.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label49.Location = New System.Drawing.Point(8, 77)
-        Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(110, 21)
-        Me.Label49.TabIndex = 44
-        Me.Label49.Text = "Pasatiempos:"
+        Me.Panel26.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Panel26.Controls.Add(Me.Label71)
+        Me.Panel26.Controls.Add(Me.Label76)
+        Me.Panel26.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel26.Location = New System.Drawing.Point(0, 0)
+        Me.Panel26.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel26.Name = "Panel26"
+        Me.Panel26.Size = New System.Drawing.Size(914, 40)
+        Me.Panel26.TabIndex = 0
+        '
+        'Label71
+        '
+        Me.Label71.AutoSize = True
+        Me.Label71.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label71.ForeColor = System.Drawing.Color.White
+        Me.Label71.Location = New System.Drawing.Point(13, 6)
+        Me.Label71.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label71.Name = "Label71"
+        Me.Label71.Size = New System.Drawing.Size(120, 21)
+        Me.Label71.TabIndex = 1
+        Me.Label71.Text = "Observaciones"
+        '
+        'Label76
+        '
+        Me.Label76.AutoSize = True
+        Me.Label76.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label76.ForeColor = System.Drawing.Color.White
+        Me.Label76.Location = New System.Drawing.Point(13, 6)
+        Me.Label76.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label76.Name = "Label76"
+        Me.Label76.Size = New System.Drawing.Size(0, 21)
+        Me.Label76.TabIndex = 0
+        '
+        'PnlGastos
+        '
+        Me.PnlGastos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PnlGastos.Controls.Add(Me.Label64)
+        Me.PnlGastos.Controls.Add(Me.txt_GFServ)
+        Me.PnlGastos.Controls.Add(Me.Label73)
+        Me.PnlGastos.Controls.Add(Me.Panel30)
+        Me.PnlGastos.Controls.Add(Me.txt_GFRenta)
+        Me.PnlGastos.Controls.Add(Me.Label72)
+        Me.PnlGastos.Controls.Add(Me.Label62)
+        Me.PnlGastos.Controls.Add(Me.Txt_GFDesp)
+        Me.PnlGastos.Controls.Add(Me.txt_GFCole)
+        Me.PnlGastos.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PnlGastos.Location = New System.Drawing.Point(0, 1086)
+        Me.PnlGastos.Margin = New System.Windows.Forms.Padding(2)
+        Me.PnlGastos.Name = "PnlGastos"
+        Me.PnlGastos.Size = New System.Drawing.Size(918, 86)
+        Me.PnlGastos.TabIndex = 72
+        '
+        'Label64
+        '
+        Me.Label64.AutoSize = True
+        Me.Label64.Location = New System.Drawing.Point(620, 48)
+        Me.Label64.Name = "Label64"
+        Me.Label64.Size = New System.Drawing.Size(79, 21)
+        Me.Label64.TabIndex = 66
+        Me.Label64.Text = "Servicios:"
+        '
+        'txt_GFServ
+        '
+        Me.txt_GFServ.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_GFServ.Location = New System.Drawing.Point(705, 45)
+        Me.txt_GFServ.Name = "txt_GFServ"
+        Me.txt_GFServ.Size = New System.Drawing.Size(95, 28)
+        Me.txt_GFServ.TabIndex = 30
+        '
+        'Label73
+        '
+        Me.Label73.AutoSize = True
+        Me.Label73.Location = New System.Drawing.Point(45, 48)
+        Me.Label73.Name = "Label73"
+        Me.Label73.Size = New System.Drawing.Size(58, 21)
+        Me.Label73.TabIndex = 57
+        Me.Label73.Text = "Renta:"
+        '
+        'Panel30
+        '
+        Me.Panel30.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Panel30.Controls.Add(Me.Label74)
+        Me.Panel30.Controls.Add(Me.Label75)
+        Me.Panel30.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel30.Location = New System.Drawing.Point(0, 0)
+        Me.Panel30.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel30.Name = "Panel30"
+        Me.Panel30.Size = New System.Drawing.Size(914, 40)
+        Me.Panel30.TabIndex = 0
+        '
+        'Label74
+        '
+        Me.Label74.AutoSize = True
+        Me.Label74.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label74.ForeColor = System.Drawing.Color.White
+        Me.Label74.Location = New System.Drawing.Point(13, 6)
+        Me.Label74.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label74.Name = "Label74"
+        Me.Label74.Size = New System.Drawing.Size(100, 21)
+        Me.Label74.TabIndex = 1
+        Me.Label74.Text = "Gastos Fijos"
+        '
+        'Label75
+        '
+        Me.Label75.AutoSize = True
+        Me.Label75.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label75.ForeColor = System.Drawing.Color.White
+        Me.Label75.Location = New System.Drawing.Point(13, 6)
+        Me.Label75.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label75.Name = "Label75"
+        Me.Label75.Size = New System.Drawing.Size(0, 21)
+        Me.Label75.TabIndex = 0
+        '
+        'txt_GFRenta
+        '
+        Me.txt_GFRenta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_GFRenta.Location = New System.Drawing.Point(109, 45)
+        Me.txt_GFRenta.Name = "txt_GFRenta"
+        Me.txt_GFRenta.Size = New System.Drawing.Size(95, 28)
+        Me.txt_GFRenta.TabIndex = 27
+        '
+        'Label72
+        '
+        Me.Label72.AutoSize = True
+        Me.Label72.Location = New System.Drawing.Point(210, 48)
+        Me.Label72.Name = "Label72"
+        Me.Label72.Size = New System.Drawing.Size(109, 21)
+        Me.Label72.TabIndex = 62
+        Me.Label72.Text = "Colegiaturas:"
+        '
+        'Label62
+        '
+        Me.Label62.AutoSize = True
+        Me.Label62.Location = New System.Drawing.Point(426, 48)
+        Me.Label62.Name = "Label62"
+        Me.Label62.Size = New System.Drawing.Size(87, 21)
+        Me.Label62.TabIndex = 64
+        Me.Label62.Text = "Despensa:"
+        '
+        'Txt_GFDesp
+        '
+        Me.Txt_GFDesp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.Txt_GFDesp.Location = New System.Drawing.Point(519, 45)
+        Me.Txt_GFDesp.Name = "Txt_GFDesp"
+        Me.Txt_GFDesp.Size = New System.Drawing.Size(95, 28)
+        Me.Txt_GFDesp.TabIndex = 29
+        '
+        'txt_GFCole
+        '
+        Me.txt_GFCole.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_GFCole.Location = New System.Drawing.Point(325, 45)
+        Me.txt_GFCole.Name = "txt_GFCole"
+        Me.txt_GFCole.Size = New System.Drawing.Size(95, 28)
+        Me.txt_GFCole.TabIndex = 28
+        '
+        'PnlReferencias
+        '
+        Me.PnlReferencias.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PnlReferencias.Controls.Add(Me.dgv_Ref)
+        Me.PnlReferencias.Controls.Add(Me.Label52)
+        Me.PnlReferencias.Controls.Add(Me.txt_TC)
+        Me.PnlReferencias.Controls.Add(Me.txt_RefOcu)
+        Me.PnlReferencias.Controls.Add(Me.Label56)
+        Me.PnlReferencias.Controls.Add(Me.Label46)
+        Me.PnlReferencias.Controls.Add(Me.Txt_TR)
+        Me.PnlReferencias.Controls.Add(Me.txt_RefNom)
+        Me.PnlReferencias.Controls.Add(Me.Label48)
+        Me.PnlReferencias.Controls.Add(Me.Panel10)
+        Me.PnlReferencias.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PnlReferencias.Location = New System.Drawing.Point(0, 866)
+        Me.PnlReferencias.Margin = New System.Windows.Forms.Padding(2)
+        Me.PnlReferencias.Name = "PnlReferencias"
+        Me.PnlReferencias.Size = New System.Drawing.Size(918, 216)
+        Me.PnlReferencias.TabIndex = 71
+        '
+        'dgv_Ref
+        '
+        Me.dgv_Ref.AllowUserToAddRows = False
+        Me.dgv_Ref.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_Ref.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NOMBRE, Me.TIPO, Me.OCUPACION, Me.TIEMPO})
+        Me.dgv_Ref.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.dgv_Ref.Location = New System.Drawing.Point(0, 114)
+        Me.dgv_Ref.Name = "dgv_Ref"
+        Me.dgv_Ref.RowHeadersVisible = False
+        Me.dgv_Ref.Size = New System.Drawing.Size(914, 98)
+        Me.dgv_Ref.TabIndex = 54
+        '
+        'NOMBRE
+        '
+        Me.NOMBRE.DataPropertyName = "Ref_Nombre"
+        Me.NOMBRE.HeaderText = "NOMBRE"
+        Me.NOMBRE.Name = "NOMBRE"
+        Me.NOMBRE.Width = 200
+        '
+        'TIPO
+        '
+        Me.TIPO.DataPropertyName = "Ref_TRelacion"
+        Me.TIPO.HeaderText = "TIPO DE RELACION"
+        Me.TIPO.Name = "TIPO"
+        Me.TIPO.Width = 300
+        '
+        'OCUPACION
+        '
+        Me.OCUPACION.DataPropertyName = "Ref_Ocupacion"
+        Me.OCUPACION.HeaderText = "OCUPACION"
+        Me.OCUPACION.Name = "OCUPACION"
+        Me.OCUPACION.Width = 200
+        '
+        'TIEMPO
+        '
+        Me.TIEMPO.DataPropertyName = "Ref_TiempoC"
+        Me.TIEMPO.HeaderText = "TIEMPO DE CONOCERLO"
+        Me.TIEMPO.Name = "TIEMPO"
+        Me.TIEMPO.Width = 400
+        '
+        'Label52
+        '
+        Me.Label52.AutoSize = True
+        Me.Label52.Location = New System.Drawing.Point(327, 82)
+        Me.Label52.Name = "Label52"
+        Me.Label52.Size = New System.Drawing.Size(71, 21)
+        Me.Label52.TabIndex = 53
+        Me.Label52.Text = "Tiempo:"
+        '
+        'txt_TC
+        '
+        Me.txt_TC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_TC.Location = New System.Drawing.Point(404, 79)
+        Me.txt_TC.Name = "txt_TC"
+        Me.txt_TC.Size = New System.Drawing.Size(208, 28)
+        Me.txt_TC.TabIndex = 5
+        '
+        'txt_RefOcu
+        '
+        Me.txt_RefOcu.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_RefOcu.Location = New System.Drawing.Point(109, 79)
+        Me.txt_RefOcu.Name = "txt_RefOcu"
+        Me.txt_RefOcu.Size = New System.Drawing.Size(209, 28)
+        Me.txt_RefOcu.TabIndex = 4
+        '
+        'Label56
+        '
+        Me.Label56.AutoSize = True
+        Me.Label56.Location = New System.Drawing.Point(478, 52)
+        Me.Label56.Name = "Label56"
+        Me.Label56.Size = New System.Drawing.Size(140, 21)
+        Me.Label56.TabIndex = 51
+        Me.Label56.Text = "Tipo de Relacion:"
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Location = New System.Drawing.Point(7, 82)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(96, 21)
+        Me.Label46.TabIndex = 44
+        Me.Label46.Text = "Ocupacion:"
+        '
+        'Txt_TR
+        '
+        Me.Txt_TR.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.Txt_TR.Location = New System.Drawing.Point(624, 49)
+        Me.Txt_TR.Name = "Txt_TR"
+        Me.Txt_TR.Size = New System.Drawing.Size(209, 28)
+        Me.Txt_TR.TabIndex = 3
+        '
+        'txt_RefNom
+        '
+        Me.txt_RefNom.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_RefNom.Location = New System.Drawing.Point(109, 45)
+        Me.txt_RefNom.Name = "txt_RefNom"
+        Me.txt_RefNom.Size = New System.Drawing.Size(363, 28)
+        Me.txt_RefNom.TabIndex = 2
+        '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.Location = New System.Drawing.Point(26, 48)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(77, 21)
+        Me.Label48.TabIndex = 37
+        Me.Label48.Text = "Nombre:"
+        '
+        'Panel10
+        '
+        Me.Panel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Panel10.Controls.Add(Me.Btn_AddRef)
+        Me.Panel10.Controls.Add(Me.Label51)
+        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel10.Location = New System.Drawing.Point(0, 0)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(914, 40)
+        Me.Panel10.TabIndex = 0
+        '
+        'Btn_AddRef
+        '
+        Me.Btn_AddRef.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Reference_80px
+        Me.Btn_AddRef.Location = New System.Drawing.Point(846, 0)
+        Me.Btn_AddRef.Name = "Btn_AddRef"
+        Me.Btn_AddRef.Size = New System.Drawing.Size(45, 40)
+        Me.Btn_AddRef.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Btn_AddRef.TabIndex = 63
+        Me.Btn_AddRef.TabStop = False
+        '
+        'Label51
+        '
+        Me.Label51.AutoSize = True
+        Me.Label51.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label51.ForeColor = System.Drawing.Color.White
+        Me.Label51.Location = New System.Drawing.Point(13, 6)
+        Me.Label51.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label51.Name = "Label51"
+        Me.Label51.Size = New System.Drawing.Size(97, 21)
+        Me.Label51.TabIndex = 0
+        Me.Label51.Text = "Referencias"
+        '
+        'PnlActividades
+        '
+        Me.PnlActividades.Controls.Add(Me.Label90)
+        Me.PnlActividades.Controls.Add(Me.Label88)
+        Me.PnlActividades.Controls.Add(Me.txt_se_diversiones)
+        Me.PnlActividades.Controls.Add(Me.txt_SE_NATURALES)
+        Me.PnlActividades.Controls.Add(Me.Label89)
+        Me.PnlActividades.Controls.Add(Me.txt_SE_PLAZAS)
+        Me.PnlActividades.Controls.Add(Me.Label83)
+        Me.PnlActividades.Controls.Add(Me.txt_SE_CINES)
+        Me.PnlActividades.Controls.Add(Me.txt_SE_ZONAS)
+        Me.PnlActividades.Controls.Add(Me.Label85)
+        Me.PnlActividades.Controls.Add(Me.Label87)
+        Me.PnlActividades.Controls.Add(Me.txt_SE_CULTURALES)
+        Me.PnlActividades.Controls.Add(Me.Label80)
+        Me.PnlActividades.Controls.Add(Me.txt_SE_TEATROS)
+        Me.PnlActividades.Controls.Add(Me.Label86)
+        Me.PnlActividades.Controls.Add(Me.Label81)
+        Me.PnlActividades.Controls.Add(Me.txt_SE_MUSEOS)
+        Me.PnlActividades.Controls.Add(Me.txt_SE_VACIONES)
+        Me.PnlActividades.Controls.Add(Me.Label78)
+        Me.PnlActividades.Controls.Add(Me.txt_SE__SOCIALE)
+        Me.PnlActividades.Controls.Add(Me.txt_SE_EVENTOS)
+        Me.PnlActividades.Controls.Add(Me.Label79)
+        Me.PnlActividades.Controls.Add(Me.Panel36)
+        Me.PnlActividades.Location = New System.Drawing.Point(0, 430)
+        Me.PnlActividades.Name = "PnlActividades"
+        Me.PnlActividades.Size = New System.Drawing.Size(920, 245)
+        Me.PnlActividades.TabIndex = 51
+        '
+        'Label90
+        '
+        Me.Label90.AutoSize = True
+        Me.Label90.Location = New System.Drawing.Point(-1, 210)
+        Me.Label90.Name = "Label90"
+        Me.Label90.Size = New System.Drawing.Size(183, 21)
+        Me.Label90.TabIndex = 82
+        Me.Label90.Text = "Parque de Diversiones:"
+        '
+        'Label88
+        '
+        Me.Label88.AutoSize = True
+        Me.Label88.Location = New System.Drawing.Point(541, 108)
+        Me.Label88.Name = "Label88"
+        Me.Label88.Size = New System.Drawing.Size(153, 21)
+        Me.Label88.TabIndex = 79
+        Me.Label88.Text = "Parques Naturales:"
+        '
+        'txt_se_diversiones
+        '
+        Me.txt_se_diversiones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_se_diversiones.Location = New System.Drawing.Point(188, 210)
+        Me.txt_se_diversiones.Name = "txt_se_diversiones"
+        Me.txt_se_diversiones.Size = New System.Drawing.Size(209, 28)
+        Me.txt_se_diversiones.TabIndex = 79
+        '
+        'txt_SE_NATURALES
+        '
+        Me.txt_SE_NATURALES.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_SE_NATURALES.Location = New System.Drawing.Point(700, 108)
+        Me.txt_SE_NATURALES.Name = "txt_SE_NATURALES"
+        Me.txt_SE_NATURALES.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE_NATURALES.TabIndex = 73
+        '
+        'Label89
+        '
+        Me.Label89.AutoSize = True
+        Me.Label89.Location = New System.Drawing.Point(566, 179)
+        Me.Label89.Name = "Label89"
+        Me.Label89.Size = New System.Drawing.Size(128, 21)
+        Me.Label89.TabIndex = 81
+        Me.Label89.Text = "Plazas Publicas:"
+        '
+        'txt_SE_PLAZAS
+        '
+        Me.txt_SE_PLAZAS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_SE_PLAZAS.Location = New System.Drawing.Point(700, 176)
+        Me.txt_SE_PLAZAS.Name = "txt_SE_PLAZAS"
+        Me.txt_SE_PLAZAS.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE_PLAZAS.TabIndex = 78
+        '
+        'Label83
+        '
+        Me.Label83.AutoSize = True
+        Me.Label83.Location = New System.Drawing.Point(15, 77)
+        Me.Label83.Name = "Label83"
+        Me.Label83.Size = New System.Drawing.Size(167, 21)
+        Me.Label83.TabIndex = 71
+        Me.Label83.Text = "Festivales Culturales:"
+        '
+        'txt_SE_CINES
+        '
+        Me.txt_SE_CINES.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_SE_CINES.Location = New System.Drawing.Point(700, 142)
+        Me.txt_SE_CINES.Name = "txt_SE_CINES"
+        Me.txt_SE_CINES.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE_CINES.TabIndex = 75
+        '
+        'txt_SE_ZONAS
+        '
+        Me.txt_SE_ZONAS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_SE_ZONAS.Location = New System.Drawing.Point(188, 176)
+        Me.txt_SE_ZONAS.Name = "txt_SE_ZONAS"
+        Me.txt_SE_ZONAS.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE_ZONAS.TabIndex = 77
+        '
+        'Label85
+        '
+        Me.Label85.AutoSize = True
+        Me.Label85.Location = New System.Drawing.Point(639, 145)
+        Me.Label85.Name = "Label85"
+        Me.Label85.Size = New System.Drawing.Size(55, 21)
+        Me.Label85.TabIndex = 77
+        Me.Label85.Text = "Cines:"
+        '
+        'Label87
+        '
+        Me.Label87.AutoSize = True
+        Me.Label87.Location = New System.Drawing.Point(9, 179)
+        Me.Label87.Name = "Label87"
+        Me.Label87.Size = New System.Drawing.Size(173, 21)
+        Me.Label87.TabIndex = 80
+        Me.Label87.Text = "Zonas Arqueologicas:"
+        '
+        'txt_SE_CULTURALES
+        '
+        Me.txt_SE_CULTURALES.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_SE_CULTURALES.Location = New System.Drawing.Point(188, 74)
+        Me.txt_SE_CULTURALES.Name = "txt_SE_CULTURALES"
+        Me.txt_SE_CULTURALES.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE_CULTURALES.TabIndex = 67
+        '
+        'Label80
+        '
+        Me.Label80.AutoSize = True
+        Me.Label80.Location = New System.Drawing.Point(624, 77)
+        Me.Label80.Name = "Label80"
+        Me.Label80.Size = New System.Drawing.Size(70, 21)
+        Me.Label80.TabIndex = 70
+        Me.Label80.Text = "Teatros:"
+        '
+        'txt_SE_TEATROS
+        '
+        Me.txt_SE_TEATROS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_SE_TEATROS.Location = New System.Drawing.Point(700, 74)
+        Me.txt_SE_TEATROS.Name = "txt_SE_TEATROS"
+        Me.txt_SE_TEATROS.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE_TEATROS.TabIndex = 65
+        '
+        'Label86
+        '
+        Me.Label86.AutoSize = True
+        Me.Label86.Location = New System.Drawing.Point(83, 111)
+        Me.Label86.Name = "Label86"
+        Me.Label86.Size = New System.Drawing.Size(99, 21)
+        Me.Label86.TabIndex = 78
+        Me.Label86.Text = "Vacaciones:"
+        '
+        'Label81
+        '
+        Me.Label81.AutoSize = True
+        Me.Label81.Location = New System.Drawing.Point(109, 145)
+        Me.Label81.Name = "Label81"
+        Me.Label81.Size = New System.Drawing.Size(73, 21)
+        Me.Label81.TabIndex = 76
+        Me.Label81.Text = "Museos:"
+        '
+        'txt_SE_MUSEOS
+        '
+        Me.txt_SE_MUSEOS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_SE_MUSEOS.Location = New System.Drawing.Point(188, 142)
+        Me.txt_SE_MUSEOS.Name = "txt_SE_MUSEOS"
+        Me.txt_SE_MUSEOS.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE_MUSEOS.TabIndex = 74
+        '
+        'txt_SE_VACIONES
+        '
+        Me.txt_SE_VACIONES.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_SE_VACIONES.Location = New System.Drawing.Point(188, 108)
+        Me.txt_SE_VACIONES.Name = "txt_SE_VACIONES"
+        Me.txt_SE_VACIONES.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE_VACIONES.TabIndex = 72
+        '
+        'Label78
+        '
+        Me.Label78.AutoSize = True
+        Me.Label78.Location = New System.Drawing.Point(433, 43)
+        Me.Label78.Name = "Label78"
+        Me.Label78.Size = New System.Drawing.Size(261, 21)
+        Me.Label78.TabIndex = 69
+        Me.Label78.Text = "Eventos sociales (Fam o Amigos):"
+        '
+        'txt_SE__SOCIALE
+        '
+        Me.txt_SE__SOCIALE.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_SE__SOCIALE.Location = New System.Drawing.Point(700, 40)
+        Me.txt_SE__SOCIALE.Name = "txt_SE__SOCIALE"
+        Me.txt_SE__SOCIALE.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE__SOCIALE.TabIndex = 66
+        '
+        'txt_SE_EVENTOS
+        '
+        Me.txt_SE_EVENTOS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_SE_EVENTOS.Location = New System.Drawing.Point(188, 40)
+        Me.txt_SE_EVENTOS.Name = "txt_SE_EVENTOS"
+        Me.txt_SE_EVENTOS.Size = New System.Drawing.Size(209, 28)
+        Me.txt_SE_EVENTOS.TabIndex = 64
+        '
+        'Label79
+        '
+        Me.Label79.AutoSize = True
+        Me.Label79.Location = New System.Drawing.Point(2, 43)
+        Me.Label79.Name = "Label79"
+        Me.Label79.Size = New System.Drawing.Size(180, 21)
+        Me.Label79.TabIndex = 68
+        Me.Label79.Text = "Eventos Comunitarios:"
+        '
+        'Panel36
+        '
+        Me.Panel36.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Panel36.Controls.Add(Me.Label84)
+        Me.Panel36.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel36.Location = New System.Drawing.Point(0, 0)
+        Me.Panel36.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel36.Name = "Panel36"
+        Me.Panel36.Size = New System.Drawing.Size(920, 35)
+        Me.Panel36.TabIndex = 28
+        '
+        'Label84
+        '
+        Me.Label84.AutoSize = True
+        Me.Label84.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label84.ForeColor = System.Drawing.Color.White
+        Me.Label84.Location = New System.Drawing.Point(13, 6)
+        Me.Label84.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label84.Name = "Label84"
+        Me.Label84.Size = New System.Drawing.Size(96, 21)
+        Me.Label84.TabIndex = 0
+        Me.Label84.Text = "Actividades"
         '
         'PnlIngresos
         '
@@ -613,6 +1172,16 @@ Partial Class Empleados
         Me.Panel14.Size = New System.Drawing.Size(916, 40)
         Me.Panel14.TabIndex = 0
         '
+        'btn_OI
+        '
+        Me.btn_OI.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Income_80px
+        Me.btn_OI.Location = New System.Drawing.Point(846, 0)
+        Me.btn_OI.Name = "btn_OI"
+        Me.btn_OI.Size = New System.Drawing.Size(45, 40)
+        Me.btn_OI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_OI.TabIndex = 55
+        Me.btn_OI.TabStop = False
+        '
         'Label60
         '
         Me.Label60.AutoSize = True
@@ -636,26 +1205,165 @@ Partial Class Empleados
         Me.Label61.Size = New System.Drawing.Size(0, 21)
         Me.Label61.TabIndex = 0
         '
-        'Panel1
+        'PnlDatos
         '
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel1.Controls.Add(Me.btn_SERPT)
-        Me.Panel1.Controls.Add(Me.btn_SESave)
-        Me.Panel1.Controls.Add(Me.btn_SECancel)
-        Me.Panel1.Controls.Add(Me.PnlObservaciones)
-        Me.Panel1.Controls.Add(Me.PnlGastos)
-        Me.Panel1.Controls.Add(Me.PnlReferencias)
-        Me.Panel1.Controls.Add(Me.PnlActividades)
-        Me.Panel1.Controls.Add(Me.PnlIngresos)
-        Me.Panel1.Controls.Add(Me.PnlDatos)
-        Me.Panel1.Controls.Add(Me.PnlTransporte)
-        Me.Panel1.Controls.Add(Me.PnlVivienda)
-        Me.Panel1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(930, 1400)
-        Me.Panel1.TabIndex = 2
+        Me.PnlDatos.Controls.Add(Me.Panel6)
+        Me.PnlDatos.Controls.Add(Me.txt_Religion)
+        Me.PnlDatos.Controls.Add(Me.Label50)
+        Me.PnlDatos.Controls.Add(Me.Txt_pasatiempos)
+        Me.PnlDatos.Controls.Add(Me.Label49)
+        Me.PnlDatos.Location = New System.Drawing.Point(491, 314)
+        Me.PnlDatos.Name = "PnlDatos"
+        Me.PnlDatos.Size = New System.Drawing.Size(429, 110)
+        Me.PnlDatos.TabIndex = 50
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Panel6.Controls.Add(Me.Label53)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel6.Location = New System.Drawing.Point(0, 0)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(429, 35)
+        Me.Panel6.TabIndex = 0
+        '
+        'Label53
+        '
+        Me.Label53.AutoSize = True
+        Me.Label53.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label53.ForeColor = System.Drawing.Color.White
+        Me.Label53.Location = New System.Drawing.Point(13, 6)
+        Me.Label53.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label53.Name = "Label53"
+        Me.Label53.Size = New System.Drawing.Size(54, 21)
+        Me.Label53.TabIndex = 0
+        Me.Label53.Text = "Datos"
+        '
+        'txt_Religion
+        '
+        Me.txt_Religion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_Religion.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_Religion.Location = New System.Drawing.Point(124, 40)
+        Me.txt_Religion.Name = "txt_Religion"
+        Me.txt_Religion.Size = New System.Drawing.Size(293, 28)
+        Me.txt_Religion.TabIndex = 0
+        '
+        'Label50
+        '
+        Me.Label50.AutoSize = True
+        Me.Label50.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label50.Location = New System.Drawing.Point(43, 43)
+        Me.Label50.Name = "Label50"
+        Me.Label50.Size = New System.Drawing.Size(75, 21)
+        Me.Label50.TabIndex = 37
+        Me.Label50.Text = "Religion:"
+        '
+        'Txt_pasatiempos
+        '
+        Me.Txt_pasatiempos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.Txt_pasatiempos.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_pasatiempos.Location = New System.Drawing.Point(124, 72)
+        Me.Txt_pasatiempos.Name = "Txt_pasatiempos"
+        Me.Txt_pasatiempos.Size = New System.Drawing.Size(293, 28)
+        Me.Txt_pasatiempos.TabIndex = 1
+        '
+        'Label49
+        '
+        Me.Label49.AutoSize = True
+        Me.Label49.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label49.Location = New System.Drawing.Point(8, 77)
+        Me.Label49.Name = "Label49"
+        Me.Label49.Size = New System.Drawing.Size(110, 21)
+        Me.Label49.TabIndex = 44
+        Me.Label49.Text = "Pasatiempos:"
+        '
+        'PnlTransporte
+        '
+        Me.PnlTransporte.Controls.Add(Me.Panel22)
+        Me.PnlTransporte.Controls.Add(Me.cb_Metro)
+        Me.PnlTransporte.Controls.Add(Me.cb_Trans)
+        Me.PnlTransporte.Controls.Add(Me.cb_Taxi)
+        Me.PnlTransporte.Controls.Add(Me.cb_Vehi)
+        Me.PnlTransporte.Location = New System.Drawing.Point(0, 314)
+        Me.PnlTransporte.Name = "PnlTransporte"
+        Me.PnlTransporte.Size = New System.Drawing.Size(485, 110)
+        Me.PnlTransporte.TabIndex = 1
+        '
+        'Panel22
+        '
+        Me.Panel22.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Panel22.Controls.Add(Me.Label57)
+        Me.Panel22.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel22.Location = New System.Drawing.Point(0, 0)
+        Me.Panel22.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel22.Name = "Panel22"
+        Me.Panel22.Size = New System.Drawing.Size(485, 40)
+        Me.Panel22.TabIndex = 2
+        '
+        'Label57
+        '
+        Me.Label57.AutoSize = True
+        Me.Label57.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label57.ForeColor = System.Drawing.Color.White
+        Me.Label57.Location = New System.Drawing.Point(13, 6)
+        Me.Label57.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label57.Name = "Label57"
+        Me.Label57.Size = New System.Drawing.Size(92, 21)
+        Me.Label57.TabIndex = 0
+        Me.Label57.Text = "Transporte"
+        '
+        'cb_Metro
+        '
+        Me.cb_Metro.AutoSize = True
+        Me.cb_Metro.Location = New System.Drawing.Point(6, 45)
+        Me.cb_Metro.Name = "cb_Metro"
+        Me.cb_Metro.Size = New System.Drawing.Size(76, 25)
+        Me.cb_Metro.TabIndex = 7
+        Me.cb_Metro.Text = "Metro"
+        Me.cb_Metro.UseVisualStyleBackColor = True
+        '
+        'cb_Trans
+        '
+        Me.cb_Trans.AutoSize = True
+        Me.cb_Trans.Location = New System.Drawing.Point(88, 45)
+        Me.cb_Trans.Name = "cb_Trans"
+        Me.cb_Trans.Size = New System.Drawing.Size(172, 25)
+        Me.cb_Trans.TabIndex = 8
+        Me.cb_Trans.Text = "Transporte Publico"
+        Me.cb_Trans.UseVisualStyleBackColor = True
+        '
+        'cb_Taxi
+        '
+        Me.cb_Taxi.AutoSize = True
+        Me.cb_Taxi.Location = New System.Drawing.Point(266, 45)
+        Me.cb_Taxi.Name = "cb_Taxi"
+        Me.cb_Taxi.Size = New System.Drawing.Size(59, 25)
+        Me.cb_Taxi.TabIndex = 9
+        Me.cb_Taxi.Text = "Taxi"
+        Me.cb_Taxi.UseVisualStyleBackColor = True
+        '
+        'cb_Vehi
+        '
+        Me.cb_Vehi.AutoSize = True
+        Me.cb_Vehi.Location = New System.Drawing.Point(331, 45)
+        Me.cb_Vehi.Name = "cb_Vehi"
+        Me.cb_Vehi.Size = New System.Drawing.Size(150, 25)
+        Me.cb_Vehi.TabIndex = 10
+        Me.cb_Vehi.Text = "Vehiculo Propio"
+        Me.cb_Vehi.UseVisualStyleBackColor = True
+        '
+        'PnlVivienda
+        '
+        Me.PnlVivienda.Controls.Add(Me.GrpServicios)
+        Me.PnlVivienda.Controls.Add(Me.PB_IMAGE_VIVIENDA)
+        Me.PnlVivienda.Controls.Add(Me.GrpMaterial)
+        Me.PnlVivienda.Controls.Add(Me.GrpTIpo)
+        Me.PnlVivienda.Controls.Add(Me.Panel15)
+        Me.PnlVivienda.Location = New System.Drawing.Point(0, 0)
+        Me.PnlVivienda.Name = "PnlVivienda"
+        Me.PnlVivienda.Size = New System.Drawing.Size(920, 308)
+        Me.PnlVivienda.TabIndex = 0
         '
         'GrpServicios
         '
@@ -695,16 +1403,6 @@ Partial Class Empleados
         Me.cb_Drenaje.Text = "Drenaje"
         Me.cb_Drenaje.UseVisualStyleBackColor = True
         '
-        'cb_AguaP
-        '
-        Me.cb_AguaP.AutoSize = True
-        Me.cb_AguaP.Location = New System.Drawing.Point(161, 27)
-        Me.cb_AguaP.Name = "cb_AguaP"
-        Me.cb_AguaP.Size = New System.Drawing.Size(132, 25)
-        Me.cb_AguaP.TabIndex = 20
-        Me.cb_AguaP.Text = "Agua Potable"
-        Me.cb_AguaP.UseVisualStyleBackColor = True
-        '
         'cb_SisSeg
         '
         Me.cb_SisSeg.AutoSize = True
@@ -715,25 +1413,15 @@ Partial Class Empleados
         Me.cb_SisSeg.Text = "Sistema de Seguridad"
         Me.cb_SisSeg.UseVisualStyleBackColor = True
         '
-        'cb_Tuberia
+        'cb_LineaTel
         '
-        Me.cb_Tuberia.AutoSize = True
-        Me.cb_Tuberia.Location = New System.Drawing.Point(299, 27)
-        Me.cb_Tuberia.Name = "cb_Tuberia"
-        Me.cb_Tuberia.Size = New System.Drawing.Size(143, 25)
-        Me.cb_Tuberia.TabIndex = 22
-        Me.cb_Tuberia.Text = "Tuberia de Gas"
-        Me.cb_Tuberia.UseVisualStyleBackColor = True
-        '
-        'cb_Basura
-        '
-        Me.cb_Basura.AutoSize = True
-        Me.cb_Basura.Location = New System.Drawing.Point(6, 58)
-        Me.cb_Basura.Name = "cb_Basura"
-        Me.cb_Basura.Size = New System.Drawing.Size(175, 25)
-        Me.cb_Basura.TabIndex = 23
-        Me.cb_Basura.Text = "Recoleccion Basura"
-        Me.cb_Basura.UseVisualStyleBackColor = True
+        Me.cb_LineaTel.AutoSize = True
+        Me.cb_LineaTel.Location = New System.Drawing.Point(187, 58)
+        Me.cb_LineaTel.Name = "cb_LineaTel"
+        Me.cb_LineaTel.Size = New System.Drawing.Size(152, 25)
+        Me.cb_LineaTel.TabIndex = 19
+        Me.cb_LineaTel.Text = "Linea Telefonica"
+        Me.cb_LineaTel.UseVisualStyleBackColor = True
         '
         'cb_TV
         '
@@ -755,27 +1443,45 @@ Partial Class Empleados
         Me.cb_Internet.Text = "Internet"
         Me.cb_Internet.UseVisualStyleBackColor = True
         '
-        'cb_LineaTel
+        'cb_AguaP
         '
-        Me.cb_LineaTel.AutoSize = True
-        Me.cb_LineaTel.Location = New System.Drawing.Point(187, 58)
-        Me.cb_LineaTel.Name = "cb_LineaTel"
-        Me.cb_LineaTel.Size = New System.Drawing.Size(152, 25)
-        Me.cb_LineaTel.TabIndex = 19
-        Me.cb_LineaTel.Text = "Linea Telefonica"
-        Me.cb_LineaTel.UseVisualStyleBackColor = True
+        Me.cb_AguaP.AutoSize = True
+        Me.cb_AguaP.Location = New System.Drawing.Point(161, 27)
+        Me.cb_AguaP.Name = "cb_AguaP"
+        Me.cb_AguaP.Size = New System.Drawing.Size(132, 25)
+        Me.cb_AguaP.TabIndex = 20
+        Me.cb_AguaP.Text = "Agua Potable"
+        Me.cb_AguaP.UseVisualStyleBackColor = True
         '
-        'PnlVivienda
+        'cb_Tuberia
         '
-        Me.PnlVivienda.Controls.Add(Me.GrpServicios)
-        Me.PnlVivienda.Controls.Add(Me.PB_IMAGE_VIVIENDA)
-        Me.PnlVivienda.Controls.Add(Me.GrpMaterial)
-        Me.PnlVivienda.Controls.Add(Me.GrpTIpo)
-        Me.PnlVivienda.Controls.Add(Me.Panel15)
-        Me.PnlVivienda.Location = New System.Drawing.Point(0, 0)
-        Me.PnlVivienda.Name = "PnlVivienda"
-        Me.PnlVivienda.Size = New System.Drawing.Size(920, 308)
-        Me.PnlVivienda.TabIndex = 0
+        Me.cb_Tuberia.AutoSize = True
+        Me.cb_Tuberia.Location = New System.Drawing.Point(299, 27)
+        Me.cb_Tuberia.Name = "cb_Tuberia"
+        Me.cb_Tuberia.Size = New System.Drawing.Size(143, 25)
+        Me.cb_Tuberia.TabIndex = 22
+        Me.cb_Tuberia.Text = "Tuberia de Gas"
+        Me.cb_Tuberia.UseVisualStyleBackColor = True
+        '
+        'cb_Basura
+        '
+        Me.cb_Basura.AutoSize = True
+        Me.cb_Basura.Location = New System.Drawing.Point(6, 58)
+        Me.cb_Basura.Name = "cb_Basura"
+        Me.cb_Basura.Size = New System.Drawing.Size(175, 25)
+        Me.cb_Basura.TabIndex = 23
+        Me.cb_Basura.Text = "Recoleccion Basura"
+        Me.cb_Basura.UseVisualStyleBackColor = True
+        '
+        'PB_IMAGE_VIVIENDA
+        '
+        Me.PB_IMAGE_VIVIENDA.Image = Global.AdminEmpleados.My.Resources.Resources.AddImage
+        Me.PB_IMAGE_VIVIENDA.Location = New System.Drawing.Point(6, 40)
+        Me.PB_IMAGE_VIVIENDA.Name = "PB_IMAGE_VIVIENDA"
+        Me.PB_IMAGE_VIVIENDA.Size = New System.Drawing.Size(450, 262)
+        Me.PB_IMAGE_VIVIENDA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PB_IMAGE_VIVIENDA.TabIndex = 32
+        Me.PB_IMAGE_VIVIENDA.TabStop = False
         '
         'GrpMaterial
         '
@@ -906,46 +1612,6 @@ Partial Class Empleados
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "Vivienda"
         '
-        'cb_Metro
-        '
-        Me.cb_Metro.AutoSize = True
-        Me.cb_Metro.Location = New System.Drawing.Point(6, 45)
-        Me.cb_Metro.Name = "cb_Metro"
-        Me.cb_Metro.Size = New System.Drawing.Size(76, 25)
-        Me.cb_Metro.TabIndex = 7
-        Me.cb_Metro.Text = "Metro"
-        Me.cb_Metro.UseVisualStyleBackColor = True
-        '
-        'cb_Taxi
-        '
-        Me.cb_Taxi.AutoSize = True
-        Me.cb_Taxi.Location = New System.Drawing.Point(266, 45)
-        Me.cb_Taxi.Name = "cb_Taxi"
-        Me.cb_Taxi.Size = New System.Drawing.Size(59, 25)
-        Me.cb_Taxi.TabIndex = 9
-        Me.cb_Taxi.Text = "Taxi"
-        Me.cb_Taxi.UseVisualStyleBackColor = True
-        '
-        'cb_Trans
-        '
-        Me.cb_Trans.AutoSize = True
-        Me.cb_Trans.Location = New System.Drawing.Point(88, 45)
-        Me.cb_Trans.Name = "cb_Trans"
-        Me.cb_Trans.Size = New System.Drawing.Size(172, 25)
-        Me.cb_Trans.TabIndex = 8
-        Me.cb_Trans.Text = "Transporte Publico"
-        Me.cb_Trans.UseVisualStyleBackColor = True
-        '
-        'cb_Vehi
-        '
-        Me.cb_Vehi.AutoSize = True
-        Me.cb_Vehi.Location = New System.Drawing.Point(331, 45)
-        Me.cb_Vehi.Name = "cb_Vehi"
-        Me.cb_Vehi.Size = New System.Drawing.Size(150, 25)
-        Me.cb_Vehi.TabIndex = 10
-        Me.cb_Vehi.Text = "Vehiculo Propio"
-        Me.cb_Vehi.UseVisualStyleBackColor = True
-        '
         'Tab_Enfer
         '
         Me.Tab_Enfer.Controls.Add(Me.panel20)
@@ -953,7 +1619,7 @@ Partial Class Empleados
         Me.Tab_Enfer.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_Enfer.Name = "Tab_Enfer"
         Me.Tab_Enfer.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_Enfer.Size = New System.Drawing.Size(950, 1066)
+        Me.Tab_Enfer.Size = New System.Drawing.Size(950, 696)
         Me.Tab_Enfer.TabIndex = 4
         Me.Tab_Enfer.Text = "Enfermedades"
         Me.Tab_Enfer.UseVisualStyleBackColor = True
@@ -999,8 +1665,8 @@ Partial Class Empleados
         'Text
         '
         Me.Text.DataPropertyName = "Text"
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        Me.Text.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.Text.DefaultCellStyle = DataGridViewCellStyle1
         Me.Text.HeaderText = "Enfermedad"
         Me.Text.Name = "Text"
         Me.Text.ReadOnly = True
@@ -1037,6 +1703,16 @@ Partial Class Empleados
         Me.panel21.Size = New System.Drawing.Size(958, 40)
         Me.panel21.TabIndex = 0
         '
+        'btn_enfADD
+        '
+        Me.btn_enfADD.Image = Global.AdminEmpleados.My.Resources.Resources.Add_MedicalCondition_80px
+        Me.btn_enfADD.Location = New System.Drawing.Point(892, 0)
+        Me.btn_enfADD.Name = "btn_enfADD"
+        Me.btn_enfADD.Size = New System.Drawing.Size(45, 40)
+        Me.btn_enfADD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_enfADD.TabIndex = 46
+        Me.btn_enfADD.TabStop = False
+        '
         'label19
         '
         Me.label19.AutoSize = True
@@ -1056,7 +1732,7 @@ Partial Class Empleados
         Me.Tab_Cont.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_Cont.Name = "Tab_Cont"
         Me.Tab_Cont.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_Cont.Size = New System.Drawing.Size(950, 1066)
+        Me.Tab_Cont.Size = New System.Drawing.Size(950, 696)
         Me.Tab_Cont.TabIndex = 3
         Me.Tab_Cont.Text = "Contacto"
         Me.Tab_Cont.UseVisualStyleBackColor = True
@@ -1275,6 +1951,16 @@ Partial Class Empleados
         Me.panel19.Size = New System.Drawing.Size(958, 40)
         Me.panel19.TabIndex = 0
         '
+        'btn_conADD
+        '
+        Me.btn_conADD.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Contact_80px
+        Me.btn_conADD.Location = New System.Drawing.Point(892, 0)
+        Me.btn_conADD.Name = "btn_conADD"
+        Me.btn_conADD.Size = New System.Drawing.Size(45, 40)
+        Me.btn_conADD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_conADD.TabIndex = 55
+        Me.btn_conADD.TabStop = False
+        '
         'label18
         '
         Me.label18.AutoSize = True
@@ -1294,7 +1980,7 @@ Partial Class Empleados
         Me.Tab_AL.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_AL.Name = "Tab_AL"
         Me.Tab_AL.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_AL.Size = New System.Drawing.Size(950, 1066)
+        Me.Tab_AL.Size = New System.Drawing.Size(950, 696)
         Me.Tab_AL.TabIndex = 2
         Me.Tab_AL.Text = "Antecedentes Laborales"
         Me.Tab_AL.UseVisualStyleBackColor = True
@@ -1551,6 +2237,16 @@ Partial Class Empleados
         Me.panel17.Size = New System.Drawing.Size(958, 40)
         Me.panel17.TabIndex = 0
         '
+        'btn_antSave
+        '
+        Me.btn_antSave.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Job_80px
+        Me.btn_antSave.Location = New System.Drawing.Point(892, 0)
+        Me.btn_antSave.Name = "btn_antSave"
+        Me.btn_antSave.Size = New System.Drawing.Size(45, 40)
+        Me.btn_antSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_antSave.TabIndex = 54
+        Me.btn_antSave.TabStop = False
+        '
         'label17
         '
         Me.label17.AutoSize = True
@@ -1571,7 +2267,7 @@ Partial Class Empleados
         Me.Tab_Familia.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_Familia.Name = "Tab_Familia"
         Me.Tab_Familia.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_Familia.Size = New System.Drawing.Size(950, 1066)
+        Me.Tab_Familia.Size = New System.Drawing.Size(950, 696)
         Me.Tab_Familia.TabIndex = 1
         Me.Tab_Familia.Text = "Familia"
         Me.Tab_Familia.UseVisualStyleBackColor = True
@@ -1826,6 +2522,16 @@ Partial Class Empleados
         Me.panel5.Size = New System.Drawing.Size(958, 40)
         Me.panel5.TabIndex = 1
         '
+        'btn_hijoADD
+        '
+        Me.btn_hijoADD.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Family_80px
+        Me.btn_hijoADD.Location = New System.Drawing.Point(892, 0)
+        Me.btn_hijoADD.Name = "btn_hijoADD"
+        Me.btn_hijoADD.Size = New System.Drawing.Size(45, 40)
+        Me.btn_hijoADD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_hijoADD.TabIndex = 53
+        Me.btn_hijoADD.TabStop = False
+        '
         'label11
         '
         Me.label11.AutoSize = True
@@ -1882,6 +2588,16 @@ Partial Class Empleados
         Me.label10.Size = New System.Drawing.Size(78, 21)
         Me.label10.TabIndex = 1
         Me.label10.Text = "Cónyuge"
+        '
+        'btn_esSAVE
+        '
+        Me.btn_esSAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_marriage_80px
+        Me.btn_esSAVE.Location = New System.Drawing.Point(892, 0)
+        Me.btn_esSAVE.Name = "btn_esSAVE"
+        Me.btn_esSAVE.Size = New System.Drawing.Size(45, 40)
+        Me.btn_esSAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_esSAVE.TabIndex = 52
+        Me.btn_esSAVE.TabStop = False
         '
         'label25
         '
@@ -2089,7 +2805,7 @@ Partial Class Empleados
         Me.Tab_DP.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_DP.Name = "Tab_DP"
         Me.Tab_DP.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_DP.Size = New System.Drawing.Size(950, 1066)
+        Me.Tab_DP.Size = New System.Drawing.Size(950, 696)
         Me.Tab_DP.TabIndex = 0
         Me.Tab_DP.Text = "Datos Personales"
         Me.Tab_DP.UseVisualStyleBackColor = True
@@ -2172,18 +2888,6 @@ Partial Class Empleados
         Me.panel13.Size = New System.Drawing.Size(946, 40)
         Me.panel13.TabIndex = 0
         '
-        'LBL_BAJA
-        '
-        Me.LBL_BAJA.AutoSize = True
-        Me.LBL_BAJA.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBL_BAJA.ForeColor = System.Drawing.Color.White
-        Me.LBL_BAJA.Location = New System.Drawing.Point(833, 9)
-        Me.LBL_BAJA.Name = "LBL_BAJA"
-        Me.LBL_BAJA.Size = New System.Drawing.Size(53, 22)
-        Me.LBL_BAJA.TabIndex = 45
-        Me.LBL_BAJA.Text = "BAJA"
-        Me.LBL_BAJA.Visible = False
-        '
         'label15
         '
         Me.label15.AutoSize = True
@@ -2196,6 +2900,28 @@ Partial Class Empleados
         Me.label15.TabIndex = 0
         Me.label15.Text = "Estatus"
         '
+        'ALTA
+        '
+        Me.ALTA.Image = Global.AdminEmpleados.My.Resources.Resources.Alta_80px
+        Me.ALTA.Location = New System.Drawing.Point(892, 0)
+        Me.ALTA.Name = "ALTA"
+        Me.ALTA.Size = New System.Drawing.Size(45, 40)
+        Me.ALTA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ALTA.TabIndex = 24
+        Me.ALTA.TabStop = False
+        Me.ALTA.Visible = False
+        '
+        'BAJA
+        '
+        Me.BAJA.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
+        Me.BAJA.Location = New System.Drawing.Point(892, 0)
+        Me.BAJA.Name = "BAJA"
+        Me.BAJA.Size = New System.Drawing.Size(45, 40)
+        Me.BAJA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.BAJA.TabIndex = 41
+        Me.BAJA.TabStop = False
+        Me.BAJA.Visible = False
+        '
         'lbl_ALTA
         '
         Me.lbl_ALTA.AutoSize = True
@@ -2207,6 +2933,18 @@ Partial Class Empleados
         Me.lbl_ALTA.TabIndex = 37
         Me.lbl_ALTA.Text = "ALTA"
         Me.lbl_ALTA.Visible = False
+        '
+        'LBL_BAJA
+        '
+        Me.LBL_BAJA.AutoSize = True
+        Me.LBL_BAJA.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBL_BAJA.ForeColor = System.Drawing.Color.White
+        Me.LBL_BAJA.Location = New System.Drawing.Point(833, 9)
+        Me.LBL_BAJA.Name = "LBL_BAJA"
+        Me.LBL_BAJA.Size = New System.Drawing.Size(53, 22)
+        Me.LBL_BAJA.TabIndex = 45
+        Me.LBL_BAJA.Text = "BAJA"
+        Me.LBL_BAJA.Visible = False
         '
         'commen
         '
@@ -2295,6 +3033,17 @@ Partial Class Empleados
         Me.pnl_cont.Size = New System.Drawing.Size(948, 149)
         Me.pnl_cont.TabIndex = 33
         '
+        'buscar_depto
+        '
+        Me.buscar_depto.BackgroundImage = CType(resources.GetObject("buscar_depto.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_depto.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_depto.Location = New System.Drawing.Point(906, 39)
+        Me.buscar_depto.Name = "buscar_depto"
+        Me.buscar_depto.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_depto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_depto.TabIndex = 60
+        Me.buscar_depto.TabStop = False
+        '
         'depto
         '
         Me.depto.Location = New System.Drawing.Point(686, 39)
@@ -2310,6 +3059,17 @@ Partial Class Empleados
         Me.depto2.Size = New System.Drawing.Size(171, 28)
         Me.depto2.TabIndex = 59
         Me.depto2.TabStop = False
+        '
+        'Buscar_PUESTO
+        '
+        Me.Buscar_PUESTO.BackgroundImage = CType(resources.GetObject("Buscar_PUESTO.BackgroundImage"), System.Drawing.Image)
+        Me.Buscar_PUESTO.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.Buscar_PUESTO.Location = New System.Drawing.Point(559, 40)
+        Me.Buscar_PUESTO.Name = "Buscar_PUESTO"
+        Me.Buscar_PUESTO.Size = New System.Drawing.Size(30, 28)
+        Me.Buscar_PUESTO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Buscar_PUESTO.TabIndex = 57
+        Me.Buscar_PUESTO.TabStop = False
         '
         'panel11
         '
@@ -2333,6 +3093,16 @@ Partial Class Empleados
         Me.label14.Size = New System.Drawing.Size(109, 21)
         Me.label14.TabIndex = 0
         Me.label14.Text = "Contratacion"
+        '
+        'Buscar_tipo
+        '
+        Me.Buscar_tipo.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.Buscar_tipo.Location = New System.Drawing.Point(558, 74)
+        Me.Buscar_tipo.Name = "Buscar_tipo"
+        Me.Buscar_tipo.Size = New System.Drawing.Size(30, 28)
+        Me.Buscar_tipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Buscar_tipo.TabIndex = 54
+        Me.Buscar_tipo.TabStop = False
         '
         'lbl_ingreso
         '
@@ -2429,6 +3199,17 @@ Partial Class Empleados
         Me.txt_FECHAINGRESO.Size = New System.Drawing.Size(209, 28)
         Me.txt_FECHAINGRESO.TabIndex = 19
         '
+        'Buscar_Super
+        '
+        Me.Buscar_Super.BackgroundImage = CType(resources.GetObject("Buscar_Super.BackgroundImage"), System.Drawing.Image)
+        Me.Buscar_Super.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.Buscar_Super.Location = New System.Drawing.Point(264, 74)
+        Me.Buscar_Super.Name = "Buscar_Super"
+        Me.Buscar_Super.Size = New System.Drawing.Size(30, 28)
+        Me.Buscar_Super.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Buscar_Super.TabIndex = 51
+        Me.Buscar_Super.TabStop = False
+        '
         'txt_PUESTO
         '
         Me.txt_PUESTO.Location = New System.Drawing.Point(383, 40)
@@ -2524,9 +3305,30 @@ Partial Class Empleados
         Me.pnl_per.Size = New System.Drawing.Size(950, 351)
         Me.pnl_per.TabIndex = 31
         '
+        'buscar_ciudad
+        '
+        Me.buscar_ciudad.BackgroundImage = CType(resources.GetObject("buscar_ciudad.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_ciudad.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_ciudad.Location = New System.Drawing.Point(904, 144)
+        Me.buscar_ciudad.Name = "buscar_ciudad"
+        Me.buscar_ciudad.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_ciudad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_ciudad.TabIndex = 61
+        Me.buscar_ciudad.TabStop = False
+        '
+        'foto
+        '
+        Me.foto.Image = Global.AdminEmpleados.My.Resources.Resources.photoNobody120
+        Me.foto.Location = New System.Drawing.Point(6, 77)
+        Me.foto.Name = "foto"
+        Me.foto.Size = New System.Drawing.Size(180, 200)
+        Me.foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.foto.TabIndex = 29
+        Me.foto.TabStop = False
+        '
         'cuidad
         '
-        Me.cuidad.Location = New System.Drawing.Point(317, 314)
+        Me.cuidad.Location = New System.Drawing.Point(684, 144)
         Me.cuidad.Name = "cuidad"
         Me.cuidad.Size = New System.Drawing.Size(39, 28)
         Me.cuidad.TabIndex = 8
@@ -2552,7 +3354,7 @@ Partial Class Empleados
         'CP
         '
         Me.CP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.CP.Location = New System.Drawing.Point(686, 316)
+        Me.CP.Location = New System.Drawing.Point(314, 285)
         Me.CP.Name = "CP"
         Me.CP.Size = New System.Drawing.Size(250, 28)
         Me.CP.TabIndex = 18
@@ -2560,7 +3362,7 @@ Partial Class Empleados
         'LBL_CP
         '
         Me.LBL_CP.AutoSize = True
-        Me.LBL_CP.Location = New System.Drawing.Point(637, 319)
+        Me.LBL_CP.Location = New System.Drawing.Point(265, 288)
         Me.LBL_CP.Name = "LBL_CP"
         Me.LBL_CP.Size = New System.Drawing.Size(43, 21)
         Me.LBL_CP.TabIndex = 34
@@ -2569,7 +3371,7 @@ Partial Class Empleados
         'txt_CURP
         '
         Me.txt_CURP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_CURP.Location = New System.Drawing.Point(314, 214)
+        Me.txt_CURP.Location = New System.Drawing.Point(314, 178)
         Me.txt_CURP.Name = "txt_CURP"
         Me.txt_CURP.Size = New System.Drawing.Size(250, 28)
         Me.txt_CURP.TabIndex = 11
@@ -2577,7 +3379,7 @@ Partial Class Empleados
         'cuidad2
         '
         Me.cuidad2.Enabled = False
-        Me.cuidad2.Location = New System.Drawing.Point(359, 314)
+        Me.cuidad2.Location = New System.Drawing.Point(729, 144)
         Me.cuidad2.Name = "cuidad2"
         Me.cuidad2.Size = New System.Drawing.Size(168, 28)
         Me.cuidad2.TabIndex = 60
@@ -2588,7 +3390,7 @@ Partial Class Empleados
         Me.EC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.EC.FormattingEnabled = True
         Me.EC.Items.AddRange(New Object() {"SOLTERO", "CASADO", "DIVORCIADO", "VIUDO", "UNION LIBRE"})
-        Me.EC.Location = New System.Drawing.Point(314, 179)
+        Me.EC.Location = New System.Drawing.Point(314, 212)
         Me.EC.Name = "EC"
         Me.EC.Size = New System.Drawing.Size(250, 29)
         Me.EC.TabIndex = 14
@@ -2596,7 +3398,7 @@ Partial Class Empleados
         'Label92
         '
         Me.Label92.AutoSize = True
-        Me.Label92.Location = New System.Drawing.Point(243, 321)
+        Me.Label92.Location = New System.Drawing.Point(610, 149)
         Me.Label92.Name = "Label92"
         Me.Label92.Size = New System.Drawing.Size(68, 21)
         Me.Label92.TabIndex = 59
@@ -2615,7 +3417,7 @@ Partial Class Empleados
         Me.ddl_educacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ddl_educacion.FormattingEnabled = True
         Me.ddl_educacion.Items.AddRange(New Object() {"PRIMARIA", "SECUNDARIA", "PREPARATOIA", "LICENCIATURA"})
-        Me.ddl_educacion.Location = New System.Drawing.Point(686, 145)
+        Me.ddl_educacion.Location = New System.Drawing.Point(686, 282)
         Me.ddl_educacion.Name = "ddl_educacion"
         Me.ddl_educacion.Size = New System.Drawing.Size(250, 29)
         Me.ddl_educacion.TabIndex = 5
@@ -2623,7 +3425,7 @@ Partial Class Empleados
         'Label54
         '
         Me.Label54.AutoSize = True
-        Me.Label54.Location = New System.Drawing.Point(591, 150)
+        Me.Label54.Location = New System.Drawing.Point(591, 287)
         Me.Label54.Name = "Label54"
         Me.Label54.Size = New System.Drawing.Size(92, 21)
         Me.Label54.TabIndex = 54
@@ -2632,7 +3434,7 @@ Partial Class Empleados
         'lbl_curp
         '
         Me.lbl_curp.AutoSize = True
-        Me.lbl_curp.Location = New System.Drawing.Point(235, 217)
+        Me.lbl_curp.Location = New System.Drawing.Point(235, 181)
         Me.lbl_curp.Name = "lbl_curp"
         Me.lbl_curp.Size = New System.Drawing.Size(73, 21)
         Me.lbl_curp.TabIndex = 21
@@ -2641,7 +3443,7 @@ Partial Class Empleados
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(608, 285)
+        Me.Label1.Location = New System.Drawing.Point(606, 251)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(72, 21)
         Me.Label1.TabIndex = 32
@@ -2650,7 +3452,7 @@ Partial Class Empleados
         'colonia
         '
         Me.colonia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.colonia.Location = New System.Drawing.Point(686, 282)
+        Me.colonia.Location = New System.Drawing.Point(687, 248)
         Me.colonia.Name = "colonia"
         Me.colonia.Size = New System.Drawing.Size(250, 28)
         Me.colonia.TabIndex = 17
@@ -2658,7 +3460,7 @@ Partial Class Empleados
         'Label55
         '
         Me.Label55.AutoSize = True
-        Me.Label55.Location = New System.Drawing.Point(584, 251)
+        Me.Label55.Location = New System.Drawing.Point(212, 321)
         Me.Label55.Name = "Label55"
         Me.Label55.Size = New System.Drawing.Size(96, 21)
         Me.Label55.TabIndex = 57
@@ -2667,7 +3469,7 @@ Partial Class Empleados
         'domicilio
         '
         Me.domicilio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.domicilio.Location = New System.Drawing.Point(314, 282)
+        Me.domicilio.Location = New System.Drawing.Point(314, 251)
         Me.domicilio.Name = "domicilio"
         Me.domicilio.Size = New System.Drawing.Size(250, 28)
         Me.domicilio.TabIndex = 16
@@ -2675,7 +3477,7 @@ Partial Class Empleados
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(223, 288)
+        Me.Label2.Location = New System.Drawing.Point(223, 257)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(85, 21)
         Me.Label2.TabIndex = 31
@@ -2692,7 +3494,7 @@ Partial Class Empleados
         'Celular
         '
         Me.Celular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.Celular.Location = New System.Drawing.Point(314, 248)
+        Me.Celular.Location = New System.Drawing.Point(686, 316)
         Me.Celular.Name = "Celular"
         Me.Celular.Size = New System.Drawing.Size(250, 28)
         Me.Celular.TabIndex = 12
@@ -2700,7 +3502,7 @@ Partial Class Empleados
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(226, 251)
+        Me.Label4.Location = New System.Drawing.Point(598, 318)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(82, 21)
         Me.Label4.TabIndex = 54
@@ -2718,7 +3520,7 @@ Partial Class Empleados
         'txt_telefono
         '
         Me.txt_telefono.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_telefono.Location = New System.Drawing.Point(686, 249)
+        Me.txt_telefono.Location = New System.Drawing.Point(314, 319)
         Me.txt_telefono.Name = "txt_telefono"
         Me.txt_telefono.Size = New System.Drawing.Size(250, 28)
         Me.txt_telefono.TabIndex = 13
@@ -2726,7 +3528,7 @@ Partial Class Empleados
         'LBL_ESTADOCIVIL
         '
         Me.LBL_ESTADOCIVIL.AutoSize = True
-        Me.LBL_ESTADOCIVIL.Location = New System.Drawing.Point(207, 182)
+        Me.LBL_ESTADOCIVIL.Location = New System.Drawing.Point(207, 215)
         Me.LBL_ESTADOCIVIL.Name = "LBL_ESTADOCIVIL"
         Me.LBL_ESTADOCIVIL.Size = New System.Drawing.Size(101, 21)
         Me.LBL_ESTADOCIVIL.TabIndex = 25
@@ -2821,6 +3623,26 @@ Partial Class Empleados
         Me.pnl_save.Size = New System.Drawing.Size(267, 40)
         Me.pnl_save.TabIndex = 35
         '
+        'CANCEL
+        '
+        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
+        Me.CANCEL.Location = New System.Drawing.Point(199, 0)
+        Me.CANCEL.Name = "CANCEL"
+        Me.CANCEL.Size = New System.Drawing.Size(45, 40)
+        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.CANCEL.TabIndex = 1
+        Me.CANCEL.TabStop = False
+        '
+        'SAVE
+        '
+        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
+        Me.SAVE.Location = New System.Drawing.Point(148, 0)
+        Me.SAVE.Name = "SAVE"
+        Me.SAVE.Size = New System.Drawing.Size(45, 40)
+        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.SAVE.TabIndex = 0
+        Me.SAVE.TabStop = False
+        '
         'txt_EN2
         '
         Me.txt_EN2.Enabled = False
@@ -2867,6 +3689,17 @@ Partial Class Empleados
         Me.txt_AP.Name = "txt_AP"
         Me.txt_AP.Size = New System.Drawing.Size(250, 28)
         Me.txt_AP.TabIndex = 1
+        '
+        'buscar_EN
+        '
+        Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_EN.Location = New System.Drawing.Point(534, 145)
+        Me.buscar_EN.Name = "buscar_EN"
+        Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_EN.TabIndex = 52
+        Me.buscar_EN.TabStop = False
         '
         'lbl_num
         '
@@ -2918,870 +3751,64 @@ Partial Class Empleados
         Me.MenuEmp.Margin = New System.Windows.Forms.Padding(2)
         Me.MenuEmp.Name = "MenuEmp"
         Me.MenuEmp.SelectedIndex = 0
-        Me.MenuEmp.Size = New System.Drawing.Size(958, 1100)
+        Me.MenuEmp.Size = New System.Drawing.Size(958, 730)
         Me.MenuEmp.TabIndex = 1
-        '
-        'PnlTransporte
-        '
-        Me.PnlTransporte.Controls.Add(Me.Panel22)
-        Me.PnlTransporte.Controls.Add(Me.cb_Metro)
-        Me.PnlTransporte.Controls.Add(Me.cb_Trans)
-        Me.PnlTransporte.Controls.Add(Me.cb_Taxi)
-        Me.PnlTransporte.Controls.Add(Me.cb_Vehi)
-        Me.PnlTransporte.Location = New System.Drawing.Point(0, 314)
-        Me.PnlTransporte.Name = "PnlTransporte"
-        Me.PnlTransporte.Size = New System.Drawing.Size(485, 110)
-        Me.PnlTransporte.TabIndex = 1
-        '
-        'Panel22
-        '
-        Me.Panel22.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Panel22.Controls.Add(Me.Label57)
-        Me.Panel22.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel22.Location = New System.Drawing.Point(0, 0)
-        Me.Panel22.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(485, 40)
-        Me.Panel22.TabIndex = 2
-        '
-        'Label57
-        '
-        Me.Label57.AutoSize = True
-        Me.Label57.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label57.ForeColor = System.Drawing.Color.White
-        Me.Label57.Location = New System.Drawing.Point(13, 6)
-        Me.Label57.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(92, 21)
-        Me.Label57.TabIndex = 0
-        Me.Label57.Text = "Transporte"
-        '
-        'ALTA
-        '
-        Me.ALTA.Image = Global.AdminEmpleados.My.Resources.Resources.Alta_80px
-        Me.ALTA.Location = New System.Drawing.Point(892, 0)
-        Me.ALTA.Name = "ALTA"
-        Me.ALTA.Size = New System.Drawing.Size(45, 40)
-        Me.ALTA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ALTA.TabIndex = 24
-        Me.ALTA.TabStop = False
-        Me.ALTA.Visible = False
-        '
-        'BAJA
-        '
-        Me.BAJA.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
-        Me.BAJA.Location = New System.Drawing.Point(892, 0)
-        Me.BAJA.Name = "BAJA"
-        Me.BAJA.Size = New System.Drawing.Size(45, 40)
-        Me.BAJA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.BAJA.TabIndex = 41
-        Me.BAJA.TabStop = False
-        Me.BAJA.Visible = False
-        '
-        'buscar_depto
-        '
-        Me.buscar_depto.BackgroundImage = CType(resources.GetObject("buscar_depto.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_depto.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_depto.Location = New System.Drawing.Point(906, 39)
-        Me.buscar_depto.Name = "buscar_depto"
-        Me.buscar_depto.Size = New System.Drawing.Size(30, 28)
-        Me.buscar_depto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_depto.TabIndex = 60
-        Me.buscar_depto.TabStop = False
-        '
-        'Buscar_PUESTO
-        '
-        Me.Buscar_PUESTO.BackgroundImage = CType(resources.GetObject("Buscar_PUESTO.BackgroundImage"), System.Drawing.Image)
-        Me.Buscar_PUESTO.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.Buscar_PUESTO.Location = New System.Drawing.Point(559, 40)
-        Me.Buscar_PUESTO.Name = "Buscar_PUESTO"
-        Me.Buscar_PUESTO.Size = New System.Drawing.Size(30, 28)
-        Me.Buscar_PUESTO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Buscar_PUESTO.TabIndex = 57
-        Me.Buscar_PUESTO.TabStop = False
-        '
-        'Buscar_tipo
-        '
-        Me.Buscar_tipo.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.Buscar_tipo.Location = New System.Drawing.Point(558, 74)
-        Me.Buscar_tipo.Name = "Buscar_tipo"
-        Me.Buscar_tipo.Size = New System.Drawing.Size(30, 28)
-        Me.Buscar_tipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Buscar_tipo.TabIndex = 54
-        Me.Buscar_tipo.TabStop = False
-        '
-        'Buscar_Super
-        '
-        Me.Buscar_Super.BackgroundImage = CType(resources.GetObject("Buscar_Super.BackgroundImage"), System.Drawing.Image)
-        Me.Buscar_Super.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.Buscar_Super.Location = New System.Drawing.Point(264, 74)
-        Me.Buscar_Super.Name = "Buscar_Super"
-        Me.Buscar_Super.Size = New System.Drawing.Size(30, 28)
-        Me.Buscar_Super.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Buscar_Super.TabIndex = 51
-        Me.Buscar_Super.TabStop = False
-        '
-        'buscar_ciudad
-        '
-        Me.buscar_ciudad.BackgroundImage = CType(resources.GetObject("buscar_ciudad.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_ciudad.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_ciudad.Location = New System.Drawing.Point(534, 314)
-        Me.buscar_ciudad.Name = "buscar_ciudad"
-        Me.buscar_ciudad.Size = New System.Drawing.Size(30, 28)
-        Me.buscar_ciudad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_ciudad.TabIndex = 61
-        Me.buscar_ciudad.TabStop = False
-        '
-        'foto
-        '
-        Me.foto.Image = Global.AdminEmpleados.My.Resources.Resources.photoNobody120
-        Me.foto.Location = New System.Drawing.Point(6, 77)
-        Me.foto.Name = "foto"
-        Me.foto.Size = New System.Drawing.Size(180, 200)
-        Me.foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.foto.TabIndex = 29
-        Me.foto.TabStop = False
-        '
-        'CANCEL
-        '
-        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(199, 0)
-        Me.CANCEL.Name = "CANCEL"
-        Me.CANCEL.Size = New System.Drawing.Size(45, 40)
-        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.CANCEL.TabIndex = 1
-        Me.CANCEL.TabStop = False
-        '
-        'SAVE
-        '
-        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.SAVE.Location = New System.Drawing.Point(148, 0)
-        Me.SAVE.Name = "SAVE"
-        Me.SAVE.Size = New System.Drawing.Size(45, 40)
-        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.SAVE.TabIndex = 0
-        Me.SAVE.TabStop = False
-        '
-        'buscar_EN
-        '
-        Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_EN.Location = New System.Drawing.Point(534, 145)
-        Me.buscar_EN.Name = "buscar_EN"
-        Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
-        Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_EN.TabIndex = 52
-        Me.buscar_EN.TabStop = False
-        '
-        'btn_hijoADD
-        '
-        Me.btn_hijoADD.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Family_80px
-        Me.btn_hijoADD.Location = New System.Drawing.Point(892, 0)
-        Me.btn_hijoADD.Name = "btn_hijoADD"
-        Me.btn_hijoADD.Size = New System.Drawing.Size(45, 40)
-        Me.btn_hijoADD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_hijoADD.TabIndex = 53
-        Me.btn_hijoADD.TabStop = False
-        '
-        'btn_esSAVE
-        '
-        Me.btn_esSAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_marriage_80px
-        Me.btn_esSAVE.Location = New System.Drawing.Point(892, 0)
-        Me.btn_esSAVE.Name = "btn_esSAVE"
-        Me.btn_esSAVE.Size = New System.Drawing.Size(45, 40)
-        Me.btn_esSAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_esSAVE.TabIndex = 52
-        Me.btn_esSAVE.TabStop = False
-        '
-        'btn_antSave
-        '
-        Me.btn_antSave.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Job_80px
-        Me.btn_antSave.Location = New System.Drawing.Point(892, 0)
-        Me.btn_antSave.Name = "btn_antSave"
-        Me.btn_antSave.Size = New System.Drawing.Size(45, 40)
-        Me.btn_antSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_antSave.TabIndex = 54
-        Me.btn_antSave.TabStop = False
-        '
-        'btn_conADD
-        '
-        Me.btn_conADD.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Contact_80px
-        Me.btn_conADD.Location = New System.Drawing.Point(892, 0)
-        Me.btn_conADD.Name = "btn_conADD"
-        Me.btn_conADD.Size = New System.Drawing.Size(45, 40)
-        Me.btn_conADD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_conADD.TabIndex = 55
-        Me.btn_conADD.TabStop = False
-        '
-        'btn_enfADD
-        '
-        Me.btn_enfADD.Image = Global.AdminEmpleados.My.Resources.Resources.Add_MedicalCondition_80px
-        Me.btn_enfADD.Location = New System.Drawing.Point(892, 0)
-        Me.btn_enfADD.Name = "btn_enfADD"
-        Me.btn_enfADD.Size = New System.Drawing.Size(45, 40)
-        Me.btn_enfADD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_enfADD.TabIndex = 46
-        Me.btn_enfADD.TabStop = False
-        '
-        'btn_OI
-        '
-        Me.btn_OI.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Income_80px
-        Me.btn_OI.Location = New System.Drawing.Point(846, 0)
-        Me.btn_OI.Name = "btn_OI"
-        Me.btn_OI.Size = New System.Drawing.Size(45, 40)
-        Me.btn_OI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_OI.TabIndex = 55
-        Me.btn_OI.TabStop = False
-        '
-        'PB_IMAGE_VIVIENDA
-        '
-        Me.PB_IMAGE_VIVIENDA.Image = Global.AdminEmpleados.My.Resources.Resources.AddImage
-        Me.PB_IMAGE_VIVIENDA.Location = New System.Drawing.Point(6, 40)
-        Me.PB_IMAGE_VIVIENDA.Name = "PB_IMAGE_VIVIENDA"
-        Me.PB_IMAGE_VIVIENDA.Size = New System.Drawing.Size(450, 262)
-        Me.PB_IMAGE_VIVIENDA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PB_IMAGE_VIVIENDA.TabIndex = 32
-        Me.PB_IMAGE_VIVIENDA.TabStop = False
         '
         'datosFamiliaBindingSource
         '
         Me.datosFamiliaBindingSource.DataMember = "Datos_Familia"
         '
-        'PnlActividades
-        '
-        Me.PnlActividades.Controls.Add(Me.Label90)
-        Me.PnlActividades.Controls.Add(Me.Label88)
-        Me.PnlActividades.Controls.Add(Me.txt_se_diversiones)
-        Me.PnlActividades.Controls.Add(Me.txt_SE_NATURALES)
-        Me.PnlActividades.Controls.Add(Me.Label89)
-        Me.PnlActividades.Controls.Add(Me.txt_SE_PLAZAS)
-        Me.PnlActividades.Controls.Add(Me.Label83)
-        Me.PnlActividades.Controls.Add(Me.txt_SE_CINES)
-        Me.PnlActividades.Controls.Add(Me.txt_SE_ZONAS)
-        Me.PnlActividades.Controls.Add(Me.Label85)
-        Me.PnlActividades.Controls.Add(Me.Label87)
-        Me.PnlActividades.Controls.Add(Me.txt_SE_CULTURALES)
-        Me.PnlActividades.Controls.Add(Me.Label80)
-        Me.PnlActividades.Controls.Add(Me.txt_SE_TEATROS)
-        Me.PnlActividades.Controls.Add(Me.Label86)
-        Me.PnlActividades.Controls.Add(Me.Label81)
-        Me.PnlActividades.Controls.Add(Me.txt_SE_MUSEOS)
-        Me.PnlActividades.Controls.Add(Me.txt_SE_VACIONES)
-        Me.PnlActividades.Controls.Add(Me.Label78)
-        Me.PnlActividades.Controls.Add(Me.txt_SE__SOCIALE)
-        Me.PnlActividades.Controls.Add(Me.txt_SE_EVENTOS)
-        Me.PnlActividades.Controls.Add(Me.Label79)
-        Me.PnlActividades.Controls.Add(Me.Panel36)
-        Me.PnlActividades.Location = New System.Drawing.Point(0, 430)
-        Me.PnlActividades.Name = "PnlActividades"
-        Me.PnlActividades.Size = New System.Drawing.Size(920, 245)
-        Me.PnlActividades.TabIndex = 51
-        '
-        'Panel36
-        '
-        Me.Panel36.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Panel36.Controls.Add(Me.Label84)
-        Me.Panel36.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel36.Location = New System.Drawing.Point(0, 0)
-        Me.Panel36.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel36.Name = "Panel36"
-        Me.Panel36.Size = New System.Drawing.Size(920, 35)
-        Me.Panel36.TabIndex = 28
-        '
-        'Label84
-        '
-        Me.Label84.AutoSize = True
-        Me.Label84.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label84.ForeColor = System.Drawing.Color.White
-        Me.Label84.Location = New System.Drawing.Point(13, 6)
-        Me.Label84.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label84.Name = "Label84"
-        Me.Label84.Size = New System.Drawing.Size(96, 21)
-        Me.Label84.TabIndex = 0
-        Me.Label84.Text = "Actividades"
-        '
-        'Label83
-        '
-        Me.Label83.AutoSize = True
-        Me.Label83.Location = New System.Drawing.Point(15, 77)
-        Me.Label83.Name = "Label83"
-        Me.Label83.Size = New System.Drawing.Size(167, 21)
-        Me.Label83.TabIndex = 71
-        Me.Label83.Text = "Festivales Culturales:"
-        '
-        'txt_SE_CULTURALES
-        '
-        Me.txt_SE_CULTURALES.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE_CULTURALES.Location = New System.Drawing.Point(188, 74)
-        Me.txt_SE_CULTURALES.Name = "txt_SE_CULTURALES"
-        Me.txt_SE_CULTURALES.Size = New System.Drawing.Size(209, 28)
-        Me.txt_SE_CULTURALES.TabIndex = 67
-        '
-        'Label80
-        '
-        Me.Label80.AutoSize = True
-        Me.Label80.Location = New System.Drawing.Point(624, 77)
-        Me.Label80.Name = "Label80"
-        Me.Label80.Size = New System.Drawing.Size(70, 21)
-        Me.Label80.TabIndex = 70
-        Me.Label80.Text = "Teatros:"
-        '
-        'txt_SE_TEATROS
-        '
-        Me.txt_SE_TEATROS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE_TEATROS.Location = New System.Drawing.Point(700, 74)
-        Me.txt_SE_TEATROS.Name = "txt_SE_TEATROS"
-        Me.txt_SE_TEATROS.Size = New System.Drawing.Size(209, 28)
-        Me.txt_SE_TEATROS.TabIndex = 65
-        '
-        'Label78
-        '
-        Me.Label78.AutoSize = True
-        Me.Label78.Location = New System.Drawing.Point(433, 43)
-        Me.Label78.Name = "Label78"
-        Me.Label78.Size = New System.Drawing.Size(261, 21)
-        Me.Label78.TabIndex = 69
-        Me.Label78.Text = "Eventos sociales (Fam o Amigos):"
-        '
-        'txt_SE__SOCIALE
-        '
-        Me.txt_SE__SOCIALE.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE__SOCIALE.Location = New System.Drawing.Point(700, 40)
-        Me.txt_SE__SOCIALE.Name = "txt_SE__SOCIALE"
-        Me.txt_SE__SOCIALE.Size = New System.Drawing.Size(209, 28)
-        Me.txt_SE__SOCIALE.TabIndex = 66
-        '
-        'txt_SE_EVENTOS
-        '
-        Me.txt_SE_EVENTOS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE_EVENTOS.Location = New System.Drawing.Point(188, 40)
-        Me.txt_SE_EVENTOS.Name = "txt_SE_EVENTOS"
-        Me.txt_SE_EVENTOS.Size = New System.Drawing.Size(209, 28)
-        Me.txt_SE_EVENTOS.TabIndex = 64
-        '
-        'Label79
-        '
-        Me.Label79.AutoSize = True
-        Me.Label79.Location = New System.Drawing.Point(2, 43)
-        Me.Label79.Name = "Label79"
-        Me.Label79.Size = New System.Drawing.Size(180, 21)
-        Me.Label79.TabIndex = 68
-        Me.Label79.Text = "Eventos Comunitarios:"
-        '
-        'Label88
-        '
-        Me.Label88.AutoSize = True
-        Me.Label88.Location = New System.Drawing.Point(541, 108)
-        Me.Label88.Name = "Label88"
-        Me.Label88.Size = New System.Drawing.Size(153, 21)
-        Me.Label88.TabIndex = 79
-        Me.Label88.Text = "Parques Naturales:"
-        '
-        'txt_SE_NATURALES
-        '
-        Me.txt_SE_NATURALES.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE_NATURALES.Location = New System.Drawing.Point(700, 108)
-        Me.txt_SE_NATURALES.Name = "txt_SE_NATURALES"
-        Me.txt_SE_NATURALES.Size = New System.Drawing.Size(209, 28)
-        Me.txt_SE_NATURALES.TabIndex = 73
-        '
-        'Label86
-        '
-        Me.Label86.AutoSize = True
-        Me.Label86.Location = New System.Drawing.Point(83, 111)
-        Me.Label86.Name = "Label86"
-        Me.Label86.Size = New System.Drawing.Size(99, 21)
-        Me.Label86.TabIndex = 78
-        Me.Label86.Text = "Vacaciones:"
-        '
-        'txt_SE_VACIONES
-        '
-        Me.txt_SE_VACIONES.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE_VACIONES.Location = New System.Drawing.Point(188, 108)
-        Me.txt_SE_VACIONES.Name = "txt_SE_VACIONES"
-        Me.txt_SE_VACIONES.Size = New System.Drawing.Size(209, 28)
-        Me.txt_SE_VACIONES.TabIndex = 72
-        '
-        'txt_SE_CINES
-        '
-        Me.txt_SE_CINES.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE_CINES.Location = New System.Drawing.Point(700, 142)
-        Me.txt_SE_CINES.Name = "txt_SE_CINES"
-        Me.txt_SE_CINES.Size = New System.Drawing.Size(209, 28)
-        Me.txt_SE_CINES.TabIndex = 75
-        '
-        'Label85
-        '
-        Me.Label85.AutoSize = True
-        Me.Label85.Location = New System.Drawing.Point(639, 145)
-        Me.Label85.Name = "Label85"
-        Me.Label85.Size = New System.Drawing.Size(55, 21)
-        Me.Label85.TabIndex = 77
-        Me.Label85.Text = "Cines:"
-        '
-        'txt_SE_MUSEOS
-        '
-        Me.txt_SE_MUSEOS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE_MUSEOS.Location = New System.Drawing.Point(188, 142)
-        Me.txt_SE_MUSEOS.Name = "txt_SE_MUSEOS"
-        Me.txt_SE_MUSEOS.Size = New System.Drawing.Size(209, 28)
-        Me.txt_SE_MUSEOS.TabIndex = 74
-        '
-        'Label81
-        '
-        Me.Label81.AutoSize = True
-        Me.Label81.Location = New System.Drawing.Point(109, 145)
-        Me.Label81.Name = "Label81"
-        Me.Label81.Size = New System.Drawing.Size(73, 21)
-        Me.Label81.TabIndex = 76
-        Me.Label81.Text = "Museos:"
-        '
-        'Label90
-        '
-        Me.Label90.AutoSize = True
-        Me.Label90.Location = New System.Drawing.Point(-1, 210)
-        Me.Label90.Name = "Label90"
-        Me.Label90.Size = New System.Drawing.Size(183, 21)
-        Me.Label90.TabIndex = 82
-        Me.Label90.Text = "Parque de Diversiones:"
-        '
-        'txt_se_diversiones
-        '
-        Me.txt_se_diversiones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_se_diversiones.Location = New System.Drawing.Point(188, 210)
-        Me.txt_se_diversiones.Name = "txt_se_diversiones"
-        Me.txt_se_diversiones.Size = New System.Drawing.Size(209, 28)
-        Me.txt_se_diversiones.TabIndex = 79
-        '
-        'txt_SE_PLAZAS
-        '
-        Me.txt_SE_PLAZAS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE_PLAZAS.Location = New System.Drawing.Point(700, 176)
-        Me.txt_SE_PLAZAS.Name = "txt_SE_PLAZAS"
-        Me.txt_SE_PLAZAS.Size = New System.Drawing.Size(209, 28)
-        Me.txt_SE_PLAZAS.TabIndex = 78
-        '
-        'Label89
-        '
-        Me.Label89.AutoSize = True
-        Me.Label89.Location = New System.Drawing.Point(566, 179)
-        Me.Label89.Name = "Label89"
-        Me.Label89.Size = New System.Drawing.Size(128, 21)
-        Me.Label89.TabIndex = 81
-        Me.Label89.Text = "Plazas Publicas:"
-        '
-        'txt_SE_ZONAS
-        '
-        Me.txt_SE_ZONAS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SE_ZONAS.Location = New System.Drawing.Point(188, 176)
-        Me.txt_SE_ZONAS.Name = "txt_SE_ZONAS"
-        Me.txt_SE_ZONAS.Size = New System.Drawing.Size(209, 28)
-        Me.txt_SE_ZONAS.TabIndex = 77
-        '
-        'Label87
-        '
-        Me.Label87.AutoSize = True
-        Me.Label87.Location = New System.Drawing.Point(9, 179)
-        Me.Label87.Name = "Label87"
-        Me.Label87.Size = New System.Drawing.Size(173, 21)
-        Me.Label87.TabIndex = 80
-        Me.Label87.Text = "Zonas Arqueologicas:"
-        '
-        'PnlReferencias
-        '
-        Me.PnlReferencias.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PnlReferencias.Controls.Add(Me.dgv_Ref)
-        Me.PnlReferencias.Controls.Add(Me.Label52)
-        Me.PnlReferencias.Controls.Add(Me.txt_TC)
-        Me.PnlReferencias.Controls.Add(Me.txt_RefOcu)
-        Me.PnlReferencias.Controls.Add(Me.Label56)
-        Me.PnlReferencias.Controls.Add(Me.Label46)
-        Me.PnlReferencias.Controls.Add(Me.Txt_TR)
-        Me.PnlReferencias.Controls.Add(Me.txt_RefNom)
-        Me.PnlReferencias.Controls.Add(Me.Label48)
-        Me.PnlReferencias.Controls.Add(Me.Panel10)
-        Me.PnlReferencias.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PnlReferencias.Location = New System.Drawing.Point(0, 866)
-        Me.PnlReferencias.Margin = New System.Windows.Forms.Padding(2)
-        Me.PnlReferencias.Name = "PnlReferencias"
-        Me.PnlReferencias.Size = New System.Drawing.Size(918, 216)
-        Me.PnlReferencias.TabIndex = 71
-        '
-        'Btn_AddRef
-        '
-        Me.Btn_AddRef.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Reference_80px
-        Me.Btn_AddRef.Location = New System.Drawing.Point(846, 0)
-        Me.Btn_AddRef.Name = "Btn_AddRef"
-        Me.Btn_AddRef.Size = New System.Drawing.Size(45, 40)
-        Me.Btn_AddRef.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Btn_AddRef.TabIndex = 63
-        Me.Btn_AddRef.TabStop = False
-        '
-        'dgv_Ref
-        '
-        Me.dgv_Ref.AllowUserToAddRows = False
-        Me.dgv_Ref.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_Ref.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NOMBRE, Me.TIPO, Me.OCUPACION, Me.TIEMPO})
-        Me.dgv_Ref.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.dgv_Ref.Location = New System.Drawing.Point(0, 114)
-        Me.dgv_Ref.Name = "dgv_Ref"
-        Me.dgv_Ref.RowHeadersVisible = False
-        Me.dgv_Ref.Size = New System.Drawing.Size(914, 98)
-        Me.dgv_Ref.TabIndex = 54
-        '
-        'NOMBRE
-        '
-        Me.NOMBRE.DataPropertyName = "Ref_Nombre"
-        Me.NOMBRE.HeaderText = "NOMBRE"
-        Me.NOMBRE.Name = "NOMBRE"
-        Me.NOMBRE.Width = 200
-        '
-        'TIPO
-        '
-        Me.TIPO.DataPropertyName = "Ref_TRelacion"
-        Me.TIPO.HeaderText = "TIPO DE RELACION"
-        Me.TIPO.Name = "TIPO"
-        Me.TIPO.Width = 300
-        '
-        'OCUPACION
-        '
-        Me.OCUPACION.DataPropertyName = "Ref_Ocupacion"
-        Me.OCUPACION.HeaderText = "OCUPACION"
-        Me.OCUPACION.Name = "OCUPACION"
-        Me.OCUPACION.Width = 200
-        '
-        'TIEMPO
-        '
-        Me.TIEMPO.DataPropertyName = "Ref_TiempoC"
-        Me.TIEMPO.HeaderText = "TIEMPO DE CONOCERLO"
-        Me.TIEMPO.Name = "TIEMPO"
-        Me.TIEMPO.Width = 400
-        '
-        'Label52
-        '
-        Me.Label52.AutoSize = True
-        Me.Label52.Location = New System.Drawing.Point(327, 82)
-        Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(71, 21)
-        Me.Label52.TabIndex = 53
-        Me.Label52.Text = "Tiempo:"
-        '
-        'txt_TC
-        '
-        Me.txt_TC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_TC.Location = New System.Drawing.Point(404, 79)
-        Me.txt_TC.Name = "txt_TC"
-        Me.txt_TC.Size = New System.Drawing.Size(208, 28)
-        Me.txt_TC.TabIndex = 5
-        '
-        'txt_RefOcu
-        '
-        Me.txt_RefOcu.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_RefOcu.Location = New System.Drawing.Point(109, 79)
-        Me.txt_RefOcu.Name = "txt_RefOcu"
-        Me.txt_RefOcu.Size = New System.Drawing.Size(209, 28)
-        Me.txt_RefOcu.TabIndex = 4
-        '
-        'Label56
-        '
-        Me.Label56.AutoSize = True
-        Me.Label56.Location = New System.Drawing.Point(478, 52)
-        Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(140, 21)
-        Me.Label56.TabIndex = 51
-        Me.Label56.Text = "Tipo de Relacion:"
-        '
-        'Label46
-        '
-        Me.Label46.AutoSize = True
-        Me.Label46.Location = New System.Drawing.Point(7, 82)
-        Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(96, 21)
-        Me.Label46.TabIndex = 44
-        Me.Label46.Text = "Ocupacion:"
-        '
-        'Txt_TR
-        '
-        Me.Txt_TR.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.Txt_TR.Location = New System.Drawing.Point(624, 49)
-        Me.Txt_TR.Name = "Txt_TR"
-        Me.Txt_TR.Size = New System.Drawing.Size(209, 28)
-        Me.Txt_TR.TabIndex = 3
-        '
-        'txt_RefNom
-        '
-        Me.txt_RefNom.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_RefNom.Location = New System.Drawing.Point(109, 45)
-        Me.txt_RefNom.Name = "txt_RefNom"
-        Me.txt_RefNom.Size = New System.Drawing.Size(363, 28)
-        Me.txt_RefNom.TabIndex = 2
-        '
-        'Label48
-        '
-        Me.Label48.AutoSize = True
-        Me.Label48.Location = New System.Drawing.Point(26, 48)
-        Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(77, 21)
-        Me.Label48.TabIndex = 37
-        Me.Label48.Text = "Nombre:"
-        '
-        'Panel10
-        '
-        Me.Panel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Panel10.Controls.Add(Me.Btn_AddRef)
-        Me.Panel10.Controls.Add(Me.Label51)
-        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel10.Location = New System.Drawing.Point(0, 0)
-        Me.Panel10.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(914, 40)
-        Me.Panel10.TabIndex = 0
-        '
-        'Label51
-        '
-        Me.Label51.AutoSize = True
-        Me.Label51.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label51.ForeColor = System.Drawing.Color.White
-        Me.Label51.Location = New System.Drawing.Point(13, 6)
-        Me.Label51.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(97, 21)
-        Me.Label51.TabIndex = 0
-        Me.Label51.Text = "Referencias"
-        '
-        'PnlGastos
-        '
-        Me.PnlGastos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PnlGastos.Controls.Add(Me.Label64)
-        Me.PnlGastos.Controls.Add(Me.txt_GFServ)
-        Me.PnlGastos.Controls.Add(Me.Label73)
-        Me.PnlGastos.Controls.Add(Me.Panel30)
-        Me.PnlGastos.Controls.Add(Me.txt_GFRenta)
-        Me.PnlGastos.Controls.Add(Me.Label72)
-        Me.PnlGastos.Controls.Add(Me.Label62)
-        Me.PnlGastos.Controls.Add(Me.Txt_GFDesp)
-        Me.PnlGastos.Controls.Add(Me.txt_GFCole)
-        Me.PnlGastos.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PnlGastos.Location = New System.Drawing.Point(0, 1086)
-        Me.PnlGastos.Margin = New System.Windows.Forms.Padding(2)
-        Me.PnlGastos.Name = "PnlGastos"
-        Me.PnlGastos.Size = New System.Drawing.Size(918, 86)
-        Me.PnlGastos.TabIndex = 72
-        '
-        'Label64
-        '
-        Me.Label64.AutoSize = True
-        Me.Label64.Location = New System.Drawing.Point(620, 48)
-        Me.Label64.Name = "Label64"
-        Me.Label64.Size = New System.Drawing.Size(79, 21)
-        Me.Label64.TabIndex = 66
-        Me.Label64.Text = "Servicios:"
-        '
-        'txt_GFServ
-        '
-        Me.txt_GFServ.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_GFServ.Location = New System.Drawing.Point(705, 45)
-        Me.txt_GFServ.Name = "txt_GFServ"
-        Me.txt_GFServ.Size = New System.Drawing.Size(95, 28)
-        Me.txt_GFServ.TabIndex = 30
-        '
-        'Label62
-        '
-        Me.Label62.AutoSize = True
-        Me.Label62.Location = New System.Drawing.Point(426, 48)
-        Me.Label62.Name = "Label62"
-        Me.Label62.Size = New System.Drawing.Size(87, 21)
-        Me.Label62.TabIndex = 64
-        Me.Label62.Text = "Despensa:"
-        '
-        'Txt_GFDesp
-        '
-        Me.Txt_GFDesp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.Txt_GFDesp.Location = New System.Drawing.Point(519, 45)
-        Me.Txt_GFDesp.Name = "Txt_GFDesp"
-        Me.Txt_GFDesp.Size = New System.Drawing.Size(95, 28)
-        Me.Txt_GFDesp.TabIndex = 29
-        '
-        'Label72
-        '
-        Me.Label72.AutoSize = True
-        Me.Label72.Location = New System.Drawing.Point(210, 48)
-        Me.Label72.Name = "Label72"
-        Me.Label72.Size = New System.Drawing.Size(109, 21)
-        Me.Label72.TabIndex = 62
-        Me.Label72.Text = "Colegiaturas:"
-        '
-        'txt_GFRenta
-        '
-        Me.txt_GFRenta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_GFRenta.Location = New System.Drawing.Point(109, 45)
-        Me.txt_GFRenta.Name = "txt_GFRenta"
-        Me.txt_GFRenta.Size = New System.Drawing.Size(95, 28)
-        Me.txt_GFRenta.TabIndex = 27
-        '
-        'txt_GFCole
-        '
-        Me.txt_GFCole.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_GFCole.Location = New System.Drawing.Point(325, 45)
-        Me.txt_GFCole.Name = "txt_GFCole"
-        Me.txt_GFCole.Size = New System.Drawing.Size(95, 28)
-        Me.txt_GFCole.TabIndex = 28
-        '
-        'Label73
-        '
-        Me.Label73.AutoSize = True
-        Me.Label73.Location = New System.Drawing.Point(45, 48)
-        Me.Label73.Name = "Label73"
-        Me.Label73.Size = New System.Drawing.Size(58, 21)
-        Me.Label73.TabIndex = 57
-        Me.Label73.Text = "Renta:"
-        '
-        'Panel30
-        '
-        Me.Panel30.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Panel30.Controls.Add(Me.Label74)
-        Me.Panel30.Controls.Add(Me.Label75)
-        Me.Panel30.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel30.Location = New System.Drawing.Point(0, 0)
-        Me.Panel30.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(914, 40)
-        Me.Panel30.TabIndex = 0
-        '
-        'Label74
-        '
-        Me.Label74.AutoSize = True
-        Me.Label74.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label74.ForeColor = System.Drawing.Color.White
-        Me.Label74.Location = New System.Drawing.Point(13, 6)
-        Me.Label74.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label74.Name = "Label74"
-        Me.Label74.Size = New System.Drawing.Size(100, 21)
-        Me.Label74.TabIndex = 1
-        Me.Label74.Text = "Gastos Fijos"
-        '
-        'Label75
-        '
-        Me.Label75.AutoSize = True
-        Me.Label75.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label75.ForeColor = System.Drawing.Color.White
-        Me.Label75.Location = New System.Drawing.Point(13, 6)
-        Me.Label75.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label75.Name = "Label75"
-        Me.Label75.Size = New System.Drawing.Size(0, 21)
-        Me.Label75.TabIndex = 0
-        '
-        'PnlObservaciones
-        '
-        Me.PnlObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PnlObservaciones.Controls.Add(Me.txt_commen)
-        Me.PnlObservaciones.Controls.Add(Me.Panel26)
-        Me.PnlObservaciones.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PnlObservaciones.Location = New System.Drawing.Point(0, 1176)
-        Me.PnlObservaciones.Margin = New System.Windows.Forms.Padding(2)
-        Me.PnlObservaciones.Name = "PnlObservaciones"
-        Me.PnlObservaciones.Size = New System.Drawing.Size(918, 166)
-        Me.PnlObservaciones.TabIndex = 73
-        '
-        'txt_commen
-        '
-        Me.txt_commen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_commen.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txt_commen.Location = New System.Drawing.Point(0, 40)
-        Me.txt_commen.Multiline = True
-        Me.txt_commen.Name = "txt_commen"
-        Me.txt_commen.Size = New System.Drawing.Size(914, 122)
-        Me.txt_commen.TabIndex = 31
-        '
-        'Panel26
-        '
-        Me.Panel26.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Panel26.Controls.Add(Me.Label71)
-        Me.Panel26.Controls.Add(Me.Label76)
-        Me.Panel26.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel26.Location = New System.Drawing.Point(0, 0)
-        Me.Panel26.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(914, 40)
-        Me.Panel26.TabIndex = 0
-        '
-        'Label71
-        '
-        Me.Label71.AutoSize = True
-        Me.Label71.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label71.ForeColor = System.Drawing.Color.White
-        Me.Label71.Location = New System.Drawing.Point(13, 6)
-        Me.Label71.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label71.Name = "Label71"
-        Me.Label71.Size = New System.Drawing.Size(120, 21)
-        Me.Label71.TabIndex = 1
-        Me.Label71.Text = "Observaciones"
-        '
-        'Label76
-        '
-        Me.Label76.AutoSize = True
-        Me.Label76.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label76.ForeColor = System.Drawing.Color.White
-        Me.Label76.Location = New System.Drawing.Point(13, 6)
-        Me.Label76.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label76.Name = "Label76"
-        Me.Label76.Size = New System.Drawing.Size(0, 21)
-        Me.Label76.TabIndex = 0
-        '
-        'btn_SERPT
-        '
-        Me.btn_SERPT.Image = Global.AdminEmpleados.My.Resources.Resources.Accounting_80px
-        Me.btn_SERPT.Location = New System.Drawing.Point(769, 1346)
-        Me.btn_SERPT.Name = "btn_SERPT"
-        Me.btn_SERPT.Size = New System.Drawing.Size(45, 40)
-        Me.btn_SERPT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_SERPT.TabIndex = 76
-        Me.btn_SERPT.TabStop = False
-        '
-        'btn_SESave
-        '
-        Me.btn_SESave.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.btn_SESave.Location = New System.Drawing.Point(820, 1346)
-        Me.btn_SESave.Name = "btn_SESave"
-        Me.btn_SESave.Size = New System.Drawing.Size(45, 40)
-        Me.btn_SESave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_SESave.TabIndex = 74
-        Me.btn_SESave.TabStop = False
-        '
-        'btn_SECancel
-        '
-        Me.btn_SECancel.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.btn_SECancel.Location = New System.Drawing.Point(871, 1346)
-        Me.btn_SECancel.Name = "btn_SECancel"
-        Me.btn_SECancel.Size = New System.Drawing.Size(45, 40)
-        Me.btn_SECancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_SECancel.TabIndex = 75
-        Me.btn_SECancel.TabStop = False
-        '
         'Empleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(958, 1100)
+        Me.ClientSize = New System.Drawing.Size(958, 730)
         Me.Controls.Add(Me.MenuEmp)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Empleados"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Tam_Es.ResumeLayout(False)
-        Me.PnlDatos.ResumeLayout(False)
-        Me.PnlDatos.PerformLayout()
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.btn_SERPT, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_SESave, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_SECancel, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PnlObservaciones.ResumeLayout(False)
+        Me.PnlObservaciones.PerformLayout()
+        Me.Panel26.ResumeLayout(False)
+        Me.Panel26.PerformLayout()
+        Me.PnlGastos.ResumeLayout(False)
+        Me.PnlGastos.PerformLayout()
+        Me.Panel30.ResumeLayout(False)
+        Me.Panel30.PerformLayout()
+        Me.PnlReferencias.ResumeLayout(False)
+        Me.PnlReferencias.PerformLayout()
+        CType(Me.dgv_Ref, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel10.ResumeLayout(False)
+        Me.Panel10.PerformLayout()
+        CType(Me.Btn_AddRef, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PnlActividades.ResumeLayout(False)
+        Me.PnlActividades.PerformLayout()
+        Me.Panel36.ResumeLayout(False)
+        Me.Panel36.PerformLayout()
         Me.PnlIngresos.ResumeLayout(False)
         Me.PnlIngresos.PerformLayout()
         CType(Me.dgv_OI, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
+        CType(Me.btn_OI, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PnlDatos.ResumeLayout(False)
+        Me.PnlDatos.PerformLayout()
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
+        Me.PnlTransporte.ResumeLayout(False)
+        Me.PnlTransporte.PerformLayout()
+        Me.Panel22.ResumeLayout(False)
+        Me.Panel22.PerformLayout()
+        Me.PnlVivienda.ResumeLayout(False)
         Me.GrpServicios.ResumeLayout(False)
         Me.GrpServicios.PerformLayout()
-        Me.PnlVivienda.ResumeLayout(False)
+        CType(Me.PB_IMAGE_VIVIENDA, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GrpMaterial.ResumeLayout(False)
         Me.GrpMaterial.PerformLayout()
         Me.GrpTIpo.ResumeLayout(False)
@@ -3794,28 +3821,33 @@ Partial Class Empleados
         CType(Me.dgv_Enf, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel21.ResumeLayout(False)
         Me.panel21.PerformLayout()
+        CType(Me.btn_enfADD, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Tab_Cont.ResumeLayout(False)
         Me.panel18.ResumeLayout(False)
         Me.panel18.PerformLayout()
         CType(Me.dgv_contacto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel19.ResumeLayout(False)
         Me.panel19.PerformLayout()
+        CType(Me.btn_conADD, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Tab_AL.ResumeLayout(False)
         Me.panel16.ResumeLayout(False)
         Me.panel16.PerformLayout()
         CType(Me.dgv_ant, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel17.ResumeLayout(False)
         Me.panel17.PerformLayout()
+        CType(Me.btn_antSave, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Tab_Familia.ResumeLayout(False)
         Me.panel3.ResumeLayout(False)
         Me.panel3.PerformLayout()
         CType(Me.dgv_Hijos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel5.ResumeLayout(False)
         Me.panel5.PerformLayout()
+        CType(Me.btn_hijoADD, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel2.ResumeLayout(False)
         Me.panel2.PerformLayout()
         Me.panel4.ResumeLayout(False)
         Me.panel4.PerformLayout()
+        CType(Me.btn_esSAVE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv_esposa, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Tab_DP.ResumeLayout(False)
         Me.Tab_DP.PerformLayout()
@@ -3823,60 +3855,28 @@ Partial Class Empleados
         Me.pnl_estatus.PerformLayout()
         Me.panel13.ResumeLayout(False)
         Me.panel13.PerformLayout()
+        CType(Me.ALTA, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BAJA, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_cont.ResumeLayout(False)
         Me.pnl_cont.PerformLayout()
+        CType(Me.buscar_depto, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Buscar_PUESTO, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel11.ResumeLayout(False)
         Me.panel11.PerformLayout()
+        CType(Me.Buscar_tipo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Buscar_Super, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_per.ResumeLayout(False)
         Me.pnl_per.PerformLayout()
+        CType(Me.buscar_ciudad, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.foto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel7.ResumeLayout(False)
         Me.panel7.PerformLayout()
         Me.pnl_save.ResumeLayout(False)
-        Me.MenuEmp.ResumeLayout(False)
-        Me.PnlTransporte.ResumeLayout(False)
-        Me.PnlTransporte.PerformLayout()
-        Me.Panel22.ResumeLayout(False)
-        Me.Panel22.PerformLayout()
-        CType(Me.ALTA, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BAJA, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.buscar_depto, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Buscar_PUESTO, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Buscar_tipo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Buscar_Super, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.buscar_ciudad, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.foto, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_hijoADD, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_esSAVE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_antSave, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_conADD, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_enfADD, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_OI, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PB_IMAGE_VIVIENDA, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuEmp.ResumeLayout(False)
         CType(Me.datosFamiliaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PnlActividades.ResumeLayout(False)
-        Me.PnlActividades.PerformLayout()
-        Me.Panel36.ResumeLayout(False)
-        Me.Panel36.PerformLayout()
-        Me.PnlReferencias.ResumeLayout(False)
-        Me.PnlReferencias.PerformLayout()
-        CType(Me.Btn_AddRef, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgv_Ref, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel10.ResumeLayout(False)
-        Me.Panel10.PerformLayout()
-        Me.PnlGastos.ResumeLayout(False)
-        Me.PnlGastos.PerformLayout()
-        Me.Panel30.ResumeLayout(False)
-        Me.Panel30.PerformLayout()
-        Me.PnlObservaciones.ResumeLayout(False)
-        Me.PnlObservaciones.PerformLayout()
-        Me.Panel26.ResumeLayout(False)
-        Me.Panel26.PerformLayout()
-        CType(Me.btn_SERPT, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_SESave, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_SECancel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

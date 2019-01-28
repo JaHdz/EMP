@@ -12,6 +12,7 @@ Public Class Empleados
     Dim id As Integer
     Dim NEmp As Integer
     Dim NName As String
+    Dim TabCollection As New Dictionary(Of String, TabPage)
     Sub New(ByVal emp As Integer, name As String)
         InitializeComponent()
         NEmp = emp
@@ -542,6 +543,7 @@ Public Class Empleados
         End Try
     End Sub
     Private Sub Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'HideTab("All")
         txt_AP.Focus()
         txt_numero.Text = Convert.ToString(Convert.ToInt64(objcon.NUMERO_EMPLEADO()) + 1)
         SAVE.Visible = True
@@ -551,6 +553,40 @@ Public Class Empleados
         Me.FormBorderStyle = FormBorderStyle.None
         Me.Dock = DockStyle.Fill
         Me.TransparencyKey = System.Drawing.Color.FromArgb(121, 121, 121)
+    End Sub
+
+    Private Sub HideTab(TabName As String)
+        If TabName <> "All" Then
+            If TabName <> "Datos Personales" Then
+                For Each SpedcificTab As TabPage In MenuEmp.TabPages
+                    If SpedcificTab.Text = TabName Then
+                        TabCollection.Add(TabName, SpedcificTab)
+                        MenuEmp.TabPages.Remove(SpedcificTab)
+                        Exit For
+                    End If
+                Next
+            End If
+        Else
+            For Each Tab As TabPage In MenuEmp.TabPages
+                If Tab.Text <> "Datos Personales" Then
+                    TabCollection.Add(Tab.Text, Tab)
+                    MenuEmp.TabPages.Remove(Tab)
+                End If
+            Next
+        End If
+    End Sub
+    Private Sub ShowTab(TabName As String)
+        If TabName <> "All" Then
+            If TabCollection.ContainsKey(TabName) Then
+                MenuEmp.TabPages.Add(TabCollection(TabName))
+                TabCollection.Remove(TabName)
+            End If
+        Else
+            For Each TabItem In TabCollection
+                MenuEmp.TabPages.Add(TabItem.Value)
+                TabCollection.Remove(TabItem.Key)
+            Next
+        End If
     End Sub
     Sub cargarImagen(control As PictureBox)
         Dim IMAGEN As String
