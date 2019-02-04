@@ -177,7 +177,7 @@ Public Class Consultas
                     If lector("ID_Emp").ToString = "" Then
                         Return 0
                     Else
-                        Return lector("ID_Emp").ToString
+                        Return Convert.ToInt64(lector("ID_Emp")) + 1
                     End If
                 Else
                     Return 0

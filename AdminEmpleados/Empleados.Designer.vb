@@ -266,17 +266,14 @@ Partial Class Empleados
         Me.cb_esSexo = New System.Windows.Forms.ComboBox()
         Me.label22 = New System.Windows.Forms.Label()
         Me.Tab_DP = New System.Windows.Forms.TabPage()
-        Me.lbl_emp = New System.Windows.Forms.Label()
         Me.pnl_estatus = New System.Windows.Forms.Panel()
         Me.CB_CLIENTE = New System.Windows.Forms.CheckBox()
         Me.CB_PROV = New System.Windows.Forms.CheckBox()
         Me.seg = New System.Windows.Forms.CheckBox()
         Me.panel13 = New System.Windows.Forms.Panel()
         Me.label15 = New System.Windows.Forms.Label()
-        Me.ALTA = New System.Windows.Forms.PictureBox()
-        Me.BAJA = New System.Windows.Forms.PictureBox()
-        Me.lbl_ALTA = New System.Windows.Forms.Label()
-        Me.LBL_BAJA = New System.Windows.Forms.Label()
+        Me.PbOptions = New System.Windows.Forms.PictureBox()
+        Me.lbl_option = New System.Windows.Forms.Label()
         Me.commen = New System.Windows.Forms.TextBox()
         Me.txt_activo = New System.Windows.Forms.TextBox()
         Me.label8 = New System.Windows.Forms.Label()
@@ -342,6 +339,7 @@ Partial Class Empleados
         Me.CB_SEXO = New System.Windows.Forms.ComboBox()
         Me.lbl_nac = New System.Windows.Forms.Label()
         Me.panel7 = New System.Windows.Forms.Panel()
+        Me.lbl_emp = New System.Windows.Forms.Label()
         Me.label12 = New System.Windows.Forms.Label()
         Me.pnl_save = New System.Windows.Forms.Panel()
         Me.CANCEL = New System.Windows.Forms.PictureBox()
@@ -415,8 +413,7 @@ Partial Class Empleados
         Me.Tab_DP.SuspendLayout()
         Me.pnl_estatus.SuspendLayout()
         Me.panel13.SuspendLayout()
-        CType(Me.ALTA, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BAJA, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PbOptions, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_cont.SuspendLayout()
         CType(Me.buscar_depto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Buscar_PUESTO, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1790,6 +1787,7 @@ Partial Class Empleados
         Me.Column4.HeaderText = "Empleado"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
+        Me.Column4.Visible = False
         '
         'Column5
         '
@@ -2037,6 +2035,7 @@ Partial Class Empleados
         Me.ID__Emp.DataPropertyName = "ID_Emp"
         Me.ID__Emp.HeaderText = "Empleado"
         Me.ID__Emp.Name = "ID__Emp"
+        Me.ID__Emp.Visible = False
         '
         'Ant_FInicio
         '
@@ -2301,6 +2300,7 @@ Partial Class Empleados
         '
         Me.dgv_Hijos.AllowUserToAddRows = False
         Me.dgv_Hijos.AllowUserToOrderColumns = True
+        Me.dgv_Hijos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv_Hijos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_Hijos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10})
         Me.dgv_Hijos.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -2327,6 +2327,7 @@ Partial Class Empleados
         Me.DataGridViewTextBoxColumn2.HeaderText = "Empleado"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Visible = False
         '
         'DataGridViewTextBoxColumn3
         '
@@ -2334,6 +2335,7 @@ Partial Class Empleados
         Me.DataGridViewTextBoxColumn3.HeaderText = "Tipo"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Visible = False
         '
         'DataGridViewTextBoxColumn4
         '
@@ -2348,7 +2350,6 @@ Partial Class Empleados
         Me.DataGridViewTextBoxColumn5.HeaderText = "Apellido Paterno"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        Me.DataGridViewTextBoxColumn5.Width = 150
         '
         'DataGridViewTextBoxColumn6
         '
@@ -2356,7 +2357,6 @@ Partial Class Empleados
         Me.DataGridViewTextBoxColumn6.HeaderText = "Apellido Materno"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        Me.DataGridViewTextBoxColumn6.Width = 150
         '
         'DataGridViewTextBoxColumn7
         '
@@ -2371,7 +2371,6 @@ Partial Class Empleados
         Me.DataGridViewTextBoxColumn8.HeaderText = "Fecha Nacimiento"
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
         Me.DataGridViewTextBoxColumn8.ReadOnly = True
-        Me.DataGridViewTextBoxColumn8.Width = 150
         '
         'DataGridViewTextBoxColumn9
         '
@@ -2386,7 +2385,6 @@ Partial Class Empleados
         Me.DataGridViewTextBoxColumn10.HeaderText = "Estado Civil"
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
         Me.DataGridViewTextBoxColumn10.ReadOnly = True
-        Me.DataGridViewTextBoxColumn10.Width = 150
         '
         'txt_hijoEC
         '
@@ -2620,6 +2618,7 @@ Partial Class Empleados
         '
         Me.dgv_esposa.AllowUserToAddRows = False
         Me.dgv_esposa.AllowUserToOrderColumns = True
+        Me.dgv_esposa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv_esposa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_esposa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_Persona, Me.ID_Emp, Me.Fam_Tipo, Me.Fam_Nombre, Me.Fam_APat, Me.Fam_AMat, Me.Fam_Nacion, Me.Fam_FNac, Me.Fam_Genero, Me.Fam_EdoCivil})
         Me.dgv_esposa.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -2646,6 +2645,7 @@ Partial Class Empleados
         Me.ID_Emp.HeaderText = "Empleado"
         Me.ID_Emp.Name = "ID_Emp"
         Me.ID_Emp.ReadOnly = True
+        Me.ID_Emp.Visible = False
         '
         'Fam_Tipo
         '
@@ -2653,6 +2653,7 @@ Partial Class Empleados
         Me.Fam_Tipo.HeaderText = "Tipo"
         Me.Fam_Tipo.Name = "Fam_Tipo"
         Me.Fam_Tipo.ReadOnly = True
+        Me.Fam_Tipo.Visible = False
         '
         'Fam_Nombre
         '
@@ -2667,7 +2668,6 @@ Partial Class Empleados
         Me.Fam_APat.HeaderText = "Apellido Paterno"
         Me.Fam_APat.Name = "Fam_APat"
         Me.Fam_APat.ReadOnly = True
-        Me.Fam_APat.Width = 150
         '
         'Fam_AMat
         '
@@ -2675,7 +2675,6 @@ Partial Class Empleados
         Me.Fam_AMat.HeaderText = "Apellido Materno"
         Me.Fam_AMat.Name = "Fam_AMat"
         Me.Fam_AMat.ReadOnly = True
-        Me.Fam_AMat.Width = 150
         '
         'Fam_Nacion
         '
@@ -2690,7 +2689,6 @@ Partial Class Empleados
         Me.Fam_FNac.HeaderText = "Fecha Nacimiento"
         Me.Fam_FNac.Name = "Fam_FNac"
         Me.Fam_FNac.ReadOnly = True
-        Me.Fam_FNac.Width = 150
         '
         'Fam_Genero
         '
@@ -2705,7 +2703,6 @@ Partial Class Empleados
         Me.Fam_EdoCivil.HeaderText = "Estado Civil"
         Me.Fam_EdoCivil.Name = "Fam_EdoCivil"
         Me.Fam_EdoCivil.ReadOnly = True
-        Me.Fam_EdoCivil.Width = 200
         '
         'txt_esName
         '
@@ -2796,7 +2793,6 @@ Partial Class Empleados
         '
         'Tab_DP
         '
-        Me.Tab_DP.Controls.Add(Me.lbl_emp)
         Me.Tab_DP.Controls.Add(Me.pnl_estatus)
         Me.Tab_DP.Controls.Add(Me.pnl_cont)
         Me.Tab_DP.Controls.Add(Me.pnl_per)
@@ -2809,16 +2805,6 @@ Partial Class Empleados
         Me.Tab_DP.TabIndex = 0
         Me.Tab_DP.Text = "Datos Personales"
         Me.Tab_DP.UseVisualStyleBackColor = True
-        '
-        'lbl_emp
-        '
-        Me.lbl_emp.AutoSize = True
-        Me.lbl_emp.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_emp.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.lbl_emp.Location = New System.Drawing.Point(842, 8)
-        Me.lbl_emp.Name = "lbl_emp"
-        Me.lbl_emp.Size = New System.Drawing.Size(0, 22)
-        Me.lbl_emp.TabIndex = 40
         '
         'pnl_estatus
         '
@@ -2877,10 +2863,8 @@ Partial Class Empleados
         '
         Me.panel13.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.panel13.Controls.Add(Me.label15)
-        Me.panel13.Controls.Add(Me.ALTA)
-        Me.panel13.Controls.Add(Me.BAJA)
-        Me.panel13.Controls.Add(Me.lbl_ALTA)
-        Me.panel13.Controls.Add(Me.LBL_BAJA)
+        Me.panel13.Controls.Add(Me.PbOptions)
+        Me.panel13.Controls.Add(Me.lbl_option)
         Me.panel13.Dock = System.Windows.Forms.DockStyle.Top
         Me.panel13.Location = New System.Drawing.Point(0, 0)
         Me.panel13.Margin = New System.Windows.Forms.Padding(2)
@@ -2900,51 +2884,29 @@ Partial Class Empleados
         Me.label15.TabIndex = 0
         Me.label15.Text = "Estatus"
         '
-        'ALTA
+        'PbOptions
         '
-        Me.ALTA.Image = Global.AdminEmpleados.My.Resources.Resources.Alta_80px
-        Me.ALTA.Location = New System.Drawing.Point(892, 0)
-        Me.ALTA.Name = "ALTA"
-        Me.ALTA.Size = New System.Drawing.Size(45, 40)
-        Me.ALTA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ALTA.TabIndex = 24
-        Me.ALTA.TabStop = False
-        Me.ALTA.Visible = False
+        Me.PbOptions.Image = Global.AdminEmpleados.My.Resources.Resources.Alta_80px
+        Me.PbOptions.Location = New System.Drawing.Point(892, 0)
+        Me.PbOptions.Name = "PbOptions"
+        Me.PbOptions.Size = New System.Drawing.Size(45, 40)
+        Me.PbOptions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PbOptions.TabIndex = 41
+        Me.PbOptions.TabStop = False
+        Me.PbOptions.Visible = False
         '
-        'BAJA
+        'lbl_option
         '
-        Me.BAJA.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
-        Me.BAJA.Location = New System.Drawing.Point(892, 0)
-        Me.BAJA.Name = "BAJA"
-        Me.BAJA.Size = New System.Drawing.Size(45, 40)
-        Me.BAJA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.BAJA.TabIndex = 41
-        Me.BAJA.TabStop = False
-        Me.BAJA.Visible = False
-        '
-        'lbl_ALTA
-        '
-        Me.lbl_ALTA.AutoSize = True
-        Me.lbl_ALTA.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_ALTA.ForeColor = System.Drawing.Color.White
-        Me.lbl_ALTA.Location = New System.Drawing.Point(833, 9)
-        Me.lbl_ALTA.Name = "lbl_ALTA"
-        Me.lbl_ALTA.Size = New System.Drawing.Size(53, 22)
-        Me.lbl_ALTA.TabIndex = 37
-        Me.lbl_ALTA.Text = "ALTA"
-        Me.lbl_ALTA.Visible = False
-        '
-        'LBL_BAJA
-        '
-        Me.LBL_BAJA.AutoSize = True
-        Me.LBL_BAJA.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBL_BAJA.ForeColor = System.Drawing.Color.White
-        Me.LBL_BAJA.Location = New System.Drawing.Point(833, 9)
-        Me.LBL_BAJA.Name = "LBL_BAJA"
-        Me.LBL_BAJA.Size = New System.Drawing.Size(53, 22)
-        Me.LBL_BAJA.TabIndex = 45
-        Me.LBL_BAJA.Text = "BAJA"
-        Me.LBL_BAJA.Visible = False
+        Me.lbl_option.AutoSize = True
+        Me.lbl_option.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_option.ForeColor = System.Drawing.Color.White
+        Me.lbl_option.Location = New System.Drawing.Point(833, 9)
+        Me.lbl_option.Name = "lbl_option"
+        Me.lbl_option.Size = New System.Drawing.Size(53, 22)
+        Me.lbl_option.TabIndex = 45
+        Me.lbl_option.Tag = "ALTA"
+        Me.lbl_option.Text = "ALTA"
+        Me.lbl_option.Visible = False
         '
         'commen
         '
@@ -3590,6 +3552,7 @@ Partial Class Empleados
         'panel7
         '
         Me.panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.panel7.Controls.Add(Me.lbl_emp)
         Me.panel7.Controls.Add(Me.label12)
         Me.panel7.Controls.Add(Me.pnl_save)
         Me.panel7.Dock = System.Windows.Forms.DockStyle.Top
@@ -3599,6 +3562,16 @@ Partial Class Empleados
         Me.panel7.Name = "panel7"
         Me.panel7.Size = New System.Drawing.Size(946, 40)
         Me.panel7.TabIndex = 0
+        '
+        'lbl_emp
+        '
+        Me.lbl_emp.AutoSize = True
+        Me.lbl_emp.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_emp.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.lbl_emp.Location = New System.Drawing.Point(109, 6)
+        Me.lbl_emp.Name = "lbl_emp"
+        Me.lbl_emp.Size = New System.Drawing.Size(0, 22)
+        Me.lbl_emp.TabIndex = 40
         '
         'label12
         '
@@ -3620,7 +3593,7 @@ Partial Class Empleados
         Me.pnl_save.Location = New System.Drawing.Point(693, 0)
         Me.pnl_save.Margin = New System.Windows.Forms.Padding(2)
         Me.pnl_save.Name = "pnl_save"
-        Me.pnl_save.Size = New System.Drawing.Size(267, 40)
+        Me.pnl_save.Size = New System.Drawing.Size(248, 40)
         Me.pnl_save.TabIndex = 35
         '
         'CANCEL
@@ -3850,13 +3823,11 @@ Partial Class Empleados
         CType(Me.btn_esSAVE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv_esposa, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Tab_DP.ResumeLayout(False)
-        Me.Tab_DP.PerformLayout()
         Me.pnl_estatus.ResumeLayout(False)
         Me.pnl_estatus.PerformLayout()
         Me.panel13.ResumeLayout(False)
         Me.panel13.PerformLayout()
-        CType(Me.ALTA, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BAJA, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PbOptions, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_cont.ResumeLayout(False)
         Me.pnl_cont.PerformLayout()
         CType(Me.buscar_depto, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3991,18 +3962,16 @@ Partial Class Empleados
     Friend WithEvents SAVE As PictureBox
     Friend WithEvents CANCEL As PictureBox
     Private WithEvents pnl_estatus As Panel
-    Friend WithEvents BAJA As PictureBox
+    Friend WithEvents PbOptions As PictureBox
     Private WithEvents seg As CheckBox
     Private WithEvents panel13 As Panel
     Private WithEvents label15 As Label
     Friend WithEvents commen As TextBox
     Friend WithEvents txt_activo As TextBox
     Friend WithEvents label8 As Label
-    Friend WithEvents ALTA As PictureBox
     Friend WithEvents txt_baja As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents lbl_ALTA As Label
     Private WithEvents pnl_cont As Panel
     Friend WithEvents buscar_depto As PictureBox
     Friend WithEvents depto As TextBox
@@ -4101,47 +4070,9 @@ Partial Class Empleados
     Friend WithEvents btn_OI As PictureBox
     Private WithEvents CB_CLIENTE As CheckBox
     Private WithEvents CB_PROV As CheckBox
-    Friend WithEvents LBL_BAJA As Label
+    Friend WithEvents lbl_option As Label
     Friend WithEvents ID_Enf As DataGridViewTextBoxColumn
     Friend WithEvents Text As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
-    Friend WithEvents Column9 As DataGridViewTextBoxColumn
-    Friend WithEvents Column10 As DataGridViewTextBoxColumn
-    Friend WithEvents ID_Ant As DataGridViewTextBoxColumn
-    Friend WithEvents ID__Emp As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_FInicio As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_FFin As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_NEmpresa As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Cargo As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Salario As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Tel As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Motivo As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Contacto As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
-    Friend WithEvents ID_Persona As DataGridViewTextBoxColumn
-    Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_Tipo As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_APat As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_AMat As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_Nacion As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_FNac As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_Genero As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_EdoCivil As DataGridViewTextBoxColumn
     Private WithEvents pnl_save As Panel
     Friend WithEvents PnlDatos As Panel
     Friend WithEvents GrpServicios As GroupBox
@@ -4216,4 +4147,42 @@ Partial Class Empleados
     Friend WithEvents btn_SERPT As PictureBox
     Friend WithEvents btn_SESave As PictureBox
     Friend WithEvents btn_SECancel As PictureBox
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents Column10 As DataGridViewTextBoxColumn
+    Friend WithEvents ID_Ant As DataGridViewTextBoxColumn
+    Friend WithEvents ID__Emp As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_FInicio As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_FFin As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_NEmpresa As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_Cargo As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_Salario As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_Tel As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_Motivo As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_Contacto As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
+    Friend WithEvents ID_Persona As DataGridViewTextBoxColumn
+    Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_Tipo As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_Nombre As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_APat As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_AMat As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_Nacion As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_FNac As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_Genero As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_EdoCivil As DataGridViewTextBoxColumn
 End Class

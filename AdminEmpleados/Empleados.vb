@@ -20,7 +20,7 @@ Public Class Empleados
     End Sub
     Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
         Try
-            numeroleave()
+            Numeroleave()
             llenarFamilia()
             llenarAL()
             llenarContacto()
@@ -30,13 +30,14 @@ Public Class Empleados
             MessageBox.Show("Numero de empleado no valido")
         End Try
     End Sub
-    Private Sub numeroleave()
+    Private Sub Numeroleave()
         Dim numero As String
         numero = txt_numero.Text
         txt_activo.Text = ""
         txt_baja.Text = ""
-        ALTA.Visible = False
-        lbl_ALTA.Visible = False
+        lbl_option.Visible = True
+        PbOptions.Visible = True
+
         If (txt_numero.Text <> "") Then
             aux = objcon.Emp_Exist(txt_numero.Text)
             If (aux = 1) Then
@@ -44,13 +45,14 @@ Public Class Empleados
                 EXISTE = True
                 lbl_emp.Text = txt_numero.Text + " | " + txt_NOM.Text + " " + txt_AP.Text + " " + txt_AM.Text
                 EMPLEADO_ID = txt_numero.Text
+                PbOptions.Tag = "BAJA"
             Else
                 limp()
                 lbl_emp.Text = ""
-                EMPLEADO_ID = ""
+                EMPLEADO_ID = 0
                 txt_numero.Text = numero
                 EXISTE = False
-                'pnl_save.Text = "GUARDAR"
+                PbOptions.Tag = "ALTA"
             End If
         Else
             txt_numero.Focus()
@@ -81,26 +83,10 @@ Public Class Empleados
             txt_FECHAINGRESO.Text = dt.Rows(0).Item("Emp_FEfectiva").ToString()
             txt_SALARY.Text = dt.Rows(0).Item("Emp_Salario").ToString()
             Txt_correo.Text = dt.Rows(0).Item("Emp_Email").ToString()
-            If IsDBNull(dt.Rows(0).Item("Emp_Activo").ToString()) Then
-                txt_baja.Text = ""
-            Else
-                txt_baja.Text = dt.Rows(0).Item("Emp_Activo").ToString()
-            End If
-            If dt.Rows(0).Item("Alerta").ToString() = True Then
-                seg.Checked = True
-            Else
-                seg.Checked = False
-            End If
-            If dt.Rows(0).Item("NProv").ToString() = True Then
-                CB_PROV.Checked = True
-            Else
-                CB_PROV.Checked = False
-            End If
-            If dt.Rows(0).Item("NClientes").ToString() = True Then
-                CB_CLIENTE.Checked = True
-            Else
-                CB_CLIENTE.Checked = False
-            End If
+            txt_baja.Text = If(IsDBNull(dt.Rows(0).Item("Emp_Activo").ToString()), "", dt.Rows(0).Item("Emp_Activo").ToString())
+            seg.Checked = If(IsDBNull(dt.Rows(0).Item("Alerta").ToString()), False, True)
+            CB_PROV.Checked = If(IsDBNull(dt.Rows(0).Item("NProv").ToString()), False, True)
+            CB_CLIENTE.Checked = If(IsDBNull(dt.Rows(0).Item("NClientes").ToString()), False, True)
             commen.Text = dt.Rows(0).Item("Motivo").ToString()
             txt_EN.Text = dt.Rows(0).Item("Emp_EN").ToString()
             txt_PUESTO.Text = dt.Rows(0).Item("ID_Puesto").ToString()
@@ -116,84 +102,63 @@ Public Class Empleados
                 foto.Image = Image.FromStream(ms)
                 foto.Visible = True
             End If
-            If (txt_EN.Text <> "") Then
+            If txt_EN.Text <> "" Then
                 V2 = objCon.S_catalago(txt_EN.Text, "EN")
-                If (V2 = "" Or V2 Is Nothing) Then
-                    txt_EN2.Text = ""
-                Else
-                    txt_EN2.Text = V2
-                End If
+                txt_EN2.Text = If(V2 = "" Or V2 Is Nothing, "", V2)
             End If
 
             If (cuidad.Text <> "") Then
                 V2 = objCon.S_catalago(cuidad.Text, "CI")
-                If (V2 = "" Or V2 Is Nothing) Then
-                    cuidad2.Text = ""
-                Else
-                    cuidad2.Text = V2
-                End If
+                cuidad2.Text = If(V2 = "" Or V2 Is Nothing, "", V2)
             End If
 
             If (depto.Text <> "") Then
                 V2 = objCon.S_catalago(depto.Text, "DE")
-                If (V2 = "" Or V2 Is Nothing) Then
-                    depto2.Text = ""
-                Else
-                    depto2.Text = V2
-                End If
+                depto2.Text = If(V2 = "" Or V2 Is Nothing, "", V2)
             End If
+
             If (txt_PUESTO.Text <> "") Then
                 V2 = objCon.S_catalago(txt_PUESTO.Text, "PU")
-                If (V2 = "" Or V2 Is Nothing) Then
-                    txt_PUESTO2.Text = ""
-                Else
-                    txt_PUESTO2.Text = V2
-                End If
+                txt_PUESTO2.Text = If(V2 = "" Or V2 Is Nothing, "", V2)
             End If
+
             If (txt_SUPER.Text <> "") Then
                 V2 = objCon.S_catalago(txt_SUPER.Text, "SU")
-                If (V2 = "" Or V2 Is Nothing) Then
-                    txt_SUPER2.Text = ""
-                Else
-                    txt_SUPER2.Text = V2
-                End If
+                txt_SUPER2.Text = If(V2 = "" Or V2 Is Nothing, "", V2)
             End If
+
             If (txt_tipo.Text <> "") Then
                 V2 = objCon.S_catalago(txt_tipo.Text, "TI")
-                If (V2 = "" Or V2 Is Nothing) Then
-                    txt_tipo2.Text = ""
-                Else
-                    txt_tipo2.Text = V2
-                End If
+                txt_tipo2.Text = If(V2 = "" Or V2 Is Nothing, "", V2)
             End If
-            If (dt.Rows(0).Item("Emp_Sexo").ToString() = "M") Then
+
+            If dt.Rows(0).Item("Emp_Sexo").ToString() = "M" Then
                 CB_SEXO.SelectedIndex = 1
             End If
-            If (dt.Rows(0).Item("Emp_Sexo").ToString() = "F") Then
+
+            If dt.Rows(0).Item("Emp_Sexo").ToString() = "F" Then
                 CB_SEXO.SelectedIndex = 0
             End If
+
+            txt_activo.Text = If(dt.Rows(0).Item("Emp_Activo").ToString() = True, "SI", "NO")
+
             If dt.Rows(0).Item("Emp_Activo").ToString() = True Then
-                txt_activo.Text = "SI"
-            Else
-                txt_activo.Text = "NO"
-            End If
-            If (dt.Rows(0).Item("Emp_Activo").ToString() = True) Then
                 txt_baja.Text = "NULL"
                 seg.Checked = False
                 CB_CLIENTE.Checked = False
                 CB_PROV.Checked = False
                 commen.Text = ""
-                ALTA.Visible = False
-                lbl_ALTA.Visible = False
-                BAJA.Visible = True
-                LBL_BAJA.Visible = True
+
+                lbl_option.Text = "BAJA"
+                PbOptions.Image = My.Resources.Baja_80px
             Else
                 txt_baja.Text = dt.Rows(0).Item("Fecha_Baja").ToString
-                ALTA.Visible = True
-                lbl_ALTA.Visible = True
-                BAJA.Visible = False
-                LBL_BAJA.Visible = False
+                lbl_option.Text = "ALTA"
+                PbOptions.Image = My.Resources.Alta_80px
             End If
+            lbl_option.Visible = True
+            PbOptions.Tag = lbl_option.Text
+            PbOptions.Visible = True
         End If
     End Sub
     Private Sub txt_numero_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_numero.KeyPress
@@ -318,12 +283,13 @@ Public Class Empleados
         CB_SEXO.SelectedIndex = -1
         ddl_educacion.SelectedIndex = -1
         EC.SelectedIndex = -1
-        txt_numero.Text = Convert.ToString(Convert.ToInt64(objcon.NUMERO_EMPLEADO) + 1)
+        txt_numero.Text = objcon.NUMERO_EMPLEADO.ToString()
         txt_numero.Focus()
         txt_activo.Text = ""
         txt_baja.Text = ""
-        ALTA.Visible = False
-        lbl_ALTA.Visible = False
+        lbl_option.Visible = False
+        PbOptions.Visible = False
+        PbOptions.Tag = ""
         foto.Image = AdminEmpleados.My.Resources.Resources.photoNobody120
         foto.Visible = True
         txt_esAM.Text = ""
@@ -332,7 +298,6 @@ Public Class Empleados
         txt_esFN.Text = ""
         txt_esNacion.Text = ""
         cb_esSexo.SelectedIndex = -1
-        llenarFamilia()
         txt_hijoAM.Text = ""
         txt_hijoAP.Text = ""
         txt_hijoNAME.Text = ""
@@ -410,7 +375,7 @@ Public Class Empleados
         txt_commen.Text = ""
         commen.Text = ""
         seg.Checked = False
-        PB_IMAGE_VIVIENDA.Image = AdminEmpleados.My.Resources.Resources.photoNobody120
+        PB_IMAGE_VIVIENDA.Image = My.Resources.AddImage
         EMPLEADO_ES = 0
         dgv_OI.DataSource = objcon.Consulta_OI(0)
         dgv_Ref.DataSource = objcon.Consulta_REF(0)
@@ -429,7 +394,7 @@ Public Class Empleados
                     aux = objcon.NUMERO_EXISTS_NSS_CURP(txt_SS.Text)
                     If (aux <> 0) Then
                         txt_numero.Text = aux
-                        numeroleave()
+                        Numeroleave()
                     End If
                 End If
             End If
@@ -446,44 +411,42 @@ Public Class Empleados
                     aux = objcon.NUMERO_EXISTS_NSS_CURP(txt_CURP.Text)
                     If (aux <> 0) Then
                         txt_numero.Text = aux
-                        numeroleave()
+                        Numeroleave()
                     End If
                 End If
             End If
         End If
     End Sub
-    Private Sub ALTA_Click(sender As Object, e As EventArgs) Handles ALTA.Click
+
+    Private Sub OptionPress(sender As Object, e As EventArgs) Handles PbOptions.Click
         Try
-            If (txt_numero.Text = "") Then
+            If txt_numero.Text <> "" Then
+                Select Case PbOptions.Tag
+                    Case "Alta"
+                        objcon.Altas(txt_numero.Text, 1)
+                        MessageBox.Show("Se dio de Alta correctamente a este Empleado")
+                        llenar()
+                        txt_activo.Text = ""
+                        txt_baja.Text = ""
+                        seg.Checked = True
+                        CB_CLIENTE.Checked = False
+                        CB_PROV.Checked = False
+                    Case "Baja"
+                        objcon.Altas(txt_numero.Text, 0)
+                        objcon.Bajas(txt_numero.Text, 0, commen.Text, seg.Checked, NEmp, CB_PROV.Checked, CB_CLIENTE.Checked)
+                        MessageBox.Show("Se dio de Baja correctamente a este Empleado")
+                        txt_activo.Text = ""
+                        txt_baja.Text = ""
+                        llenar()
+                End Select
             Else
-                objcon.Altas(txt_numero.Text, 1)
-                MessageBox.Show("Se dio de Alta correctamente a este Empleado")
-                llenar()
-                txt_activo.Text = ""
-                txt_baja.Text = ""
-                seg.Checked = True
-                CB_CLIENTE.Checked = False
-                CB_PROV.Checked = False
+                MessageBox.Show("Numero de Empleado invalido.")
             End If
         Catch ex As Exception
             MsgBox(ex.Message.ToString, MsgBoxStyle.Critical)
         End Try
     End Sub
-    Private Sub BAJA_Click(sender As Object, e As EventArgs) Handles BAJA.Click
-        Try
-            If (txt_numero.Text = "") Then
-            Else
-                objcon.Altas(txt_numero.Text, 0)
-                objcon.Bajas(txt_numero.Text, 0, commen.Text, seg.Checked, NEmp, CB_PROV.Checked, CB_CLIENTE.Checked)
-                MessageBox.Show("Se dio de Baja correctamente a este Empleado")
-                txt_activo.Text = ""
-                txt_baja.Text = ""
-                llenar()
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message.ToString, MsgBoxStyle.Critical)
-        End Try
-    End Sub
+
     Private Sub buscar_EN_Click(sender As Object, e As EventArgs) Handles buscar_EN.Click
         llenar_buscador("EN")
         If (V1 <> "" And V2 <> "") Then
@@ -535,8 +498,9 @@ Public Class Empleados
         Try
             txt_activo.Text = ""
             txt_baja.Text = ""
-            ALTA.Visible = False
-            lbl_ALTA.Visible = False
+            lbl_option.Visible = False
+            PbOptions.Visible = False
+            PbOptions.Tag = ""
             pnl_save.Text = ""
         Catch ex As Exception
             MsgBox(ex.Message.ToString, MsgBoxStyle.Critical)
@@ -545,7 +509,7 @@ Public Class Empleados
     Private Sub Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'HideTab("All")
         txt_AP.Focus()
-        txt_numero.Text = Convert.ToString(Convert.ToInt64(objcon.NUMERO_EMPLEADO()) + 1)
+        txt_numero.Text = objcon.NUMERO_EMPLEADO().ToString()
         SAVE.Visible = True
         foto.Image = AdminEmpleados.My.Resources.Resources.photoNobody120
         foto.Visible = True
@@ -638,7 +602,7 @@ Public Class Empleados
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
     Private Sub CANCEL_Click(sender As Object, e As EventArgs) Handles CANCEL.Click
-        Me.Close()
+        Close()
     End Sub
     Private Sub txt_EN_Leave(sender As Object, e As EventArgs) Handles txt_EN.Leave
         If (txt_EN.Text <> "") Then
@@ -1128,7 +1092,8 @@ Public Class Empleados
                 PB_IMAGE_VIVIENDA.Image = Image.FromStream(ms)
             End If
         End If
-        EMPLEADO_ES = Convert.ToInt64(dt.Rows(0).Item("ID_EstSocio").ToString())
+        EMPLEADO_ES = If(dt.Rows.Count > 0, Convert.ToInt64(dt.Rows(0).Item("ID_EstSocio").ToString()), 0)
+
         dgv_OI.DataSource = objcon.Consulta_OI(EMPLEADO_ES)
         dgv_Ref.DataSource = objcon.Consulta_REF(EMPLEADO_ES)
     End Sub
