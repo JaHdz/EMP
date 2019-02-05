@@ -833,7 +833,7 @@
             <Source>Database</Source>
             <Value>=First(Fields!Img_Emp.Value, "SES_INFO")</Value>
             <MIMEType>image/png</MIMEType>
-            <Sizing>FitProportional</Sizing>
+            <Sizing>Fit</Sizing>
             <Top>0.31944in</Top>
             <Left>0.0966in</Left>
             <Height>2.15278in</Height>
@@ -847,388 +847,10 @@
           </Image>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>0.08556in</Top>
+        <Top>0.71056in</Top>
         <Left>0.184in</Left>
         <Height>2.52083in</Height>
         <Width>7.18042in</Width>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Rectangle>
-      <Rectangle Name="Rectangle3">
-        <ReportItems>
-          <Textbox Name="Textbox13">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>REFERENCIAS</Value>
-                    <Style>
-                      <FontWeight>Bold</FontWeight>
-                      <Color>White</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Height>0.25in</Height>
-            <Width>7.18042in</Width>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <BackgroundColor>#005eb8</BackgroundColor>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Tablix Name="Tablix1">
-            <TablixBody>
-              <TablixColumns>
-                <TablixColumn>
-                  <Width>2.39347in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.45089in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.56769in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.76836in</Width>
-                </TablixColumn>
-              </TablixColumns>
-              <TablixRows>
-                <TablixRow>
-                  <Height>0.20139in</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox32">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>NOMBRE</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox32</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>None</Style>
-                            </Border>
-                            <BackgroundColor>#005eb8</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox44">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>OCUPACIÓN</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox44</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>None</Style>
-                            </Border>
-                            <BackgroundColor>#005eb8</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox46">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>RELACIÓN</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox46</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>None</Style>
-                            </Border>
-                            <BackgroundColor>#005eb8</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox61">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>TIEMPO DE CONOCERSE</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox61</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>None</Style>
-                            </Border>
-                            <BackgroundColor>#005eb8</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.25347in</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Ref_Nombre">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Ref_Nombre.Value</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Ref_Nombre</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Ref_Ocupacion">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Ref_Ocupacion.Value</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Ref_Ocupacion</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Ref_TRelacion">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Ref_TRelacion.Value</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Ref_TRelacion</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Ref_TiempoC">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Ref_TiempoC.Value</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Ref_TiempoC</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-              </TablixRows>
-            </TablixBody>
-            <TablixColumnHierarchy>
-              <TablixMembers>
-                <TablixMember />
-                <TablixMember />
-                <TablixMember />
-                <TablixMember />
-              </TablixMembers>
-            </TablixColumnHierarchy>
-            <TablixRowHierarchy>
-              <TablixMembers>
-                <TablixMember>
-                  <KeepWithGroup>After</KeepWithGroup>
-                </TablixMember>
-                <TablixMember>
-                  <Group Name="Details" />
-                </TablixMember>
-              </TablixMembers>
-            </TablixRowHierarchy>
-            <DataSetName>SES_REFERENCES</DataSetName>
-            <Top>0.25in</Top>
-            <Height>0.45486in</Height>
-            <Width>7.18041in</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-            </Style>
-          </Tablix>
-        </ReportItems>
-        <KeepTogether>true</KeepTogether>
-        <Top>2.67584in</Top>
-        <Left>0.184in</Left>
-        <Height>1.06249in</Height>
-        <Width>7.18779in</Width>
-        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -1274,7 +896,7 @@
             <Source>Database</Source>
             <Value>=First(Fields!Img_Dom.Value, "SES_INFO")</Value>
             <MIMEType>image/png</MIMEType>
-            <Sizing>FitProportional</Sizing>
+            <Sizing>Fit</Sizing>
             <Top>0.31944in</Top>
             <Left>0.0966in</Left>
             <Height>2.27777in</Height>
@@ -2125,11 +1747,11 @@
           </Line>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>3.86619in</Top>
+        <Top>4.07514in</Top>
         <Left>0.184in</Left>
         <Height>2.71015in</Height>
         <Width>7.18287in</Width>
-        <ZIndex>2</ZIndex>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -2190,9 +1812,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>0.26389in</Top>
+            <Top>0.27778in</Top>
             <Left>0.0966in</Left>
-            <Height>0.23611in</Height>
+            <Height>0.22222in</Height>
             <Width>0.96163in</Width>
             <ZIndex>1</ZIndex>
             <Style>
@@ -2222,9 +1844,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox54</rd:DefaultName>
-            <Top>0.26389in</Top>
+            <Top>0.27778in</Top>
             <Left>1.05823in</Left>
-            <Height>0.23611in</Height>
+            <Height>0.22222in</Height>
             <Width>0.28576in</Width>
             <ZIndex>2</ZIndex>
             <Style>
@@ -2265,7 +1887,7 @@
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>0.27778in</Top>
             <Left>1.41344in</Left>
-            <Height>0.23611in</Height>
+            <Height>0.22222in</Height>
             <Width>2.01355in</Width>
             <ZIndex>3</ZIndex>
             <Style>
@@ -2296,7 +1918,7 @@
             <rd:DefaultName>Textbox54</rd:DefaultName>
             <Top>0.27778in</Top>
             <Left>3.42699in</Left>
-            <Height>0.23611in</Height>
+            <Height>0.22222in</Height>
             <Width>0.28576in</Width>
             <ZIndex>4</ZIndex>
             <Style>
@@ -2337,7 +1959,7 @@
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>0.27778in</Top>
             <Left>3.78219in</Left>
-            <Height>0.23611in</Height>
+            <Height>0.22222in</Height>
             <Width>1.65594in</Width>
             <ZIndex>5</ZIndex>
             <Style>
@@ -2368,7 +1990,7 @@
             <rd:DefaultName>Textbox54</rd:DefaultName>
             <Top>0.27778in</Top>
             <Left>5.43813in</Left>
-            <Height>0.23611in</Height>
+            <Height>0.22222in</Height>
             <Width>0.28576in</Width>
             <ZIndex>6</ZIndex>
             <Style>
@@ -2407,9 +2029,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>0.26389in</Top>
+            <Top>0.27778in</Top>
             <Left>5.834in</Left>
-            <Height>0.23611in</Height>
+            <Height>0.22222in</Height>
             <Width>0.96163in</Width>
             <ZIndex>7</ZIndex>
             <Style>
@@ -2439,9 +2061,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox54</rd:DefaultName>
-            <Top>0.26389in</Top>
+            <Top>0.27778in</Top>
             <Left>6.79563in</Left>
-            <Height>0.23611in</Height>
+            <Height>0.22222in</Height>
             <Width>0.28576in</Width>
             <ZIndex>8</ZIndex>
             <Style>
@@ -2463,11 +2085,11 @@
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>6.64578in</Top>
-        <Left>0.184in</Left>
+        <Top>6.86453in</Top>
+        <Left>0.19138in</Left>
         <Height>0.55281in</Height>
         <Width>7.18042in</Width>
-        <ZIndex>3</ZIndex>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -2542,11 +2164,11 @@
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>7.26804in</Top>
-        <Left>0.184in</Left>
+        <Top>7.48678in</Top>
+        <Left>0.17907in</Left>
         <Height>0.47608in</Height>
         <Width>7.18042in</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2575,77 +2197,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Left>0.01721in</Left>
             <Height>0.25in</Height>
-            <Width>7.18042in</Width>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <BackgroundColor>#005eb8</BackgroundColor>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox86">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>ACTIVIDAD</Value>
-                    <Style>
-                      <Color>White</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox86</rd:DefaultName>
-            <Top>0.25in</Top>
-            <Height>0.25in</Height>
-            <Width>3.57679in</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <BackgroundColor>#005eb8</BackgroundColor>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox87">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>FRECUENCIA ANUAL</Value>
-                    <Style>
-                      <Color>White</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox86</rd:DefaultName>
-            <Top>0.25in</Top>
-            <Left>3.5678in</Left>
-            <Height>0.25in</Height>
-            <Width>3.61262in</Width>
-            <ZIndex>2</ZIndex>
+            <Width>7.201in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2664,9 +2218,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>EVENTOS SOCUALES(FAMILIARES O AMIGOS):</Value>
+                    <Value>EVENTOS SOCIALES</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
+                      <Color>White</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -2676,14 +2231,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>0.51389in</Top>
+            <Top>0.25in</Top>
+            <Left>0.01042in</Left>
             <Height>0.25in</Height>
-            <Width>3.5678in</Width>
-            <ZIndex>3</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>1</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>#005eb8</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -2697,9 +2254,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>EVENTOS COMUNITARIOS:</Value>
+                    <Value>EVENTOS COMUNITARIOS</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
+                      <Color>White</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -2709,14 +2267,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>0.79167in</Top>
+            <Top>0.25in</Top>
+            <Left>2.41373in</Left>
             <Height>0.25in</Height>
-            <Width>3.5678in</Width>
-            <ZIndex>4</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>2</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>#005eb8</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -2730,9 +2290,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>MUSEOS:</Value>
+                    <Value>MUSEOS</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
+                      <Color>White</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -2742,14 +2303,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>1.06944in</Top>
+            <Top>0.25in</Top>
+            <Left>4.81465in</Left>
             <Height>0.25in</Height>
-            <Width>3.5678in</Width>
-            <ZIndex>5</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>3</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>#005eb8</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -2763,9 +2326,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>TEATROS:</Value>
+                    <Value>TEATROS</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
+                      <Color>White</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -2775,14 +2339,15 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>1.36111in</Top>
+            <Top>0.81944in</Top>
             <Height>0.25in</Height>
-            <Width>3.5678in</Width>
-            <ZIndex>6</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>#005eb8</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -2796,9 +2361,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>CINES:</Value>
+                    <Value>CINES</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
+                      <Color>White</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -2808,14 +2374,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>1.625in</Top>
+            <Top>0.81944in</Top>
+            <Left>2.41373in</Left>
             <Height>0.25in</Height>
-            <Width>3.5678in</Width>
-            <ZIndex>7</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>#005eb8</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -2829,9 +2397,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>FESTIVALES CULTURALES:</Value>
+                    <Value>FESTIVALES CULTURALES</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
+                      <Color>White</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -2841,14 +2410,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>1.90278in</Top>
+            <Top>0.81944in</Top>
+            <Left>4.81465in</Left>
             <Height>0.25in</Height>
-            <Width>3.5678in</Width>
-            <ZIndex>8</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>#005eb8</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -2862,9 +2433,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>ZONAS ARQUEOLOGICAS:</Value>
+                    <Value>ZONAS ARQUEOLOGICAS</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
+                      <Color>White</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -2874,14 +2446,15 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>2.18056in</Top>
+            <Top>1.38889in</Top>
             <Height>0.25in</Height>
-            <Width>3.5678in</Width>
-            <ZIndex>9</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>7</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>#005eb8</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -2895,9 +2468,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>VACACIONES:</Value>
+                    <Value>VACACIONES</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
+                      <Color>White</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -2907,14 +2481,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>2.45833in</Top>
+            <Top>1.38889in</Top>
+            <Left>2.40331in</Left>
             <Height>0.25in</Height>
-            <Width>3.5678in</Width>
-            <ZIndex>10</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>8</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>#005eb8</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -2928,9 +2504,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>PLAZAS PUBLICAS:</Value>
+                    <Value>PLAZAS PUBLICAS</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
+                      <Color>White</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -2940,15 +2517,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>2.73611in</Top>
-            <Left>0.00245in</Left>
+            <Top>1.38889in</Top>
+            <Left>4.81745in</Left>
             <Height>0.25in</Height>
-            <Width>3.56534in</Width>
-            <ZIndex>11</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>9</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>#005eb8</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -2962,9 +2540,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>PARQUES NATURALES:</Value>
+                    <Value>PARQUES NATURALES</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
+                      <Color>White</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -2974,15 +2553,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>3.01389in</Top>
-            <Left>0.00245in</Left>
+            <Top>1.95833in</Top>
+            <Left>1.0459in</Left>
             <Height>0.25in</Height>
-            <Width>3.56534in</Width>
-            <ZIndex>12</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>10</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>#005eb8</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -2996,9 +2576,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>PARQUES DE DIVERSIONES:</Value>
+                    <Value>PARQUES DE DIVERSIONES</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
+                      <Color>White</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -3008,15 +2589,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>3.29167in</Top>
-            <Left>0.00245in</Left>
+            <Top>1.95833in</Top>
+            <Left>3.50874in</Left>
             <Height>0.25in</Height>
-            <Width>3.56534in</Width>
-            <ZIndex>13</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>11</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>#005eb8</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -3029,7 +2611,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!SOCIALES.Value, "SES_INFO")</Value>
+                    <Value>=First(Fields!SOCIALES.Value, "SES_INFO") + " VECES POR AÑO"</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -3039,11 +2621,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox33</rd:DefaultName>
-            <Top>0.51389in</Top>
-            <Left>3.5678in</Left>
+            <Top>0.5in</Top>
+            <Left>0.00984in</Left>
             <Height>0.25in</Height>
-            <Width>3.61262in</Width>
-            <ZIndex>14</ZIndex>
+            <Width>2.38356in</Width>
+            <ZIndex>12</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3061,7 +2643,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!COMUNITARIOS.Value, "SES_INFO")</Value>
+                    <Value>=First(Fields!COMUNITARIOS.Value, "SES_INFO")+ " VECES POR AÑO"</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -3071,11 +2653,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox33</rd:DefaultName>
-            <Top>0.79167in</Top>
-            <Left>3.5678in</Left>
+            <Top>0.5in</Top>
+            <Left>2.40331in</Left>
             <Height>0.25in</Height>
-            <Width>3.61262in</Width>
-            <ZIndex>15</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>13</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3093,7 +2675,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!MUSEOS.Value, "SES_INFO")</Value>
+                    <Value>=First(Fields!MUSEOS.Value, "SES_INFO")+ " VECES POR AÑO"</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -3103,11 +2685,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox33</rd:DefaultName>
-            <Top>1.06944in</Top>
-            <Left>3.5678in</Left>
+            <Top>0.5in</Top>
+            <Left>4.79671in</Left>
             <Height>0.25in</Height>
-            <Width>3.61262in</Width>
-            <ZIndex>16</ZIndex>
+            <Width>2.38864in</Width>
+            <ZIndex>14</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3125,7 +2707,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!TEATROS.Value, "SES_INFO")</Value>
+                    <Value>=First(Fields!TEATROS.Value, "SES_INFO")+ " VECES POR AÑO"</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -3135,11 +2717,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox33</rd:DefaultName>
-            <Top>1.34722in</Top>
-            <Left>3.5678in</Left>
+            <Top>1.06944in</Top>
+            <Left>0.00493in</Left>
             <Height>0.25in</Height>
-            <Width>3.61262in</Width>
-            <ZIndex>17</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>15</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3157,7 +2739,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!CINES.Value, "SES_INFO")</Value>
+                    <Value>=First(Fields!CINES.Value, "SES_INFO")+ " VECES POR AÑO"</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -3167,11 +2749,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox33</rd:DefaultName>
-            <Top>1.625in</Top>
-            <Left>3.5678in</Left>
+            <Top>1.06944in</Top>
+            <Left>2.40331in</Left>
             <Height>0.25in</Height>
-            <Width>3.61262in</Width>
-            <ZIndex>18</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>16</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3189,7 +2771,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!CULTURALES.Value, "SES_INFO")</Value>
+                    <Value>=First(Fields!CULTURALES.Value, "SES_INFO")+ " VECES POR AÑO"</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -3199,11 +2781,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox33</rd:DefaultName>
-            <Top>1.91667in</Top>
-            <Left>3.5678in</Left>
+            <Top>1.06944in</Top>
+            <Left>4.79933in</Left>
             <Height>0.25in</Height>
-            <Width>3.61262in</Width>
-            <ZIndex>19</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>17</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3221,7 +2803,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!ARQUEOLOGICAS.Value, "SES_INFO")</Value>
+                    <Value>=First(Fields!ARQUEOLOGICAS.Value, "SES_INFO")+ " VECES POR AÑO"</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -3231,11 +2813,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox33</rd:DefaultName>
-            <Top>2.18056in</Top>
-            <Left>3.5678in</Left>
+            <Top>1.63889in</Top>
             <Height>0.25in</Height>
-            <Width>3.61262in</Width>
-            <ZIndex>20</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>18</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3253,7 +2834,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!VACACIONES.Value, "SES_INFO")</Value>
+                    <Value>=First(Fields!VACACIONES.Value, "SES_INFO")+ " VECES POR AÑO"</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -3263,11 +2844,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox33</rd:DefaultName>
-            <Top>2.45833in</Top>
-            <Left>3.5678in</Left>
+            <Top>1.63889in</Top>
+            <Left>2.40331in</Left>
             <Height>0.25in</Height>
-            <Width>3.61262in</Width>
-            <ZIndex>21</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>19</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3285,7 +2866,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!PLAZAS.Value, "SES_INFO")</Value>
+                    <Value>=First(Fields!PLAZAS.Value, "SES_INFO")+ " VECES POR AÑO"</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -3295,11 +2876,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox33</rd:DefaultName>
-            <Top>2.73611in</Top>
-            <Left>3.5678in</Left>
+            <Top>1.63889in</Top>
+            <Left>4.78701in</Left>
             <Height>0.25in</Height>
-            <Width>3.61262in</Width>
-            <ZIndex>22</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>20</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3317,7 +2898,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!PARQUES_NAT.Value, "SES_INFO")</Value>
+                    <Value>=First(Fields!PARQUES_NAT.Value, "SES_INFO")+ " VECES POR AÑO"</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -3327,11 +2908,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox33</rd:DefaultName>
-            <Top>3.02778in</Top>
-            <Left>3.5678in</Left>
+            <Top>2.20833in</Top>
+            <Left>1.0459in</Left>
             <Height>0.25in</Height>
-            <Width>3.61262in</Width>
-            <ZIndex>23</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>21</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3349,7 +2930,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!PARQUES_DIV.Value, "SES_INFO")</Value>
+                    <Value>=First(Fields!PARQUES_DIV.Value, "SES_INFO")+ " VECES POR AÑO"</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -3359,11 +2940,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox33</rd:DefaultName>
-            <Top>3.29167in</Top>
-            <Left>3.5678in</Left>
+            <Top>2.20833in</Top>
+            <Left>3.50874in</Left>
             <Height>0.25in</Height>
-            <Width>3.61262in</Width>
-            <ZIndex>24</ZIndex>
+            <Width>2.3934in</Width>
+            <ZIndex>22</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3377,11 +2958,11 @@
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>7.85176in</Top>
-        <Left>0.18891in</Left>
-        <Height>3.54167in</Height>
-        <Width>7.18042in</Width>
-        <ZIndex>5</ZIndex>
+        <Top>8.06009in</Top>
+        <Left>0.17907in</Left>
+        <Height>2.53125in</Height>
+        <Width>7.21822in</Width>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -3405,11 +2986,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox33</rd:DefaultName>
-        <Top>11.71287in</Top>
-        <Left>0.19137in</Left>
+        <Top>10.91079in</Top>
+        <Left>0.17907in</Left>
         <Height>0.25in</Height>
         <Width>7.17796in</Width>
-        <ZIndex>6</ZIndex>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -3463,9 +3044,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>RENTA:</Value>
+                    <Value>RENTA</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
+                      <Color>White</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -3475,15 +3057,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>0.26389in</Top>
+            <Top>0.25in</Top>
             <Left>0.00245in</Left>
             <Height>0.25in</Height>
-            <Width>3.51334in</Width>
+            <Width>1.7951in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>#005eb8</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -3497,9 +3080,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>COLEGIATURAS:</Value>
+                    <Value>COLEGIATURAS</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
+                      <Color>White</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -3509,14 +3093,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>0.55556in</Top>
+            <Top>0.25in</Top>
+            <Left>1.79756in</Left>
             <Height>0.25in</Height>
-            <Width>3.5158in</Width>
+            <Width>1.7951in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>#005eb8</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -3530,9 +3116,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>DESPENSA:</Value>
+                    <Value>DESPENSA</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
+                      <Color>White</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -3542,14 +3129,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>0.83333in</Top>
+            <Top>0.25in</Top>
+            <Left>3.59266in</Left>
             <Height>0.25in</Height>
-            <Width>3.5158in</Width>
+            <Width>1.7951in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>#005eb8</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -3563,9 +3152,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>SERVICIOS:</Value>
+                    <Value>SERVICIOS</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
+                      <Color>White</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -3575,32 +3165,22 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>1.09722in</Top>
+            <Top>0.25in</Top>
+            <Left>5.41081in</Left>
             <Height>0.25in</Height>
-            <Width>3.5158in</Width>
+            <Width>1.76466in</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>#005eb8</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Line Name="Line2">
-            <Top>0.27778in</Top>
-            <Left>3.5158in</Left>
-            <Height>1.06944in</Height>
-            <Width>0in</Width>
-            <ZIndex>5</ZIndex>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-              </Border>
-            </Style>
-          </Line>
           <Textbox Name="Textbox97">
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
@@ -3617,11 +3197,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox33</rd:DefaultName>
-            <Top>0.26389in</Top>
-            <Left>3.5158in</Left>
+            <Top>0.5in</Top>
+            <Left>0.00738in</Left>
             <Height>0.25in</Height>
-            <Width>3.66462in</Width>
-            <ZIndex>6</ZIndex>
+            <Width>1.78772in</Width>
+            <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3649,11 +3229,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox33</rd:DefaultName>
-            <Top>0.55556in</Top>
-            <Left>3.5158in</Left>
+            <Top>0.5in</Top>
+            <Left>1.79756in</Left>
             <Height>0.25in</Height>
-            <Width>3.66462in</Width>
-            <ZIndex>7</ZIndex>
+            <Width>1.7951in</Width>
+            <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3681,11 +3261,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox33</rd:DefaultName>
-            <Top>0.83333in</Top>
-            <Left>3.5158in</Left>
+            <Top>0.5in</Top>
+            <Left>3.60646in</Left>
             <Height>0.25in</Height>
-            <Width>3.66462in</Width>
-            <ZIndex>8</ZIndex>
+            <Width>1.78129in</Width>
+            <ZIndex>7</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3713,11 +3293,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox33</rd:DefaultName>
-            <Top>1.09722in</Top>
-            <Left>3.5158in</Left>
+            <Top>0.5in</Top>
+            <Left>5.41081in</Left>
             <Height>0.25in</Height>
-            <Width>3.66462in</Width>
-            <ZIndex>9</ZIndex>
+            <Width>1.78189in</Width>
+            <ZIndex>8</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3731,11 +3311,11 @@
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>13.10176in</Top>
-        <Left>0.184in</Left>
-        <Height>1.39583in</Height>
-        <Width>7.18042in</Width>
-        <ZIndex>7</ZIndex>
+        <Top>12.29968in</Top>
+        <Left>0.19137in</Left>
+        <Height>0.82291in</Height>
+        <Width>7.20591in</Width>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -3761,11 +3341,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>17.99374in</Top>
+        <Top>16.86874in</Top>
         <Left>2.26536in</Left>
         <Height>0.25in</Height>
         <Width>3.24836in</Width>
-        <ZIndex>8</ZIndex>
+        <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -3801,11 +3381,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>11.46287in</Top>
-        <Left>0.19137in</Left>
+        <Top>10.66079in</Top>
+        <Left>0.17907in</Left>
         <Height>0.25in</Height>
         <Width>7.17796in</Width>
-        <ZIndex>9</ZIndex>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -3833,11 +3413,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox30</rd:DefaultName>
-        <Top>17.72792in</Top>
+        <Top>16.60292in</Top>
         <Left>2.26536in</Left>
         <Height>0.20833in</Height>
         <Width>3.24836in</Width>
-        <ZIndex>10</ZIndex>
+        <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -3868,11 +3448,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>12.03231in</Top>
-        <Left>0.17908in</Left>
+        <Top>11.23024in</Top>
+        <Left>0.18401in</Left>
         <Height>0.25in</Height>
         <Width>7.18042in</Width>
-        <ZIndex>11</ZIndex>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -3903,11 +3483,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>12.28231in</Top>
-        <Left>0.17908in</Left>
+        <Top>11.48024in</Top>
+        <Left>0.18401in</Left>
         <Height>0.25in</Height>
         <Width>7.18042in</Width>
-        <ZIndex>12</ZIndex>
+        <ZIndex>11</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -4240,11 +3820,11 @@
         </TablixRowHierarchy>
         <KeepTogether>true</KeepTogether>
         <DataSetName>SES_FAMILY</DataSetName>
-        <Top>12.53231in</Top>
-        <Left>0.18645in</Left>
+        <Top>11.73024in</Top>
+        <Left>0.19138in</Left>
         <Height>0.5in</Height>
         <Width>7.17304in</Width>
-        <ZIndex>13</ZIndex>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -4274,11 +3854,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>14.56703in</Top>
-        <Left>0.17908in</Left>
+        <Top>13.19204in</Top>
+        <Left>0.18401in</Left>
         <Height>0.25in</Height>
         <Width>7.18042in</Width>
-        <ZIndex>14</ZIndex>
+        <ZIndex>13</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -4300,10 +3880,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.51457in</Width>
+              <Width>3.50964in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.67815in</Width>
+              <Width>3.67322in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -4472,11 +4052,11 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>SES_OTHERINCOMES</DataSetName>
-        <Top>14.81703in</Top>
-        <Left>0.17908in</Left>
+        <Top>13.44204in</Top>
+        <Left>0.18401in</Left>
         <Height>0.45834in</Height>
-        <Width>7.19272in</Width>
-        <ZIndex>15</ZIndex>
+        <Width>7.18286in</Width>
+        <ZIndex>14</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -4512,11 +4092,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>15.34482in</Top>
-        <Left>0.17907in</Left>
+        <Top>13.96982in</Top>
+        <Left>0.18401in</Left>
         <Height>0.25in</Height>
         <Width>7.19272in</Width>
-        <ZIndex>16</ZIndex>
+        <ZIndex>15</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -4552,11 +4132,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox33</rd:DefaultName>
-        <Top>15.60871in</Top>
-        <Left>0.17907in</Left>
+        <Top>14.23371in</Top>
+        <Left>0.18401in</Left>
         <Height>0.26736in</Height>
         <Width>7.18042in</Width>
-        <ZIndex>17</ZIndex>
+        <ZIndex>16</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -4576,64 +4156,459 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Tablix Name="Tablix1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>2.39101in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.4472in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.56523in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.76467in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.20139in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox32">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>NOMBRE</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox32</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <BackgroundColor>#005eb8</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox44">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>OCUPACIÓN</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox44</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <BackgroundColor>#005eb8</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox46">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>RELACIÓN</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox46</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <BackgroundColor>#005eb8</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox61">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>TIEMPO DE CONOCERSE</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox61</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <BackgroundColor>#005eb8</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25347in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Ref_Nombre">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Ref_Nombre.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Ref_Nombre</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Ref_Ocupacion">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Ref_Ocupacion.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Ref_Ocupacion</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Ref_TRelacion">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Ref_TRelacion.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Ref_TRelacion</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Ref_TiempoC">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Ref_TiempoC.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Ref_TiempoC</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Details" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>SES_REFERENCES</DataSetName>
+        <Top>3.55083in</Top>
+        <Left>0.19137in</Left>
+        <Height>0.45486in</Height>
+        <Width>7.16812in</Width>
+        <ZIndex>17</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BottomBorder>
+            <Style>Solid</Style>
+          </BottomBorder>
+          <LeftBorder>
+            <Style>Solid</Style>
+          </LeftBorder>
+          <RightBorder>
+            <Style>Solid</Style>
+          </RightBorder>
+        </Style>
+      </Tablix>
+      <Textbox Name="Textbox13">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>REFERENCIAS</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>White</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>3.30083in</Top>
+        <Left>0.17907in</Left>
+        <Height>0.25in</Height>
+        <Width>7.18042in</Width>
+        <ZIndex>18</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <TopBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </TopBorder>
+          <LeftBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </LeftBorder>
+          <RightBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </RightBorder>
+          <BackgroundColor>#005eb8</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>ESTUDIO SOCIOECONÓMICO</Value>
+                <Style>
+                  <FontSize>18pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>0.24416in</Top>
+        <Left>2.28699in</Left>
+        <Height>0.35417in</Height>
+        <Width>3.6875in</Width>
+        <ZIndex>19</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Logo">
+        <Source>Embedded</Source>
+        <Value>Logo</Value>
+        <Sizing>Fit</Sizing>
+        <Top>0.11916in</Top>
+        <Left>0.17907in</Left>
+        <Height>0.52195in</Height>
+        <Width>1.58865in</Width>
+        <ZIndex>20</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
     </ReportItems>
-    <Height>18.94666in</Height>
+    <Height>19.12374in</Height>
     <Style>
       <Border>
         <Style>None</Style>
       </Border>
     </Style>
   </Body>
-  <Width>7.3718in</Width>
+  <Width>7.40221in</Width>
   <Page>
-    <PageHeader>
-      <Height>0.5in</Height>
-      <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
-      <ReportItems>
-        <Textbox Name="Textbox1">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>ESTUDIO SOCIOECONÓMICO</Value>
-                  <Style>
-                    <FontSize>18pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.13581in</Top>
-          <Left>3.07658in</Left>
-          <Height>0.35417in</Height>
-          <Width>3.6875in</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-      </ReportItems>
-      <Style>
-        <Border>
-          <Style>None</Style>
-        </Border>
-      </Style>
-    </PageHeader>
     <PageFooter>
-      <Height>0.53947in</Height>
+      <Height>0.64364in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -5061,6 +5036,16 @@
     <EmbeddedImage Name="No">
       <MIMEType>image/png</MIMEType>
       <ImageData>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACsSURBVDhPzZLLDcIwEAXNmSBRBTQQrhQDDcA5NMEdCXrhSB90wWdeYKXFXqPcYKSRYsXvJV45/R1z3OCoX30yxR1O+lXADK/4wAP6EoUvqHdnHGPBFrXBtBIflndcYIE2K+RLTujDN1xhlahkcNhQyRHzgjUOIj+zmQ82pBY2v5bkYZ1Zv53PpFrSoQ/bwKLBLrFAN0yXJJq2L9m/1yENtq/HAoX05Wr4F6T0BLNsRNPnIpMmAAAAAElFTkSuQmCC</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="Logo">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>

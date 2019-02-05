@@ -1157,15 +1157,15 @@ Public Class Empleados
     Private Sub btn_SERPT_Click(sender As Object, e As EventArgs) Handles btn_SERPT.Click
         If txt_numero.Text = "" Then
         Else
-            Dim Wait As New wait()
+            Dim Wait As New Wait()
             Wait.Show()
             Dim Reportes As New Reportes With {
                     .ReportOption = Convert.ToInt64(1),
                     .Emp = Convert.ToInt64(txt_numero.Text),
                     .User = NName
                 }
-            Reportes.Show()
             Wait.Close()
+            Reportes.ShowDialog()
         End If
     End Sub
 

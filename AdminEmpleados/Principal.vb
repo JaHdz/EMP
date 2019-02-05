@@ -40,7 +40,7 @@ Public Class Principal
     End Sub
 
     Private Sub Btn_emp_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btn_emp.Click
-        Dim Wait As wait = New wait()
+        Dim Wait As Wait = New Wait()
         Wait.Show()
         'Application.DoEvents()
         If PNL_INFO.Controls.Count > 0 Then
@@ -55,7 +55,7 @@ Public Class Principal
 
     Private Sub BTN_EQ_Click(sender As Object, e As EventArgs) Handles BTN_EQ.Click
         SelectButton(sender)
-        Dim Wait As wait = New wait()
+        Dim Wait As Wait = New Wait()
         Wait.Show()
         'Application.DoEvents()
         If PNL_INFO.Controls.Count > 0 Then
@@ -70,7 +70,7 @@ Public Class Principal
 
     Private Sub BTN_CAP_Click(sender As Object, e As EventArgs) Handles BTN_CAP.Click
         SelectButton(sender)
-        Dim Wait As wait = New wait()
+        Dim Wait As Wait = New Wait()
         Wait.Show()
         'Application.DoEvents()
         If PNL_INFO.Controls.Count > 0 Then
@@ -85,7 +85,7 @@ Public Class Principal
 
     Private Sub BTN_EV_Click(sender As Object, e As EventArgs) Handles BTN_EV.Click
         SelectButton(sender)
-        Dim Wait As wait = New wait()
+        Dim Wait As Wait = New Wait()
         Wait.Show()
         'Application.DoEvents()
         If PNL_INFO.Controls.Count > 0 Then
@@ -100,7 +100,7 @@ Public Class Principal
 
     Private Sub BTN_MED_Click(sender As Object, e As EventArgs) Handles BTN_MED.Click
         SelectButton(sender)
-        Dim Wait As wait = New wait()
+        Dim Wait As Wait = New Wait()
         Wait.Show()
         'Application.DoEvents()
         If PNL_INFO.Controls.Count > 0 Then
@@ -115,7 +115,7 @@ Public Class Principal
 
     Private Sub BTN_ADMIN_Click(sender As Object, e As EventArgs) Handles BTN_ADMIN.Click
         SelectButton(sender)
-        Dim Wait As wait = New wait()
+        Dim Wait As Wait = New Wait()
         Wait.Show()
         'Application.DoEvents()
         If PNL_INFO.Controls.Count > 0 Then

@@ -20,7 +20,7 @@
         End If
     End Sub
 
-    Private Sub header_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles header.MouseDown
+    Private Sub Header_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles header.MouseDown
         bit = True
         X = e.X
         Y = e.Y
@@ -38,7 +38,7 @@
         If user.Text = "" Or pass.Text = "" Then
             MessageBox.Show("Debe llenar todos los campos")
         Else
-            Dim Wait As New wait()
+            Dim Wait As New Wait()
             Wait.Show()
             Application.DoEvents()
             AUTENTICADO = objcon.Autenticar(user.Text, pass.Text)
@@ -68,7 +68,7 @@
     End Sub
 
     Private Sub Lnk_Password_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnk_Password.LinkClicked
-        Dim Wait As New wait()
+        Dim Wait As New Wait()
         Wait.Show()
         Clear()
         If Not String.IsNullOrWhiteSpace(user.Text) Then
@@ -135,7 +135,7 @@
                 Code = Consulta.Encriptar(Trim(TxtCode.Text))
                 If Consulta.ValidResetKey(user.Text, Code) Then
                     ErrorProvider.Clear()
-                    Dim Wait As New wait()
+                    Dim Wait As New Wait()
                     Wait.Show()
                     PnlResetKey.Visible = False
                     PnlNewPassword.Visible = True

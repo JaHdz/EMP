@@ -1,4 +1,4 @@
-﻿Public Class wait
+﻿Public Class Wait
     Private Sub wait_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.FormBorderStyle = FormBorderStyle.None
         Me.Dock = DockStyle.Fill

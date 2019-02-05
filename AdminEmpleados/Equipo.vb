@@ -136,7 +136,7 @@
                 Else
                     objcon.Add_commen(txt_numero.Text, TXT_commen.Text)
                 End If
-                Dim Wait As New wait()
+                Dim Wait As New Wait()
                 Wait.ShowDialog()
                 Dim Reportes As New Reportes With {
                         .ReportOption = Convert.ToInt64(2),
