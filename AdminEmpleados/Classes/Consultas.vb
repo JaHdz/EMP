@@ -480,7 +480,7 @@ Public Class Consultas
         End Using
     End Function
 
-    Public Function Add_TRAINING(ByVal ID As Integer, TRAINING As Integer, EMPLOYEE As Integer, DATEE As DateTime, COME As String) As String
+    Public Function Add_TRAINING(ByVal ID As Integer, TRAINING As String, EMPLOYEE As Integer, DATEE As DateTime, COME As String) As String
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand

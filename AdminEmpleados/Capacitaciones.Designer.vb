@@ -81,7 +81,7 @@ Partial Class Capacitaciones
         Me.dgv_equipo_Eval.Name = "dgv_equipo_Eval"
         Me.dgv_equipo_Eval.RowHeadersVisible = False
         Me.dgv_equipo_Eval.Size = New System.Drawing.Size(962, 412)
-        Me.dgv_equipo_Eval.TabIndex = 90
+        Me.dgv_equipo_Eval.TabIndex = 0
         '
         'DELETE
         '
@@ -152,7 +152,7 @@ Partial Class Capacitaciones
         Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(962, 313)
-        Me.Panel14.TabIndex = 844
+        Me.Panel14.TabIndex = 0
         '
         'lbl_ingreso
         '
@@ -169,7 +169,7 @@ Partial Class Capacitaciones
         Me.TXT_FECHA.Location = New System.Drawing.Point(152, 145)
         Me.TXT_FECHA.Name = "TXT_FECHA"
         Me.TXT_FECHA.Size = New System.Drawing.Size(245, 28)
-        Me.TXT_FECHA.TabIndex = 2
+        Me.TXT_FECHA.TabIndex = 3
         '
         'Panel2
         '
@@ -183,7 +183,7 @@ Partial Class Capacitaciones
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(962, 40)
-        Me.Panel2.TabIndex = 0
+        Me.Panel2.TabIndex = 7
         '
         'Label42
         '
@@ -224,7 +224,7 @@ Partial Class Capacitaciones
         Me.TXT_commen.Multiline = True
         Me.TXT_commen.Name = "TXT_commen"
         Me.TXT_commen.Size = New System.Drawing.Size(427, 83)
-        Me.TXT_commen.TabIndex = 3
+        Me.TXT_commen.TabIndex = 4
         '
         'label8
         '
@@ -263,30 +263,31 @@ Partial Class Capacitaciones
         Me.lbl_num.Location = New System.Drawing.Point(69, 66)
         Me.lbl_num.Name = "lbl_num"
         Me.lbl_num.Size = New System.Drawing.Size(77, 21)
-        Me.lbl_num.TabIndex = 78
+        Me.lbl_num.TabIndex = 3
         Me.lbl_num.Text = "Numero:"
         '
         'CAP
         '
-        Me.CAP.Location = New System.Drawing.Point(152, 104)
+        Me.CAP.Location = New System.Drawing.Point(402, 103)
         Me.CAP.Name = "CAP"
         Me.CAP.Size = New System.Drawing.Size(39, 28)
-        Me.CAP.TabIndex = 1
+        Me.CAP.TabIndex = 6
+        Me.CAP.Visible = False
         '
         'txt_numero
         '
         Me.txt_numero.Location = New System.Drawing.Point(152, 63)
         Me.txt_numero.Name = "txt_numero"
         Me.txt_numero.Size = New System.Drawing.Size(209, 28)
-        Me.txt_numero.TabIndex = 0
+        Me.txt_numero.TabIndex = 1
         '
         'CAP2
         '
         Me.CAP2.Enabled = False
-        Me.CAP2.Location = New System.Drawing.Point(197, 104)
+        Me.CAP2.Location = New System.Drawing.Point(152, 104)
         Me.CAP2.Name = "CAP2"
-        Me.CAP2.Size = New System.Drawing.Size(164, 28)
-        Me.CAP2.TabIndex = 842
+        Me.CAP2.Size = New System.Drawing.Size(209, 28)
+        Me.CAP2.TabIndex = 2
         Me.CAP2.TabStop = False
         '
         'buscar_EN

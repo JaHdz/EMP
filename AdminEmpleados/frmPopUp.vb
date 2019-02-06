@@ -2,26 +2,25 @@
     Dim tipo As String
     Public Variable As String
     Public Variable2 As String
+    Dim dt As New DataTable
 
     Sub New(tipo2 As String)
         InitializeComponent()
         tipo = tipo2
     End Sub
 
-    Private Sub btn_esSAVE_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
-        Dim objcon As New Consultas()
-        dgv_Pop.DataSource = objcon.Catalogo(tipo, txt_codi.Text)
-    End Sub
-
-    Private Sub Panel8_Paint(sender As Object, e As PaintEventArgs) Handles Panel8.Paint
-
+    Private Sub Btn_esSAVE_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
+        Dim bs As New BindingSource
+        bs.DataSource = dt
+        bs.Filter = dt.Columns(1).ColumnName + " like '" + txt_codi.Text + "%'"
+        dgv_Pop.DataSource = bs
     End Sub
 
     Private Sub PictureBox9_Click(sender As Object, e As EventArgs) Handles btn_salir.Click
         Me.Close()
     End Sub
 
-    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles btn_acep.Click
+    Private Sub Btn_acep_Click(sender As Object, e As EventArgs) Handles btn_acep.Click
         If (dgv_Pop.RowCount = 0) Then
         Else
             Me.Close()
@@ -37,4 +36,23 @@
     Private Sub frmPopUp_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = 13 Then My.Computer.Keyboard.SendKeys("{tab}")
     End Sub
+
+    Private Sub dgv_Pop_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_Pop.CellContentDoubleClick
+        If dgv_Pop.Rows.Count > 0 Then
+            Btn_acep_Click(sender, e)
+        End If
+
+    End Sub
+
+    Private Sub frmPopUp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim objcon As New Consultas()
+        dt = objcon.Catalogo(tipo, txt_codi.Text)
+        dgv_Pop.DataSource = dt
+    End Sub
+
+    'Private Sub dgv_Pop_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_Pop.CellContentClick
+    '    If dgv_Pop.Rows.Count > 0 Then
+    '        Btn_acep_Click(sender, e)
+    '    End If
+    'End Sub
 End Class
