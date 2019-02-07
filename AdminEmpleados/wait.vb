@@ -77,7 +77,7 @@ Public Class Wait
                     Parameters("Name"), Parameters("Ocupation"), Parameters("Relationship"), Parameters("Time"))}, {"Source", New Consultas().Consulta_REF(Parameters("ES"))}}
                 Result = ResultDictionary
             Case BackgroundOperations.AddReference
-                Result = New Consultas().Add_Referencias(0, Parameters("ES"), Parameters("Name"), Parameters("Ocupation"), Parameters("Relationship"), Parameters("Time"))}
+                Result = New Consultas().Add_Referencias(0, Parameters("ES"), Parameters("Name"), Parameters("Ocupation"), Parameters("Relationship"), Parameters("Time"))
             Case BackgroundOperations.ValidateIncome
                 Dim ResultDictionary As New Dictionary(Of String, Object) From {{"Valid", New Consultas().Add_OtrosIngresos(0, Parameters("ES"),
                     Parameters("Relationship"), Parameters("Amount"))}, {"Source", New Consultas().Consulta_OI(Parameters("ES"))}}

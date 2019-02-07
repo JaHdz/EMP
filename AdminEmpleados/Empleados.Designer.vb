@@ -23,7 +23,7 @@ Partial Class Empleados
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Tam_Es = New System.Windows.Forms.TabPage()
@@ -1662,8 +1662,8 @@ Partial Class Empleados
         'Text
         '
         Me.Text.DataPropertyName = "Text"
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.Text.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        Me.Text.DefaultCellStyle = DataGridViewCellStyle3
         Me.Text.HeaderText = "Enfermedad"
         Me.Text.Name = "Text"
         Me.Text.ReadOnly = True
@@ -2424,6 +2424,7 @@ Partial Class Empleados
         '
         'txt_hijoFN
         '
+        Me.txt_hijoFN.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.txt_hijoFN.Location = New System.Drawing.Point(249, 158)
         Me.txt_hijoFN.Name = "txt_hijoFN"
         Me.txt_hijoFN.Size = New System.Drawing.Size(209, 28)
