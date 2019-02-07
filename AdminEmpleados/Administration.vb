@@ -16,9 +16,9 @@
         If (txt_numero.Text <> "") Then
             NEmp = objcon.Emp_Exist(txt_numero.Text)
             If (NEmp = 1) Then
-                Dim dt As DataTable
-                dt = objcon.Consulta_empleado(txt_numero.Text)
-                lbl_emp.Text = txt_numero.Text + " | " + dt.Rows(0).Item("Emp_Name").ToString() + " " + dt.Rows(0).Item("Emp_APat").ToString() + " " + dt.Rows(0).Item("Emp_AMat").ToString()
+                Dim Employee As New Cls_Emp
+                'dt = objcon.Consulta_empleado(txt_numero.Text)
+                lbl_emp.Text = txt_numero.Text + " | " + Employee.Emp_Name + " " + Employee.Emp_APat + " " + Employee.Emp_AMat
                 dgv_equipo_emp.DataSource = objcon.Consulta_USER()
             Else
                 MessageBox.Show("Numero de empleado no existe")
@@ -348,9 +348,15 @@
         If (TXT_EMP_SUPER.Text <> "") Then
             NEmp = objcon.Emp_Exist(TXT_EMP_SUPER.Text)
             If (NEmp = 1) Then
-                Dim dt As DataTable
-                dt = objcon.Consulta_empleado(TXT_EMP_SUPER.Text)
-                TXT_EMP_SUPERname.Text = TXT_EMP_SUPER.Text + " | " + dt.Rows(0).Item("Emp_Name").ToString() + " " + dt.Rows(0).Item("Emp_APat").ToString() + " " + dt.Rows(0).Item("Emp_AMat").ToString()
+                Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", txt_numero.Text}}
+                Dim Wait As New Wait With {
+                .Parameters = ldParameters,
+                .Operation = BackgroundOperations.GetEmployeeInfo
+            }
+                Wait.ShowDialog()
+                Dim Result As Cls_Emp = Wait.Result
+                Wait.Close()
+                lbl_emp.Text = txt_numero.Text + " | " + Result.Emp_Name + " " + Result.Emp_APat + " " + Result.Emp_AMat
                 dgv_super.DataSource = objcon.Consulta_SU()
             Else
                 MessageBox.Show("Numero de empleado no existe")

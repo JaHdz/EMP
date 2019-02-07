@@ -22,9 +22,9 @@
         If (txt_numero.Text <> "") Then
             NEmp = objcon.Emp_Exist(txt_numero.Text)
             If (NEmp = 1) Then
-                Dim dt As DataTable
-                dt = objcon.Consulta_empleado(txt_numero.Text)
-                lbl_emp.Text = txt_numero.Text + " | " + dt.Rows(0).Item("Emp_Name").ToString() + " " + dt.Rows(0).Item("Emp_APat").ToString() + " " + dt.Rows(0).Item("Emp_AMat").ToString()
+                Dim Employee As New Cls_Emp
+                'dt = objcon.Consulta_empleado(txt_numero.Text)
+                lbl_emp.Text = txt_numero.Text + " | " + Employee.Emp_Name + " " + Employee.Emp_APat + " " + Employee.Emp_AMat
                 dgv_equipo_Eval.DataSource = objcon.Consulta_CAPACITACION(txt_numero.Text)
             Else
                 MessageBox.Show("Numero de empleado no existe")

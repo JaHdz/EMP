@@ -24,6 +24,7 @@ Partial Class Wait
     Private Sub InitializeComponent()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BwWait = New System.ComponentModel.BackgroundWorker()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -31,7 +32,7 @@ Partial Class Wait
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.AdminEmpleados.My.Resources.Resources.loading
-        Me.PictureBox1.Location = New System.Drawing.Point(564, 292)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(159, 178)
         Me.PictureBox1.TabIndex = 1
@@ -44,17 +45,24 @@ Partial Class Wait
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1257, 746)
+        Me.Panel1.Size = New System.Drawing.Size(180, 199)
         Me.Panel1.TabIndex = 31
         '
-        'wait
+        'BwWait
+        '
+        Me.BwWait.WorkerReportsProgress = True
+        '
+        'Wait
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1257, 746)
+        Me.ClientSize = New System.Drawing.Size(180, 199)
         Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.Name = "wait"
+        Me.Name = "Wait"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "wait"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -65,4 +73,5 @@ Partial Class Wait
 
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents BwWait As System.ComponentModel.BackgroundWorker
 End Class

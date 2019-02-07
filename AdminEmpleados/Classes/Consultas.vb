@@ -20,7 +20,7 @@ Public Class Consultas
         End If
     End Function
 
-    Public Function Autenticar(sUsr As String, sPass As String) As Boolean
+    Public Function Login(sUsr As String, sPass As String) As Dictionary(Of String, String)
         Dim sentencia As String
         Dim lector As SqlDataReader
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
@@ -30,17 +30,13 @@ Public Class Consultas
             lector = cmd.ExecuteReader()
             If lector.Read() Then
                 If Encriptar(sPass) = lector("pass").ToString Then
-                    user = lector("NoEmp").ToString
-                    name = lector("Nom").ToString
-                    autenticado = True
-                    Return True
+                    Dim Result As New Dictionary(Of String, String) From {{"User", lector("NoEmp").ToString}, {"Name", lector("Nom").ToString}}
+                    Return Result
                 Else
-                    autenticado = False
-                    Return False
+                    Return Nothing
                 End If
             Else
-                autenticado = False
-                Return False
+                Return Nothing
             End If
         End Using
     End Function
@@ -264,31 +260,73 @@ Public Class Consultas
             cmd.Parameters.AddWithValue("@ID", X)
             Using lector As SqlDataReader = cmd.ExecuteReader()
                 If lector.Read() Then
-                    If lector("ID_Emp").ToString = 0 Then
-                        Return 0
-                    Else
-                        Return lector("ID_Emp").ToString
-                    End If
+                    Return lector("ID_Emp")
                 Else
                     Return 0
                 End If
             End Using
         End Using
-
     End Function
 
-    Public Function Consulta_empleado(user As Integer) As DataTable
+    Public Function Consulta_empleado(user As Integer) As Cls_Emp
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
-            Dim cmd As New SqlCommand("Consulta_Emp", con)
+            Dim cmd As New SqlCommand("CONSULTA_EMP", con)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@ID", user)
-            Dim dt As New DataTable()
-            Dim DataAdapter As SqlDataAdapter
-            DataAdapter = New SqlDataAdapter
-            DataAdapter.SelectCommand = cmd
-            DataAdapter.Fill(dt)
-            Return dt
+            Using lector As SqlDataReader = cmd.ExecuteReader()
+                If lector.Read() Then
+                    Dim loBaja As New Cls_Bajas With {
+                        .Fecha_Baja = If(IsDBNull(lector("Fecha_Baja")), Date.MinValue, lector("Fecha_Baja")),
+                        .Alerta = If(IsDBNull(lector("Alerta").ToString()), False, True),
+                        .Motivo = lector("Motivo").ToString(),
+                        .NotificarProveedores = If(IsDBNull(lector("NProv")), False, lector("NProv")),
+                        .NotificarClientes = If(IsDBNull(lector("NClientes")), False, lector("NClientes"))
+                    }
+                    Dim Employee As New Cls_Emp With {
+                        .Emp_APat = lector("Emp_APat"),
+                        .Emp_AMat = lector("Emp_AMat"),
+                        .Emp_Name = lector("Emp_Name"),
+                        .Emp_NEducativo = lector("Emp_NEducativo"),
+                        .Emp_FNac = lector("Emp_FNac"),
+                        .Emp_RFC = lector("Emp_RFC"),
+                        .Emp_NSS = lector("Emp_NSS"),
+                        .Emp_Curp = lector("Emp_Curp"),
+                        .Emp_Cel = lector("Emp_Cel"),
+                        .Emp_Tel = lector("Emp_Tel"),
+                        .Emp_EdoCivil = lector("Emp_EdoCivil"),
+                        .Emp_Nacionalidad = lector("Emp_Nacionalidad"),
+                        .Emp_Domicilio = lector("Emp_Domicilio"),
+                        .Emp_Col = lector("Emp_Col"),
+                        .Emp_CP = lector("Emp_CP"),
+                        .Emp_FEfectiva = lector("Emp_FEfectiva"),
+                        .Emp_Salario = lector("Emp_Salario"),
+                        .Emp_Email = lector("Emp_Email"),
+                        .Emp_Activo = lector("Emp_Activo"),
+                        .Emp_Sup = lector("Emp_Sup"),
+                        .Emp_EN = lector("Emp_EN"),
+                        .ID_Puesto = lector("ID_Puesto"),
+                        .Emp_Tipo = lector("Emp_Tipo"),
+                        .Emp_Ciudad = lector("Emp_Ciudad"),
+                        .ID_Depto = lector("ID_Depto"),
+                        .Emp_Sexo = lector("Emp_Sexo"),
+                        .ID_User = lector("ID_User"),
+                        .ID_Emp = lector("ID_Emp"),
+                        .Emp_FAlta = lector("Emp_FAlta"),
+                        .Baja = loBaja
+                    }
+                    If (lector("Img_Emp").ToString() Is Nothing Or lector("Img_Emp").ToString() = "") Then
+                        Employee.Img = My.Resources.photoNobody120
+                    Else
+                        Dim bytes As Byte() = lector("Img_Emp")
+                        Dim ms As New MemoryStream(bytes)
+                        Employee.Img = Image.FromStream(ms)
+                    End If
+                    Return Employee
+                Else
+                    Return Nothing
+                End If
+            End Using
         End Using
     End Function
 
@@ -1117,17 +1155,22 @@ Public Class Consultas
         End Using
     End Function
 
-    Public Sub ResetPassword(Username As String, Password As String)
-        Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
-            con.Open()
-            Dim cmd As SqlCommand = con.CreateCommand
-            cmd.CommandType = CommandType.StoredProcedure
-            cmd.Parameters.Add(New SqlParameter("@USERNAME", Username))
-            cmd.Parameters.Add(New SqlParameter("@PASSWORD", Password))
-            cmd.CommandText = "SP_RESETPASSWORD"
-            cmd.ExecuteNonQuery()
-        End Using
-    End Sub
+    Public Function ResetPassword(Username As String, Password As String) As String
+        Try
+            Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+                con.Open()
+                Dim cmd As SqlCommand = con.CreateCommand
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.Add(New SqlParameter("@USERNAME", Username))
+                cmd.Parameters.Add(New SqlParameter("@PASSWORD", Password))
+                cmd.CommandText = "SP_RESETPASSWORD"
+                cmd.ExecuteNonQuery()
+                Return "Su contraseña ha sido cambiada con exito."
+            End Using
+        Catch ex As Exception
+            Return "Hubo un problema al intentar restablecer su contraseña, intente de nuevo o contacte a su administrador."
+        End Try
+    End Function
 
 #Region "IDisposable Support"
     Private disposedValue As Boolean ' To detect redundant calls

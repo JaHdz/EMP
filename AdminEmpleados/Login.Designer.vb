@@ -29,6 +29,7 @@ Partial Class Login
         Me.min = New System.Windows.Forms.PictureBox()
         Me.cerrar = New System.Windows.Forms.PictureBox()
         Me.PnlLogin = New System.Windows.Forms.Panel()
+        Me.chkRecordar = New System.Windows.Forms.CheckBox()
         Me.lnk_Password = New System.Windows.Forms.LinkLabel()
         Me.btn_login = New System.Windows.Forms.Button()
         Me.user = New System.Windows.Forms.TextBox()
@@ -50,7 +51,6 @@ Partial Class Login
         Me.BtnCancel = New System.Windows.Forms.PictureBox()
         Me.BtnNext = New System.Windows.Forms.PictureBox()
         Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.chkRecordar = New System.Windows.Forms.CheckBox()
         Me.header.SuspendLayout()
         CType(Me.min, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -133,6 +133,17 @@ Partial Class Login
         Me.PnlLogin.Name = "PnlLogin"
         Me.PnlLogin.Size = New System.Drawing.Size(363, 241)
         Me.PnlLogin.TabIndex = 7
+        '
+        'chkRecordar
+        '
+        Me.chkRecordar.AutoSize = True
+        Me.chkRecordar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.chkRecordar.Location = New System.Drawing.Point(91, 110)
+        Me.chkRecordar.Name = "chkRecordar"
+        Me.chkRecordar.Size = New System.Drawing.Size(197, 21)
+        Me.chkRecordar.TabIndex = 33
+        Me.chkRecordar.Text = "¿Recordar datos de inicio?"
+        Me.chkRecordar.UseVisualStyleBackColor = True
         '
         'lnk_Password
         '
@@ -348,17 +359,6 @@ Partial Class Login
         'ErrorProvider
         '
         Me.ErrorProvider.ContainerControl = Me
-        '
-        'chkRecordar
-        '
-        Me.chkRecordar.AutoSize = True
-        Me.chkRecordar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.chkRecordar.Location = New System.Drawing.Point(91, 110)
-        Me.chkRecordar.Name = "chkRecordar"
-        Me.chkRecordar.Size = New System.Drawing.Size(197, 21)
-        Me.chkRecordar.TabIndex = 33
-        Me.chkRecordar.Text = "¿Recordar datos de inicio?"
-        Me.chkRecordar.UseVisualStyleBackColor = True
         '
         'Login
         '

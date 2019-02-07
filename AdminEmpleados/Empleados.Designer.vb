@@ -23,7 +23,7 @@ Partial Class Empleados
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Tam_Es = New System.Windows.Forms.TabPage()
@@ -1662,8 +1662,8 @@ Partial Class Empleados
         'Text
         '
         Me.Text.DataPropertyName = "Text"
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.Text.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.Text.DefaultCellStyle = DataGridViewCellStyle2
         Me.Text.HeaderText = "Enfermedad"
         Me.Text.Name = "Text"
         Me.Text.ReadOnly = True
@@ -2561,7 +2561,7 @@ Partial Class Empleados
         Me.panel2.Location = New System.Drawing.Point(0, 0)
         Me.panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.panel2.Name = "panel2"
-        Me.panel2.Size = New System.Drawing.Size(962, 258)
+        Me.panel2.Size = New System.Drawing.Size(954, 258)
         Me.panel2.TabIndex = 1
         '
         'panel4
@@ -2573,7 +2573,7 @@ Partial Class Empleados
         Me.panel4.Location = New System.Drawing.Point(0, 0)
         Me.panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.panel4.Name = "panel4"
-        Me.panel4.Size = New System.Drawing.Size(958, 40)
+        Me.panel4.Size = New System.Drawing.Size(950, 40)
         Me.panel4.TabIndex = 1
         '
         'label10
@@ -2611,7 +2611,7 @@ Partial Class Empleados
         Me.txt_esNacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_esNacion.Location = New System.Drawing.Point(753, 79)
         Me.txt_esNacion.Name = "txt_esNacion"
-        Me.txt_esNacion.Size = New System.Drawing.Size(200, 28)
+        Me.txt_esNacion.Size = New System.Drawing.Size(192, 28)
         Me.txt_esNacion.TabIndex = 31
         '
         'dgv_esposa
@@ -2628,7 +2628,7 @@ Partial Class Empleados
         Me.dgv_esposa.ReadOnly = True
         Me.dgv_esposa.RowHeadersVisible = False
         Me.dgv_esposa.RowTemplate.Height = 24
-        Me.dgv_esposa.Size = New System.Drawing.Size(958, 120)
+        Me.dgv_esposa.Size = New System.Drawing.Size(950, 120)
         Me.dgv_esposa.TabIndex = 51
         '
         'ID_Persona
@@ -2717,7 +2717,7 @@ Partial Class Empleados
         Me.txt_esAM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_esAM.Location = New System.Drawing.Point(753, 45)
         Me.txt_esAM.Name = "txt_esAM"
-        Me.txt_esAM.Size = New System.Drawing.Size(200, 28)
+        Me.txt_esAM.Size = New System.Drawing.Size(192, 28)
         Me.txt_esAM.TabIndex = 17
         '
         'txt_esFN
@@ -3292,7 +3292,7 @@ Partial Class Empleados
         '
         Me.cuidad.Location = New System.Drawing.Point(684, 144)
         Me.cuidad.Name = "cuidad"
-        Me.cuidad.Size = New System.Drawing.Size(39, 28)
+        Me.cuidad.Size = New System.Drawing.Size(0, 28)
         Me.cuidad.TabIndex = 8
         '
         'lbl_rfc
@@ -3341,9 +3341,9 @@ Partial Class Empleados
         'cuidad2
         '
         Me.cuidad2.Enabled = False
-        Me.cuidad2.Location = New System.Drawing.Point(729, 144)
+        Me.cuidad2.Location = New System.Drawing.Point(686, 144)
         Me.cuidad2.Name = "cuidad2"
-        Me.cuidad2.Size = New System.Drawing.Size(168, 28)
+        Me.cuidad2.Size = New System.Drawing.Size(211, 28)
         Me.cuidad2.TabIndex = 60
         Me.cuidad2.TabStop = False
         '
@@ -3619,9 +3619,9 @@ Partial Class Empleados
         'txt_EN2
         '
         Me.txt_EN2.Enabled = False
-        Me.txt_EN2.Location = New System.Drawing.Point(359, 145)
+        Me.txt_EN2.Location = New System.Drawing.Point(314, 145)
         Me.txt_EN2.Name = "txt_EN2"
-        Me.txt_EN2.Size = New System.Drawing.Size(169, 28)
+        Me.txt_EN2.Size = New System.Drawing.Size(214, 28)
         Me.txt_EN2.TabIndex = 22
         Me.txt_EN2.TabStop = False
         '
@@ -3636,7 +3636,7 @@ Partial Class Empleados
         '
         Me.txt_EN.Location = New System.Drawing.Point(314, 145)
         Me.txt_EN.Name = "txt_EN"
-        Me.txt_EN.Size = New System.Drawing.Size(39, 28)
+        Me.txt_EN.Size = New System.Drawing.Size(0, 28)
         Me.txt_EN.TabIndex = 7
         '
         'txt_NOM

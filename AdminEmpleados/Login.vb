@@ -2,8 +2,7 @@
     Private bit As Boolean
     Private X As Integer
     Private Y As Integer
-    Dim AUTENTICADO As Boolean = False
-    Dim objcon As New Consultas
+    'Dim objcon As New Consultas
 
     Private Sub Cerrar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles cerrar.Click
         Me.Close()
@@ -38,18 +37,20 @@
         If user.Text = "" Or pass.Text = "" Then
             MessageBox.Show("Debe llenar todos los campos")
         Else
-            Dim Wait As New Wait()
-            Wait.Show()
-            Application.DoEvents()
-            AUTENTICADO = objcon.Autenticar(user.Text, pass.Text)
-            If AUTENTICADO = False Then
+            Dim ldParameters As New Dictionary(Of String, Object) From {{"Username", user.Text}, {"Password", pass.Text}}
+            Dim Wait As New Wait With {
+                .Parameters = ldParameters,
+                .Operation = BackgroundOperations.Login
+            }
+            Wait.ShowDialog()
+            Dim loResult = Wait.Result
+            If loResult Is Nothing Then
                 Wait.Close()
                 MessageBox.Show("Datos incorrectos")
             Else
-                Dim ObjEdit2 As New Principal With {
-                    .NEmp = Convert.ToInt64(objcon.user),
-                    .NName = objcon.name
-                }
+                Dim Principal As New Principal
+                Principal.NEmp = Convert.ToInt64(loResult("User"))
+                Principal.NName = loResult("Name")
                 If chkRecordar.Checked Then
                     If My.Settings.LastDate = Date.MinValue Then
                         My.Settings.Username = user.Text
@@ -61,41 +62,35 @@
                 End If
                 Wait.Close()
                 Me.Hide()
-                ObjEdit2.ShowDialog(Me)
+                Principal.ShowDialog(Me)
                 Me.Close()
             End If
         End If
     End Sub
 
     Private Sub Lnk_Password_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnk_Password.LinkClicked
-        Dim Wait As New Wait()
-        Wait.Show()
         Clear()
         If Not String.IsNullOrWhiteSpace(user.Text) Then
-            Dim EmailAddress As String = New Consultas().GetEmail(user.Text)
-            If EmailAddress IsNot Nothing Or Not String.IsNullOrWhiteSpace(EmailAddress) Then
-                Dim Email As New Email
-                Dim Code As String = Email.GenerateCode()
-                If Email.Send(EmailAddress, "Solicitud para restaurar su contraseña", "SOLICITUD RECIBIDA EL DIA:",
-                "Se ha solicitado restablecer su contraseña para ingresar al sistema EASY. Favor de ingresar el siguiente codigo en el campo correspondiente:",
-                Code, Date.Now.ToShortDateString(), "Si usted no solicitó el cambio de contraseña haga caso omiso de este correo.") = "Success" Then
-                    Using Consulta As New Consultas
-                        Code = Consulta.Encriptar(Code)
-                        Consulta.SetResetKey(user.Text, Code)
-                    End Using
-
+            Dim Wait As New Wait()
+            Dim ldParameters As New Dictionary(Of String, Object) From {{"Username", user.Text}}
+            Wait.Parameters = ldParameters
+            Wait.Operation = BackgroundOperations.ResetPasswordEmail
+            Wait.ShowDialog()
+            Dim Result = Wait.Result
+            If Result IsNot Nothing Then
+                If Not Result.ToString().Contains("problema") Then
                     PnlResetKey.Visible = True
                     PnlLogin.Visible = False
                     PnlResetKey.Location = New Point(8, 128)
                 End If
+                MessageBox.Show(Result)
             Else
                 ErrorProvider.SetError(user, "No se tiene registro para este usuario")
             End If
+            Wait.Close()
         Else
             ErrorProvider.SetError(user, "Para restaurar su contraseña debe ingresar su usuario y despues precionar 'Olvide Mi Contraseña'")
         End If
-        Threading.Thread.Sleep(500)
-        Wait.Close()
     End Sub
 
     Private Sub Clear()
@@ -130,22 +125,21 @@
 
     Private Sub BtnNext_Click(sender As Object, e As EventArgs) Handles BtnNext.Click
         If Not String.IsNullOrWhiteSpace(TxtCode.Text) Then
-            Dim Code As String
-            Using Consulta As New Consultas
-                Code = Consulta.Encriptar(Trim(TxtCode.Text))
-                If Consulta.ValidResetKey(user.Text, Code) Then
-                    ErrorProvider.Clear()
-                    Dim Wait As New Wait()
-                    Wait.Show()
-                    PnlResetKey.Visible = False
-                    PnlNewPassword.Visible = True
-                    PnlNewPassword.Location = New Point(8, 128)
-                    Threading.Thread.Sleep(500)
-                    Wait.Close()
-                Else
-                    ErrorProvider.SetError(TxtCode, "Codigo invalido. Introduzca el codigo que se le envió a su correo.")
-                End If
-            End Using
+            Dim ldParameters As New Dictionary(Of String, Object) From {{"Username", user.Text}, {"Code", New Consultas().Encriptar(Trim(TxtCode.Text))}}
+            Dim Wait As New Wait With {
+                .Parameters = ldParameters,
+                .Operation = BackgroundOperations.ValidateResetCode
+            }
+            Wait.ShowDialog()
+            If Wait.Result = True Then
+                ErrorProvider.Clear()
+                PnlResetKey.Visible = False
+                PnlNewPassword.Visible = True
+                PnlNewPassword.Location = New Point(8, 128)
+            Else
+                ErrorProvider.SetError(TxtCode, "Codigo invalido. Introduzca el codigo que se le envió a su correo.")
+            End If
+            Wait.Close()
         Else
             ErrorProvider.SetError(TxtCode, "Introduzca el codigo que se le envió a su correo.")
         End If
@@ -162,13 +156,22 @@
         If Not String.IsNullOrWhiteSpace(TxtOlvPass1.Text) Then
             If Not String.IsNullOrWhiteSpace(TxtOlvPass2.Text) Then
                 If TxtOlvPass1.Text = TxtOlvPass2.Text Then
-                    Using Consulta As New Consultas
-                        Consulta.ResetPassword(user.Text, Consulta.Encriptar(TxtOlvPass1.Text))
-                    End Using
-                    Clear()
-                    PnlNewPassword.Visible = False
-                    PnlLogin.Visible = True
-                    PnlLogin.Location = New Point(8, 128)
+                    Dim ldParameters As New Dictionary(Of String, Object) From {{"Username", user.Text}, {"Password", New Consultas().Encriptar(TxtOlvPass1.Text)}}
+                    Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.PasswordReset
+                    }
+                    Wait.ShowDialog()
+                    Dim result = Wait.Result
+                    If Not result.ToString.Contains("problema") Then
+                        Clear()
+                        chkRecordar.Enabled = False
+                        PnlNewPassword.Visible = False
+                        PnlLogin.Visible = True
+                        PnlLogin.Location = New Point(8, 128)
+                    End If
+                    Wait.Close()
+                    MessageBox.Show(result)
                 Else
                     ErrorProvider.SetError(TxtOlvPass2, "Las contraseñas coinciden. Intente de nuevo.")
                     TxtOlvPass1.Text = ""
@@ -180,10 +183,12 @@
         Else
             ErrorProvider.SetError(TxtOlvPass1, "El campo no puede estar vacio.")
         End If
-
     End Sub
 
     Private Sub Pass_KeyDown(sender As Object, e As KeyEventArgs) Handles pass.KeyDown, user.KeyDown, Me.KeyDown
-        btn_login.PerformClick()
+        If e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Return Then
+            btn_login.PerformClick()
+        End If
+
     End Sub
 End Class

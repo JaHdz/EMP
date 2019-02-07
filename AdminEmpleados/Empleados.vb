@@ -19,16 +19,16 @@ Public Class Empleados
         NName = name
     End Sub
     Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
-        Try
-            Numeroleave()
+        'Try
+        Numeroleave()
             llenarFamilia()
             llenarAL()
             llenarContacto()
             llenarEnfermedades()
             llenarSE()
-        Catch ex As Exception
-            MessageBox.Show("Numero de empleado no valido")
-        End Try
+        'Catch ex As Exception
+        '    MessageBox.Show("Numero de empleado no valido")
+        'End Try
     End Sub
     Private Sub Numeroleave()
         Dim numero As String
@@ -39,9 +39,16 @@ Public Class Empleados
         PbOptions.Visible = True
 
         If (txt_numero.Text <> "") Then
-            aux = objcon.Emp_Exist(txt_numero.Text)
-            If (aux = 1) Then
-                llenar()
+            Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", txt_numero.Text}}
+            Dim Wait As New Wait With {
+                .Parameters = ldParameters,
+                .Operation = BackgroundOperations.EmployeeExits
+            }
+            Wait.ShowDialog()
+            Dim Result = Wait.Result
+            Wait.Close()
+            If (Result = 1) Then
+                Llenar()
                 EXISTE = True
                 lbl_emp.Text = txt_numero.Text + " | " + txt_NOM.Text + " " + txt_AP.Text + " " + txt_AM.Text
                 EMPLEADO_ID = txt_numero.Text
@@ -58,105 +65,103 @@ Public Class Empleados
             txt_numero.Focus()
         End If
     End Sub
-    Public Sub llenar()
-        Dim objCon As New Consultas()
-        Dim objEmp As New Cls_Emp()
-        Dim dt As DataTable = objCon.Consulta_empleado(Convert.ToInt64(txt_numero.Text))
+    Public Sub Llenar()
+        Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", txt_numero.Text}}
+        Dim Wait As New Wait With {
+                .Parameters = ldParameters,
+                .Operation = BackgroundOperations.GetEmployeeInfo
+            }
+        Wait.ShowDialog()
+        Dim Result As Cls_Emp = Wait.Result
+        Wait.Close()
         pnl_save.Text = ""
-        If (dt.Rows.Count <= 0) Then
-        Else
-            txt_AP.Text = dt.Rows(0).Item("Emp_APat").ToString()
-            txt_AM.Text = dt.Rows(0).Item("Emp_AMat").ToString()
-            txt_NOM.Text = dt.Rows(0).Item("Emp_Name").ToString()
-            ddl_educacion.SelectedItem = dt.Rows(0).Item("Emp_NEducativo").ToString()
-            txt_FECHA.Text = dt.Rows(0).Item("Emp_FNac").ToString()
-            txt_RFC.Text = dt.Rows(0).Item("Emp_RFC").ToString()
-            txt_SS.Text = dt.Rows(0).Item("Emp_NSS").ToString()
-            txt_CURP.Text = dt.Rows(0).Item("Emp_Curp").ToString()
-            Celular.Text = dt.Rows(0).Item("Emp_Cel").ToString()
-            txt_telefono.Text = dt.Rows(0).Item("Emp_Tel").ToString()
-            EC.Text = dt.Rows(0).Item("Emp_EdoCivil").ToString()
-            nacion.Text = dt.Rows(0).Item("Emp_Nacionalidad").ToString()
-            domicilio.Text = dt.Rows(0).Item("Emp_Domicilio").ToString()
-            colonia.Text = dt.Rows(0).Item("Emp_Col").ToString()
-            CP.Text = dt.Rows(0).Item("Emp_CP").ToString()
-            txt_FECHAINGRESO.Text = dt.Rows(0).Item("Emp_FEfectiva").ToString()
-            txt_SALARY.Text = dt.Rows(0).Item("Emp_Salario").ToString()
-            Txt_correo.Text = dt.Rows(0).Item("Emp_Email").ToString()
-            txt_baja.Text = If(IsDBNull(dt.Rows(0).Item("Emp_Activo").ToString()), "", dt.Rows(0).Item("Emp_Activo").ToString())
-            seg.Checked = If(IsDBNull(dt.Rows(0).Item("Alerta").ToString()), False, True)
-            CB_PROV.Checked = If(IsDBNull(dt.Rows(0).Item("NProv").ToString()), False, True)
-            CB_CLIENTE.Checked = If(IsDBNull(dt.Rows(0).Item("NClientes").ToString()), False, True)
-            commen.Text = dt.Rows(0).Item("Motivo").ToString()
-            txt_EN.Text = dt.Rows(0).Item("Emp_EN").ToString()
-            txt_PUESTO.Text = dt.Rows(0).Item("ID_Puesto").ToString()
-            txt_tipo.Text = dt.Rows(0).Item("Emp_Tipo").ToString()
-            txt_SUPER.Text = dt.Rows(0).Item("Emp_Sup").ToString()
-            cuidad.Text = dt.Rows(0).Item("Emp_Ciudad").ToString()
-            depto.Text = dt.Rows(0).Item("ID_Depto").ToString()
-            If (dt.Rows(0).Item("Img_Emp").ToString() Is Nothing Or dt.Rows(0).Item("Img_Emp").ToString() = "") Then
-                foto.Image = AdminEmpleados.My.Resources.Resources.photoNobody120
-            Else
-                Dim bytes As [Byte]() = dt.Rows(0).Item("Img_Emp")
-                Dim ms As New MemoryStream(bytes)
-                foto.Image = Image.FromStream(ms)
-                foto.Visible = True
-            End If
+        If (Result IsNot Nothing) Then
+            txt_AP.Text = Result.Emp_APat
+            txt_AM.Text = Result.Emp_AMat
+            txt_NOM.Text = Result.Emp_Name
+            ddl_educacion.SelectedItem = Result.Emp_NEducativo
+            txt_FECHA.Text = Result.Emp_FNac.ToShortDateString()
+            txt_RFC.Text = Result.Emp_RFC
+            txt_SS.Text = Result.Emp_NSS
+            txt_CURP.Text = Result.Emp_Curp
+            Celular.Text = Result.Emp_Cel
+            txt_telefono.Text = Result.Emp_Tel
+            EC.Text = Result.Emp_EdoCivil
+            nacion.Text = Result.Emp_Nacionalidad
+            domicilio.Text = Result.Emp_Domicilio
+            colonia.Text = Result.Emp_Col
+            CP.Text = Result.Emp_CP
+            txt_FECHAINGRESO.Text = Result.Emp_FEfectiva.ToShortDateString()
+            txt_SALARY.Text = Result.Emp_Salario
+            Txt_correo.Text = Result.Emp_Email
+            txt_baja.Text = If(IsDBNull(Result.Emp_Activo), "", Result.Emp_Activo)
+            seg.Checked = If(IsDBNull(Result.Baja.Alerta), False, True)
+            CB_PROV.Checked = If(IsDBNull(Result.Baja.NotificarProveedores), False, True)
+            CB_CLIENTE.Checked = If(IsDBNull(Result.Baja.NotificarClientes), False, True)
+            commen.Text = Result.Baja.Motivo
+            txt_EN.Text = Result.Emp_EN
+            txt_PUESTO.Text = Result.ID_Puesto
+            txt_tipo.Text = Result.Emp_Tipo
+            txt_SUPER.Text = Result.Emp_Sup
+            cuidad.Text = Result.Emp_Ciudad
+            depto.Text = Result.ID_Depto
+            foto.Image = Result.Img
+
             If txt_EN.Text <> "" Then
-                V2 = objCon.S_catalago(txt_EN.Text, "EN")
+                V2 = objcon.S_catalago(txt_EN.Text, "EN")
                 txt_EN2.Text = If(V2 = "" Or V2 Is Nothing, "", V2)
             End If
 
             If (cuidad.Text <> "") Then
-                V2 = objCon.S_catalago(cuidad.Text, "CI")
+                V2 = objcon.S_catalago(cuidad.Text, "CI")
                 cuidad2.Text = If(V2 = "" Or V2 Is Nothing, "", V2)
             End If
 
             If (depto.Text <> "") Then
-                V2 = objCon.S_catalago(depto.Text, "DE")
+                V2 = objcon.S_catalago(depto.Text, "DE")
                 depto2.Text = If(V2 = "" Or V2 Is Nothing, "", V2)
             End If
 
             If (txt_PUESTO.Text <> "") Then
-                V2 = objCon.S_catalago(txt_PUESTO.Text, "PU")
+                V2 = objcon.S_catalago(txt_PUESTO.Text, "PU")
                 txt_PUESTO2.Text = If(V2 = "" Or V2 Is Nothing, "", V2)
             End If
 
             If (txt_SUPER.Text <> "") Then
-                V2 = objCon.S_catalago(txt_SUPER.Text, "SU")
+                V2 = objcon.S_catalago(txt_SUPER.Text, "SU")
                 txt_SUPER2.Text = If(V2 = "" Or V2 Is Nothing, "", V2)
             End If
 
             If (txt_tipo.Text <> "") Then
-                V2 = objCon.S_catalago(txt_tipo.Text, "TI")
+                V2 = objcon.S_catalago(txt_tipo.Text, "TI")
                 txt_tipo2.Text = If(V2 = "" Or V2 Is Nothing, "", V2)
             End If
 
-            If dt.Rows(0).Item("Emp_Sexo").ToString() = "M" Then
+            If Result.Emp_Sexo = "M" Then
                 CB_SEXO.SelectedIndex = 1
             End If
 
-            If dt.Rows(0).Item("Emp_Sexo").ToString() = "F" Then
-                CB_SEXO.SelectedIndex = 0
-            End If
+        If Result.Emp_Sexo = "F" Then
+            CB_SEXO.SelectedIndex = 0
+        End If
 
-            txt_activo.Text = If(dt.Rows(0).Item("Emp_Activo").ToString() = True, "SI", "NO")
+        txt_activo.Text = If(Result.Emp_Activo = True, "SI", "NO")
 
-            If dt.Rows(0).Item("Emp_Activo").ToString() = True Then
-                txt_baja.Text = "NULL"
+        If Result.Emp_Activo = True Then
+                txt_baja.Text = ""
                 seg.Checked = False
-                CB_CLIENTE.Checked = False
-                CB_PROV.Checked = False
-                commen.Text = ""
+            CB_CLIENTE.Checked = False
+            CB_PROV.Checked = False
+            commen.Text = ""
 
-                lbl_option.Text = "BAJA"
-                PbOptions.Image = My.Resources.Baja_80px
-            Else
-                txt_baja.Text = dt.Rows(0).Item("Fecha_Baja").ToString
-                lbl_option.Text = "ALTA"
-                PbOptions.Image = My.Resources.Alta_80px
-            End If
-            lbl_option.Visible = True
+            lbl_option.Text = "BAJA"
+            PbOptions.Image = My.Resources.Baja_80px
+        Else
+            txt_baja.Text = Result.Baja.Fecha_Baja.ToShortDateString()
+            lbl_option.Text = "ALTA"
+            PbOptions.Image = My.Resources.Alta_80px
+        End If
+        lbl_option.Visible = True
             PbOptions.Tag = lbl_option.Text
             PbOptions.Visible = True
         End If
@@ -232,8 +237,8 @@ Public Class Empleados
             InfoEmp.Emp_Ciudad = cuidad.Text
             InfoEmp.Emp_Email = Txt_correo.Text
             InfoEmp.Img = foto.Image
-            InfoEmp.NClientes = CB_CLIENTE.Checked
-            InfoEmp.NProv = CB_PROV.Checked
+            InfoEmp.Baja.NotificarClientes = CB_CLIENTE.Checked
+            InfoEmp.Baja.NotificarProveedores = CB_PROV.Checked
             If (EXISTE = False) Then
                 If (txt_numero.Text = "" Or txt_AP.Text = "" Or txt_NOM.Text = "" Or txt_EN.Text = "" Or txt_RFC.Text = "" Or txt_SS.Text = "" Or
                   txt_SALARY.Text = "" Or txt_CURP.Text = "" Or txt_FECHAINGRESO.Text = "" Or txt_tipo.Text = "" Or txt_PUESTO.Text = "" Or depto.Text = "" Or txt_SUPER.Text = "" Or txt_FECHA.Text = "") Then
@@ -380,9 +385,11 @@ Public Class Empleados
         dgv_OI.DataSource = objcon.Consulta_OI(0)
         dgv_Ref.DataSource = objcon.Consulta_REF(0)
     End Sub
+
     Private Sub Altas_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = 13 Then My.Computer.Keyboard.SendKeys("{tab}")
     End Sub
+
     Private Sub txt_SS_Leave(sender As Object, e As EventArgs) Handles txt_SS.Leave
         If (txt_SS.Text <> "" And txt_SS.Text <> "0") Then
             If Not NSS.IsValid(txt_SS.Text) Then
@@ -391,11 +398,18 @@ Public Class Empleados
                 txt_SS.Focus()
             Else
                 If EXISTE = False Then
-                    aux = objcon.NUMERO_EXISTS_NSS_CURP(txt_SS.Text)
-                    If (aux <> 0) Then
-                        txt_numero.Text = aux
+                    Dim ldParameters As New Dictionary(Of String, Object) From {{"CURPorNSS", txt_SS.Text}}
+                    Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.ValidateCURPandNSS
+                    }
+                    Wait.ShowDialog()
+                    Dim loResult = Wait.Result
+                    If loResult <> 0 Then
+                        txt_numero.Text = loResult
                         Numeroleave()
                     End If
+                    Wait.Close()
                 End If
             End If
         End If
@@ -408,11 +422,18 @@ Public Class Empleados
                 txt_CURP.Focus()
             Else
                 If EXISTE = False Then
-                    aux = objcon.NUMERO_EXISTS_NSS_CURP(txt_CURP.Text)
-                    If (aux <> 0) Then
-                        txt_numero.Text = aux
+                    Dim ldParameters As New Dictionary(Of String, Object) From {{"CURPorNSS", txt_CURP.Text}}
+                    Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.ValidateCURPandNSS
+                    }
+                    Wait.ShowDialog()
+                    Dim loResult = Wait.Result
+                    If loResult <> 0 Then
+                        txt_numero.Text = loResult
                         Numeroleave()
                     End If
+                    Wait.Close()
                 End If
             End If
         End If
@@ -425,7 +446,7 @@ Public Class Empleados
                     Case "Alta"
                         objcon.Altas(txt_numero.Text, 1)
                         MessageBox.Show("Se dio de Alta correctamente a este Empleado")
-                        llenar()
+                        Llenar()
                         txt_activo.Text = ""
                         txt_baja.Text = ""
                         seg.Checked = True
@@ -437,7 +458,7 @@ Public Class Empleados
                         MessageBox.Show("Se dio de Baja correctamente a este Empleado")
                         txt_activo.Text = ""
                         txt_baja.Text = ""
-                        llenar()
+                        Llenar()
                 End Select
             Else
                 MessageBox.Show("Numero de Empleado invalido.")
@@ -508,8 +529,12 @@ Public Class Empleados
     End Sub
     Private Sub Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'HideTab("All")
+        Dim Wait As New Wait With {
+            .Operation = BackgroundOperations.GetLatestEmployeeNumber
+        }
+        Wait.ShowDialog()
         txt_AP.Focus()
-        txt_numero.Text = objcon.NUMERO_EMPLEADO().ToString()
+        txt_numero.Text = Wait.Result.ToString()
         SAVE.Visible = True
         foto.Image = AdminEmpleados.My.Resources.Resources.photoNobody120
         foto.Visible = True
@@ -517,6 +542,7 @@ Public Class Empleados
         Me.FormBorderStyle = FormBorderStyle.None
         Me.Dock = DockStyle.Fill
         Me.TransparencyKey = System.Drawing.Color.FromArgb(121, 121, 121)
+        Wait.Close()
     End Sub
 
     Private Sub HideTab(TabName As String)
@@ -606,52 +632,82 @@ Public Class Empleados
     End Sub
     Private Sub txt_EN_Leave(sender As Object, e As EventArgs) Handles txt_EN.Leave
         If (txt_EN.Text <> "") Then
-            V2 = objcon.S_catalago(txt_EN.Text, "EN")
-            If (V2 = "" Or V2 Is Nothing) Then
+            Dim ldParameters As New Dictionary(Of String, Object) From {{"Field", txt_EN.Text}, {"Type", "EN"}}
+            Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.ValidateEnPuSuTi
+                    }
+            Wait.ShowDialog()
+            Dim loResult = Wait.Result
+            If loResult IsNot Nothing Or Not String.IsNullOrWhiteSpace(loResult) Then
+                txt_EN2.Text = loResult
+            Else
                 MessageBox.Show("No existe")
                 txt_EN.Text = ""
                 txt_EN.Focus()
-            Else
-                txt_EN2.Text = V2
             End If
+            Wait.Close()
         End If
     End Sub
     Private Sub txt_PUESTO_Leave(sender As Object, e As EventArgs) Handles txt_PUESTO.Leave
         If (txt_PUESTO.Text <> "") Then
-            V2 = objcon.S_catalago(txt_PUESTO.Text, "PU")
-            If (V2 = "" Or V2 Is Nothing) Then
+            Dim ldParameters As New Dictionary(Of String, Object) From {{"Field", txt_PUESTO.Text}, {"Type", "PU"}}
+            Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.ValidateEnPuSuTi
+                    }
+            Wait.ShowDialog()
+            Dim loResult = Wait.Result
+            If loResult IsNot Nothing Or Not String.IsNullOrWhiteSpace(loResult) Then
+                txt_PUESTO2.Text = loResult
+            Else
                 MessageBox.Show("No existe")
                 txt_PUESTO.Text = ""
                 txt_PUESTO.Focus()
-            Else
-                txt_PUESTO2.Text = V2
             End If
+            Wait.Close()
         End If
     End Sub
     Private Sub txt_SUPER_Leave(sender As Object, e As EventArgs) Handles txt_SUPER.Leave
         If (txt_SUPER.Text <> "") Then
-            V2 = objcon.S_catalago(txt_SUPER.Text, "SU")
-            If (V2 = "" Or V2 Is Nothing) Then
+            Dim ldParameters As New Dictionary(Of String, Object) From {{"Field", txt_SUPER.Text}, {"Type", "SU"}}
+            Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.ValidateEnPuSuTi
+                    }
+            Wait.ShowDialog()
+            Dim loResult = Wait.Result
+            If loResult IsNot Nothing Or Not String.IsNullOrWhiteSpace(loResult) Then
+                txt_SUPER.Text = loResult
+            Else
                 MessageBox.Show("No existe")
                 txt_SUPER.Text = ""
                 txt_SUPER.Focus()
-            Else
-                txt_SUPER2.Text = V2
             End If
+            Wait.Close()
         End If
     End Sub
+
     Private Sub txt_tipo_Leave(sender As Object, e As EventArgs) Handles txt_tipo.Leave
         If (txt_tipo.Text <> "") Then
-            V2 = objcon.S_catalago(txt_tipo.Text, "TI")
-            If (V2 = "" Or V2 Is Nothing) Then
+            Dim ldParameters As New Dictionary(Of String, Object) From {{"Field", txt_tipo.Text}, {"Type", "TI"}}
+            Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.ValidateEnPuSuTi
+                    }
+            Wait.ShowDialog()
+            Dim loResult = Wait.Result
+            If loResult IsNot Nothing Or Not String.IsNullOrWhiteSpace(loResult) Then
+                txt_SUPER.Text = loResult
+            Else
                 MessageBox.Show("No existe")
                 txt_tipo.Text = ""
                 txt_tipo.Focus()
-            Else
-                txt_tipo2.Text = V2
             End If
+            Wait.Close()
         End If
     End Sub
+
     Private Sub Btn_AddRef_Click(sender As Object, e As EventArgs) Handles Btn_AddRef.Click
         If EXISTE = True Then
             If txt_RefNom.Text = "" Or txt_RefOcu.Text = "" Or txt_TC.Text = "" Or Txt_TR.Text = "" Then
@@ -660,11 +716,19 @@ Public Class Empleados
                 If EMPLEADO_ES = 0 Then
                     dgv_Ref.Rows.Add(txt_RefNom.Text, txt_RefOcu.Text, Txt_TR.Text, txt_TC.Text)
                 Else
-                    If objcon.Add_Referencias(0, EMPLEADO_ES, txt_RefNom.Text, txt_RefOcu.Text, Txt_TR.Text, txt_TC.Text) = True Then
-                    Else
+                    Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", EMPLEADO_ES}, {"Name", txt_RefNom.Text},
+                        {"Ocupation", txt_RefNom.Text}, {"Relationship", txt_RefNom.Text}, {"Time", txt_RefNom.Text}}
+                    Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.ValidateReference
+                    }
+                    Wait.ShowDialog()
+                    Dim loResult As Dictionary(Of String, Object) = Wait.Result
+                    If loResult("Valid") = False Then
                         MessageBox.Show("Este registro ya Existe.")
                     End If
-                    dgv_Ref.DataSource = objcon.Consulta_REF(EMPLEADO_ES)
+                    dgv_Ref.DataSource = loResult("Source")
+                    Wait.Close()
                 End If
                 txt_RefOcu.Text = ""
                 txt_RefNom.Text = ""
@@ -673,6 +737,7 @@ Public Class Empleados
             End If
         End If
     End Sub
+
     Private Sub btn_OI_Click(sender As Object, e As EventArgs) Handles btn_OI.Click
         If EXISTE = True Then
             If txt_OTCantidad.Text = "" Or txt_OIParen.Text = "" Then
@@ -681,11 +746,18 @@ Public Class Empleados
                 If EMPLEADO_ES = 0 Then
                     dgv_OI.Rows.Add(txt_OIParen.Text, txt_OTCantidad.Text)
                 Else
-                    If objcon.Add_OtrosIngresos(0, EMPLEADO_ES, txt_OIParen.Text, txt_OTCantidad.Text) = True Then
-                    Else
+                    Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", EMPLEADO_ES}, {"Relationship", txt_RefNom.Text}, {"Amount", txt_RefNom.Text}}
+                    Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.ValidateIncome
+                    }
+                    Wait.ShowDialog()
+                    Dim loResult As Dictionary(Of String, Object) = Wait.Result
+                    If loResult("Valid") = False Then
                         MessageBox.Show("Este registro ya Existe.")
                     End If
-                    dgv_OI.DataSource = objcon.Consulta_OI(EMPLEADO_ES)
+                    dgv_OI.DataSource = loResult("Source")
+                    Wait.Close()
                 End If
                 txt_RefOcu.Text = ""
                 txt_RefNom.Text = ""
@@ -694,10 +766,11 @@ Public Class Empleados
             End If
         End If
     End Sub
+
     Private Sub btn_SESave_Click(sender As Object, e As EventArgs) Handles btn_SESave.Click
         If EXISTE = True Then
             Dim cont As Integer = 0
-            For Each ctrl In Me.Panel1.Controls
+            For Each ctrl In Panel1.Controls
                 If (ctrl.GetType() Is GetType(CheckBox)) Then
                     Dim txt As CheckBox = CType(ctrl, CheckBox)
                     If txt.Checked = True Then
@@ -766,16 +839,34 @@ Public Class Empleados
                 ES.SES_VERIFIER = NEmp
                 ES.SES_OBSERVATIONS = txt_commen.Text
                 ES.IMG = PB_IMAGE_VIVIENDA.Image
-                id = objcon.Add_ES(ES)
-                objcon.DELETE_OI(id)
-                objcon.DELETE_REF(id)
-                If id > 0 Then
-                    objcon.Add_Image(EMPLEADO_ID, ES.IMG, foto.Image)
+
+                Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", ES}}
+                Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.ValidateIncome
+                    }
+                Wait.ShowDialog()
+                Dim loResult = Wait.Result
+                Wait.Close()
+                If loResult > 0 Then
+                    ldParameters = New Dictionary(Of String, Object) From {{"Employee", ES.EMP_ID}, {"HousePicture", ES.IMG}, {"EmployeePicture", foto.Image}}
+                    Wait = New Wait With {
+                                    .Parameters = ldParameters,
+                                    .Operation = BackgroundOperations.AddImage
+                                }
+                    Wait.ShowDialog()
+                    Wait.Close()
                     If dgv_Ref.Rows.Count > 0 Then
                         For Each row As DataGridViewRow In dgv_Ref.Rows
                             If Not row.IsNewRow Then
-                                If objcon.Add_Referencias(0, id, row.Cells(0).Value.ToString, row.Cells(1).Value.ToString, row.Cells(2).Value.ToString, row.Cells(3).Value.ToString) = True Then
-                                Else
+                                ldParameters = New Dictionary(Of String, Object) From {{"ES", loResult}, {"Name", row.Cells(0).Value.ToString},
+                                           {"Ocupation", row.Cells(1).Value.ToString}, {"Relationship", row.Cells(2).Value.ToString}, {"Time", row.Cells(3).Value.ToString}}
+                                Wait = New Wait With {
+                                    .Parameters = ldParameters,
+                                    .Operation = BackgroundOperations.ValidateReference
+                                }
+                                Dim loResult3 As Dictionary(Of String, Object) = Wait.Result
+                                If loResult3("Valid") = False Then
                                     MessageBox.Show("Este registro ya Existe.")
                                 End If
                             End If
@@ -784,8 +875,15 @@ Public Class Empleados
                     If dgv_OI.Rows.Count > 0 Then
                         For Each row As DataGridViewRow In dgv_OI.Rows
                             If Not row.IsNewRow Then
-                                If objcon.Add_OtrosIngresos(0, id, row.Cells(0).Value.ToString, Convert.ToDouble(row.Cells(1).Value.ToString)) = True Then
-                                Else
+                                ldParameters = New Dictionary(Of String, Object) From {{"ES", loResult}, {"Relationship", row.Cells(0).Value.ToString},
+                                             {"Amount", Convert.ToDouble(row.Cells(1).Value.ToString)}}
+                                Wait = New Wait With {
+                                    .Parameters = ldParameters,
+                                    .Operation = BackgroundOperations.ValidateIncome
+                                }
+                                Dim loResult4 As Dictionary(Of String, Object) = Wait.Result
+                                Wait.Close()
+                                If loResult4("Valid") = False Then
                                     MessageBox.Show("Este registro ya Existe.")
                                 End If
                             End If
@@ -795,6 +893,7 @@ Public Class Empleados
             End If
         End If
     End Sub
+
     Private Sub btn_SECancel_Click(sender As Object, e As EventArgs) Handles btn_SECancel.Click
         Me.Close()
     End Sub
@@ -803,8 +902,15 @@ Public Class Empleados
         If EXISTE = True Then
             If txt_enfNAME.Text = "" Then
             Else
-                If objcon.Add_MEDCONDITIONS(0, EMPLEADO_ID, txt_enfNAME.Text) = True Then
-                Else
+                Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}, {"Condition", txt_enfNAME.Text}}
+                Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.AddMedicalConditions
+                    }
+                Wait.ShowDialog()
+                Wait.Close()
+                Dim loResult = Wait.Result
+                If loResult = False Then
                     MessageBox.Show("Este registro ya Existe.")
                 End If
                 txt_enfNAME.Text = ""
@@ -812,13 +918,22 @@ Public Class Empleados
             End If
         End If
     End Sub
+
     Private Sub btn_conADD_Click(sender As Object, e As EventArgs) Handles btn_conADD.Click
         If EXISTE = True Then
             If txt_conAM.Text = "" Or txt_conAP.Text = "" Or txt_conCEL.Text = "" Or txt_conPAREN.Text = "" Or txt_conNAME.Text = "" Then
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
-                If objcon.Add_CONTACTS(0, EMPLEADO_ID, txt_conNAME.Text, txt_conAP.Text, txt_conAM.Text, txt_conPAREN.Text, txt_conTEL.Text, txt_conCEL.Text) = True Then
-                Else
+                Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}, {"Name", txt_conNAME.Text}, {"FLastname", txt_conAP.Text}, {"SLastname", txt_conAM.Text},
+                 {"Relationship", txt_conPAREN.Text}, {"Phone", txt_conTEL.Text}, {"Cellphone", txt_conCEL.Text}}
+                Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.AddContact
+                    }
+                Wait.ShowDialog()
+                Dim loResult = Wait.Result
+                Wait.Close()
+                If loResult = False Then
                     MessageBox.Show("Este registro ya Existe.")
                 End If
                 txt_conAM.Text = ""
@@ -831,15 +946,23 @@ Public Class Empleados
             End If
         End If
     End Sub
+
     Private Sub btn_antSave_Click(sender As Object, e As EventArgs) Handles btn_antSave.Click
         If EXISTE = True Then
             If txt_antCARGO.Text = "" Or txt_antEMP.Text = "" Or txt_antFF.Text = "" Or txt_antFI.Text = "" Or txt_antMT.Text = "" Or
             txt_antNAME.Text = "" Or txt_antTEL.Text = "" Or txt_antSALARIO.Text = "" Then
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
-                If objcon.Add_JOBHISTORY(0, EMPLEADO_ID, txt_antFI.Text, txt_antFF.Text, txt_antEMP.Text, txt_antCARGO.Text,
-                                      txt_antSALARIO.Text, txt_antTEL.Text, txt_antMT.Text, txt_antNAME.Text) = True Then
-                Else
+                Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}, {"Start", txt_antFI.Text}, {"End", txt_antFF.Text}, {"Company", txt_antEMP.Text},
+                 {"Position", txt_antCARGO.Text}, {"Wage", txt_antSALARIO.Text}, {"Phone", txt_antTEL.Text}, {"Reason", txt_antMT.Text}, {"Contact", txt_antNAME.Text}}
+                Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.AddJobHistory
+                    }
+                Wait.ShowDialog()
+                Dim loResult = Wait.Result
+                Wait.Close()
+                If loResult = False Then
                     MessageBox.Show("Este registro ya Existe.")
                 End If
                 txt_antFI.Text = ""
@@ -859,8 +982,16 @@ Public Class Empleados
             If txt_esAM.Text = "" Or cb_esSexo.SelectedIndex = -1 Or txt_esAP.Text = "" Or txt_esFN.Text = "" Or txt_esNacion.Text = "" Or txt_esName.Text = "" Then
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
-                If objcon.Add_Family(0, EMPLEADO_ID, "CONYUGE", txt_esName.Text, txt_esAP.Text, txt_esAM.Text, txt_esNacion.Text, txt_esFN.Text, cb_esSexo.SelectedItem.ToString(), EC.SelectedItem.ToString) = True Then
-                Else
+                Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}, {"Type", "CONYUGE"}, {"Name", txt_esName.Text}, {"FLastname", txt_esAP.Text},
+                    {"SLastname", txt_esAM.Text}, {"Nationality", txt_esNacion.Text}, {"Birthday", txt_esFN.Text}, {"Sex", cb_esSexo.SelectedItem.ToString()}, {"CivilStatus", EC.SelectedItem.ToString}}
+                Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.AddFamilyMember
+                    }
+                Wait.ShowDialog()
+                Dim loResult = Wait.Result
+                Wait.Close()
+                If loResult = False Then
                     MessageBox.Show("Este registro ya Existe.")
                 End If
                 txt_esAM.Text = ""
@@ -879,9 +1010,16 @@ Public Class Empleados
            txt_hijoSEXO.SelectedIndex = -1 Or txt_hijoEC.SelectedIndex = -1 Then
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
-                If objcon.Add_Family(0, EMPLEADO_ID, "HIJO", txt_hijoNAME.Text, txt_hijoAP.Text, txt_hijoAM.Text, txt_hijoNACION.Text,
-                                  txt_hijoFN.Text, txt_hijoSEXO.SelectedItem.ToString(), txt_hijoEC.SelectedItem.ToString) = True Then
-                Else
+                Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}, {"Type", "HIJO"}, {"Name", txt_hijoNAME.Text}, {"FLastname", txt_hijoAP.Text},
+                    {"SLastname", txt_hijoAM.Text}, {"Nationality", txt_hijoNACION.Text}, {"Birthday", txt_hijoFN.Text}, {"Sex", txt_hijoSEXO.SelectedItem.ToString()}, {"CivilStatus", txt_hijoEC.SelectedItem.ToString}}
+                Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.AddFamilyMember
+                    }
+                Wait.ShowDialog()
+                Dim loResult = Wait.Result
+                Wait.Close()
+                If loResult = False Then
                     MessageBox.Show("Este registro ya Existe.")
                 End If
                 txt_hijoAM.Text = ""
