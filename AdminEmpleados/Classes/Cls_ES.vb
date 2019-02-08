@@ -6,30 +6,30 @@ Public Class Cls_ES
     Public Property EMP_ID As Integer
     Public Property H_TYPE As String
     Public Property H_CONDITION As String
-    Public Property H_ELEC As Integer
-    Public Property H_PHONE As Integer
-    Public Property H_WATER As Integer
-    Public Property H_SEWER As Integer
-    Public Property H_GAS As Integer
-    Public Property H_TRASHREC As Integer
-    Public Property H_CABLETV As Integer
-    Public Property H_INTERNET As Integer
-    Public Property H_SECURITY As Integer
-    Public Property T_METRO As Integer
-    Public Property T_PUBLIC As Integer
-    Public Property T_TAX As Integer
-    Public Property T_CAR As Integer
-    Public Property A_SOCIAL As String
-    Public Property A_COMUNITARY As String
-    Public Property A_MUSEUMS As String
-    Public Property A_THEATERS As String
-    Public Property A_MOVIES As String
-    Public Property A_FESTIVALS As String
-    Public Property A_ARCHE As String
-    Public Property A_VACATIONS As String
-    Public Property A_PLAZAS As String
-    Public Property A_NPARK As String
-    Public Property A_APARK As String
+    Public Property H_ELEC As New Boolean
+    Public Property H_PHONE As New Boolean
+    Public Property H_WATER As New Boolean
+    Public Property H_SEWER As New Boolean
+    Public Property H_GAS As New Boolean
+    Public Property H_TRASHREC As New Boolean
+    Public Property H_CABLETV As New Boolean
+    Public Property H_INTERNET As New Boolean
+    Public Property H_SECURITY As New Boolean
+    Public Property T_METRO As New Boolean
+    Public Property T_PUBLIC As New Boolean
+    Public Property T_TAX As New Boolean
+    Public Property T_CAR As New Boolean
+    Public Property A_SOCIAL As Integer
+    Public Property A_COMUNITARY As Integer
+    Public Property A_MUSEUMS As Integer
+    Public Property A_THEATERS As Integer
+    Public Property A_MOVIES As Integer
+    Public Property A_FESTIVALS As Integer
+    Public Property A_ARCHE As Integer
+    Public Property A_VACATIONS As Integer
+    Public Property A_PLAZAS As Integer
+    Public Property A_NPARK As Integer
+    Public Property A_APARK As Integer
     Public Property FS_RENT As Decimal
     Public Property FS_SCHOOL As Decimal
     Public Property FS_GROCERIES As Decimal

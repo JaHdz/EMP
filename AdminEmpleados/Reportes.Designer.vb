@@ -106,6 +106,8 @@ Partial Class Reportes
         Me.Controls.Add(Me.PnlHeader)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Reportes"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reportes"
         Me.PnlHeader.ResumeLayout(False)

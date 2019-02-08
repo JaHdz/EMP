@@ -11,15 +11,23 @@
     ValidateEnPuSuTi
     ValidateReference
     AddReference
+    GetReference
     ValidateIncome
     AddIncome
+    GetIncome
     AddSocialEconomicStudy
+    GetSocialEconomicStudy
     AddImage
     AddMedicalConditions
+    GetMedicalConditions
     AddContact
+    GetContact
     AddJobHistory
+    GetJobHistory
     AddFamilyMember
+    GetFamily
 End Enum
+
 Public Class Wait
     Public Operation As BackgroundOperations
     Public Result As New Object
@@ -103,6 +111,22 @@ Public Class Wait
             Case BackgroundOperations.AddFamilyMember
                 Result = New Consultas().Add_Family(0, Parameters("Employee"), Parameters("Type"), Parameters("Name"), Parameters("FLastname"), Parameters("SLastname"),
                                                     Parameters("Nationality"), Parameters("Birthday"), Parameters("Sex"), Parameters("CivilStatus"))
+            Case BackgroundOperations.GetFamily
+                Dim ResultDictionary As New Dictionary(Of String, Object) From {{"Spouse", New Consultas().Consulta_FamEsp(Parameters("Employee"))},
+                    {"Offsprings", New Consultas().Consulta_FamHijos(Parameters("Employee"))}}
+                Result = ResultDictionary
+            Case BackgroundOperations.GetJobHistory
+                Result = New Consultas().Consulta_AnteLab(Parameters("Employee"))
+            Case BackgroundOperations.GetContact
+                Result = New Consultas().Consulta_CEmergencia(Parameters("Employee"))
+            Case BackgroundOperations.GetMedicalConditions
+                Result = New Consultas().Consulta_Enf(Parameters("Employee"))
+            Case BackgroundOperations.GetSocialEconomicStudy
+                Result = New Consultas().Consulta_ES(Parameters("Employee"))
+            Case BackgroundOperations.GetIncome
+                Result = New Consultas().Consulta_OI(Parameters("ES"))
+            Case BackgroundOperations.GetReference
+                Result = New Consultas().Consulta_REF(Parameters("ES"))
         End Select
         'Catch ex As Exception
         '    Result = Nothing

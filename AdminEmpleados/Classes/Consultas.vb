@@ -791,18 +791,65 @@ Public Class Consultas
         End Using
     End Function
 
-    Public Function Consulta_ES(ByVal ID As Integer) As DataTable
+    Public Function Consulta_ES(ByVal ID As Integer) As Cls_ES
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As New SqlCommand("Consulta_ES", con)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@ID", ID)
-            Dim dt As New DataTable()
-            Dim DataAdapter As SqlDataAdapter
-            DataAdapter = New SqlDataAdapter
-            DataAdapter.SelectCommand = cmd
-            DataAdapter.Fill(dt)
-            Return dt
+            Dim lector As SqlDataReader
+            lector = cmd.ExecuteReader()
+            If lector.Read() Then
+                Dim SES As New Cls_ES With
+                {
+                    .SES_ID = lector("ID_EstSocio"),
+                    .EMP_ID = lector("ID_Emp"),
+                    .H_TYPE = lector("Viv_Tipo"),
+                    .H_CONDITION = lector("Viv_Condiciones"),
+                    .H_ELEC = lector("Viv_Luz"),
+                    .H_PHONE = lector("Viv_Luz"),
+                    .H_WATER = lector("Viv_Agua"),
+                    .H_SEWER = lector("Viv_Drenaje"),
+                    .H_GAS = lector("Viv_TubGas"),
+                    .H_TRASHREC = lector("Viv_RecBasura"),
+                    .H_CABLETV = lector("Viv_TVCable"),
+                    .H_INTERNET = lector("Viv_Internet"),
+                    .H_SECURITY = lector("Viv_SisSeg"),
+                    .T_METRO = lector("Trasn_Metro"),
+                    .T_PUBLIC = lector("Trans_Publico"),
+                    .T_TAX = lector("Trans_Taxi"),
+                    .T_CAR = lector("Trans_VehPropio"),
+                    .A_SOCIAL = lector("Act_EvSociales"),
+                    .A_COMUNITARY = lector("Act_EvCominitarios"),
+                    .A_MUSEUMS = lector("Act_Museos"),
+                    .A_THEATERS = lector("Act_Teatros"),
+                    .A_MOVIES = lector("Act_Cines"),
+                    .A_FESTIVALS = lector("Act_FesCulturaes"),
+                    .A_ARCHE = lector("Act_ZonasArq"),
+                    .A_VACATIONS = lector("Act_Vaciones"),
+                    .A_PLAZAS = lector("Act_PlazasPub"),
+                    .A_NPARK = lector("Act_ParquesNat"),
+                    .A_APARK = lector("Act_PaquesDiv"),
+                    .FS_RENT = lector("GF_Renta"),
+                    .FS_SCHOOL = lector("GF_Colegio"),
+                    .FS_GROCERIES = lector("GF_Despensa"),
+                    .FS_SERVICES = lector("GF_Servicios"),
+                    .SES_HOBBIES = lector("ES_Pasatiempos"),
+                    .SES_RELIGION = lector("ES_Religion"),
+                    .SES_VERIFIER = lector("ES_Verificador"),
+                    .SES_OBSERVATIONS = lector("ES_Observaciones")
+                }
+                If (lector("Img_Dom").ToString() Is Nothing Or lector("Img_Dom").ToString() = "") Then
+                    SES.IMG = My.Resources.AddImage
+                Else
+                    Dim bytes As Byte() = lector("Img_Dom")
+                    Dim ms As New MemoryStream(bytes)
+                    SES.IMG = Image.FromStream(ms)
+                End If
+                Return SES
+            Else
+                Return Nothing
+            End If
         End Using
     End Function
 

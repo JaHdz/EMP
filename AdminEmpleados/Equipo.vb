@@ -135,22 +135,21 @@
     End Sub
 
     Private Sub pb_Report_Click(sender As Object, e As EventArgs) Handles pb_Report.Click
-        If txt_numero.Text = "" Then
-        Else
+        If txt_numero.Text <> "" Then
             If TXT_commen.Visible = True Then
                 If TXT_commen.Text = "" Then
                 Else
                     objcon.Add_commen(txt_numero.Text, TXT_commen.Text)
                 End If
                 Dim Wait As New Wait()
+                Wait.Operation = BackgroundOperations.JustShowScreen
                 Wait.ShowDialog()
                 Dim Reportes As New Reportes With {
-                        .ReportOption = Convert.ToInt64(2),
-                        .Emp = Convert.ToInt64(txt_numero.Text),
-                        .User = NName
-                    }
-                Reportes.Show()
-                Wait.Close()
+                    .ReportOption = ReportOptions.AssignedEquipment,
+                    .Emp = Convert.ToInt64(txt_numero.Text),
+                    .User = NName
+                }
+                Reportes.ShowDialog()
             Else
                 TXT_commen.Visible = True
                 MessageBox.Show("Ingrese un commentario.")

@@ -1083,157 +1083,135 @@ Public Class Empleados
 
     End Sub
     Private Sub llenarFamilia()
-        dgv_esposa.DataSource = objcon.Consulta_FamEsp(EMPLEADO_ID)
-        dgv_Hijos.DataSource = objcon.Consulta_FamHijos(EMPLEADO_ID)
+        Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}}
+        Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.GetFamily
+                    }
+        Wait.ShowDialog()
+        Dim loResult As Dictionary(Of String, Object) = Wait.Result
+        Wait.Close()
+        dgv_esposa.DataSource = loResult("Spouse")
+        dgv_Hijos.DataSource = loResult("Offsprings")
     End Sub
     Private Sub llenarAL()
-        dgv_ant.DataSource = objcon.Consulta_AnteLab(EMPLEADO_ID)
+        Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}}
+        Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.GetJobHistory
+                    }
+        Wait.ShowDialog()
+        Wait.Close()
+        Dim loResult = Wait.Result
+        Wait.Close()
+        dgv_ant.DataSource = loResult
     End Sub
     Private Sub llenarContacto()
-        dgv_contacto.DataSource = objcon.Consulta_CEmergencia(EMPLEADO_ID)
+        Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}}
+        Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.GetContact
+                    }
+        Wait.ShowDialog()
+        Dim loResult = Wait.Result
+        Wait.Close()
+        dgv_contacto.DataSource = loResult
     End Sub
     Private Sub llenarEnfermedades()
-        dgv_Enf.DataSource = objcon.Consulta_Enf(EMPLEADO_ID)
+        Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}}
+        Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.GetMedicalConditions
+                    }
+        Wait.ShowDialog()
+        Dim loResult = Wait.Result
+        Wait.Close()
+        dgv_Enf.DataSource = loResult
     End Sub
     Private Sub llenarSE()
-        Dim dt As DataTable = objcon.Consulta_ES(EMPLEADO_ID)
+        Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}}
+        Dim Wait As New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.GetSocialEconomicStudy
+                    }
+        Wait.ShowDialog()
+        Dim loResult As Cls_ES = Wait.Result
+        Wait.Close()
         pnl_save.Text = ""
-        If (dt.Rows.Count <= 0) Then
-        Else
-            If dt.Rows(0).Item("Viv_Tipo").ToString() = "CASA PROPIA" Then
-                cb_CasaP.Checked = True
-            Else
-                cb_CasaP.Checked = False
-            End If
-            If dt.Rows(0).Item("Viv_Tipo").ToString() = "DEPARTAMENTO" Then
-                cb_Depto.Checked = True
-            Else
-                cb_Depto.Checked = False
-            End If
-            If dt.Rows(0).Item("Viv_Tipo").ToString() = "CASA DE RENTA" Then
-                cb_Renta.Checked = True
-            Else
-                cb_Renta.Checked = False
-            End If
-            If dt.Rows(0).Item("Viv_Tipo").ToString() = "TERRENO" Then
-                cb_Terreno.Checked = True
-            Else
-                cb_Terreno.Checked = False
-            End If
-            If dt.Rows(0).Item("Viv_Condiciones").ToString() = "ADOBE" Then
-                cb_adobe.Checked = True
-            Else
-                cb_adobe.Checked = False
-            End If
-            If dt.Rows(0).Item("Viv_Condiciones").ToString() = "BLOCK" Then
-                cb_block.Checked = True
-            Else
-                cb_block.Checked = False
-            End If
-            If dt.Rows(0).Item("Viv_Condiciones").ToString() = "MADERA" Then
-                cb_Madera.Checked = True
-            Else
-                cb_Madera.Checked = False
-            End If
-            If dt.Rows(0).Item("Viv_Condiciones").ToString() = "LADRILLO" Then
-                cb_ladrillo.Checked = True
-            Else
-                cb_ladrillo.Checked = False
-            End If
-            If dt.Rows(0).Item("Viv_Luz").ToString() = "True" Then
-                cb_Luz.Checked = True
-            Else
-                cb_Luz.Checked = False
-            End If
-            If dt.Rows(0).Item("Viv_Tel").ToString() = "True" Then
-                cb_LineaTel.Checked = True
-            Else
-                cb_LineaTel.Checked = False
-            End If
-            If dt.Rows(0).Item("Viv_Agua").ToString() = "True" Then
-                cb_AguaP.Checked = True
-            Else
-                cb_AguaP.Checked = False
-            End If
-            If dt.Rows(0).Item("Viv_Drenaje").ToString() = "True" Then
-                cb_Drenaje.Checked = True
-            Else
-                cb_Drenaje.Checked = False
-            End If
-            If dt.Rows(0).Item("Viv_TubGas").ToString() = "True" Then
-                cb_Tuberia.Checked = True
-            Else
-                cb_Tuberia.Checked = False
-            End If
-            If dt.Rows(0).Item("Viv_RecBasura").ToString() = "True" Then
-                cb_Basura.Checked = True
-            Else
-                cb_Basura.Checked = False
-            End If
-            If dt.Rows(0).Item("Viv_TVCable").ToString() = "True" Then
-                cb_TV.Checked = True
-            Else
-                cb_TV.Checked = False
-            End If
-            If dt.Rows(0).Item("Viv_Internet").ToString() = "True" Then
-                cb_Internet.Checked = True
-            Else
-                cb_Internet.Checked = False
-            End If
-            If dt.Rows(0).Item("Viv_SisSeg").ToString() = "True" Then
-                cb_SisSeg.Checked = True
-            Else
-                cb_SisSeg.Checked = False
-            End If
-            If dt.Rows(0).Item("Trasn_Metro").ToString() = "True" Then
-                cb_Metro.Checked = True
-            Else
-                cb_Metro.Checked = False
-            End If
-            If dt.Rows(0).Item("Trans_Publico").ToString() = "True" Then
-                cb_Trans.Checked = True
-            Else
-                cb_Trans.Checked = False
-            End If
-            If dt.Rows(0).Item("Trans_Taxi").ToString() = "True" Then
-                cb_Taxi.Checked = True
-            Else
-                cb_Taxi.Checked = False
-            End If
-            If dt.Rows(0).Item("Trans_VehPropio").ToString() = "True" Then
-                cb_Vehi.Checked = True
-            Else
-                cb_Vehi.Checked = False
-            End If
-            txt_SE__SOCIALE.Text = dt.Rows(0).Item("Act_EvSociales").ToString()
-            txt_SE_EVENTOS.Text = dt.Rows(0).Item("Act_EvCominitarios").ToString()
-            txt_SE_MUSEOS.Text = dt.Rows(0).Item("Act_Museos").ToString()
-            txt_SE_TEATROS.Text = dt.Rows(0).Item("Act_Teatros").ToString()
-            txt_SE_CINES.Text = dt.Rows(0).Item("Act_Cines").ToString()
-            txt_SE_CULTURALES.Text = dt.Rows(0).Item("Act_FesCulturaes").ToString()
-            txt_SE_ZONAS.Text = dt.Rows(0).Item("Act_ZonasArq").ToString()
-            txt_SE_VACIONES.Text = dt.Rows(0).Item("Act_Vaciones").ToString()
-            txt_SE_PLAZAS.Text = dt.Rows(0).Item("Act_PlazasPub").ToString()
-            txt_SE_NATURALES.Text = dt.Rows(0).Item("Act_ParquesNat").ToString()
-            txt_se_diversiones.Text = dt.Rows(0).Item("Act_PaquesDiv").ToString()
-            txt_GFRenta.Text = dt.Rows(0).Item("GF_Renta").ToString()
-            txt_GFCole.Text = dt.Rows(0).Item("GF_Colegio").ToString()
-            Txt_GFDesp.Text = dt.Rows(0).Item("GF_Despensa").ToString()
-            txt_GFServ.Text = dt.Rows(0).Item("GF_Servicios").ToString()
-            Txt_pasatiempos.Text = dt.Rows(0).Item("ES_Pasatiempos").ToString()
-            txt_Religion.Text = dt.Rows(0).Item("ES_Religion").ToString()
-            txt_commen.Text = dt.Rows(0).Item("ES_Observaciones").ToString()
-            If IsDBNull(dt.Rows(0).Item("Img_Dom")) Then
-            Else
-                Dim bytes As [Byte]() = dt.Rows(0).Item("Img_Dom")
-                Dim ms As New MemoryStream(bytes)
-                PB_IMAGE_VIVIENDA.Image = Image.FromStream(ms)
-            End If
-        End If
-        EMPLEADO_ES = If(dt.Rows.Count > 0, Convert.ToInt64(dt.Rows(0).Item("ID_EstSocio").ToString()), 0)
+        If loResult IsNot Nothing Then
+            Select Case loResult.H_TYPE
+                Case "CASA PROPIA"
+                    cb_CasaP.Checked = True
+                Case "DEPARTAMENTO"
+                    cb_Depto.Checked = True
+                Case "CASA DE RENTA"
+                    cb_Renta.Checked = True
+                Case "TERRENO"
+                    cb_Terreno.Checked = True
+            End Select
+            Select Case loResult.H_CONDITION
+                Case "ADOBE"
+                    cb_adobe.Checked = True
+                Case "BLOCK"
+                    cb_block.Checked = True
+                Case "MADERA"
+                    cb_Madera.Checked = True
+                Case "LADRILLO"
+                    cb_ladrillo.Checked = True
+            End Select
+            cb_Luz.Checked = loResult.H_ELEC
+            cb_LineaTel.Checked = loResult.H_PHONE
+            cb_AguaP.Checked = loResult.H_WATER
+            cb_Drenaje.Checked = loResult.H_SEWER
+            cb_Tuberia.Checked = loResult.H_GAS
+            cb_Basura.Checked = loResult.H_TRASHREC
+            cb_TV.Checked = loResult.H_CABLETV
+            cb_Internet.Checked = loResult.H_INTERNET
+            cb_SisSeg.Checked = loResult.H_SECURITY
+            cb_Metro.Checked = loResult.T_METRO
+            cb_Trans.Checked = loResult.T_PUBLIC
+            cb_Taxi.Checked = loResult.T_TAX
+            cb_Vehi.Checked = loResult.T_CAR
 
-        dgv_OI.DataSource = objcon.Consulta_OI(EMPLEADO_ES)
-        dgv_Ref.DataSource = objcon.Consulta_REF(EMPLEADO_ES)
+            txt_SE__SOCIALE.Text = loResult.A_SOCIAL.ToString()
+            txt_SE_EVENTOS.Text = loResult.A_COMUNITARY.ToString()
+            txt_SE_MUSEOS.Text = loResult.A_MUSEUMS.ToString()
+            txt_SE_CINES.Text = loResult.A_THEATERS.ToString()
+            txt_SE_CULTURALES.Text = loResult.A_FESTIVALS.ToString()
+            txt_SE_ZONAS.Text = loResult.A_ARCHE.ToString()
+            txt_SE_VACIONES.Text = loResult.A_VACATIONS.ToString()
+            txt_SE_PLAZAS.Text = loResult.A_PLAZAS.ToString()
+            txt_SE_NATURALES.Text = loResult.A_NPARK.ToString()
+            txt_se_diversiones.Text = loResult.A_APARK.ToString()
+            txt_GFRenta.Text = loResult.FS_RENT.ToString()
+            txt_GFCole.Text = loResult.FS_SCHOOL.ToString()
+            Txt_GFDesp.Text = loResult.FS_GROCERIES.ToString()
+            txt_GFServ.Text = loResult.FS_SERVICES.ToString()
+            Txt_pasatiempos.Text = loResult.SES_HOBBIES
+            txt_Religion.Text = loResult.SES_RELIGION
+            txt_commen.Text = loResult.SES_OBSERVATIONS
+            PB_IMAGE_VIVIENDA.Image = loResult.IMG
+            EMPLEADO_ES = loResult.SES_ID
+        Else
+            EMPLEADO_ES = 0
+        End If
+        ldParameters = New Dictionary(Of String, Object) From {{"ES", EMPLEADO_ES}}
+        Wait = New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.GetIncome
+                    }
+        Wait.ShowDialog()
+        Dim loResult2 = Wait.Result
+        Wait.Close()
+        dgv_OI.DataSource = loResult2
+        Wait = New Wait With {
+                        .Parameters = ldParameters,
+                        .Operation = BackgroundOperations.GetReference
+                    }
+        Wait.ShowDialog()
+        Dim loResult3 = Wait.Result
+        Wait.Close()
+        dgv_Ref.DataSource = loResult3
     End Sub
     Private Sub cb_CasaP_CheckedChanged(sender As Object, e As EventArgs) Handles cb_CasaP.CheckedChanged
         If cb_CasaP.Checked = True Then
@@ -1293,16 +1271,15 @@ Public Class Empleados
     End Sub
 
     Private Sub btn_SERPT_Click(sender As Object, e As EventArgs) Handles btn_SERPT.Click
-        If txt_numero.Text = "" Then
-        Else
+        If txt_numero.Text <> "" Then
             Dim Wait As New Wait()
+            Wait.Operation = BackgroundOperations.JustShowScreen
             Wait.Show()
             Dim Reportes As New Reportes With {
-                    .ReportOption = Convert.ToInt64(1),
+                    .ReportOption = ReportOptions.SocialeconomicStudy,
                     .Emp = Convert.ToInt64(txt_numero.Text),
                     .User = NName
                 }
-            Wait.Close()
             Reportes.ShowDialog()
         End If
     End Sub
