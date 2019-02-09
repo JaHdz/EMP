@@ -24,7 +24,7 @@
         pnl_comen.Visible = False
         If (txt_numero.Text <> "") Then
             NEmp = objcon.Emp_Exist(txt_numero.Text)
-            If (NEmp = 1) Then
+            If (NEmp > 0) Then
                 Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", txt_numero.Text}}
                 Dim Wait As New Wait With {
                 .Parameters = ldParameters,
