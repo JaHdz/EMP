@@ -136,7 +136,7 @@
 
     Private Sub pb_Report_Click(sender As Object, e As EventArgs) Handles pb_Report.Click
         If txt_numero.Text <> "" Then
-            If TXT_commen.Visible = True Then
+            If pnl_comen.Visible = True Then
                 If TXT_commen.Text = "" Then
                 Else
                     objcon.Add_commen(txt_numero.Text, TXT_commen.Text)
@@ -151,7 +151,7 @@
                 }
                 Reportes.ShowDialog()
             Else
-                TXT_commen.Visible = True
+                pnl_comen.Visible = True
                 MessageBox.Show("Ingrese un commentario.")
             End If
         End If
