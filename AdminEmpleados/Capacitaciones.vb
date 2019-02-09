@@ -4,9 +4,10 @@
     Dim V1 As String
     Dim V2 As String
     Dim NEmp As Integer
+    Dim NEmpUser As Integer
     Sub New(ByVal emp As Integer)
         InitializeComponent()
-        NEmp = emp
+        NEmpUser = emp
     End Sub
     Public Sub llenar_buscador(tipo As String)
         Dim popup As New frmPopUp(tipo)
@@ -21,7 +22,7 @@
     Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
         If (txt_numero.Text <> "") Then
             NEmp = objcon.Emp_Exist(txt_numero.Text)
-            If (NEmp = 1) Then
+            If (NEmp = 0) Then
                 Dim Employee As New Cls_Emp
                 'dt = objcon.Consulta_empleado(txt_numero.Text)
                 lbl_emp.Text = txt_numero.Text + " | " + Employee.Emp_Name + " " + Employee.Emp_APat + " " + Employee.Emp_AMat
