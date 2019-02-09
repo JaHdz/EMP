@@ -1291,4 +1291,149 @@ Public Class Empleados
     Private Sub PB_IMAGE_VIVIENDA_DoubleClick(sender As Object, e As EventArgs) Handles PB_IMAGE_VIVIENDA.DoubleClick
         cargarImagen(PB_IMAGE_VIVIENDA)
     End Sub
+
+    Private Sub dgv_esposa_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_esposa.CellClick
+        Dim Id As Integer
+        Dim gr As New DataGridView
+        gr = sender
+        If e.RowIndex <> -1 Then
+            Select Case e.ColumnIndex
+                Case Is > -1
+                    Select Case gr.Columns(e.ColumnIndex).Name
+                        Case "btnCEliminar"
+                            If MessageBox.Show("Seguro que desea Eliminar este registro?", "Eliminar Familiar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+                                Id = gr.Rows(e.RowIndex).Cells(1).Value
+                                objcon.DELETE_Familia(Id)
+                            End If
+                    End Select
+            End Select
+            Dim dt As New DataTable
+            llenarFamilia()
+        End If
+    End Sub
+
+    Private Sub dgv_Hijos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_Hijos.CellClick
+        Dim Id As Integer
+        Dim gr As New DataGridView
+        gr = sender
+        If e.RowIndex <> -1 Then
+            Select Case e.ColumnIndex
+                Case Is > -1
+                    Select Case gr.Columns(e.ColumnIndex).Name
+                        Case "btnHEliminar"
+                            If MessageBox.Show("Seguro que desea Eliminar este registro?", "Eliminar Familiar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+                                Id = gr.Rows(e.RowIndex).Cells(1).Value
+                                objcon.DELETE_Familia(Id)
+                            End If
+                    End Select
+            End Select
+            Dim dt As New DataTable
+            llenarFamilia()
+        End If
+    End Sub
+
+    Private Sub dgv_ant_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_ant.CellClick
+        Dim Id As Integer
+        Dim gr As New DataGridView
+        gr = sender
+        If e.RowIndex <> -1 Then
+            Select Case e.ColumnIndex
+                Case Is > -1
+                    Select Case gr.Columns(e.ColumnIndex).Name
+                        Case "btnAEliminar"
+                            If MessageBox.Show("Seguro que desea Eliminar este registro?", "Eliminar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+                                Id = gr.Rows(e.RowIndex).Cells(1).Value
+                                objcon.DELETE_ANTE(Id)
+                            End If
+                    End Select
+            End Select
+            Dim dt As New DataTable
+            llenarAL()
+        End If
+    End Sub
+
+    Private Sub dgv_contacto_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_contacto.CellClick
+        Dim Id As Integer
+        Dim gr As New DataGridView
+        gr = sender
+        If e.RowIndex <> -1 Then
+            Select Case e.ColumnIndex
+                Case Is > -1
+                    Select Case gr.Columns(e.ColumnIndex).Name
+                        Case "btnCOEliminar"
+                            If MessageBox.Show("Seguro que desea Eliminar este registro?", "Eliminar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+                                Id = gr.Rows(e.RowIndex).Cells(1).Value
+                                objcon.DELETE_CEMERGENCIA(Id)
+                            End If
+                    End Select
+            End Select
+            Dim dt As New DataTable
+            llenarContacto()
+        End If
+    End Sub
+
+    Private Sub dgv_Enf_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_Enf.CellClick
+        Dim Id As Integer
+        Dim gr As New DataGridView
+        gr = sender
+        If e.RowIndex <> -1 Then
+            Select Case e.ColumnIndex
+                Case Is > -1
+                    Select Case gr.Columns(e.ColumnIndex).Name
+                        Case "btnEnELiminar"
+                            If MessageBox.Show("Seguro que desea Eliminar este registro?", "Eliminar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+                                Id = gr.Rows(e.RowIndex).Cells(1).Value
+                                objcon.DELETE_Enfermedades(Id)
+                            End If
+                    End Select
+            End Select
+            Dim dt As New DataTable
+            llenarEnfermedades()
+        End If
+    End Sub
+
+    Private Sub dgv_OI_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_OI.CellClick
+        Dim Id As Integer
+        Dim gr As New DataGridView
+        gr = sender
+        If e.RowIndex <> -1 Then
+            Select Case e.ColumnIndex
+                Case Is > -1
+                    Select Case gr.Columns(e.ColumnIndex).Name
+                        Case "btnEIngresos"
+                            If MessageBox.Show("Seguro que desea Eliminar este registro?", "Eliminar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+                                Id = gr.Rows(e.RowIndex).Cells(1).Value
+                                objcon.DELETE_OI(Id)
+                            End If
+                    End Select
+            End Select
+            Dim dt As New DataTable
+            If EMPLEADO_ES <> 0 Then
+                dgv_OI.DataSource = objcon.Consulta_OI(EMPLEADO_ES)
+            End If
+
+        End If
+    End Sub
+
+    Private Sub dgv_Ref_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_Ref.CellClick
+        Dim Id As Integer
+        Dim gr As New DataGridView
+        gr = sender
+        If e.RowIndex <> -1 Then
+            Select Case e.ColumnIndex
+                Case Is > -1
+                    Select Case gr.Columns(e.ColumnIndex).Name
+                        Case "btnEReferencia"
+                            If MessageBox.Show("Seguro que desea Eliminar este registro?", "Eliminar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+                                Id = gr.Rows(e.RowIndex).Cells(1).Value
+                                objcon.DELETE_REF(Id)
+                            End If
+                    End Select
+            End Select
+            Dim dt As New DataTable
+            If EMPLEADO_ES <> 0 Then
+                dgv_Ref.DataSource = objcon.Consulta_REF(EMPLEADO_ES)
+            End If
+        End If
+    End Sub
 End Class
