@@ -24,7 +24,7 @@ Partial Class Empleados
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Tam_Es = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -360,14 +360,16 @@ Partial Class Empleados
         Me.btnEnELiminar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ID_Enf = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Text = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnEIngresos = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.IOID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PARENTESCO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CANTIDAD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnEReferencia = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.REID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NOMBRE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TIPO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.OCUPACION = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TIEMPO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnEIngresos = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.PARENTESCO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CANTIDAD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tam_Es.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.btn_SERPT, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -717,7 +719,7 @@ Partial Class Empleados
         '
         Me.dgv_Ref.AllowUserToAddRows = False
         Me.dgv_Ref.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_Ref.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.btnEReferencia, Me.NOMBRE, Me.TIPO, Me.OCUPACION, Me.TIEMPO})
+        Me.dgv_Ref.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.btnEReferencia, Me.REID, Me.NOMBRE, Me.TIPO, Me.OCUPACION, Me.TIEMPO})
         Me.dgv_Ref.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.dgv_Ref.Location = New System.Drawing.Point(0, 114)
         Me.dgv_Ref.Name = "dgv_Ref"
@@ -1121,7 +1123,7 @@ Partial Class Empleados
         '
         Me.dgv_OI.AllowUserToAddRows = False
         Me.dgv_OI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_OI.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.btnEIngresos, Me.PARENTESCO, Me.CANTIDAD})
+        Me.dgv_OI.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.btnEIngresos, Me.IOID, Me.PARENTESCO, Me.CANTIDAD})
         Me.dgv_OI.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.dgv_OI.Location = New System.Drawing.Point(0, 80)
         Me.dgv_OI.Name = "dgv_OI"
@@ -3746,11 +3748,39 @@ Partial Class Empleados
         'Text
         '
         Me.Text.DataPropertyName = "Text"
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
-        Me.Text.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
+        Me.Text.DefaultCellStyle = DataGridViewCellStyle12
         Me.Text.HeaderText = "Enfermedad"
         Me.Text.Name = "Text"
         Me.Text.Width = 1400
+        '
+        'btnEIngresos
+        '
+        Me.btnEIngresos.FillWeight = 11.0!
+        Me.btnEIngresos.HeaderText = ""
+        Me.btnEIngresos.Name = "btnEIngresos"
+        Me.btnEIngresos.Width = 48
+        '
+        'IOID
+        '
+        Me.IOID.DataPropertyName = "ID_OIng"
+        Me.IOID.HeaderText = "ID"
+        Me.IOID.Name = "IOID"
+        Me.IOID.Visible = False
+        '
+        'PARENTESCO
+        '
+        Me.PARENTESCO.DataPropertyName = "OIng_Desc"
+        Me.PARENTESCO.HeaderText = "PARENTESCO"
+        Me.PARENTESCO.Name = "PARENTESCO"
+        Me.PARENTESCO.Width = 500
+        '
+        'CANTIDAD
+        '
+        Me.CANTIDAD.DataPropertyName = "OIng_Cantidad"
+        Me.CANTIDAD.HeaderText = "CANTIDAD"
+        Me.CANTIDAD.Name = "CANTIDAD"
+        Me.CANTIDAD.Width = 600
         '
         'btnEReferencia
         '
@@ -3758,6 +3788,13 @@ Partial Class Empleados
         Me.btnEReferencia.HeaderText = ""
         Me.btnEReferencia.Name = "btnEReferencia"
         Me.btnEReferencia.Width = 48
+        '
+        'REID
+        '
+        Me.REID.DataPropertyName = "ID_Ref"
+        Me.REID.HeaderText = "ID"
+        Me.REID.Name = "REID"
+        Me.REID.Visible = False
         '
         'NOMBRE
         '
@@ -3786,27 +3823,6 @@ Partial Class Empleados
         Me.TIEMPO.HeaderText = "TIEMPO DE CONOCERLO"
         Me.TIEMPO.Name = "TIEMPO"
         Me.TIEMPO.Width = 400
-        '
-        'btnEIngresos
-        '
-        Me.btnEIngresos.FillWeight = 11.0!
-        Me.btnEIngresos.HeaderText = ""
-        Me.btnEIngresos.Name = "btnEIngresos"
-        Me.btnEIngresos.Width = 48
-        '
-        'PARENTESCO
-        '
-        Me.PARENTESCO.DataPropertyName = "OIng_Desc"
-        Me.PARENTESCO.HeaderText = "PARENTESCO"
-        Me.PARENTESCO.Name = "PARENTESCO"
-        Me.PARENTESCO.Width = 500
-        '
-        'CANTIDAD
-        '
-        Me.CANTIDAD.DataPropertyName = "OIng_Cantidad"
-        Me.CANTIDAD.HeaderText = "CANTIDAD"
-        Me.CANTIDAD.Name = "CANTIDAD"
-        Me.CANTIDAD.Width = 600
         '
         'Empleados
         '
@@ -4269,12 +4285,14 @@ Partial Class Empleados
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
     Friend WithEvents Column10 As DataGridViewTextBoxColumn
+    Friend WithEvents btnEIngresos As DataGridViewImageColumn
+    Friend WithEvents IOID As DataGridViewTextBoxColumn
+    Friend WithEvents PARENTESCO As DataGridViewTextBoxColumn
+    Friend WithEvents CANTIDAD As DataGridViewTextBoxColumn
     Friend WithEvents btnEReferencia As DataGridViewImageColumn
+    Friend WithEvents REID As DataGridViewTextBoxColumn
     Friend WithEvents NOMBRE As DataGridViewTextBoxColumn
     Friend WithEvents TIPO As DataGridViewTextBoxColumn
     Friend WithEvents OCUPACION As DataGridViewTextBoxColumn
     Friend WithEvents TIEMPO As DataGridViewTextBoxColumn
-    Friend WithEvents btnEIngresos As DataGridViewImageColumn
-    Friend WithEvents PARENTESCO As DataGridViewTextBoxColumn
-    Friend WithEvents CANTIDAD As DataGridViewTextBoxColumn
 End Class

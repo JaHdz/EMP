@@ -111,3 +111,66 @@ BEGIN
   Left JOIN [dbo].[Emp_Bajas] AS B ON A.ID_Emp= B.ID_Emp 
   where A.ID_Emp=@ID
 END
+
+-- =============================================
+-- Author:		JAVIER HERNANDEZ
+-- Create date: 2/09/2019
+-- Description:	
+-- =============================================
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[Consulta_OI]
+ @ID as int
+AS
+BEGIN  
+ SELECT  ID_OIng,
+			 [OIng_Desc]
+      ,[OIng_Cantidad]
+  FROM [dbo].[ES_OtrosIngresos]
+  where [ID_EstSocio]=@ID 
+END
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[DELETE_OI]
+ @ID as int
+AS
+BEGIN  
+DELETE FROM [dbo].[ES_OtrosIngresos] WHERE @ID=[ID_OIng] 
+END
+-- =============================================
+-- Author:		JAVIER HERNANDEZ
+-- Create date: 2/09/2019
+-- Description:	
+-- =============================================
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[Consulta_REF]
+ @ID as int
+AS
+BEGIN  
+ SELECT ID_Ref,
+ [Ref_Nombre]
+      ,[Ref_Ocupacion]
+      ,[Ref_TRelacion]
+      ,[Ref_TiempoC]
+  FROM [dbo].[ES_Referencias]
+  where [ID_EstSocio]=@ID 
+END
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[DELETE_REF]
+ @ID as int
+AS
+BEGIN  
+DELETE FROM [dbo].[ES_Referencias] WHERE @ID=[ID_Ref] 
+END
