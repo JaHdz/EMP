@@ -24,7 +24,7 @@
         pnl_comen.Visible = False
         If (txt_numero.Text <> "") Then
             NEmp = objcon.Emp_Exist(txt_numero.Text)
-            If (NEmp = 1) Then
+            If (NEmp > 0) Then
                 Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", txt_numero.Text}}
                 Dim Wait As New Wait With {
                 .Parameters = ldParameters,
@@ -79,7 +79,7 @@
 
     Private Sub SAVE_Click(sender As Object, e As EventArgs) Handles SAVE.Click
         If (Eq.Text <> "" Or txt_numero.Text <> "") Then
-            If objcon.Add_EQUIPMENT_ASSIGNED(0, Eq.Text, txt_numero.Text, TXT_FECHA.Text, 0, "01/01/1900", NEmp) = True Then
+            If objcon.Add_EQUIPMENT_ASSIGNED(0, Eq.Text, txt_numero.Text, TXT_FECHA.Text, 0, "01/01/1900", NEmp, TXT_commen.Text) = True Then
             Else
                 MessageBox.Show("Este registro ya Existe.")
             End If
@@ -116,7 +116,7 @@
                             If MessageBox.Show("Seguro que desea regresar el equipo?", "Regresar Equipo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
                                 Id = dgv_equipo_emp.Rows(e.RowIndex).Cells(3).Value
                                 If dgv_equipo_emp.Rows(e.RowIndex).Cells(5).Value.ToString = "False" Then
-                                    If objcon.Add_EQUIPMENT_ASSIGNED(dgv_equipo_emp.Rows(e.RowIndex).Cells(1).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(2).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(3).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(4).Value, True, Date.Now, dgv_equipo_emp.Rows(e.RowIndex).Cells(8).Value) = True Then
+                                    If objcon.Add_EQUIPMENT_ASSIGNED(dgv_equipo_emp.Rows(e.RowIndex).Cells(1).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(2).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(3).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(4).Value, True, Date.Now, dgv_equipo_emp.Rows(e.RowIndex).Cells(8).Value, TXT_commen.Text) = True Then
                                     Else
                                         MessageBox.Show("Este registro ya Existe.")
                                     End If
@@ -136,7 +136,7 @@
 
     Private Sub pb_Report_Click(sender As Object, e As EventArgs) Handles pb_Report.Click
         If txt_numero.Text <> "" Then
-            If TXT_commen.Visible = True Then
+            If pnl_comen.Visible = True Then
                 If TXT_commen.Text = "" Then
                 Else
                     objcon.Add_commen(txt_numero.Text, TXT_commen.Text)
@@ -151,7 +151,7 @@
                 }
                 Reportes.ShowDialog()
             Else
-                TXT_commen.Visible = True
+                pnl_comen.Visible = True
                 MessageBox.Show("Ingrese un commentario.")
             End If
         End If
