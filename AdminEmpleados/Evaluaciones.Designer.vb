@@ -36,11 +36,11 @@ Partial Class Evaluaciones
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label42 = New System.Windows.Forms.Label()
-        Me.TXT_commen = New System.Windows.Forms.TextBox()
+        Me.CANCEL = New System.Windows.Forms.PictureBox()
         Me.SAVE = New System.Windows.Forms.PictureBox()
+        Me.TXT_commen = New System.Windows.Forms.TextBox()
         Me.label8 = New System.Windows.Forms.Label()
         Me.buscar_EV = New System.Windows.Forms.PictureBox()
-        Me.CANCEL = New System.Windows.Forms.PictureBox()
         Me.EV = New System.Windows.Forms.TextBox()
         Me.txt_numero = New System.Windows.Forms.TextBox()
         Me.EV2 = New System.Windows.Forms.TextBox()
@@ -53,9 +53,9 @@ Partial Class Evaluaciones
         CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel14.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_EV, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -184,14 +184,15 @@ Partial Class Evaluaciones
         Me.Label42.TabIndex = 0
         Me.Label42.Text = "Agregar Evaluaciones"
         '
-        'TXT_commen
+        'CANCEL
         '
-        Me.TXT_commen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TXT_commen.Location = New System.Drawing.Point(147, 133)
-        Me.TXT_commen.Multiline = True
-        Me.TXT_commen.Name = "TXT_commen"
-        Me.TXT_commen.Size = New System.Drawing.Size(427, 83)
-        Me.TXT_commen.TabIndex = 2
+        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
+        Me.CANCEL.Location = New System.Drawing.Point(910, 0)
+        Me.CANCEL.Name = "CANCEL"
+        Me.CANCEL.Size = New System.Drawing.Size(40, 40)
+        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.CANCEL.TabIndex = 1
+        Me.CANCEL.TabStop = False
         '
         'SAVE
         '
@@ -202,6 +203,15 @@ Partial Class Evaluaciones
         Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.SAVE.TabIndex = 0
         Me.SAVE.TabStop = False
+        '
+        'TXT_commen
+        '
+        Me.TXT_commen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TXT_commen.Location = New System.Drawing.Point(147, 133)
+        Me.TXT_commen.Multiline = True
+        Me.TXT_commen.Name = "TXT_commen"
+        Me.TXT_commen.Size = New System.Drawing.Size(427, 83)
+        Me.TXT_commen.TabIndex = 2
         '
         'label8
         '
@@ -222,16 +232,6 @@ Partial Class Evaluaciones
         Me.buscar_EV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.buscar_EV.TabIndex = 69
         Me.buscar_EV.TabStop = False
-        '
-        'CANCEL
-        '
-        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(910, 0)
-        Me.CANCEL.Name = "CANCEL"
-        Me.CANCEL.Size = New System.Drawing.Size(40, 40)
-        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.CANCEL.TabIndex = 1
-        Me.CANCEL.TabStop = False
         '
         'EV
         '
@@ -324,9 +324,9 @@ Partial Class Evaluaciones
         Me.Panel14.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_EV, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

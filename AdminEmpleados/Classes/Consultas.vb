@@ -537,7 +537,7 @@ Public Class Consultas
         End Using
     End Function
 
-    Public Function Add_EQUIPMENT(ByVal EQU_ID As Integer, NAME As String, DESCRIPTION As String, COST As Double, STATUS As Integer, depto As Integer) As String
+    Public Function Add_EQUIPMENT(ByVal EQU_ID As Integer, NAME As String, DESCRIPTION As String, COST As Double, STATUS As Integer) As String
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -547,7 +547,6 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@DESCRIPTION", DESCRIPTION))
             cmd.Parameters.Add(New SqlParameter("@COST", COST))
             cmd.Parameters.Add(New SqlParameter("@STATUS", STATUS))
-            cmd.Parameters.Add(New SqlParameter("@DEPTO", depto))
             cmd.CommandText = "UDSP_EQUIPMENT"
             Dim lector As SqlDataReader
             lector = cmd.ExecuteReader()

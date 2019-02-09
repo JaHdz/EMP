@@ -1068,7 +1068,7 @@ Public Class Empleados
         End If
     End Sub
     Private Sub buscar_ciudad_Click(sender As Object, e As EventArgs) Handles buscar_ciudad.Click
-        If cuidad.Text = "" Then
+        If txt_EN.Text = "" Then
             MessageBox.Show("Primero debe elegir una entidad.")
         Else
             llenar_buscador("CI," + txt_EN.Text)

@@ -20,12 +20,19 @@
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
     Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
+
         If (txt_numero.Text <> "") Then
             NEmp = objcon.Emp_Exist(txt_numero.Text)
-            If (NEmp = 0) Then
-                Dim Employee As New Cls_Emp
-                'dt = objcon.Consulta_empleado(txt_numero.Text)
-                lbl_emp.Text = txt_numero.Text + " | " + Employee.Emp_Name + " " + Employee.Emp_APat + " " + Employee.Emp_AMat
+            If (NEmp > 0) Then
+                Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", txt_numero.Text}}
+                Dim Wait As New Wait With {
+                    .Parameters = ldParameters,
+                    .Operation = BackgroundOperations.GetEmployeeInfo
+                }
+                Wait.ShowDialog()
+                Dim Result As Cls_Emp = Wait.Result
+                Wait.Close()
+                lbl_emp.Text = txt_numero.Text + " | " + Result.Emp_Name + " " + Result.Emp_APat + " " + Result.Emp_AMat
                 dgv_equipo_Eval.DataSource = objcon.Consulta_CAPACITACION(txt_numero.Text)
             Else
                 MessageBox.Show("Numero de empleado no existe")
