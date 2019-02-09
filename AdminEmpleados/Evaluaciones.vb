@@ -4,9 +4,10 @@
     Dim V1 As String
     Dim V2 As String
     Dim NEmp As Integer
+    Dim NEmpUser As Integer
     Sub New(ByVal emp As Integer)
         InitializeComponent()
-        NEmp = emp
+        NEmpUser = emp
     End Sub
     Public Sub llenar_buscador(tipo As String)
         Dim popup As New frmPopUp(tipo)
@@ -21,7 +22,7 @@
     Private Sub txt_numero_Leave(sender As Object, e As EventArgs)
         If (txt_numero.Text <> "") Then
             NEmp = objcon.Emp_Exist(txt_numero.Text)
-            If (NEmp = 1) Then
+            If (NEmp > 0) Then
                 Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", txt_numero.Text}}
                 Dim Wait As New Wait With {
                 .Parameters = ldParameters,
@@ -77,7 +78,7 @@
 
     Private Sub SAVE_Click(sender As Object, e As EventArgs)
         If (EV.Text <> "" Or txt_numero.Text <> "") Then
-            If objcon.Add_UDSP_EMPLOYEE_EVALUATION(0, txt_numero.Text, TXT_commen.Text, NEmp, EV.Text) = True Then
+            If objcon.Add_UDSP_EMPLOYEE_EVALUATION(0, txt_numero.Text, TXT_commen.Text, NEmpUser, EV.Text) = True Then
             Else
                 MessageBox.Show("Este registro ya Existe.")
             End If

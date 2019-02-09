@@ -3,19 +3,19 @@
     Dim objcon As New Consultas
     Dim V1 As String
     Dim V2 As String
-
+    Dim NEmpUser As Integer
     Private Sub txt_numero_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_numero.KeyPress
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
 
     Sub New(ByVal emp As Integer)
         InitializeComponent()
-        NEmp = emp
+        NEmpUser = emp
     End Sub
     Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
         If (txt_numero.Text <> "") Then
             NEmp = objcon.Emp_Exist(txt_numero.Text)
-            If (NEmp = 1) Then
+            If (NEmp > 0) Then
                 Dim Employee As New Cls_Emp
                 'dt = objcon.Consulta_empleado(txt_numero.Text)
                 lbl_emp.Text = txt_numero.Text + " | " + Employee.Emp_Name + " " + Employee.Emp_APat + " " + Employee.Emp_AMat
@@ -347,7 +347,7 @@
     Private Sub TXT_EMP_SUPER_Leave(sender As Object, e As EventArgs) Handles TXT_EMP_SUPER.Leave
         If (TXT_EMP_SUPER.Text <> "") Then
             NEmp = objcon.Emp_Exist(TXT_EMP_SUPER.Text)
-            If (NEmp = 1) Then
+            If (NEmp > 0) Then
                 Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", txt_numero.Text}}
                 Dim Wait As New Wait With {
                 .Parameters = ldParameters,

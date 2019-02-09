@@ -5,9 +5,10 @@
     Dim V2 As String
     Dim NEmp As Integer
     Dim NName As String
+    Dim NEmpUser As Integer
     Sub New(ByVal emp As Integer, name As String)
         InitializeComponent()
-        NEmp = emp
+        NEmpUser = emp
         NName = name
     End Sub
     Public Sub llenar_buscador(tipo As String)
@@ -41,6 +42,8 @@
                 lbl_emp.Text = ""
             End If
         End If
+        pnl_comen.Visible = False
+        TXT_commen.Text = ""
     End Sub
 
     Private Sub buscar_EN_Click(sender As Object, e As EventArgs) Handles buscar_EN.Click
@@ -79,7 +82,7 @@
 
     Private Sub SAVE_Click(sender As Object, e As EventArgs) Handles SAVE.Click
         If (Eq.Text <> "" Or txt_numero.Text <> "") Then
-            If objcon.Add_EQUIPMENT_ASSIGNED(0, Eq.Text, txt_numero.Text, TXT_FECHA.Text, 0, "01/01/1900", NEmp, TXT_commen.Text) = True Then
+            If objcon.Add_EQUIPMENT_ASSIGNED(0, Eq.Text, txt_numero.Text, TXT_FECHA.Text, 0, "01/01/1900", NEmpUser, TXT_commen.Text) = True Then
             Else
                 MessageBox.Show("Este registro ya Existe.")
             End If
@@ -91,7 +94,6 @@
             TXT_commen.Text = ""
             lbl_emp.Text = ""
             txt_numero.Focus()
-            MessageBox.Show("Debe ingresar un numero de empleado valido y un equipo.")
             pnl_comen.Visible = False
         End If
     End Sub
@@ -150,6 +152,9 @@
                     .User = NName
                 }
                 Reportes.ShowDialog()
+
+                pnl_comen.Visible = False
+                TXT_commen.Text = ""
             Else
                 pnl_comen.Visible = True
                 MessageBox.Show("Ingrese un commentario.")
