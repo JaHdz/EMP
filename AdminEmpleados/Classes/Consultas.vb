@@ -1218,7 +1218,16 @@ Public Class Consultas
             Return "Hubo un problema al intentar restablecer su contraseña, intente de nuevo o contacte a su administrador."
         End Try
     End Function
-
+    Public Sub DELETE_ANTE(id As Integer)
+        Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            con.Open()
+            Dim cmd As SqlCommand = con.CreateCommand
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add(New SqlParameter("@ID", id))
+            cmd.CommandText = "DELETE_ANTE"
+            cmd.ExecuteNonQuery()
+        End Using
+    End Sub
 #Region "IDisposable Support"
     Private disposedValue As Boolean ' To detect redundant calls
 
@@ -1234,6 +1243,8 @@ Public Class Consultas
         End If
         disposedValue = True
     End Sub
+
+
 
     ' TODO: override Finalize() only if Dispose(disposing As Boolean) above has code to free unmanaged resources.
     'Protected Overrides Sub Finalize()
