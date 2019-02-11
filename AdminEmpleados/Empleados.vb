@@ -12,24 +12,13 @@ Public Class Empleados
     Dim id As Integer
     Dim NEmp As Integer
     Dim NName As String
-    Dim TabCollection As New Dictionary(Of String, TabPage)
+
     Sub New(ByVal emp As Integer, name As String)
         InitializeComponent()
         NEmp = emp
         NName = name
     End Sub
-    Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
-        'Try
-        Numeroleave()
-            llenarFamilia()
-            llenarAL()
-            llenarContacto()
-            llenarEnfermedades()
-            llenarSE()
-        'Catch ex As Exception
-        '    MessageBox.Show("Numero de empleado no valido")
-        'End Try
-    End Sub
+
     Private Sub Numeroleave()
         Dim numero As String
         numero = txt_numero.Text
@@ -38,21 +27,22 @@ Public Class Empleados
         lbl_option.Visible = True
         PbOptions.Visible = True
 
-        If (txt_numero.Text <> "") Then
-            Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", txt_numero.Text}}
+        If txt_numero.Text <> "" Then
+            Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", numero}}
             Dim Wait As New Wait With {
                 .Parameters = ldParameters,
                 .Operation = BackgroundOperations.EmployeeExits
             }
             Wait.ShowDialog()
-            Dim Result = Wait.Result
+            Dim Result As Boolean = Wait.Result
             Wait.Close()
-            If (Result = 1) Then
+            If Result = True Then
                 Llenar()
                 EXISTE = True
-                lbl_emp.Text = txt_numero.Text + " | " + txt_NOM.Text + " " + txt_AP.Text + " " + txt_AM.Text
-                EMPLEADO_ID = txt_numero.Text
+                lbl_emp.Text = numero + " | " + txt_NOM.Text + " " + txt_AP.Text + " " + txt_AM.Text
+                EMPLEADO_ID = numero
                 PbOptions.Tag = "BAJA"
+
             Else
                 limp()
                 lbl_emp.Text = ""
@@ -197,14 +187,14 @@ Public Class Empleados
         End If
     End Function
     Private Sub SAVE_Click(sender As Object, e As EventArgs) Handles SAVE.Click
-        Try
-            SAVE_F()
+        'Try
+        SAVE_F()
             lbl_emp.Text = ""
             lbl_emp.Text = txt_numero.Text + " | " + txt_NOM.Text + " " + txt_AP.Text + " " + txt_AM.Text
             EMPLEADO_ID = txt_numero.Text
-        Catch ex As Exception
-            MsgBox(ex.Message.ToString, MsgBoxStyle.Critical)
-        End Try
+        'Catch ex As Exception
+        '    MsgBox(ex.Message.ToString, MsgBoxStyle.Critical)
+        'End Try
     End Sub
     Private Sub SAVE_F()
         If validateEmail(Txt_correo.Text) = True Then
@@ -263,6 +253,7 @@ Public Class Empleados
         End If
     End Sub
     Public Sub limp()
+
         Dim ctrl As Control
         For Each ctrl In Me.pnl_per.Controls
             If (ctrl.GetType() Is GetType(TextBox)) Then
@@ -379,6 +370,7 @@ Public Class Empleados
         txt_Religion.Text = ""
         txt_commen.Text = ""
         commen.Text = ""
+        lbl_emp.Text = ""
         seg.Checked = False
         PB_IMAGE_VIVIENDA.Image = My.Resources.AddImage
         EMPLEADO_ES = 0
@@ -440,8 +432,8 @@ Public Class Empleados
     End Sub
 
     Private Sub OptionPress(sender As Object, e As EventArgs) Handles PbOptions.Click
-        Try
-            If txt_numero.Text <> "" Then
+        'Try
+        If txt_numero.Text <> "" Then
                 Select Case PbOptions.Tag
                     Case "Alta"
                         objcon.Altas(txt_numero.Text, 1)
@@ -463,9 +455,9 @@ Public Class Empleados
             Else
                 MessageBox.Show("Numero de Empleado invalido.")
             End If
-        Catch ex As Exception
-            MsgBox(ex.Message.ToString, MsgBoxStyle.Critical)
-        End Try
+        'Catch ex As Exception
+        '    MsgBox(ex.Message.ToString, MsgBoxStyle.Critical)
+        'End Try
     End Sub
 
     Private Sub buscar_EN_Click(sender As Object, e As EventArgs) Handles buscar_EN.Click
@@ -516,25 +508,27 @@ Public Class Empleados
         popup.Close()
     End Sub
     Public Sub Limpiartxt(ByVal form As Windows.Forms.Form)
-        Try
-            txt_activo.Text = ""
+        'Try
+        txt_activo.Text = ""
             txt_baja.Text = ""
             lbl_option.Visible = False
             PbOptions.Visible = False
             PbOptions.Tag = ""
             pnl_save.Text = ""
-        Catch ex As Exception
-            MsgBox(ex.Message.ToString, MsgBoxStyle.Critical)
-        End Try
+        'Catch ex As Exception
+        '    MsgBox(ex.Message.ToString, MsgBoxStyle.Critical)
+        'End Try
     End Sub
     Private Sub Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'HideTab("All")
+        'ResetTabs()
         Dim Wait As New Wait With {
             .Operation = BackgroundOperations.GetLatestEmployeeNumber
         }
         Wait.ShowDialog()
-        txt_AP.Focus()
         txt_numero.Text = Wait.Result.ToString()
+        Wait.Close()
+        txt_AP.Focus()
+
         SAVE.Visible = True
         foto.Image = AdminEmpleados.My.Resources.Resources.photoNobody120
         foto.Visible = True
@@ -542,42 +536,42 @@ Public Class Empleados
         Me.FormBorderStyle = FormBorderStyle.None
         Me.Dock = DockStyle.Fill
         Me.TransparencyKey = System.Drawing.Color.FromArgb(121, 121, 121)
-        Wait.Close()
+
     End Sub
 
-    Private Sub HideTab(TabName As String)
-        If TabName <> "All" Then
-            If TabName <> "Datos Personales" Then
-                For Each SpedcificTab As TabPage In MenuEmp.TabPages
-                    If SpedcificTab.Text = TabName Then
-                        TabCollection.Add(TabName, SpedcificTab)
-                        MenuEmp.TabPages.Remove(SpedcificTab)
-                        Exit For
-                    End If
-                Next
-            End If
-        Else
-            For Each Tab As TabPage In MenuEmp.TabPages
-                If Tab.Text <> "Datos Personales" Then
-                    TabCollection.Add(Tab.Text, Tab)
-                    MenuEmp.TabPages.Remove(Tab)
-                End If
-            Next
-        End If
-    End Sub
-    Private Sub ShowTab(TabName As String)
-        If TabName <> "All" Then
-            If TabCollection.ContainsKey(TabName) Then
-                MenuEmp.TabPages.Add(TabCollection(TabName))
-                TabCollection.Remove(TabName)
-            End If
-        Else
-            For Each TabItem In TabCollection
-                MenuEmp.TabPages.Add(TabItem.Value)
-                TabCollection.Remove(TabItem.Key)
-            Next
-        End If
-    End Sub
+    'Private Sub HideTab(TabName As String)
+    '    If TabName <> "All" Then
+    '        If TabName <> "Datos Personales" Then
+    '            For Each SpedcificTab As TabPage In MenuEmp.TabPages
+    '                If SpedcificTab.Text = TabName Then
+    '                    TabCollection.Add(TabName, SpedcificTab)
+    '                    MenuEmp.TabPages.Remove(SpedcificTab)
+    '                    Exit For
+    '                End If
+    '            Next
+    '        End If
+    '    Else
+    '        For Each Tab As TabPage In MenuEmp.TabPages
+    '            If Tab.Text <> "Datos Personales" Then
+    '                TabCollection.Add(Tab.Text, Tab)
+    '                MenuEmp.TabPages.Remove(Tab)
+    '            End If
+    '        Next
+    '    End If
+    'End Sub
+    'Private Sub ShowTab(TabName As String)
+    '    If TabName <> "All" Then
+    '        If TabCollection.ContainsKey(TabName) Then
+    '            MenuEmp.TabPages.Add(TabCollection(TabName))
+    '            TabCollection.Remove(TabName)
+    '        End If
+    '    Else
+    '        For Each TabItem In TabCollection
+    '            MenuEmp.TabPages.Add(TabItem.Value)
+    '            TabCollection.Remove(TabItem.Key)
+    '        Next
+    '    End If
+    'End Sub
     Sub cargarImagen(control As PictureBox)
         Dim IMAGEN As String
         Me.OpenFileDialog1.ShowDialog()
@@ -628,7 +622,7 @@ Public Class Empleados
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
     Private Sub CANCEL_Click(sender As Object, e As EventArgs) Handles CANCEL.Click
-        Close()
+        limp()
     End Sub
     Private Sub txt_EN_Leave(sender As Object, e As EventArgs) Handles txt_EN.Leave
         If (txt_EN.Text <> "") Then
@@ -1435,5 +1429,34 @@ Public Class Empleados
                 dgv_Ref.DataSource = objcon.Consulta_REF(EMPLEADO_ES)
             End If
         End If
+    End Sub
+
+    Private Sub PbSearchEmployee_Click(sender As Object, e As EventArgs) Handles PbSearchEmployee.Click
+        llenar_buscador("EMPLEADOS")
+        If V1 <> "" And V2 <> "" Then
+            txt_numero.Text = V1
+            Numeroleave()
+            llenarFamilia()
+            llenarAL()
+            llenarContacto()
+            llenarEnfermedades()
+            llenarSE()
+        Else
+            Dim Wait As New Wait With {
+            .Operation = BackgroundOperations.GetLatestEmployeeNumber
+        }
+            Wait.ShowDialog()
+            txt_numero.Text = Wait.Result.ToString()
+            Wait.Close()
+        End If
+        txt_NOM.Focus()
+    End Sub
+
+    Private Sub BwEmpleados_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BwEmpleados.DoWork
+
+    End Sub
+
+    Private Sub BwEmpleados_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BwEmpleados.RunWorkerCompleted
+
     End Sub
 End Class

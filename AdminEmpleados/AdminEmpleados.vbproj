@@ -29,7 +29,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>default.htm</WebPage>
     <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>1.0.0.1</ApplicationVersion>
+    <ApplicationVersion>1.0.3.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -143,6 +143,7 @@
       <DependentUpon>ASSIGNED_EQUIPMENT.xsd</DependentUpon>
     </Compile>
     <Compile Include="Classes\Email.vb" />
+    <Compile Include="Classes\Page.vb" />
     <Compile Include="Reports\Datasets\RECEIVER.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

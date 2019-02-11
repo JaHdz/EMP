@@ -182,7 +182,7 @@ Public Class Consultas
         End Using
     End Function
 
-    Public Function Emp_Exist(ByVal user As Integer) As Integer
+    Public Function Emp_Exist(ByVal user As Integer) As Boolean
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As New SqlCommand("Consulta_Emp", con)
@@ -190,11 +190,7 @@ Public Class Consultas
             cmd.Parameters.AddWithValue("@ID", user)
             Using lector As SqlDataReader = cmd.ExecuteReader()
                 If lector.Read() Then
-                    If lector("ID_Emp").ToString = 0 Then
-                        Return 0
-                    Else
-                        Return lector("ID_Emp").ToString
-                    End If
+                    Return 1
                 Else
                     Return 0
                 End If

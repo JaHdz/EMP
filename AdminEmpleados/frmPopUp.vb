@@ -23,11 +23,15 @@
     Private Sub Btn_acep_Click(sender As Object, e As EventArgs) Handles btn_acep.Click
         If (dgv_Pop.RowCount = 0) Then
         Else
-            Me.Close()
             If (dgv_Pop.CurrentRow.Index < 0) Then
             Else
                 Variable = dgv_Pop.Item(0, dgv_Pop.CurrentRow.Index).Value
-                Variable2 = dgv_Pop.Item(1, dgv_Pop.CurrentRow.Index).Value
+                If tipo = "EMPLEADOS" Then
+                    Variable2 = dgv_Pop.Item(1, dgv_Pop.CurrentRow.Index).Value + " " + dgv_Pop.Item(2, dgv_Pop.CurrentRow.Index).Value + " " + dgv_Pop.Item(3, dgv_Pop.CurrentRow.Index).Value
+                Else
+                    Variable2 = dgv_Pop.Item(1, dgv_Pop.CurrentRow.Index).Value
+                End If
+
                 Me.Close()
             End If
         End If
@@ -41,18 +45,14 @@
         If dgv_Pop.Rows.Count > 0 Then
             Btn_acep_Click(sender, e)
         End If
-
     End Sub
 
     Private Sub frmPopUp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objcon As New Consultas()
         dt = objcon.Catalogo(tipo, txt_codi.Text)
         dgv_Pop.DataSource = dt
+        If tipo = "EMPLEADOS" Then
+            dgv_Pop.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader
+        End If
     End Sub
-
-    'Private Sub dgv_Pop_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_Pop.CellContentClick
-    '    If dgv_Pop.Rows.Count > 0 Then
-    '        Btn_acep_Click(sender, e)
-    '    End If
-    'End Sub
 End Class
