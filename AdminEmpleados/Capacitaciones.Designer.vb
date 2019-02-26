@@ -199,6 +199,7 @@ Partial Class Capacitaciones
         '
         'SAVE
         '
+        Me.SAVE.Cursor = System.Windows.Forms.Cursors.Hand
         Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Training_80px
         Me.SAVE.Location = New System.Drawing.Point(854, 0)
         Me.SAVE.Name = "SAVE"
@@ -209,6 +210,7 @@ Partial Class Capacitaciones
         '
         'CANCEL
         '
+        Me.CANCEL.Cursor = System.Windows.Forms.Cursors.Hand
         Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
         Me.CANCEL.Location = New System.Drawing.Point(905, 0)
         Me.CANCEL.Name = "CANCEL"
@@ -249,6 +251,7 @@ Partial Class Capacitaciones
         'buscar_CAP
         '
         Me.buscar_CAP.BackgroundImage = CType(resources.GetObject("buscar_CAP.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_CAP.Cursor = System.Windows.Forms.Cursors.Hand
         Me.buscar_CAP.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
         Me.buscar_CAP.Location = New System.Drawing.Point(366, 103)
         Me.buscar_CAP.Name = "buscar_CAP"
@@ -270,12 +273,13 @@ Partial Class Capacitaciones
         '
         Me.CAP.Location = New System.Drawing.Point(402, 103)
         Me.CAP.Name = "CAP"
-        Me.CAP.Size = New System.Drawing.Size(39, 28)
+        Me.CAP.Size = New System.Drawing.Size(0, 28)
         Me.CAP.TabIndex = 6
         Me.CAP.Visible = False
         '
         'txt_numero
         '
+        Me.txt_numero.Enabled = False
         Me.txt_numero.Location = New System.Drawing.Point(152, 63)
         Me.txt_numero.Name = "txt_numero"
         Me.txt_numero.Size = New System.Drawing.Size(209, 28)
@@ -293,6 +297,7 @@ Partial Class Capacitaciones
         'buscar_EN
         '
         Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_EN.Cursor = System.Windows.Forms.Cursors.Hand
         Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
         Me.buscar_EN.Location = New System.Drawing.Point(367, 63)
         Me.buscar_EN.Name = "buscar_EN"

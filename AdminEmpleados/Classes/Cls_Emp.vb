@@ -23,6 +23,7 @@ Public Class Cls_Emp
     Public Property Emp_Sexo As String = ""
     Public Property Emp_Curp As String = ""
     Public Property Emp_Domicilio As String = ""
+    Public Property Emp_CiudadEstado As String = ""
     Public Property Emp_Activo As New Integer
     Public Property Emp_Tipo As String = ""
     Public Property Emp_Sup As New Integer

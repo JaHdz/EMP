@@ -21,12 +21,13 @@ Public Class Consultas
     End Function
 
     Public Function Login(sUsr As String, sPass As String) As Dictionary(Of String, String)
-        Dim sentencia As String
         Dim lector As SqlDataReader
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
-            sentencia = "SP_UserandPass '" & sUsr & "'"
-            Dim cmd As New SqlCommand(sentencia, con)
+            Dim cmd As SqlCommand = con.CreateCommand
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "SP_UserandPass"
+            cmd.Parameters.AddWithValue("@user", sUsr)
             lector = cmd.ExecuteReader()
             If lector.Read() Then
                 If Encriptar(sPass) = lector("pass").ToString Then
@@ -93,6 +94,7 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@GENDER", infoEmp.Emp_Sexo))
             cmd.Parameters.Add(New SqlParameter("@CURP", infoEmp.Emp_Curp))
             cmd.Parameters.Add(New SqlParameter("@ADDRESS", infoEmp.Emp_Domicilio))
+            cmd.Parameters.Add(New SqlParameter("@CITYSTATE", infoEmp.Emp_Domicilio))
             cmd.Parameters.Add(New SqlParameter("@ACTIVE", infoEmp.Emp_Activo))
             cmd.Parameters.Add(New SqlParameter("@TYPE", infoEmp.Emp_Tipo))
             cmd.Parameters.Add(New SqlParameter("@SUPERVISOR", infoEmp.Emp_Sup))
@@ -164,19 +166,14 @@ Public Class Consultas
     End Function
 
     Public Function NUMERO_EMPLEADO() As Integer
+        NUMERO_EMPLEADO = 0
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As New SqlCommand("Ultimo_Emp", con)
             cmd.CommandType = CommandType.StoredProcedure
             Using lector As SqlDataReader = cmd.ExecuteReader()
                 If lector.Read() Then
-                    If lector("ID_Emp").ToString = "" Then
-                        Return 0
-                    Else
-                        Return Convert.ToInt64(lector("ID_Emp")) + 1
-                    End If
-                Else
-                    Return 0
+                    Return lector(0)
                 End If
             End Using
         End Using
@@ -294,6 +291,7 @@ Public Class Consultas
                         .Emp_Nacionalidad = lector("Emp_Nacionalidad"),
                         .Emp_Domicilio = lector("Emp_Domicilio"),
                         .Emp_Col = lector("Emp_Col"),
+                        .Emp_CiudadEstado = lector("Emp_CiudadEstado"),
                         .Emp_CP = lector("Emp_CP"),
                         .Emp_FEfectiva = lector("Emp_FEfectiva"),
                         .Emp_Salario = lector("Emp_Salario"),
@@ -533,7 +531,7 @@ Public Class Consultas
         End Using
     End Function
 
-    Public Function Add_EQUIPMENT(ByVal EQU_ID As Integer, NAME As String, DESCRIPTION As String, COST As Double, STATUS As Integer) As String
+    Public Function Add_EQUIPMENT(ByVal EQU_ID As Integer, NAME As String, DESCRIPTION As String, COST As Double, STATUS As Integer, DEPTO As Integer) As String
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -543,6 +541,7 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@DESCRIPTION", DESCRIPTION))
             cmd.Parameters.Add(New SqlParameter("@COST", COST))
             cmd.Parameters.Add(New SqlParameter("@STATUS", STATUS))
+            cmd.Parameters.Add(New SqlParameter("@DEPTO", DEPTO))
             cmd.CommandText = "UDSP_EQUIPMENT"
             Dim lector As SqlDataReader
             lector = cmd.ExecuteReader()
@@ -552,6 +551,19 @@ Public Class Consultas
         End Using
     End Function
 
+    Public Function DELETE_EQUIPMENT_ADMIN(EQU_ID As Integer) As Boolean
+        Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            con.Open()
+            Dim cmd As New SqlCommand("DELETE_EQUIPMENT_ADMIN", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@ID", EQU_ID)
+            Using lector As SqlDataReader = cmd.ExecuteReader()
+                If lector.Read() Then
+                    Return Convert.ToBoolean(lector(0))
+                End If
+            End Using
+        End Using
+    End Function
     Public Function Add_EQUIPMENT_ASSIGNED(ByVal ASSIGNED As Integer, EQUIPMENT As String, EMPLOYEE As Integer, DATEE As DateTime, ISRETURNED As Integer,
                                            DATE_R As DateTime, USER As Integer, COMMENTS As String) As String
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
@@ -593,6 +605,20 @@ Public Class Consultas
         End Using
     End Function
 
+    Public Function DELETE_ADMIN_EVALUATIONS(EV_ID As String) As Boolean
+        Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            con.Open()
+            Dim cmd As New SqlCommand("DELETE_EVALUATION_ADMIN", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@ID", EV_ID)
+            Using lector As SqlDataReader = cmd.ExecuteReader()
+                If lector.Read() Then
+                    Return Convert.ToBoolean(lector(0))
+                End If
+            End Using
+        End Using
+    End Function
+
     Public Function Add_POSITIONS(ByVal POSITION As Integer, NAME As String, DESCRIPTION As String, RISK As Integer, ESTATUS As Integer) As String
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
@@ -612,6 +638,19 @@ Public Class Consultas
         End Using
     End Function
 
+    Public Function DELETE_ADMIN_POSITIONS(ID As Integer) As Boolean
+        Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            con.Open()
+            Dim cmd As New SqlCommand("DELETE_POSITIONS_ADMIN", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@ID", ID)
+            Using lector As SqlDataReader = cmd.ExecuteReader()
+                If lector.Read() Then
+                    Return Convert.ToBoolean(lector(0))
+                End If
+            End Using
+        End Using
+    End Function
 
     Public Function Add_TRANINGS(ByVal ID As Integer, CODE As String, DESCRIPTION As String, STATUS As Integer) As String
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
@@ -669,6 +708,20 @@ Public Class Consultas
         End Using
     End Function
 
+    Public Function DELETE_ADMIN_SUPER(ID As Integer) As Boolean
+        Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            con.Open()
+            Dim cmd As New SqlCommand("DELETE_SUPERVISOR_ADMIN", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@ID", ID)
+            Using lector As SqlDataReader = cmd.ExecuteReader()
+                If lector.Read() Then
+                    Return Convert.ToBoolean(lector(0))
+                End If
+            End Using
+        End Using
+    End Function
+
     Public Function Add_TE(ByVal ID As Integer, CODE As String, DESC As String, ESTATUS As Integer) As String
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
@@ -684,6 +737,20 @@ Public Class Consultas
             If lector.Read() Then
                 Return lector("RESULT").ToString()
             End If
+        End Using
+    End Function
+
+    Public Function DELETE_ADMIN_TE(ID As Integer) As Boolean
+        Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            con.Open()
+            Dim cmd As New SqlCommand("DELETE_EMPTYPE_ADMIN", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@ID", ID)
+            Using lector As SqlDataReader = cmd.ExecuteReader()
+                If lector.Read() Then
+                    Return Convert.ToBoolean(lector(0))
+                End If
+            End Using
         End Using
     End Function
 
@@ -725,6 +792,20 @@ Public Class Consultas
             If lector.Read() Then
                 Return lector("RESULT").ToString()
             End If
+        End Using
+    End Function
+
+    Public Function DELETE_DEPTO_ADMIN(ID As Integer) As Boolean
+        Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            con.Open()
+            Dim cmd As New SqlCommand("DELETE_DEPTO_ADMIN", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@ID", ID)
+            Using lector As SqlDataReader = cmd.ExecuteReader()
+                If lector.Read() Then
+                    Return Convert.ToBoolean(lector(0))
+                End If
+            End Using
         End Using
     End Function
 
@@ -1130,6 +1211,20 @@ Public Class Consultas
             cmd.ExecuteNonQuery()
         End Using
     End Sub
+
+    Public Function DELETE_CAPACITACION_ADMIN(ByVal ID As Integer) As Boolean
+        Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            con.Open()
+            Dim cmd As New SqlCommand("DELETE_CAPACITACION_ADMIN", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@ID", ID)
+            Using lector As SqlDataReader = cmd.ExecuteReader()
+                If lector.Read() Then
+                    Return Convert.ToBoolean(lector(0))
+                End If
+            End Using
+        End Using
+    End Function
 
     Public Sub DELETE_OI(ByVal ID As Integer)
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)

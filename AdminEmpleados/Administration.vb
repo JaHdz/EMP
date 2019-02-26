@@ -115,16 +115,8 @@
                     Select Case gr.Columns(e.ColumnIndex).Name
                         Case "UPDATEC"
                             If MessageBox.Show("Seguro que desea dar de baja esta capacitacion?", "Baja Capacitacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                If DGV_CAT.Rows(e.RowIndex).Cells(4).Value.ToString = "False" Then
-                                    If objcon.Add_TRANINGS(DGV_CAT.Rows(e.RowIndex).Cells(1).Value, DGV_CAT.Rows(e.RowIndex).Cells(2).Value, DGV_CAT.Rows(e.RowIndex).Cells(3).Value, 1) = True Then
-                                    Else
-                                        MessageBox.Show("Este registro ya Existe.")
-                                    End If
-                                Else
-                                    If objcon.Add_TRANINGS(DGV_CAT.Rows(e.RowIndex).Cells(1).Value, DGV_CAT.Rows(e.RowIndex).Cells(2).Value, DGV_CAT.Rows(e.RowIndex).Cells(3).Value, 0) = True Then
-                                    Else
-                                        MessageBox.Show("Este registro ya Existe.")
-                                    End If
+                                If objcon.DELETE_CAPACITACION_ADMIN(DGV_CAT.Rows(e.RowIndex).Cells(1).Value) = False Then
+                                    MessageBox.Show("No se puede eliminar esta capacitación ya que fue impartida a uno o varios empleados")
                                 End If
                             End If
                     End Select
@@ -140,13 +132,13 @@
             MessageBox.Show("Debe llenar todos los campos")
         Else
             If (objcon.Add_DEPTO(0, txt_depcod.Text, txt_coddes.Text, 1) = True) Then
+                dgv_depto.DataSource = objcon.Consulta_depto()
+                txt_depcod.Text = ""
+                txt_coddes.Text = ""
+                txt_depcod.Focus()
             Else
                 MessageBox.Show("Este registro ya Existe.")
             End If
-            dgv_depto.DataSource = objcon.Consulta_depto()
-            txt_depcod.Text = ""
-            txt_coddes.Text = ""
-            txt_depcod.Focus()
         End If
     End Sub
 
@@ -155,14 +147,14 @@
     End Sub
 
     Private Sub txt_eqcost_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_eqcost.KeyPress
-        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+        e.Handled = Not (Char.IsDigit(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
     End Sub
 
     Private Sub save_eq_Click(sender As Object, e As EventArgs) Handles save_eq.Click
-        If txt_eqcod.Text = "" Or txt_eqdesc.Text = "" Or txt_eqcost.Text = "" Then
+        If txt_eqcod.Text = "" Or txt_eqdesc.Text = "" Or txt_eqcost.Text = "" Or txtDpto.Text = "" Then
             MessageBox.Show("Debe llenar todos los campos")
         Else
-            If objcon.Add_EQUIPMENT(0, txt_eqcod.Text, txt_eqdesc.Text, txt_eqcost.Text, 1) = True Then
+            If objcon.Add_EQUIPMENT(0, txt_eqcod.Text, txt_eqdesc.Text, txt_eqcost.Text, True, lblDpto.Text) = True Then
             Else
                 MessageBox.Show("Este registro ya Existe.")
             End If
@@ -202,16 +194,12 @@
                     Select Case gr.Columns(e.ColumnIndex).Name
                         Case "UPDATEE"
                             If MessageBox.Show("Seguro que desea dar de baja esta Evaluacion?", "Baja Evaluacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                If dgv_eval.Rows(e.RowIndex).Cells(4).Value.ToString = "False" Then
-                                    If objcon.Add_EVALUATIONS(dgv_eval.Rows(e.RowIndex).Cells(1).Value, dgv_eval.Rows(e.RowIndex).Cells(2).Value, dgv_eval.Rows(e.RowIndex).Cells(3).Value, 1) = True Then
-                                    Else
-                                        MessageBox.Show("Este registro ya Existe.")
+                                If dgv_eval.Rows(e.RowIndex).Cells(4).Value.ToString = "True" Then
+                                    If objcon.DELETE_ADMIN_EVALUATIONS(2) = False Then
+                                        MessageBox.Show("No se puede eliminar esta evaluación ya que fue impartida a uno o varios empleados")
                                     End If
                                 Else
-                                    If objcon.Add_EVALUATIONS(dgv_eval.Rows(e.RowIndex).Cells(1).Value, dgv_eval.Rows(e.RowIndex).Cells(2).Value, dgv_eval.Rows(e.RowIndex).Cells(3).Value, 0) = True Then
-                                    Else
-                                        MessageBox.Show("Este registro ya Existe.")
-                                    End If
+                                    'hacer algo aqui'
                                 End If
                             End If
                     End Select
@@ -234,17 +222,9 @@
                 Case Is > -1
                     Select Case gr.Columns(e.ColumnIndex).Name
                         Case "UPDATED"
-                            If MessageBox.Show("Seguro que desea dar de baja esta Evaluacion?", "Baja Evaluacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                If dgv_depto.Rows(e.RowIndex).Cells(4).Value.ToString = "False" Then
-                                    If objcon.Add_DEPTO(dgv_depto.Rows(e.RowIndex).Cells(1).Value, dgv_depto.Rows(e.RowIndex).Cells(2).Value, dgv_depto.Rows(e.RowIndex).Cells(3).Value, 1) = True Then
-                                    Else
-                                        MessageBox.Show("Este registro ya Existe.")
-                                    End If
-                                Else
-                                    If objcon.Add_DEPTO(dgv_depto.Rows(e.RowIndex).Cells(1).Value, dgv_depto.Rows(e.RowIndex).Cells(2).Value, dgv_depto.Rows(e.RowIndex).Cells(3).Value, 0) = True Then
-                                    Else
-                                        MessageBox.Show("Este registro ya Existe.")
-                                    End If
+                            If MessageBox.Show("Seguro que desea dar de baja este Departamento?", "Baja Departamento", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+                                If objcon.DELETE_DEPTO_ADMIN(dgv_depto.Rows(e.RowIndex).Cells(1).Value) = False Then
+                                    MessageBox.Show("No se puede eliminar este departamento ya que fue asignado a uno o varios empleados")
                                 End If
                             End If
                     End Select
@@ -264,15 +244,13 @@
                     Select Case gr.Columns(e.ColumnIndex).Name
                         Case "UPDATEEQ"
                             If MessageBox.Show("Seguro que desea dar de baja este Equipo?", "Baja Equipo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                If dgv_eq.Rows(e.RowIndex).Cells(5).Value.ToString = "False" Then
-                                    If objcon.Add_EQUIPMENT(dgv_eq.Rows(e.RowIndex).Cells(3).Value, dgv_eq.Rows(e.RowIndex).Cells(4).Value, dgv_eq.Rows(e.RowIndex).Cells(5).Value, dgv_eq.Rows(e.RowIndex).Cells(6).Value, 1) = True Then
-                                    Else
-                                        MessageBox.Show("Este registro ya Existe.")
+                                If CType(dgv_eq.Rows(e.RowIndex).Cells(5).Value.ToString, Boolean) = True Then
+                                    If objcon.DELETE_EQUIPMENT_ADMIN(gr(2, e.RowIndex()).Value.ToString()) = False Then
+                                        MessageBox.Show("No se puede eliminar este equipo ya que fue asignado a uno o varios empleados")
                                     End If
                                 Else
-                                    If objcon.Add_EQUIPMENT(dgv_eq.Rows(e.RowIndex).Cells(3).Value, dgv_eq.Rows(e.RowIndex).Cells(4).Value, dgv_eq.Rows(e.RowIndex).Cells(5).Value, dgv_eq.Rows(e.RowIndex).Cells(6).Value, 0) = True Then
-                                    Else
-                                        MessageBox.Show("Este registro ya Existe.")
+                                    If MessageBox.Show("Este equipo ya esta dado de baja, Deseas activarlo nuevamente?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+                                        'actualizar el registro para activarlo
                                     End If
                                 End If
                             End If
@@ -312,16 +290,12 @@
                     Select Case gr.Columns(e.ColumnIndex).Name
                         Case "UPDATEPU"
                             If MessageBox.Show("Seguro que desea dar de baja este puesto?", "Baja Puesto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                If dgv_Puesto.Rows(e.RowIndex).Cells(5).Value.ToString = "False" Then
-                                    If objcon.Add_POSITIONS(dgv_Puesto.Rows(e.RowIndex).Cells(1).Value, dgv_Puesto.Rows(e.RowIndex).Cells(2).Value, dgv_Puesto.Rows(e.RowIndex).Cells(3).Value, dgv_Puesto.Rows(e.RowIndex).Cells(4).Value, 1) = True Then
-                                    Else
-                                        MessageBox.Show("Este registro ya Existe.")
+                                If gr(5, e.RowIndex).Value = True Then
+                                    If objcon.DELETE_ADMIN_POSITIONS(gr(1, e.RowIndex).Value) = False Then
+                                        MessageBox.Show("No se puede eliminar este puesto ya que fue asignado a uno o varios empleados")
                                     End If
                                 Else
-                                    If objcon.Add_POSITIONS(dgv_Puesto.Rows(e.RowIndex).Cells(1).Value, dgv_Puesto.Rows(e.RowIndex).Cells(2).Value, dgv_Puesto.Rows(e.RowIndex).Cells(3).Value, dgv_Puesto.Rows(e.RowIndex).Cells(4).Value, 0) = True Then
-                                    Else
-                                        MessageBox.Show("Este registro ya Existe.")
-                                    End If
+                                    'hacer algo aqui'
                                 End If
                             End If
                     End Select
@@ -412,16 +386,12 @@
                     Select Case gr.Columns(e.ColumnIndex).Name
                         Case "UPDATESU"
                             If MessageBox.Show("Seguro que desea dar de baja a este supervisor?", "Baja Supervisor", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                If dgv_super.Rows(e.RowIndex).Cells(3).Value.ToString = "False" Then
-                                    If objcon.Add_SUPER(dgv_super.Rows(e.RowIndex).Cells(1).Value, dgv_super.Rows(e.RowIndex).Cells(2).Value, dgv_super.Rows(e.RowIndex).Cells(3).Value, 1) = True Then
-                                    Else
-                                        MessageBox.Show("Este registro ya Existe.")
+                                If dgv_super.Rows(e.RowIndex).Cells(4).Value.ToString = "True" Then
+                                    If objcon.DELETE_ADMIN_SUPER((dgv_super.Rows(e.RowIndex).Cells(1).Value)) = False Then
+                                        MessageBox.Show("No se puede eliminar este supervisor ya que fue asignado a uno o varios empleados")
                                     End If
                                 Else
-                                    If objcon.Add_SUPER(dgv_super.Rows(e.RowIndex).Cells(1).Value, dgv_super.Rows(e.RowIndex).Cells(2).Value, dgv_super.Rows(e.RowIndex).Cells(3).Value, 0) = True Then
-                                    Else
-                                        MessageBox.Show("Este registro ya Existe.")
-                                    End If
+                                    'HACER ALGO'
                                 End If
                             End If
                     End Select
@@ -459,17 +429,13 @@
                 Case Is > -1
                     Select Case gr.Columns(e.ColumnIndex).Name
                         Case "UPDATETE"
-                            If MessageBox.Show("Seguro que desea dar de baja a esta Categoria?", "Baja Categoria", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                If dgv_te.Rows(e.RowIndex).Cells(4).Value.ToString = "False" Then
-                                    If objcon.Add_TE(dgv_te.Rows(e.RowIndex).Cells(1).Value, dgv_te.Rows(e.RowIndex).Cells(2).Value, dgv_te.Rows(e.RowIndex).Cells(3).Value, 1) = True Then
-                                    Else
-                                        MessageBox.Show("Este registro ya Existe.")
+                            If MessageBox.Show("Seguro que desea dar de baja a este tipo de empleado?", "Baja de tipo de empleado", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+                                If dgv_te.Rows(e.RowIndex).Cells(4).Value.ToString = "True" Then
+                                    If objcon.DELETE_ADMIN_TE(dgv_te.Rows(e.RowIndex).Cells(1).Value) = False Then
+                                        MessageBox.Show("No se puede eliminar este 'Tipo de Empleado' ya que fue asignado a uno o varios empleados")
                                     End If
                                 Else
-                                    If objcon.Add_TE(dgv_te.Rows(e.RowIndex).Cells(1).Value, dgv_te.Rows(e.RowIndex).Cells(2).Value, dgv_te.Rows(e.RowIndex).Cells(3).Value, 0) = True Then
-                                    Else
-                                        MessageBox.Show("Este registro ya Existe.")
-                                    End If
+                                    'hacer algo'
                                 End If
                             End If
                     End Select
@@ -481,6 +447,17 @@
     End Sub
 
     Private Sub tab_admin_Click(sender As Object, e As EventArgs) Handles tab_admin.Click
+        'DGV_CAT.DataSource = objcon.Consulta_Cap()
+        'dgv_depto.DataSource = objcon.Consulta_depto()
+        'dgv_eq.DataSource = objcon.Consulta_EQ()
+        'dgv_eval.DataSource = objcon.Consulta_EV()
+        'dgv_Puesto.DataSource = objcon.Consulta_PU()
+        'dgv_super.DataSource = objcon.Consulta_SU()
+        'dgv_te.DataSource = objcon.Consulta_TE()
+    End Sub
+
+    Private Sub Admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        dgv_equipo_emp.DataSource = objcon.Consulta_USER()
         DGV_CAT.DataSource = objcon.Consulta_Cap()
         dgv_depto.DataSource = objcon.Consulta_depto()
         dgv_eq.DataSource = objcon.Consulta_EQ()
@@ -490,11 +467,16 @@
         dgv_te.DataSource = objcon.Consulta_TE()
     End Sub
 
-    Private Sub Admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        dgv_equipo_emp.DataSource = objcon.Consulta_USER()
+    Private Sub pbSearchDpto_Click(sender As Object, e As EventArgs) Handles pbSearchDpto.Click
+        llenar_buscador("DE")
+        If (V1 <> "" And V2 <> "") Then
+            lblDpto.Text = V1
+            txtDpto.Text = V2
+        Else
+            lblDpto.Text = ""
+            txtDpto.Text = ""
+            pbSearchDpto.Focus()
+        End If
+
     End Sub
-
-
-
-
 End Class

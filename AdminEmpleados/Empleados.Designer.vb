@@ -23,7 +23,7 @@ Partial Class Empleados
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Tam_Es = New System.Windows.Forms.TabPage()
@@ -319,6 +319,8 @@ Partial Class Empleados
         Me.txt_SUPER = New System.Windows.Forms.TextBox()
         Me.lbl_depto = New System.Windows.Forms.Label()
         Me.pnl_per = New System.Windows.Forms.Panel()
+        Me.txtCdDomicilio = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.PbSearchEmployee = New System.Windows.Forms.PictureBox()
         Me.buscar_ciudad = New System.Windows.Forms.PictureBox()
         Me.foto = New System.Windows.Forms.PictureBox()
@@ -491,6 +493,7 @@ Partial Class Empleados
         '
         'btn_SERPT
         '
+        Me.btn_SERPT.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_SERPT.Image = Global.AdminEmpleados.My.Resources.Resources.Accounting_80px
         Me.btn_SERPT.Location = New System.Drawing.Point(769, 1346)
         Me.btn_SERPT.Name = "btn_SERPT"
@@ -501,6 +504,7 @@ Partial Class Empleados
         '
         'btn_SESave
         '
+        Me.btn_SESave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_SESave.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
         Me.btn_SESave.Location = New System.Drawing.Point(820, 1346)
         Me.btn_SESave.Name = "btn_SESave"
@@ -511,6 +515,7 @@ Partial Class Empleados
         '
         'btn_SECancel
         '
+        Me.btn_SECancel.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_SECancel.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
         Me.btn_SECancel.Location = New System.Drawing.Point(871, 1346)
         Me.btn_SECancel.Name = "btn_SECancel"
@@ -854,6 +859,7 @@ Partial Class Empleados
         '
         'Btn_AddRef
         '
+        Me.Btn_AddRef.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Btn_AddRef.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Reference_80px
         Me.Btn_AddRef.Location = New System.Drawing.Point(846, 0)
         Me.Btn_AddRef.Name = "Btn_AddRef"
@@ -1219,6 +1225,7 @@ Partial Class Empleados
         '
         'btn_OI
         '
+        Me.btn_OI.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_OI.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Income_80px
         Me.btn_OI.Location = New System.Drawing.Point(846, 0)
         Me.btn_OI.Name = "btn_OI"
@@ -1520,6 +1527,7 @@ Partial Class Empleados
         '
         'PB_IMAGE_VIVIENDA
         '
+        Me.PB_IMAGE_VIVIENDA.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PB_IMAGE_VIVIENDA.Image = Global.AdminEmpleados.My.Resources.Resources.AddImage
         Me.PB_IMAGE_VIVIENDA.Location = New System.Drawing.Point(6, 40)
         Me.PB_IMAGE_VIVIENDA.Name = "PB_IMAGE_VIVIENDA"
@@ -1724,8 +1732,8 @@ Partial Class Empleados
         'Text
         '
         Me.Text.DataPropertyName = "Text"
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.Text.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.Text.DefaultCellStyle = DataGridViewCellStyle1
         Me.Text.HeaderText = "Enfermedad"
         Me.Text.Name = "Text"
         Me.Text.Width = 1400
@@ -1763,6 +1771,7 @@ Partial Class Empleados
         '
         'btn_enfADD
         '
+        Me.btn_enfADD.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_enfADD.Image = Global.AdminEmpleados.My.Resources.Resources.Add_MedicalCondition_80px
         Me.btn_enfADD.Location = New System.Drawing.Point(892, 0)
         Me.btn_enfADD.Name = "btn_enfADD"
@@ -2019,6 +2028,7 @@ Partial Class Empleados
         '
         'btn_conADD
         '
+        Me.btn_conADD.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_conADD.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Contact_80px
         Me.btn_conADD.Location = New System.Drawing.Point(892, 0)
         Me.btn_conADD.Name = "btn_conADD"
@@ -2322,6 +2332,7 @@ Partial Class Empleados
         '
         'btn_antSave
         '
+        Me.btn_antSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_antSave.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Job_80px
         Me.btn_antSave.Location = New System.Drawing.Point(892, 0)
         Me.btn_antSave.Name = "btn_antSave"
@@ -2617,6 +2628,7 @@ Partial Class Empleados
         '
         'btn_hijoADD
         '
+        Me.btn_hijoADD.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_hijoADD.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Family_80px
         Me.btn_hijoADD.Location = New System.Drawing.Point(892, 0)
         Me.btn_hijoADD.Name = "btn_hijoADD"
@@ -2684,6 +2696,7 @@ Partial Class Empleados
         '
         'btn_esSAVE
         '
+        Me.btn_esSAVE.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_esSAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_marriage_80px
         Me.btn_esSAVE.Location = New System.Drawing.Point(892, 0)
         Me.btn_esSAVE.Name = "btn_esSAVE"
@@ -2916,11 +2929,12 @@ Partial Class Empleados
         Me.pnl_estatus.Controls.Add(Me.Label6)
         Me.pnl_estatus.Controls.Add(Me.Label7)
         Me.pnl_estatus.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnl_estatus.Location = New System.Drawing.Point(0, 508)
+        Me.pnl_estatus.Location = New System.Drawing.Point(0, 538)
         Me.pnl_estatus.Margin = New System.Windows.Forms.Padding(2)
         Me.pnl_estatus.Name = "pnl_estatus"
-        Me.pnl_estatus.Size = New System.Drawing.Size(950, 196)
+        Me.pnl_estatus.Size = New System.Drawing.Size(950, 166)
         Me.pnl_estatus.TabIndex = 34
+        Me.pnl_estatus.Visible = False
         '
         'CB_CLIENTE
         '
@@ -2929,7 +2943,7 @@ Partial Class Empleados
         Me.CB_CLIENTE.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_CLIENTE.Name = "CB_CLIENTE"
         Me.CB_CLIENTE.Size = New System.Drawing.Size(186, 25)
-        Me.CB_CLIENTE.TabIndex = 44
+        Me.CB_CLIENTE.TabIndex = 4
         Me.CB_CLIENTE.Text = "Notificacion Clientes"
         Me.CB_CLIENTE.UseVisualStyleBackColor = True
         '
@@ -2940,7 +2954,7 @@ Partial Class Empleados
         Me.CB_PROV.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_PROV.Name = "CB_PROV"
         Me.CB_PROV.Size = New System.Drawing.Size(204, 25)
-        Me.CB_PROV.TabIndex = 43
+        Me.CB_PROV.TabIndex = 8
         Me.CB_PROV.Text = "Notificacion Proveedor"
         Me.CB_PROV.UseVisualStyleBackColor = True
         '
@@ -2951,7 +2965,7 @@ Partial Class Empleados
         Me.seg.Margin = New System.Windows.Forms.Padding(2)
         Me.seg.Name = "seg"
         Me.seg.Size = New System.Drawing.Size(165, 25)
-        Me.seg.TabIndex = 27
+        Me.seg.TabIndex = 5
         Me.seg.Text = "Motivo Seguridad"
         Me.seg.UseVisualStyleBackColor = True
         '
@@ -2982,6 +2996,7 @@ Partial Class Empleados
         '
         'PbOptions
         '
+        Me.PbOptions.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PbOptions.Image = Global.AdminEmpleados.My.Resources.Resources.Alta_80px
         Me.PbOptions.Location = New System.Drawing.Point(892, 0)
         Me.PbOptions.Name = "PbOptions"
@@ -3010,8 +3025,8 @@ Partial Class Empleados
         Me.commen.Location = New System.Drawing.Point(85, 88)
         Me.commen.Multiline = True
         Me.commen.Name = "commen"
-        Me.commen.Size = New System.Drawing.Size(442, 84)
-        Me.commen.TabIndex = 28
+        Me.commen.Size = New System.Drawing.Size(442, 65)
+        Me.commen.TabIndex = 7
         '
         'txt_activo
         '
@@ -3020,7 +3035,7 @@ Partial Class Empleados
         Me.txt_activo.Location = New System.Drawing.Point(85, 54)
         Me.txt_activo.Name = "txt_activo"
         Me.txt_activo.Size = New System.Drawing.Size(155, 28)
-        Me.txt_activo.TabIndex = 25
+        Me.txt_activo.TabIndex = 1
         '
         'label8
         '
@@ -3028,7 +3043,7 @@ Partial Class Empleados
         Me.label8.Location = New System.Drawing.Point(6, 88)
         Me.label8.Name = "label8"
         Me.label8.Size = New System.Drawing.Size(73, 21)
-        Me.label8.TabIndex = 38
+        Me.label8.TabIndex = 6
         Me.label8.Text = "Motivo: "
         '
         'txt_baja
@@ -3038,24 +3053,24 @@ Partial Class Empleados
         Me.txt_baja.Location = New System.Drawing.Point(372, 54)
         Me.txt_baja.Name = "txt_baja"
         Me.txt_baja.Size = New System.Drawing.Size(155, 28)
-        Me.txt_baja.TabIndex = 26
+        Me.txt_baja.TabIndex = 3
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(13, 57)
+        Me.Label6.Location = New System.Drawing.Point(13, 58)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(66, 21)
-        Me.Label6.TabIndex = 12
+        Me.Label6.TabIndex = 0
         Me.Label6.Text = "Activo: "
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(246, 57)
+        Me.Label7.Location = New System.Drawing.Point(246, 58)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(125, 21)
-        Me.Label7.TabIndex = 13
+        Me.Label7.TabIndex = 2
         Me.Label7.Text = "Fecha de Baja: "
         '
         'pnl_cont
@@ -3085,15 +3100,16 @@ Partial Class Empleados
         Me.pnl_cont.Controls.Add(Me.txt_SUPER)
         Me.pnl_cont.Controls.Add(Me.lbl_depto)
         Me.pnl_cont.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnl_cont.Location = New System.Drawing.Point(0, 355)
+        Me.pnl_cont.Location = New System.Drawing.Point(0, 389)
         Me.pnl_cont.Margin = New System.Windows.Forms.Padding(2)
         Me.pnl_cont.Name = "pnl_cont"
-        Me.pnl_cont.Size = New System.Drawing.Size(948, 149)
-        Me.pnl_cont.TabIndex = 33
+        Me.pnl_cont.Size = New System.Drawing.Size(948, 145)
+        Me.pnl_cont.TabIndex = 1
         '
         'buscar_depto
         '
         Me.buscar_depto.BackgroundImage = CType(resources.GetObject("buscar_depto.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_depto.Cursor = System.Windows.Forms.Cursors.Hand
         Me.buscar_depto.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
         Me.buscar_depto.Location = New System.Drawing.Point(906, 39)
         Me.buscar_depto.Name = "buscar_depto"
@@ -3106,21 +3122,22 @@ Partial Class Empleados
         '
         Me.depto.Location = New System.Drawing.Point(686, 39)
         Me.depto.Name = "depto"
-        Me.depto.Size = New System.Drawing.Size(37, 28)
-        Me.depto.TabIndex = 22
+        Me.depto.Size = New System.Drawing.Size(0, 28)
+        Me.depto.TabIndex = 7
         '
         'depto2
         '
         Me.depto2.Enabled = False
-        Me.depto2.Location = New System.Drawing.Point(729, 39)
+        Me.depto2.Location = New System.Drawing.Point(687, 39)
         Me.depto2.Name = "depto2"
-        Me.depto2.Size = New System.Drawing.Size(171, 28)
-        Me.depto2.TabIndex = 59
+        Me.depto2.Size = New System.Drawing.Size(213, 28)
+        Me.depto2.TabIndex = 3
         Me.depto2.TabStop = False
         '
         'Buscar_PUESTO
         '
         Me.Buscar_PUESTO.BackgroundImage = CType(resources.GetObject("Buscar_PUESTO.BackgroundImage"), System.Drawing.Image)
+        Me.Buscar_PUESTO.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Buscar_PUESTO.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
         Me.Buscar_PUESTO.Location = New System.Drawing.Point(559, 40)
         Me.Buscar_PUESTO.Name = "Buscar_PUESTO"
@@ -3154,6 +3171,7 @@ Partial Class Empleados
         '
         'Buscar_tipo
         '
+        Me.Buscar_tipo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Buscar_tipo.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
         Me.Buscar_tipo.Location = New System.Drawing.Point(558, 74)
         Me.Buscar_tipo.Name = "Buscar_tipo"
@@ -3165,10 +3183,10 @@ Partial Class Empleados
         'lbl_ingreso
         '
         Me.lbl_ingreso.AutoSize = True
-        Me.lbl_ingreso.Location = New System.Drawing.Point(8, 46)
+        Me.lbl_ingreso.Location = New System.Drawing.Point(8, 44)
         Me.lbl_ingreso.Name = "lbl_ingreso"
         Me.lbl_ingreso.Size = New System.Drawing.Size(71, 21)
-        Me.lbl_ingreso.TabIndex = 11
+        Me.lbl_ingreso.TabIndex = 0
         Me.lbl_ingreso.Text = "Ingreso:"
         '
         'Txt_correo
@@ -3177,42 +3195,42 @@ Partial Class Empleados
         Me.Txt_correo.Location = New System.Drawing.Point(85, 108)
         Me.Txt_correo.Name = "Txt_correo"
         Me.Txt_correo.Size = New System.Drawing.Size(422, 28)
-        Me.Txt_correo.TabIndex = 23
+        Me.Txt_correo.TabIndex = 15
         '
         'lbl_clase
         '
         Me.lbl_clase.AutoSize = True
-        Me.lbl_clase.Location = New System.Drawing.Point(327, 77)
+        Me.lbl_clase.Location = New System.Drawing.Point(329, 78)
         Me.lbl_clase.Name = "lbl_clase"
         Me.lbl_clase.Size = New System.Drawing.Size(47, 21)
-        Me.lbl_clase.TabIndex = 24
+        Me.lbl_clase.TabIndex = 10
         Me.lbl_clase.Text = "Tipo:"
         '
         'txt_tipo2
         '
         Me.txt_tipo2.Enabled = False
-        Me.txt_tipo2.Location = New System.Drawing.Point(423, 74)
+        Me.txt_tipo2.Location = New System.Drawing.Point(380, 74)
         Me.txt_tipo2.Name = "txt_tipo2"
-        Me.txt_tipo2.Size = New System.Drawing.Size(130, 28)
-        Me.txt_tipo2.TabIndex = 56
+        Me.txt_tipo2.Size = New System.Drawing.Size(173, 28)
+        Me.txt_tipo2.TabIndex = 11
         Me.txt_tipo2.TabStop = False
         '
         'lbl_super
         '
         Me.lbl_super.AutoSize = True
-        Me.lbl_super.Location = New System.Drawing.Point(9, 77)
+        Me.lbl_super.Location = New System.Drawing.Point(9, 78)
         Me.lbl_super.Name = "lbl_super"
         Me.lbl_super.Size = New System.Drawing.Size(70, 21)
-        Me.lbl_super.TabIndex = 23
+        Me.lbl_super.TabIndex = 8
         Me.lbl_super.Text = "Superv.:"
         '
         'correo
         '
         Me.correo.AutoSize = True
-        Me.correo.Location = New System.Drawing.Point(17, 111)
+        Me.correo.Location = New System.Drawing.Point(17, 112)
         Me.correo.Name = "correo"
         Me.correo.Size = New System.Drawing.Size(62, 21)
-        Me.correo.TabIndex = 55
+        Me.correo.TabIndex = 14
         Me.correo.Text = "E-mail:"
         '
         'txt_SALARY
@@ -3221,32 +3239,32 @@ Partial Class Empleados
         Me.txt_SALARY.Location = New System.Drawing.Point(687, 71)
         Me.txt_SALARY.Name = "txt_SALARY"
         Me.txt_SALARY.Size = New System.Drawing.Size(213, 28)
-        Me.txt_SALARY.TabIndex = 21
+        Me.txt_SALARY.TabIndex = 13
         '
         'lbl_puesto
         '
         Me.lbl_puesto.AutoSize = True
         Me.lbl_puesto.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lbl_puesto.Location = New System.Drawing.Point(310, 46)
+        Me.lbl_puesto.Location = New System.Drawing.Point(310, 44)
         Me.lbl_puesto.Name = "lbl_puesto"
         Me.lbl_puesto.Size = New System.Drawing.Size(66, 21)
-        Me.lbl_puesto.TabIndex = 16
+        Me.lbl_puesto.TabIndex = 2
         Me.lbl_puesto.Text = "Puesto:"
         '
         'txt_tipo
         '
-        Me.txt_tipo.Location = New System.Drawing.Point(380, 74)
+        Me.txt_tipo.Location = New System.Drawing.Point(383, 74)
         Me.txt_tipo.Name = "txt_tipo"
-        Me.txt_tipo.Size = New System.Drawing.Size(37, 28)
+        Me.txt_tipo.Size = New System.Drawing.Size(0, 28)
         Me.txt_tipo.TabIndex = 25
         '
         'lbl_sali
         '
         Me.lbl_sali.AutoSize = True
-        Me.lbl_sali.Location = New System.Drawing.Point(615, 77)
+        Me.lbl_sali.Location = New System.Drawing.Point(615, 75)
         Me.lbl_sali.Name = "lbl_sali"
         Me.lbl_sali.Size = New System.Drawing.Size(65, 21)
-        Me.lbl_sali.TabIndex = 19
+        Me.lbl_sali.TabIndex = 12
         Me.lbl_sali.Text = "Salario:"
         '
         'txt_FECHAINGRESO
@@ -3255,11 +3273,12 @@ Partial Class Empleados
         Me.txt_FECHAINGRESO.Location = New System.Drawing.Point(85, 40)
         Me.txt_FECHAINGRESO.Name = "txt_FECHAINGRESO"
         Me.txt_FECHAINGRESO.Size = New System.Drawing.Size(209, 28)
-        Me.txt_FECHAINGRESO.TabIndex = 19
+        Me.txt_FECHAINGRESO.TabIndex = 1
         '
         'Buscar_Super
         '
         Me.Buscar_Super.BackgroundImage = CType(resources.GetObject("Buscar_Super.BackgroundImage"), System.Drawing.Image)
+        Me.Buscar_Super.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Buscar_Super.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
         Me.Buscar_Super.Location = New System.Drawing.Point(264, 74)
         Me.Buscar_Super.Name = "Buscar_Super"
@@ -3272,32 +3291,32 @@ Partial Class Empleados
         '
         Me.txt_PUESTO.Location = New System.Drawing.Point(383, 40)
         Me.txt_PUESTO.Name = "txt_PUESTO"
-        Me.txt_PUESTO.Size = New System.Drawing.Size(37, 28)
-        Me.txt_PUESTO.TabIndex = 20
+        Me.txt_PUESTO.Size = New System.Drawing.Size(0, 28)
+        Me.txt_PUESTO.TabIndex = 4
         '
         'txt_PUESTO2
         '
         Me.txt_PUESTO2.Enabled = False
-        Me.txt_PUESTO2.Location = New System.Drawing.Point(426, 40)
+        Me.txt_PUESTO2.Location = New System.Drawing.Point(380, 40)
         Me.txt_PUESTO2.Name = "txt_PUESTO2"
-        Me.txt_PUESTO2.Size = New System.Drawing.Size(127, 28)
-        Me.txt_PUESTO2.TabIndex = 41
+        Me.txt_PUESTO2.Size = New System.Drawing.Size(173, 28)
+        Me.txt_PUESTO2.TabIndex = 5
         Me.txt_PUESTO2.TabStop = False
         '
         'txt_SUPER2
         '
         Me.txt_SUPER2.Enabled = False
-        Me.txt_SUPER2.Location = New System.Drawing.Point(128, 74)
+        Me.txt_SUPER2.Location = New System.Drawing.Point(85, 74)
         Me.txt_SUPER2.Name = "txt_SUPER2"
-        Me.txt_SUPER2.Size = New System.Drawing.Size(130, 28)
-        Me.txt_SUPER2.TabIndex = 53
+        Me.txt_SUPER2.Size = New System.Drawing.Size(173, 28)
+        Me.txt_SUPER2.TabIndex = 9
         Me.txt_SUPER2.TabStop = False
         '
         'txt_SUPER
         '
         Me.txt_SUPER.Location = New System.Drawing.Point(85, 74)
         Me.txt_SUPER.Name = "txt_SUPER"
-        Me.txt_SUPER.Size = New System.Drawing.Size(37, 28)
+        Me.txt_SUPER.Size = New System.Drawing.Size(0, 28)
         Me.txt_SUPER.TabIndex = 24
         '
         'lbl_depto
@@ -3306,12 +3325,14 @@ Partial Class Empleados
         Me.lbl_depto.Location = New System.Drawing.Point(619, 43)
         Me.lbl_depto.Name = "lbl_depto"
         Me.lbl_depto.Size = New System.Drawing.Size(61, 21)
-        Me.lbl_depto.TabIndex = 18
+        Me.lbl_depto.TabIndex = 6
         Me.lbl_depto.Text = "Depto:"
         '
         'pnl_per
         '
         Me.pnl_per.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pnl_per.Controls.Add(Me.txtCdDomicilio)
+        Me.pnl_per.Controls.Add(Me.Label13)
         Me.pnl_per.Controls.Add(Me.PbSearchEmployee)
         Me.pnl_per.Controls.Add(Me.buscar_ciudad)
         Me.pnl_per.Controls.Add(Me.foto)
@@ -3361,12 +3382,30 @@ Partial Class Empleados
         Me.pnl_per.Location = New System.Drawing.Point(0, 0)
         Me.pnl_per.Margin = New System.Windows.Forms.Padding(2)
         Me.pnl_per.Name = "pnl_per"
-        Me.pnl_per.Size = New System.Drawing.Size(950, 351)
-        Me.pnl_per.TabIndex = 31
+        Me.pnl_per.Size = New System.Drawing.Size(950, 395)
+        Me.pnl_per.TabIndex = 1
+        '
+        'txtCdDomicilio
+        '
+        Me.txtCdDomicilio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtCdDomicilio.Location = New System.Drawing.Point(314, 282)
+        Me.txtCdDomicilio.Name = "txtCdDomicilio"
+        Me.txtCdDomicilio.Size = New System.Drawing.Size(250, 28)
+        Me.txtCdDomicilio.TabIndex = 31
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(171, 286)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(137, 21)
+        Me.Label13.TabIndex = 30
+        Me.Label13.Text = "Ciudad y Estado:"
         '
         'PbSearchEmployee
         '
         Me.PbSearchEmployee.BackgroundImage = CType(resources.GetObject("PbSearchEmployee.BackgroundImage"), System.Drawing.Image)
+        Me.PbSearchEmployee.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PbSearchEmployee.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
         Me.PbSearchEmployee.Location = New System.Drawing.Point(156, 43)
         Me.PbSearchEmployee.Name = "PbSearchEmployee"
@@ -3378,8 +3417,9 @@ Partial Class Empleados
         'buscar_ciudad
         '
         Me.buscar_ciudad.BackgroundImage = CType(resources.GetObject("buscar_ciudad.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_ciudad.Cursor = System.Windows.Forms.Cursors.Hand
         Me.buscar_ciudad.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_ciudad.Location = New System.Drawing.Point(904, 144)
+        Me.buscar_ciudad.Location = New System.Drawing.Point(904, 145)
         Me.buscar_ciudad.Name = "buscar_ciudad"
         Me.buscar_ciudad.Size = New System.Drawing.Size(30, 28)
         Me.buscar_ciudad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3388,6 +3428,7 @@ Partial Class Empleados
         '
         'foto
         '
+        Me.foto.Cursor = System.Windows.Forms.Cursors.Hand
         Me.foto.Image = Global.AdminEmpleados.My.Resources.Resources.photoNobody120
         Me.foto.Location = New System.Drawing.Point(6, 77)
         Me.foto.Name = "foto"
@@ -3401,58 +3442,58 @@ Partial Class Empleados
         Me.cuidad.Location = New System.Drawing.Point(684, 144)
         Me.cuidad.Name = "cuidad"
         Me.cuidad.Size = New System.Drawing.Size(0, 28)
-        Me.cuidad.TabIndex = 8
+        Me.cuidad.TabIndex = 17
         '
         'lbl_rfc
         '
         Me.lbl_rfc.AutoSize = True
-        Me.lbl_rfc.Location = New System.Drawing.Point(624, 185)
+        Me.lbl_rfc.Location = New System.Drawing.Point(624, 182)
         Me.lbl_rfc.Name = "lbl_rfc"
         Me.lbl_rfc.Size = New System.Drawing.Size(56, 21)
-        Me.lbl_rfc.TabIndex = 19
+        Me.lbl_rfc.TabIndex = 20
         Me.lbl_rfc.Text = "R.F.C.:"
         '
         'lbl_ss
         '
         Me.lbl_ss.AutoSize = True
-        Me.lbl_ss.Location = New System.Drawing.Point(583, 217)
+        Me.lbl_ss.Location = New System.Drawing.Point(583, 216)
         Me.lbl_ss.Name = "lbl_ss"
         Me.lbl_ss.Size = New System.Drawing.Size(97, 21)
-        Me.lbl_ss.TabIndex = 20
+        Me.lbl_ss.TabIndex = 24
         Me.lbl_ss.Text = "# Seg. Soc.:"
         '
         'CP
         '
         Me.CP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.CP.Location = New System.Drawing.Point(314, 285)
+        Me.CP.Location = New System.Drawing.Point(686, 282)
         Me.CP.Name = "CP"
         Me.CP.Size = New System.Drawing.Size(250, 28)
-        Me.CP.TabIndex = 18
+        Me.CP.TabIndex = 33
         '
         'LBL_CP
         '
         Me.LBL_CP.AutoSize = True
-        Me.LBL_CP.Location = New System.Drawing.Point(265, 288)
+        Me.LBL_CP.Location = New System.Drawing.Point(637, 286)
         Me.LBL_CP.Name = "LBL_CP"
         Me.LBL_CP.Size = New System.Drawing.Size(43, 21)
-        Me.LBL_CP.TabIndex = 34
+        Me.LBL_CP.TabIndex = 32
         Me.LBL_CP.Text = "C.p.:"
         '
         'txt_CURP
         '
         Me.txt_CURP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_CURP.Location = New System.Drawing.Point(314, 178)
+        Me.txt_CURP.Location = New System.Drawing.Point(314, 179)
         Me.txt_CURP.Name = "txt_CURP"
         Me.txt_CURP.Size = New System.Drawing.Size(250, 28)
-        Me.txt_CURP.TabIndex = 11
+        Me.txt_CURP.TabIndex = 19
         '
         'cuidad2
         '
         Me.cuidad2.Enabled = False
-        Me.cuidad2.Location = New System.Drawing.Point(686, 144)
+        Me.cuidad2.Location = New System.Drawing.Point(686, 145)
         Me.cuidad2.Name = "cuidad2"
         Me.cuidad2.Size = New System.Drawing.Size(211, 28)
-        Me.cuidad2.TabIndex = 60
+        Me.cuidad2.TabIndex = 9
         Me.cuidad2.TabStop = False
         '
         'EC
@@ -3460,63 +3501,63 @@ Partial Class Empleados
         Me.EC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.EC.FormattingEnabled = True
         Me.EC.Items.AddRange(New Object() {"SOLTERO", "CASADO", "DIVORCIADO", "VIUDO", "UNION LIBRE"})
-        Me.EC.Location = New System.Drawing.Point(314, 212)
+        Me.EC.Location = New System.Drawing.Point(314, 213)
         Me.EC.Name = "EC"
         Me.EC.Size = New System.Drawing.Size(250, 29)
-        Me.EC.TabIndex = 14
+        Me.EC.TabIndex = 23
         '
         'Label92
         '
         Me.Label92.AutoSize = True
-        Me.Label92.Location = New System.Drawing.Point(610, 149)
+        Me.Label92.Location = New System.Drawing.Point(574, 149)
         Me.Label92.Name = "Label92"
-        Me.Label92.Size = New System.Drawing.Size(68, 21)
-        Me.Label92.TabIndex = 59
-        Me.Label92.Text = "Ciudad:"
+        Me.Label92.Size = New System.Drawing.Size(106, 21)
+        Me.Label92.TabIndex = 16
+        Me.Label92.Text = "Cd. de Naci.:"
         '
         'txt_SS
         '
         Me.txt_SS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SS.Location = New System.Drawing.Point(686, 214)
+        Me.txt_SS.Location = New System.Drawing.Point(686, 212)
         Me.txt_SS.Name = "txt_SS"
         Me.txt_SS.Size = New System.Drawing.Size(250, 28)
-        Me.txt_SS.TabIndex = 10
+        Me.txt_SS.TabIndex = 25
         '
         'ddl_educacion
         '
         Me.ddl_educacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ddl_educacion.FormattingEnabled = True
         Me.ddl_educacion.Items.AddRange(New Object() {"PRIMARIA", "SECUNDARIA", "PREPARATOIA", "LICENCIATURA"})
-        Me.ddl_educacion.Location = New System.Drawing.Point(686, 282)
+        Me.ddl_educacion.Location = New System.Drawing.Point(314, 350)
         Me.ddl_educacion.Name = "ddl_educacion"
         Me.ddl_educacion.Size = New System.Drawing.Size(250, 29)
-        Me.ddl_educacion.TabIndex = 5
+        Me.ddl_educacion.TabIndex = 39
         '
         'Label54
         '
         Me.Label54.AutoSize = True
-        Me.Label54.Location = New System.Drawing.Point(591, 287)
+        Me.Label54.Location = New System.Drawing.Point(219, 354)
         Me.Label54.Name = "Label54"
         Me.Label54.Size = New System.Drawing.Size(92, 21)
-        Me.Label54.TabIndex = 54
+        Me.Label54.TabIndex = 38
         Me.Label54.Text = "Educacion:"
         '
         'lbl_curp
         '
         Me.lbl_curp.AutoSize = True
-        Me.lbl_curp.Location = New System.Drawing.Point(235, 181)
+        Me.lbl_curp.Location = New System.Drawing.Point(235, 183)
         Me.lbl_curp.Name = "lbl_curp"
         Me.lbl_curp.Size = New System.Drawing.Size(73, 21)
-        Me.lbl_curp.TabIndex = 21
+        Me.lbl_curp.TabIndex = 18
         Me.lbl_curp.Text = "C.U.R.P.:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(606, 251)
+        Me.Label1.Location = New System.Drawing.Point(606, 252)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(72, 21)
-        Me.Label1.TabIndex = 32
+        Me.Label1.TabIndex = 28
         Me.Label1.Text = "Colonia:"
         '
         'colonia
@@ -3525,41 +3566,41 @@ Partial Class Empleados
         Me.colonia.Location = New System.Drawing.Point(687, 248)
         Me.colonia.Name = "colonia"
         Me.colonia.Size = New System.Drawing.Size(250, 28)
-        Me.colonia.TabIndex = 17
+        Me.colonia.TabIndex = 29
         '
         'Label55
         '
         Me.Label55.AutoSize = True
-        Me.Label55.Location = New System.Drawing.Point(212, 321)
+        Me.Label55.Location = New System.Drawing.Point(212, 320)
         Me.Label55.Name = "Label55"
         Me.Label55.Size = New System.Drawing.Size(96, 21)
-        Me.Label55.TabIndex = 57
+        Me.Label55.TabIndex = 34
         Me.Label55.Text = "# Telefono:"
         '
         'domicilio
         '
         Me.domicilio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.domicilio.Location = New System.Drawing.Point(314, 251)
+        Me.domicilio.Location = New System.Drawing.Point(314, 248)
         Me.domicilio.Name = "domicilio"
         Me.domicilio.Size = New System.Drawing.Size(250, 28)
-        Me.domicilio.TabIndex = 16
+        Me.domicilio.TabIndex = 27
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(223, 257)
+        Me.Label2.Location = New System.Drawing.Point(223, 252)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(85, 21)
-        Me.Label2.TabIndex = 31
+        Me.Label2.TabIndex = 26
         Me.Label2.Text = "Domicilio:"
         '
         'txt_RFC
         '
         Me.txt_RFC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_RFC.Location = New System.Drawing.Point(686, 180)
+        Me.txt_RFC.Location = New System.Drawing.Point(686, 178)
         Me.txt_RFC.Name = "txt_RFC"
         Me.txt_RFC.Size = New System.Drawing.Size(250, 28)
-        Me.txt_RFC.TabIndex = 9
+        Me.txt_RFC.TabIndex = 21
         '
         'Celular
         '
@@ -3567,67 +3608,67 @@ Partial Class Empleados
         Me.Celular.Location = New System.Drawing.Point(686, 316)
         Me.Celular.Name = "Celular"
         Me.Celular.Size = New System.Drawing.Size(250, 28)
-        Me.Celular.TabIndex = 12
+        Me.Celular.TabIndex = 37
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(598, 318)
+        Me.Label4.Location = New System.Drawing.Point(598, 320)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(82, 21)
-        Me.Label4.TabIndex = 54
+        Me.Label4.TabIndex = 36
         Me.Label4.Text = "# Celular:"
         '
         'lbl_sex
         '
         Me.lbl_sex.AutoSize = True
-        Me.lbl_sex.Location = New System.Drawing.Point(630, 80)
+        Me.lbl_sex.Location = New System.Drawing.Point(630, 81)
         Me.lbl_sex.Name = "lbl_sex"
         Me.lbl_sex.Size = New System.Drawing.Size(50, 21)
-        Me.lbl_sex.TabIndex = 15
+        Me.lbl_sex.TabIndex = 8
         Me.lbl_sex.Text = "Sexo:"
         '
         'txt_telefono
         '
         Me.txt_telefono.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_telefono.Location = New System.Drawing.Point(314, 319)
+        Me.txt_telefono.Location = New System.Drawing.Point(314, 316)
         Me.txt_telefono.Name = "txt_telefono"
         Me.txt_telefono.Size = New System.Drawing.Size(250, 28)
-        Me.txt_telefono.TabIndex = 13
+        Me.txt_telefono.TabIndex = 35
         '
         'LBL_ESTADOCIVIL
         '
         Me.LBL_ESTADOCIVIL.AutoSize = True
-        Me.LBL_ESTADOCIVIL.Location = New System.Drawing.Point(207, 215)
+        Me.LBL_ESTADOCIVIL.Location = New System.Drawing.Point(207, 217)
         Me.LBL_ESTADOCIVIL.Name = "LBL_ESTADOCIVIL"
         Me.LBL_ESTADOCIVIL.Size = New System.Drawing.Size(101, 21)
-        Me.LBL_ESTADOCIVIL.TabIndex = 25
+        Me.LBL_ESTADOCIVIL.TabIndex = 22
         Me.LBL_ESTADOCIVIL.Text = "Estado Civil:"
         '
         'lbl_fn
         '
         Me.lbl_fn.AutoSize = True
-        Me.lbl_fn.Location = New System.Drawing.Point(182, 117)
+        Me.lbl_fn.Location = New System.Drawing.Point(182, 115)
         Me.lbl_fn.Name = "lbl_fn"
         Me.lbl_fn.Size = New System.Drawing.Size(126, 21)
-        Me.lbl_fn.TabIndex = 16
+        Me.lbl_fn.TabIndex = 10
         Me.lbl_fn.Text = "Fecha de Naci.:"
         '
         'nacion
         '
         Me.nacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.nacion.Location = New System.Drawing.Point(686, 110)
+        Me.nacion.Location = New System.Drawing.Point(686, 111)
         Me.nacion.Name = "nacion"
         Me.nacion.Size = New System.Drawing.Size(250, 28)
-        Me.nacion.TabIndex = 15
+        Me.nacion.TabIndex = 13
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(566, 113)
+        Me.Label3.Location = New System.Drawing.Point(566, 115)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(114, 21)
-        Me.Label3.TabIndex = 30
+        Me.Label3.TabIndex = 12
         Me.Label3.Text = "Nacionalidad:"
         '
         'txt_FECHA
@@ -3636,7 +3677,7 @@ Partial Class Empleados
         Me.txt_FECHA.Location = New System.Drawing.Point(314, 111)
         Me.txt_FECHA.Name = "txt_FECHA"
         Me.txt_FECHA.Size = New System.Drawing.Size(250, 28)
-        Me.txt_FECHA.TabIndex = 6
+        Me.txt_FECHA.TabIndex = 11
         '
         'CB_SEXO
         '
@@ -3646,15 +3687,15 @@ Partial Class Empleados
         Me.CB_SEXO.Location = New System.Drawing.Point(686, 77)
         Me.CB_SEXO.Name = "CB_SEXO"
         Me.CB_SEXO.Size = New System.Drawing.Size(250, 29)
-        Me.CB_SEXO.TabIndex = 4
+        Me.CB_SEXO.TabIndex = 9
         '
         'lbl_nac
         '
         Me.lbl_nac.AutoSize = True
-        Me.lbl_nac.Location = New System.Drawing.Point(194, 148)
+        Me.lbl_nac.Location = New System.Drawing.Point(194, 149)
         Me.lbl_nac.Name = "lbl_nac"
         Me.lbl_nac.Size = New System.Drawing.Size(114, 21)
-        Me.lbl_nac.TabIndex = 18
+        Me.lbl_nac.TabIndex = 14
         Me.lbl_nac.Text = "Enti. de Naci.:"
         '
         'panel7
@@ -3679,7 +3720,7 @@ Partial Class Empleados
         Me.lbl_emp.Location = New System.Drawing.Point(109, 6)
         Me.lbl_emp.Name = "lbl_emp"
         Me.lbl_emp.Size = New System.Drawing.Size(0, 22)
-        Me.lbl_emp.TabIndex = 40
+        Me.lbl_emp.TabIndex = 1
         '
         'label12
         '
@@ -3706,6 +3747,7 @@ Partial Class Empleados
         '
         'CANCEL
         '
+        Me.CANCEL.Cursor = System.Windows.Forms.Cursors.Hand
         Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
         Me.CANCEL.Location = New System.Drawing.Point(199, 0)
         Me.CANCEL.Name = "CANCEL"
@@ -3716,6 +3758,7 @@ Partial Class Empleados
         '
         'SAVE
         '
+        Me.SAVE.Cursor = System.Windows.Forms.Cursors.Hand
         Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
         Me.SAVE.Location = New System.Drawing.Point(148, 0)
         Me.SAVE.Name = "SAVE"
@@ -3730,7 +3773,7 @@ Partial Class Empleados
         Me.txt_EN2.Location = New System.Drawing.Point(314, 145)
         Me.txt_EN2.Name = "txt_EN2"
         Me.txt_EN2.Size = New System.Drawing.Size(214, 28)
-        Me.txt_EN2.TabIndex = 22
+        Me.txt_EN2.TabIndex = 15
         Me.txt_EN2.TabStop = False
         '
         'txt_numero
@@ -3739,7 +3782,7 @@ Partial Class Empleados
         Me.txt_numero.Location = New System.Drawing.Point(75, 43)
         Me.txt_numero.Name = "txt_numero"
         Me.txt_numero.Size = New System.Drawing.Size(80, 28)
-        Me.txt_numero.TabIndex = 0
+        Me.txt_numero.TabIndex = 1
         '
         'txt_EN
         '
@@ -3762,7 +3805,7 @@ Partial Class Empleados
         Me.txt_AM.Location = New System.Drawing.Point(314, 77)
         Me.txt_AM.Name = "txt_AM"
         Me.txt_AM.Size = New System.Drawing.Size(250, 28)
-        Me.txt_AM.TabIndex = 2
+        Me.txt_AM.TabIndex = 7
         '
         'txt_AP
         '
@@ -3770,11 +3813,12 @@ Partial Class Empleados
         Me.txt_AP.Location = New System.Drawing.Point(686, 43)
         Me.txt_AP.Name = "txt_AP"
         Me.txt_AP.Size = New System.Drawing.Size(250, 28)
-        Me.txt_AP.TabIndex = 1
+        Me.txt_AP.TabIndex = 5
         '
         'buscar_EN
         '
         Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_EN.Cursor = System.Windows.Forms.Cursors.Hand
         Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
         Me.buscar_EN.Location = New System.Drawing.Point(534, 145)
         Me.buscar_EN.Name = "buscar_EN"
@@ -3789,34 +3833,34 @@ Partial Class Empleados
         Me.lbl_num.Location = New System.Drawing.Point(2, 46)
         Me.lbl_num.Name = "lbl_num"
         Me.lbl_num.Size = New System.Drawing.Size(77, 21)
-        Me.lbl_num.TabIndex = 11
+        Me.lbl_num.TabIndex = 0
         Me.lbl_num.Text = "Numero:"
         '
         'lbl_ap
         '
         Me.lbl_ap.AutoSize = True
-        Me.lbl_ap.Location = New System.Drawing.Point(570, 46)
+        Me.lbl_ap.Location = New System.Drawing.Point(570, 47)
         Me.lbl_ap.Name = "lbl_ap"
         Me.lbl_ap.Size = New System.Drawing.Size(110, 21)
-        Me.lbl_ap.TabIndex = 12
+        Me.lbl_ap.TabIndex = 4
         Me.lbl_ap.Text = "Apellido Pat.:"
         '
         'lbl_am
         '
         Me.lbl_am.AutoSize = True
-        Me.lbl_am.Location = New System.Drawing.Point(192, 80)
+        Me.lbl_am.Location = New System.Drawing.Point(192, 81)
         Me.lbl_am.Name = "lbl_am"
         Me.lbl_am.Size = New System.Drawing.Size(116, 21)
-        Me.lbl_am.TabIndex = 13
+        Me.lbl_am.TabIndex = 6
         Me.lbl_am.Text = "Apellido Mat.:"
         '
         'lbl_nom
         '
         Me.lbl_nom.AutoSize = True
-        Me.lbl_nom.Location = New System.Drawing.Point(214, 46)
+        Me.lbl_nom.Location = New System.Drawing.Point(214, 47)
         Me.lbl_nom.Name = "lbl_nom"
         Me.lbl_nom.Size = New System.Drawing.Size(94, 21)
-        Me.lbl_nom.TabIndex = 14
+        Me.lbl_nom.TabIndex = 2
         Me.lbl_nom.Text = "Nombre(s):"
         '
         'MenuEmp
@@ -3839,9 +3883,6 @@ Partial Class Empleados
         'datosFamiliaBindingSource
         '
         Me.datosFamiliaBindingSource.DataMember = "Datos_Familia"
-        '
-        'BwEmpleados
-        '
         '
         'Empleados
         '
@@ -4317,4 +4358,6 @@ Partial Class Empleados
     Friend WithEvents TIEMPO As DataGridViewTextBoxColumn
     Friend WithEvents PbSearchEmployee As PictureBox
     Friend WithEvents BwEmpleados As System.ComponentModel.BackgroundWorker
+    Friend WithEvents txtCdDomicilio As TextBox
+    Friend WithEvents Label13 As Label
 End Class

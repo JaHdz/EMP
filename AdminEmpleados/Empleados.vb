@@ -80,6 +80,7 @@ Public Class Empleados
             nacion.Text = Result.Emp_Nacionalidad
             domicilio.Text = Result.Emp_Domicilio
             colonia.Text = Result.Emp_Col
+            txtCdDomicilio.Text = Result.Emp_CiudadEstado
             CP.Text = Result.Emp_CP
             txt_FECHAINGRESO.Text = Result.Emp_FEfectiva.ToShortDateString()
             txt_SALARY.Text = Result.Emp_Salario
@@ -131,27 +132,27 @@ Public Class Empleados
                 CB_SEXO.SelectedIndex = 1
             End If
 
-        If Result.Emp_Sexo = "F" Then
-            CB_SEXO.SelectedIndex = 0
-        End If
+            If Result.Emp_Sexo = "F" Then
+                CB_SEXO.SelectedIndex = 0
+            End If
 
-        txt_activo.Text = If(Result.Emp_Activo = True, "SI", "NO")
+            txt_activo.Text = If(Result.Emp_Activo = True, "SI", "NO")
 
-        If Result.Emp_Activo = True Then
+            If Result.Emp_Activo = True Then
                 txt_baja.Text = ""
                 seg.Checked = False
-            CB_CLIENTE.Checked = False
-            CB_PROV.Checked = False
-            commen.Text = ""
+                CB_CLIENTE.Checked = False
+                CB_PROV.Checked = False
+                commen.Text = ""
 
-            lbl_option.Text = "BAJA"
-            PbOptions.Image = My.Resources.Baja_80px
-        Else
-            txt_baja.Text = Result.Baja.Fecha_Baja.ToShortDateString()
-            lbl_option.Text = "ALTA"
-            PbOptions.Image = My.Resources.Alta_80px
-        End If
-        lbl_option.Visible = True
+                lbl_option.Text = "BAJA"
+                PbOptions.Image = My.Resources.Baja_80px
+            Else
+                txt_baja.Text = Result.Baja.Fecha_Baja.ToShortDateString()
+                lbl_option.Text = "ALTA"
+                PbOptions.Image = My.Resources.Alta_80px
+            End If
+            lbl_option.Visible = True
             PbOptions.Tag = lbl_option.Text
             PbOptions.Visible = True
         End If
@@ -168,8 +169,12 @@ Public Class Empleados
     Private Sub txt_CLASE_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_tipo.KeyPress
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
-    Private Sub txt_SALARY_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SALARY.KeyPress
-        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    Private Sub Txt_SALARY_KeyPress(sender As Object, e As KeyPressEventArgs)
+        If Not txt_SALARY.Text.Contains(".") Then
+            e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
+        Else
+            e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+        End If
     End Sub
     Private Sub txt_SS_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SS.KeyPress
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
@@ -189,9 +194,9 @@ Public Class Empleados
     Private Sub SAVE_Click(sender As Object, e As EventArgs) Handles SAVE.Click
         'Try
         SAVE_F()
-            lbl_emp.Text = ""
-            lbl_emp.Text = txt_numero.Text + " | " + txt_NOM.Text + " " + txt_AP.Text + " " + txt_AM.Text
-            EMPLEADO_ID = txt_numero.Text
+        lbl_emp.Text = ""
+        lbl_emp.Text = txt_numero.Text + " | " + txt_NOM.Text + " " + txt_AP.Text + " " + txt_AM.Text
+        EMPLEADO_ID = txt_numero.Text
         'Catch ex As Exception
         '    MsgBox(ex.Message.ToString, MsgBoxStyle.Critical)
         'End Try
@@ -216,6 +221,7 @@ Public Class Empleados
             InfoEmp.Emp_Nacionalidad = nacion.Text
             InfoEmp.Emp_Domicilio = domicilio.Text
             InfoEmp.Emp_Col = colonia.Text
+            InfoEmp.Emp_CiudadEstado = txtCdDomicilio.Text
             InfoEmp.Emp_CP = CP.Text
             InfoEmp.Emp_FEfectiva = Convert.ToDateTime(txt_FECHAINGRESO.Text)
             InfoEmp.ID_Puesto = Convert.ToInt64(txt_PUESTO.Text)
@@ -434,27 +440,27 @@ Public Class Empleados
     Private Sub OptionPress(sender As Object, e As EventArgs) Handles PbOptions.Click
         'Try
         If txt_numero.Text <> "" Then
-                Select Case PbOptions.Tag
-                    Case "Alta"
-                        objcon.Altas(txt_numero.Text, 1)
-                        MessageBox.Show("Se dio de Alta correctamente a este Empleado")
-                        Llenar()
-                        txt_activo.Text = ""
-                        txt_baja.Text = ""
-                        seg.Checked = True
-                        CB_CLIENTE.Checked = False
-                        CB_PROV.Checked = False
-                    Case "Baja"
-                        objcon.Altas(txt_numero.Text, 0)
-                        objcon.Bajas(txt_numero.Text, 0, commen.Text, seg.Checked, NEmp, CB_PROV.Checked, CB_CLIENTE.Checked)
-                        MessageBox.Show("Se dio de Baja correctamente a este Empleado")
-                        txt_activo.Text = ""
-                        txt_baja.Text = ""
-                        Llenar()
-                End Select
-            Else
-                MessageBox.Show("Numero de Empleado invalido.")
-            End If
+            Select Case PbOptions.Tag
+                Case "Alta"
+                    objcon.Altas(txt_numero.Text, 1)
+                    MessageBox.Show("Se dio de Alta correctamente a este Empleado")
+                    Llenar()
+                    txt_activo.Text = ""
+                    txt_baja.Text = ""
+                    seg.Checked = True
+                    CB_CLIENTE.Checked = False
+                    CB_PROV.Checked = False
+                Case "Baja"
+                    objcon.Altas(txt_numero.Text, 0)
+                    objcon.Bajas(txt_numero.Text, 0, commen.Text, seg.Checked, NEmp, CB_PROV.Checked, CB_CLIENTE.Checked)
+                    MessageBox.Show("Se dio de Baja correctamente a este Empleado")
+                    txt_activo.Text = ""
+                    txt_baja.Text = ""
+                    Llenar()
+            End Select
+        Else
+            MessageBox.Show("Numero de Empleado invalido.")
+        End If
         'Catch ex As Exception
         '    MsgBox(ex.Message.ToString, MsgBoxStyle.Critical)
         'End Try
@@ -510,11 +516,11 @@ Public Class Empleados
     Public Sub Limpiartxt(ByVal form As Windows.Forms.Form)
         'Try
         txt_activo.Text = ""
-            txt_baja.Text = ""
-            lbl_option.Visible = False
-            PbOptions.Visible = False
-            PbOptions.Tag = ""
-            pnl_save.Text = ""
+        txt_baja.Text = ""
+        lbl_option.Visible = False
+        PbOptions.Visible = False
+        PbOptions.Tag = ""
+        pnl_save.Text = ""
         'Catch ex As Exception
         '    MsgBox(ex.Message.ToString, MsgBoxStyle.Critical)
         'End Try
@@ -539,39 +545,6 @@ Public Class Empleados
 
     End Sub
 
-    'Private Sub HideTab(TabName As String)
-    '    If TabName <> "All" Then
-    '        If TabName <> "Datos Personales" Then
-    '            For Each SpedcificTab As TabPage In MenuEmp.TabPages
-    '                If SpedcificTab.Text = TabName Then
-    '                    TabCollection.Add(TabName, SpedcificTab)
-    '                    MenuEmp.TabPages.Remove(SpedcificTab)
-    '                    Exit For
-    '                End If
-    '            Next
-    '        End If
-    '    Else
-    '        For Each Tab As TabPage In MenuEmp.TabPages
-    '            If Tab.Text <> "Datos Personales" Then
-    '                TabCollection.Add(Tab.Text, Tab)
-    '                MenuEmp.TabPages.Remove(Tab)
-    '            End If
-    '        Next
-    '    End If
-    'End Sub
-    'Private Sub ShowTab(TabName As String)
-    '    If TabName <> "All" Then
-    '        If TabCollection.ContainsKey(TabName) Then
-    '            MenuEmp.TabPages.Add(TabCollection(TabName))
-    '            TabCollection.Remove(TabName)
-    '        End If
-    '    Else
-    '        For Each TabItem In TabCollection
-    '            MenuEmp.TabPages.Add(TabItem.Value)
-    '            TabCollection.Remove(TabItem.Key)
-    '        Next
-    '    End If
-    'End Sub
     Sub cargarImagen(control As PictureBox)
         Dim IMAGEN As String
         Me.OpenFileDialog1.ShowDialog()
@@ -594,11 +567,12 @@ Public Class Empleados
     Private Sub ln_img_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         cargarImagen(foto)
     End Sub
-    Private Sub txt_antSALARIO_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_antSALARIO.KeyPress
-        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
-    End Sub
     Private Sub txt_OTCantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_OTCantidad.KeyPress
-        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+        If Not txt_OTCantidad.Text.Contains(".") Then
+            e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
+        Else
+            e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+        End If
     End Sub
     Private Sub txt_GFRenta_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
@@ -973,28 +947,32 @@ Public Class Empleados
     End Sub
     Private Sub btn_esSAVE_Click(sender As Object, e As EventArgs) Handles btn_esSAVE.Click
         If EXISTE = True Then
-            If txt_esAM.Text = "" Or cb_esSexo.SelectedIndex = -1 Or txt_esAP.Text = "" Or txt_esFN.Text = "" Or txt_esNacion.Text = "" Or txt_esName.Text = "" Then
-                MessageBox.Show("Favor de llenar todos los campos")
+            If dgv_esposa.Rows.Count > 0 Then
+                MessageBox.Show("Solo se puede agregar un registro a este campo.")
             Else
-                Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}, {"Type", "CONYUGE"}, {"Name", txt_esName.Text}, {"FLastname", txt_esAP.Text},
-                    {"SLastname", txt_esAM.Text}, {"Nationality", txt_esNacion.Text}, {"Birthday", txt_esFN.Text}, {"Sex", cb_esSexo.SelectedItem.ToString()}, {"CivilStatus", EC.SelectedItem.ToString}}
-                Dim Wait As New Wait With {
-                        .Parameters = ldParameters,
-                        .Operation = BackgroundOperations.AddFamilyMember
-                    }
-                Wait.ShowDialog()
-                Dim loResult = Wait.Result
-                Wait.Close()
-                If loResult = False Then
-                    MessageBox.Show("Este registro ya Existe.")
+                If txt_esAM.Text = "" Or cb_esSexo.SelectedIndex = -1 Or txt_esAP.Text = "" Or txt_esFN.Text = "" Or txt_esNacion.Text = "" Or txt_esName.Text = "" Then
+                    MessageBox.Show("Favor de llenar todos los campos")
+                Else
+                    Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}, {"Type", "CONYUGE"}, {"Name", txt_esName.Text}, {"FLastname", txt_esAP.Text},
+                        {"SLastname", txt_esAM.Text}, {"Nationality", txt_esNacion.Text}, {"Birthday", txt_esFN.Text}, {"Sex", cb_esSexo.SelectedItem.ToString()}, {"CivilStatus", EC.SelectedItem.ToString}}
+                    Dim Wait As New Wait With {
+                            .Parameters = ldParameters,
+                            .Operation = BackgroundOperations.AddFamilyMember
+                        }
+                    Wait.ShowDialog()
+                    Dim loResult = Wait.Result
+                    Wait.Close()
+                    If loResult = False Then
+                        MessageBox.Show("Este registro ya Existe.")
+                    End If
+                    txt_esAM.Text = ""
+                    txt_esAP.Text = ""
+                    txt_esName.Text = ""
+                    txt_esFN.Text = ""
+                    txt_esNacion.Text = ""
+                    cb_esSexo.SelectedIndex = -1
+                    llenarFamilia()
                 End If
-                txt_esAM.Text = ""
-                txt_esAP.Text = ""
-                txt_esName.Text = ""
-                txt_esFN.Text = ""
-                txt_esNacion.Text = ""
-                cb_esSexo.SelectedIndex = -1
-                llenarFamilia()
             End If
         End If
     End Sub
@@ -1441,6 +1419,7 @@ Public Class Empleados
             llenarContacto()
             llenarEnfermedades()
             llenarSE()
+            pnl_estatus.Visible = True
         Else
             Dim Wait As New Wait With {
             .Operation = BackgroundOperations.GetLatestEmployeeNumber
@@ -1449,14 +1428,17 @@ Public Class Empleados
             txt_numero.Text = Wait.Result.ToString()
             Wait.Close()
         End If
+        pnl_estatus.Visible = False
         txt_NOM.Focus()
     End Sub
 
-    Private Sub BwEmpleados_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BwEmpleados.DoWork
-
-    End Sub
-
-    Private Sub BwEmpleados_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BwEmpleados.RunWorkerCompleted
-
+    Private Sub TxtMoney_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_GFCole.KeyPress, Txt_GFDesp.KeyPress, txt_GFRenta.KeyPress, txt_GFServ.KeyPress,
+                                                                                     txt_OTCantidad.KeyPress, txt_antSALARIO.KeyPress, txt_SALARY.KeyPress
+        Dim TxtBoxMoney As TextBox = CType(sender, TextBox)
+        If Not TxtBoxMoney.Text.Contains(".") Then
+            e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
+        Else
+            e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+        End If
     End Sub
 End Class

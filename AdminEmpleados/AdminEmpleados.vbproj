@@ -143,7 +143,6 @@
       <DependentUpon>ASSIGNED_EQUIPMENT.xsd</DependentUpon>
     </Compile>
     <Compile Include="Classes\Email.vb" />
-    <Compile Include="Classes\Page.vb" />
     <Compile Include="Reports\Datasets\RECEIVER.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

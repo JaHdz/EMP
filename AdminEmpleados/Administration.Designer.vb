@@ -86,6 +86,10 @@ Partial Class Administration
         Me.pnlUsuarios = New System.Windows.Forms.Panel()
         Me.dgv_eq = New System.Windows.Forms.DataGridView()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.lblDpto = New System.Windows.Forms.Label()
+        Me.pbSearchDpto = New System.Windows.Forms.PictureBox()
+        Me.txtDpto = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_eqcost = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.txt_eqdesc = New System.Windows.Forms.TextBox()
@@ -202,6 +206,7 @@ Partial Class Administration
         Me.pnlUsuarios.SuspendLayout()
         CType(Me.dgv_eq, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
+        CType(Me.pbSearchDpto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
         CType(Me.cancel_eq, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.save_eq, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -862,6 +867,10 @@ Partial Class Administration
         'Panel5
         '
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel5.Controls.Add(Me.lblDpto)
+        Me.Panel5.Controls.Add(Me.pbSearchDpto)
+        Me.Panel5.Controls.Add(Me.txtDpto)
+        Me.Panel5.Controls.Add(Me.Label1)
         Me.Panel5.Controls.Add(Me.txt_eqcost)
         Me.Panel5.Controls.Add(Me.Label21)
         Me.Panel5.Controls.Add(Me.txt_eqdesc)
@@ -877,10 +886,46 @@ Partial Class Administration
         Me.Panel5.Size = New System.Drawing.Size(950, 217)
         Me.Panel5.TabIndex = 75
         '
+        'lblDpto
+        '
+        Me.lblDpto.Location = New System.Drawing.Point(520, 53)
+        Me.lblDpto.Name = "lblDpto"
+        Me.lblDpto.Size = New System.Drawing.Size(10, 13)
+        Me.lblDpto.TabIndex = 101
+        Me.lblDpto.Text = "Label2"
+        '
+        'pbSearchDpto
+        '
+        Me.pbSearchDpto.BackgroundImage = CType(resources.GetObject("pbSearchDpto.BackgroundImage"), System.Drawing.Image)
+        Me.pbSearchDpto.Image = CType(resources.GetObject("pbSearchDpto.Image"), System.Drawing.Image)
+        Me.pbSearchDpto.Location = New System.Drawing.Point(714, 53)
+        Me.pbSearchDpto.Name = "pbSearchDpto"
+        Me.pbSearchDpto.Size = New System.Drawing.Size(30, 28)
+        Me.pbSearchDpto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbSearchDpto.TabIndex = 100
+        Me.pbSearchDpto.TabStop = False
+        '
+        'txtDpto
+        '
+        Me.txtDpto.Enabled = False
+        Me.txtDpto.Location = New System.Drawing.Point(536, 53)
+        Me.txtDpto.Name = "txtDpto"
+        Me.txtDpto.Size = New System.Drawing.Size(172, 28)
+        Me.txtDpto.TabIndex = 98
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(405, 57)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(125, 21)
+        Me.Label1.TabIndex = 99
+        Me.Label1.Text = "Departamento:"
+        '
         'txt_eqcost
         '
         Me.txt_eqcost.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_eqcost.Location = New System.Drawing.Point(146, 134)
+        Me.txt_eqcost.Location = New System.Drawing.Point(132, 134)
         Me.txt_eqcost.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_eqcost.Name = "txt_eqcost"
         Me.txt_eqcost.Size = New System.Drawing.Size(252, 28)
@@ -889,7 +934,7 @@ Partial Class Administration
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(69, 137)
+        Me.Label21.Location = New System.Drawing.Point(69, 138)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(58, 21)
         Me.Label21.TabIndex = 97
@@ -898,7 +943,7 @@ Partial Class Administration
         'txt_eqdesc
         '
         Me.txt_eqdesc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_eqdesc.Location = New System.Drawing.Point(146, 92)
+        Me.txt_eqdesc.Location = New System.Drawing.Point(132, 92)
         Me.txt_eqdesc.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_eqdesc.Name = "txt_eqdesc"
         Me.txt_eqdesc.Size = New System.Drawing.Size(252, 28)
@@ -907,7 +952,7 @@ Partial Class Administration
         'txt_eqcod
         '
         Me.txt_eqcod.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_eqcod.Location = New System.Drawing.Point(146, 50)
+        Me.txt_eqcod.Location = New System.Drawing.Point(132, 53)
         Me.txt_eqcod.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_eqcod.Name = "txt_eqcod"
         Me.txt_eqcod.Size = New System.Drawing.Size(252, 28)
@@ -916,7 +961,7 @@ Partial Class Administration
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(29, 99)
+        Me.Label5.Location = New System.Drawing.Point(29, 96)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(102, 21)
         Me.Label5.TabIndex = 88
@@ -1547,13 +1592,13 @@ Partial Class Administration
         '
         Me.UPDATETE.HeaderText = "Baja"
         Me.UPDATETE.Name = "UPDATETE"
-        Me.UPDATETE.Visible = False
         '
         'ID_TE
         '
         Me.ID_TE.DataPropertyName = "ID_TE"
         Me.ID_TE.HeaderText = "ID"
         Me.ID_TE.Name = "ID_TE"
+        Me.ID_TE.Visible = False
         '
         'Codigote
         '
@@ -1575,6 +1620,7 @@ Partial Class Administration
         Me.Estatuste.HeaderText = "ESTATUS"
         Me.Estatuste.Name = "Estatuste"
         Me.Estatuste.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Estatuste.Visible = False
         Me.Estatuste.Width = 200
         '
         'Panel14
@@ -1772,6 +1818,7 @@ Partial Class Administration
         CType(Me.dgv_eq, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
+        CType(Me.pbSearchDpto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         CType(Me.cancel_eq, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1948,11 +1995,6 @@ Partial Class Administration
     Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
     Friend WithEvents Name As DataGridViewTextBoxColumn
     Friend WithEvents ActivoS As DataGridViewTextBoxColumn
-    Friend WithEvents UPDATETE As DataGridViewImageColumn
-    Friend WithEvents ID_TE As DataGridViewTextBoxColumn
-    Friend WithEvents Codigote As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcionte As DataGridViewTextBoxColumn
-    Friend WithEvents Estatuste As DataGridViewTextBoxColumn
     Friend WithEvents pnlCapacitaciones As Panel
     Friend WithEvents pnlDepartamentos As Panel
     Friend WithEvents pnlUsuarios As Panel
@@ -1961,6 +2003,15 @@ Partial Class Administration
     Friend WithEvents PnlSupervisores As Panel
     Friend WithEvents PnlTipoEmpleados As Panel
     Friend WithEvents PnlUser As Panel
+    Friend WithEvents UPDATETE As DataGridViewImageColumn
+    Friend WithEvents ID_TE As DataGridViewTextBoxColumn
+    Friend WithEvents Codigote As DataGridViewTextBoxColumn
+    Friend WithEvents Descripcionte As DataGridViewTextBoxColumn
+    Friend WithEvents Estatuste As DataGridViewTextBoxColumn
+    Friend WithEvents pbSearchDpto As PictureBox
+    Friend WithEvents txtDpto As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lblDpto As Label
     Friend WithEvents UPDATEEQ As DataGridViewImageColumn
     Friend WithEvents ID_Equipo As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn

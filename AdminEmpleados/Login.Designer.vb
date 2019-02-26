@@ -144,6 +144,7 @@ Partial Class Login
         Me.chkRecordar.TabIndex = 33
         Me.chkRecordar.Text = "¿Recordar datos de inicio?"
         Me.chkRecordar.UseVisualStyleBackColor = True
+        Me.chkRecordar.Visible = False
         '
         'lnk_Password
         '
@@ -156,6 +157,7 @@ Partial Class Login
         Me.lnk_Password.TabStop = True
         Me.lnk_Password.Text = "Olvide mi contraseña"
         Me.lnk_Password.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lnk_Password.Visible = False
         '
         'btn_login
         '

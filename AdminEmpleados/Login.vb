@@ -37,6 +37,7 @@
         If user.Text = "" Or pass.Text = "" Then
             MessageBox.Show("Debe llenar todos los campos")
         Else
+            Dim en = New Consultas().Encriptar(pass.Text)
             Dim ldParameters As New Dictionary(Of String, Object) From {{"Username", user.Text}, {"Password", pass.Text}}
             Dim Wait As New Wait With {
                 .Parameters = ldParameters,
@@ -49,7 +50,7 @@
                 MessageBox.Show("Datos incorrectos")
             Else
                 Dim Principal As New Principal
-                Principal.NEmp = Convert.ToInt64(loResult("User"))
+                Principal.NEmp = loResult("User")
                 Principal.NName = loResult("Name")
                 If chkRecordar.Checked Then
                     If My.Settings.LastDate = Date.MinValue Then
@@ -59,6 +60,12 @@
                         My.Settings.RememberMe = True
                         My.Settings.Save()
                     End If
+                Else
+                    My.Settings.Username = Nothing
+                    My.Settings.Password = Nothing
+                    My.Settings.LastDate = Nothing
+                    My.Settings.RememberMe = False
+                    My.Settings.Save()
                 End If
                 Wait.Close()
                 Me.Hide()
@@ -190,5 +197,15 @@
             btn_login.PerformClick()
         End If
 
+    End Sub
+
+    Private Sub user_TextChanged(sender As Object, e As EventArgs) Handles user.TextChanged
+        If user.TextLength > 3 And user.Text.ToUpper() <> "ADMIN" Then
+            lnk_Password.Visible = True
+            chkRecordar.Visible = True
+        Else
+            lnk_Password.Visible = False
+            chkRecordar.Visible = False
+        End If
     End Sub
 End Class

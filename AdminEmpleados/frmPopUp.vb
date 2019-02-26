@@ -10,10 +10,15 @@
     End Sub
 
     Private Sub Btn_esSAVE_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
-        Dim bs As New BindingSource
-        bs.DataSource = dt
-        bs.Filter = dt.Columns(1).ColumnName + " like '" + txt_codi.Text + "%'"
-        dgv_Pop.DataSource = bs
+        If dt.Rows.Count > 0 Then
+            Dim bs As New BindingSource
+            bs.DataSource = dt
+            bs.Filter = dt.Columns(1).ColumnName + " like '" + txt_codi.Text + "%'"
+            dgv_Pop.DataSource = bs
+        Else
+            MessageBox.Show("No se puede filtrar ya que no existen registros")
+        End If
+
     End Sub
 
     Private Sub PictureBox9_Click(sender As Object, e As EventArgs) Handles btn_salir.Click
