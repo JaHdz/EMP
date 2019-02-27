@@ -57,8 +57,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=MX1018-PF15YZS7;Initial Catalog=EmpleadosDB;Persist Security Info=Tru"& _ 
-            "e;User ID=sa;Password=Techno2k18")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=TURING;Initial Catalog=EmpleadosDB;Persist Security Info=True;User ID"& _ 
+            "=developer;Password=P@$$w0rd")>  _
         Public ReadOnly Property EmpleadosDBConnectionString() As String
             Get
                 Return CType(Me("EmpleadosDBConnectionString"),String)

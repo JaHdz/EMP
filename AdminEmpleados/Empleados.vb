@@ -193,8 +193,27 @@ Public Class Empleados
     End Function
     Private Sub SAVE_Click(sender As Object, e As EventArgs) Handles SAVE.Click
         'Try
+        For Each ctrl In pnl_per.Controls
+            If (ctrl.GetType() Is GetType(TextBox)) Then
+                Dim txt As TextBox = CType(ctrl, TextBox)
+                If String.IsNullOrWhiteSpace(txt.Text) Then
+                    MessageBox.Show("Favor de llenar todos los campos en la seccion 'Personales'")
+                    Exit Sub
+                End If
+            End If
+        Next
+
+        For Each ctrl In pnl_cont.Controls
+            If (ctrl.GetType() Is GetType(TextBox)) Then
+                Dim txt As TextBox = CType(ctrl, TextBox)
+                If String.IsNullOrWhiteSpace(txt.Text) Then
+                    MessageBox.Show("Favor de llenar todos los campos en la seccion 'Contratacion'")
+                    Exit Sub
+                End If
+            End If
+        Next
         SAVE_F()
-        lbl_emp.Text = ""
+            lbl_emp.Text = ""
         lbl_emp.Text = txt_numero.Text + " | " + txt_NOM.Text + " " + txt_AP.Text + " " + txt_AM.Text
         EMPLEADO_ID = txt_numero.Text
         'Catch ex As Exception

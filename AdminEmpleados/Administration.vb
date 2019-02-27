@@ -29,8 +29,14 @@
         End If
     End Sub
 
-    Private Sub CANCEL_Click(sender As Object, e As EventArgs) Handles CANCEL.Click
-        Me.Close()
+    Private Sub CANCEL_Click(sender As Object, e As EventArgs) Handles CANCEL.Click, PictureBox2.Click, cancel_code.Click, cancel_eq.Click, CANCEL_EVAL.Click, btn_CancelPuesto.Click,
+                                                                       btn_cancelsuper.Click, pb_cancelTE.Click
+        For Each ctrl In Me.Controls
+            If (ctrl.GetType() Is GetType(TextBox)) Then
+                Dim txt As TextBox = CType(ctrl, TextBox)
+                txt.Text = ""
+            End If
+        Next
     End Sub
 
     Private Sub tab_users_Click(sender As Object, e As EventArgs) Handles tab_users.Click
@@ -249,9 +255,9 @@
                                         MessageBox.Show("No se puede eliminar este equipo ya que fue asignado a uno o varios empleados")
                                     End If
                                 Else
-                                    If MessageBox.Show("Este equipo ya esta dado de baja, Deseas activarlo nuevamente?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                        'actualizar el registro para activarlo
-                                    End If
+                                    'If MessageBox.Show("Este equipo ya esta dado de baja, Deseas activarlo nuevamente?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+                                    '    'actualizar el registro para activarlo
+                                    'End If
                                 End If
                             End If
                     End Select

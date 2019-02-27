@@ -5,7 +5,13 @@ Public Class Principal
     Private Y As Integer
     Public NEmp As String
     Public NName As String
+    Private CurrentMenu As New Dictionary(Of String, Form)
+    Private SelectedOption As String = ""
+    Private CurrentOption As String = ""
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadMenu()
+        Dim x = PNL_INFO.Controls
+        SelectedOption = "Empleados"
         btn_emp.PerformClick()
         lbl_user.Text = NEmp + " | " + NName
     End Sub
@@ -39,16 +45,52 @@ Public Class Principal
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
+    Private Sub LoadMenu()
+        For i = 0 To 5
+            Dim f As New Form
+            Dim fName As String = ""
+            Select Case i
+                Case 0
+                    f = New Empleados(NEmp, NName) With {.TopLevel = False, .AutoSize = False}
+                    fName = "Empleados"
+                Case 1
+                    f = New Equipo(NEmp, NName) With {.TopLevel = False, .AutoSize = False}
+                    fName = "Equipo"
+                Case 2
+                    f = New Capacitaciones(NEmp) With {.TopLevel = False, .AutoSize = False}
+                    fName = "Capacitaciones"
+                Case 3
+                    f = New Evaluaciones(NEmp) With {.TopLevel = False, .AutoSize = False}
+                    fName = "Evaluaciones"
+                Case 4
+                    f = New Examenes_Medicos(NEmp) With {.TopLevel = False, .AutoSize = False}
+                    fName = "Examenes_Medicos"
+                Case 5
+                    f = New Administration(NEmp) With {.TopLevel = False, .AutoSize = False}
+                    fName = "Administration"
+            End Select
+            CurrentMenu.Add(fName, f)
+            PNL_INFO.Controls.Add(f)
+        Next
+    End Sub
+
+    Private Sub MenuShow()
+        If SelectedOption <> CurrentOption Then
+            CurrentMenu(SelectedOption).Show()
+            Try
+                CurrentMenu(CurrentOption).Hide()
+            Catch
+            End Try
+            CurrentOption = SelectedOption
+            SelectedOption = ""
+        End If
+    End Sub
+
     Private Sub Btn_emp_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btn_emp.Click
         Dim Wait As Wait = New Wait()
         Wait.Show()
-        'Application.DoEvents()
-        If PNL_INFO.Controls.Count > 0 Then
-            PNL_INFO.Controls.RemoveAt(PNL_INFO.Controls.Count - 1)
-        End If
-        Dim f As New Empleados(NEmp, NName) With {.TopLevel = False, .AutoSize = False}
-        PNL_INFO.Controls.Add(f)
-        f.Show()
+        SelectedOption = "Empleados"
+        MenuShow()
         Wait.Close()
         SelectButton(sender)
     End Sub
@@ -57,13 +99,8 @@ Public Class Principal
         SelectButton(sender)
         Dim Wait As Wait = New Wait()
         Wait.Show()
-        'Application.DoEvents()
-        If PNL_INFO.Controls.Count > 0 Then
-            PNL_INFO.Controls.RemoveAt(PNL_INFO.Controls.Count - 1)
-        End If
-        Dim f As New Equipo(NEmp, NName) With {.TopLevel = False, .AutoSize = False}
-        PNL_INFO.Controls.Add(f)
-        f.Show()
+        SelectedOption = "Equipo"
+        MenuShow()
         Wait.Close()
 
     End Sub
@@ -72,13 +109,8 @@ Public Class Principal
         SelectButton(sender)
         Dim Wait As Wait = New Wait()
         Wait.Show()
-        'Application.DoEvents()
-        If PNL_INFO.Controls.Count > 0 Then
-            PNL_INFO.Controls.RemoveAt(PNL_INFO.Controls.Count - 1)
-        End If
-        Dim f As New Capacitaciones(NEmp) With {.TopLevel = False, .AutoSize = False}
-        PNL_INFO.Controls.Add(f)
-        f.Show()
+        SelectedOption = "Capacitaciones"
+        MenuShow()
         Wait.Close()
 
     End Sub
@@ -87,13 +119,8 @@ Public Class Principal
         SelectButton(sender)
         Dim Wait As Wait = New Wait()
         Wait.Show()
-        'Application.DoEvents()
-        If PNL_INFO.Controls.Count > 0 Then
-            PNL_INFO.Controls.RemoveAt(PNL_INFO.Controls.Count - 1)
-        End If
-        Dim f As New Evaluaciones(NEmp) With {.TopLevel = False, .AutoSize = False}
-        PNL_INFO.Controls.Add(f)
-        f.Show()
+        SelectedOption = "Evaluaciones"
+        MenuShow()
         Wait.Close()
 
     End Sub
@@ -102,13 +129,8 @@ Public Class Principal
         SelectButton(sender)
         Dim Wait As Wait = New Wait()
         Wait.Show()
-        'Application.DoEvents()
-        If PNL_INFO.Controls.Count > 0 Then
-            PNL_INFO.Controls.RemoveAt(PNL_INFO.Controls.Count - 1)
-        End If
-        Dim f As New Examenes_Medicos(NEmp) With {.TopLevel = False, .AutoSize = False}
-        PNL_INFO.Controls.Add(f)
-        f.Show()
+        SelectedOption = "Examenes_Medicos"
+        MenuShow()
         Wait.Close()
 
     End Sub
@@ -117,15 +139,9 @@ Public Class Principal
         SelectButton(sender)
         Dim Wait As Wait = New Wait()
         Wait.Show()
-        'Application.DoEvents()
-        If PNL_INFO.Controls.Count > 0 Then
-            PNL_INFO.Controls.RemoveAt(PNL_INFO.Controls.Count - 1)
-        End If
-        Dim f As New Administration(NEmp) With {.TopLevel = False, .AutoSize = False}
-        PNL_INFO.Controls.Add(f)
-        f.Show()
+        SelectedOption = "Administration"
+        MenuShow()
         Wait.Close()
-
     End Sub
 
     Private Sub SelectButton(btn As Button)
@@ -143,5 +159,11 @@ Public Class Principal
         Next
     End Sub
 
-
+    Private Sub BTN_CERRARSESION_Click(sender As Object, e As EventArgs) Handles BTN_CERRARSESION.Click
+        If MessageBox.Show("¿Desea cerrar sesion?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.Yes Then
+            Dim Login As New Login
+            Login.Show()
+            Close()
+        End If
+    End Sub
 End Class

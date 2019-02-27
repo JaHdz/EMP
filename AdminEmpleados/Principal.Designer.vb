@@ -25,6 +25,8 @@ Partial Class Principal
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Principal))
         Me.PNL_INFO = New System.Windows.Forms.Panel()
         Me.header = New System.Windows.Forms.Panel()
+        Me.min = New System.Windows.Forms.PictureBox()
+        Me.cerrar = New System.Windows.Forms.PictureBox()
         Me.Lbl_Title = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Menu = New System.Windows.Forms.Panel()
@@ -36,14 +38,13 @@ Partial Class Principal
         Me.BTN_EQ = New System.Windows.Forms.Button()
         Me.btn_emp = New System.Windows.Forms.Button()
         Me.lbl_user = New System.Windows.Forms.Label()
-        Me.min = New System.Windows.Forms.PictureBox()
-        Me.cerrar = New System.Windows.Forms.PictureBox()
+        Me.BTN_CERRARSESION = New System.Windows.Forms.Button()
         Me.header.SuspendLayout()
+        CType(Me.min, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Menu.SuspendLayout()
         CType(Me.Pb_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.min, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PNL_INFO
@@ -69,6 +70,30 @@ Partial Class Principal
         Me.header.Name = "header"
         Me.header.Size = New System.Drawing.Size(1200, 30)
         Me.header.TabIndex = 5
+        '
+        'min
+        '
+        Me.min.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.min.Image = Global.AdminEmpleados.My.Resources.Resources.Minimize_80px
+        Me.min.Location = New System.Drawing.Point(1142, 3)
+        Me.min.Margin = New System.Windows.Forms.Padding(2)
+        Me.min.Name = "min"
+        Me.min.Size = New System.Drawing.Size(25, 22)
+        Me.min.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.min.TabIndex = 10
+        Me.min.TabStop = False
+        '
+        'cerrar
+        '
+        Me.cerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cerrar.Image = Global.AdminEmpleados.My.Resources.Resources.Close_80px
+        Me.cerrar.Location = New System.Drawing.Point(1171, 3)
+        Me.cerrar.Margin = New System.Windows.Forms.Padding(2)
+        Me.cerrar.Name = "cerrar"
+        Me.cerrar.Size = New System.Drawing.Size(25, 22)
+        Me.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.cerrar.TabIndex = 9
+        Me.cerrar.TabStop = False
         '
         'Lbl_Title
         '
@@ -96,6 +121,7 @@ Partial Class Principal
         Me.Menu.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Menu.BackColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(209, Byte), Integer), CType(CType(210, Byte), Integer))
+        Me.Menu.Controls.Add(Me.BTN_CERRARSESION)
         Me.Menu.Controls.Add(Me.Pb_Logo)
         Me.Menu.Controls.Add(Me.BTN_ADMIN)
         Me.Menu.Controls.Add(Me.BTN_MED)
@@ -248,29 +274,24 @@ Partial Class Principal
         Me.lbl_user.TabIndex = 8
         Me.lbl_user.Text = "Usuario:"
         '
-        'min
+        'BTN_CERRARSESION
         '
-        Me.min.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.min.Image = Global.AdminEmpleados.My.Resources.Resources.Minimize_80px
-        Me.min.Location = New System.Drawing.Point(1142, 3)
-        Me.min.Margin = New System.Windows.Forms.Padding(2)
-        Me.min.Name = "min"
-        Me.min.Size = New System.Drawing.Size(25, 22)
-        Me.min.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.min.TabIndex = 10
-        Me.min.TabStop = False
-        '
-        'cerrar
-        '
-        Me.cerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cerrar.Image = Global.AdminEmpleados.My.Resources.Resources.Close_80px
-        Me.cerrar.Location = New System.Drawing.Point(1171, 3)
-        Me.cerrar.Margin = New System.Windows.Forms.Padding(2)
-        Me.cerrar.Name = "cerrar"
-        Me.cerrar.Size = New System.Drawing.Size(25, 22)
-        Me.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.cerrar.TabIndex = 9
-        Me.cerrar.TabStop = False
+        Me.BTN_CERRARSESION.FlatAppearance.BorderSize = 0
+        Me.BTN_CERRARSESION.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
+        Me.BTN_CERRARSESION.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTN_CERRARSESION.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_CERRARSESION.ForeColor = System.Drawing.Color.Black
+        Me.BTN_CERRARSESION.Location = New System.Drawing.Point(0, 401)
+        Me.BTN_CERRARSESION.Margin = New System.Windows.Forms.Padding(2)
+        Me.BTN_CERRARSESION.Name = "BTN_CERRARSESION"
+        Me.BTN_CERRARSESION.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.BTN_CERRARSESION.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.BTN_CERRARSESION.Size = New System.Drawing.Size(224, 46)
+        Me.BTN_CERRARSESION.TabIndex = 8
+        Me.BTN_CERRARSESION.Text = "CERRAR SESION"
+        Me.BTN_CERRARSESION.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BTN_CERRARSESION.UseCompatibleTextRendering = True
+        Me.BTN_CERRARSESION.UseVisualStyleBackColor = True
         '
         'Principal
         '
@@ -290,11 +311,11 @@ Partial Class Principal
         Me.Text = "EASY - Employee Administrator System"
         Me.header.ResumeLayout(False)
         Me.header.PerformLayout()
+        CType(Me.min, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cerrar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Menu.ResumeLayout(False)
         CType(Me.Pb_Logo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.min, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -315,4 +336,5 @@ Partial Class Principal
     Friend WithEvents PictureBox1 As PictureBox
     Private WithEvents min As PictureBox
     Private WithEvents cerrar As PictureBox
+    Private WithEvents BTN_CERRARSESION As Button
 End Class

@@ -96,7 +96,12 @@
     End Sub
 
     Private Sub CANCEL_Click(sender As Object, e As EventArgs) Handles CANCEL.Click
-        Me.Close()
+        txt_numero.Text = ""
+        CAP.Text = ""
+        CAP2.Text = ""
+        TXT_FECHA.ResetText()
+        TXT_commen.Text = ""
+        dgv_equipo_Eval.DataSource = Nothing
     End Sub
 
 
