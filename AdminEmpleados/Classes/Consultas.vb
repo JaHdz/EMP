@@ -429,7 +429,7 @@ Public Class Consultas
     End Function
 
     Public Function Add_Family(ByVal FAM_ID As Integer, EMPLOYEE As Integer, TYPE As String, NAME As String, P_LASTNAME As String, M_LASTMANEM As String,
-                                 NATIONALITY As String, BIRTHDATE As DateTime, GENDER As String, C_STATUS As String) As String
+                                 NATIONALITY As String, BIRTHDATE As DateTime, GENDER As String) As String
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -443,7 +443,6 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@NATIONALITY", NATIONALITY))
             cmd.Parameters.Add(New SqlParameter("@BIRTHDATE", BIRTHDATE))
             cmd.Parameters.Add(New SqlParameter("@GENDER", GENDER))
-            cmd.Parameters.Add(New SqlParameter("@C_STATUS", C_STATUS))
             cmd.CommandText = "UDSP_EMPLOYEE_FAMILY"
             Dim lector As SqlDataReader
             lector = cmd.ExecuteReader()

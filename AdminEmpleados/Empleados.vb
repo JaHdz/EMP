@@ -64,7 +64,6 @@ Public Class Empleados
         Wait.ShowDialog()
         Dim Result As Cls_Emp = Wait.Result
         Wait.Close()
-        pnl_save.Text = ""
         If (Result IsNot Nothing) Then
             txt_AP.Text = Result.Emp_APat
             txt_AM.Text = Result.Emp_AMat
@@ -325,7 +324,6 @@ Public Class Empleados
         txt_hijoFN.Text = ""
         txt_hijoNACION.Text = ""
         txt_hijoSEXO.SelectedIndex = -1
-        txt_hijoEC.SelectedIndex = -1
         llenarFamilia()
         txt_antFI.Text = ""
         txt_antFF.Text = ""
@@ -539,7 +537,6 @@ Public Class Empleados
         lbl_option.Visible = False
         PbOptions.Visible = False
         PbOptions.Tag = ""
-        pnl_save.Text = ""
         'Catch ex As Exception
         '    MsgBox(ex.Message.ToString, MsgBoxStyle.Critical)
         'End Try
@@ -557,7 +554,6 @@ Public Class Empleados
         SAVE.Visible = True
         foto.Image = AdminEmpleados.My.Resources.Resources.photoNobody120
         foto.Visible = True
-        pnl_save.Text = "GUARDAR"
         Me.FormBorderStyle = FormBorderStyle.None
         Me.Dock = DockStyle.Fill
         Me.TransparencyKey = System.Drawing.Color.FromArgb(121, 121, 121)
@@ -998,11 +994,11 @@ Public Class Empleados
     Private Sub btn_hijoADD_Click(sender As Object, e As EventArgs) Handles btn_hijoADD.Click
         If EXISTE = True Then
             If txt_hijoAM.Text = "" Or txt_hijoAP.Text = "" Or txt_hijoNAME.Text = "" Or txt_hijoFN.Text = "" Or txt_hijoNACION.Text = "" Or
-           txt_hijoSEXO.SelectedIndex = -1 Or txt_hijoEC.SelectedIndex = -1 Then
+           txt_hijoSEXO.SelectedIndex = -1 Then
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
                 Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}, {"Type", "HIJO"}, {"Name", txt_hijoNAME.Text}, {"FLastname", txt_hijoAP.Text},
-                    {"SLastname", txt_hijoAM.Text}, {"Nationality", txt_hijoNACION.Text}, {"Birthday", txt_hijoFN.Text}, {"Sex", txt_hijoSEXO.SelectedItem.ToString()}, {"CivilStatus", txt_hijoEC.SelectedItem.ToString}}
+                    {"SLastname", txt_hijoAM.Text}, {"Nationality", txt_hijoNACION.Text}, {"Birthday", txt_hijoFN.Text}, {"Sex", txt_hijoSEXO.SelectedItem.ToString()}}
                 Dim Wait As New Wait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.AddFamilyMember
@@ -1019,7 +1015,6 @@ Public Class Empleados
                 txt_hijoFN.Text = ""
                 txt_hijoNACION.Text = ""
                 txt_hijoSEXO.SelectedIndex = -1
-                txt_hijoEC.SelectedIndex = -1
                 llenarFamilia()
             End If
         End If
@@ -1128,7 +1123,6 @@ Public Class Empleados
         Wait.ShowDialog()
         Dim loResult As Cls_ES = Wait.Result
         Wait.Close()
-        pnl_save.Text = ""
         If loResult IsNot Nothing Then
             Select Case loResult.H_TYPE
                 Case "CASA PROPIA"
@@ -1460,4 +1454,5 @@ Public Class Empleados
             e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
         End If
     End Sub
+
 End Class

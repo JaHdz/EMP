@@ -33,8 +33,8 @@ Public Class Wait
     Public Result As New Object
     Public Parameters As Dictionary(Of String, Object)
     Private Sub wait_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Dock = DockStyle.Fill
-        Me.TransparencyKey = System.Drawing.Color.FromArgb(121, 121, 121)
+        Dock = DockStyle.Fill
+        TransparencyKey = Color.FromArgb(121, 121, 121)
         BwWait.RunWorkerAsync()
     End Sub
 
@@ -110,7 +110,7 @@ Public Class Wait
                                                        Parameters("Wage"), Parameters("Phone"), Parameters("Reason"), Parameters("Contact"))
             Case BackgroundOperations.AddFamilyMember
                 Result = New Consultas().Add_Family(0, Parameters("Employee"), Parameters("Type"), Parameters("Name"), Parameters("FLastname"), Parameters("SLastname"),
-                                                    Parameters("Nationality"), Parameters("Birthday"), Parameters("Sex"), Parameters("CivilStatus"))
+                                                    Parameters("Nationality"), Parameters("Birthday"), Parameters("Sex"))
             Case BackgroundOperations.GetFamily
                 Dim ResultDictionary As New Dictionary(Of String, Object) From {{"Spouse", New Consultas().Consulta_FamEsp(Parameters("Employee"))},
                     {"Offsprings", New Consultas().Consulta_FamHijos(Parameters("Employee"))}}
@@ -135,6 +135,6 @@ Public Class Wait
 
     Private Sub BwWait_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BwWait.RunWorkerCompleted
         Threading.Thread.Sleep(500)
-        Me.Hide()
+        Hide()
     End Sub
 End Class
