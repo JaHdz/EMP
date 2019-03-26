@@ -76,7 +76,7 @@ Partial Class Principal
         '
         Me.min.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.min.Image = Global.AdminEmpleados.My.Resources.Resources.Minimize_80px
-        Me.min.Location = New System.Drawing.Point(1550, 3)
+        Me.min.Location = New System.Drawing.Point(1134, 3)
         Me.min.Margin = New System.Windows.Forms.Padding(2)
         Me.min.Name = "min"
         Me.min.Size = New System.Drawing.Size(25, 22)
@@ -88,7 +88,7 @@ Partial Class Principal
         '
         Me.cerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cerrar.Image = Global.AdminEmpleados.My.Resources.Resources.Close_80px
-        Me.cerrar.Location = New System.Drawing.Point(1579, 3)
+        Me.cerrar.Location = New System.Drawing.Point(1163, 3)
         Me.cerrar.Margin = New System.Windows.Forms.Padding(2)
         Me.cerrar.Name = "cerrar"
         Me.cerrar.Size = New System.Drawing.Size(25, 22)
