@@ -464,7 +464,7 @@ Partial Class Empleados
         Me.Tam_Es.Padding = New System.Windows.Forms.Padding(3)
         Me.Tam_Es.Size = New System.Drawing.Size(981, 668)
         Me.Tam_Es.TabIndex = 5
-        Me.Tam_Es.Text = "Estudio SocioEconomico"
+        Me.Tam_Es.Text = "ESTUDIO SOCIOECONOMICO"
         Me.Tam_Es.UseVisualStyleBackColor = True
         '
         'Panel1
@@ -1735,7 +1735,7 @@ Partial Class Empleados
         Me.Tab_Enfer.Padding = New System.Windows.Forms.Padding(2)
         Me.Tab_Enfer.Size = New System.Drawing.Size(981, 668)
         Me.Tab_Enfer.TabIndex = 4
-        Me.Tab_Enfer.Text = "Enfermedades"
+        Me.Tab_Enfer.Text = "ENFERMEDADES"
         Me.Tab_Enfer.UseVisualStyleBackColor = True
         '
         'panel20
@@ -1862,7 +1862,7 @@ Partial Class Empleados
         Me.Tab_Cont.Padding = New System.Windows.Forms.Padding(2)
         Me.Tab_Cont.Size = New System.Drawing.Size(981, 668)
         Me.Tab_Cont.TabIndex = 3
-        Me.Tab_Cont.Text = "Contacto"
+        Me.Tab_Cont.Text = "CONTACTO"
         Me.Tab_Cont.UseVisualStyleBackColor = True
         '
         'panel18
@@ -2115,7 +2115,7 @@ Partial Class Empleados
         Me.label18.AutoSize = True
         Me.label18.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label18.ForeColor = System.Drawing.Color.White
-        Me.label18.Location = New System.Drawing.Point(2, 7)
+        Me.label18.Location = New System.Drawing.Point(2, 6)
         Me.label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.label18.Name = "label18"
         Me.label18.Size = New System.Drawing.Size(198, 21)
@@ -2131,7 +2131,7 @@ Partial Class Empleados
         Me.Tab_AL.Padding = New System.Windows.Forms.Padding(2)
         Me.Tab_AL.Size = New System.Drawing.Size(981, 668)
         Me.Tab_AL.TabIndex = 2
-        Me.Tab_AL.Text = "Antecedentes Laborales"
+        Me.Tab_AL.Text = "ANTECEDENTES LABORALES"
         Me.Tab_AL.UseVisualStyleBackColor = True
         '
         'panel16
@@ -2435,7 +2435,7 @@ Partial Class Empleados
         Me.label17.AutoSize = True
         Me.label17.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label17.ForeColor = System.Drawing.Color.White
-        Me.label17.Location = New System.Drawing.Point(2, 7)
+        Me.label17.Location = New System.Drawing.Point(2, 6)
         Me.label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.label17.Name = "label17"
         Me.label17.Size = New System.Drawing.Size(147, 21)
@@ -2452,7 +2452,7 @@ Partial Class Empleados
         Me.Tab_Familia.Padding = New System.Windows.Forms.Padding(2)
         Me.Tab_Familia.Size = New System.Drawing.Size(981, 668)
         Me.Tab_Familia.TabIndex = 1
-        Me.Tab_Familia.Text = "Familia"
+        Me.Tab_Familia.Text = "FAMILIA"
         Me.Tab_Familia.UseVisualStyleBackColor = True
         '
         'panel3
@@ -2713,11 +2713,12 @@ Partial Class Empleados
         'label11
         '
         Me.label11.AutoSize = True
+        Me.label11.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!)
         Me.label11.ForeColor = System.Drawing.Color.White
         Me.label11.Location = New System.Drawing.Point(2, 6)
         Me.label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.label11.Name = "label11"
-        Me.label11.Size = New System.Drawing.Size(44, 18)
+        Me.label11.Size = New System.Drawing.Size(47, 21)
         Me.label11.TabIndex = 2
         Me.label11.Text = "Hijos"
         '
@@ -2759,11 +2760,12 @@ Partial Class Empleados
         'label10
         '
         Me.label10.AutoSize = True
+        Me.label10.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!)
         Me.label10.ForeColor = System.Drawing.Color.White
         Me.label10.Location = New System.Drawing.Point(2, 6)
         Me.label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.label10.Name = "label10"
-        Me.label10.Size = New System.Drawing.Size(61, 18)
+        Me.label10.Size = New System.Drawing.Size(78, 21)
         Me.label10.TabIndex = 1
         Me.label10.Text = "Cónyuge"
         '
@@ -2997,7 +2999,7 @@ Partial Class Empleados
         Me.Tab_DP.Padding = New System.Windows.Forms.Padding(2)
         Me.Tab_DP.Size = New System.Drawing.Size(981, 668)
         Me.Tab_DP.TabIndex = 0
-        Me.Tab_DP.Text = "Datos Personales"
+        Me.Tab_DP.Text = "DATOS PERSONALES"
         Me.Tab_DP.UseVisualStyleBackColor = True
         '
         'pnl_estatus
@@ -4367,7 +4369,7 @@ Partial Class Empleados
     Friend WithEvents Panel8 As Panel
     Friend WithEvents btnEnELiminar As DataGridViewImageColumn
     Friend WithEvents ID_Enf As DataGridViewTextBoxColumn
-    Friend WithEvents Text As DataGridViewTextBoxColumn
+    Friend WithEvents cText As DataGridViewTextBoxColumn
     Friend WithEvents PnlContacto As Panel
     Friend WithEvents btnCOEliminar As DataGridViewImageColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
@@ -4511,4 +4513,5 @@ Partial Class Empleados
     Friend WithEvents cb_Terreno As CheckBox
     Private WithEvents Panel15 As Panel
     Private WithEvents Label5 As Label
+    Friend WithEvents Text As DataGridViewTextBoxColumn
 End Class

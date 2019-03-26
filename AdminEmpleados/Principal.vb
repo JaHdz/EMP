@@ -86,77 +86,28 @@ Public Class Principal
         End If
     End Sub
 
-    Private Sub Btn_emp_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btn_emp.Click
-        Dim Wait As Wait = New Wait()
-        Wait.Show()
-        SelectedOption = "Empleados"
-        MenuShow()
-        Wait.Close()
-        SelectButton(sender)
-    End Sub
-
-    Private Sub BTN_EQ_Click(sender As Object, e As EventArgs) Handles BTN_EQ.Click
-        SelectButton(sender)
-        Dim Wait As Wait = New Wait()
-        Wait.Show()
-        SelectedOption = "Equipo"
-        MenuShow()
-        Wait.Close()
-
-    End Sub
-
-    Private Sub BTN_CAP_Click(sender As Object, e As EventArgs) Handles BTN_CAP.Click
-        SelectButton(sender)
-        Dim Wait As Wait = New Wait()
-        Wait.Show()
-        SelectedOption = "Capacitaciones"
-        MenuShow()
-        Wait.Close()
-
-    End Sub
-
-    Private Sub BTN_EV_Click(sender As Object, e As EventArgs) Handles BTN_EV.Click
-        SelectButton(sender)
-        Dim Wait As Wait = New Wait()
-        Wait.Show()
-        SelectedOption = "Evaluaciones"
-        MenuShow()
-        Wait.Close()
-
-    End Sub
-
-    Private Sub BTN_MED_Click(sender As Object, e As EventArgs) Handles BTN_MED.Click
-        SelectButton(sender)
-        Dim Wait As Wait = New Wait()
-        Wait.Show()
-        SelectedOption = "Examenes_Medicos"
-        MenuShow()
-        Wait.Close()
-
-    End Sub
-
-    Private Sub BTN_ADMIN_Click(sender As Object, e As EventArgs) Handles BTN_ADMIN.Click
-        SelectButton(sender)
-        Dim Wait As Wait = New Wait()
-        Wait.Show()
-        SelectedOption = "Administration"
-        MenuShow()
-        Wait.Close()
-    End Sub
-
     Private Sub SelectButton(btn As Button)
         For Each ctrl As Control In Menu.Controls
             If TypeOf ctrl Is Button Then
                 If ctrl.Name <> btn.Name Then
                     ctrl.BackColor = Color.FromArgb(207, 209, 210)
-                    ctrl.Font = New Font(ctrl.Font, FontStyle.Regular)
+                    'ctrl.Font = New Font(ctrl.Font, FontStyle.Regular)
                 Else
                     ctrl.BackColor = SystemColors.Control
-                    ctrl.Font = New Font(ctrl.Font, FontStyle.Bold)
+                    'ctrl.Font = New Font(ctrl.Font, FontStyle.Bold)
                 End If
             End If
 
         Next
+    End Sub
+
+    Private Sub MenuOptionClick(ByVal sender As Object, ByVal e As EventArgs) Handles BTN_MED.Click, BTN_EV.Click, BTN_EQ.Click, btn_emp.Click, BTN_CAP.Click, BTN_ADMIN.Click
+        Dim Wait As Wait = New Wait()
+        Wait.Show()
+        SelectedOption = CType(sender, Button).Tag
+        MenuShow()
+        SelectButton(sender)
+        Wait.Close()
     End Sub
 
     Private Sub BTN_CERRARSESION_Click(sender As Object, e As EventArgs) Handles BTN_CERRARSESION.Click

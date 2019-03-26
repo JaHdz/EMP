@@ -66,9 +66,9 @@ Partial Class Capacitaciones
         Me.Panel1.Controls.Add(Me.dgv_equipo_Eval)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!)
-        Me.Panel1.Location = New System.Drawing.Point(0, 318)
+        Me.Panel1.Location = New System.Drawing.Point(0, 287)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(962, 412)
+        Me.Panel1.Size = New System.Drawing.Size(989, 412)
         Me.Panel1.TabIndex = 1
         '
         'dgv_equipo_Eval
@@ -80,7 +80,7 @@ Partial Class Capacitaciones
         Me.dgv_equipo_Eval.Location = New System.Drawing.Point(0, 0)
         Me.dgv_equipo_Eval.Name = "dgv_equipo_Eval"
         Me.dgv_equipo_Eval.RowHeadersVisible = False
-        Me.dgv_equipo_Eval.Size = New System.Drawing.Size(962, 412)
+        Me.dgv_equipo_Eval.Size = New System.Drawing.Size(989, 412)
         Me.dgv_equipo_Eval.TabIndex = 0
         '
         'DELETE
@@ -151,24 +151,26 @@ Partial Class Capacitaciones
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
         Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(962, 313)
+        Me.Panel14.Size = New System.Drawing.Size(989, 313)
         Me.Panel14.TabIndex = 0
         '
         'lbl_ingreso
         '
         Me.lbl_ingreso.AutoSize = True
-        Me.lbl_ingreso.Location = New System.Drawing.Point(87, 151)
+        Me.lbl_ingreso.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.lbl_ingreso.Location = New System.Drawing.Point(45, 105)
         Me.lbl_ingreso.Name = "lbl_ingreso"
-        Me.lbl_ingreso.Size = New System.Drawing.Size(59, 21)
+        Me.lbl_ingreso.Size = New System.Drawing.Size(50, 18)
         Me.lbl_ingreso.TabIndex = 91
         Me.lbl_ingreso.Text = "Fecha:"
         '
         'TXT_FECHA
         '
+        Me.TXT_FECHA.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.TXT_FECHA.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.TXT_FECHA.Location = New System.Drawing.Point(152, 145)
+        Me.TXT_FECHA.Location = New System.Drawing.Point(104, 102)
         Me.TXT_FECHA.Name = "TXT_FECHA"
-        Me.TXT_FECHA.Size = New System.Drawing.Size(245, 28)
+        Me.TXT_FECHA.Size = New System.Drawing.Size(245, 25)
         Me.TXT_FECHA.TabIndex = 3
         '
         'Panel2
@@ -182,7 +184,7 @@ Partial Class Capacitaciones
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(962, 40)
+        Me.Panel2.Size = New System.Drawing.Size(989, 35)
         Me.Panel2.TabIndex = 7
         '
         'Label42
@@ -190,7 +192,7 @@ Partial Class Capacitaciones
         Me.Label42.AutoSize = True
         Me.Label42.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label42.ForeColor = System.Drawing.Color.White
-        Me.Label42.Location = New System.Drawing.Point(13, 6)
+        Me.Label42.Location = New System.Drawing.Point(2, 6)
         Me.Label42.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(190, 21)
@@ -201,9 +203,9 @@ Partial Class Capacitaciones
         '
         Me.SAVE.Cursor = System.Windows.Forms.Cursors.Hand
         Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Training_80px
-        Me.SAVE.Location = New System.Drawing.Point(854, 0)
+        Me.SAVE.Location = New System.Drawing.Point(889, 0)
         Me.SAVE.Name = "SAVE"
-        Me.SAVE.Size = New System.Drawing.Size(45, 40)
+        Me.SAVE.Size = New System.Drawing.Size(35, 35)
         Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.SAVE.TabIndex = 0
         Me.SAVE.TabStop = False
@@ -212,9 +214,9 @@ Partial Class Capacitaciones
         '
         Me.CANCEL.Cursor = System.Windows.Forms.Cursors.Hand
         Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(905, 0)
+        Me.CANCEL.Location = New System.Drawing.Point(930, 0)
         Me.CANCEL.Name = "CANCEL"
-        Me.CANCEL.Size = New System.Drawing.Size(45, 40)
+        Me.CANCEL.Size = New System.Drawing.Size(35, 35)
         Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.CANCEL.TabIndex = 1
         Me.CANCEL.TabStop = False
@@ -222,7 +224,8 @@ Partial Class Capacitaciones
         'TXT_commen
         '
         Me.TXT_commen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TXT_commen.Location = New System.Drawing.Point(152, 188)
+        Me.TXT_commen.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.TXT_commen.Location = New System.Drawing.Point(104, 133)
         Me.TXT_commen.Multiline = True
         Me.TXT_commen.Name = "TXT_commen"
         Me.TXT_commen.Size = New System.Drawing.Size(427, 83)
@@ -231,20 +234,21 @@ Partial Class Capacitaciones
         'label8
         '
         Me.label8.AutoSize = True
-        Me.label8.Location = New System.Drawing.Point(38, 188)
+        Me.label8.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.label8.Location = New System.Drawing.Point(5, 133)
         Me.label8.Name = "label8"
-        Me.label8.Size = New System.Drawing.Size(109, 21)
+        Me.label8.Size = New System.Drawing.Size(90, 18)
         Me.label8.TabIndex = 87
         Me.label8.Text = "Comentario: "
         '
         'Empleado
         '
         Me.Empleado.AutoSize = True
-        Me.Empleado.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Empleado.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.Empleado.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Empleado.Location = New System.Drawing.Point(416, 68)
+        Me.Empleado.Location = New System.Drawing.Point(350, 43)
         Me.Empleado.Name = "Empleado"
-        Me.Empleado.Size = New System.Drawing.Size(101, 22)
+        Me.Empleado.Size = New System.Drawing.Size(81, 18)
         Me.Empleado.TabIndex = 80
         Me.Empleado.Text = "Empleado: "
         '
@@ -253,9 +257,9 @@ Partial Class Capacitaciones
         Me.buscar_CAP.BackgroundImage = CType(resources.GetObject("buscar_CAP.BackgroundImage"), System.Drawing.Image)
         Me.buscar_CAP.Cursor = System.Windows.Forms.Cursors.Hand
         Me.buscar_CAP.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_CAP.Location = New System.Drawing.Point(366, 103)
+        Me.buscar_CAP.Location = New System.Drawing.Point(319, 71)
         Me.buscar_CAP.Name = "buscar_CAP"
-        Me.buscar_CAP.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_CAP.Size = New System.Drawing.Size(25, 25)
         Me.buscar_CAP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.buscar_CAP.TabIndex = 85
         Me.buscar_CAP.TabStop = False
@@ -263,34 +267,38 @@ Partial Class Capacitaciones
         'lbl_num
         '
         Me.lbl_num.AutoSize = True
-        Me.lbl_num.Location = New System.Drawing.Point(69, 66)
+        Me.lbl_num.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.lbl_num.Location = New System.Drawing.Point(33, 43)
         Me.lbl_num.Name = "lbl_num"
-        Me.lbl_num.Size = New System.Drawing.Size(77, 21)
+        Me.lbl_num.Size = New System.Drawing.Size(62, 18)
         Me.lbl_num.TabIndex = 3
         Me.lbl_num.Text = "Numero:"
         '
         'CAP
         '
-        Me.CAP.Location = New System.Drawing.Point(402, 103)
+        Me.CAP.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.CAP.Location = New System.Drawing.Point(586, 123)
         Me.CAP.Name = "CAP"
-        Me.CAP.Size = New System.Drawing.Size(0, 28)
+        Me.CAP.Size = New System.Drawing.Size(0, 25)
         Me.CAP.TabIndex = 6
         Me.CAP.Visible = False
         '
         'txt_numero
         '
         Me.txt_numero.Enabled = False
-        Me.txt_numero.Location = New System.Drawing.Point(152, 63)
+        Me.txt_numero.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txt_numero.Location = New System.Drawing.Point(104, 40)
         Me.txt_numero.Name = "txt_numero"
-        Me.txt_numero.Size = New System.Drawing.Size(209, 28)
+        Me.txt_numero.Size = New System.Drawing.Size(209, 25)
         Me.txt_numero.TabIndex = 1
         '
         'CAP2
         '
         Me.CAP2.Enabled = False
-        Me.CAP2.Location = New System.Drawing.Point(152, 104)
+        Me.CAP2.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.CAP2.Location = New System.Drawing.Point(104, 71)
         Me.CAP2.Name = "CAP2"
-        Me.CAP2.Size = New System.Drawing.Size(209, 28)
+        Me.CAP2.Size = New System.Drawing.Size(209, 25)
         Me.CAP2.TabIndex = 2
         Me.CAP2.TabStop = False
         '
@@ -299,9 +307,9 @@ Partial Class Capacitaciones
         Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
         Me.buscar_EN.Cursor = System.Windows.Forms.Cursors.Hand
         Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_EN.Location = New System.Drawing.Point(367, 63)
+        Me.buscar_EN.Location = New System.Drawing.Point(319, 40)
         Me.buscar_EN.Name = "buscar_EN"
-        Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_EN.Size = New System.Drawing.Size(25, 25)
         Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.buscar_EN.TabIndex = 79
         Me.buscar_EN.TabStop = False
@@ -309,20 +317,21 @@ Partial Class Capacitaciones
         'Label92
         '
         Me.Label92.AutoSize = True
-        Me.Label92.Location = New System.Drawing.Point(34, 107)
+        Me.Label92.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.Label92.Location = New System.Drawing.Point(2, 74)
         Me.Label92.Name = "Label92"
-        Me.Label92.Size = New System.Drawing.Size(112, 21)
+        Me.Label92.Size = New System.Drawing.Size(93, 18)
         Me.Label92.TabIndex = 83
         Me.Label92.Text = "Capacitacion:"
         '
         'lbl_emp
         '
         Me.lbl_emp.AutoSize = True
-        Me.lbl_emp.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_emp.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.lbl_emp.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.lbl_emp.Location = New System.Drawing.Point(523, 54)
+        Me.lbl_emp.Location = New System.Drawing.Point(437, 43)
         Me.lbl_emp.Name = "lbl_emp"
-        Me.lbl_emp.Size = New System.Drawing.Size(0, 22)
+        Me.lbl_emp.Size = New System.Drawing.Size(0, 18)
         Me.lbl_emp.TabIndex = 81
         '
         'Capacitaciones
@@ -330,7 +339,7 @@ Partial Class Capacitaciones
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(962, 730)
+        Me.ClientSize = New System.Drawing.Size(989, 699)
         Me.Controls.Add(Me.Panel14)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

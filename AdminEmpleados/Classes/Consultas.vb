@@ -208,6 +208,7 @@ Public Class Consultas
     End Sub
 
     Public Function Add_Examenes_Medicos(ByVal id As Integer, Emp As Integer, EM_Estudio As String, EM_Resultado As String, EM_Fecha As DateTime, EM_FechaProximo As DateTime) As String
+        Add_Examenes_Medicos = String.Empty
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -324,7 +325,7 @@ Public Class Consultas
         End Using
     End Function
 
-    Public Function Add_commen(user As Integer, text As String)
+    Public Sub Add_commen(user As Integer, text As String)
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -335,7 +336,7 @@ Public Class Consultas
             cmd.CommandText = "UDSP_OBSERVACIONES"
             cmd.ExecuteNonQuery()
         End Using
-    End Function
+    End Sub
 
 
 
@@ -357,6 +358,7 @@ Public Class Consultas
     End Function
 
     Public Function S_catalago(ByVal cond As String, ByVal tipo As String) As String
+        S_catalago = String.Empty
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As New SqlCommand("SELECT_CATALOGOS", con)
@@ -372,6 +374,7 @@ Public Class Consultas
     End Function
 
     Public Function Add_Referencias(ByVal REF As Integer, SES_ID As Integer, NAME As String, OCUPATION As String, RELATIONSHIP As String, TIME As String) As String
+        Add_Referencias = String.Empty
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -392,6 +395,7 @@ Public Class Consultas
     End Function
 
     Public Function Add_OtrosIngresos(ByVal INCOME_ID As Integer, SES_ID As Integer, DESC As String, AMOUNT As Double) As String
+        Add_OtrosIngresos = String.Empty
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -410,6 +414,7 @@ Public Class Consultas
     End Function
 
     Public Function Add_UDSP_EMPLOYEE_EVALUATION(ByVal ID As Integer, EMPLOYEE As Integer, STATUS As String, USER As Integer, ID_Codigo As String) As String
+        Add_UDSP_EMPLOYEE_EVALUATION = String.Empty
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -430,6 +435,7 @@ Public Class Consultas
 
     Public Function Add_Family(ByVal FAM_ID As Integer, EMPLOYEE As Integer, TYPE As String, NAME As String, P_LASTNAME As String, M_LASTMANEM As String,
                                  NATIONALITY As String, BIRTHDATE As DateTime, GENDER As String) As String
+        Add_Family = String.Empty
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -471,6 +477,7 @@ Public Class Consultas
 
     Public Function Add_JOBHISTORY(ByVal PREV_ID As Integer, EMPLOYEE As Integer, START As DateTime, ENDD As DateTime, COMPANY As String, POSITION As String, WAGE As Decimal,
             PHONE As String, REASON As String, CONTACT As String) As String
+        Add_JOBHISTORY = String.Empty
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -495,6 +502,7 @@ Public Class Consultas
     End Function
 
     Public Function Add_MEDCONDITIONS(ByVal CON_ID As Integer, EMPLOYEE As Integer, DESCRIPTION As String) As String
+        Add_MEDCONDITIONS = String.Empty
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -512,6 +520,7 @@ Public Class Consultas
     End Function
 
     Public Function Add_TRAINING(ByVal ID As Integer, TRAINING As String, EMPLOYEE As Integer, DATEE As DateTime, COME As String) As String
+        Add_TRAINING = String.Empty
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -531,6 +540,7 @@ Public Class Consultas
     End Function
 
     Public Function Add_EQUIPMENT(ByVal EQU_ID As Integer, NAME As String, DESCRIPTION As String, COST As Double, STATUS As Integer, DEPTO As Integer) As String
+        Add_EQUIPMENT = String.Empty
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -551,6 +561,7 @@ Public Class Consultas
     End Function
 
     Public Function DELETE_EQUIPMENT_ADMIN(EQU_ID As Integer) As Boolean
+        DELETE_EQUIPMENT_ADMIN = False
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As New SqlCommand("DELETE_EQUIPMENT_ADMIN", con)
@@ -565,6 +576,7 @@ Public Class Consultas
     End Function
     Public Function Add_EQUIPMENT_ASSIGNED(ByVal ASSIGNED As Integer, EQUIPMENT As String, EMPLOYEE As Integer, DATEE As DateTime, ISRETURNED As Integer,
                                            DATE_R As DateTime, USER As Integer, COMMENTS As String) As String
+        Add_EQUIPMENT_ASSIGNED = String.Empty
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -587,6 +599,7 @@ Public Class Consultas
     End Function
 
     Public Function Add_EVALUATIONS(ByVal EVAL_ID As Integer, CODE As String, DESCRIPTION As String, STATUS As Integer) As String
+        Add_EVALUATIONS = String.Empty
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -605,6 +618,7 @@ Public Class Consultas
     End Function
 
     Public Function DELETE_ADMIN_EVALUATIONS(EV_ID As String) As Boolean
+        DELETE_ADMIN_EVALUATIONS = False
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As New SqlCommand("DELETE_EVALUATION_ADMIN", con)
@@ -619,6 +633,7 @@ Public Class Consultas
     End Function
 
     Public Function Add_POSITIONS(ByVal POSITION As Integer, NAME As String, DESCRIPTION As String, RISK As Integer, ESTATUS As Integer) As String
+        Add_POSITIONS = String.Empty
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -638,6 +653,7 @@ Public Class Consultas
     End Function
 
     Public Function DELETE_ADMIN_POSITIONS(ID As Integer) As Boolean
+        DELETE_ADMIN_POSITIONS = False
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As New SqlCommand("DELETE_POSITIONS_ADMIN", con)
@@ -652,6 +668,7 @@ Public Class Consultas
     End Function
 
     Public Function Add_TRANINGS(ByVal ID As Integer, CODE As String, DESCRIPTION As String, STATUS As Integer) As String
+        Add_TRANINGS = String.Empty
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -670,6 +687,7 @@ Public Class Consultas
     End Function
 
     Public Function Add_USERS(ByVal ID As Integer, USERNAME As String, PASSWORD As String, ACTIVE As Integer, ACCESS As Integer, EMP As Integer) As String
+        Add_USERS = String.Empty
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -690,6 +708,7 @@ Public Class Consultas
     End Function
 
     Public Function Add_SUPER(ByVal ID As Integer, ID_EMP As Integer, NAME As String, ESTATUS As Integer) As String
+        Add_SUPER = String.Empty
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -708,6 +727,7 @@ Public Class Consultas
     End Function
 
     Public Function DELETE_ADMIN_SUPER(ID As Integer) As Boolean
+        DELETE_ADMIN_SUPER = False
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As New SqlCommand("DELETE_SUPERVISOR_ADMIN", con)
@@ -722,6 +742,7 @@ Public Class Consultas
     End Function
 
     Public Function Add_TE(ByVal ID As Integer, CODE As String, DESC As String, ESTATUS As Integer) As String
+        Add_TE = String.Empty
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -740,6 +761,7 @@ Public Class Consultas
     End Function
 
     Public Function DELETE_ADMIN_TE(ID As Integer) As Boolean
+        DELETE_ADMIN_TE = False
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As New SqlCommand("DELETE_EMPTYPE_ADMIN", con)
@@ -755,6 +777,7 @@ Public Class Consultas
 
     Public Function Add_CONTACTS(ByVal CONTACT As Integer, EMPLOYEE As Integer, NAME As String, P_LASTNAME As String, M_LASTNAME As String,
         RELATIONSHIP As String, PHONE As String, CELLPHONE As String) As String
+        Add_CONTACTS = String.Empty
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
@@ -778,6 +801,7 @@ Public Class Consultas
 
     Public Function Add_DEPTO(ID As Integer, ByVal CODIGO As String, DESCRIPCION As String, STATUS As Integer) As String
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+            Add_DEPTO = String.Empty
             con.Open()
             Dim cmd As SqlCommand = con.CreateCommand
             cmd.CommandType = CommandType.StoredProcedure
@@ -795,6 +819,7 @@ Public Class Consultas
     End Function
 
     Public Function DELETE_DEPTO_ADMIN(ID As Integer) As Boolean
+        DELETE_DEPTO_ADMIN = False
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As New SqlCommand("DELETE_DEPTO_ADMIN", con)
@@ -1212,6 +1237,7 @@ Public Class Consultas
     End Sub
 
     Public Function DELETE_CAPACITACION_ADMIN(ByVal ID As Integer) As Boolean
+        DELETE_CAPACITACION_ADMIN = False
         Using con As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
             con.Open()
             Dim cmd As New SqlCommand("DELETE_CAPACITACION_ADMIN", con)

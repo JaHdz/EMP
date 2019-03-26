@@ -44,7 +44,7 @@ Partial Class Equipo
         Me.Empleado = New System.Windows.Forms.Label()
         Me.lbl_emp = New System.Windows.Forms.Label()
         Me.dgv_equipo_emp = New System.Windows.Forms.DataGridView()
-        Me.UPDATE = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.cUPDATE = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ID_Assig = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_Equipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -287,7 +287,7 @@ Partial Class Equipo
         '
         Me.dgv_equipo_emp.AllowUserToAddRows = False
         Me.dgv_equipo_emp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_equipo_emp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATE, Me.ID_Assig, Me.ID_Equipo, Me.ID_Emp, Me.Fecha, Me.Regreso, Me.Fecha_R, Me.Comentario, Me.ID_User})
+        Me.dgv_equipo_emp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cUPDATE, Me.ID_Assig, Me.ID_Equipo, Me.ID_Emp, Me.Fecha, Me.Regreso, Me.Fecha_R, Me.Comentario, Me.ID_User})
         Me.dgv_equipo_emp.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgv_equipo_emp.Location = New System.Drawing.Point(0, 0)
         Me.dgv_equipo_emp.Name = "dgv_equipo_emp"
@@ -297,8 +297,8 @@ Partial Class Equipo
         '
         'UPDATE
         '
-        Me.UPDATE.HeaderText = "Regresar"
-        Me.UPDATE.Name = "UPDATE"
+        Me.cUPDATE.HeaderText = "Regresar"
+        Me.cUPDATE.Name = "UPDATE"
         '
         'ID_Assig
         '
@@ -431,7 +431,7 @@ Partial Class Equipo
     Private WithEvents Label42 As Label
     Friend WithEvents pb_Report As PictureBox
     Friend WithEvents pnl_comen As Panel
-    Friend WithEvents UPDATE As DataGridViewImageColumn
+    Friend WithEvents cUPDATE As DataGridViewImageColumn
     Friend WithEvents ID_Assig As DataGridViewTextBoxColumn
     Friend WithEvents ID_Equipo As DataGridViewTextBoxColumn
     Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
