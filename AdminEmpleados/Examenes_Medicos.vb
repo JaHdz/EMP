@@ -101,4 +101,8 @@
             dgv_equipo_Eval.DataSource = dt
         End If
     End Sub
+
+    Private Sub Panel14_Paint(sender As Object, e As PaintEventArgs) Handles Panel14.Paint
+
+    End Sub
 End Class

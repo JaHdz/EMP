@@ -22,6 +22,7 @@ Partial Class Capacitaciones
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Capacitaciones))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dgv_equipo_Eval = New System.Windows.Forms.DataGridView()
@@ -68,19 +69,21 @@ Partial Class Capacitaciones
         Me.Panel1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!)
         Me.Panel1.Location = New System.Drawing.Point(0, 287)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(989, 412)
+        Me.Panel1.Size = New System.Drawing.Size(1139, 412)
         Me.Panel1.TabIndex = 1
         '
         'dgv_equipo_Eval
         '
         Me.dgv_equipo_Eval.AllowUserToAddRows = False
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft YaHei UI", 7.2!)
+        Me.dgv_equipo_Eval.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_equipo_Eval.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_equipo_Eval.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DELETE, Me.ID_Cap_Emp, Me.ID_Cap, Me.ID_Emp, Me.Fecha, Me.Comentario})
         Me.dgv_equipo_Eval.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgv_equipo_Eval.Location = New System.Drawing.Point(0, 0)
         Me.dgv_equipo_Eval.Name = "dgv_equipo_Eval"
         Me.dgv_equipo_Eval.RowHeadersVisible = False
-        Me.dgv_equipo_Eval.Size = New System.Drawing.Size(989, 412)
+        Me.dgv_equipo_Eval.Size = New System.Drawing.Size(1139, 412)
         Me.dgv_equipo_Eval.TabIndex = 0
         '
         'DELETE
@@ -151,14 +154,14 @@ Partial Class Capacitaciones
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
         Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(989, 313)
+        Me.Panel14.Size = New System.Drawing.Size(1139, 282)
         Me.Panel14.TabIndex = 0
         '
         'lbl_ingreso
         '
         Me.lbl_ingreso.AutoSize = True
         Me.lbl_ingreso.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.lbl_ingreso.Location = New System.Drawing.Point(45, 105)
+        Me.lbl_ingreso.Location = New System.Drawing.Point(74, 121)
         Me.lbl_ingreso.Name = "lbl_ingreso"
         Me.lbl_ingreso.Size = New System.Drawing.Size(50, 18)
         Me.lbl_ingreso.TabIndex = 91
@@ -168,7 +171,7 @@ Partial Class Capacitaciones
         '
         Me.TXT_FECHA.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.TXT_FECHA.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.TXT_FECHA.Location = New System.Drawing.Point(104, 102)
+        Me.TXT_FECHA.Location = New System.Drawing.Point(133, 118)
         Me.TXT_FECHA.Name = "TXT_FECHA"
         Me.TXT_FECHA.Size = New System.Drawing.Size(245, 25)
         Me.TXT_FECHA.TabIndex = 3
@@ -184,7 +187,7 @@ Partial Class Capacitaciones
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(989, 35)
+        Me.Panel2.Size = New System.Drawing.Size(1139, 35)
         Me.Panel2.TabIndex = 7
         '
         'Label42
@@ -203,7 +206,7 @@ Partial Class Capacitaciones
         '
         Me.SAVE.Cursor = System.Windows.Forms.Cursors.Hand
         Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Training_80px
-        Me.SAVE.Location = New System.Drawing.Point(889, 0)
+        Me.SAVE.Location = New System.Drawing.Point(1051, 0)
         Me.SAVE.Name = "SAVE"
         Me.SAVE.Size = New System.Drawing.Size(35, 35)
         Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -214,7 +217,7 @@ Partial Class Capacitaciones
         '
         Me.CANCEL.Cursor = System.Windows.Forms.Cursors.Hand
         Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(930, 0)
+        Me.CANCEL.Location = New System.Drawing.Point(1092, 0)
         Me.CANCEL.Name = "CANCEL"
         Me.CANCEL.Size = New System.Drawing.Size(35, 35)
         Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -225,7 +228,7 @@ Partial Class Capacitaciones
         '
         Me.TXT_commen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TXT_commen.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.TXT_commen.Location = New System.Drawing.Point(104, 133)
+        Me.TXT_commen.Location = New System.Drawing.Point(133, 149)
         Me.TXT_commen.Multiline = True
         Me.TXT_commen.Name = "TXT_commen"
         Me.TXT_commen.Size = New System.Drawing.Size(427, 83)
@@ -235,7 +238,7 @@ Partial Class Capacitaciones
         '
         Me.label8.AutoSize = True
         Me.label8.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.label8.Location = New System.Drawing.Point(5, 133)
+        Me.label8.Location = New System.Drawing.Point(37, 149)
         Me.label8.Name = "label8"
         Me.label8.Size = New System.Drawing.Size(90, 18)
         Me.label8.TabIndex = 87
@@ -246,7 +249,7 @@ Partial Class Capacitaciones
         Me.Empleado.AutoSize = True
         Me.Empleado.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.Empleado.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Empleado.Location = New System.Drawing.Point(350, 43)
+        Me.Empleado.Location = New System.Drawing.Point(379, 59)
         Me.Empleado.Name = "Empleado"
         Me.Empleado.Size = New System.Drawing.Size(81, 18)
         Me.Empleado.TabIndex = 80
@@ -257,7 +260,7 @@ Partial Class Capacitaciones
         Me.buscar_CAP.BackgroundImage = CType(resources.GetObject("buscar_CAP.BackgroundImage"), System.Drawing.Image)
         Me.buscar_CAP.Cursor = System.Windows.Forms.Cursors.Hand
         Me.buscar_CAP.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_CAP.Location = New System.Drawing.Point(319, 71)
+        Me.buscar_CAP.Location = New System.Drawing.Point(348, 87)
         Me.buscar_CAP.Name = "buscar_CAP"
         Me.buscar_CAP.Size = New System.Drawing.Size(25, 25)
         Me.buscar_CAP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -268,7 +271,7 @@ Partial Class Capacitaciones
         '
         Me.lbl_num.AutoSize = True
         Me.lbl_num.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.lbl_num.Location = New System.Drawing.Point(33, 43)
+        Me.lbl_num.Location = New System.Drawing.Point(62, 59)
         Me.lbl_num.Name = "lbl_num"
         Me.lbl_num.Size = New System.Drawing.Size(62, 18)
         Me.lbl_num.TabIndex = 3
@@ -277,17 +280,16 @@ Partial Class Capacitaciones
         'CAP
         '
         Me.CAP.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.CAP.Location = New System.Drawing.Point(586, 123)
+        Me.CAP.Location = New System.Drawing.Point(657, 174)
         Me.CAP.Name = "CAP"
-        Me.CAP.Size = New System.Drawing.Size(0, 25)
+        Me.CAP.Size = New System.Drawing.Size(1, 25)
         Me.CAP.TabIndex = 6
         Me.CAP.Visible = False
         '
         'txt_numero
         '
-        Me.txt_numero.Enabled = False
         Me.txt_numero.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.txt_numero.Location = New System.Drawing.Point(104, 40)
+        Me.txt_numero.Location = New System.Drawing.Point(133, 56)
         Me.txt_numero.Name = "txt_numero"
         Me.txt_numero.Size = New System.Drawing.Size(209, 25)
         Me.txt_numero.TabIndex = 1
@@ -296,7 +298,7 @@ Partial Class Capacitaciones
         '
         Me.CAP2.Enabled = False
         Me.CAP2.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.CAP2.Location = New System.Drawing.Point(104, 71)
+        Me.CAP2.Location = New System.Drawing.Point(133, 87)
         Me.CAP2.Name = "CAP2"
         Me.CAP2.Size = New System.Drawing.Size(209, 25)
         Me.CAP2.TabIndex = 2
@@ -307,7 +309,7 @@ Partial Class Capacitaciones
         Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
         Me.buscar_EN.Cursor = System.Windows.Forms.Cursors.Hand
         Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_EN.Location = New System.Drawing.Point(319, 40)
+        Me.buscar_EN.Location = New System.Drawing.Point(348, 56)
         Me.buscar_EN.Name = "buscar_EN"
         Me.buscar_EN.Size = New System.Drawing.Size(25, 25)
         Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -318,7 +320,7 @@ Partial Class Capacitaciones
         '
         Me.Label92.AutoSize = True
         Me.Label92.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.Label92.Location = New System.Drawing.Point(2, 74)
+        Me.Label92.Location = New System.Drawing.Point(31, 90)
         Me.Label92.Name = "Label92"
         Me.Label92.Size = New System.Drawing.Size(93, 18)
         Me.Label92.TabIndex = 83
@@ -329,7 +331,7 @@ Partial Class Capacitaciones
         Me.lbl_emp.AutoSize = True
         Me.lbl_emp.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.lbl_emp.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.lbl_emp.Location = New System.Drawing.Point(437, 43)
+        Me.lbl_emp.Location = New System.Drawing.Point(466, 59)
         Me.lbl_emp.Name = "lbl_emp"
         Me.lbl_emp.Size = New System.Drawing.Size(0, 18)
         Me.lbl_emp.TabIndex = 81
@@ -339,7 +341,7 @@ Partial Class Capacitaciones
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(989, 699)
+        Me.ClientSize = New System.Drawing.Size(1139, 699)
         Me.Controls.Add(Me.Panel14)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

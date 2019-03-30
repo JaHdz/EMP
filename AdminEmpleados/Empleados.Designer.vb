@@ -462,7 +462,7 @@ Partial Class Empleados
         Me.Tam_Es.Location = New System.Drawing.Point(4, 27)
         Me.Tam_Es.Name = "Tam_Es"
         Me.Tam_Es.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tam_Es.Size = New System.Drawing.Size(981, 668)
+        Me.Tam_Es.Size = New System.Drawing.Size(1070, 668)
         Me.Tam_Es.TabIndex = 5
         Me.Tam_Es.Text = "ESTUDIO SOCIOECONOMICO"
         Me.Tam_Es.UseVisualStyleBackColor = True
@@ -485,14 +485,14 @@ Partial Class Empleados
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(962, 1400)
+        Me.Panel1.Size = New System.Drawing.Size(1070, 1400)
         Me.Panel1.TabIndex = 2
         '
         'btn_SERPT
         '
         Me.btn_SERPT.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_SERPT.Image = Global.AdminEmpleados.My.Resources.Resources.Accounting_80px
-        Me.btn_SERPT.Location = New System.Drawing.Point(836, 1273)
+        Me.btn_SERPT.Location = New System.Drawing.Point(864, 1299)
         Me.btn_SERPT.Name = "btn_SERPT"
         Me.btn_SERPT.Size = New System.Drawing.Size(35, 35)
         Me.btn_SERPT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -503,7 +503,7 @@ Partial Class Empleados
         '
         Me.btn_SESave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_SESave.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.btn_SESave.Location = New System.Drawing.Point(874, 1273)
+        Me.btn_SESave.Location = New System.Drawing.Point(902, 1299)
         Me.btn_SESave.Name = "btn_SESave"
         Me.btn_SESave.Size = New System.Drawing.Size(35, 35)
         Me.btn_SESave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -514,7 +514,7 @@ Partial Class Empleados
         '
         Me.btn_SECancel.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_SECancel.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.btn_SECancel.Location = New System.Drawing.Point(912, 1273)
+        Me.btn_SECancel.Location = New System.Drawing.Point(940, 1299)
         Me.btn_SECancel.Name = "btn_SECancel"
         Me.btn_SECancel.Size = New System.Drawing.Size(35, 35)
         Me.btn_SECancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -527,10 +527,10 @@ Partial Class Empleados
         Me.PnlObservaciones.Controls.Add(Me.txt_commen)
         Me.PnlObservaciones.Controls.Add(Me.Panel26)
         Me.PnlObservaciones.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PnlObservaciones.Location = New System.Drawing.Point(2, 1158)
+        Me.PnlObservaciones.Location = New System.Drawing.Point(2, 1175)
         Me.PnlObservaciones.Margin = New System.Windows.Forms.Padding(2)
         Me.PnlObservaciones.Name = "PnlObservaciones"
-        Me.PnlObservaciones.Size = New System.Drawing.Size(954, 111)
+        Me.PnlObservaciones.Size = New System.Drawing.Size(1051, 111)
         Me.PnlObservaciones.TabIndex = 73
         '
         'txt_commen
@@ -538,10 +538,10 @@ Partial Class Empleados
         Me.txt_commen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_commen.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_commen.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_commen.Location = New System.Drawing.Point(0, 40)
+        Me.txt_commen.Location = New System.Drawing.Point(0, 35)
         Me.txt_commen.Multiline = True
         Me.txt_commen.Name = "txt_commen"
-        Me.txt_commen.Size = New System.Drawing.Size(950, 67)
+        Me.txt_commen.Size = New System.Drawing.Size(1047, 72)
         Me.txt_commen.TabIndex = 31
         '
         'Panel26
@@ -553,7 +553,7 @@ Partial Class Empleados
         Me.Panel26.Location = New System.Drawing.Point(0, 0)
         Me.Panel26.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(950, 40)
+        Me.Panel26.Size = New System.Drawing.Size(1047, 35)
         Me.Panel26.TabIndex = 0
         '
         'Label71
@@ -592,17 +592,17 @@ Partial Class Empleados
         Me.PnlGastos.Controls.Add(Me.Txt_GFDesp)
         Me.PnlGastos.Controls.Add(Me.txt_GFCole)
         Me.PnlGastos.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PnlGastos.Location = New System.Drawing.Point(0, 1086)
+        Me.PnlGastos.Location = New System.Drawing.Point(0, 1075)
         Me.PnlGastos.Margin = New System.Windows.Forms.Padding(2)
         Me.PnlGastos.Name = "PnlGastos"
-        Me.PnlGastos.Size = New System.Drawing.Size(956, 78)
+        Me.PnlGastos.Size = New System.Drawing.Size(1051, 78)
         Me.PnlGastos.TabIndex = 72
         '
         'Label64
         '
         Me.Label64.AutoSize = True
         Me.Label64.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label64.Location = New System.Drawing.Point(569, 43)
+        Me.Label64.Location = New System.Drawing.Point(727, 43)
         Me.Label64.Name = "Label64"
         Me.Label64.Size = New System.Drawing.Size(68, 18)
         Me.Label64.TabIndex = 66
@@ -612,7 +612,7 @@ Partial Class Empleados
         '
         Me.txt_GFServ.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_GFServ.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_GFServ.Location = New System.Drawing.Point(643, 40)
+        Me.txt_GFServ.Location = New System.Drawing.Point(801, 40)
         Me.txt_GFServ.Name = "txt_GFServ"
         Me.txt_GFServ.Size = New System.Drawing.Size(95, 25)
         Me.txt_GFServ.TabIndex = 30
@@ -621,7 +621,7 @@ Partial Class Empleados
         '
         Me.Label73.AutoSize = True
         Me.Label73.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label73.Location = New System.Drawing.Point(36, 43)
+        Me.Label73.Location = New System.Drawing.Point(194, 43)
         Me.Label73.Name = "Label73"
         Me.Label73.Size = New System.Drawing.Size(50, 18)
         Me.Label73.TabIndex = 57
@@ -636,7 +636,7 @@ Partial Class Empleados
         Me.Panel30.Location = New System.Drawing.Point(0, 0)
         Me.Panel30.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(952, 35)
+        Me.Panel30.Size = New System.Drawing.Size(1047, 35)
         Me.Panel30.TabIndex = 0
         '
         'Label74
@@ -666,7 +666,7 @@ Partial Class Empleados
         '
         Me.txt_GFRenta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_GFRenta.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_GFRenta.Location = New System.Drawing.Point(92, 40)
+        Me.txt_GFRenta.Location = New System.Drawing.Point(250, 40)
         Me.txt_GFRenta.Name = "txt_GFRenta"
         Me.txt_GFRenta.Size = New System.Drawing.Size(95, 25)
         Me.txt_GFRenta.TabIndex = 27
@@ -675,7 +675,7 @@ Partial Class Empleados
         '
         Me.Label72.AutoSize = True
         Me.Label72.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label72.Location = New System.Drawing.Point(193, 43)
+        Me.Label72.Location = New System.Drawing.Point(351, 43)
         Me.Label72.Name = "Label72"
         Me.Label72.Size = New System.Drawing.Size(90, 18)
         Me.Label72.TabIndex = 62
@@ -685,7 +685,7 @@ Partial Class Empleados
         '
         Me.Label62.AutoSize = True
         Me.Label62.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label62.Location = New System.Drawing.Point(390, 43)
+        Me.Label62.Location = New System.Drawing.Point(548, 43)
         Me.Label62.Name = "Label62"
         Me.Label62.Size = New System.Drawing.Size(72, 18)
         Me.Label62.TabIndex = 64
@@ -695,7 +695,7 @@ Partial Class Empleados
         '
         Me.Txt_GFDesp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Txt_GFDesp.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_GFDesp.Location = New System.Drawing.Point(468, 40)
+        Me.Txt_GFDesp.Location = New System.Drawing.Point(626, 40)
         Me.Txt_GFDesp.Name = "Txt_GFDesp"
         Me.Txt_GFDesp.Size = New System.Drawing.Size(95, 25)
         Me.Txt_GFDesp.TabIndex = 29
@@ -704,7 +704,7 @@ Partial Class Empleados
         '
         Me.txt_GFCole.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_GFCole.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_GFCole.Location = New System.Drawing.Point(289, 40)
+        Me.txt_GFCole.Location = New System.Drawing.Point(447, 40)
         Me.txt_GFCole.Name = "txt_GFCole"
         Me.txt_GFCole.Size = New System.Drawing.Size(95, 25)
         Me.txt_GFCole.TabIndex = 28
@@ -726,7 +726,7 @@ Partial Class Empleados
         Me.PnlReferencias.Location = New System.Drawing.Point(0, 841)
         Me.PnlReferencias.Margin = New System.Windows.Forms.Padding(2)
         Me.PnlReferencias.Name = "PnlReferencias"
-        Me.PnlReferencias.Size = New System.Drawing.Size(958, 216)
+        Me.PnlReferencias.Size = New System.Drawing.Size(1051, 216)
         Me.PnlReferencias.TabIndex = 71
         '
         'dgv_Ref
@@ -738,7 +738,7 @@ Partial Class Empleados
         Me.dgv_Ref.Location = New System.Drawing.Point(0, 114)
         Me.dgv_Ref.Name = "dgv_Ref"
         Me.dgv_Ref.RowHeadersVisible = False
-        Me.dgv_Ref.Size = New System.Drawing.Size(954, 98)
+        Me.dgv_Ref.Size = New System.Drawing.Size(1047, 98)
         Me.dgv_Ref.TabIndex = 54
         '
         'btnEReferencia
@@ -787,7 +787,7 @@ Partial Class Empleados
         '
         Me.Label52.AutoSize = True
         Me.Label52.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label52.Location = New System.Drawing.Point(523, 74)
+        Me.Label52.Location = New System.Drawing.Point(664, 74)
         Me.Label52.Name = "Label52"
         Me.Label52.Size = New System.Drawing.Size(60, 18)
         Me.Label52.TabIndex = 53
@@ -797,7 +797,7 @@ Partial Class Empleados
         '
         Me.txt_TC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_TC.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_TC.Location = New System.Drawing.Point(589, 71)
+        Me.txt_TC.Location = New System.Drawing.Point(730, 71)
         Me.txt_TC.Name = "txt_TC"
         Me.txt_TC.Size = New System.Drawing.Size(208, 25)
         Me.txt_TC.TabIndex = 5
@@ -806,7 +806,7 @@ Partial Class Empleados
         '
         Me.txt_RefOcu.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_RefOcu.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_RefOcu.Location = New System.Drawing.Point(92, 71)
+        Me.txt_RefOcu.Location = New System.Drawing.Point(233, 71)
         Me.txt_RefOcu.Name = "txt_RefOcu"
         Me.txt_RefOcu.Size = New System.Drawing.Size(209, 25)
         Me.txt_RefOcu.TabIndex = 4
@@ -815,7 +815,7 @@ Partial Class Empleados
         '
         Me.Label56.AutoSize = True
         Me.Label56.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label56.Location = New System.Drawing.Point(461, 43)
+        Me.Label56.Location = New System.Drawing.Point(602, 43)
         Me.Label56.Name = "Label56"
         Me.Label56.Size = New System.Drawing.Size(122, 18)
         Me.Label56.TabIndex = 51
@@ -825,7 +825,7 @@ Partial Class Empleados
         '
         Me.Label46.AutoSize = True
         Me.Label46.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label46.Location = New System.Drawing.Point(8, 74)
+        Me.Label46.Location = New System.Drawing.Point(149, 74)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(78, 18)
         Me.Label46.TabIndex = 44
@@ -835,7 +835,7 @@ Partial Class Empleados
         '
         Me.Txt_TR.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Txt_TR.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_TR.Location = New System.Drawing.Point(589, 40)
+        Me.Txt_TR.Location = New System.Drawing.Point(730, 40)
         Me.Txt_TR.Name = "Txt_TR"
         Me.Txt_TR.Size = New System.Drawing.Size(209, 25)
         Me.Txt_TR.TabIndex = 3
@@ -844,7 +844,7 @@ Partial Class Empleados
         '
         Me.txt_RefNom.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_RefNom.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_RefNom.Location = New System.Drawing.Point(92, 40)
+        Me.txt_RefNom.Location = New System.Drawing.Point(233, 40)
         Me.txt_RefNom.Name = "txt_RefNom"
         Me.txt_RefNom.Size = New System.Drawing.Size(363, 25)
         Me.txt_RefNom.TabIndex = 2
@@ -853,7 +853,7 @@ Partial Class Empleados
         '
         Me.Label48.AutoSize = True
         Me.Label48.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label48.Location = New System.Drawing.Point(24, 43)
+        Me.Label48.Location = New System.Drawing.Point(165, 43)
         Me.Label48.Name = "Label48"
         Me.Label48.Size = New System.Drawing.Size(62, 18)
         Me.Label48.TabIndex = 37
@@ -868,14 +868,14 @@ Partial Class Empleados
         Me.Panel10.Location = New System.Drawing.Point(0, 0)
         Me.Panel10.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(954, 35)
+        Me.Panel10.Size = New System.Drawing.Size(1047, 35)
         Me.Panel10.TabIndex = 0
         '
         'Btn_AddRef
         '
         Me.Btn_AddRef.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Btn_AddRef.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Reference_80px
-        Me.Btn_AddRef.Location = New System.Drawing.Point(910, 0)
+        Me.Btn_AddRef.Location = New System.Drawing.Point(1009, 0)
         Me.Btn_AddRef.Name = "Btn_AddRef"
         Me.Btn_AddRef.Size = New System.Drawing.Size(35, 35)
         Me.Btn_AddRef.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -921,14 +921,14 @@ Partial Class Empleados
         Me.PnlActividades.Controls.Add(Me.Panel36)
         Me.PnlActividades.Location = New System.Drawing.Point(0, 405)
         Me.PnlActividades.Name = "PnlActividades"
-        Me.PnlActividades.Size = New System.Drawing.Size(960, 245)
+        Me.PnlActividades.Size = New System.Drawing.Size(1070, 245)
         Me.PnlActividades.TabIndex = 51
         '
         'Label90
         '
         Me.Label90.AutoSize = True
         Me.Label90.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label90.Location = New System.Drawing.Point(10, 210)
+        Me.Label90.Location = New System.Drawing.Point(72, 210)
         Me.Label90.Name = "Label90"
         Me.Label90.Size = New System.Drawing.Size(156, 18)
         Me.Label90.TabIndex = 82
@@ -938,7 +938,7 @@ Partial Class Empleados
         '
         Me.Label88.AutoSize = True
         Me.Label88.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label88.Location = New System.Drawing.Point(603, 105)
+        Me.Label88.Location = New System.Drawing.Point(665, 105)
         Me.Label88.Name = "Label88"
         Me.Label88.Size = New System.Drawing.Size(129, 18)
         Me.Label88.TabIndex = 79
@@ -948,7 +948,7 @@ Partial Class Empleados
         '
         Me.txt_se_diversiones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_se_diversiones.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_se_diversiones.Location = New System.Drawing.Point(172, 210)
+        Me.txt_se_diversiones.Location = New System.Drawing.Point(234, 210)
         Me.txt_se_diversiones.Name = "txt_se_diversiones"
         Me.txt_se_diversiones.Size = New System.Drawing.Size(209, 25)
         Me.txt_se_diversiones.TabIndex = 79
@@ -957,7 +957,7 @@ Partial Class Empleados
         '
         Me.txt_SE_NATURALES.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_SE_NATURALES.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SE_NATURALES.Location = New System.Drawing.Point(738, 105)
+        Me.txt_SE_NATURALES.Location = New System.Drawing.Point(800, 105)
         Me.txt_SE_NATURALES.Name = "txt_SE_NATURALES"
         Me.txt_SE_NATURALES.Size = New System.Drawing.Size(209, 25)
         Me.txt_SE_NATURALES.TabIndex = 73
@@ -966,7 +966,7 @@ Partial Class Empleados
         '
         Me.Label89.AutoSize = True
         Me.Label89.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label89.Location = New System.Drawing.Point(618, 176)
+        Me.Label89.Location = New System.Drawing.Point(680, 176)
         Me.Label89.Name = "Label89"
         Me.Label89.Size = New System.Drawing.Size(114, 18)
         Me.Label89.TabIndex = 81
@@ -976,7 +976,7 @@ Partial Class Empleados
         '
         Me.txt_SE_PLAZAS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_SE_PLAZAS.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SE_PLAZAS.Location = New System.Drawing.Point(738, 173)
+        Me.txt_SE_PLAZAS.Location = New System.Drawing.Point(800, 173)
         Me.txt_SE_PLAZAS.Name = "txt_SE_PLAZAS"
         Me.txt_SE_PLAZAS.Size = New System.Drawing.Size(209, 25)
         Me.txt_SE_PLAZAS.TabIndex = 78
@@ -985,7 +985,7 @@ Partial Class Empleados
         '
         Me.Label83.AutoSize = True
         Me.Label83.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label83.Location = New System.Drawing.Point(21, 77)
+        Me.Label83.Location = New System.Drawing.Point(83, 77)
         Me.Label83.Name = "Label83"
         Me.Label83.Size = New System.Drawing.Size(145, 18)
         Me.Label83.TabIndex = 71
@@ -995,7 +995,7 @@ Partial Class Empleados
         '
         Me.txt_SE_CINES.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_SE_CINES.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SE_CINES.Location = New System.Drawing.Point(738, 139)
+        Me.txt_SE_CINES.Location = New System.Drawing.Point(800, 139)
         Me.txt_SE_CINES.Name = "txt_SE_CINES"
         Me.txt_SE_CINES.Size = New System.Drawing.Size(209, 25)
         Me.txt_SE_CINES.TabIndex = 75
@@ -1004,7 +1004,7 @@ Partial Class Empleados
         '
         Me.txt_SE_ZONAS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_SE_ZONAS.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SE_ZONAS.Location = New System.Drawing.Point(172, 176)
+        Me.txt_SE_ZONAS.Location = New System.Drawing.Point(234, 176)
         Me.txt_SE_ZONAS.Name = "txt_SE_ZONAS"
         Me.txt_SE_ZONAS.Size = New System.Drawing.Size(209, 25)
         Me.txt_SE_ZONAS.TabIndex = 77
@@ -1013,7 +1013,7 @@ Partial Class Empleados
         '
         Me.Label85.AutoSize = True
         Me.Label85.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label85.Location = New System.Drawing.Point(685, 142)
+        Me.Label85.Location = New System.Drawing.Point(747, 142)
         Me.Label85.Name = "Label85"
         Me.Label85.Size = New System.Drawing.Size(47, 18)
         Me.Label85.TabIndex = 77
@@ -1023,7 +1023,7 @@ Partial Class Empleados
         '
         Me.Label87.AutoSize = True
         Me.Label87.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label87.Location = New System.Drawing.Point(22, 179)
+        Me.Label87.Location = New System.Drawing.Point(84, 179)
         Me.Label87.Name = "Label87"
         Me.Label87.Size = New System.Drawing.Size(144, 18)
         Me.Label87.TabIndex = 80
@@ -1033,7 +1033,7 @@ Partial Class Empleados
         '
         Me.txt_SE_CULTURALES.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_SE_CULTURALES.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SE_CULTURALES.Location = New System.Drawing.Point(172, 70)
+        Me.txt_SE_CULTURALES.Location = New System.Drawing.Point(234, 70)
         Me.txt_SE_CULTURALES.Name = "txt_SE_CULTURALES"
         Me.txt_SE_CULTURALES.Size = New System.Drawing.Size(209, 25)
         Me.txt_SE_CULTURALES.TabIndex = 67
@@ -1042,7 +1042,7 @@ Partial Class Empleados
         '
         Me.Label80.AutoSize = True
         Me.Label80.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label80.Location = New System.Drawing.Point(673, 74)
+        Me.Label80.Location = New System.Drawing.Point(735, 74)
         Me.Label80.Name = "Label80"
         Me.Label80.Size = New System.Drawing.Size(59, 18)
         Me.Label80.TabIndex = 70
@@ -1052,7 +1052,7 @@ Partial Class Empleados
         '
         Me.txt_SE_TEATROS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_SE_TEATROS.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SE_TEATROS.Location = New System.Drawing.Point(738, 71)
+        Me.txt_SE_TEATROS.Location = New System.Drawing.Point(800, 71)
         Me.txt_SE_TEATROS.Name = "txt_SE_TEATROS"
         Me.txt_SE_TEATROS.Size = New System.Drawing.Size(209, 25)
         Me.txt_SE_TEATROS.TabIndex = 65
@@ -1061,7 +1061,7 @@ Partial Class Empleados
         '
         Me.Label86.AutoSize = True
         Me.Label86.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label86.Location = New System.Drawing.Point(84, 111)
+        Me.Label86.Location = New System.Drawing.Point(146, 111)
         Me.Label86.Name = "Label86"
         Me.Label86.Size = New System.Drawing.Size(82, 18)
         Me.Label86.TabIndex = 78
@@ -1071,7 +1071,7 @@ Partial Class Empleados
         '
         Me.Label81.AutoSize = True
         Me.Label81.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label81.Location = New System.Drawing.Point(107, 145)
+        Me.Label81.Location = New System.Drawing.Point(169, 145)
         Me.Label81.Name = "Label81"
         Me.Label81.Size = New System.Drawing.Size(59, 18)
         Me.Label81.TabIndex = 76
@@ -1081,7 +1081,7 @@ Partial Class Empleados
         '
         Me.txt_SE_MUSEOS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_SE_MUSEOS.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SE_MUSEOS.Location = New System.Drawing.Point(172, 142)
+        Me.txt_SE_MUSEOS.Location = New System.Drawing.Point(234, 142)
         Me.txt_SE_MUSEOS.Name = "txt_SE_MUSEOS"
         Me.txt_SE_MUSEOS.Size = New System.Drawing.Size(209, 25)
         Me.txt_SE_MUSEOS.TabIndex = 74
@@ -1090,7 +1090,7 @@ Partial Class Empleados
         '
         Me.txt_SE_VACIONES.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_SE_VACIONES.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SE_VACIONES.Location = New System.Drawing.Point(172, 108)
+        Me.txt_SE_VACIONES.Location = New System.Drawing.Point(234, 108)
         Me.txt_SE_VACIONES.Name = "txt_SE_VACIONES"
         Me.txt_SE_VACIONES.Size = New System.Drawing.Size(209, 25)
         Me.txt_SE_VACIONES.TabIndex = 72
@@ -1099,7 +1099,7 @@ Partial Class Empleados
         '
         Me.Label78.AutoSize = True
         Me.Label78.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label78.Location = New System.Drawing.Point(505, 40)
+        Me.Label78.Location = New System.Drawing.Point(567, 40)
         Me.Label78.Name = "Label78"
         Me.Label78.Size = New System.Drawing.Size(227, 18)
         Me.Label78.TabIndex = 69
@@ -1109,7 +1109,7 @@ Partial Class Empleados
         '
         Me.txt_SE__SOCIALE.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_SE__SOCIALE.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SE__SOCIALE.Location = New System.Drawing.Point(738, 40)
+        Me.txt_SE__SOCIALE.Location = New System.Drawing.Point(800, 40)
         Me.txt_SE__SOCIALE.Name = "txt_SE__SOCIALE"
         Me.txt_SE__SOCIALE.Size = New System.Drawing.Size(209, 25)
         Me.txt_SE__SOCIALE.TabIndex = 66
@@ -1118,7 +1118,7 @@ Partial Class Empleados
         '
         Me.txt_SE_EVENTOS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_SE_EVENTOS.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SE_EVENTOS.Location = New System.Drawing.Point(172, 40)
+        Me.txt_SE_EVENTOS.Location = New System.Drawing.Point(234, 40)
         Me.txt_SE_EVENTOS.Name = "txt_SE_EVENTOS"
         Me.txt_SE_EVENTOS.Size = New System.Drawing.Size(209, 25)
         Me.txt_SE_EVENTOS.TabIndex = 64
@@ -1127,7 +1127,7 @@ Partial Class Empleados
         '
         Me.Label79.AutoSize = True
         Me.Label79.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label79.Location = New System.Drawing.Point(12, 43)
+        Me.Label79.Location = New System.Drawing.Point(74, 43)
         Me.Label79.Name = "Label79"
         Me.Label79.Size = New System.Drawing.Size(154, 18)
         Me.Label79.TabIndex = 68
@@ -1141,7 +1141,7 @@ Partial Class Empleados
         Me.Panel36.Location = New System.Drawing.Point(0, 0)
         Me.Panel36.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel36.Name = "Panel36"
-        Me.Panel36.Size = New System.Drawing.Size(960, 35)
+        Me.Panel36.Size = New System.Drawing.Size(1070, 35)
         Me.Panel36.TabIndex = 28
         '
         'Label84
@@ -1169,14 +1169,14 @@ Partial Class Empleados
         Me.PnlIngresos.Location = New System.Drawing.Point(0, 655)
         Me.PnlIngresos.Margin = New System.Windows.Forms.Padding(2)
         Me.PnlIngresos.Name = "PnlIngresos"
-        Me.PnlIngresos.Size = New System.Drawing.Size(960, 182)
+        Me.PnlIngresos.Size = New System.Drawing.Size(1051, 182)
         Me.PnlIngresos.TabIndex = 51
         '
         'Label63
         '
         Me.Label63.AutoSize = True
         Me.Label63.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label63.Location = New System.Drawing.Point(309, 43)
+        Me.Label63.Location = New System.Drawing.Point(440, 43)
         Me.Label63.Name = "Label63"
         Me.Label63.Size = New System.Drawing.Size(70, 18)
         Me.Label63.TabIndex = 62
@@ -1186,7 +1186,7 @@ Partial Class Empleados
         '
         Me.txt_OTCantidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_OTCantidad.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_OTCantidad.Location = New System.Drawing.Point(385, 40)
+        Me.txt_OTCantidad.Location = New System.Drawing.Point(516, 40)
         Me.txt_OTCantidad.Name = "txt_OTCantidad"
         Me.txt_OTCantidad.Size = New System.Drawing.Size(208, 25)
         Me.txt_OTCantidad.TabIndex = 16
@@ -1195,7 +1195,7 @@ Partial Class Empleados
         '
         Me.txt_OIParen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_OIParen.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_OIParen.Location = New System.Drawing.Point(91, 40)
+        Me.txt_OIParen.Location = New System.Drawing.Point(222, 40)
         Me.txt_OIParen.Name = "txt_OIParen"
         Me.txt_OIParen.Size = New System.Drawing.Size(212, 25)
         Me.txt_OIParen.TabIndex = 15
@@ -1204,7 +1204,7 @@ Partial Class Empleados
         '
         Me.Label65.AutoSize = True
         Me.Label65.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label65.Location = New System.Drawing.Point(5, 43)
+        Me.Label65.Location = New System.Drawing.Point(136, 43)
         Me.Label65.Name = "Label65"
         Me.Label65.Size = New System.Drawing.Size(80, 18)
         Me.Label65.TabIndex = 57
@@ -1219,7 +1219,7 @@ Partial Class Empleados
         Me.dgv_OI.Location = New System.Drawing.Point(0, 71)
         Me.dgv_OI.Name = "dgv_OI"
         Me.dgv_OI.RowHeadersVisible = False
-        Me.dgv_OI.Size = New System.Drawing.Size(956, 107)
+        Me.dgv_OI.Size = New System.Drawing.Size(1047, 107)
         Me.dgv_OI.TabIndex = 55
         '
         'btnEIngresos
@@ -1260,14 +1260,14 @@ Partial Class Empleados
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
         Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(956, 35)
+        Me.Panel14.Size = New System.Drawing.Size(1047, 35)
         Me.Panel14.TabIndex = 0
         '
         'btn_OI
         '
         Me.btn_OI.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_OI.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Income_80px
-        Me.btn_OI.Location = New System.Drawing.Point(910, 0)
+        Me.btn_OI.Location = New System.Drawing.Point(1009, -1)
         Me.btn_OI.Name = "btn_OI"
         Me.btn_OI.Size = New System.Drawing.Size(35, 35)
         Me.btn_OI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1304,9 +1304,9 @@ Partial Class Empleados
         Me.PnlDatos.Controls.Add(Me.Label50)
         Me.PnlDatos.Controls.Add(Me.Txt_pasatiempos)
         Me.PnlDatos.Controls.Add(Me.Label49)
-        Me.PnlDatos.Location = New System.Drawing.Point(489, 289)
+        Me.PnlDatos.Location = New System.Drawing.Point(486, 289)
         Me.PnlDatos.Name = "PnlDatos"
-        Me.PnlDatos.Size = New System.Drawing.Size(469, 110)
+        Me.PnlDatos.Size = New System.Drawing.Size(565, 110)
         Me.PnlDatos.TabIndex = 50
         '
         'Panel6
@@ -1317,7 +1317,7 @@ Partial Class Empleados
         Me.Panel6.Location = New System.Drawing.Point(0, 0)
         Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(469, 35)
+        Me.Panel6.Size = New System.Drawing.Size(565, 35)
         Me.Panel6.TabIndex = 0
         '
         'Label53
@@ -1336,7 +1336,7 @@ Partial Class Empleados
         '
         Me.txt_Religion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_Religion.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_Religion.Location = New System.Drawing.Point(116, 39)
+        Me.txt_Religion.Location = New System.Drawing.Point(223, 40)
         Me.txt_Religion.Name = "txt_Religion"
         Me.txt_Religion.Size = New System.Drawing.Size(293, 25)
         Me.txt_Religion.TabIndex = 0
@@ -1345,7 +1345,7 @@ Partial Class Empleados
         '
         Me.Label50.AutoSize = True
         Me.Label50.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label50.Location = New System.Drawing.Point(43, 42)
+        Me.Label50.Location = New System.Drawing.Point(150, 43)
         Me.Label50.Name = "Label50"
         Me.Label50.Size = New System.Drawing.Size(67, 18)
         Me.Label50.TabIndex = 37
@@ -1355,7 +1355,7 @@ Partial Class Empleados
         '
         Me.Txt_pasatiempos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Txt_pasatiempos.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_pasatiempos.Location = New System.Drawing.Point(116, 70)
+        Me.Txt_pasatiempos.Location = New System.Drawing.Point(223, 71)
         Me.Txt_pasatiempos.Name = "Txt_pasatiempos"
         Me.Txt_pasatiempos.Size = New System.Drawing.Size(293, 25)
         Me.Txt_pasatiempos.TabIndex = 1
@@ -1364,7 +1364,7 @@ Partial Class Empleados
         '
         Me.Label49.AutoSize = True
         Me.Label49.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label49.Location = New System.Drawing.Point(19, 73)
+        Me.Label49.Location = New System.Drawing.Point(126, 74)
         Me.Label49.Name = "Label49"
         Me.Label49.Size = New System.Drawing.Size(91, 18)
         Me.Label49.TabIndex = 44
@@ -1379,7 +1379,7 @@ Partial Class Empleados
         Me.PnlTransporte.Controls.Add(Me.cb_Vehi)
         Me.PnlTransporte.Location = New System.Drawing.Point(0, 289)
         Me.PnlTransporte.Name = "PnlTransporte"
-        Me.PnlTransporte.Size = New System.Drawing.Size(485, 110)
+        Me.PnlTransporte.Size = New System.Drawing.Size(480, 110)
         Me.PnlTransporte.TabIndex = 1
         '
         'Panel22
@@ -1390,7 +1390,7 @@ Partial Class Empleados
         Me.Panel22.Location = New System.Drawing.Point(0, 0)
         Me.Panel22.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(485, 35)
+        Me.Panel22.Size = New System.Drawing.Size(480, 35)
         Me.Panel22.TabIndex = 2
         '
         'Label57
@@ -1409,7 +1409,7 @@ Partial Class Empleados
         '
         Me.cb_Metro.AutoSize = True
         Me.cb_Metro.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_Metro.Location = New System.Drawing.Point(6, 40)
+        Me.cb_Metro.Location = New System.Drawing.Point(23, 54)
         Me.cb_Metro.Name = "cb_Metro"
         Me.cb_Metro.Size = New System.Drawing.Size(65, 22)
         Me.cb_Metro.TabIndex = 7
@@ -1420,7 +1420,7 @@ Partial Class Empleados
         '
         Me.cb_Trans.AutoSize = True
         Me.cb_Trans.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_Trans.Location = New System.Drawing.Point(77, 40)
+        Me.cb_Trans.Location = New System.Drawing.Point(94, 54)
         Me.cb_Trans.Name = "cb_Trans"
         Me.cb_Trans.Size = New System.Drawing.Size(151, 22)
         Me.cb_Trans.TabIndex = 8
@@ -1431,7 +1431,7 @@ Partial Class Empleados
         '
         Me.cb_Taxi.AutoSize = True
         Me.cb_Taxi.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_Taxi.Location = New System.Drawing.Point(234, 40)
+        Me.cb_Taxi.Location = New System.Drawing.Point(251, 54)
         Me.cb_Taxi.Name = "cb_Taxi"
         Me.cb_Taxi.Size = New System.Drawing.Size(57, 22)
         Me.cb_Taxi.TabIndex = 9
@@ -1442,7 +1442,7 @@ Partial Class Empleados
         '
         Me.cb_Vehi.AutoSize = True
         Me.cb_Vehi.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_Vehi.Location = New System.Drawing.Point(297, 40)
+        Me.cb_Vehi.Location = New System.Drawing.Point(314, 54)
         Me.cb_Vehi.Name = "cb_Vehi"
         Me.cb_Vehi.Size = New System.Drawing.Size(132, 22)
         Me.cb_Vehi.TabIndex = 10
@@ -1458,7 +1458,7 @@ Partial Class Empleados
         Me.PnlVivienda.Controls.Add(Me.Panel15)
         Me.PnlVivienda.Location = New System.Drawing.Point(0, 0)
         Me.PnlVivienda.Name = "PnlVivienda"
-        Me.PnlVivienda.Size = New System.Drawing.Size(960, 283)
+        Me.PnlVivienda.Size = New System.Drawing.Size(1051, 283)
         Me.PnlVivienda.TabIndex = 0
         '
         'GrpServicios
@@ -1474,7 +1474,7 @@ Partial Class Empleados
         Me.GrpServicios.Controls.Add(Me.cb_Basura)
         Me.GrpServicios.Location = New System.Drawing.Point(465, 155)
         Me.GrpServicios.Name = "GrpServicios"
-        Me.GrpServicios.Size = New System.Drawing.Size(493, 120)
+        Me.GrpServicios.Size = New System.Drawing.Size(569, 120)
         Me.GrpServicios.TabIndex = 16
         Me.GrpServicios.TabStop = False
         Me.GrpServicios.Text = "Servicios"
@@ -1483,7 +1483,7 @@ Partial Class Empleados
         '
         Me.cb_Luz.AutoSize = True
         Me.cb_Luz.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_Luz.Location = New System.Drawing.Point(6, 27)
+        Me.cb_Luz.Location = New System.Drawing.Point(37, 27)
         Me.cb_Luz.Name = "cb_Luz"
         Me.cb_Luz.Size = New System.Drawing.Size(53, 22)
         Me.cb_Luz.TabIndex = 18
@@ -1494,7 +1494,7 @@ Partial Class Empleados
         '
         Me.cb_Drenaje.AutoSize = True
         Me.cb_Drenaje.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_Drenaje.Location = New System.Drawing.Point(65, 27)
+        Me.cb_Drenaje.Location = New System.Drawing.Point(96, 27)
         Me.cb_Drenaje.Name = "cb_Drenaje"
         Me.cb_Drenaje.Size = New System.Drawing.Size(78, 22)
         Me.cb_Drenaje.TabIndex = 21
@@ -1505,7 +1505,7 @@ Partial Class Empleados
         '
         Me.cb_SisSeg.AutoSize = True
         Me.cb_SisSeg.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_SisSeg.Location = New System.Drawing.Point(6, 83)
+        Me.cb_SisSeg.Location = New System.Drawing.Point(37, 83)
         Me.cb_SisSeg.Name = "cb_SisSeg"
         Me.cb_SisSeg.Size = New System.Drawing.Size(163, 22)
         Me.cb_SisSeg.TabIndex = 26
@@ -1516,7 +1516,7 @@ Partial Class Empleados
         '
         Me.cb_LineaTel.AutoSize = True
         Me.cb_LineaTel.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_LineaTel.Location = New System.Drawing.Point(161, 55)
+        Me.cb_LineaTel.Location = New System.Drawing.Point(192, 55)
         Me.cb_LineaTel.Name = "cb_LineaTel"
         Me.cb_LineaTel.Size = New System.Drawing.Size(137, 22)
         Me.cb_LineaTel.TabIndex = 19
@@ -1527,7 +1527,7 @@ Partial Class Empleados
         '
         Me.cb_TV.AutoSize = True
         Me.cb_TV.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_TV.Location = New System.Drawing.Point(307, 55)
+        Me.cb_TV.Location = New System.Drawing.Point(338, 55)
         Me.cb_TV.Name = "cb_TV"
         Me.cb_TV.Size = New System.Drawing.Size(114, 22)
         Me.cb_TV.TabIndex = 24
@@ -1538,7 +1538,7 @@ Partial Class Empleados
         '
         Me.cb_Internet.AutoSize = True
         Me.cb_Internet.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_Internet.Location = New System.Drawing.Point(399, 27)
+        Me.cb_Internet.Location = New System.Drawing.Point(430, 27)
         Me.cb_Internet.Name = "cb_Internet"
         Me.cb_Internet.Size = New System.Drawing.Size(80, 22)
         Me.cb_Internet.TabIndex = 25
@@ -1549,7 +1549,7 @@ Partial Class Empleados
         '
         Me.cb_AguaP.AutoSize = True
         Me.cb_AguaP.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_AguaP.Location = New System.Drawing.Point(149, 27)
+        Me.cb_AguaP.Location = New System.Drawing.Point(180, 27)
         Me.cb_AguaP.Name = "cb_AguaP"
         Me.cb_AguaP.Size = New System.Drawing.Size(113, 22)
         Me.cb_AguaP.TabIndex = 20
@@ -1560,7 +1560,7 @@ Partial Class Empleados
         '
         Me.cb_Tuberia.AutoSize = True
         Me.cb_Tuberia.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_Tuberia.Location = New System.Drawing.Point(268, 27)
+        Me.cb_Tuberia.Location = New System.Drawing.Point(299, 27)
         Me.cb_Tuberia.Name = "cb_Tuberia"
         Me.cb_Tuberia.Size = New System.Drawing.Size(125, 22)
         Me.cb_Tuberia.TabIndex = 22
@@ -1571,7 +1571,7 @@ Partial Class Empleados
         '
         Me.cb_Basura.AutoSize = True
         Me.cb_Basura.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_Basura.Location = New System.Drawing.Point(6, 55)
+        Me.cb_Basura.Location = New System.Drawing.Point(37, 55)
         Me.cb_Basura.Name = "cb_Basura"
         Me.cb_Basura.Size = New System.Drawing.Size(151, 22)
         Me.cb_Basura.TabIndex = 23
@@ -1597,7 +1597,7 @@ Partial Class Empleados
         Me.GrpMaterial.Controls.Add(Me.cb_Madera)
         Me.GrpMaterial.Location = New System.Drawing.Point(465, 95)
         Me.GrpMaterial.Name = "GrpMaterial"
-        Me.GrpMaterial.Size = New System.Drawing.Size(493, 54)
+        Me.GrpMaterial.Size = New System.Drawing.Size(569, 54)
         Me.GrpMaterial.TabIndex = 15
         Me.GrpMaterial.TabStop = False
         Me.GrpMaterial.Text = "Material"
@@ -1606,7 +1606,7 @@ Partial Class Empleados
         '
         Me.cb_block.AutoSize = True
         Me.cb_block.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_block.Location = New System.Drawing.Point(91, 27)
+        Me.cb_block.Location = New System.Drawing.Point(122, 26)
         Me.cb_block.Name = "cb_block"
         Me.cb_block.Size = New System.Drawing.Size(64, 22)
         Me.cb_block.TabIndex = 48
@@ -1617,7 +1617,7 @@ Partial Class Empleados
         '
         Me.cb_adobe.AutoSize = True
         Me.cb_adobe.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_adobe.Location = New System.Drawing.Point(6, 27)
+        Me.cb_adobe.Location = New System.Drawing.Point(37, 26)
         Me.cb_adobe.Name = "cb_adobe"
         Me.cb_adobe.Size = New System.Drawing.Size(67, 22)
         Me.cb_adobe.TabIndex = 46
@@ -1628,7 +1628,7 @@ Partial Class Empleados
         '
         Me.cb_ladrillo.AutoSize = True
         Me.cb_ladrillo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_ladrillo.Location = New System.Drawing.Point(167, 27)
+        Me.cb_ladrillo.Location = New System.Drawing.Point(198, 26)
         Me.cb_ladrillo.Name = "cb_ladrillo"
         Me.cb_ladrillo.Size = New System.Drawing.Size(81, 22)
         Me.cb_ladrillo.TabIndex = 47
@@ -1639,7 +1639,7 @@ Partial Class Empleados
         '
         Me.cb_Madera.AutoSize = True
         Me.cb_Madera.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_Madera.Location = New System.Drawing.Point(257, 27)
+        Me.cb_Madera.Location = New System.Drawing.Point(288, 26)
         Me.cb_Madera.Name = "cb_Madera"
         Me.cb_Madera.Size = New System.Drawing.Size(75, 22)
         Me.cb_Madera.TabIndex = 49
@@ -1654,7 +1654,7 @@ Partial Class Empleados
         Me.GrpTIpo.Controls.Add(Me.cb_Terreno)
         Me.GrpTIpo.Location = New System.Drawing.Point(465, 40)
         Me.GrpTIpo.Name = "GrpTIpo"
-        Me.GrpTIpo.Size = New System.Drawing.Size(493, 51)
+        Me.GrpTIpo.Size = New System.Drawing.Size(569, 51)
         Me.GrpTIpo.TabIndex = 2
         Me.GrpTIpo.TabStop = False
         Me.GrpTIpo.Text = "Tipo"
@@ -1663,7 +1663,7 @@ Partial Class Empleados
         '
         Me.cb_CasaP.AutoSize = True
         Me.cb_CasaP.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_CasaP.Location = New System.Drawing.Point(6, 27)
+        Me.cb_CasaP.Location = New System.Drawing.Point(37, 27)
         Me.cb_CasaP.Name = "cb_CasaP"
         Me.cb_CasaP.Size = New System.Drawing.Size(104, 22)
         Me.cb_CasaP.TabIndex = 11
@@ -1674,7 +1674,7 @@ Partial Class Empleados
         '
         Me.cb_Renta.AutoSize = True
         Me.cb_Renta.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_Renta.Location = New System.Drawing.Point(131, 27)
+        Me.cb_Renta.Location = New System.Drawing.Point(162, 27)
         Me.cb_Renta.Name = "cb_Renta"
         Me.cb_Renta.Size = New System.Drawing.Size(65, 22)
         Me.cb_Renta.TabIndex = 12
@@ -1685,7 +1685,7 @@ Partial Class Empleados
         '
         Me.cb_Depto.AutoSize = True
         Me.cb_Depto.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_Depto.Location = New System.Drawing.Point(304, 27)
+        Me.cb_Depto.Location = New System.Drawing.Point(335, 27)
         Me.cb_Depto.Name = "cb_Depto"
         Me.cb_Depto.Size = New System.Drawing.Size(117, 22)
         Me.cb_Depto.TabIndex = 14
@@ -1696,7 +1696,7 @@ Partial Class Empleados
         '
         Me.cb_Terreno.AutoSize = True
         Me.cb_Terreno.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_Terreno.Location = New System.Drawing.Point(210, 27)
+        Me.cb_Terreno.Location = New System.Drawing.Point(241, 27)
         Me.cb_Terreno.Name = "cb_Terreno"
         Me.cb_Terreno.Size = New System.Drawing.Size(77, 22)
         Me.cb_Terreno.TabIndex = 13
@@ -1711,7 +1711,7 @@ Partial Class Empleados
         Me.Panel15.Location = New System.Drawing.Point(0, 0)
         Me.Panel15.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(960, 35)
+        Me.Panel15.Size = New System.Drawing.Size(1051, 35)
         Me.Panel15.TabIndex = 1
         '
         'Label5
@@ -1733,7 +1733,7 @@ Partial Class Empleados
         Me.Tab_Enfer.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_Enfer.Name = "Tab_Enfer"
         Me.Tab_Enfer.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_Enfer.Size = New System.Drawing.Size(981, 668)
+        Me.Tab_Enfer.Size = New System.Drawing.Size(1070, 668)
         Me.Tab_Enfer.TabIndex = 4
         Me.Tab_Enfer.Text = "ENFERMEDADES"
         Me.Tab_Enfer.UseVisualStyleBackColor = True
@@ -1750,16 +1750,16 @@ Partial Class Empleados
         Me.panel20.Location = New System.Drawing.Point(0, 0)
         Me.panel20.Margin = New System.Windows.Forms.Padding(2)
         Me.panel20.Name = "panel20"
-        Me.panel20.Size = New System.Drawing.Size(981, 492)
+        Me.panel20.Size = New System.Drawing.Size(1070, 591)
         Me.panel20.TabIndex = 1
         '
         'Panel8
         '
         Me.Panel8.Controls.Add(Me.dgv_Enf)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel8.Location = New System.Drawing.Point(0, 98)
+        Me.Panel8.Location = New System.Drawing.Point(0, 197)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(977, 390)
+        Me.Panel8.Size = New System.Drawing.Size(1066, 390)
         Me.Panel8.TabIndex = 35
         '
         'dgv_Enf
@@ -1773,7 +1773,7 @@ Partial Class Empleados
         Me.dgv_Enf.Name = "dgv_Enf"
         Me.dgv_Enf.RowHeadersVisible = False
         Me.dgv_Enf.RowTemplate.Height = 24
-        Me.dgv_Enf.Size = New System.Drawing.Size(977, 390)
+        Me.dgv_Enf.Size = New System.Drawing.Size(1066, 390)
         Me.dgv_Enf.TabIndex = 34
         '
         'btnEnELiminar
@@ -1802,7 +1802,7 @@ Partial Class Empleados
         'txt_enfNAME
         '
         Me.txt_enfNAME.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_enfNAME.Location = New System.Drawing.Point(119, 40)
+        Me.txt_enfNAME.Location = New System.Drawing.Point(123, 54)
         Me.txt_enfNAME.Name = "txt_enfNAME"
         Me.txt_enfNAME.Size = New System.Drawing.Size(209, 28)
         Me.txt_enfNAME.TabIndex = 28
@@ -1812,7 +1812,7 @@ Partial Class Empleados
         Me.label47.AutoSize = True
         Me.label47.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label47.ForeColor = System.Drawing.Color.Black
-        Me.label47.Location = New System.Drawing.Point(6, 44)
+        Me.label47.Location = New System.Drawing.Point(10, 58)
         Me.label47.Name = "label47"
         Me.label47.Size = New System.Drawing.Size(107, 21)
         Me.label47.TabIndex = 27
@@ -1827,14 +1827,14 @@ Partial Class Empleados
         Me.panel21.Location = New System.Drawing.Point(0, 0)
         Me.panel21.Margin = New System.Windows.Forms.Padding(2)
         Me.panel21.Name = "panel21"
-        Me.panel21.Size = New System.Drawing.Size(977, 35)
+        Me.panel21.Size = New System.Drawing.Size(1066, 35)
         Me.panel21.TabIndex = 0
         '
         'btn_enfADD
         '
         Me.btn_enfADD.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_enfADD.Image = Global.AdminEmpleados.My.Resources.Resources.Add_MedicalCondition_80px
-        Me.btn_enfADD.Location = New System.Drawing.Point(930, 0)
+        Me.btn_enfADD.Location = New System.Drawing.Point(1025, 0)
         Me.btn_enfADD.Name = "btn_enfADD"
         Me.btn_enfADD.Size = New System.Drawing.Size(35, 35)
         Me.btn_enfADD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1860,7 +1860,7 @@ Partial Class Empleados
         Me.Tab_Cont.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_Cont.Name = "Tab_Cont"
         Me.Tab_Cont.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_Cont.Size = New System.Drawing.Size(981, 668)
+        Me.Tab_Cont.Size = New System.Drawing.Size(1070, 668)
         Me.Tab_Cont.TabIndex = 3
         Me.Tab_Cont.Text = "CONTACTO"
         Me.Tab_Cont.UseVisualStyleBackColor = True
@@ -1886,16 +1886,16 @@ Partial Class Empleados
         Me.panel18.Location = New System.Drawing.Point(0, 0)
         Me.panel18.Margin = New System.Windows.Forms.Padding(2)
         Me.panel18.Name = "panel18"
-        Me.panel18.Size = New System.Drawing.Size(981, 492)
+        Me.panel18.Size = New System.Drawing.Size(1070, 581)
         Me.panel18.TabIndex = 1
         '
         'PnlContacto
         '
         Me.PnlContacto.Controls.Add(Me.dgv_contacto)
         Me.PnlContacto.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PnlContacto.Location = New System.Drawing.Point(0, 102)
+        Me.PnlContacto.Location = New System.Drawing.Point(0, 191)
         Me.PnlContacto.Name = "PnlContacto"
-        Me.PnlContacto.Size = New System.Drawing.Size(977, 386)
+        Me.PnlContacto.Size = New System.Drawing.Size(1066, 386)
         Me.PnlContacto.TabIndex = 51
         '
         'dgv_contacto
@@ -1909,7 +1909,7 @@ Partial Class Empleados
         Me.dgv_contacto.Name = "dgv_contacto"
         Me.dgv_contacto.RowHeadersVisible = False
         Me.dgv_contacto.RowTemplate.Height = 24
-        Me.dgv_contacto.Size = New System.Drawing.Size(977, 386)
+        Me.dgv_contacto.Size = New System.Drawing.Size(1066, 386)
         Me.dgv_contacto.TabIndex = 50
         '
         'btnCOEliminar
@@ -1977,7 +1977,7 @@ Partial Class Empleados
         '
         Me.label45.AutoSize = True
         Me.label45.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label45.Location = New System.Drawing.Point(21, 74)
+        Me.label45.Location = New System.Drawing.Point(66, 93)
         Me.label45.Name = "label45"
         Me.label45.Size = New System.Drawing.Size(80, 18)
         Me.label45.TabIndex = 48
@@ -1987,7 +1987,7 @@ Partial Class Empleados
         '
         Me.txt_conPAREN.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_conPAREN.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_conPAREN.Location = New System.Drawing.Point(107, 71)
+        Me.txt_conPAREN.Location = New System.Drawing.Point(152, 90)
         Me.txt_conPAREN.Name = "txt_conPAREN"
         Me.txt_conPAREN.Size = New System.Drawing.Size(209, 25)
         Me.txt_conPAREN.TabIndex = 47
@@ -1996,7 +1996,7 @@ Partial Class Empleados
         '
         Me.label41.AutoSize = True
         Me.label41.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label41.Location = New System.Drawing.Point(685, 74)
+        Me.label41.Location = New System.Drawing.Point(730, 93)
         Me.label41.Name = "label41"
         Me.label41.Size = New System.Drawing.Size(58, 18)
         Me.label41.TabIndex = 46
@@ -2006,7 +2006,7 @@ Partial Class Empleados
         '
         Me.txt_conCEL.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_conCEL.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_conCEL.Location = New System.Drawing.Point(749, 71)
+        Me.txt_conCEL.Location = New System.Drawing.Point(794, 90)
         Me.txt_conCEL.Name = "txt_conCEL"
         Me.txt_conCEL.Size = New System.Drawing.Size(209, 25)
         Me.txt_conCEL.TabIndex = 45
@@ -2015,7 +2015,7 @@ Partial Class Empleados
         '
         Me.label40.AutoSize = True
         Me.label40.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label40.Location = New System.Drawing.Point(352, 74)
+        Me.label40.Location = New System.Drawing.Point(397, 93)
         Me.label40.Name = "label40"
         Me.label40.Size = New System.Drawing.Size(68, 18)
         Me.label40.TabIndex = 44
@@ -2025,7 +2025,7 @@ Partial Class Empleados
         '
         Me.txt_conTEL.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_conTEL.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_conTEL.Location = New System.Drawing.Point(426, 71)
+        Me.txt_conTEL.Location = New System.Drawing.Point(471, 90)
         Me.txt_conTEL.Name = "txt_conTEL"
         Me.txt_conTEL.Size = New System.Drawing.Size(209, 25)
         Me.txt_conTEL.TabIndex = 43
@@ -2034,7 +2034,7 @@ Partial Class Empleados
         '
         Me.txt_conNAME.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_conNAME.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_conNAME.Location = New System.Drawing.Point(107, 40)
+        Me.txt_conNAME.Location = New System.Drawing.Point(152, 59)
         Me.txt_conNAME.Name = "txt_conNAME"
         Me.txt_conNAME.Size = New System.Drawing.Size(209, 25)
         Me.txt_conNAME.TabIndex = 35
@@ -2043,7 +2043,7 @@ Partial Class Empleados
         '
         Me.txt_conAM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_conAM.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_conAM.Location = New System.Drawing.Point(749, 40)
+        Me.txt_conAM.Location = New System.Drawing.Point(794, 59)
         Me.txt_conAM.Name = "txt_conAM"
         Me.txt_conAM.Size = New System.Drawing.Size(209, 25)
         Me.txt_conAM.TabIndex = 34
@@ -2052,7 +2052,7 @@ Partial Class Empleados
         '
         Me.txt_conAP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_conAP.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_conAP.Location = New System.Drawing.Point(426, 40)
+        Me.txt_conAP.Location = New System.Drawing.Point(471, 59)
         Me.txt_conAP.Name = "txt_conAP"
         Me.txt_conAP.Size = New System.Drawing.Size(209, 25)
         Me.txt_conAP.TabIndex = 33
@@ -2061,7 +2061,7 @@ Partial Class Empleados
         '
         Me.label42.AutoSize = True
         Me.label42.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label42.Location = New System.Drawing.Point(322, 43)
+        Me.label42.Location = New System.Drawing.Point(367, 62)
         Me.label42.Name = "label42"
         Me.label42.Size = New System.Drawing.Size(98, 18)
         Me.label42.TabIndex = 37
@@ -2071,7 +2071,7 @@ Partial Class Empleados
         '
         Me.label43.AutoSize = True
         Me.label43.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label43.Location = New System.Drawing.Point(641, 43)
+        Me.label43.Location = New System.Drawing.Point(686, 62)
         Me.label43.Name = "label43"
         Me.label43.Size = New System.Drawing.Size(102, 18)
         Me.label43.TabIndex = 38
@@ -2081,7 +2081,7 @@ Partial Class Empleados
         '
         Me.label44.AutoSize = True
         Me.label44.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label44.Location = New System.Drawing.Point(21, 43)
+        Me.label44.Location = New System.Drawing.Point(66, 62)
         Me.label44.Name = "label44"
         Me.label44.Size = New System.Drawing.Size(80, 18)
         Me.label44.TabIndex = 39
@@ -2096,14 +2096,14 @@ Partial Class Empleados
         Me.panel19.Location = New System.Drawing.Point(0, 0)
         Me.panel19.Margin = New System.Windows.Forms.Padding(2)
         Me.panel19.Name = "panel19"
-        Me.panel19.Size = New System.Drawing.Size(977, 35)
+        Me.panel19.Size = New System.Drawing.Size(1066, 35)
         Me.panel19.TabIndex = 0
         '
         'btn_conADD
         '
         Me.btn_conADD.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_conADD.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Contact_80px
-        Me.btn_conADD.Location = New System.Drawing.Point(930, 0)
+        Me.btn_conADD.Location = New System.Drawing.Point(1025, -2)
         Me.btn_conADD.Name = "btn_conADD"
         Me.btn_conADD.Size = New System.Drawing.Size(35, 35)
         Me.btn_conADD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2129,7 +2129,7 @@ Partial Class Empleados
         Me.Tab_AL.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_AL.Name = "Tab_AL"
         Me.Tab_AL.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_AL.Size = New System.Drawing.Size(981, 668)
+        Me.Tab_AL.Size = New System.Drawing.Size(1070, 668)
         Me.Tab_AL.TabIndex = 2
         Me.Tab_AL.Text = "ANTECEDENTES LABORALES"
         Me.Tab_AL.UseVisualStyleBackColor = True
@@ -2159,16 +2159,16 @@ Partial Class Empleados
         Me.panel16.Location = New System.Drawing.Point(0, 0)
         Me.panel16.Margin = New System.Windows.Forms.Padding(2)
         Me.panel16.Name = "panel16"
-        Me.panel16.Size = New System.Drawing.Size(981, 496)
+        Me.panel16.Size = New System.Drawing.Size(1070, 548)
         Me.panel16.TabIndex = 1
         '
         'pnlAntecedentes
         '
         Me.pnlAntecedentes.Controls.Add(Me.dgv_ant)
         Me.pnlAntecedentes.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pnlAntecedentes.Location = New System.Drawing.Point(0, 155)
+        Me.pnlAntecedentes.Location = New System.Drawing.Point(0, 207)
         Me.pnlAntecedentes.Name = "pnlAntecedentes"
-        Me.pnlAntecedentes.Size = New System.Drawing.Size(977, 337)
+        Me.pnlAntecedentes.Size = New System.Drawing.Size(1066, 337)
         Me.pnlAntecedentes.TabIndex = 52
         '
         'dgv_ant
@@ -2180,7 +2180,7 @@ Partial Class Empleados
         Me.dgv_ant.Location = New System.Drawing.Point(0, 0)
         Me.dgv_ant.Name = "dgv_ant"
         Me.dgv_ant.RowHeadersVisible = False
-        Me.dgv_ant.Size = New System.Drawing.Size(977, 337)
+        Me.dgv_ant.Size = New System.Drawing.Size(1066, 337)
         Me.dgv_ant.TabIndex = 51
         '
         'btnAEliminar
@@ -2258,7 +2258,7 @@ Partial Class Empleados
         '
         Me.txt_antMT.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_antMT.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_antMT.Location = New System.Drawing.Point(453, 102)
+        Me.txt_antMT.Location = New System.Drawing.Point(515, 102)
         Me.txt_antMT.Multiline = True
         Me.txt_antMT.Name = "txt_antMT"
         Me.txt_antMT.Size = New System.Drawing.Size(498, 47)
@@ -2268,7 +2268,7 @@ Partial Class Empleados
         '
         Me.txt_antNAME.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_antNAME.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_antNAME.Location = New System.Drawing.Point(453, 71)
+        Me.txt_antNAME.Location = New System.Drawing.Point(515, 71)
         Me.txt_antNAME.Name = "txt_antNAME"
         Me.txt_antNAME.Size = New System.Drawing.Size(209, 25)
         Me.txt_antNAME.TabIndex = 28
@@ -2277,7 +2277,7 @@ Partial Class Empleados
         '
         Me.txt_antTEL.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_antTEL.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_antTEL.Location = New System.Drawing.Point(122, 71)
+        Me.txt_antTEL.Location = New System.Drawing.Point(184, 71)
         Me.txt_antTEL.Name = "txt_antTEL"
         Me.txt_antTEL.Size = New System.Drawing.Size(209, 25)
         Me.txt_antTEL.TabIndex = 27
@@ -2286,7 +2286,7 @@ Partial Class Empleados
         '
         Me.label37.AutoSize = True
         Me.label37.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label37.Location = New System.Drawing.Point(41, 74)
+        Me.label37.Location = New System.Drawing.Point(103, 74)
         Me.label37.Name = "label37"
         Me.label37.Size = New System.Drawing.Size(68, 18)
         Me.label37.TabIndex = 30
@@ -2296,7 +2296,7 @@ Partial Class Empleados
         '
         Me.label38.AutoSize = True
         Me.label38.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label38.Location = New System.Drawing.Point(380, 74)
+        Me.label38.Location = New System.Drawing.Point(442, 74)
         Me.label38.Name = "label38"
         Me.label38.Size = New System.Drawing.Size(67, 18)
         Me.label38.TabIndex = 31
@@ -2306,7 +2306,7 @@ Partial Class Empleados
         '
         Me.label39.AutoSize = True
         Me.label39.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label39.Location = New System.Drawing.Point(390, 102)
+        Me.label39.Location = New System.Drawing.Point(452, 102)
         Me.label39.Name = "label39"
         Me.label39.Size = New System.Drawing.Size(57, 18)
         Me.label39.TabIndex = 32
@@ -2316,7 +2316,7 @@ Partial Class Empleados
         '
         Me.txt_antSALARIO.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_antSALARIO.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_antSALARIO.Location = New System.Drawing.Point(123, 102)
+        Me.txt_antSALARIO.Location = New System.Drawing.Point(185, 102)
         Me.txt_antSALARIO.Name = "txt_antSALARIO"
         Me.txt_antSALARIO.Size = New System.Drawing.Size(208, 25)
         Me.txt_antSALARIO.TabIndex = 23
@@ -2325,7 +2325,7 @@ Partial Class Empleados
         '
         Me.txt_antCARGO.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_antCARGO.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_antCARGO.Location = New System.Drawing.Point(742, 71)
+        Me.txt_antCARGO.Location = New System.Drawing.Point(804, 71)
         Me.txt_antCARGO.Name = "txt_antCARGO"
         Me.txt_antCARGO.Size = New System.Drawing.Size(209, 25)
         Me.txt_antCARGO.TabIndex = 22
@@ -2334,7 +2334,7 @@ Partial Class Empleados
         '
         Me.txt_antEMP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_antEMP.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_antEMP.Location = New System.Drawing.Point(742, 40)
+        Me.txt_antEMP.Location = New System.Drawing.Point(804, 40)
         Me.txt_antEMP.Name = "txt_antEMP"
         Me.txt_antEMP.Size = New System.Drawing.Size(209, 25)
         Me.txt_antEMP.TabIndex = 21
@@ -2343,7 +2343,7 @@ Partial Class Empleados
         '
         Me.label34.AutoSize = True
         Me.label34.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label34.Location = New System.Drawing.Point(668, 43)
+        Me.label34.Location = New System.Drawing.Point(730, 43)
         Me.label34.Name = "label34"
         Me.label34.Size = New System.Drawing.Size(68, 18)
         Me.label34.TabIndex = 24
@@ -2353,7 +2353,7 @@ Partial Class Empleados
         '
         Me.label35.AutoSize = True
         Me.label35.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label35.Location = New System.Drawing.Point(688, 74)
+        Me.label35.Location = New System.Drawing.Point(750, 74)
         Me.label35.Name = "label35"
         Me.label35.Size = New System.Drawing.Size(48, 18)
         Me.label35.TabIndex = 25
@@ -2363,7 +2363,7 @@ Partial Class Empleados
         '
         Me.label36.AutoSize = True
         Me.label36.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label36.Location = New System.Drawing.Point(52, 105)
+        Me.label36.Location = New System.Drawing.Point(114, 105)
         Me.label36.Name = "label36"
         Me.label36.Size = New System.Drawing.Size(57, 18)
         Me.label36.TabIndex = 26
@@ -2373,7 +2373,7 @@ Partial Class Empleados
         '
         Me.txt_antFF.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_antFF.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txt_antFF.Location = New System.Drawing.Point(453, 40)
+        Me.txt_antFF.Location = New System.Drawing.Point(515, 40)
         Me.txt_antFF.Name = "txt_antFF"
         Me.txt_antFF.Size = New System.Drawing.Size(209, 25)
         Me.txt_antFF.TabIndex = 19
@@ -2382,7 +2382,7 @@ Partial Class Empleados
         '
         Me.label33.AutoSize = True
         Me.label33.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label33.Location = New System.Drawing.Point(337, 43)
+        Me.label33.Location = New System.Drawing.Point(399, 43)
         Me.label33.Name = "label33"
         Me.label33.Size = New System.Drawing.Size(110, 18)
         Me.label33.TabIndex = 20
@@ -2392,7 +2392,7 @@ Partial Class Empleados
         '
         Me.txt_antFI.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_antFI.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txt_antFI.Location = New System.Drawing.Point(122, 40)
+        Me.txt_antFI.Location = New System.Drawing.Point(184, 40)
         Me.txt_antFI.Name = "txt_antFI"
         Me.txt_antFI.Size = New System.Drawing.Size(209, 25)
         Me.txt_antFI.TabIndex = 17
@@ -2401,7 +2401,7 @@ Partial Class Empleados
         '
         Me.label9.AutoSize = True
         Me.label9.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label9.Location = New System.Drawing.Point(3, 43)
+        Me.label9.Location = New System.Drawing.Point(65, 43)
         Me.label9.Name = "label9"
         Me.label9.Size = New System.Drawing.Size(113, 18)
         Me.label9.TabIndex = 18
@@ -2416,14 +2416,14 @@ Partial Class Empleados
         Me.panel17.Location = New System.Drawing.Point(0, 0)
         Me.panel17.Margin = New System.Windows.Forms.Padding(2)
         Me.panel17.Name = "panel17"
-        Me.panel17.Size = New System.Drawing.Size(977, 35)
+        Me.panel17.Size = New System.Drawing.Size(1066, 35)
         Me.panel17.TabIndex = 0
         '
         'btn_antSave
         '
         Me.btn_antSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_antSave.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Job_80px
-        Me.btn_antSave.Location = New System.Drawing.Point(930, 0)
+        Me.btn_antSave.Location = New System.Drawing.Point(1025, -2)
         Me.btn_antSave.Name = "btn_antSave"
         Me.btn_antSave.Size = New System.Drawing.Size(35, 35)
         Me.btn_antSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2450,7 +2450,7 @@ Partial Class Empleados
         Me.Tab_Familia.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_Familia.Name = "Tab_Familia"
         Me.Tab_Familia.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_Familia.Size = New System.Drawing.Size(981, 668)
+        Me.Tab_Familia.Size = New System.Drawing.Size(1070, 668)
         Me.Tab_Familia.TabIndex = 1
         Me.Tab_Familia.Text = "FAMILIA"
         Me.Tab_Familia.UseVisualStyleBackColor = True
@@ -2472,10 +2472,10 @@ Partial Class Empleados
         Me.panel3.Controls.Add(Me.label30)
         Me.panel3.Controls.Add(Me.label31)
         Me.panel3.Controls.Add(Me.panel5)
-        Me.panel3.Location = New System.Drawing.Point(0, 207)
+        Me.panel3.Location = New System.Drawing.Point(2, 280)
         Me.panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.panel3.Name = "panel3"
-        Me.panel3.Size = New System.Drawing.Size(981, 287)
+        Me.panel3.Size = New System.Drawing.Size(1070, 287)
         Me.panel3.TabIndex = 1
         '
         'PnlOffsprings
@@ -2484,7 +2484,7 @@ Partial Class Empleados
         Me.PnlOffsprings.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PnlOffsprings.Location = New System.Drawing.Point(0, 101)
         Me.PnlOffsprings.Name = "PnlOffsprings"
-        Me.PnlOffsprings.Size = New System.Drawing.Size(977, 182)
+        Me.PnlOffsprings.Size = New System.Drawing.Size(1066, 182)
         Me.PnlOffsprings.TabIndex = 53
         '
         'dgv_Hijos
@@ -2499,7 +2499,7 @@ Partial Class Empleados
         Me.dgv_Hijos.Name = "dgv_Hijos"
         Me.dgv_Hijos.RowHeadersVisible = False
         Me.dgv_Hijos.RowTemplate.Height = 24
-        Me.dgv_Hijos.Size = New System.Drawing.Size(977, 182)
+        Me.dgv_Hijos.Size = New System.Drawing.Size(1066, 182)
         Me.dgv_Hijos.TabIndex = 52
         '
         'btnHEliminar
@@ -2575,7 +2575,7 @@ Partial Class Empleados
         '
         Me.label26.AutoSize = True
         Me.label26.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label26.Location = New System.Drawing.Point(645, 74)
+        Me.label26.Location = New System.Drawing.Point(706, 74)
         Me.label26.Name = "label26"
         Me.label26.Size = New System.Drawing.Size(97, 18)
         Me.label26.TabIndex = 44
@@ -2585,7 +2585,7 @@ Partial Class Empleados
         '
         Me.txt_hijoNACION.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_hijoNACION.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_hijoNACION.Location = New System.Drawing.Point(748, 71)
+        Me.txt_hijoNACION.Location = New System.Drawing.Point(809, 71)
         Me.txt_hijoNACION.Name = "txt_hijoNACION"
         Me.txt_hijoNACION.Size = New System.Drawing.Size(192, 25)
         Me.txt_hijoNACION.TabIndex = 43
@@ -2594,7 +2594,7 @@ Partial Class Empleados
         '
         Me.txt_hijoFN.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_hijoFN.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txt_hijoFN.Location = New System.Drawing.Point(432, 71)
+        Me.txt_hijoFN.Location = New System.Drawing.Point(493, 71)
         Me.txt_hijoFN.Name = "txt_hijoFN"
         Me.txt_hijoFN.Size = New System.Drawing.Size(200, 25)
         Me.txt_hijoFN.TabIndex = 41
@@ -2603,7 +2603,7 @@ Partial Class Empleados
         '
         Me.label27.AutoSize = True
         Me.label27.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label27.Location = New System.Drawing.Point(323, 74)
+        Me.label27.Location = New System.Drawing.Point(384, 74)
         Me.label27.Name = "label27"
         Me.label27.Size = New System.Drawing.Size(102, 18)
         Me.label27.TabIndex = 42
@@ -2613,7 +2613,7 @@ Partial Class Empleados
         '
         Me.txt_hijoNAME.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_hijoNAME.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_hijoNAME.Location = New System.Drawing.Point(115, 40)
+        Me.txt_hijoNAME.Location = New System.Drawing.Point(176, 40)
         Me.txt_hijoNAME.Name = "txt_hijoNAME"
         Me.txt_hijoNAME.Size = New System.Drawing.Size(200, 25)
         Me.txt_hijoNAME.TabIndex = 35
@@ -2622,7 +2622,7 @@ Partial Class Empleados
         '
         Me.txt_hijoAM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_hijoAM.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_hijoAM.Location = New System.Drawing.Point(748, 40)
+        Me.txt_hijoAM.Location = New System.Drawing.Point(809, 40)
         Me.txt_hijoAM.Name = "txt_hijoAM"
         Me.txt_hijoAM.Size = New System.Drawing.Size(192, 25)
         Me.txt_hijoAM.TabIndex = 34
@@ -2631,7 +2631,7 @@ Partial Class Empleados
         '
         Me.txt_hijoAP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_hijoAP.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_hijoAP.Location = New System.Drawing.Point(431, 40)
+        Me.txt_hijoAP.Location = New System.Drawing.Point(492, 40)
         Me.txt_hijoAP.Name = "txt_hijoAP"
         Me.txt_hijoAP.Size = New System.Drawing.Size(201, 25)
         Me.txt_hijoAP.TabIndex = 33
@@ -2640,7 +2640,7 @@ Partial Class Empleados
         '
         Me.label28.AutoSize = True
         Me.label28.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label28.Location = New System.Drawing.Point(327, 43)
+        Me.label28.Location = New System.Drawing.Point(388, 43)
         Me.label28.Name = "label28"
         Me.label28.Size = New System.Drawing.Size(98, 18)
         Me.label28.TabIndex = 37
@@ -2650,7 +2650,7 @@ Partial Class Empleados
         '
         Me.label29.AutoSize = True
         Me.label29.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label29.Location = New System.Drawing.Point(640, 43)
+        Me.label29.Location = New System.Drawing.Point(701, 43)
         Me.label29.Name = "label29"
         Me.label29.Size = New System.Drawing.Size(102, 18)
         Me.label29.TabIndex = 38
@@ -2662,7 +2662,7 @@ Partial Class Empleados
         Me.txt_hijoSEXO.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_hijoSEXO.FormattingEnabled = True
         Me.txt_hijoSEXO.Items.AddRange(New Object() {"FEMENINO", "MASCULINO"})
-        Me.txt_hijoSEXO.Location = New System.Drawing.Point(115, 70)
+        Me.txt_hijoSEXO.Location = New System.Drawing.Point(176, 70)
         Me.txt_hijoSEXO.Name = "txt_hijoSEXO"
         Me.txt_hijoSEXO.Size = New System.Drawing.Size(200, 26)
         Me.txt_hijoSEXO.TabIndex = 36
@@ -2671,7 +2671,7 @@ Partial Class Empleados
         '
         Me.label30.AutoSize = True
         Me.label30.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label30.Location = New System.Drawing.Point(29, 43)
+        Me.label30.Location = New System.Drawing.Point(90, 43)
         Me.label30.Name = "label30"
         Me.label30.Size = New System.Drawing.Size(80, 18)
         Me.label30.TabIndex = 39
@@ -2681,7 +2681,7 @@ Partial Class Empleados
         '
         Me.label31.AutoSize = True
         Me.label31.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label31.Location = New System.Drawing.Point(68, 74)
+        Me.label31.Location = New System.Drawing.Point(129, 74)
         Me.label31.Name = "label31"
         Me.label31.Size = New System.Drawing.Size(41, 18)
         Me.label31.TabIndex = 40
@@ -2696,14 +2696,14 @@ Partial Class Empleados
         Me.panel5.Location = New System.Drawing.Point(0, 0)
         Me.panel5.Margin = New System.Windows.Forms.Padding(2)
         Me.panel5.Name = "panel5"
-        Me.panel5.Size = New System.Drawing.Size(977, 35)
+        Me.panel5.Size = New System.Drawing.Size(1066, 35)
         Me.panel5.TabIndex = 1
         '
         'btn_hijoADD
         '
         Me.btn_hijoADD.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_hijoADD.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Family_80px
-        Me.btn_hijoADD.Location = New System.Drawing.Point(930, 0)
+        Me.btn_hijoADD.Location = New System.Drawing.Point(1023, -2)
         Me.btn_hijoADD.Name = "btn_hijoADD"
         Me.btn_hijoADD.Size = New System.Drawing.Size(35, 35)
         Me.btn_hijoADD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2742,7 +2742,7 @@ Partial Class Empleados
         Me.panel2.Location = New System.Drawing.Point(0, 0)
         Me.panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.panel2.Name = "panel2"
-        Me.panel2.Size = New System.Drawing.Size(981, 203)
+        Me.panel2.Size = New System.Drawing.Size(1070, 278)
         Me.panel2.TabIndex = 1
         '
         'panel4
@@ -2754,7 +2754,7 @@ Partial Class Empleados
         Me.panel4.Location = New System.Drawing.Point(0, 0)
         Me.panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.panel4.Name = "panel4"
-        Me.panel4.Size = New System.Drawing.Size(977, 35)
+        Me.panel4.Size = New System.Drawing.Size(1066, 35)
         Me.panel4.TabIndex = 1
         '
         'label10
@@ -2773,7 +2773,7 @@ Partial Class Empleados
         '
         Me.btn_esSAVE.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_esSAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_marriage_80px
-        Me.btn_esSAVE.Location = New System.Drawing.Point(930, 0)
+        Me.btn_esSAVE.Location = New System.Drawing.Point(1025, -2)
         Me.btn_esSAVE.Name = "btn_esSAVE"
         Me.btn_esSAVE.Size = New System.Drawing.Size(35, 35)
         Me.btn_esSAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2784,7 +2784,7 @@ Partial Class Empleados
         '
         Me.label25.AutoSize = True
         Me.label25.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label25.Location = New System.Drawing.Point(645, 74)
+        Me.label25.Location = New System.Drawing.Point(708, 74)
         Me.label25.Name = "label25"
         Me.label25.Size = New System.Drawing.Size(97, 18)
         Me.label25.TabIndex = 32
@@ -2794,7 +2794,7 @@ Partial Class Empleados
         '
         Me.txt_esNacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_esNacion.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_esNacion.Location = New System.Drawing.Point(748, 71)
+        Me.txt_esNacion.Location = New System.Drawing.Point(811, 71)
         Me.txt_esNacion.Name = "txt_esNacion"
         Me.txt_esNacion.Size = New System.Drawing.Size(192, 25)
         Me.txt_esNacion.TabIndex = 31
@@ -2806,12 +2806,12 @@ Partial Class Empleados
         Me.dgv_esposa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_esposa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.btnCEliminar, Me.ID_Persona, Me.ID_Emp, Me.Fam_Tipo, Me.Fam_Nombre, Me.Fam_APat, Me.Fam_AMat, Me.Fam_Nacion, Me.Fam_FNac, Me.Fam_Genero, Me.Fam_EdoCivil})
         Me.dgv_esposa.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.dgv_esposa.Location = New System.Drawing.Point(0, 101)
+        Me.dgv_esposa.Location = New System.Drawing.Point(0, 129)
         Me.dgv_esposa.Margin = New System.Windows.Forms.Padding(2)
         Me.dgv_esposa.Name = "dgv_esposa"
         Me.dgv_esposa.RowHeadersVisible = False
         Me.dgv_esposa.RowTemplate.Height = 24
-        Me.dgv_esposa.Size = New System.Drawing.Size(977, 98)
+        Me.dgv_esposa.Size = New System.Drawing.Size(1066, 145)
         Me.dgv_esposa.TabIndex = 51
         '
         'btnCEliminar
@@ -2894,7 +2894,7 @@ Partial Class Empleados
         '
         Me.txt_esName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_esName.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_esName.Location = New System.Drawing.Point(115, 40)
+        Me.txt_esName.Location = New System.Drawing.Point(178, 40)
         Me.txt_esName.Name = "txt_esName"
         Me.txt_esName.Size = New System.Drawing.Size(200, 25)
         Me.txt_esName.TabIndex = 18
@@ -2903,7 +2903,7 @@ Partial Class Empleados
         '
         Me.txt_esAM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_esAM.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_esAM.Location = New System.Drawing.Point(748, 40)
+        Me.txt_esAM.Location = New System.Drawing.Point(811, 40)
         Me.txt_esAM.Name = "txt_esAM"
         Me.txt_esAM.Size = New System.Drawing.Size(192, 25)
         Me.txt_esAM.TabIndex = 17
@@ -2912,7 +2912,7 @@ Partial Class Empleados
         '
         Me.txt_esFN.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_esFN.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txt_esFN.Location = New System.Drawing.Point(432, 71)
+        Me.txt_esFN.Location = New System.Drawing.Point(495, 71)
         Me.txt_esFN.Name = "txt_esFN"
         Me.txt_esFN.Size = New System.Drawing.Size(200, 25)
         Me.txt_esFN.TabIndex = 24
@@ -2921,7 +2921,7 @@ Partial Class Empleados
         '
         Me.txt_esAP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_esAP.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_esAP.Location = New System.Drawing.Point(431, 40)
+        Me.txt_esAP.Location = New System.Drawing.Point(494, 40)
         Me.txt_esAP.Name = "txt_esAP"
         Me.txt_esAP.Size = New System.Drawing.Size(200, 25)
         Me.txt_esAP.TabIndex = 16
@@ -2930,7 +2930,7 @@ Partial Class Empleados
         '
         Me.label24.AutoSize = True
         Me.label24.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label24.Location = New System.Drawing.Point(323, 74)
+        Me.label24.Location = New System.Drawing.Point(386, 74)
         Me.label24.Name = "label24"
         Me.label24.Size = New System.Drawing.Size(102, 18)
         Me.label24.TabIndex = 25
@@ -2940,7 +2940,7 @@ Partial Class Empleados
         '
         Me.label23.AutoSize = True
         Me.label23.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label23.Location = New System.Drawing.Point(68, 74)
+        Me.label23.Location = New System.Drawing.Point(131, 74)
         Me.label23.Name = "label23"
         Me.label23.Size = New System.Drawing.Size(41, 18)
         Me.label23.TabIndex = 23
@@ -2950,7 +2950,7 @@ Partial Class Empleados
         '
         Me.label20.AutoSize = True
         Me.label20.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label20.Location = New System.Drawing.Point(327, 43)
+        Me.label20.Location = New System.Drawing.Point(390, 43)
         Me.label20.Name = "label20"
         Me.label20.Size = New System.Drawing.Size(98, 18)
         Me.label20.TabIndex = 20
@@ -2960,7 +2960,7 @@ Partial Class Empleados
         '
         Me.label21.AutoSize = True
         Me.label21.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label21.Location = New System.Drawing.Point(640, 43)
+        Me.label21.Location = New System.Drawing.Point(703, 43)
         Me.label21.Name = "label21"
         Me.label21.Size = New System.Drawing.Size(102, 18)
         Me.label21.TabIndex = 21
@@ -2972,7 +2972,7 @@ Partial Class Empleados
         Me.cb_esSexo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cb_esSexo.FormattingEnabled = True
         Me.cb_esSexo.Items.AddRange(New Object() {"FEMENINO", "MASCULINO"})
-        Me.cb_esSexo.Location = New System.Drawing.Point(115, 70)
+        Me.cb_esSexo.Location = New System.Drawing.Point(178, 70)
         Me.cb_esSexo.Name = "cb_esSexo"
         Me.cb_esSexo.Size = New System.Drawing.Size(200, 26)
         Me.cb_esSexo.TabIndex = 19
@@ -2981,7 +2981,7 @@ Partial Class Empleados
         '
         Me.label22.AutoSize = True
         Me.label22.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label22.Location = New System.Drawing.Point(29, 43)
+        Me.label22.Location = New System.Drawing.Point(92, 43)
         Me.label22.Name = "label22"
         Me.label22.Size = New System.Drawing.Size(80, 18)
         Me.label22.TabIndex = 22
@@ -2997,7 +2997,7 @@ Partial Class Empleados
         Me.Tab_DP.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_DP.Name = "Tab_DP"
         Me.Tab_DP.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_DP.Size = New System.Drawing.Size(981, 668)
+        Me.Tab_DP.Size = New System.Drawing.Size(1070, 668)
         Me.Tab_DP.TabIndex = 0
         Me.Tab_DP.Text = "DATOS PERSONALES"
         Me.Tab_DP.UseVisualStyleBackColor = True
@@ -3017,7 +3017,7 @@ Partial Class Empleados
         Me.pnl_estatus.Location = New System.Drawing.Point(2, 497)
         Me.pnl_estatus.Margin = New System.Windows.Forms.Padding(2)
         Me.pnl_estatus.Name = "pnl_estatus"
-        Me.pnl_estatus.Size = New System.Drawing.Size(981, 120)
+        Me.pnl_estatus.Size = New System.Drawing.Size(1068, 120)
         Me.pnl_estatus.TabIndex = 34
         Me.pnl_estatus.Visible = False
         '
@@ -3027,7 +3027,7 @@ Partial Class Empleados
         Me.GroupBox1.Controls.Add(Me.seg)
         Me.GroupBox1.Controls.Add(Me.CB_PROV)
         Me.GroupBox1.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(745, 40)
+        Me.GroupBox1.Location = New System.Drawing.Point(791, 39)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(220, 66)
         Me.GroupBox1.TabIndex = 9
@@ -3080,7 +3080,7 @@ Partial Class Empleados
         Me.panel13.Location = New System.Drawing.Point(0, 0)
         Me.panel13.Margin = New System.Windows.Forms.Padding(2)
         Me.panel13.Name = "panel13"
-        Me.panel13.Size = New System.Drawing.Size(977, 35)
+        Me.panel13.Size = New System.Drawing.Size(1064, 35)
         Me.panel13.TabIndex = 0
         '
         'label15
@@ -3099,7 +3099,7 @@ Partial Class Empleados
         '
         Me.PbOptions.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PbOptions.Image = Global.AdminEmpleados.My.Resources.Resources.Alta_80px
-        Me.PbOptions.Location = New System.Drawing.Point(930, 0)
+        Me.PbOptions.Location = New System.Drawing.Point(1023, -1)
         Me.PbOptions.Name = "PbOptions"
         Me.PbOptions.Size = New System.Drawing.Size(35, 35)
         Me.PbOptions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3112,7 +3112,7 @@ Partial Class Empleados
         Me.lbl_option.AutoSize = True
         Me.lbl_option.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_option.ForeColor = System.Drawing.Color.White
-        Me.lbl_option.Location = New System.Drawing.Point(869, 6)
+        Me.lbl_option.Location = New System.Drawing.Point(962, 5)
         Me.lbl_option.Name = "lbl_option"
         Me.lbl_option.Size = New System.Drawing.Size(49, 21)
         Me.lbl_option.TabIndex = 45
@@ -3124,7 +3124,7 @@ Partial Class Empleados
         '
         Me.commen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.commen.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.commen.Location = New System.Drawing.Point(400, 41)
+        Me.commen.Location = New System.Drawing.Point(446, 40)
         Me.commen.Multiline = True
         Me.commen.Name = "commen"
         Me.commen.Size = New System.Drawing.Size(290, 65)
@@ -3135,7 +3135,7 @@ Partial Class Empleados
         Me.txt_activo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_activo.Enabled = False
         Me.txt_activo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_activo.Location = New System.Drawing.Point(70, 40)
+        Me.txt_activo.Location = New System.Drawing.Point(116, 39)
         Me.txt_activo.Name = "txt_activo"
         Me.txt_activo.Size = New System.Drawing.Size(213, 25)
         Me.txt_activo.TabIndex = 1
@@ -3144,7 +3144,7 @@ Partial Class Empleados
         '
         Me.label8.AutoSize = True
         Me.label8.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label8.Location = New System.Drawing.Point(332, 43)
+        Me.label8.Location = New System.Drawing.Point(378, 42)
         Me.label8.Name = "label8"
         Me.label8.Size = New System.Drawing.Size(62, 18)
         Me.label8.TabIndex = 6
@@ -3155,7 +3155,7 @@ Partial Class Empleados
         Me.txt_baja.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_baja.Enabled = False
         Me.txt_baja.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_baja.Location = New System.Drawing.Point(119, 71)
+        Me.txt_baja.Location = New System.Drawing.Point(165, 70)
         Me.txt_baja.Name = "txt_baja"
         Me.txt_baja.Size = New System.Drawing.Size(164, 25)
         Me.txt_baja.TabIndex = 3
@@ -3164,7 +3164,7 @@ Partial Class Empleados
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(4, 43)
+        Me.Label6.Location = New System.Drawing.Point(50, 42)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(58, 18)
         Me.Label6.TabIndex = 0
@@ -3174,7 +3174,7 @@ Partial Class Empleados
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(4, 74)
+        Me.Label7.Location = New System.Drawing.Point(50, 73)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(109, 18)
         Me.Label7.TabIndex = 2
@@ -3210,7 +3210,7 @@ Partial Class Empleados
         Me.pnl_cont.Location = New System.Drawing.Point(2, 359)
         Me.pnl_cont.Margin = New System.Windows.Forms.Padding(2)
         Me.pnl_cont.Name = "pnl_cont"
-        Me.pnl_cont.Size = New System.Drawing.Size(981, 134)
+        Me.pnl_cont.Size = New System.Drawing.Size(1068, 134)
         Me.pnl_cont.TabIndex = 1
         '
         'buscar_depto
@@ -3218,7 +3218,7 @@ Partial Class Empleados
         Me.buscar_depto.BackgroundImage = CType(resources.GetObject("buscar_depto.BackgroundImage"), System.Drawing.Image)
         Me.buscar_depto.Cursor = System.Windows.Forms.Cursors.Hand
         Me.buscar_depto.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_depto.Location = New System.Drawing.Point(944, 39)
+        Me.buscar_depto.Location = New System.Drawing.Point(1001, 40)
         Me.buscar_depto.Name = "buscar_depto"
         Me.buscar_depto.Size = New System.Drawing.Size(25, 25)
         Me.buscar_depto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3228,16 +3228,16 @@ Partial Class Empleados
         'depto
         '
         Me.depto.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.depto.Location = New System.Drawing.Point(690, 39)
+        Me.depto.Location = New System.Drawing.Point(747, 40)
         Me.depto.Name = "depto"
-        Me.depto.Size = New System.Drawing.Size(0, 25)
+        Me.depto.Size = New System.Drawing.Size(1, 25)
         Me.depto.TabIndex = 7
         '
         'depto2
         '
         Me.depto2.Enabled = False
         Me.depto2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.depto2.Location = New System.Drawing.Point(731, 39)
+        Me.depto2.Location = New System.Drawing.Point(788, 40)
         Me.depto2.Name = "depto2"
         Me.depto2.Size = New System.Drawing.Size(213, 25)
         Me.depto2.TabIndex = 3
@@ -3248,7 +3248,7 @@ Partial Class Empleados
         Me.Buscar_PUESTO.BackgroundImage = CType(resources.GetObject("Buscar_PUESTO.BackgroundImage"), System.Drawing.Image)
         Me.Buscar_PUESTO.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Buscar_PUESTO.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.Buscar_PUESTO.Location = New System.Drawing.Point(613, 39)
+        Me.Buscar_PUESTO.Location = New System.Drawing.Point(670, 40)
         Me.Buscar_PUESTO.Name = "Buscar_PUESTO"
         Me.Buscar_PUESTO.Size = New System.Drawing.Size(25, 25)
         Me.Buscar_PUESTO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3263,7 +3263,7 @@ Partial Class Empleados
         Me.panel11.Location = New System.Drawing.Point(0, 0)
         Me.panel11.Margin = New System.Windows.Forms.Padding(2)
         Me.panel11.Name = "panel11"
-        Me.panel11.Size = New System.Drawing.Size(977, 35)
+        Me.panel11.Size = New System.Drawing.Size(1064, 35)
         Me.panel11.TabIndex = 0
         '
         'label14
@@ -3282,7 +3282,7 @@ Partial Class Empleados
         '
         Me.Buscar_tipo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Buscar_tipo.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.Buscar_tipo.Location = New System.Drawing.Point(613, 70)
+        Me.Buscar_tipo.Location = New System.Drawing.Point(670, 71)
         Me.Buscar_tipo.Name = "Buscar_tipo"
         Me.Buscar_tipo.Size = New System.Drawing.Size(25, 25)
         Me.Buscar_tipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3293,7 +3293,7 @@ Partial Class Empleados
         '
         Me.lbl_ingreso.AutoSize = True
         Me.lbl_ingreso.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_ingreso.Location = New System.Drawing.Point(5, 42)
+        Me.lbl_ingreso.Location = New System.Drawing.Point(62, 43)
         Me.lbl_ingreso.Name = "lbl_ingreso"
         Me.lbl_ingreso.Size = New System.Drawing.Size(60, 18)
         Me.lbl_ingreso.TabIndex = 0
@@ -3303,7 +3303,7 @@ Partial Class Empleados
         '
         Me.Txt_correo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Txt_correo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_correo.Location = New System.Drawing.Point(70, 101)
+        Me.Txt_correo.Location = New System.Drawing.Point(127, 102)
         Me.Txt_correo.Name = "Txt_correo"
         Me.Txt_correo.Size = New System.Drawing.Size(238, 25)
         Me.Txt_correo.TabIndex = 15
@@ -3312,7 +3312,7 @@ Partial Class Empleados
         '
         Me.lbl_clase.AutoSize = True
         Me.lbl_clase.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_clase.Location = New System.Drawing.Point(352, 73)
+        Me.lbl_clase.Location = New System.Drawing.Point(409, 74)
         Me.lbl_clase.Name = "lbl_clase"
         Me.lbl_clase.Size = New System.Drawing.Size(42, 18)
         Me.lbl_clase.TabIndex = 10
@@ -3322,7 +3322,7 @@ Partial Class Empleados
         '
         Me.txt_tipo2.Enabled = False
         Me.txt_tipo2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_tipo2.Location = New System.Drawing.Point(400, 70)
+        Me.txt_tipo2.Location = New System.Drawing.Point(457, 71)
         Me.txt_tipo2.Name = "txt_tipo2"
         Me.txt_tipo2.Size = New System.Drawing.Size(213, 25)
         Me.txt_tipo2.TabIndex = 11
@@ -3332,7 +3332,7 @@ Partial Class Empleados
         '
         Me.lbl_super.AutoSize = True
         Me.lbl_super.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_super.Location = New System.Drawing.Point(5, 73)
+        Me.lbl_super.Location = New System.Drawing.Point(62, 74)
         Me.lbl_super.Name = "lbl_super"
         Me.lbl_super.Size = New System.Drawing.Size(59, 18)
         Me.lbl_super.TabIndex = 8
@@ -3342,7 +3342,7 @@ Partial Class Empleados
         '
         Me.correo.AutoSize = True
         Me.correo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.correo.Location = New System.Drawing.Point(5, 104)
+        Me.correo.Location = New System.Drawing.Point(62, 105)
         Me.correo.Name = "correo"
         Me.correo.Size = New System.Drawing.Size(57, 18)
         Me.correo.TabIndex = 14
@@ -3352,7 +3352,7 @@ Partial Class Empleados
         '
         Me.txt_SALARY.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_SALARY.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SALARY.Location = New System.Drawing.Point(731, 68)
+        Me.txt_SALARY.Location = New System.Drawing.Point(788, 69)
         Me.txt_SALARY.Name = "txt_SALARY"
         Me.txt_SALARY.Size = New System.Drawing.Size(238, 25)
         Me.txt_SALARY.TabIndex = 13
@@ -3362,7 +3362,7 @@ Partial Class Empleados
         Me.lbl_puesto.AutoSize = True
         Me.lbl_puesto.Cursor = System.Windows.Forms.Cursors.Default
         Me.lbl_puesto.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_puesto.Location = New System.Drawing.Point(340, 42)
+        Me.lbl_puesto.Location = New System.Drawing.Point(397, 43)
         Me.lbl_puesto.Name = "lbl_puesto"
         Me.lbl_puesto.Size = New System.Drawing.Size(54, 18)
         Me.lbl_puesto.TabIndex = 2
@@ -3371,16 +3371,16 @@ Partial Class Empleados
         'txt_tipo
         '
         Me.txt_tipo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_tipo.Location = New System.Drawing.Point(428, 73)
+        Me.txt_tipo.Location = New System.Drawing.Point(485, 74)
         Me.txt_tipo.Name = "txt_tipo"
-        Me.txt_tipo.Size = New System.Drawing.Size(0, 25)
+        Me.txt_tipo.Size = New System.Drawing.Size(1, 25)
         Me.txt_tipo.TabIndex = 25
         '
         'lbl_sali
         '
         Me.lbl_sali.AutoSize = True
         Me.lbl_sali.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_sali.Location = New System.Drawing.Point(670, 67)
+        Me.lbl_sali.Location = New System.Drawing.Point(727, 68)
         Me.lbl_sali.Name = "lbl_sali"
         Me.lbl_sali.Size = New System.Drawing.Size(57, 18)
         Me.lbl_sali.TabIndex = 12
@@ -3390,7 +3390,7 @@ Partial Class Empleados
         '
         Me.txt_FECHAINGRESO.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_FECHAINGRESO.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txt_FECHAINGRESO.Location = New System.Drawing.Point(70, 39)
+        Me.txt_FECHAINGRESO.Location = New System.Drawing.Point(127, 40)
         Me.txt_FECHAINGRESO.Name = "txt_FECHAINGRESO"
         Me.txt_FECHAINGRESO.Size = New System.Drawing.Size(238, 25)
         Me.txt_FECHAINGRESO.TabIndex = 1
@@ -3400,7 +3400,7 @@ Partial Class Empleados
         Me.Buscar_Super.BackgroundImage = CType(resources.GetObject("Buscar_Super.BackgroundImage"), System.Drawing.Image)
         Me.Buscar_Super.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Buscar_Super.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.Buscar_Super.Location = New System.Drawing.Point(283, 70)
+        Me.Buscar_Super.Location = New System.Drawing.Point(340, 71)
         Me.Buscar_Super.Name = "Buscar_Super"
         Me.Buscar_Super.Size = New System.Drawing.Size(25, 25)
         Me.Buscar_Super.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3410,16 +3410,16 @@ Partial Class Empleados
         'txt_PUESTO
         '
         Me.txt_PUESTO.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_PUESTO.Location = New System.Drawing.Point(428, 39)
+        Me.txt_PUESTO.Location = New System.Drawing.Point(485, 40)
         Me.txt_PUESTO.Name = "txt_PUESTO"
-        Me.txt_PUESTO.Size = New System.Drawing.Size(0, 25)
+        Me.txt_PUESTO.Size = New System.Drawing.Size(1, 25)
         Me.txt_PUESTO.TabIndex = 4
         '
         'txt_PUESTO2
         '
         Me.txt_PUESTO2.Enabled = False
         Me.txt_PUESTO2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_PUESTO2.Location = New System.Drawing.Point(400, 39)
+        Me.txt_PUESTO2.Location = New System.Drawing.Point(457, 40)
         Me.txt_PUESTO2.Name = "txt_PUESTO2"
         Me.txt_PUESTO2.Size = New System.Drawing.Size(213, 25)
         Me.txt_PUESTO2.TabIndex = 5
@@ -3429,7 +3429,7 @@ Partial Class Empleados
         '
         Me.txt_SUPER2.Enabled = False
         Me.txt_SUPER2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SUPER2.Location = New System.Drawing.Point(70, 70)
+        Me.txt_SUPER2.Location = New System.Drawing.Point(127, 71)
         Me.txt_SUPER2.Name = "txt_SUPER2"
         Me.txt_SUPER2.Size = New System.Drawing.Size(213, 25)
         Me.txt_SUPER2.TabIndex = 9
@@ -3438,16 +3438,16 @@ Partial Class Empleados
         'txt_SUPER
         '
         Me.txt_SUPER.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SUPER.Location = New System.Drawing.Point(89, 74)
+        Me.txt_SUPER.Location = New System.Drawing.Point(146, 75)
         Me.txt_SUPER.Name = "txt_SUPER"
-        Me.txt_SUPER.Size = New System.Drawing.Size(0, 25)
+        Me.txt_SUPER.Size = New System.Drawing.Size(1, 25)
         Me.txt_SUPER.TabIndex = 24
         '
         'lbl_depto
         '
         Me.lbl_depto.AutoSize = True
         Me.lbl_depto.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_depto.Location = New System.Drawing.Point(675, 42)
+        Me.lbl_depto.Location = New System.Drawing.Point(732, 43)
         Me.lbl_depto.Name = "lbl_depto"
         Me.lbl_depto.Size = New System.Drawing.Size(50, 18)
         Me.lbl_depto.TabIndex = 6
@@ -3507,14 +3507,14 @@ Partial Class Empleados
         Me.pnl_per.Location = New System.Drawing.Point(0, 0)
         Me.pnl_per.Margin = New System.Windows.Forms.Padding(2)
         Me.pnl_per.Name = "pnl_per"
-        Me.pnl_per.Size = New System.Drawing.Size(981, 355)
+        Me.pnl_per.Size = New System.Drawing.Size(1073, 355)
         Me.pnl_per.TabIndex = 1
         '
         'txtCdDomicilio
         '
         Me.txtCdDomicilio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCdDomicilio.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCdDomicilio.Location = New System.Drawing.Point(312, 258)
+        Me.txtCdDomicilio.Location = New System.Drawing.Point(378, 258)
         Me.txtCdDomicilio.Name = "txtCdDomicilio"
         Me.txtCdDomicilio.Size = New System.Drawing.Size(238, 25)
         Me.txtCdDomicilio.TabIndex = 31
@@ -3523,7 +3523,7 @@ Partial Class Empleados
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(188, 261)
+        Me.Label13.Location = New System.Drawing.Point(254, 261)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(118, 18)
         Me.Label13.TabIndex = 30
@@ -3534,7 +3534,7 @@ Partial Class Empleados
         Me.PbSearchEmployee.BackgroundImage = CType(resources.GetObject("PbSearchEmployee.BackgroundImage"), System.Drawing.Image)
         Me.PbSearchEmployee.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PbSearchEmployee.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.PbSearchEmployee.Location = New System.Drawing.Point(156, 40)
+        Me.PbSearchEmployee.Location = New System.Drawing.Point(201, 56)
         Me.PbSearchEmployee.Name = "PbSearchEmployee"
         Me.PbSearchEmployee.Size = New System.Drawing.Size(25, 25)
         Me.PbSearchEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3546,7 +3546,7 @@ Partial Class Empleados
         Me.buscar_ciudad.BackgroundImage = CType(resources.GetObject("buscar_ciudad.BackgroundImage"), System.Drawing.Image)
         Me.buscar_ciudad.Cursor = System.Windows.Forms.Cursors.Hand
         Me.buscar_ciudad.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_ciudad.Location = New System.Drawing.Point(940, 133)
+        Me.buscar_ciudad.Location = New System.Drawing.Point(1006, 133)
         Me.buscar_ciudad.Name = "buscar_ciudad"
         Me.buscar_ciudad.Size = New System.Drawing.Size(25, 25)
         Me.buscar_ciudad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3557,7 +3557,7 @@ Partial Class Empleados
         '
         Me.foto.Cursor = System.Windows.Forms.Cursors.Hand
         Me.foto.Image = Global.AdminEmpleados.My.Resources.Resources.photoNobody120
-        Me.foto.Location = New System.Drawing.Point(2, 71)
+        Me.foto.Location = New System.Drawing.Point(47, 87)
         Me.foto.Name = "foto"
         Me.foto.Size = New System.Drawing.Size(180, 200)
         Me.foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3566,16 +3566,16 @@ Partial Class Empleados
         '
         'cuidad
         '
-        Me.cuidad.Location = New System.Drawing.Point(684, 144)
+        Me.cuidad.Location = New System.Drawing.Point(750, 144)
         Me.cuidad.Name = "cuidad"
-        Me.cuidad.Size = New System.Drawing.Size(0, 28)
+        Me.cuidad.Size = New System.Drawing.Size(1, 28)
         Me.cuidad.TabIndex = 17
         '
         'lbl_rfc
         '
         Me.lbl_rfc.AutoSize = True
         Me.lbl_rfc.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_rfc.Location = New System.Drawing.Point(667, 167)
+        Me.lbl_rfc.Location = New System.Drawing.Point(733, 167)
         Me.lbl_rfc.Name = "lbl_rfc"
         Me.lbl_rfc.Size = New System.Drawing.Size(54, 18)
         Me.lbl_rfc.TabIndex = 20
@@ -3585,7 +3585,7 @@ Partial Class Empleados
         '
         Me.lbl_ss.AutoSize = True
         Me.lbl_ss.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_ss.Location = New System.Drawing.Point(629, 199)
+        Me.lbl_ss.Location = New System.Drawing.Point(695, 199)
         Me.lbl_ss.Name = "lbl_ss"
         Me.lbl_ss.Size = New System.Drawing.Size(92, 18)
         Me.lbl_ss.TabIndex = 24
@@ -3595,7 +3595,7 @@ Partial Class Empleados
         '
         Me.CP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.CP.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CP.Location = New System.Drawing.Point(727, 258)
+        Me.CP.Location = New System.Drawing.Point(793, 258)
         Me.CP.Name = "CP"
         Me.CP.Size = New System.Drawing.Size(238, 25)
         Me.CP.TabIndex = 33
@@ -3604,7 +3604,7 @@ Partial Class Empleados
         '
         Me.LBL_CP.AutoSize = True
         Me.LBL_CP.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBL_CP.Location = New System.Drawing.Point(621, 261)
+        Me.LBL_CP.Location = New System.Drawing.Point(687, 261)
         Me.LBL_CP.Name = "LBL_CP"
         Me.LBL_CP.Size = New System.Drawing.Size(100, 18)
         Me.LBL_CP.TabIndex = 32
@@ -3614,7 +3614,7 @@ Partial Class Empleados
         '
         Me.txt_CURP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_CURP.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_CURP.Location = New System.Drawing.Point(312, 164)
+        Me.txt_CURP.Location = New System.Drawing.Point(378, 164)
         Me.txt_CURP.Name = "txt_CURP"
         Me.txt_CURP.Size = New System.Drawing.Size(238, 25)
         Me.txt_CURP.TabIndex = 19
@@ -3623,7 +3623,7 @@ Partial Class Empleados
         '
         Me.cuidad2.Enabled = False
         Me.cuidad2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cuidad2.Location = New System.Drawing.Point(727, 133)
+        Me.cuidad2.Location = New System.Drawing.Point(793, 133)
         Me.cuidad2.Name = "cuidad2"
         Me.cuidad2.Size = New System.Drawing.Size(215, 25)
         Me.cuidad2.TabIndex = 9
@@ -3635,7 +3635,7 @@ Partial Class Empleados
         Me.EC.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EC.FormattingEnabled = True
         Me.EC.Items.AddRange(New Object() {"SOLTERO", "CASADO", "DIVORCIADO", "VIUDO", "UNION LIBRE"})
-        Me.EC.Location = New System.Drawing.Point(312, 195)
+        Me.EC.Location = New System.Drawing.Point(378, 195)
         Me.EC.Name = "EC"
         Me.EC.Size = New System.Drawing.Size(238, 26)
         Me.EC.TabIndex = 23
@@ -3644,7 +3644,7 @@ Partial Class Empleados
         '
         Me.Label92.AutoSize = True
         Me.Label92.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label92.Location = New System.Drawing.Point(631, 136)
+        Me.Label92.Location = New System.Drawing.Point(697, 136)
         Me.Label92.Name = "Label92"
         Me.Label92.Size = New System.Drawing.Size(90, 18)
         Me.Label92.TabIndex = 16
@@ -3654,7 +3654,7 @@ Partial Class Empleados
         '
         Me.txt_SS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_SS.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SS.Location = New System.Drawing.Point(727, 196)
+        Me.txt_SS.Location = New System.Drawing.Point(793, 196)
         Me.txt_SS.Name = "txt_SS"
         Me.txt_SS.Size = New System.Drawing.Size(238, 25)
         Me.txt_SS.TabIndex = 25
@@ -3665,7 +3665,7 @@ Partial Class Empleados
         Me.ddl_educacion.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ddl_educacion.FormattingEnabled = True
         Me.ddl_educacion.Items.AddRange(New Object() {"PRIMARIA", "SECUNDARIA", "PREPARATOIA", "LICENCIATURA"})
-        Me.ddl_educacion.Location = New System.Drawing.Point(312, 320)
+        Me.ddl_educacion.Location = New System.Drawing.Point(378, 320)
         Me.ddl_educacion.Name = "ddl_educacion"
         Me.ddl_educacion.Size = New System.Drawing.Size(238, 26)
         Me.ddl_educacion.TabIndex = 39
@@ -3674,7 +3674,7 @@ Partial Class Empleados
         '
         Me.Label54.AutoSize = True
         Me.Label54.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label54.Location = New System.Drawing.Point(227, 324)
+        Me.Label54.Location = New System.Drawing.Point(293, 324)
         Me.Label54.Name = "Label54"
         Me.Label54.Size = New System.Drawing.Size(79, 18)
         Me.Label54.TabIndex = 38
@@ -3684,7 +3684,7 @@ Partial Class Empleados
         '
         Me.lbl_curp.AutoSize = True
         Me.lbl_curp.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_curp.Location = New System.Drawing.Point(237, 167)
+        Me.lbl_curp.Location = New System.Drawing.Point(303, 167)
         Me.lbl_curp.Name = "lbl_curp"
         Me.lbl_curp.Size = New System.Drawing.Size(69, 18)
         Me.lbl_curp.TabIndex = 18
@@ -3694,7 +3694,7 @@ Partial Class Empleados
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(660, 230)
+        Me.Label1.Location = New System.Drawing.Point(726, 230)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(61, 18)
         Me.Label1.TabIndex = 28
@@ -3704,7 +3704,7 @@ Partial Class Empleados
         '
         Me.colonia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.colonia.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.colonia.Location = New System.Drawing.Point(727, 227)
+        Me.colonia.Location = New System.Drawing.Point(793, 227)
         Me.colonia.Name = "colonia"
         Me.colonia.Size = New System.Drawing.Size(238, 25)
         Me.colonia.TabIndex = 29
@@ -3713,7 +3713,7 @@ Partial Class Empleados
         '
         Me.Label55.AutoSize = True
         Me.Label55.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label55.Location = New System.Drawing.Point(226, 292)
+        Me.Label55.Location = New System.Drawing.Point(292, 292)
         Me.Label55.Name = "Label55"
         Me.Label55.Size = New System.Drawing.Size(80, 18)
         Me.Label55.TabIndex = 34
@@ -3723,7 +3723,7 @@ Partial Class Empleados
         '
         Me.domicilio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.domicilio.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.domicilio.Location = New System.Drawing.Point(312, 227)
+        Me.domicilio.Location = New System.Drawing.Point(378, 227)
         Me.domicilio.Name = "domicilio"
         Me.domicilio.Size = New System.Drawing.Size(238, 25)
         Me.domicilio.TabIndex = 27
@@ -3732,7 +3732,7 @@ Partial Class Empleados
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(230, 230)
+        Me.Label2.Location = New System.Drawing.Point(296, 230)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(76, 18)
         Me.Label2.TabIndex = 26
@@ -3742,7 +3742,7 @@ Partial Class Empleados
         '
         Me.txt_RFC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_RFC.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_RFC.Location = New System.Drawing.Point(727, 164)
+        Me.txt_RFC.Location = New System.Drawing.Point(793, 164)
         Me.txt_RFC.Name = "txt_RFC"
         Me.txt_RFC.Size = New System.Drawing.Size(238, 25)
         Me.txt_RFC.TabIndex = 21
@@ -3751,7 +3751,7 @@ Partial Class Empleados
         '
         Me.Celular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Celular.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Celular.Location = New System.Drawing.Point(727, 289)
+        Me.Celular.Location = New System.Drawing.Point(793, 289)
         Me.Celular.Name = "Celular"
         Me.Celular.Size = New System.Drawing.Size(238, 25)
         Me.Celular.TabIndex = 37
@@ -3760,7 +3760,7 @@ Partial Class Empleados
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(651, 292)
+        Me.Label4.Location = New System.Drawing.Point(717, 292)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(70, 18)
         Me.Label4.TabIndex = 36
@@ -3770,7 +3770,7 @@ Partial Class Empleados
         '
         Me.lbl_sex.AutoSize = True
         Me.lbl_sex.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_sex.Location = New System.Drawing.Point(680, 74)
+        Me.lbl_sex.Location = New System.Drawing.Point(746, 74)
         Me.lbl_sex.Name = "lbl_sex"
         Me.lbl_sex.Size = New System.Drawing.Size(41, 18)
         Me.lbl_sex.TabIndex = 8
@@ -3780,7 +3780,7 @@ Partial Class Empleados
         '
         Me.txt_telefono.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_telefono.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_telefono.Location = New System.Drawing.Point(312, 289)
+        Me.txt_telefono.Location = New System.Drawing.Point(378, 289)
         Me.txt_telefono.Name = "txt_telefono"
         Me.txt_telefono.Size = New System.Drawing.Size(238, 25)
         Me.txt_telefono.TabIndex = 35
@@ -3789,7 +3789,7 @@ Partial Class Empleados
         '
         Me.LBL_ESTADOCIVIL.AutoSize = True
         Me.LBL_ESTADOCIVIL.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBL_ESTADOCIVIL.Location = New System.Drawing.Point(214, 199)
+        Me.LBL_ESTADOCIVIL.Location = New System.Drawing.Point(280, 199)
         Me.LBL_ESTADOCIVIL.Name = "LBL_ESTADOCIVIL"
         Me.LBL_ESTADOCIVIL.Size = New System.Drawing.Size(92, 18)
         Me.LBL_ESTADOCIVIL.TabIndex = 22
@@ -3799,7 +3799,7 @@ Partial Class Empleados
         '
         Me.lbl_fn.AutoSize = True
         Me.lbl_fn.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_fn.Location = New System.Drawing.Point(199, 105)
+        Me.lbl_fn.Location = New System.Drawing.Point(265, 105)
         Me.lbl_fn.Name = "lbl_fn"
         Me.lbl_fn.Size = New System.Drawing.Size(107, 18)
         Me.lbl_fn.TabIndex = 10
@@ -3809,7 +3809,7 @@ Partial Class Empleados
         '
         Me.nacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.nacion.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nacion.Location = New System.Drawing.Point(727, 102)
+        Me.nacion.Location = New System.Drawing.Point(793, 102)
         Me.nacion.Name = "nacion"
         Me.nacion.Size = New System.Drawing.Size(238, 25)
         Me.nacion.TabIndex = 13
@@ -3818,7 +3818,7 @@ Partial Class Empleados
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(624, 105)
+        Me.Label3.Location = New System.Drawing.Point(690, 105)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(97, 18)
         Me.Label3.TabIndex = 12
@@ -3828,7 +3828,7 @@ Partial Class Empleados
         '
         Me.txt_FECHA.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_FECHA.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txt_FECHA.Location = New System.Drawing.Point(312, 102)
+        Me.txt_FECHA.Location = New System.Drawing.Point(378, 102)
         Me.txt_FECHA.Name = "txt_FECHA"
         Me.txt_FECHA.Size = New System.Drawing.Size(238, 25)
         Me.txt_FECHA.TabIndex = 11
@@ -3839,7 +3839,7 @@ Partial Class Empleados
         Me.CB_SEXO.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CB_SEXO.FormattingEnabled = True
         Me.CB_SEXO.Items.AddRange(New Object() {"FEMENINO", "MASCULINO"})
-        Me.CB_SEXO.Location = New System.Drawing.Point(727, 70)
+        Me.CB_SEXO.Location = New System.Drawing.Point(793, 70)
         Me.CB_SEXO.Name = "CB_SEXO"
         Me.CB_SEXO.Size = New System.Drawing.Size(238, 26)
         Me.CB_SEXO.TabIndex = 9
@@ -3848,7 +3848,7 @@ Partial Class Empleados
         '
         Me.lbl_nac.AutoSize = True
         Me.lbl_nac.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_nac.Location = New System.Drawing.Point(203, 136)
+        Me.lbl_nac.Location = New System.Drawing.Point(269, 136)
         Me.lbl_nac.Name = "lbl_nac"
         Me.lbl_nac.Size = New System.Drawing.Size(103, 18)
         Me.lbl_nac.TabIndex = 14
@@ -3866,14 +3866,14 @@ Partial Class Empleados
         Me.panel7.Location = New System.Drawing.Point(0, 0)
         Me.panel7.Margin = New System.Windows.Forms.Padding(2)
         Me.panel7.Name = "panel7"
-        Me.panel7.Size = New System.Drawing.Size(977, 35)
+        Me.panel7.Size = New System.Drawing.Size(1069, 35)
         Me.panel7.TabIndex = 0
         '
         'SAVE
         '
         Me.SAVE.Cursor = System.Windows.Forms.Cursors.Hand
         Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.SAVE.Location = New System.Drawing.Point(889, 0)
+        Me.SAVE.Location = New System.Drawing.Point(984, -2)
         Me.SAVE.Name = "SAVE"
         Me.SAVE.Size = New System.Drawing.Size(35, 35)
         Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3884,7 +3884,7 @@ Partial Class Empleados
         '
         Me.CANCEL.Cursor = System.Windows.Forms.Cursors.Hand
         Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(930, 0)
+        Me.CANCEL.Location = New System.Drawing.Point(1025, -2)
         Me.CANCEL.Name = "CANCEL"
         Me.CANCEL.Size = New System.Drawing.Size(35, 35)
         Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3917,7 +3917,7 @@ Partial Class Empleados
         '
         Me.txt_EN2.Enabled = False
         Me.txt_EN2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_EN2.Location = New System.Drawing.Point(312, 133)
+        Me.txt_EN2.Location = New System.Drawing.Point(378, 133)
         Me.txt_EN2.Name = "txt_EN2"
         Me.txt_EN2.Size = New System.Drawing.Size(215, 25)
         Me.txt_EN2.TabIndex = 15
@@ -3927,23 +3927,23 @@ Partial Class Empleados
         '
         Me.txt_numero.Enabled = False
         Me.txt_numero.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_numero.Location = New System.Drawing.Point(70, 40)
+        Me.txt_numero.Location = New System.Drawing.Point(115, 56)
         Me.txt_numero.Name = "txt_numero"
         Me.txt_numero.Size = New System.Drawing.Size(80, 25)
         Me.txt_numero.TabIndex = 1
         '
         'txt_EN
         '
-        Me.txt_EN.Location = New System.Drawing.Point(314, 145)
+        Me.txt_EN.Location = New System.Drawing.Point(380, 145)
         Me.txt_EN.Name = "txt_EN"
-        Me.txt_EN.Size = New System.Drawing.Size(0, 28)
+        Me.txt_EN.Size = New System.Drawing.Size(1, 28)
         Me.txt_EN.TabIndex = 7
         '
         'txt_NOM
         '
         Me.txt_NOM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_NOM.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_NOM.Location = New System.Drawing.Point(312, 40)
+        Me.txt_NOM.Location = New System.Drawing.Point(378, 40)
         Me.txt_NOM.Name = "txt_NOM"
         Me.txt_NOM.Size = New System.Drawing.Size(238, 25)
         Me.txt_NOM.TabIndex = 3
@@ -3952,7 +3952,7 @@ Partial Class Empleados
         '
         Me.txt_AM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_AM.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_AM.Location = New System.Drawing.Point(312, 71)
+        Me.txt_AM.Location = New System.Drawing.Point(378, 71)
         Me.txt_AM.Name = "txt_AM"
         Me.txt_AM.Size = New System.Drawing.Size(238, 25)
         Me.txt_AM.TabIndex = 7
@@ -3961,7 +3961,7 @@ Partial Class Empleados
         '
         Me.txt_AP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_AP.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_AP.Location = New System.Drawing.Point(727, 40)
+        Me.txt_AP.Location = New System.Drawing.Point(793, 40)
         Me.txt_AP.Name = "txt_AP"
         Me.txt_AP.Size = New System.Drawing.Size(238, 25)
         Me.txt_AP.TabIndex = 5
@@ -3971,7 +3971,7 @@ Partial Class Empleados
         Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
         Me.buscar_EN.Cursor = System.Windows.Forms.Cursors.Hand
         Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_EN.Location = New System.Drawing.Point(525, 133)
+        Me.buscar_EN.Location = New System.Drawing.Point(594, 133)
         Me.buscar_EN.Name = "buscar_EN"
         Me.buscar_EN.Size = New System.Drawing.Size(25, 25)
         Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3982,7 +3982,7 @@ Partial Class Empleados
         '
         Me.lbl_num.AutoSize = True
         Me.lbl_num.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_num.Location = New System.Drawing.Point(2, 43)
+        Me.lbl_num.Location = New System.Drawing.Point(47, 59)
         Me.lbl_num.Name = "lbl_num"
         Me.lbl_num.Size = New System.Drawing.Size(62, 18)
         Me.lbl_num.TabIndex = 0
@@ -3992,7 +3992,7 @@ Partial Class Empleados
         '
         Me.lbl_ap.AutoSize = True
         Me.lbl_ap.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_ap.Location = New System.Drawing.Point(623, 43)
+        Me.lbl_ap.Location = New System.Drawing.Point(689, 43)
         Me.lbl_ap.Name = "lbl_ap"
         Me.lbl_ap.Size = New System.Drawing.Size(98, 18)
         Me.lbl_ap.TabIndex = 4
@@ -4002,7 +4002,7 @@ Partial Class Empleados
         '
         Me.lbl_am.AutoSize = True
         Me.lbl_am.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_am.Location = New System.Drawing.Point(204, 74)
+        Me.lbl_am.Location = New System.Drawing.Point(270, 74)
         Me.lbl_am.Name = "lbl_am"
         Me.lbl_am.Size = New System.Drawing.Size(102, 18)
         Me.lbl_am.TabIndex = 6
@@ -4012,7 +4012,7 @@ Partial Class Empleados
         '
         Me.lbl_nom.AutoSize = True
         Me.lbl_nom.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_nom.Location = New System.Drawing.Point(226, 43)
+        Me.lbl_nom.Location = New System.Drawing.Point(292, 43)
         Me.lbl_nom.Name = "lbl_nom"
         Me.lbl_nom.Size = New System.Drawing.Size(80, 18)
         Me.lbl_nom.TabIndex = 2
@@ -4032,7 +4032,7 @@ Partial Class Empleados
         Me.MenuEmp.Margin = New System.Windows.Forms.Padding(2)
         Me.MenuEmp.Name = "MenuEmp"
         Me.MenuEmp.SelectedIndex = 0
-        Me.MenuEmp.Size = New System.Drawing.Size(989, 699)
+        Me.MenuEmp.Size = New System.Drawing.Size(1078, 699)
         Me.MenuEmp.TabIndex = 1
         '
         'datosFamiliaBindingSource
@@ -4043,7 +4043,7 @@ Partial Class Empleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(989, 699)
+        Me.ClientSize = New System.Drawing.Size(1078, 699)
         Me.Controls.Add(Me.MenuEmp)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)

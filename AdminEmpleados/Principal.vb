@@ -16,11 +16,11 @@ Public Class Principal
         lbl_user.Text = NEmp + " | " + NName
     End Sub
 
-    Private Sub Cerrar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles cerrar.Click
+    Private Sub Cerrar_Click(ByVal sender As Object, ByVal e As EventArgs)
         Me.Close()
     End Sub
 
-    Private Sub Header_MouseMove(ByVal sender As Object, ByVal e As MouseEventArgs) Handles header.MouseMove
+    Private Sub Header_MouseMove(ByVal sender As Object, ByVal e As MouseEventArgs)
         If bit Then
             Me.WindowState = FormWindowState.Normal
             If Me.Left + e.X - X >= 0 AndAlso Me.Top + e.Y - Y > 10 Then
@@ -31,17 +31,17 @@ Public Class Principal
         End If
     End Sub
 
-    Private Sub header_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles header.MouseDown
+    Private Sub header_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs)
         bit = True
         X = e.X
         Y = e.Y
     End Sub
 
-    Private Sub header_MouseUp(ByVal sender As Object, ByVal e As MouseEventArgs) Handles header.MouseUp
+    Private Sub header_MouseUp(ByVal sender As Object, ByVal e As MouseEventArgs)
         bit = False
     End Sub
 
-    Private Sub Min_Click(ByVal sender As Object, ByVal e As EventArgs) Handles min.Click
+    Private Sub Min_Click(ByVal sender As Object, ByVal e As EventArgs)
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
@@ -117,4 +117,6 @@ Public Class Principal
             Close()
         End If
     End Sub
+
+
 End Class

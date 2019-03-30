@@ -24,11 +24,6 @@ Partial Class Principal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Principal))
         Me.PNL_INFO = New System.Windows.Forms.Panel()
-        Me.header = New System.Windows.Forms.Panel()
-        Me.min = New System.Windows.Forms.PictureBox()
-        Me.cerrar = New System.Windows.Forms.PictureBox()
-        Me.Lbl_Title = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lbl_user = New System.Windows.Forms.Label()
         Me.Menu = New System.Windows.Forms.Panel()
         Me.BTN_CERRARSESION = New System.Windows.Forms.Button()
@@ -39,90 +34,24 @@ Partial Class Principal
         Me.BTN_CAP = New System.Windows.Forms.Button()
         Me.BTN_EQ = New System.Windows.Forms.Button()
         Me.btn_emp = New System.Windows.Forms.Button()
-        Me.header.SuspendLayout()
-        CType(Me.min, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Menu.SuspendLayout()
         CType(Me.Pb_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PNL_INFO
         '
-        Me.PNL_INFO.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PNL_INFO.Location = New System.Drawing.Point(204, 30)
-        Me.PNL_INFO.Margin = New System.Windows.Forms.Padding(2)
+        Me.PNL_INFO.Location = New System.Drawing.Point(204, 2)
+        Me.PNL_INFO.Margin = New System.Windows.Forms.Padding(2, 2, 0, 2)
         Me.PNL_INFO.Name = "PNL_INFO"
-        Me.PNL_INFO.Size = New System.Drawing.Size(996, 730)
+        Me.PNL_INFO.Size = New System.Drawing.Size(1078, 758)
         Me.PNL_INFO.TabIndex = 7
-        '
-        'header
-        '
-        Me.header.AutoSize = True
-        Me.header.BackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(91, Byte), Integer))
-        Me.header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.header.Controls.Add(Me.min)
-        Me.header.Controls.Add(Me.cerrar)
-        Me.header.Controls.Add(Me.Lbl_Title)
-        Me.header.Controls.Add(Me.PictureBox1)
-        Me.header.Dock = System.Windows.Forms.DockStyle.Top
-        Me.header.Location = New System.Drawing.Point(0, 0)
-        Me.header.Margin = New System.Windows.Forms.Padding(2)
-        Me.header.Name = "header"
-        Me.header.Size = New System.Drawing.Size(1200, 30)
-        Me.header.TabIndex = 5
-        '
-        'min
-        '
-        Me.min.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.min.Image = Global.AdminEmpleados.My.Resources.Resources.Minimize_80px
-        Me.min.Location = New System.Drawing.Point(1134, 3)
-        Me.min.Margin = New System.Windows.Forms.Padding(2)
-        Me.min.Name = "min"
-        Me.min.Size = New System.Drawing.Size(25, 22)
-        Me.min.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.min.TabIndex = 10
-        Me.min.TabStop = False
-        '
-        'cerrar
-        '
-        Me.cerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cerrar.Image = Global.AdminEmpleados.My.Resources.Resources.Close_80px
-        Me.cerrar.Location = New System.Drawing.Point(1163, 3)
-        Me.cerrar.Margin = New System.Windows.Forms.Padding(2)
-        Me.cerrar.Name = "cerrar"
-        Me.cerrar.Size = New System.Drawing.Size(25, 22)
-        Me.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.cerrar.TabIndex = 9
-        Me.cerrar.TabStop = False
-        '
-        'Lbl_Title
-        '
-        Me.Lbl_Title.AutoSize = True
-        Me.Lbl_Title.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Title.ForeColor = System.Drawing.Color.White
-        Me.Lbl_Title.Location = New System.Drawing.Point(33, 3)
-        Me.Lbl_Title.Name = "Lbl_Title"
-        Me.Lbl_Title.Size = New System.Drawing.Size(306, 23)
-        Me.Lbl_Title.TabIndex = 0
-        Me.Lbl_Title.Text = "EASY - Employee Administrator System"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.AdminEmpleados.My.Resources.Resources.EASY_Small
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(24, 22)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 8
-        Me.PictureBox1.TabStop = False
         '
         'lbl_user
         '
         Me.lbl_user.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbl_user.AutoSize = True
         Me.lbl_user.Font = New System.Drawing.Font("Microsoft YaHei UI", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_user.Location = New System.Drawing.Point(4, 702)
+        Me.lbl_user.Location = New System.Drawing.Point(4, 612)
         Me.lbl_user.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_user.Name = "lbl_user"
         Me.lbl_user.Size = New System.Drawing.Size(67, 19)
@@ -142,10 +71,10 @@ Partial Class Principal
         Me.Menu.Controls.Add(Me.BTN_EQ)
         Me.Menu.Controls.Add(Me.btn_emp)
         Me.Menu.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Menu.Location = New System.Drawing.Point(0, 30)
-        Me.Menu.Margin = New System.Windows.Forms.Padding(2)
+        Me.Menu.Location = New System.Drawing.Point(0, 0)
+        Me.Menu.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Menu.Name = "Menu"
-        Me.Menu.Size = New System.Drawing.Size(205, 730)
+        Me.Menu.Size = New System.Drawing.Size(205, 551)
         Me.Menu.TabIndex = 9
         '
         'BTN_CERRARSESION
@@ -156,7 +85,7 @@ Partial Class Principal
         Me.BTN_CERRARSESION.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_CERRARSESION.ForeColor = System.Drawing.Color.Black
         Me.BTN_CERRARSESION.Location = New System.Drawing.Point(0, 399)
-        Me.BTN_CERRARSESION.Margin = New System.Windows.Forms.Padding(2)
+        Me.BTN_CERRARSESION.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BTN_CERRARSESION.Name = "BTN_CERRARSESION"
         Me.BTN_CERRARSESION.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTN_CERRARSESION.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -185,7 +114,7 @@ Partial Class Principal
         Me.BTN_ADMIN.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_ADMIN.ForeColor = System.Drawing.Color.Black
         Me.BTN_ADMIN.Location = New System.Drawing.Point(0, 349)
-        Me.BTN_ADMIN.Margin = New System.Windows.Forms.Padding(2)
+        Me.BTN_ADMIN.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BTN_ADMIN.Name = "BTN_ADMIN"
         Me.BTN_ADMIN.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTN_ADMIN.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -205,7 +134,7 @@ Partial Class Principal
         Me.BTN_MED.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_MED.ForeColor = System.Drawing.Color.Black
         Me.BTN_MED.Location = New System.Drawing.Point(0, 299)
-        Me.BTN_MED.Margin = New System.Windows.Forms.Padding(2)
+        Me.BTN_MED.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BTN_MED.Name = "BTN_MED"
         Me.BTN_MED.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTN_MED.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -225,7 +154,7 @@ Partial Class Principal
         Me.BTN_EV.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_EV.ForeColor = System.Drawing.Color.Black
         Me.BTN_EV.Location = New System.Drawing.Point(0, 249)
-        Me.BTN_EV.Margin = New System.Windows.Forms.Padding(2)
+        Me.BTN_EV.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BTN_EV.Name = "BTN_EV"
         Me.BTN_EV.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTN_EV.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -245,7 +174,7 @@ Partial Class Principal
         Me.BTN_CAP.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_CAP.ForeColor = System.Drawing.Color.Black
         Me.BTN_CAP.Location = New System.Drawing.Point(0, 199)
-        Me.BTN_CAP.Margin = New System.Windows.Forms.Padding(2)
+        Me.BTN_CAP.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BTN_CAP.Name = "BTN_CAP"
         Me.BTN_CAP.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTN_CAP.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -265,7 +194,7 @@ Partial Class Principal
         Me.BTN_EQ.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_EQ.ForeColor = System.Drawing.Color.Black
         Me.BTN_EQ.Location = New System.Drawing.Point(0, 149)
-        Me.BTN_EQ.Margin = New System.Windows.Forms.Padding(2)
+        Me.BTN_EQ.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BTN_EQ.Name = "BTN_EQ"
         Me.BTN_EQ.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTN_EQ.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -287,7 +216,7 @@ Partial Class Principal
         Me.btn_emp.ForeColor = System.Drawing.Color.Black
         Me.btn_emp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btn_emp.Location = New System.Drawing.Point(0, 99)
-        Me.btn_emp.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_emp.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_emp.Name = "btn_emp"
         Me.btn_emp.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.btn_emp.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -305,36 +234,23 @@ Partial Class Principal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(1200, 760)
+        Me.ClientSize = New System.Drawing.Size(1028, 551)
         Me.Controls.Add(Me.Menu)
         Me.Controls.Add(Me.PNL_INFO)
-        Me.Controls.Add(Me.header)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Principal"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "EASY - Employee Administrator System"
-        Me.header.ResumeLayout(False)
-        Me.header.PerformLayout()
-        CType(Me.min, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cerrar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TopMost = True
         Me.Menu.ResumeLayout(False)
         Me.Menu.PerformLayout()
         CType(Me.Pb_Logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Private WithEvents PNL_INFO As Panel
-    Private WithEvents header As Panel
     Private WithEvents lbl_user As Label
-    Friend WithEvents Lbl_Title As Label
-    Friend WithEvents PictureBox1 As PictureBox
-    Private WithEvents min As PictureBox
-    Private WithEvents cerrar As PictureBox
     Private WithEvents Menu As Panel
     Private WithEvents BTN_CERRARSESION As Button
     Friend WithEvents Pb_Logo As PictureBox
