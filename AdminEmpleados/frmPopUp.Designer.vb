@@ -147,6 +147,7 @@ Partial Class frmPopUp
         Me.Name = "frmPopUp"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmPopUp"
+        Me.TopMost = True
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
         CType(Me.btn_salir, System.ComponentModel.ISupportInitialize).EndInit()

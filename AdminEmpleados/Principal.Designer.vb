@@ -72,7 +72,7 @@ Partial Class Principal
         Me.Menu.Controls.Add(Me.btn_emp)
         Me.Menu.Dock = System.Windows.Forms.DockStyle.Left
         Me.Menu.Location = New System.Drawing.Point(0, 0)
-        Me.Menu.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Menu.Margin = New System.Windows.Forms.Padding(2)
         Me.Menu.Name = "Menu"
         Me.Menu.Size = New System.Drawing.Size(205, 551)
         Me.Menu.TabIndex = 9
@@ -85,7 +85,7 @@ Partial Class Principal
         Me.BTN_CERRARSESION.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_CERRARSESION.ForeColor = System.Drawing.Color.Black
         Me.BTN_CERRARSESION.Location = New System.Drawing.Point(0, 399)
-        Me.BTN_CERRARSESION.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BTN_CERRARSESION.Margin = New System.Windows.Forms.Padding(2)
         Me.BTN_CERRARSESION.Name = "BTN_CERRARSESION"
         Me.BTN_CERRARSESION.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTN_CERRARSESION.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -114,7 +114,7 @@ Partial Class Principal
         Me.BTN_ADMIN.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_ADMIN.ForeColor = System.Drawing.Color.Black
         Me.BTN_ADMIN.Location = New System.Drawing.Point(0, 349)
-        Me.BTN_ADMIN.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BTN_ADMIN.Margin = New System.Windows.Forms.Padding(2)
         Me.BTN_ADMIN.Name = "BTN_ADMIN"
         Me.BTN_ADMIN.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTN_ADMIN.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -134,7 +134,7 @@ Partial Class Principal
         Me.BTN_MED.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_MED.ForeColor = System.Drawing.Color.Black
         Me.BTN_MED.Location = New System.Drawing.Point(0, 299)
-        Me.BTN_MED.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BTN_MED.Margin = New System.Windows.Forms.Padding(2)
         Me.BTN_MED.Name = "BTN_MED"
         Me.BTN_MED.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTN_MED.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -154,7 +154,7 @@ Partial Class Principal
         Me.BTN_EV.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_EV.ForeColor = System.Drawing.Color.Black
         Me.BTN_EV.Location = New System.Drawing.Point(0, 249)
-        Me.BTN_EV.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BTN_EV.Margin = New System.Windows.Forms.Padding(2)
         Me.BTN_EV.Name = "BTN_EV"
         Me.BTN_EV.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTN_EV.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -174,7 +174,7 @@ Partial Class Principal
         Me.BTN_CAP.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_CAP.ForeColor = System.Drawing.Color.Black
         Me.BTN_CAP.Location = New System.Drawing.Point(0, 199)
-        Me.BTN_CAP.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BTN_CAP.Margin = New System.Windows.Forms.Padding(2)
         Me.BTN_CAP.Name = "BTN_CAP"
         Me.BTN_CAP.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTN_CAP.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -194,7 +194,7 @@ Partial Class Principal
         Me.BTN_EQ.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_EQ.ForeColor = System.Drawing.Color.Black
         Me.BTN_EQ.Location = New System.Drawing.Point(0, 149)
-        Me.BTN_EQ.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BTN_EQ.Margin = New System.Windows.Forms.Padding(2)
         Me.BTN_EQ.Name = "BTN_EQ"
         Me.BTN_EQ.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTN_EQ.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -216,7 +216,7 @@ Partial Class Principal
         Me.btn_emp.ForeColor = System.Drawing.Color.Black
         Me.btn_emp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btn_emp.Location = New System.Drawing.Point(0, 99)
-        Me.btn_emp.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_emp.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_emp.Name = "btn_emp"
         Me.btn_emp.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.btn_emp.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -238,10 +238,9 @@ Partial Class Principal
         Me.Controls.Add(Me.Menu)
         Me.Controls.Add(Me.PNL_INFO)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Principal"
         Me.Text = "EASY - Employee Administrator System"
-        Me.TopMost = True
         Me.Menu.ResumeLayout(False)
         Me.Menu.PerformLayout()
         CType(Me.Pb_Logo, System.ComponentModel.ISupportInitialize).EndInit()
