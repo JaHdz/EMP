@@ -153,6 +153,7 @@ Public Class Consultas
             cmd.CommandText = "UDSP_SES"
             Using lector As SqlDataReader = cmd.ExecuteReader()
                 If lector.Read() Then
+                    Dim result = lector(0)
                     If lector("ID_ESTSOCIO").ToString = "" Then
                         Return 0
                     Else

@@ -129,7 +129,7 @@ Public Class Wait
                     Result = New Consultas().Consulta_REF(Parameters("ES"))
             End Select
         Catch ex As Exception
-            Result = Nothing
+        Result = Nothing
         End Try
     End Sub
 

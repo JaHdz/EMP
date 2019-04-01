@@ -703,11 +703,8 @@ Public Class Empleados
             If txt_RefNom.Text = "" Or txt_RefOcu.Text = "" Or txt_TC.Text = "" Or Txt_TR.Text = "" Then
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
-                If EMPLEADO_ES <> 0 Then
-                    dgv_Ref.Rows.Add(txt_RefNom.Text, txt_RefOcu.Text, Txt_TR.Text, txt_TC.Text)
-                Else
-                    Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", EMPLEADO_ES}, {"Name", txt_RefNom.Text},
-                        {"Ocupation", txt_RefNom.Text}, {"Relationship", txt_RefNom.Text}, {"Time", txt_RefNom.Text}}
+                Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", EMPLEADO_ES}, {"Name", txt_RefNom.Text},
+                        {"Ocupation", txt_RefOcu.Text}, {"Relationship", Txt_TR.Text}, {"Time", txt_RefNom.Text}}
                     Dim Wait As New Wait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.ValidateReference
@@ -719,8 +716,8 @@ Public Class Empleados
                     End If
                     dgv_Ref.DataSource = loResult("Source")
                     Wait.Close()
-                End If
-                txt_RefOcu.Text = ""
+
+                    txt_RefOcu.Text = ""
                 txt_RefNom.Text = ""
                 txt_TC.Text = ""
                 Txt_TR.Text = ""
@@ -824,7 +821,7 @@ Public Class Empleados
             Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", ES}}
             Dim Wait As New Wait With {
                         .Parameters = ldParameters,
-                        .Operation = BackgroundOperations.ValidateIncome
+                        .Operation = BackgroundOperations.AddSocialEconomicStudy
                     }
             Wait.ShowDialog()
             Dim loResult = Wait.Result
@@ -840,13 +837,17 @@ Public Class Empleados
                 If dgv_Ref.Rows.Count > 0 Then
                     For Each row As DataGridViewRow In dgv_Ref.Rows
                         If Not row.IsNewRow Then
-                            ldParameters = New Dictionary(Of String, Object) From {{"ES", loResult}, {"Name", row.Cells(0).Value.ToString},
-                                           {"Ocupation", row.Cells(1).Value.ToString}, {"Relationship", row.Cells(2).Value.ToString}, {"Time", row.Cells(3).Value.ToString}}
+                            'ES.SES_ID
+                            ldParameters = New Dictionary(Of String, Object) From {{"ES", loResult}, {"Name", row.Cells(2).Value.ToString},
+                                       {"Ocupation", row.Cells(4).Value.ToString}, {"Relationship", row.Cells(3).Value.ToString}, {"Time", row.Cells(5).Value.ToString}}
                             Wait = New Wait With {
-                                    .Parameters = ldParameters,
-                                    .Operation = BackgroundOperations.ValidateReference
-                                }
+                                .Parameters = ldParameters,
+                                .Operation = BackgroundOperations.ValidateReference
+                            }
+                            Wait.ShowDialog()
                             Dim loResult3 As Dictionary(Of String, Object) = Wait.Result
+                            Wait.Close()
+
                             If loResult3("Valid") = False Then
                                 MessageBox.Show("Este registro ya Existe.")
                             End If
