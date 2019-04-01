@@ -23,7 +23,7 @@ Partial Class Empleados
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Tam_Es = New System.Windows.Forms.TabPage()
@@ -1793,8 +1793,8 @@ Partial Class Empleados
         'Text
         '
         Me.Text.DataPropertyName = "Text"
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        Me.Text.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.Text.DefaultCellStyle = DataGridViewCellStyle1
         Me.Text.HeaderText = "Enfermedad"
         Me.Text.Name = "Text"
         Me.Text.Width = 1400
@@ -3371,7 +3371,7 @@ Partial Class Empleados
         'txt_tipo
         '
         Me.txt_tipo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_tipo.Location = New System.Drawing.Point(449, 74)
+        Me.txt_tipo.Location = New System.Drawing.Point(485, 74)
         Me.txt_tipo.Name = "txt_tipo"
         Me.txt_tipo.Size = New System.Drawing.Size(1, 25)
         Me.txt_tipo.TabIndex = 25
@@ -3410,9 +3410,9 @@ Partial Class Empleados
         'txt_PUESTO
         '
         Me.txt_PUESTO.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_PUESTO.Location = New System.Drawing.Point(446, 40)
+        Me.txt_PUESTO.Location = New System.Drawing.Point(485, 40)
         Me.txt_PUESTO.Name = "txt_PUESTO"
-        Me.txt_PUESTO.Size = New System.Drawing.Size(0, 25)
+        Me.txt_PUESTO.Size = New System.Drawing.Size(1, 25)
         Me.txt_PUESTO.TabIndex = 4
         '
         'txt_PUESTO2
@@ -3438,9 +3438,9 @@ Partial Class Empleados
         'txt_SUPER
         '
         Me.txt_SUPER.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SUPER.Location = New System.Drawing.Point(126, 72)
+        Me.txt_SUPER.Location = New System.Drawing.Point(146, 75)
         Me.txt_SUPER.Name = "txt_SUPER"
-        Me.txt_SUPER.Size = New System.Drawing.Size(0, 25)
+        Me.txt_SUPER.Size = New System.Drawing.Size(1, 25)
         Me.txt_SUPER.TabIndex = 24
         '
         'lbl_depto
@@ -4033,7 +4033,7 @@ Partial Class Empleados
         Me.MenuEmp.Name = "MenuEmp"
         Me.MenuEmp.SelectedIndex = 0
         Me.MenuEmp.Size = New System.Drawing.Size(1078, 699)
-        Me.MenuEmp.TabIndex = 1
+        Me.MenuEmp.TabIndex = 6
         '
         'datosFamiliaBindingSource
         '
