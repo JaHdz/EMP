@@ -130,7 +130,6 @@ Public Class Wait
             End Select
         Catch ex As Exception
             Result = Nothing
-            Hide()
         End Try
     End Sub
 

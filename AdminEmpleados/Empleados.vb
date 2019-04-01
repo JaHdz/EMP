@@ -696,7 +696,7 @@ Public Class Empleados
             If txt_RefNom.Text = "" Or txt_RefOcu.Text = "" Or txt_TC.Text = "" Or Txt_TR.Text = "" Then
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
-                If EMPLEADO_ES = 0 Then
+                If EMPLEADO_ES <> 0 Then
                     dgv_Ref.Rows.Add(txt_RefNom.Text, txt_RefOcu.Text, Txt_TR.Text, txt_TC.Text)
                 Else
                     Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", EMPLEADO_ES}, {"Name", txt_RefNom.Text},
@@ -726,10 +726,10 @@ Public Class Empleados
             If txt_OTCantidad.Text = "" Or txt_OIParen.Text = "" Then
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
-                If EMPLEADO_ES = 0 Then
+                If EMPLEADO_ES <> 0 Then
                     dgv_OI.Rows.Add(txt_OIParen.Text, txt_OTCantidad.Text)
                 Else
-                    Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", EMPLEADO_ES}, {"Relationship", txt_RefNom.Text}, {"Amount", txt_RefNom.Text}}
+                    Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", EMPLEADO_ES}, {"Relationship", txt_OIParen.Text}, {"Amount", txt_OTCantidad.Text}}
                     Dim Wait As New Wait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.ValidateIncome
@@ -752,126 +752,116 @@ Public Class Empleados
 
     Private Sub btn_SESave_Click(sender As Object, e As EventArgs) Handles btn_SESave.Click
         If EXISTE = True Then
-            Dim cont As Integer = 0
-            For Each ctrl In Panel1.Controls
-                If (ctrl.GetType() Is GetType(CheckBox)) Then
-                    Dim txt As CheckBox = CType(ctrl, CheckBox)
-                    If txt.Checked = True Then
-                        cont = cont + 1
-                    End If
-                End If
-            Next
-            If cont > 0 Then
-                Dim ES As New Cls_ES()
-                ES.SES_ID = EMPLEADO_ES
-                ES.EMP_ID = EMPLEADO_ID
-                If cb_CasaP.Checked = True Then
-                    ES.H_TYPE = "CASA PROPIA"
-                End If
-                If cb_Depto.Checked = True Then
-                    ES.H_TYPE = "DEPARTAMENTO"
-                End If
-                If cb_Renta.Checked = True Then
-                    ES.H_TYPE = "CASA DE RENTA"
-                End If
-                If cb_Terreno.Checked = True Then
-                    ES.H_TYPE = "TERRENO"
-                End If
-                If cb_adobe.Checked = True Then
-                    ES.H_CONDITION = "ADOBE"
-                End If
-                If cb_block.Checked = True Then
-                    ES.H_CONDITION = "BLOCK"
-                End If
-                If cb_Madera.Checked = True Then
-                    ES.H_CONDITION = "MADERA"
-                End If
-                If cb_ladrillo.Checked = True Then
-                    ES.H_CONDITION = "LADRILLO"
-                End If
-                ES.H_ELEC = cb_Luz.Checked
-                ES.H_PHONE = cb_LineaTel.Checked
-                ES.H_WATER = cb_AguaP.Checked
-                ES.H_SEWER = cb_Drenaje.Checked
-                ES.H_GAS = cb_Tuberia.Checked
-                ES.H_TRASHREC = cb_Basura.Checked
-                ES.H_CABLETV = cb_Internet.Checked
-                ES.H_INTERNET = cb_Internet.Checked
-                ES.H_SECURITY = cb_SisSeg.Checked
-                ES.T_METRO = cb_Metro.Checked
-                ES.T_PUBLIC = cb_Trans.Checked
-                ES.T_TAX = cb_Taxi.Checked
-                ES.T_CAR = cb_Vehi.Checked
-                ES.A_SOCIAL = txt_SE__SOCIALE.Text
-                ES.A_COMUNITARY = txt_SE_EVENTOS.Text
-                ES.A_MUSEUMS = txt_SE_MUSEOS.Text
-                ES.A_THEATERS = txt_SE_TEATROS.Text
-                ES.A_MOVIES = txt_SE_CINES.Text
-                ES.A_FESTIVALS = txt_SE_CULTURALES.Text
-                ES.A_ARCHE = txt_SE_ZONAS.Text
-                ES.A_VACATIONS = txt_SE_VACIONES.Text
-                ES.A_PLAZAS = txt_SE_PLAZAS.Text
-                ES.A_NPARK = txt_SE_NATURALES.Text
-                ES.A_APARK = txt_se_diversiones.Text
-                ES.FS_RENT = txt_GFRenta.Text
-                ES.FS_SCHOOL = txt_GFCole.Text
-                ES.FS_GROCERIES = Txt_GFDesp.Text
-                ES.FS_SERVICES = txt_GFServ.Text
-                ES.SES_HOBBIES = Txt_pasatiempos.Text
-                ES.SES_RELIGION = txt_Religion.Text
-                ES.SES_VERIFIER = NEmp
-                ES.SES_OBSERVATIONS = txt_commen.Text
-                ES.IMG = PB_IMAGE_VIVIENDA.Image
 
-                Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", ES}}
-                Dim Wait As New Wait With {
+            Dim ES As New Cls_ES()
+            ES.SES_ID = EMPLEADO_ES
+            ES.EMP_ID = EMPLEADO_ID
+            If cb_CasaP.Checked = True Then
+                ES.H_TYPE = "CASA PROPIA"
+            End If
+            If cb_Depto.Checked = True Then
+                ES.H_TYPE = "DEPARTAMENTO"
+            End If
+            If cb_Renta.Checked = True Then
+                ES.H_TYPE = "CASA DE RENTA"
+            End If
+            If cb_Terreno.Checked = True Then
+                ES.H_TYPE = "TERRENO"
+            End If
+            If cb_adobe.Checked = True Then
+                ES.H_CONDITION = "ADOBE"
+            End If
+            If cb_block.Checked = True Then
+                ES.H_CONDITION = "BLOCK"
+            End If
+            If cb_Madera.Checked = True Then
+                ES.H_CONDITION = "MADERA"
+            End If
+            If cb_ladrillo.Checked = True Then
+                ES.H_CONDITION = "LADRILLO"
+            End If
+            ES.H_ELEC = cb_Luz.Checked
+            ES.H_PHONE = cb_LineaTel.Checked
+            ES.H_WATER = cb_AguaP.Checked
+            ES.H_SEWER = cb_Drenaje.Checked
+            ES.H_GAS = cb_Tuberia.Checked
+            ES.H_TRASHREC = cb_Basura.Checked
+            ES.H_CABLETV = cb_Internet.Checked
+            ES.H_INTERNET = cb_Internet.Checked
+            ES.H_SECURITY = cb_SisSeg.Checked
+            ES.T_METRO = cb_Metro.Checked
+            ES.T_PUBLIC = cb_Trans.Checked
+            ES.T_TAX = cb_Taxi.Checked
+            ES.T_CAR = cb_Vehi.Checked
+            ES.A_SOCIAL = txt_SE__SOCIALE.Text
+            ES.A_COMUNITARY = txt_SE_EVENTOS.Text
+            ES.A_MUSEUMS = txt_SE_MUSEOS.Text
+            ES.A_THEATERS = txt_SE_TEATROS.Text
+            ES.A_MOVIES = txt_SE_CINES.Text
+            ES.A_FESTIVALS = txt_SE_CULTURALES.Text
+            ES.A_ARCHE = txt_SE_ZONAS.Text
+            ES.A_VACATIONS = txt_SE_VACIONES.Text
+            ES.A_PLAZAS = txt_SE_PLAZAS.Text
+            ES.A_NPARK = txt_SE_NATURALES.Text
+            ES.A_APARK = txt_se_diversiones.Text
+            ES.FS_RENT = txt_GFRenta.Text
+            ES.FS_SCHOOL = txt_GFCole.Text
+            ES.FS_GROCERIES = Txt_GFDesp.Text
+            ES.FS_SERVICES = txt_GFServ.Text
+            ES.SES_HOBBIES = Txt_pasatiempos.Text
+            ES.SES_RELIGION = txt_Religion.Text
+            ES.SES_VERIFIER = NEmp
+            ES.SES_OBSERVATIONS = txt_commen.Text
+            ES.IMG = PB_IMAGE_VIVIENDA.Image
+
+            Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", ES}}
+            Dim Wait As New Wait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.ValidateIncome
                     }
-                Wait.ShowDialog()
-                Dim loResult = Wait.Result
-                Wait.Close()
-                If loResult > 0 Then
-                    ldParameters = New Dictionary(Of String, Object) From {{"Employee", ES.EMP_ID}, {"HousePicture", ES.IMG}, {"EmployeePicture", foto.Image}}
-                    Wait = New Wait With {
+            Wait.ShowDialog()
+            Dim loResult = Wait.Result
+            Wait.Close()
+            If loResult > 0 Then
+                ldParameters = New Dictionary(Of String, Object) From {{"Employee", ES.EMP_ID}, {"HousePicture", ES.IMG}, {"EmployeePicture", foto.Image}}
+                Wait = New Wait With {
                                     .Parameters = ldParameters,
                                     .Operation = BackgroundOperations.AddImage
                                 }
-                    Wait.ShowDialog()
-                    Wait.Close()
-                    If dgv_Ref.Rows.Count > 0 Then
-                        For Each row As DataGridViewRow In dgv_Ref.Rows
-                            If Not row.IsNewRow Then
-                                ldParameters = New Dictionary(Of String, Object) From {{"ES", loResult}, {"Name", row.Cells(0).Value.ToString},
+                Wait.ShowDialog()
+                Wait.Close()
+                If dgv_Ref.Rows.Count > 0 Then
+                    For Each row As DataGridViewRow In dgv_Ref.Rows
+                        If Not row.IsNewRow Then
+                            ldParameters = New Dictionary(Of String, Object) From {{"ES", loResult}, {"Name", row.Cells(0).Value.ToString},
                                            {"Ocupation", row.Cells(1).Value.ToString}, {"Relationship", row.Cells(2).Value.ToString}, {"Time", row.Cells(3).Value.ToString}}
-                                Wait = New Wait With {
+                            Wait = New Wait With {
                                     .Parameters = ldParameters,
                                     .Operation = BackgroundOperations.ValidateReference
                                 }
-                                Dim loResult3 As Dictionary(Of String, Object) = Wait.Result
-                                If loResult3("Valid") = False Then
-                                    MessageBox.Show("Este registro ya Existe.")
-                                End If
+                            Dim loResult3 As Dictionary(Of String, Object) = Wait.Result
+                            If loResult3("Valid") = False Then
+                                MessageBox.Show("Este registro ya Existe.")
                             End If
-                        Next
-                    End If
-                    If dgv_OI.Rows.Count > 0 Then
-                        For Each row As DataGridViewRow In dgv_OI.Rows
-                            If Not row.IsNewRow Then
-                                ldParameters = New Dictionary(Of String, Object) From {{"ES", loResult}, {"Relationship", row.Cells(0).Value.ToString},
+                        End If
+                    Next
+                End If
+                If dgv_OI.Rows.Count > 0 Then
+                    For Each row As DataGridViewRow In dgv_OI.Rows
+                        If Not row.IsNewRow Then
+                            ldParameters = New Dictionary(Of String, Object) From {{"ES", loResult}, {"Relationship", row.Cells(0).Value.ToString},
                                              {"Amount", Convert.ToDouble(row.Cells(1).Value.ToString)}}
-                                Wait = New Wait With {
+                            Wait = New Wait With {
                                     .Parameters = ldParameters,
                                     .Operation = BackgroundOperations.ValidateIncome
                                 }
-                                Dim loResult4 As Dictionary(Of String, Object) = Wait.Result
-                                Wait.Close()
-                                If loResult4("Valid") = False Then
-                                    MessageBox.Show("Este registro ya Existe.")
-                                End If
+                            Dim loResult4 As Dictionary(Of String, Object) = Wait.Result
+                            Wait.Close()
+                            If loResult4("Valid") = False Then
+                                MessageBox.Show("Este registro ya Existe.")
                             End If
-                        Next
-                    End If
+                        End If
+                    Next
                 End If
             End If
         End If
@@ -1423,7 +1413,7 @@ Public Class Empleados
     End Sub
 
     Private Sub PbSearchEmployee_Click(sender As Object, e As EventArgs) Handles PbSearchEmployee.Click
-        llenar_buscador("EMPLEADOS")
+        llenar_buscador("EMP")
         If V1 <> "" And V2 <> "" Then
             txt_numero.Text = V1
             Numeroleave()
@@ -1455,4 +1445,102 @@ Public Class Empleados
         End If
     End Sub
 
+    Private Sub txt_SE__SOCIALE_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE__SOCIALE.KeyPress
+        Dim txt_SE__SOCIALE As TextBox = CType(sender, TextBox)
+        If Not txt_SE__SOCIALE.Text.Contains(".") Then
+            e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
+        Else
+            e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+        End If
+    End Sub
+
+    Private Sub txt_SE_TEATROS_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE_TEATROS.KeyPress
+        Dim txt_SE_TEATROS As TextBox = CType(sender, TextBox)
+        If Not txt_SE_TEATROS.Text.Contains(".") Then
+            e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
+        Else
+            e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+        End If
+    End Sub
+
+    Private Sub txt_SE_NATURALES_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE_NATURALES.KeyPress
+        Dim txt_SE_NATURALES As TextBox = CType(sender, TextBox)
+        If Not txt_SE_NATURALES.Text.Contains(".") Then
+            e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
+        Else
+            e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+        End If
+    End Sub
+
+    Private Sub txt_SE_CINES_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE_CINES.KeyPress
+        Dim txt_SE_CINES As TextBox = CType(sender, TextBox)
+        If Not txt_SE_CINES.Text.Contains(".") Then
+            e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
+        Else
+            e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+        End If
+    End Sub
+
+    Private Sub txt_SE_PLAZAS_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE_PLAZAS.KeyPress
+        Dim txt_SE_PLAZAS As TextBox = CType(sender, TextBox)
+        If Not txt_SE_PLAZAS.Text.Contains(".") Then
+            e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
+        Else
+            e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+        End If
+    End Sub
+
+    Private Sub txt_SE_EVENTOS_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE_EVENTOS.KeyPress
+        Dim txt_SE_EVENTOS As TextBox = CType(sender, TextBox)
+        If Not txt_SE_EVENTOS.Text.Contains(".") Then
+            e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
+        Else
+            e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+        End If
+    End Sub
+
+    Private Sub txt_SE_CULTURALES_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE_CULTURALES.KeyPress
+        Dim txt_SE_CULTURALES As TextBox = CType(sender, TextBox)
+        If Not txt_SE_CULTURALES.Text.Contains(".") Then
+            e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
+        Else
+            e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+        End If
+    End Sub
+
+    Private Sub txt_SE_VACIONES_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE_VACIONES.KeyPress
+        Dim txt_SE_VACIONES As TextBox = CType(sender, TextBox)
+        If Not txt_SE_VACIONES.Text.Contains(".") Then
+            e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
+        Else
+            e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+        End If
+    End Sub
+
+    Private Sub txt_SE_MUSEOS_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE_MUSEOS.KeyPress
+        Dim txt_SE_MUSEOS As TextBox = CType(sender, TextBox)
+        If Not txt_SE_MUSEOS.Text.Contains(".") Then
+            e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
+        Else
+            e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+        End If
+    End Sub
+
+    Private Sub txt_SE_ZONAS_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE_ZONAS.KeyPress
+        Dim txt_SE_ZONAS As TextBox = CType(sender, TextBox)
+        If Not txt_SE_ZONAS.Text.Contains(".") Then
+            e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
+        Else
+            e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+        End If
+    End Sub
+
+    Private Sub txt_se_diversiones_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_se_diversiones.KeyPress
+        Dim txt_se_diversiones As TextBox = CType(sender, TextBox)
+        If Not txt_se_diversiones.Text.Contains(".") Then
+            e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
+        Else
+            e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+        End If
+    End Sub
 End Class

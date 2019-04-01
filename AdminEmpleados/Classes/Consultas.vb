@@ -1179,7 +1179,7 @@ Public Class Consultas
             Dim cmd As SqlCommand = con.CreateCommand
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.Add(New SqlParameter("@ID", ID))
-            cmd.CommandText = "Emp_CEmergencia"
+            cmd.CommandText = "DELETE_CEMERGENCIA"
             cmd.ExecuteNonQuery()
         End Using
     End Sub

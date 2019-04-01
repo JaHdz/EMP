@@ -40,10 +40,11 @@ Partial Class Principal
         '
         'PNL_INFO
         '
-        Me.PNL_INFO.Location = New System.Drawing.Point(204, 2)
+        Me.PNL_INFO.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PNL_INFO.Location = New System.Drawing.Point(-50, 0)
         Me.PNL_INFO.Margin = New System.Windows.Forms.Padding(2, 2, 0, 2)
         Me.PNL_INFO.Name = "PNL_INFO"
-        Me.PNL_INFO.Size = New System.Drawing.Size(1078, 758)
+        Me.PNL_INFO.Size = New System.Drawing.Size(1078, 551)
         Me.PNL_INFO.TabIndex = 7
         '
         'lbl_user
