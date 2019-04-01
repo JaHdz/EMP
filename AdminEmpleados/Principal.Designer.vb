@@ -41,10 +41,10 @@ Partial Class Principal
         'PNL_INFO
         '
         Me.PNL_INFO.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PNL_INFO.Location = New System.Drawing.Point(-50, 0)
+        Me.PNL_INFO.Location = New System.Drawing.Point(250, 0)
         Me.PNL_INFO.Margin = New System.Windows.Forms.Padding(2, 2, 0, 2)
         Me.PNL_INFO.Name = "PNL_INFO"
-        Me.PNL_INFO.Size = New System.Drawing.Size(1078, 551)
+        Me.PNL_INFO.Size = New System.Drawing.Size(1078, 651)
         Me.PNL_INFO.TabIndex = 7
         '
         'lbl_user
@@ -52,7 +52,7 @@ Partial Class Principal
         Me.lbl_user.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbl_user.AutoSize = True
         Me.lbl_user.Font = New System.Drawing.Font("Microsoft YaHei UI", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_user.Location = New System.Drawing.Point(4, 612)
+        Me.lbl_user.Location = New System.Drawing.Point(4, 662)
         Me.lbl_user.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_user.Name = "lbl_user"
         Me.lbl_user.Size = New System.Drawing.Size(67, 19)
@@ -75,7 +75,7 @@ Partial Class Principal
         Me.Menu.Location = New System.Drawing.Point(0, 0)
         Me.Menu.Margin = New System.Windows.Forms.Padding(2)
         Me.Menu.Name = "Menu"
-        Me.Menu.Size = New System.Drawing.Size(205, 551)
+        Me.Menu.Size = New System.Drawing.Size(205, 651)
         Me.Menu.TabIndex = 9
         '
         'BTN_CERRARSESION
@@ -235,7 +235,7 @@ Partial Class Principal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(1028, 551)
+        Me.ClientSize = New System.Drawing.Size(1328, 651)
         Me.Controls.Add(Me.Menu)
         Me.Controls.Add(Me.PNL_INFO)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
