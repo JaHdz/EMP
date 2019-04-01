@@ -23,8 +23,8 @@ Partial Class Principal
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Principal))
-        Me.PNL_INFO = New System.Windows.Forms.Panel()
-        Me.lbl_user = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Pnl_Info = New System.Windows.Forms.TableLayoutPanel()
         Me.Menu = New System.Windows.Forms.Panel()
         Me.BTN_CERRARSESION = New System.Windows.Forms.Button()
         Me.Pb_Logo = New System.Windows.Forms.PictureBox()
@@ -34,30 +34,38 @@ Partial Class Principal
         Me.BTN_CAP = New System.Windows.Forms.Button()
         Me.BTN_EQ = New System.Windows.Forms.Button()
         Me.btn_emp = New System.Windows.Forms.Button()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.lbl_user = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.Panel1.SuspendLayout()
+        Me.Pnl_Info.SuspendLayout()
         Me.Menu.SuspendLayout()
         CType(Me.Pb_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'PNL_INFO
+        'Panel1
         '
-        Me.PNL_INFO.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PNL_INFO.Location = New System.Drawing.Point(250, 0)
-        Me.PNL_INFO.Margin = New System.Windows.Forms.Padding(2, 2, 0, 2)
-        Me.PNL_INFO.Name = "PNL_INFO"
-        Me.PNL_INFO.Size = New System.Drawing.Size(1078, 651)
-        Me.PNL_INFO.TabIndex = 7
+        Me.Panel1.Controls.Add(Me.StatusStrip1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel1.Location = New System.Drawing.Point(0, 629)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1328, 22)
+        Me.Panel1.TabIndex = 0
         '
-        'lbl_user
+        'Pnl_Info
         '
-        Me.lbl_user.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.lbl_user.AutoSize = True
-        Me.lbl_user.Font = New System.Drawing.Font("Microsoft YaHei UI", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_user.Location = New System.Drawing.Point(4, 662)
-        Me.lbl_user.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbl_user.Name = "lbl_user"
-        Me.lbl_user.Size = New System.Drawing.Size(67, 19)
-        Me.lbl_user.TabIndex = 8
-        Me.lbl_user.Text = "Usuario:"
+        Me.Pnl_Info.ColumnCount = 2
+        Me.Pnl_Info.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205.0!))
+        Me.Pnl_Info.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.Pnl_Info.Controls.Add(Me.Menu, 0, 0)
+        Me.Pnl_Info.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Pnl_Info.Location = New System.Drawing.Point(0, 0)
+        Me.Pnl_Info.Name = "Pnl_Info"
+        Me.Pnl_Info.RowCount = 1
+        Me.Pnl_Info.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.Pnl_Info.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.Pnl_Info.Size = New System.Drawing.Size(1328, 629)
+        Me.Pnl_Info.TabIndex = 1
         '
         'Menu
         '
@@ -65,18 +73,17 @@ Partial Class Principal
         Me.Menu.Controls.Add(Me.BTN_CERRARSESION)
         Me.Menu.Controls.Add(Me.Pb_Logo)
         Me.Menu.Controls.Add(Me.BTN_ADMIN)
-        Me.Menu.Controls.Add(Me.lbl_user)
         Me.Menu.Controls.Add(Me.BTN_MED)
         Me.Menu.Controls.Add(Me.BTN_EV)
         Me.Menu.Controls.Add(Me.BTN_CAP)
         Me.Menu.Controls.Add(Me.BTN_EQ)
         Me.Menu.Controls.Add(Me.btn_emp)
         Me.Menu.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Menu.Location = New System.Drawing.Point(0, 0)
+        Me.Menu.Location = New System.Drawing.Point(2, 2)
         Me.Menu.Margin = New System.Windows.Forms.Padding(2)
         Me.Menu.Name = "Menu"
-        Me.Menu.Size = New System.Drawing.Size(205, 651)
-        Me.Menu.TabIndex = 9
+        Me.Menu.Size = New System.Drawing.Size(201, 651)
+        Me.Menu.TabIndex = 10
         '
         'BTN_CERRARSESION
         '
@@ -230,27 +237,48 @@ Partial Class Principal
         Me.btn_emp.UseCompatibleTextRendering = True
         Me.btn_emp.UseVisualStyleBackColor = True
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(209, Byte), Integer), CType(CType(210, Byte), Integer))
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lbl_user})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(1328, 22)
+        Me.StatusStrip1.TabIndex = 0
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'lbl_user
+        '
+        Me.lbl_user.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_user.Name = "lbl_user"
+        Me.lbl_user.Size = New System.Drawing.Size(143, 17)
+        Me.lbl_user.Text = "ToolStripStatusLabel1"
+        '
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(1328, 651)
-        Me.Controls.Add(Me.Menu)
-        Me.Controls.Add(Me.PNL_INFO)
+        Me.Controls.Add(Me.Pnl_Info)
+        Me.Controls.Add(Me.Panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Principal"
         Me.Text = "EASY - Employee Administrator System"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Pnl_Info.ResumeLayout(False)
         Me.Menu.ResumeLayout(False)
-        Me.Menu.PerformLayout()
         CType(Me.Pb_Logo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Private WithEvents PNL_INFO As Panel
-    Private WithEvents lbl_user As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Pnl_Info As TableLayoutPanel
     Private WithEvents Menu As Panel
     Private WithEvents BTN_CERRARSESION As Button
     Friend WithEvents Pb_Logo As PictureBox
@@ -260,4 +288,6 @@ Partial Class Principal
     Private WithEvents BTN_CAP As Button
     Private WithEvents BTN_EQ As Button
     Private WithEvents btn_emp As Button
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents lbl_user As ToolStripStatusLabel
 End Class

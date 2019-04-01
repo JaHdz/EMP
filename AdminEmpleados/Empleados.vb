@@ -212,7 +212,7 @@ Public Class Empleados
             End If
         Next
         SAVE_F()
-            lbl_emp.Text = ""
+        lbl_emp.Text = ""
         lbl_emp.Text = txt_numero.Text + " | " + txt_NOM.Text + " " + txt_AP.Text + " " + txt_AM.Text
         EMPLEADO_ID = txt_numero.Text
         'Catch ex As Exception
@@ -245,7 +245,7 @@ Public Class Empleados
             InfoEmp.ID_Puesto = Convert.ToInt64(txt_PUESTO.Text)
             InfoEmp.Emp_Salario = Convert.ToDouble(txt_SALARY.Text)
             InfoEmp.ID_Depto = depto.Text
-            InfoEmp.Emp_Sup = Convert.ToInt64(txt_SUPER.Text)
+            InfoEmp.Emp_Sup = txt_SUPER.Text
             InfoEmp.Emp_Tipo = txt_tipo.Text
             InfoEmp.Emp_Activo = 1
             InfoEmp.Emp_Ciudad = cuidad.Text
@@ -300,6 +300,13 @@ Public Class Empleados
                 txt.Text = Date.Now
             End If
         Next
+        Dim Wait As New Wait With {
+            .Operation = BackgroundOperations.GetLatestEmployeeNumber
+        }
+        Wait.ShowDialog()
+        txt_numero.Text = Wait.Result.ToString()
+        Wait.Close()
+
         CB_SEXO.SelectedIndex = -1
         ddl_educacion.SelectedIndex = -1
         EC.SelectedIndex = -1

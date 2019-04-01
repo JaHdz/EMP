@@ -94,7 +94,7 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@GENDER", infoEmp.Emp_Sexo))
             cmd.Parameters.Add(New SqlParameter("@CURP", infoEmp.Emp_Curp))
             cmd.Parameters.Add(New SqlParameter("@ADDRESS", infoEmp.Emp_Domicilio))
-            cmd.Parameters.Add(New SqlParameter("@CITYSTATE", infoEmp.Emp_Domicilio))
+            cmd.Parameters.Add(New SqlParameter("@CITYSTATE", infoEmp.Emp_CiudadEstado))
             cmd.Parameters.Add(New SqlParameter("@ACTIVE", infoEmp.Emp_Activo))
             cmd.Parameters.Add(New SqlParameter("@TYPE", infoEmp.Emp_Tipo))
             cmd.Parameters.Add(New SqlParameter("@SUPERVISOR", infoEmp.Emp_Sup))
