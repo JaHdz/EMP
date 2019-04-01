@@ -101,7 +101,7 @@ Public Class Principal
         Next
     End Sub
 
-    Private Sub MenuOptionClick(ByVal sender As Object, ByVal e As EventArgs) Handles BTN_MED.Click, BTN_EV.Click, BTN_EQ.Click, btn_emp.Click, BTN_CAP.Click, BTN_ADMIN.Click
+    Private Sub MenuOptionClick(ByVal sender As Object, ByVal e As EventArgs) Handles btn_emp.Click, BTN_MED.Click, BTN_EV.Click, BTN_EQ.Click, BTN_CAP.Click, BTN_ADMIN.Click
         Dim Wait As Wait = New Wait()
         Wait.Show()
         SelectedOption = CType(sender, Button).Tag
