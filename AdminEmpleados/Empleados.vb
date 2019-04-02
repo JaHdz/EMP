@@ -704,8 +704,8 @@ Public Class Empleados
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
                 Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", EMPLEADO_ES}, {"Name", txt_RefNom.Text},
-                        {"Ocupation", txt_RefOcu.Text}, {"Relationship", Txt_TR.Text}, {"Time", txt_RefNom.Text}}
-                    Dim Wait As New Wait With {
+                        {"Ocupation", txt_RefOcu.Text}, {"Relationship", Txt_TR.Text}, {"Time", txt_TC.Text}}
+                Dim Wait As New Wait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.ValidateReference
                     }
