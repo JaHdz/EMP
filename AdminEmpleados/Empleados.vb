@@ -704,8 +704,8 @@ Public Class Empleados
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
                 Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", EMPLEADO_ES}, {"Name", txt_RefNom.Text},
-                        {"Ocupation", txt_RefOcu.Text}, {"Relationship", Txt_TR.Text}, {"Time", txt_RefNom.Text}}
-                    Dim Wait As New Wait With {
+                        {"Ocupation", txt_RefOcu.Text}, {"Relationship", Txt_TR.Text}, {"Time", txt_TC.Text}}
+                Dim Wait As New Wait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.ValidateReference
                     }
@@ -730,7 +730,7 @@ Public Class Empleados
             If txt_OTCantidad.Text = "" Or txt_OIParen.Text = "" Then
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
-                If EMPLEADO_ES <> 0 Then
+                If EMPLEADO_ES = 0 Then
                     dgv_OI.Rows.Add(txt_OIParen.Text, txt_OTCantidad.Text)
                 Else
                     Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", EMPLEADO_ES}, {"Relationship", txt_OIParen.Text}, {"Amount", txt_OTCantidad.Text}}
@@ -797,17 +797,61 @@ Public Class Empleados
             ES.T_PUBLIC = cb_Trans.Checked
             ES.T_TAX = cb_Taxi.Checked
             ES.T_CAR = cb_Vehi.Checked
-            ES.A_SOCIAL = txt_SE__SOCIALE.Text
-            ES.A_COMUNITARY = txt_SE_EVENTOS.Text
-            ES.A_MUSEUMS = txt_SE_MUSEOS.Text
-            ES.A_THEATERS = txt_SE_TEATROS.Text
-            ES.A_MOVIES = txt_SE_CINES.Text
-            ES.A_FESTIVALS = txt_SE_CULTURALES.Text
-            ES.A_ARCHE = txt_SE_ZONAS.Text
-            ES.A_VACATIONS = txt_SE_VACIONES.Text
-            ES.A_PLAZAS = txt_SE_PLAZAS.Text
-            ES.A_NPARK = txt_SE_NATURALES.Text
-            ES.A_APARK = txt_se_diversiones.Text
+            If txt_SE__SOCIALE.Text = "" Then
+                ES.A_SOCIAL = "0"
+            Else
+                ES.A_SOCIAL = txt_SE__SOCIALE.Text
+            End If
+            If txt_SE_EVENTOS.Text = "" Then
+                ES.A_COMUNITARY = "0"
+            Else
+                ES.A_COMUNITARY = txt_SE_EVENTOS.Text
+            End If
+            If txt_SE_MUSEOS.Text = "" Then
+                ES.A_COMUNITARY = "0"
+            Else
+                ES.A_COMUNITARY = txt_SE_MUSEOS.Text
+            End If
+            If txt_SE_TEATROS.Text = "" Then
+                ES.A_THEATERS = "0"
+            Else
+                ES.A_THEATERS = txt_SE_TEATROS.Text
+            End If
+            If txt_SE_CINES.Text = "" Then
+                ES.A_MOVIES = "0"
+            Else
+                ES.A_MOVIES = txt_SE_CINES.Text
+            End If
+            If txt_SE_CULTURALES.Text = "" Then
+                ES.A_FESTIVALS = "0"
+            Else
+                ES.A_FESTIVALS = txt_SE_CULTURALES.Text
+            End If
+            If txt_SE_ZONAS.Text = "" Then
+                ES.A_ARCHE = "0"
+            Else
+                ES.A_ARCHE = txt_SE_ZONAS.Text
+            End If
+            If txt_SE_VACIONES.Text = "" Then
+                ES.A_VACATIONS = "0"
+            Else
+                ES.A_VACATIONS = txt_SE_VACIONES.Text
+            End If
+            If txt_SE_PLAZAS.Text = "" Then
+                ES.A_PLAZAS = "0"
+            Else
+                ES.A_PLAZAS = txt_SE_PLAZAS.Text
+            End If
+            If txt_SE_NATURALES.Text = "" Then
+                ES.A_NPARK = "0"
+            Else
+                ES.A_NPARK = txt_SE_NATURALES.Text
+            End If
+            If txt_se_diversiones.Text = "" Then
+                ES.A_APARK = "0"
+            Else
+                ES.A_APARK = txt_se_diversiones.Text
+            End If
             ES.FS_RENT = txt_GFRenta.Text
             ES.FS_SCHOOL = txt_GFCole.Text
             ES.FS_GROCERIES = Txt_GFDesp.Text
@@ -826,6 +870,8 @@ Public Class Empleados
             Wait.ShowDialog()
             Dim loResult = Wait.Result
             Wait.Close()
+
+
             If loResult > 0 Then
                 ldParameters = New Dictionary(Of String, Object) From {{"Employee", ES.EMP_ID}, {"HousePicture", ES.IMG}, {"EmployeePicture", foto.Image}}
                 Wait = New Wait With {
@@ -834,49 +880,50 @@ Public Class Empleados
                                 }
                 Wait.ShowDialog()
                 Wait.Close()
-                If dgv_Ref.Rows.Count > 0 Then
-                    For Each row As DataGridViewRow In dgv_Ref.Rows
-                        If Not row.IsNewRow Then
-                            'ES.SES_ID
-                            ldParameters = New Dictionary(Of String, Object) From {{"ES", loResult}, {"Name", row.Cells(2).Value.ToString},
-                                       {"Ocupation", row.Cells(4).Value.ToString}, {"Relationship", row.Cells(3).Value.ToString}, {"Time", row.Cells(5).Value.ToString}}
-                            Wait = New Wait With {
-                                .Parameters = ldParameters,
-                                .Operation = BackgroundOperations.ValidateReference
-                            }
-                            Wait.ShowDialog()
-                            Dim loResult3 As Dictionary(Of String, Object) = Wait.Result
-                            Wait.Close()
+                '    If dgv_Ref.Rows.Count > 0 Then
+                '        For Each row As DataGridViewRow In dgv_Ref.Rows
+                '            If Not row.IsNewRow Then
+                '                'ES.SES_ID
+                '                ldParameters = New Dictionary(Of String, Object) From {{"ES", loResult}, {"Name", row.Cells(2).Value.ToString},
+                '                           {"Ocupation", row.Cells(4).Value.ToString}, {"Relationship", row.Cells(3).Value.ToString}, {"Time", row.Cells(5).Value.ToString}}
+                '                Wait = New Wait With {
+                '                    .Parameters = ldParameters,
+                '                    .Operation = BackgroundOperations.ValidateReference
+                '                }
+                '                Wait.ShowDialog()
+                '                Dim loResult3 As Dictionary(Of String, Object) = Wait.Result
+                '                Wait.Close()
 
-                            If loResult3("Valid") = False Then
-                                MessageBox.Show("Este registro ya Existe.")
-                            End If
-                        End If
-                    Next
-                End If
-                If dgv_OI.Rows.Count > 0 Then
-                    For Each row As DataGridViewRow In dgv_OI.Rows
-                        If Not row.IsNewRow Then
-                            ldParameters = New Dictionary(Of String, Object) From {{"ES", loResult}, {"Relationship", row.Cells(0).Value.ToString},
-                                             {"Amount", Convert.ToDouble(row.Cells(1).Value.ToString)}}
-                            Wait = New Wait With {
-                                    .Parameters = ldParameters,
-                                    .Operation = BackgroundOperations.ValidateIncome
-                                }
-                            Dim loResult4 As Dictionary(Of String, Object) = Wait.Result
-                            Wait.Close()
-                            If loResult4("Valid") = False Then
-                                MessageBox.Show("Este registro ya Existe.")
-                            End If
-                        End If
-                    Next
-                End If
+                '                If loResult3("Valid") = False Then
+                '                    MessageBox.Show("Este registro ya Existe.")
+                '                End If
+                '            End If
+                '        Next
+                '    End If
+                'If dgv_OI.Rows.Count > 0 Then
+                '    For Each row As DataGridViewRow In dgv_OI.Rows
+                '        If Not row.IsNewRow Then
+                '            ldParameters = New Dictionary(Of String, Object) From {{"ES", loResult}, {"Relationship", row.Cells(0).Value.ToString},
+                '                             {"Amount", Convert.ToDouble(row.Cells(1).Value.ToString)}}
+                '            Wait = New Wait With {
+                '                    .Parameters = ldParameters,
+                '                    .Operation = BackgroundOperations.ValidateIncome
+                '                }
+                '            Dim loResult4 As Dictionary(Of String, Object) = Wait.Result
+                '            Wait.Close()
+                '            If loResult4("Valid") = False Then
+                '                MessageBox.Show("Este registro ya Existe.")
+                '            End If
+                '        End If
+                '    Next
+                'End If
+                limp()
             End If
         End If
     End Sub
 
     Private Sub btn_SECancel_Click(sender As Object, e As EventArgs) Handles btn_SECancel.Click
-        Me.Close()
+        limp()
     End Sub
 
     Private Sub btn_enfADD_Click(sender As Object, e As EventArgs) Handles btn_enfADD.Click

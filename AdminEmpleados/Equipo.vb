@@ -24,7 +24,7 @@
     Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
         pnl_comen.Visible = False
         If (txt_numero.Text <> "") Then
-            NEmp = objcon.Emp_Exist(txt_numero.Text)
+            NEmp = Convert.ToInt16(objcon.Emp_Exist(txt_numero.Text))
             If (NEmp > 0) Then
                 Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", txt_numero.Text}}
                 Dim Wait As New Wait With {

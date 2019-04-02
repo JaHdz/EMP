@@ -44,7 +44,7 @@ Public Class Cls_Emp
             connection.Open()
             Dim cmd As SqlCommand = connection.CreateCommand()
             cmd.CommandType = CommandType.Text
-            cmd.CommandText = "SELECT * FROM ASSIGNED_EQUIPMENT WHERE ID_EMPLEADO=@EMPLOYEE"
+            cmd.CommandText = "SELECT * FROM Equipo_Asignado WHERE ID_Emp=@EMPLOYEE"
             cmd.Parameters.Add("@EMPLOYEE", SqlDbType.Int).Value = Employee
             Dim dr As SqlDataReader = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             GetAssignedEquipment.Load(dr)

@@ -22,7 +22,6 @@ Partial Class Evaluaciones
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Evaluaciones))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dgv_equipo_Eval = New System.Windows.Forms.DataGridView()
@@ -74,14 +73,6 @@ Partial Class Evaluaciones
         'dgv_equipo_Eval
         '
         Me.dgv_equipo_Eval.AllowUserToAddRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft YaHei UI", 7.2!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_equipo_Eval.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_equipo_Eval.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_equipo_Eval.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DELETE, Me.ID_EvEmp, Me.ID_Codigo, Me.ID_Emp, Me.Fecha, Me.Estatus, Me.ID_User})
         Me.dgv_equipo_Eval.Location = New System.Drawing.Point(0, 0)
@@ -179,7 +170,6 @@ Partial Class Evaluaciones
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1072, 35)
         Me.Panel2.TabIndex = 0
-        Me.Panel2.UseWaitCursor = True
         '
         'Label42
         '
@@ -192,7 +182,6 @@ Partial Class Evaluaciones
         Me.Label42.Size = New System.Drawing.Size(173, 21)
         Me.Label42.TabIndex = 0
         Me.Label42.Text = "Agregar Evaluaciones"
-        Me.Label42.UseWaitCursor = True
         '
         'CANCEL
         '
@@ -203,7 +192,6 @@ Partial Class Evaluaciones
         Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.CANCEL.TabIndex = 1
         Me.CANCEL.TabStop = False
-        Me.CANCEL.UseWaitCursor = True
         '
         'SAVE
         '
@@ -214,7 +202,6 @@ Partial Class Evaluaciones
         Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.SAVE.TabIndex = 0
         Me.SAVE.TabStop = False
-        Me.SAVE.UseWaitCursor = True
         '
         'TXT_commen
         '

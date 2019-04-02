@@ -14,7 +14,7 @@
     End Sub
     Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
         If (txt_numero.Text <> "") Then
-            NEmp = objcon.Emp_Exist(txt_numero.Text)
+            NEmp = Convert.ToInt16(objcon.Emp_Exist(txt_numero.Text))
             If (NEmp > 0) Then
                 Dim Employee As New Cls_Emp
                 'dt = objcon.Consulta_empleado(txt_numero.Text)
@@ -324,9 +324,9 @@
 
     Private Sub TXT_EMP_SUPER_Leave(sender As Object, e As EventArgs) Handles TXT_EMP_SUPER.Leave
         If (TXT_EMP_SUPER.Text <> "") Then
-            NEmp = objcon.Emp_Exist(TXT_EMP_SUPER.Text)
+            NEmp = Convert.ToInt16(objcon.Emp_Exist(TXT_EMP_SUPER.Text))
             If (NEmp > 0) Then
-                Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", txt_numero.Text}}
+                Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", TXT_EMP_SUPER.Text}}
                 Dim Wait As New Wait With {
                 .Parameters = ldParameters,
                 .Operation = BackgroundOperations.GetEmployeeInfo
@@ -334,7 +334,7 @@
                 Wait.ShowDialog()
                 Dim Result As Cls_Emp = Wait.Result
                 Wait.Close()
-                lbl_emp.Text = txt_numero.Text + " | " + Result.Emp_Name + " " + Result.Emp_APat + " " + Result.Emp_AMat
+                TXT_EMP_SUPERname.Text = TXT_EMP_SUPER.Text + " | " + Result.Emp_Name + " " + Result.Emp_APat + " " + Result.Emp_AMat
                 dgv_super.DataSource = objcon.Consulta_SU()
             Else
                 MessageBox.Show("Numero de empleado no existe")
@@ -392,7 +392,7 @@
                     Select Case gr.Columns(e.ColumnIndex).Name
                         Case "UPDATESU"
                             If MessageBox.Show("Seguro que desea dar de baja a este supervisor?", "Baja Supervisor", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                If dgv_super.Rows(e.RowIndex).Cells(4).Value.ToString = "True" Then
+                                If dgv_super.Rows(e.RowIndex).Cells(5).Value.ToString = "True" Then
                                     If objcon.DELETE_ADMIN_SUPER((dgv_super.Rows(e.RowIndex).Cells(1).Value)) = False Then
                                         MessageBox.Show("No se puede eliminar este supervisor ya que fue asignado a uno o varios empleados")
                                     End If

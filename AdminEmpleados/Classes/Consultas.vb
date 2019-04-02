@@ -587,7 +587,6 @@ Public Class Consultas
             cmd.Parameters.Add(New SqlParameter("@EMPLOYEE", EMPLOYEE))
             cmd.Parameters.Add(New SqlParameter("@DATE", DATEE))
             cmd.Parameters.Add(New SqlParameter("@ISRETURNED", ISRETURNED))
-            cmd.Parameters.Add(New SqlParameter("@COMMENTS", COMMENTS))
             cmd.Parameters.Add(New SqlParameter("@DATE_R", DATE_R))
             cmd.Parameters.Add(New SqlParameter("@USER", USER))
             cmd.CommandText = "UDSP_EQUIPMENT_ASSIGNED"
@@ -1258,7 +1257,7 @@ Public Class Consultas
             Dim cmd As SqlCommand = con.CreateCommand
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.Add(New SqlParameter("@ID", ID))
-            cmd.CommandText = "DELETE_OI"
+            cmd.CommandText = "DELETE_OI2"
             cmd.ExecuteNonQuery()
         End Using
     End Sub
@@ -1269,7 +1268,7 @@ Public Class Consultas
             Dim cmd As SqlCommand = con.CreateCommand
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.Add(New SqlParameter("@ID", ID))
-            cmd.CommandText = "DELETE_REF"
+            cmd.CommandText = "DELETE_REF2"
             cmd.ExecuteNonQuery()
         End Using
     End Sub
