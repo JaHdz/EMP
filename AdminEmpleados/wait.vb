@@ -95,8 +95,8 @@ Public Class Wait
                 Case BackgroundOperations.AddSocialEconomicStudy
                     Dim Consultas As New Consultas()
                     Result = Consultas.Add_ES(Parameters("ES"))
-                    Consultas.DELETE_OI(Result)
-                    Consultas.DELETE_REF(Result)
+                    'Consultas.DELETE_OI(Result)
+                    'Consultas.DELETE_REF(Result)
                 Case BackgroundOperations.AddImage
                     Dim Consultas As New Consultas()
                     Consultas.Add_Image(Parameters("Employee"), Parameters("HousePicture"), Parameters("EmployeePicture"))
