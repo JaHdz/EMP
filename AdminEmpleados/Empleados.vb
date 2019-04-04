@@ -12,11 +12,28 @@ Public Class Empleados
     Dim id As Integer
     Dim NEmp As Integer
     Dim NName As String
-
+    Dim tooltip As New ToolTip
     Sub New(ByVal emp As Integer, name As String)
         InitializeComponent()
         NEmp = emp
-        NName = name
+    End Sub
+
+    Private Sub AddToolTips()
+        tooltip.SetToolTip(SAVE, "Guardar Información de un nuevo empleado")
+        tooltip.SetToolTip(CANCEL, "Cancelar operación")
+        tooltip.SetToolTip(foto, "Haz doble clic para agregar una nueva imagen")
+        tooltip.SetToolTip(PbOptions, "Dar de baja a este empleado")
+        tooltip.SetToolTip(btn_esSAVE, "Agregar cónyuge")
+        tooltip.SetToolTip(btn_hijoADD, "Agregar hijos")
+        tooltip.SetToolTip(btn_antSave, "Agregar atecedentes laborales")
+        tooltip.SetToolTip(btn_enfADD, "Agregar un nuevo registro de enfermedades")
+        tooltip.SetToolTip(btn_conADD, "Agregar nuevo contacto de emergencia")
+        tooltip.SetToolTip(PB_IMAGE_VIVIENDA, "Haz doble clic para agregar una nueva imagen")
+        tooltip.SetToolTip(btn_OI, "Agregar otros ingresos")
+        tooltip.SetToolTip(Btn_AddRef, "Agregar una nueva referencia")
+        tooltip.SetToolTip(btn_SERPT, "Ver el reporte de Estudio Socioeconomico")
+        tooltip.SetToolTip(btn_SESave, "Guardar Estudio Socioeconomico")
+        tooltip.SetToolTip(btn_SECancel, "Cancelar operación")
     End Sub
 
     Private Sub Numeroleave()
@@ -42,7 +59,7 @@ Public Class Empleados
                 lbl_emp.Text = numero + " | " + txt_NOM.Text + " " + txt_AP.Text + " " + txt_AM.Text
                 EMPLEADO_ID = numero
                 PbOptions.Tag = "BAJA"
-
+                tooltip.SetToolTip(PbOptions, "Dar de baja a este empleado")
             Else
                 Limp()
                 lbl_emp.Text = ""
@@ -50,6 +67,7 @@ Public Class Empleados
                 txt_numero.Text = numero
                 EXISTE = False
                 PbOptions.Tag = "ALTA"
+                tooltip.SetToolTip(PbOptions, "Dar de alta nuevamente a este empleado")
             End If
         Else
             txt_numero.Focus()
@@ -336,6 +354,7 @@ Public Class Empleados
         txt_numero.Text = objcon.NUMERO_EMPLEADO.ToString()
         txt_numero.Focus()
 
+        lbl_emp.Text = ""
         PbOptions.Tag = ""
         foto.Image = My.Resources.photoNobody120
         foto.Visible = True
@@ -348,6 +367,9 @@ Public Class Empleados
         dgv_OI.DataSource = objcon.Consulta_OI(0)
         dgv_Ref.DataSource = objcon.Consulta_REF(0)
         MenuEmp.SelectedIndex = 0
+        SAVE.Image = My.Resources.Save_80px
+        btn_SESave.Image = My.Resources.Save_80px
+        AddToolTips()
     End Sub
 
     Private Sub Altas_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
@@ -491,7 +513,7 @@ Public Class Empleados
         'End Try
     End Sub
     Private Sub Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'ResetTabs()
+        AddToolTips()
         Dim Wait As New Wait With {
             .Operation = BackgroundOperations.GetLatestEmployeeNumber
         }
@@ -860,6 +882,11 @@ Public Class Empleados
                         End If
                     Next
                 End If
+                If MessageBox.Show("Se ha guardado el Estudio Socioeconomico con exito ¿Desea ver el reporte?",
+                                   "Estudio Socioeconomico guardado", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                                   MessageBoxDefaultButton.Button1) = DialogResult.Yes Then
+                    btn_SERPT_Click(sender, e)
+                End If
                 Limp()
             End If
         End If
@@ -1165,7 +1192,10 @@ Public Class Empleados
             txt_commen.Text = loResult.SES_OBSERVATIONS
             PB_IMAGE_VIVIENDA.Image = loResult.IMG
             EMPLEADO_ES = loResult.SES_ID
+            btn_SESave.Image = My.Resources.Updates_80
+            tooltip.SetToolTip(btn_SESave, "Actualizar Estudio Socioeconomico")
         Else
+            btn_SESave.Image = My.Resources.Save_80px
             EMPLEADO_ES = 0
         End If
         ldParameters = New Dictionary(Of String, Object) From {{"ES", EMPLEADO_ES}}
@@ -1411,6 +1441,7 @@ Public Class Empleados
     End Sub
 
     Private Sub PbSearchEmployee_Click(sender As Object, e As EventArgs) Handles PbSearchEmployee.Click
+        tooltip.RemoveAll()
         llenar_buscador("EMP")
         If V1 <> "" And V2 <> "" Then
             txt_numero.Text = V1
@@ -1421,6 +1452,8 @@ Public Class Empleados
             llenarEnfermedades()
             llenarSE()
             pnl_estatus.Visible = True
+            SAVE.Image = My.Resources.Updates_80
+            tooltip.SetToolTip(SAVE, "Actualizar Información del empleado")
         Else
             Dim Wait As New Wait With {
             .Operation = BackgroundOperations.GetLatestEmployeeNumber
@@ -1429,6 +1462,8 @@ Public Class Empleados
             txt_numero.Text = Wait.Result.ToString()
             Wait.Close()
             pnl_estatus.Visible = False
+            SAVE.Image = My.Resources.Save_80px
+            tooltip.SetToolTip(SAVE, "Guardar Información de un nuevo empleado")
         End If
         txt_NOM.Focus()
     End Sub

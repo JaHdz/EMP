@@ -23,14 +23,11 @@ Partial Class Empleados
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Tam_Es = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btn_SERPT = New System.Windows.Forms.PictureBox()
-        Me.btn_SESave = New System.Windows.Forms.PictureBox()
-        Me.btn_SECancel = New System.Windows.Forms.PictureBox()
         Me.PnlObservaciones = New System.Windows.Forms.Panel()
         Me.txt_commen = New System.Windows.Forms.TextBox()
         Me.Panel26 = New System.Windows.Forms.Panel()
@@ -65,7 +62,6 @@ Partial Class Empleados
         Me.txt_RefNom = New System.Windows.Forms.TextBox()
         Me.Label48 = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.Btn_AddRef = New System.Windows.Forms.PictureBox()
         Me.Label51 = New System.Windows.Forms.Label()
         Me.PnlActividades = New System.Windows.Forms.Panel()
         Me.Label90 = New System.Windows.Forms.Label()
@@ -103,7 +99,6 @@ Partial Class Empleados
         Me.PARENTESCO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CANTIDAD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.btn_OI = New System.Windows.Forms.PictureBox()
         Me.Label60 = New System.Windows.Forms.Label()
         Me.Label61 = New System.Windows.Forms.Label()
         Me.PnlDatos = New System.Windows.Forms.Panel()
@@ -131,7 +126,6 @@ Partial Class Empleados
         Me.cb_AguaP = New System.Windows.Forms.CheckBox()
         Me.cb_Tuberia = New System.Windows.Forms.CheckBox()
         Me.cb_Basura = New System.Windows.Forms.CheckBox()
-        Me.PB_IMAGE_VIVIENDA = New System.Windows.Forms.PictureBox()
         Me.GrpMaterial = New System.Windows.Forms.GroupBox()
         Me.cb_block = New System.Windows.Forms.CheckBox()
         Me.cb_adobe = New System.Windows.Forms.CheckBox()
@@ -154,7 +148,6 @@ Partial Class Empleados
         Me.txt_enfNAME = New System.Windows.Forms.TextBox()
         Me.label47 = New System.Windows.Forms.Label()
         Me.panel21 = New System.Windows.Forms.Panel()
-        Me.btn_enfADD = New System.Windows.Forms.PictureBox()
         Me.label19 = New System.Windows.Forms.Label()
         Me.Tab_Cont = New System.Windows.Forms.TabPage()
         Me.panel18 = New System.Windows.Forms.Panel()
@@ -182,7 +175,6 @@ Partial Class Empleados
         Me.label43 = New System.Windows.Forms.Label()
         Me.label44 = New System.Windows.Forms.Label()
         Me.panel19 = New System.Windows.Forms.Panel()
-        Me.btn_conADD = New System.Windows.Forms.PictureBox()
         Me.label18 = New System.Windows.Forms.Label()
         Me.Tab_AL = New System.Windows.Forms.TabPage()
         Me.panel16 = New System.Windows.Forms.Panel()
@@ -216,7 +208,6 @@ Partial Class Empleados
         Me.txt_antFI = New System.Windows.Forms.DateTimePicker()
         Me.label9 = New System.Windows.Forms.Label()
         Me.panel17 = New System.Windows.Forms.Panel()
-        Me.btn_antSave = New System.Windows.Forms.PictureBox()
         Me.label17 = New System.Windows.Forms.Label()
         Me.Tab_Familia = New System.Windows.Forms.TabPage()
         Me.panel3 = New System.Windows.Forms.Panel()
@@ -245,12 +236,10 @@ Partial Class Empleados
         Me.label30 = New System.Windows.Forms.Label()
         Me.label31 = New System.Windows.Forms.Label()
         Me.panel5 = New System.Windows.Forms.Panel()
-        Me.btn_hijoADD = New System.Windows.Forms.PictureBox()
         Me.label11 = New System.Windows.Forms.Label()
         Me.panel2 = New System.Windows.Forms.Panel()
         Me.panel4 = New System.Windows.Forms.Panel()
         Me.label10 = New System.Windows.Forms.Label()
-        Me.btn_esSAVE = New System.Windows.Forms.PictureBox()
         Me.label25 = New System.Windows.Forms.Label()
         Me.txt_esNacion = New System.Windows.Forms.TextBox()
         Me.dgv_esposa = New System.Windows.Forms.DataGridView()
@@ -283,7 +272,6 @@ Partial Class Empleados
         Me.CB_PROV = New System.Windows.Forms.CheckBox()
         Me.panel13 = New System.Windows.Forms.Panel()
         Me.label15 = New System.Windows.Forms.Label()
-        Me.PbOptions = New System.Windows.Forms.PictureBox()
         Me.lbl_option = New System.Windows.Forms.Label()
         Me.commen = New System.Windows.Forms.TextBox()
         Me.txt_activo = New System.Windows.Forms.TextBox()
@@ -292,13 +280,10 @@ Partial Class Empleados
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.pnl_cont = New System.Windows.Forms.Panel()
-        Me.buscar_depto = New System.Windows.Forms.PictureBox()
         Me.depto = New System.Windows.Forms.TextBox()
         Me.depto2 = New System.Windows.Forms.TextBox()
-        Me.Buscar_PUESTO = New System.Windows.Forms.PictureBox()
         Me.panel11 = New System.Windows.Forms.Panel()
         Me.label14 = New System.Windows.Forms.Label()
-        Me.Buscar_tipo = New System.Windows.Forms.PictureBox()
         Me.lbl_ingreso = New System.Windows.Forms.Label()
         Me.Txt_correo = New System.Windows.Forms.TextBox()
         Me.lbl_clase = New System.Windows.Forms.Label()
@@ -310,7 +295,6 @@ Partial Class Empleados
         Me.txt_tipo = New System.Windows.Forms.TextBox()
         Me.lbl_sali = New System.Windows.Forms.Label()
         Me.txt_FECHAINGRESO = New System.Windows.Forms.DateTimePicker()
-        Me.Buscar_Super = New System.Windows.Forms.PictureBox()
         Me.txt_PUESTO = New System.Windows.Forms.TextBox()
         Me.txt_PUESTO2 = New System.Windows.Forms.TextBox()
         Me.txt_SUPER2 = New System.Windows.Forms.TextBox()
@@ -319,9 +303,6 @@ Partial Class Empleados
         Me.pnl_per = New System.Windows.Forms.Panel()
         Me.txtCdDomicilio = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.PbSearchEmployee = New System.Windows.Forms.PictureBox()
-        Me.buscar_ciudad = New System.Windows.Forms.PictureBox()
-        Me.foto = New System.Windows.Forms.PictureBox()
         Me.cuidad = New System.Windows.Forms.TextBox()
         Me.lbl_rfc = New System.Windows.Forms.Label()
         Me.lbl_ss = New System.Windows.Forms.Label()
@@ -353,8 +334,6 @@ Partial Class Empleados
         Me.CB_SEXO = New System.Windows.Forms.ComboBox()
         Me.lbl_nac = New System.Windows.Forms.Label()
         Me.panel7 = New System.Windows.Forms.Panel()
-        Me.SAVE = New System.Windows.Forms.PictureBox()
-        Me.CANCEL = New System.Windows.Forms.PictureBox()
         Me.lbl_emp = New System.Windows.Forms.Label()
         Me.label12 = New System.Windows.Forms.Label()
         Me.txt_EN2 = New System.Windows.Forms.TextBox()
@@ -363,19 +342,37 @@ Partial Class Empleados
         Me.txt_NOM = New System.Windows.Forms.TextBox()
         Me.txt_AM = New System.Windows.Forms.TextBox()
         Me.txt_AP = New System.Windows.Forms.TextBox()
-        Me.buscar_EN = New System.Windows.Forms.PictureBox()
         Me.lbl_num = New System.Windows.Forms.Label()
         Me.lbl_ap = New System.Windows.Forms.Label()
         Me.lbl_am = New System.Windows.Forms.Label()
         Me.lbl_nom = New System.Windows.Forms.Label()
         Me.MenuEmp = New System.Windows.Forms.TabControl()
-        Me.datosFamiliaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BwEmpleados = New System.ComponentModel.BackgroundWorker()
+        Me.PbOptions = New System.Windows.Forms.PictureBox()
+        Me.buscar_depto = New System.Windows.Forms.PictureBox()
+        Me.Buscar_PUESTO = New System.Windows.Forms.PictureBox()
+        Me.Buscar_tipo = New System.Windows.Forms.PictureBox()
+        Me.Buscar_Super = New System.Windows.Forms.PictureBox()
+        Me.PbSearchEmployee = New System.Windows.Forms.PictureBox()
+        Me.buscar_ciudad = New System.Windows.Forms.PictureBox()
+        Me.foto = New System.Windows.Forms.PictureBox()
+        Me.SAVE = New System.Windows.Forms.PictureBox()
+        Me.CANCEL = New System.Windows.Forms.PictureBox()
+        Me.buscar_EN = New System.Windows.Forms.PictureBox()
+        Me.btn_hijoADD = New System.Windows.Forms.PictureBox()
+        Me.btn_esSAVE = New System.Windows.Forms.PictureBox()
+        Me.btn_antSave = New System.Windows.Forms.PictureBox()
+        Me.btn_conADD = New System.Windows.Forms.PictureBox()
+        Me.btn_enfADD = New System.Windows.Forms.PictureBox()
+        Me.btn_SERPT = New System.Windows.Forms.PictureBox()
+        Me.btn_SESave = New System.Windows.Forms.PictureBox()
+        Me.btn_SECancel = New System.Windows.Forms.PictureBox()
+        Me.Btn_AddRef = New System.Windows.Forms.PictureBox()
+        Me.btn_OI = New System.Windows.Forms.PictureBox()
+        Me.PB_IMAGE_VIVIENDA = New System.Windows.Forms.PictureBox()
+        Me.datosFamiliaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Tam_Es.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        CType(Me.btn_SERPT, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_SESave, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_SECancel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlObservaciones.SuspendLayout()
         Me.Panel26.SuspendLayout()
         Me.PnlGastos.SuspendLayout()
@@ -383,20 +380,17 @@ Partial Class Empleados
         Me.PnlReferencias.SuspendLayout()
         CType(Me.dgv_Ref, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel10.SuspendLayout()
-        CType(Me.Btn_AddRef, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlActividades.SuspendLayout()
         Me.Panel36.SuspendLayout()
         Me.PnlIngresos.SuspendLayout()
         CType(Me.dgv_OI, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel14.SuspendLayout()
-        CType(Me.btn_OI, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlDatos.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.PnlTransporte.SuspendLayout()
         Me.Panel22.SuspendLayout()
         Me.PnlVivienda.SuspendLayout()
         Me.GrpServicios.SuspendLayout()
-        CType(Me.PB_IMAGE_VIVIENDA, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GrpMaterial.SuspendLayout()
         Me.GrpTIpo.SuspendLayout()
         Me.Panel15.SuspendLayout()
@@ -405,49 +399,55 @@ Partial Class Empleados
         Me.Panel8.SuspendLayout()
         CType(Me.dgv_Enf, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel21.SuspendLayout()
-        CType(Me.btn_enfADD, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Tab_Cont.SuspendLayout()
         Me.panel18.SuspendLayout()
         Me.PnlContacto.SuspendLayout()
         CType(Me.dgv_contacto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel19.SuspendLayout()
-        CType(Me.btn_conADD, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Tab_AL.SuspendLayout()
         Me.panel16.SuspendLayout()
         Me.pnlAntecedentes.SuspendLayout()
         CType(Me.dgv_ant, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel17.SuspendLayout()
-        CType(Me.btn_antSave, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Tab_Familia.SuspendLayout()
         Me.panel3.SuspendLayout()
         Me.PnlOffsprings.SuspendLayout()
         CType(Me.dgv_Hijos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel5.SuspendLayout()
-        CType(Me.btn_hijoADD, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel2.SuspendLayout()
         Me.panel4.SuspendLayout()
-        CType(Me.btn_esSAVE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_esposa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Tab_DP.SuspendLayout()
         Me.pnl_estatus.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.panel13.SuspendLayout()
-        CType(Me.PbOptions, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_cont.SuspendLayout()
+        Me.panel11.SuspendLayout()
+        Me.pnl_per.SuspendLayout()
+        Me.panel7.SuspendLayout()
+        Me.MenuEmp.SuspendLayout()
+        CType(Me.PbOptions, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_depto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Buscar_PUESTO, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.panel11.SuspendLayout()
         CType(Me.Buscar_tipo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Buscar_Super, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnl_per.SuspendLayout()
         CType(Me.PbSearchEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_ciudad, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.foto, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.panel7.SuspendLayout()
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuEmp.SuspendLayout()
+        CType(Me.btn_hijoADD, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_esSAVE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_antSave, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_conADD, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_enfADD, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_SERPT, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_SESave, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_SECancel, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Btn_AddRef, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_OI, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PB_IMAGE_VIVIENDA, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.datosFamiliaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -487,39 +487,6 @@ Partial Class Empleados
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1070, 1400)
         Me.Panel1.TabIndex = 2
-        '
-        'btn_SERPT
-        '
-        Me.btn_SERPT.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_SERPT.Image = Global.AdminEmpleados.My.Resources.Resources.Accounting_80px
-        Me.btn_SERPT.Location = New System.Drawing.Point(864, 1299)
-        Me.btn_SERPT.Name = "btn_SERPT"
-        Me.btn_SERPT.Size = New System.Drawing.Size(35, 35)
-        Me.btn_SERPT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_SERPT.TabIndex = 76
-        Me.btn_SERPT.TabStop = False
-        '
-        'btn_SESave
-        '
-        Me.btn_SESave.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_SESave.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.btn_SESave.Location = New System.Drawing.Point(902, 1299)
-        Me.btn_SESave.Name = "btn_SESave"
-        Me.btn_SESave.Size = New System.Drawing.Size(35, 35)
-        Me.btn_SESave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_SESave.TabIndex = 74
-        Me.btn_SESave.TabStop = False
-        '
-        'btn_SECancel
-        '
-        Me.btn_SECancel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_SECancel.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.btn_SECancel.Location = New System.Drawing.Point(940, 1299)
-        Me.btn_SECancel.Name = "btn_SECancel"
-        Me.btn_SECancel.Size = New System.Drawing.Size(35, 35)
-        Me.btn_SECancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_SECancel.TabIndex = 75
-        Me.btn_SECancel.TabStop = False
         '
         'PnlObservaciones
         '
@@ -870,17 +837,6 @@ Partial Class Empleados
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(1047, 35)
         Me.Panel10.TabIndex = 0
-        '
-        'Btn_AddRef
-        '
-        Me.Btn_AddRef.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Btn_AddRef.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Reference_80px
-        Me.Btn_AddRef.Location = New System.Drawing.Point(1009, 0)
-        Me.Btn_AddRef.Name = "Btn_AddRef"
-        Me.Btn_AddRef.Size = New System.Drawing.Size(35, 35)
-        Me.Btn_AddRef.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Btn_AddRef.TabIndex = 63
-        Me.Btn_AddRef.TabStop = False
         '
         'Label51
         '
@@ -1263,17 +1219,6 @@ Partial Class Empleados
         Me.Panel14.Size = New System.Drawing.Size(1047, 35)
         Me.Panel14.TabIndex = 0
         '
-        'btn_OI
-        '
-        Me.btn_OI.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_OI.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Income_80px
-        Me.btn_OI.Location = New System.Drawing.Point(1009, -1)
-        Me.btn_OI.Name = "btn_OI"
-        Me.btn_OI.Size = New System.Drawing.Size(35, 35)
-        Me.btn_OI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_OI.TabIndex = 55
-        Me.btn_OI.TabStop = False
-        '
         'Label60
         '
         Me.Label60.AutoSize = True
@@ -1578,18 +1523,6 @@ Partial Class Empleados
         Me.cb_Basura.Text = "Recoleccion Basura"
         Me.cb_Basura.UseVisualStyleBackColor = True
         '
-        'PB_IMAGE_VIVIENDA
-        '
-        Me.PB_IMAGE_VIVIENDA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PB_IMAGE_VIVIENDA.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PB_IMAGE_VIVIENDA.Image = Global.AdminEmpleados.My.Resources.Resources.AddImage
-        Me.PB_IMAGE_VIVIENDA.Location = New System.Drawing.Point(6, 40)
-        Me.PB_IMAGE_VIVIENDA.Name = "PB_IMAGE_VIVIENDA"
-        Me.PB_IMAGE_VIVIENDA.Size = New System.Drawing.Size(450, 235)
-        Me.PB_IMAGE_VIVIENDA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PB_IMAGE_VIVIENDA.TabIndex = 32
-        Me.PB_IMAGE_VIVIENDA.TabStop = False
-        '
         'GrpMaterial
         '
         Me.GrpMaterial.Controls.Add(Me.cb_block)
@@ -1794,8 +1727,8 @@ Partial Class Empleados
         'Text
         '
         Me.Text.DataPropertyName = "Text"
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        Me.Text.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.Text.DefaultCellStyle = DataGridViewCellStyle2
         Me.Text.HeaderText = "Enfermedad"
         Me.Text.Name = "Text"
         Me.Text.Width = 1400
@@ -1830,17 +1763,6 @@ Partial Class Empleados
         Me.panel21.Name = "panel21"
         Me.panel21.Size = New System.Drawing.Size(1066, 35)
         Me.panel21.TabIndex = 0
-        '
-        'btn_enfADD
-        '
-        Me.btn_enfADD.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_enfADD.Image = Global.AdminEmpleados.My.Resources.Resources.Add_MedicalCondition_80px
-        Me.btn_enfADD.Location = New System.Drawing.Point(1025, 0)
-        Me.btn_enfADD.Name = "btn_enfADD"
-        Me.btn_enfADD.Size = New System.Drawing.Size(35, 35)
-        Me.btn_enfADD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_enfADD.TabIndex = 46
-        Me.btn_enfADD.TabStop = False
         '
         'label19
         '
@@ -2099,17 +2021,6 @@ Partial Class Empleados
         Me.panel19.Name = "panel19"
         Me.panel19.Size = New System.Drawing.Size(1066, 35)
         Me.panel19.TabIndex = 0
-        '
-        'btn_conADD
-        '
-        Me.btn_conADD.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_conADD.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Contact_80px
-        Me.btn_conADD.Location = New System.Drawing.Point(1025, -2)
-        Me.btn_conADD.Name = "btn_conADD"
-        Me.btn_conADD.Size = New System.Drawing.Size(35, 35)
-        Me.btn_conADD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_conADD.TabIndex = 55
-        Me.btn_conADD.TabStop = False
         '
         'label18
         '
@@ -2420,17 +2331,6 @@ Partial Class Empleados
         Me.panel17.Size = New System.Drawing.Size(1066, 35)
         Me.panel17.TabIndex = 0
         '
-        'btn_antSave
-        '
-        Me.btn_antSave.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_antSave.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Job_80px
-        Me.btn_antSave.Location = New System.Drawing.Point(1025, -2)
-        Me.btn_antSave.Name = "btn_antSave"
-        Me.btn_antSave.Size = New System.Drawing.Size(35, 35)
-        Me.btn_antSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_antSave.TabIndex = 54
-        Me.btn_antSave.TabStop = False
-        '
         'label17
         '
         Me.label17.AutoSize = True
@@ -2700,17 +2600,6 @@ Partial Class Empleados
         Me.panel5.Size = New System.Drawing.Size(1066, 35)
         Me.panel5.TabIndex = 1
         '
-        'btn_hijoADD
-        '
-        Me.btn_hijoADD.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_hijoADD.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Family_80px
-        Me.btn_hijoADD.Location = New System.Drawing.Point(1023, -2)
-        Me.btn_hijoADD.Name = "btn_hijoADD"
-        Me.btn_hijoADD.Size = New System.Drawing.Size(35, 35)
-        Me.btn_hijoADD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_hijoADD.TabIndex = 53
-        Me.btn_hijoADD.TabStop = False
-        '
         'label11
         '
         Me.label11.AutoSize = True
@@ -2769,17 +2658,6 @@ Partial Class Empleados
         Me.label10.Size = New System.Drawing.Size(78, 21)
         Me.label10.TabIndex = 1
         Me.label10.Text = "Cónyuge"
-        '
-        'btn_esSAVE
-        '
-        Me.btn_esSAVE.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_esSAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_marriage_80px
-        Me.btn_esSAVE.Location = New System.Drawing.Point(1025, -2)
-        Me.btn_esSAVE.Name = "btn_esSAVE"
-        Me.btn_esSAVE.Size = New System.Drawing.Size(35, 35)
-        Me.btn_esSAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_esSAVE.TabIndex = 52
-        Me.btn_esSAVE.TabStop = False
         '
         'label25
         '
@@ -3096,18 +2974,6 @@ Partial Class Empleados
         Me.label15.TabIndex = 0
         Me.label15.Text = "Estatus"
         '
-        'PbOptions
-        '
-        Me.PbOptions.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PbOptions.Image = Global.AdminEmpleados.My.Resources.Resources.Alta_80px
-        Me.PbOptions.Location = New System.Drawing.Point(1023, -1)
-        Me.PbOptions.Name = "PbOptions"
-        Me.PbOptions.Size = New System.Drawing.Size(35, 35)
-        Me.PbOptions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PbOptions.TabIndex = 41
-        Me.PbOptions.TabStop = False
-        Me.PbOptions.Visible = False
-        '
         'lbl_option
         '
         Me.lbl_option.AutoSize = True
@@ -3214,18 +3080,6 @@ Partial Class Empleados
         Me.pnl_cont.Size = New System.Drawing.Size(1068, 134)
         Me.pnl_cont.TabIndex = 1
         '
-        'buscar_depto
-        '
-        Me.buscar_depto.BackgroundImage = CType(resources.GetObject("buscar_depto.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_depto.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.buscar_depto.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_depto.Location = New System.Drawing.Point(1001, 40)
-        Me.buscar_depto.Name = "buscar_depto"
-        Me.buscar_depto.Size = New System.Drawing.Size(25, 25)
-        Me.buscar_depto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_depto.TabIndex = 60
-        Me.buscar_depto.TabStop = False
-        '
         'depto
         '
         Me.depto.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3243,18 +3097,6 @@ Partial Class Empleados
         Me.depto2.Size = New System.Drawing.Size(213, 25)
         Me.depto2.TabIndex = 3
         Me.depto2.TabStop = False
-        '
-        'Buscar_PUESTO
-        '
-        Me.Buscar_PUESTO.BackgroundImage = CType(resources.GetObject("Buscar_PUESTO.BackgroundImage"), System.Drawing.Image)
-        Me.Buscar_PUESTO.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Buscar_PUESTO.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.Buscar_PUESTO.Location = New System.Drawing.Point(670, 40)
-        Me.Buscar_PUESTO.Name = "Buscar_PUESTO"
-        Me.Buscar_PUESTO.Size = New System.Drawing.Size(25, 25)
-        Me.Buscar_PUESTO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Buscar_PUESTO.TabIndex = 57
-        Me.Buscar_PUESTO.TabStop = False
         '
         'panel11
         '
@@ -3278,17 +3120,6 @@ Partial Class Empleados
         Me.label14.Size = New System.Drawing.Size(109, 21)
         Me.label14.TabIndex = 0
         Me.label14.Text = "Contratacion"
-        '
-        'Buscar_tipo
-        '
-        Me.Buscar_tipo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Buscar_tipo.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.Buscar_tipo.Location = New System.Drawing.Point(670, 71)
-        Me.Buscar_tipo.Name = "Buscar_tipo"
-        Me.Buscar_tipo.Size = New System.Drawing.Size(25, 25)
-        Me.Buscar_tipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Buscar_tipo.TabIndex = 54
-        Me.Buscar_tipo.TabStop = False
         '
         'lbl_ingreso
         '
@@ -3395,18 +3226,6 @@ Partial Class Empleados
         Me.txt_FECHAINGRESO.Name = "txt_FECHAINGRESO"
         Me.txt_FECHAINGRESO.Size = New System.Drawing.Size(238, 25)
         Me.txt_FECHAINGRESO.TabIndex = 1
-        '
-        'Buscar_Super
-        '
-        Me.Buscar_Super.BackgroundImage = CType(resources.GetObject("Buscar_Super.BackgroundImage"), System.Drawing.Image)
-        Me.Buscar_Super.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Buscar_Super.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.Buscar_Super.Location = New System.Drawing.Point(340, 71)
-        Me.Buscar_Super.Name = "Buscar_Super"
-        Me.Buscar_Super.Size = New System.Drawing.Size(25, 25)
-        Me.Buscar_Super.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Buscar_Super.TabIndex = 51
-        Me.Buscar_Super.TabStop = False
         '
         'txt_PUESTO
         '
@@ -3529,41 +3348,6 @@ Partial Class Empleados
         Me.Label13.Size = New System.Drawing.Size(118, 18)
         Me.Label13.TabIndex = 30
         Me.Label13.Text = "Ciudad y Estado:"
-        '
-        'PbSearchEmployee
-        '
-        Me.PbSearchEmployee.BackgroundImage = CType(resources.GetObject("PbSearchEmployee.BackgroundImage"), System.Drawing.Image)
-        Me.PbSearchEmployee.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PbSearchEmployee.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.PbSearchEmployee.Location = New System.Drawing.Point(201, 56)
-        Me.PbSearchEmployee.Name = "PbSearchEmployee"
-        Me.PbSearchEmployee.Size = New System.Drawing.Size(25, 25)
-        Me.PbSearchEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PbSearchEmployee.TabIndex = 62
-        Me.PbSearchEmployee.TabStop = False
-        '
-        'buscar_ciudad
-        '
-        Me.buscar_ciudad.BackgroundImage = CType(resources.GetObject("buscar_ciudad.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_ciudad.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.buscar_ciudad.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_ciudad.Location = New System.Drawing.Point(1006, 133)
-        Me.buscar_ciudad.Name = "buscar_ciudad"
-        Me.buscar_ciudad.Size = New System.Drawing.Size(25, 25)
-        Me.buscar_ciudad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_ciudad.TabIndex = 61
-        Me.buscar_ciudad.TabStop = False
-        '
-        'foto
-        '
-        Me.foto.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.foto.Image = Global.AdminEmpleados.My.Resources.Resources.photoNobody120
-        Me.foto.Location = New System.Drawing.Point(47, 87)
-        Me.foto.Name = "foto"
-        Me.foto.Size = New System.Drawing.Size(180, 200)
-        Me.foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.foto.TabIndex = 29
-        Me.foto.TabStop = False
         '
         'cuidad
         '
@@ -3870,28 +3654,6 @@ Partial Class Empleados
         Me.panel7.Size = New System.Drawing.Size(1069, 35)
         Me.panel7.TabIndex = 0
         '
-        'SAVE
-        '
-        Me.SAVE.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.SAVE.Location = New System.Drawing.Point(984, -2)
-        Me.SAVE.Name = "SAVE"
-        Me.SAVE.Size = New System.Drawing.Size(35, 35)
-        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.SAVE.TabIndex = 0
-        Me.SAVE.TabStop = False
-        '
-        'CANCEL
-        '
-        Me.CANCEL.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(1025, -2)
-        Me.CANCEL.Name = "CANCEL"
-        Me.CANCEL.Size = New System.Drawing.Size(35, 35)
-        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.CANCEL.TabIndex = 1
-        Me.CANCEL.TabStop = False
-        '
         'lbl_emp
         '
         Me.lbl_emp.AutoSize = True
@@ -3968,18 +3730,6 @@ Partial Class Empleados
         Me.txt_AP.Size = New System.Drawing.Size(238, 25)
         Me.txt_AP.TabIndex = 5
         '
-        'buscar_EN
-        '
-        Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_EN.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_EN.Location = New System.Drawing.Point(594, 133)
-        Me.buscar_EN.Name = "buscar_EN"
-        Me.buscar_EN.Size = New System.Drawing.Size(25, 25)
-        Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_EN.TabIndex = 52
-        Me.buscar_EN.TabStop = False
-        '
         'lbl_num
         '
         Me.lbl_num.AutoSize = True
@@ -4037,6 +3787,256 @@ Partial Class Empleados
         Me.MenuEmp.Size = New System.Drawing.Size(1078, 629)
         Me.MenuEmp.TabIndex = 6
         '
+        'PbOptions
+        '
+        Me.PbOptions.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PbOptions.Image = Global.AdminEmpleados.My.Resources.Resources.Alta_80px
+        Me.PbOptions.Location = New System.Drawing.Point(1023, -1)
+        Me.PbOptions.Name = "PbOptions"
+        Me.PbOptions.Size = New System.Drawing.Size(35, 35)
+        Me.PbOptions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PbOptions.TabIndex = 41
+        Me.PbOptions.TabStop = False
+        Me.PbOptions.Visible = False
+        '
+        'buscar_depto
+        '
+        Me.buscar_depto.BackgroundImage = CType(resources.GetObject("buscar_depto.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_depto.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.buscar_depto.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_depto.Location = New System.Drawing.Point(1001, 40)
+        Me.buscar_depto.Name = "buscar_depto"
+        Me.buscar_depto.Size = New System.Drawing.Size(25, 25)
+        Me.buscar_depto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_depto.TabIndex = 60
+        Me.buscar_depto.TabStop = False
+        '
+        'Buscar_PUESTO
+        '
+        Me.Buscar_PUESTO.BackgroundImage = CType(resources.GetObject("Buscar_PUESTO.BackgroundImage"), System.Drawing.Image)
+        Me.Buscar_PUESTO.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Buscar_PUESTO.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.Buscar_PUESTO.Location = New System.Drawing.Point(670, 40)
+        Me.Buscar_PUESTO.Name = "Buscar_PUESTO"
+        Me.Buscar_PUESTO.Size = New System.Drawing.Size(25, 25)
+        Me.Buscar_PUESTO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Buscar_PUESTO.TabIndex = 57
+        Me.Buscar_PUESTO.TabStop = False
+        '
+        'Buscar_tipo
+        '
+        Me.Buscar_tipo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Buscar_tipo.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.Buscar_tipo.Location = New System.Drawing.Point(670, 71)
+        Me.Buscar_tipo.Name = "Buscar_tipo"
+        Me.Buscar_tipo.Size = New System.Drawing.Size(25, 25)
+        Me.Buscar_tipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Buscar_tipo.TabIndex = 54
+        Me.Buscar_tipo.TabStop = False
+        '
+        'Buscar_Super
+        '
+        Me.Buscar_Super.BackgroundImage = CType(resources.GetObject("Buscar_Super.BackgroundImage"), System.Drawing.Image)
+        Me.Buscar_Super.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Buscar_Super.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.Buscar_Super.Location = New System.Drawing.Point(340, 71)
+        Me.Buscar_Super.Name = "Buscar_Super"
+        Me.Buscar_Super.Size = New System.Drawing.Size(25, 25)
+        Me.Buscar_Super.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Buscar_Super.TabIndex = 51
+        Me.Buscar_Super.TabStop = False
+        '
+        'PbSearchEmployee
+        '
+        Me.PbSearchEmployee.BackgroundImage = CType(resources.GetObject("PbSearchEmployee.BackgroundImage"), System.Drawing.Image)
+        Me.PbSearchEmployee.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PbSearchEmployee.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.PbSearchEmployee.Location = New System.Drawing.Point(201, 56)
+        Me.PbSearchEmployee.Name = "PbSearchEmployee"
+        Me.PbSearchEmployee.Size = New System.Drawing.Size(25, 25)
+        Me.PbSearchEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PbSearchEmployee.TabIndex = 62
+        Me.PbSearchEmployee.TabStop = False
+        '
+        'buscar_ciudad
+        '
+        Me.buscar_ciudad.BackgroundImage = CType(resources.GetObject("buscar_ciudad.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_ciudad.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.buscar_ciudad.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_ciudad.Location = New System.Drawing.Point(1006, 133)
+        Me.buscar_ciudad.Name = "buscar_ciudad"
+        Me.buscar_ciudad.Size = New System.Drawing.Size(25, 25)
+        Me.buscar_ciudad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_ciudad.TabIndex = 61
+        Me.buscar_ciudad.TabStop = False
+        '
+        'foto
+        '
+        Me.foto.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.foto.Image = Global.AdminEmpleados.My.Resources.Resources.photoNobody120
+        Me.foto.Location = New System.Drawing.Point(47, 87)
+        Me.foto.Name = "foto"
+        Me.foto.Size = New System.Drawing.Size(180, 200)
+        Me.foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.foto.TabIndex = 29
+        Me.foto.TabStop = False
+        '
+        'SAVE
+        '
+        Me.SAVE.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
+        Me.SAVE.Location = New System.Drawing.Point(984, -2)
+        Me.SAVE.Name = "SAVE"
+        Me.SAVE.Size = New System.Drawing.Size(35, 35)
+        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.SAVE.TabIndex = 0
+        Me.SAVE.TabStop = False
+        '
+        'CANCEL
+        '
+        Me.CANCEL.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
+        Me.CANCEL.Location = New System.Drawing.Point(1025, -2)
+        Me.CANCEL.Name = "CANCEL"
+        Me.CANCEL.Size = New System.Drawing.Size(35, 35)
+        Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.CANCEL.TabIndex = 1
+        Me.CANCEL.TabStop = False
+        '
+        'buscar_EN
+        '
+        Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_EN.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_EN.Location = New System.Drawing.Point(594, 133)
+        Me.buscar_EN.Name = "buscar_EN"
+        Me.buscar_EN.Size = New System.Drawing.Size(25, 25)
+        Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_EN.TabIndex = 52
+        Me.buscar_EN.TabStop = False
+        '
+        'btn_hijoADD
+        '
+        Me.btn_hijoADD.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_hijoADD.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Family_80px
+        Me.btn_hijoADD.Location = New System.Drawing.Point(1023, -2)
+        Me.btn_hijoADD.Name = "btn_hijoADD"
+        Me.btn_hijoADD.Size = New System.Drawing.Size(35, 35)
+        Me.btn_hijoADD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_hijoADD.TabIndex = 53
+        Me.btn_hijoADD.TabStop = False
+        '
+        'btn_esSAVE
+        '
+        Me.btn_esSAVE.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_esSAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_marriage_80px
+        Me.btn_esSAVE.Location = New System.Drawing.Point(1025, -2)
+        Me.btn_esSAVE.Name = "btn_esSAVE"
+        Me.btn_esSAVE.Size = New System.Drawing.Size(35, 35)
+        Me.btn_esSAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_esSAVE.TabIndex = 52
+        Me.btn_esSAVE.TabStop = False
+        '
+        'btn_antSave
+        '
+        Me.btn_antSave.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_antSave.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Job_80px
+        Me.btn_antSave.Location = New System.Drawing.Point(1025, -2)
+        Me.btn_antSave.Name = "btn_antSave"
+        Me.btn_antSave.Size = New System.Drawing.Size(35, 35)
+        Me.btn_antSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_antSave.TabIndex = 54
+        Me.btn_antSave.TabStop = False
+        '
+        'btn_conADD
+        '
+        Me.btn_conADD.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_conADD.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Contact_80px
+        Me.btn_conADD.Location = New System.Drawing.Point(1025, -2)
+        Me.btn_conADD.Name = "btn_conADD"
+        Me.btn_conADD.Size = New System.Drawing.Size(35, 35)
+        Me.btn_conADD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_conADD.TabIndex = 55
+        Me.btn_conADD.TabStop = False
+        '
+        'btn_enfADD
+        '
+        Me.btn_enfADD.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_enfADD.Image = Global.AdminEmpleados.My.Resources.Resources.Add_MedicalCondition_80px
+        Me.btn_enfADD.Location = New System.Drawing.Point(1025, 0)
+        Me.btn_enfADD.Name = "btn_enfADD"
+        Me.btn_enfADD.Size = New System.Drawing.Size(35, 35)
+        Me.btn_enfADD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_enfADD.TabIndex = 46
+        Me.btn_enfADD.TabStop = False
+        '
+        'btn_SERPT
+        '
+        Me.btn_SERPT.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_SERPT.Image = Global.AdminEmpleados.My.Resources.Resources.Accounting_80px
+        Me.btn_SERPT.Location = New System.Drawing.Point(867, 1290)
+        Me.btn_SERPT.Name = "btn_SERPT"
+        Me.btn_SERPT.Size = New System.Drawing.Size(35, 35)
+        Me.btn_SERPT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_SERPT.TabIndex = 76
+        Me.btn_SERPT.TabStop = False
+        '
+        'btn_SESave
+        '
+        Me.btn_SESave.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_SESave.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
+        Me.btn_SESave.Location = New System.Drawing.Point(905, 1290)
+        Me.btn_SESave.Name = "btn_SESave"
+        Me.btn_SESave.Size = New System.Drawing.Size(35, 35)
+        Me.btn_SESave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_SESave.TabIndex = 74
+        Me.btn_SESave.TabStop = False
+        '
+        'btn_SECancel
+        '
+        Me.btn_SECancel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_SECancel.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
+        Me.btn_SECancel.Location = New System.Drawing.Point(943, 1290)
+        Me.btn_SECancel.Name = "btn_SECancel"
+        Me.btn_SECancel.Size = New System.Drawing.Size(35, 35)
+        Me.btn_SECancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_SECancel.TabIndex = 75
+        Me.btn_SECancel.TabStop = False
+        '
+        'Btn_AddRef
+        '
+        Me.Btn_AddRef.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btn_AddRef.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Reference_80px
+        Me.Btn_AddRef.Location = New System.Drawing.Point(1009, 0)
+        Me.Btn_AddRef.Name = "Btn_AddRef"
+        Me.Btn_AddRef.Size = New System.Drawing.Size(35, 35)
+        Me.Btn_AddRef.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Btn_AddRef.TabIndex = 63
+        Me.Btn_AddRef.TabStop = False
+        '
+        'btn_OI
+        '
+        Me.btn_OI.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_OI.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Income_80px
+        Me.btn_OI.Location = New System.Drawing.Point(1009, -1)
+        Me.btn_OI.Name = "btn_OI"
+        Me.btn_OI.Size = New System.Drawing.Size(35, 35)
+        Me.btn_OI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_OI.TabIndex = 55
+        Me.btn_OI.TabStop = False
+        '
+        'PB_IMAGE_VIVIENDA
+        '
+        Me.PB_IMAGE_VIVIENDA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PB_IMAGE_VIVIENDA.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PB_IMAGE_VIVIENDA.Image = Global.AdminEmpleados.My.Resources.Resources.AddImage
+        Me.PB_IMAGE_VIVIENDA.Location = New System.Drawing.Point(6, 40)
+        Me.PB_IMAGE_VIVIENDA.Name = "PB_IMAGE_VIVIENDA"
+        Me.PB_IMAGE_VIVIENDA.Size = New System.Drawing.Size(450, 235)
+        Me.PB_IMAGE_VIVIENDA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PB_IMAGE_VIVIENDA.TabIndex = 32
+        Me.PB_IMAGE_VIVIENDA.TabStop = False
+        '
         'datosFamiliaBindingSource
         '
         Me.datosFamiliaBindingSource.DataMember = "Datos_Familia"
@@ -4053,9 +4053,6 @@ Partial Class Empleados
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Tam_Es.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
-        CType(Me.btn_SERPT, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_SESave, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_SECancel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PnlObservaciones.ResumeLayout(False)
         Me.PnlObservaciones.PerformLayout()
         Me.Panel26.ResumeLayout(False)
@@ -4069,7 +4066,6 @@ Partial Class Empleados
         CType(Me.dgv_Ref, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()
-        CType(Me.Btn_AddRef, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PnlActividades.ResumeLayout(False)
         Me.PnlActividades.PerformLayout()
         Me.Panel36.ResumeLayout(False)
@@ -4079,7 +4075,6 @@ Partial Class Empleados
         CType(Me.dgv_OI, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
-        CType(Me.btn_OI, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PnlDatos.ResumeLayout(False)
         Me.PnlDatos.PerformLayout()
         Me.Panel6.ResumeLayout(False)
@@ -4091,7 +4086,6 @@ Partial Class Empleados
         Me.PnlVivienda.ResumeLayout(False)
         Me.GrpServicios.ResumeLayout(False)
         Me.GrpServicios.PerformLayout()
-        CType(Me.PB_IMAGE_VIVIENDA, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GrpMaterial.ResumeLayout(False)
         Me.GrpMaterial.PerformLayout()
         Me.GrpTIpo.ResumeLayout(False)
@@ -4105,7 +4099,6 @@ Partial Class Empleados
         CType(Me.dgv_Enf, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel21.ResumeLayout(False)
         Me.panel21.PerformLayout()
-        CType(Me.btn_enfADD, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Tab_Cont.ResumeLayout(False)
         Me.panel18.ResumeLayout(False)
         Me.panel18.PerformLayout()
@@ -4113,7 +4106,6 @@ Partial Class Empleados
         CType(Me.dgv_contacto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel19.ResumeLayout(False)
         Me.panel19.PerformLayout()
-        CType(Me.btn_conADD, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Tab_AL.ResumeLayout(False)
         Me.panel16.ResumeLayout(False)
         Me.panel16.PerformLayout()
@@ -4121,7 +4113,6 @@ Partial Class Empleados
         CType(Me.dgv_ant, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel17.ResumeLayout(False)
         Me.panel17.PerformLayout()
-        CType(Me.btn_antSave, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Tab_Familia.ResumeLayout(False)
         Me.panel3.ResumeLayout(False)
         Me.panel3.PerformLayout()
@@ -4129,12 +4120,10 @@ Partial Class Empleados
         CType(Me.dgv_Hijos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel5.ResumeLayout(False)
         Me.panel5.PerformLayout()
-        CType(Me.btn_hijoADD, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel2.ResumeLayout(False)
         Me.panel2.PerformLayout()
         Me.panel4.ResumeLayout(False)
         Me.panel4.PerformLayout()
-        CType(Me.btn_esSAVE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv_esposa, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Tab_DP.ResumeLayout(False)
         Me.pnl_estatus.ResumeLayout(False)
@@ -4143,26 +4132,37 @@ Partial Class Empleados
         Me.GroupBox1.PerformLayout()
         Me.panel13.ResumeLayout(False)
         Me.panel13.PerformLayout()
-        CType(Me.PbOptions, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_cont.ResumeLayout(False)
         Me.pnl_cont.PerformLayout()
-        CType(Me.buscar_depto, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Buscar_PUESTO, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel11.ResumeLayout(False)
         Me.panel11.PerformLayout()
-        CType(Me.Buscar_tipo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Buscar_Super, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_per.ResumeLayout(False)
         Me.pnl_per.PerformLayout()
+        Me.panel7.ResumeLayout(False)
+        Me.panel7.PerformLayout()
+        Me.MenuEmp.ResumeLayout(False)
+        CType(Me.PbOptions, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.buscar_depto, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Buscar_PUESTO, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Buscar_tipo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Buscar_Super, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PbSearchEmployee, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_ciudad, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.foto, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.panel7.ResumeLayout(False)
-        Me.panel7.PerformLayout()
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MenuEmp.ResumeLayout(False)
+        CType(Me.btn_hijoADD, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_esSAVE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_antSave, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_conADD, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_enfADD, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_SERPT, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_SESave, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_SECancel, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Btn_AddRef, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_OI, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PB_IMAGE_VIVIENDA, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.datosFamiliaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

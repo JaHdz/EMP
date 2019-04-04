@@ -392,6 +392,7 @@
     <Content Include="images\photoNobody120.gif" />
     <Content Include="images\tenor.gif" />
     <Content Include="images\Up1.png" />
+    <None Include="Resources\Updates_80.png" />
     <None Include="Resources\AddImage.jpg" />
     <None Include="Resources\Accounting_80px.png" />
     <None Include="Resources\Add_MedicalCondition_80px.png" />
