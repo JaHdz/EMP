@@ -957,7 +957,7 @@ Public Class Empleados
                     MessageBox.Show("Favor de llenar todos los campos")
                 Else
                     Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}, {"Type", "CONYUGE"}, {"Name", txt_esName.Text}, {"FLastname", txt_esAP.Text},
-                        {"SLastname", txt_esAM.Text}, {"Nationality", txt_esNacion.Text}, {"Birthday", txt_esFN.Text}, {"Sex", cb_esSexo.SelectedItem.ToString()}, {"CivilStatus", EC.SelectedItem.ToString}}
+                        {"SLastname", txt_esAM.Text}, {"Nationality", txt_esNacion.Text}, {"Birthday", txt_esFN.Text}, {"Sex", cb_esSexo.SelectedItem.ToString()}}
                     Dim Wait As New Wait With {
                             .Parameters = ldParameters,
                             .Operation = BackgroundOperations.AddFamilyMember
