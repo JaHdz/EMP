@@ -24,6 +24,8 @@ Partial Class Principal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Principal))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.lbl_user = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Pnl_Info = New System.Windows.Forms.TableLayoutPanel()
         Me.Menu = New System.Windows.Forms.Panel()
         Me.BTN_CERRARSESION = New System.Windows.Forms.Button()
@@ -34,13 +36,11 @@ Partial Class Principal
         Me.BTN_CAP = New System.Windows.Forms.Button()
         Me.BTN_EQ = New System.Windows.Forms.Button()
         Me.btn_emp = New System.Windows.Forms.Button()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.lbl_user = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel1.SuspendLayout()
+        Me.StatusStrip1.SuspendLayout()
         Me.Pnl_Info.SuspendLayout()
         Me.Menu.SuspendLayout()
         CType(Me.Pb_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -49,8 +49,23 @@ Partial Class Principal
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(0, 629)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1328, 22)
+        Me.Panel1.Size = New System.Drawing.Size(1284, 22)
         Me.Panel1.TabIndex = 0
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(209, Byte), Integer), CType(CType(210, Byte), Integer))
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lbl_user})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(1284, 22)
+        Me.StatusStrip1.TabIndex = 0
+        '
+        'lbl_user
+        '
+        Me.lbl_user.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_user.Name = "lbl_user"
+        Me.lbl_user.Size = New System.Drawing.Size(0, 17)
         '
         'Pnl_Info
         '
@@ -64,7 +79,7 @@ Partial Class Principal
         Me.Pnl_Info.RowCount = 1
         Me.Pnl_Info.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.Pnl_Info.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.Pnl_Info.Size = New System.Drawing.Size(1328, 629)
+        Me.Pnl_Info.Size = New System.Drawing.Size(1284, 629)
         Me.Pnl_Info.TabIndex = 1
         '
         'Menu
@@ -237,42 +252,27 @@ Partial Class Principal
         Me.btn_emp.UseCompatibleTextRendering = True
         Me.btn_emp.UseVisualStyleBackColor = True
         '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(209, Byte), Integer), CType(CType(210, Byte), Integer))
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lbl_user})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(1328, 22)
-        Me.StatusStrip1.TabIndex = 0
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'lbl_user
-        '
-        Me.lbl_user.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_user.Name = "lbl_user"
-        Me.lbl_user.Size = New System.Drawing.Size(143, 17)
-        Me.lbl_user.Text = "ToolStripStatusLabel1"
-        '
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(1328, 651)
+        Me.ClientSize = New System.Drawing.Size(1284, 651)
         Me.Controls.Add(Me.Pnl_Info)
         Me.Controls.Add(Me.Panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MinimumSize = New System.Drawing.Size(1300, 690)
         Me.Name = "Principal"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "EASY - Employee Administrator System"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.Pnl_Info.ResumeLayout(False)
         Me.Menu.ResumeLayout(False)
         CType(Me.Pb_Logo, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.StatusStrip1.ResumeLayout(False)
-        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

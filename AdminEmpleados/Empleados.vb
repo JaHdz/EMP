@@ -44,7 +44,7 @@ Public Class Empleados
                 PbOptions.Tag = "BAJA"
 
             Else
-                limp()
+                Limp()
                 lbl_emp.Text = ""
                 EMPLEADO_ID = 0
                 txt_numero.Text = numero
@@ -259,7 +259,7 @@ Public Class Empleados
                     MessageBox.Show("Favor de llenar todos los campos")
                 Else
                     objEmp.UpInsert_colabora(InfoEmp)
-                    limp()
+                    Limp()
                     MessageBox.Show("Empleado agregado satisfactoriamente")
                 End If
             Else
@@ -268,7 +268,7 @@ Public Class Empleados
                       = DialogResult.Yes Then
                     InfoEmp.ID_Emp = txt_numero.Text
                     objEmp.UpInsert_colabora(InfoEmp)
-                    limp()
+                    Limp()
                     MessageBox.Show("Empleado Actualizado Satisfactoriamente")
                 End If
             End If
@@ -276,30 +276,56 @@ Public Class Empleados
             MsgBox("Email no es Valido")
         End If
     End Sub
-    Public Sub limp()
 
-        Dim ctrl As Control
-        For Each ctrl In Me.pnl_per.Controls
-            If (ctrl.GetType() Is GetType(TextBox)) Then
+    Private Sub ClearSubControls(Parent As Control)
+        For Each ctrl As Control In Parent.Controls
+            If ctrl.GetType() Is GetType(TextBox) Then
                 Dim txt As TextBox = CType(ctrl, TextBox)
                 txt.Text = ""
+                Continue For
             End If
-            If (ctrl.GetType() Is GetType(DateTimePicker)) Then
-                Dim txt As DateTimePicker = CType(ctrl, DateTimePicker)
-                txt.Text = Date.Now
+            If ctrl.GetType() Is GetType(DateTimePicker) Then
+                Dim dt As DateTimePicker = CType(ctrl, DateTimePicker)
+                dt.Text = Date.Now
+                Continue For
+            End If
+            If ctrl.GetType() Is GetType(ComboBox) Then
+                Dim cb As ComboBox = CType(ctrl, ComboBox)
+                cb.SelectedIndex = -1
+                Continue For
+            End If
+            If ctrl.GetType() Is GetType(CheckBox) Then
+                Dim chk As CheckBox = CType(ctrl, CheckBox)
+                chk.Checked = False
+                Continue For
+            End If
+            If ctrl.GetType() Is GetType(DataGrid) Then
+                Dim dg As DataGrid = CType(ctrl, DataGrid)
+                dg.DataSource = Nothing
+                Continue For
+            End If
+            If ctrl.GetType() Is GetType(Panel) Then
+                Dim pnl As Panel = CType(ctrl, Panel)
+                ClearSubControls(pnl)
+                Continue For
+            End If
+            If ctrl.GetType() Is GetType(GroupBox) Then
+                Dim gb As GroupBox = CType(ctrl, GroupBox)
+                ClearSubControls(gb)
+                Continue For
             End If
         Next
+    End Sub
+    Public Sub Limp()
+        For Each Tab As TabPage In MenuEmp.TabPages
+            For Each Container As Control In Tab.Controls
+                If Container.GetType() Is GetType(Panel) Then
+                    ClearSubControls(Tab)
+                End If
+            Next
+        Next
+        pnl_estatus.Visible = False
 
-        For Each ctrl In Me.pnl_cont.Controls
-            If (ctrl.GetType() Is GetType(TextBox)) Then
-                Dim txt As TextBox = CType(ctrl, TextBox)
-                txt.Text = ""
-            End If
-            If (ctrl.GetType() Is GetType(DateTimePicker)) Then
-                Dim txt As DateTimePicker = CType(ctrl, DateTimePicker)
-                txt.Text = Date.Now
-            End If
-        Next
         Dim Wait As New Wait With {
             .Operation = BackgroundOperations.GetLatestEmployeeNumber
         }
@@ -307,105 +333,21 @@ Public Class Empleados
         txt_numero.Text = Wait.Result.ToString()
         Wait.Close()
 
-        CB_SEXO.SelectedIndex = -1
-        ddl_educacion.SelectedIndex = -1
-        EC.SelectedIndex = -1
         txt_numero.Text = objcon.NUMERO_EMPLEADO.ToString()
         txt_numero.Focus()
-        txt_activo.Text = ""
-        txt_baja.Text = ""
-        lbl_option.Visible = False
-        PbOptions.Visible = False
+
         PbOptions.Tag = ""
-        foto.Image = AdminEmpleados.My.Resources.Resources.photoNobody120
+        foto.Image = My.Resources.photoNobody120
         foto.Visible = True
-        txt_esAM.Text = ""
-        txt_esAP.Text = ""
-        txt_esName.Text = ""
-        txt_esFN.Text = ""
-        txt_esNacion.Text = ""
-        cb_esSexo.SelectedIndex = -1
-        txt_hijoAM.Text = ""
-        txt_hijoAP.Text = ""
-        txt_hijoNAME.Text = ""
-        txt_hijoFN.Text = ""
-        txt_hijoNACION.Text = ""
-        txt_hijoSEXO.SelectedIndex = -1
         llenarFamilia()
-        txt_antFI.Text = ""
-        txt_antFF.Text = ""
-        txt_antEMP.Text = ""
-        txt_antCARGO.Text = ""
-        txt_antSALARIO.Text = ""
-        txt_antTEL.Text = ""
-        txt_antMT.Text = ""
-        txt_antNAME.Text = ""
         llenarAL()
-        txt_conAM.Text = ""
-        txt_conAP.Text = ""
-        txt_conCEL.Text = ""
-        txt_conPAREN.Text = ""
-        txt_conNAME.Text = ""
-        txt_conTEL.Text = ""
         llenarContacto()
-        txt_enfNAME.Text = ""
         llenarEnfermedades()
-        txt_RefOcu.Text = ""
-        txt_RefNom.Text = ""
-        txt_TC.Text = ""
-        Txt_TR.Text = ""
-        txt_RefOcu.Text = ""
-        txt_RefNom.Text = ""
-        txt_TC.Text = ""
-        Txt_TR.Text = ""
-        cb_CasaP.Checked = False
-        cb_Depto.Checked = False
-        cb_Renta.Checked = False
-        cb_Terreno.Checked = False
-        cb_adobe.Checked = False
-        cb_block.Checked = False
-        cb_Madera.Checked = False
-        cb_ladrillo.Checked = False
-        cb_Luz.Checked = False
-        cb_LineaTel.Checked = False
-        cb_AguaP.Checked = False
-        cb_Drenaje.Checked = False
-        cb_Tuberia.Checked = False
-        cb_Basura.Checked = False
-        cb_TV.Checked = False
-        cb_Internet.Checked = False
-        cb_SisSeg.Checked = False
-        cb_Metro.Checked = False
-        cb_Trans.Checked = False
-        cb_Taxi.Checked = False
-        cb_Vehi.Checked = False
-        CB_PROV.Checked = False
-        CB_CLIENTE.Checked = False
-        txt_SE__SOCIALE.Text = ""
-        txt_SE_EVENTOS.Text = ""
-        txt_SE_MUSEOS.Text = ""
-        txt_SE_TEATROS.Text = ""
-        txt_SE_CINES.Text = ""
-        txt_SE_CULTURALES.Text = ""
-        txt_SE_ZONAS.Text = ""
-        txt_SE_VACIONES.Text = ""
-        txt_SE_PLAZAS.Text = ""
-        txt_SE_NATURALES.Text = ""
-        txt_se_diversiones.Text = ""
-        txt_GFRenta.Text = ""
-        txt_GFCole.Text = ""
-        Txt_GFDesp.Text = ""
-        txt_GFServ.Text = ""
-        Txt_pasatiempos.Text = ""
-        txt_Religion.Text = ""
-        txt_commen.Text = ""
-        commen.Text = ""
-        lbl_emp.Text = ""
-        seg.Checked = False
         PB_IMAGE_VIVIENDA.Image = My.Resources.AddImage
         EMPLEADO_ES = 0
         dgv_OI.DataSource = objcon.Consulta_OI(0)
         dgv_Ref.DataSource = objcon.Consulta_REF(0)
+        MenuEmp.SelectedIndex = 0
     End Sub
 
     Private Sub Altas_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
@@ -567,27 +509,32 @@ Public Class Empleados
 
     End Sub
 
-    Sub cargarImagen(control As PictureBox)
+    Public Sub CargarImagen(control As PictureBox)
         Dim IMAGEN As String
-        Me.OpenFileDialog1.ShowDialog()
-        If Me.OpenFileDialog1.FileName <> "" And Me.OpenFileDialog1.FileName <> "OpenFileDialog1" Then
+        OpenFileDialog1.ShowDialog()
+        If OpenFileDialog1.FileName <> "" And OpenFileDialog1.FileName <> "OpenFileDialog1" Then
             IMAGEN = OpenFileDialog1.FileName
             Dim largo As Integer = IMAGEN.Length
-            Dim imagen2 As String
-            imagen2 = CStr(Microsoft.VisualBasic.Mid(RTrim(IMAGEN), largo - 2, largo))
-            If imagen2 <> "gif" And imagen2 <> "bmp" And imagen2 <> "jpg" And imagen2 <> "jpeg" And imagen2 <> "GIF" And imagen2 <> "BMP" And imagen2 <> "JPG" And imagen2 <> "JPEG" Then
-                imagen2 = CStr(Microsoft.VisualBasic.Mid(RTrim(IMAGEN), largo - 3, largo))
-                If imagen2 <> "jpeg" And imagen2 <> "JPEG" And imagen2 <> "log1" Then
-                    MsgBox("Formato no valido") : Exit Sub
-                    If imagen2 <> "log1" Then Exit Sub
-                End If
+            If IsValidFormat(Mid(RTrim(IMAGEN), largo - 2, largo).ToLower()) OrElse
+                IsValidFormat(Mid(RTrim(IMAGEN), largo - 3, largo).ToLower()) Then
+                control.Load(IMAGEN)
+            Else
+                MsgBox("Formato no valido") : Exit Sub
             End If
-            control.Load(IMAGEN)
         End If
-
     End Sub
+
+    Private Function IsValidFormat(Ext As String) As Boolean
+        IsValidFormat = False
+        If Ext <> "gif" And Ext <> "bmp" And Ext <> "jpg" And Ext <> "jpeg" And Ext <> "png" Then
+            IsValidFormat = False
+        Else
+            IsValidFormat = True
+        End If
+    End Function
+
     Private Sub ln_img_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
-        cargarImagen(foto)
+        CargarImagen(foto)
     End Sub
     Private Sub txt_OTCantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_OTCantidad.KeyPress
         If Not txt_OTCantidad.Text.Contains(".") Then
@@ -618,7 +565,7 @@ Public Class Empleados
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
     Private Sub CANCEL_Click(sender As Object, e As EventArgs) Handles CANCEL.Click
-        limp()
+        Limp()
     End Sub
     Private Sub txt_EN_Leave(sender As Object, e As EventArgs) Handles txt_EN.Leave
         If (txt_EN.Text <> "") Then
@@ -703,21 +650,21 @@ Public Class Empleados
             If txt_RefNom.Text = "" Or txt_RefOcu.Text = "" Or txt_TC.Text = "" Or Txt_TR.Text = "" Then
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
-                Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", EMPLEADO_ES}, {"Name", txt_RefNom.Text},
+                Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", EMPLEADO_ES}, {"REFID", 0}, {"Name", txt_RefNom.Text},
                         {"Ocupation", txt_RefOcu.Text}, {"Relationship", Txt_TR.Text}, {"Time", txt_TC.Text}}
                 Dim Wait As New Wait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.ValidateReference
                     }
-                    Wait.ShowDialog()
-                    Dim loResult As Dictionary(Of String, Object) = Wait.Result
-                    If loResult("Valid") = False Then
-                        MessageBox.Show("Este registro ya Existe.")
-                    End If
-                    dgv_Ref.DataSource = loResult("Source")
-                    Wait.Close()
+                Wait.ShowDialog()
+                Dim loResult As Dictionary(Of String, Object) = Wait.Result
+                If loResult("Valid") = False Then
+                    MessageBox.Show("Este registro ya Existe.")
+                End If
+                dgv_Ref.DataSource = loResult("Source")
+                Wait.Close()
 
-                    txt_RefOcu.Text = ""
+                txt_RefOcu.Text = ""
                 txt_RefNom.Text = ""
                 txt_TC.Text = ""
                 Txt_TR.Text = ""
@@ -730,11 +677,8 @@ Public Class Empleados
             If txt_OTCantidad.Text = "" Or txt_OIParen.Text = "" Then
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
-                If EMPLEADO_ES = 0 Then
-                    dgv_OI.Rows.Add(txt_OIParen.Text, txt_OTCantidad.Text)
-                Else
-                    Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", EMPLEADO_ES}, {"Relationship", txt_OIParen.Text}, {"Amount", txt_OTCantidad.Text}}
-                    Dim Wait As New Wait With {
+                Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", EMPLEADO_ES}, {"ICMID", 0}, {"Relationship", txt_OIParen.Text}, {"Amount", txt_OTCantidad.Text}}
+                Dim Wait As New Wait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.ValidateIncome
                     }
@@ -745,7 +689,7 @@ Public Class Empleados
                     End If
                     dgv_OI.DataSource = loResult("Source")
                     Wait.Close()
-                End If
+
                 txt_RefOcu.Text = ""
                 txt_RefNom.Text = ""
                 txt_TC.Text = ""
@@ -756,7 +700,6 @@ Public Class Empleados
 
     Private Sub btn_SESave_Click(sender As Object, e As EventArgs) Handles btn_SESave.Click
         If EXISTE = True Then
-
             Dim ES As New Cls_ES()
             ES.SES_ID = EMPLEADO_ES
             ES.EMP_ID = EMPLEADO_ID
@@ -873,57 +816,57 @@ Public Class Empleados
 
 
             If loResult > 0 Then
-                ldParameters = New Dictionary(Of String, Object) From {{"Employee", ES.EMP_ID}, {"HousePicture", ES.IMG}, {"EmployeePicture", foto.Image}}
-                Wait = New Wait With {
-                                    .Parameters = ldParameters,
-                                    .Operation = BackgroundOperations.AddImage
-                                }
-                Wait.ShowDialog()
-                Wait.Close()
-                '    If dgv_Ref.Rows.Count > 0 Then
-                '        For Each row As DataGridViewRow In dgv_Ref.Rows
-                '            If Not row.IsNewRow Then
-                '                'ES.SES_ID
-                '                ldParameters = New Dictionary(Of String, Object) From {{"ES", loResult}, {"Name", row.Cells(2).Value.ToString},
-                '                           {"Ocupation", row.Cells(4).Value.ToString}, {"Relationship", row.Cells(3).Value.ToString}, {"Time", row.Cells(5).Value.ToString}}
-                '                Wait = New Wait With {
-                '                    .Parameters = ldParameters,
-                '                    .Operation = BackgroundOperations.ValidateReference
-                '                }
-                '                Wait.ShowDialog()
-                '                Dim loResult3 As Dictionary(Of String, Object) = Wait.Result
-                '                Wait.Close()
+                If ReferenceEquals(PB_IMAGE_VIVIENDA.Image, My.Resources.AddImage) Then
+                    ldParameters = New Dictionary(Of String, Object) From {{"Employee", ES.EMP_ID}, {"HousePicture", ES.IMG}, {"EmployeePicture", foto.Image}}
+                    Wait = New Wait With {.Parameters = ldParameters, .Operation = BackgroundOperations.AddImage}
+                    Wait.ShowDialog()
+                    Wait.Close()
+                End If
 
-                '                If loResult3("Valid") = False Then
-                '                    MessageBox.Show("Este registro ya Existe.")
-                '                End If
-                '            End If
-                '        Next
-                '    End If
-                'If dgv_OI.Rows.Count > 0 Then
-                '    For Each row As DataGridViewRow In dgv_OI.Rows
-                '        If Not row.IsNewRow Then
-                '            ldParameters = New Dictionary(Of String, Object) From {{"ES", loResult}, {"Relationship", row.Cells(0).Value.ToString},
-                '                             {"Amount", Convert.ToDouble(row.Cells(1).Value.ToString)}}
-                '            Wait = New Wait With {
-                '                    .Parameters = ldParameters,
-                '                    .Operation = BackgroundOperations.ValidateIncome
-                '                }
-                '            Dim loResult4 As Dictionary(Of String, Object) = Wait.Result
-                '            Wait.Close()
-                '            If loResult4("Valid") = False Then
-                '                MessageBox.Show("Este registro ya Existe.")
-                '            End If
-                '        End If
-                '    Next
-                'End If
-                limp()
+                If dgv_Ref.Rows.Count > 0 Then
+                    For Each row As DataGridViewRow In dgv_Ref.Rows
+                        If Not row.IsNewRow Then
+                            ldParameters = New Dictionary(Of String, Object) From {{"ES", loResult}, {"REFID", row.Cells(1).Value.ToString}, {"Name", row.Cells(2).Value.ToString},
+                                       {"Ocupation", row.Cells(3).Value.ToString}, {"Relationship", row.Cells(4).Value.ToString}, {"Time", row.Cells(5).Value.ToString}}
+                            Wait = New Wait With {
+                                .Parameters = ldParameters,
+                                .Operation = BackgroundOperations.ValidateReference
+                            }
+                            Wait.ShowDialog()
+                            Dim loResult3 As Dictionary(Of String, Object) = Wait.Result
+                            Wait.Close()
+
+                            If loResult3("Valid") = False Then
+                                MessageBox.Show("Este registro ya Existe.")
+                            End If
+                        End If
+                    Next
+                End If
+                If dgv_OI.Rows.Count > 0 Then
+                    For Each row As DataGridViewRow In dgv_OI.Rows
+                        If Not row.IsNewRow Then
+                            ldParameters = New Dictionary(Of String, Object) From {{"ES", loResult}, {"ICMID", row.Cells(1).Value.ToString}, {"Relationship", row.Cells(2).Value.ToString},
+                                             {"Amount", Convert.ToDouble(row.Cells(3).Value.ToString)}}
+                            Wait = New Wait With {
+                                    .Parameters = ldParameters,
+                                    .Operation = BackgroundOperations.ValidateIncome
+                                }
+                            Wait.ShowDialog()
+                            Dim loResult4 As Dictionary(Of String, Object) = Wait.Result
+                            Wait.Close()
+                            If loResult4("Valid") = False Then
+                                MessageBox.Show("Este registro ya Existe.")
+                            End If
+                        End If
+                    Next
+                End If
+                Limp()
             End If
         End If
     End Sub
 
     Private Sub btn_SECancel_Click(sender As Object, e As EventArgs) Handles btn_SECancel.Click
-        limp()
+        Limp()
     End Sub
 
     Private Sub btn_enfADD_Click(sender As Object, e As EventArgs) Handles btn_enfADD.Click
@@ -1315,11 +1258,11 @@ Public Class Empleados
     End Sub
 
     Private Sub foto_DoubleClick(sender As Object, e As EventArgs) Handles foto.DoubleClick
-        cargarImagen(foto)
+        CargarImagen(foto)
     End Sub
 
     Private Sub PB_IMAGE_VIVIENDA_DoubleClick(sender As Object, e As EventArgs) Handles PB_IMAGE_VIVIENDA.DoubleClick
-        cargarImagen(PB_IMAGE_VIVIENDA)
+        CargarImagen(PB_IMAGE_VIVIENDA)
     End Sub
 
     Private Sub dgv_esposa_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_esposa.CellClick
@@ -1485,8 +1428,8 @@ Public Class Empleados
             Wait.ShowDialog()
             txt_numero.Text = Wait.Result.ToString()
             Wait.Close()
+            pnl_estatus.Visible = False
         End If
-        pnl_estatus.Visible = False
         txt_NOM.Focus()
     End Sub
 

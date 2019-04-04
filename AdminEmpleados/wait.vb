@@ -81,13 +81,13 @@ Public Class Wait
                 Case BackgroundOperations.ValidateEnPuSuTi
                     Result = New Consultas().S_catalago(Parameters("Field"), Parameters("Type"))
                 Case BackgroundOperations.ValidateReference
-                    Dim ResultDictionary As New Dictionary(Of String, Object) From {{"Valid", New Consultas().Add_Referencias(0, Parameters("ES"),
+                    Dim ResultDictionary As New Dictionary(Of String, Object) From {{"Valid", New Consultas().Add_Referencias(Parameters("REFID"), Parameters("ES"),
                         Parameters("Name"), Parameters("Ocupation"), Parameters("Relationship"), Parameters("Time"))}, {"Source", New Consultas().Consulta_REF(Parameters("ES"))}}
                     Result = ResultDictionary
                 Case BackgroundOperations.AddReference
                     Result = New Consultas().Add_Referencias(0, Parameters("ES"), Parameters("Name"), Parameters("Ocupation"), Parameters("Relationship"), Parameters("Time"))
                 Case BackgroundOperations.ValidateIncome
-                    Dim ResultDictionary As New Dictionary(Of String, Object) From {{"Valid", New Consultas().Add_OtrosIngresos(0, Parameters("ES"),
+                    Dim ResultDictionary As New Dictionary(Of String, Object) From {{"Valid", New Consultas().Add_OtrosIngresos(Parameters("ICMID"), Parameters("ES"),
                         Parameters("Relationship"), Parameters("Amount"))}, {"Source", New Consultas().Consulta_OI(Parameters("ES"))}}
                     Result = ResultDictionary
                 Case BackgroundOperations.AddIncome

@@ -17,7 +17,6 @@
             NEmp = Convert.ToInt16(objcon.Emp_Exist(txt_numero.Text))
             If (NEmp > 0) Then
                 Dim Employee As New Cls_Emp
-                'dt = objcon.Consulta_empleado(txt_numero.Text)
                 lbl_emp.Text = txt_numero.Text + " | " + Employee.Emp_Name + " " + Employee.Emp_APat + " " + Employee.Emp_AMat
                 dgv_equipo_emp.DataSource = objcon.Consulta_USER()
             Else
@@ -31,16 +30,12 @@
 
     Private Sub CANCEL_Click(sender As Object, e As EventArgs) Handles CANCEL.Click, PictureBox2.Click, cancel_code.Click, cancel_eq.Click, CANCEL_EVAL.Click, btn_CancelPuesto.Click,
                                                                        btn_cancelsuper.Click, pb_cancelTE.Click
-        For Each ctrl In Me.Controls
+        For Each ctrl In Controls
             If (ctrl.GetType() Is GetType(TextBox)) Then
                 Dim txt As TextBox = CType(ctrl, TextBox)
                 txt.Text = ""
             End If
         Next
-    End Sub
-
-    Private Sub tab_users_Click(sender As Object, e As EventArgs) Handles tab_users.Click
-
     End Sub
 
     Private Sub dgv_equipo_emp_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_equipo_emp.CellClick

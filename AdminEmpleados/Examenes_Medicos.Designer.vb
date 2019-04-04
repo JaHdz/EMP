@@ -71,14 +71,14 @@ Partial Class Examenes_Medicos
         Me.Panel1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1078, 730)
+        Me.Panel1.Size = New System.Drawing.Size(1078, 699)
         Me.Panel1.TabIndex = 1
         '
         'PnlExamenes
         '
         Me.PnlExamenes.Controls.Add(Me.dgv_equipo_Eval)
         Me.PnlExamenes.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PnlExamenes.Location = New System.Drawing.Point(0, 255)
+        Me.PnlExamenes.Location = New System.Drawing.Point(0, 224)
         Me.PnlExamenes.Name = "PnlExamenes"
         Me.PnlExamenes.Size = New System.Drawing.Size(1078, 475)
         Me.PnlExamenes.TabIndex = 92
@@ -95,6 +95,7 @@ Partial Class Examenes_Medicos
         Me.dgv_equipo_Eval.RowHeadersVisible = False
         Me.dgv_equipo_Eval.Size = New System.Drawing.Size(1078, 475)
         Me.dgv_equipo_Eval.TabIndex = 89
+        Me.dgv_equipo_Eval.UseWaitCursor = True
         '
         'DELETE
         '
@@ -165,7 +166,7 @@ Partial Class Examenes_Medicos
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
         Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(1078, 730)
+        Me.Panel14.Size = New System.Drawing.Size(1078, 699)
         Me.Panel14.TabIndex = 91
         '
         'TXT_EST
@@ -352,7 +353,7 @@ Partial Class Examenes_Medicos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1078, 730)
+        Me.ClientSize = New System.Drawing.Size(1078, 699)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Examenes_Medicos"

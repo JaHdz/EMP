@@ -79,14 +79,14 @@ Partial Class Equipo
         Me.Panel1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1078, 730)
+        Me.Panel1.Size = New System.Drawing.Size(1078, 699)
         Me.Panel1.TabIndex = 1
         '
         'pnlEquipo
         '
         Me.pnlEquipo.Controls.Add(Me.dgv_equipo_emp)
         Me.pnlEquipo.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pnlEquipo.Location = New System.Drawing.Point(0, 331)
+        Me.pnlEquipo.Location = New System.Drawing.Point(0, 300)
         Me.pnlEquipo.Name = "pnlEquipo"
         Me.pnlEquipo.Size = New System.Drawing.Size(1078, 399)
         Me.pnlEquipo.TabIndex = 81
@@ -184,7 +184,7 @@ Partial Class Equipo
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
         Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(1078, 730)
+        Me.Panel14.Size = New System.Drawing.Size(1078, 699)
         Me.Panel14.TabIndex = 80
         '
         'pnl_comen
@@ -393,7 +393,7 @@ Partial Class Equipo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1078, 730)
+        Me.ClientSize = New System.Drawing.Size(1078, 699)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Equipo"

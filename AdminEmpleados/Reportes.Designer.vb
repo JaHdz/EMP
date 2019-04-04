@@ -84,7 +84,7 @@ Partial Class Reportes
         Me.PnlDetails.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PnlDetails.Location = New System.Drawing.Point(0, 30)
         Me.PnlDetails.Name = "PnlDetails"
-        Me.PnlDetails.Size = New System.Drawing.Size(600, 696)
+        Me.PnlDetails.Size = New System.Drawing.Size(600, 669)
         Me.PnlDetails.TabIndex = 2
         '
         'RvReports
@@ -93,7 +93,7 @@ Partial Class Reportes
         Me.RvReports.Location = New System.Drawing.Point(0, 0)
         Me.RvReports.Name = "RvReports"
         Me.RvReports.ServerReport.BearerToken = Nothing
-        Me.RvReports.Size = New System.Drawing.Size(600, 696)
+        Me.RvReports.Size = New System.Drawing.Size(600, 669)
         Me.RvReports.TabIndex = 1
         Me.RvReports.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth
         '
@@ -101,13 +101,12 @@ Partial Class Reportes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(600, 726)
+        Me.ClientSize = New System.Drawing.Size(600, 699)
         Me.Controls.Add(Me.PnlDetails)
         Me.Controls.Add(Me.PnlHeader)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Reportes"
         Me.ShowIcon = False
-        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reportes"
         Me.PnlHeader.ResumeLayout(False)

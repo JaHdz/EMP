@@ -23,7 +23,7 @@ Partial Class Empleados
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Tam_Es = New System.Windows.Forms.TabPage()
@@ -462,7 +462,7 @@ Partial Class Empleados
         Me.Tam_Es.Location = New System.Drawing.Point(4, 27)
         Me.Tam_Es.Name = "Tam_Es"
         Me.Tam_Es.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tam_Es.Size = New System.Drawing.Size(1070, 668)
+        Me.Tam_Es.Size = New System.Drawing.Size(1070, 598)
         Me.Tam_Es.TabIndex = 5
         Me.Tam_Es.Text = "ESTUDIO SOCIOECONOMICO"
         Me.Tam_Es.UseVisualStyleBackColor = True
@@ -921,7 +921,7 @@ Partial Class Empleados
         Me.PnlActividades.Controls.Add(Me.Panel36)
         Me.PnlActividades.Location = New System.Drawing.Point(0, 405)
         Me.PnlActividades.Name = "PnlActividades"
-        Me.PnlActividades.Size = New System.Drawing.Size(1070, 245)
+        Me.PnlActividades.Size = New System.Drawing.Size(1051, 245)
         Me.PnlActividades.TabIndex = 51
         '
         'Label90
@@ -1141,7 +1141,7 @@ Partial Class Empleados
         Me.Panel36.Location = New System.Drawing.Point(0, 0)
         Me.Panel36.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel36.Name = "Panel36"
-        Me.Panel36.Size = New System.Drawing.Size(1070, 35)
+        Me.Panel36.Size = New System.Drawing.Size(1051, 35)
         Me.Panel36.TabIndex = 28
         '
         'Label84
@@ -1580,6 +1580,7 @@ Partial Class Empleados
         '
         'PB_IMAGE_VIVIENDA
         '
+        Me.PB_IMAGE_VIVIENDA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PB_IMAGE_VIVIENDA.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PB_IMAGE_VIVIENDA.Image = Global.AdminEmpleados.My.Resources.Resources.AddImage
         Me.PB_IMAGE_VIVIENDA.Location = New System.Drawing.Point(6, 40)
@@ -1733,7 +1734,7 @@ Partial Class Empleados
         Me.Tab_Enfer.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_Enfer.Name = "Tab_Enfer"
         Me.Tab_Enfer.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_Enfer.Size = New System.Drawing.Size(1070, 668)
+        Me.Tab_Enfer.Size = New System.Drawing.Size(1070, 598)
         Me.Tab_Enfer.TabIndex = 4
         Me.Tab_Enfer.Text = "ENFERMEDADES"
         Me.Tab_Enfer.UseVisualStyleBackColor = True
@@ -1793,8 +1794,8 @@ Partial Class Empleados
         'Text
         '
         Me.Text.DataPropertyName = "Text"
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.Text.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.Text.DefaultCellStyle = DataGridViewCellStyle4
         Me.Text.HeaderText = "Enfermedad"
         Me.Text.Name = "Text"
         Me.Text.Width = 1400
@@ -1860,7 +1861,7 @@ Partial Class Empleados
         Me.Tab_Cont.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_Cont.Name = "Tab_Cont"
         Me.Tab_Cont.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_Cont.Size = New System.Drawing.Size(1070, 668)
+        Me.Tab_Cont.Size = New System.Drawing.Size(1070, 598)
         Me.Tab_Cont.TabIndex = 3
         Me.Tab_Cont.Text = "CONTACTO"
         Me.Tab_Cont.UseVisualStyleBackColor = True
@@ -2129,7 +2130,7 @@ Partial Class Empleados
         Me.Tab_AL.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_AL.Name = "Tab_AL"
         Me.Tab_AL.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_AL.Size = New System.Drawing.Size(1070, 668)
+        Me.Tab_AL.Size = New System.Drawing.Size(1070, 598)
         Me.Tab_AL.TabIndex = 2
         Me.Tab_AL.Text = "ANTECEDENTES LABORALES"
         Me.Tab_AL.UseVisualStyleBackColor = True
@@ -2450,7 +2451,7 @@ Partial Class Empleados
         Me.Tab_Familia.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_Familia.Name = "Tab_Familia"
         Me.Tab_Familia.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_Familia.Size = New System.Drawing.Size(1070, 668)
+        Me.Tab_Familia.Size = New System.Drawing.Size(1070, 598)
         Me.Tab_Familia.TabIndex = 1
         Me.Tab_Familia.Text = "FAMILIA"
         Me.Tab_Familia.UseVisualStyleBackColor = True
@@ -2997,7 +2998,7 @@ Partial Class Empleados
         Me.Tab_DP.Margin = New System.Windows.Forms.Padding(2)
         Me.Tab_DP.Name = "Tab_DP"
         Me.Tab_DP.Padding = New System.Windows.Forms.Padding(2)
-        Me.Tab_DP.Size = New System.Drawing.Size(1070, 668)
+        Me.Tab_DP.Size = New System.Drawing.Size(1070, 598)
         Me.Tab_DP.TabIndex = 0
         Me.Tab_DP.Text = "DATOS PERSONALES"
         Me.Tab_DP.UseVisualStyleBackColor = True
@@ -3017,7 +3018,7 @@ Partial Class Empleados
         Me.pnl_estatus.Location = New System.Drawing.Point(2, 497)
         Me.pnl_estatus.Margin = New System.Windows.Forms.Padding(2)
         Me.pnl_estatus.Name = "pnl_estatus"
-        Me.pnl_estatus.Size = New System.Drawing.Size(1068, 120)
+        Me.pnl_estatus.Size = New System.Drawing.Size(1068, 97)
         Me.pnl_estatus.TabIndex = 34
         Me.pnl_estatus.Visible = False
         '
@@ -3027,9 +3028,9 @@ Partial Class Empleados
         Me.GroupBox1.Controls.Add(Me.seg)
         Me.GroupBox1.Controls.Add(Me.CB_PROV)
         Me.GroupBox1.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(791, 39)
+        Me.GroupBox1.Location = New System.Drawing.Point(627, 39)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(220, 66)
+        Me.GroupBox1.Size = New System.Drawing.Size(384, 50)
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Notificar a :"
@@ -3050,7 +3051,7 @@ Partial Class Empleados
         '
         Me.seg.AutoSize = True
         Me.seg.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.seg.Location = New System.Drawing.Point(5, 44)
+        Me.seg.Location = New System.Drawing.Point(219, 18)
         Me.seg.Margin = New System.Windows.Forms.Padding(2)
         Me.seg.Name = "seg"
         Me.seg.Size = New System.Drawing.Size(90, 22)
@@ -3124,10 +3125,10 @@ Partial Class Empleados
         '
         Me.commen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.commen.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.commen.Location = New System.Drawing.Point(446, 40)
+        Me.commen.Location = New System.Drawing.Point(116, 70)
         Me.commen.Multiline = True
         Me.commen.Name = "commen"
-        Me.commen.Size = New System.Drawing.Size(290, 65)
+        Me.commen.Size = New System.Drawing.Size(505, 20)
         Me.commen.TabIndex = 7
         '
         'txt_activo
@@ -3144,7 +3145,7 @@ Partial Class Empleados
         '
         Me.label8.AutoSize = True
         Me.label8.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label8.Location = New System.Drawing.Point(378, 42)
+        Me.label8.Location = New System.Drawing.Point(46, 71)
         Me.label8.Name = "label8"
         Me.label8.Size = New System.Drawing.Size(62, 18)
         Me.label8.TabIndex = 6
@@ -3155,7 +3156,7 @@ Partial Class Empleados
         Me.txt_baja.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_baja.Enabled = False
         Me.txt_baja.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_baja.Location = New System.Drawing.Point(165, 70)
+        Me.txt_baja.Location = New System.Drawing.Point(457, 39)
         Me.txt_baja.Name = "txt_baja"
         Me.txt_baja.Size = New System.Drawing.Size(164, 25)
         Me.txt_baja.TabIndex = 3
@@ -3174,7 +3175,7 @@ Partial Class Empleados
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(50, 73)
+        Me.Label7.Location = New System.Drawing.Point(342, 42)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(109, 18)
         Me.Label7.TabIndex = 2
@@ -3894,8 +3895,9 @@ Partial Class Empleados
         'lbl_emp
         '
         Me.lbl_emp.AutoSize = True
+        Me.lbl_emp.BackColor = System.Drawing.Color.Transparent
         Me.lbl_emp.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_emp.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.lbl_emp.ForeColor = System.Drawing.Color.White
         Me.lbl_emp.Location = New System.Drawing.Point(109, 6)
         Me.lbl_emp.Name = "lbl_emp"
         Me.lbl_emp.Size = New System.Drawing.Size(0, 22)
@@ -4029,10 +4031,10 @@ Partial Class Empleados
         Me.MenuEmp.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MenuEmp.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuEmp.Location = New System.Drawing.Point(0, 0)
-        Me.MenuEmp.Margin = New System.Windows.Forms.Padding(2)
+        Me.MenuEmp.Margin = New System.Windows.Forms.Padding(0)
         Me.MenuEmp.Name = "MenuEmp"
         Me.MenuEmp.SelectedIndex = 0
-        Me.MenuEmp.Size = New System.Drawing.Size(1078, 699)
+        Me.MenuEmp.Size = New System.Drawing.Size(1078, 629)
         Me.MenuEmp.TabIndex = 6
         '
         'datosFamiliaBindingSource
@@ -4043,7 +4045,7 @@ Partial Class Empleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1078, 699)
+        Me.ClientSize = New System.Drawing.Size(1078, 629)
         Me.Controls.Add(Me.MenuEmp)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)

@@ -65,9 +65,9 @@ Partial Class Evaluaciones
         Me.Panel1.Controls.Add(Me.dgv_equipo_Eval)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!)
-        Me.Panel1.Location = New System.Drawing.Point(0, 318)
+        Me.Panel1.Location = New System.Drawing.Point(0, 287)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1072, 412)
+        Me.Panel1.Size = New System.Drawing.Size(1078, 412)
         Me.Panel1.TabIndex = 1
         '
         'dgv_equipo_Eval
@@ -154,7 +154,7 @@ Partial Class Evaluaciones
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
         Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(1072, 318)
+        Me.Panel14.Size = New System.Drawing.Size(1078, 287)
         Me.Panel14.TabIndex = 81
         '
         'Panel2
@@ -168,7 +168,7 @@ Partial Class Evaluaciones
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1072, 35)
+        Me.Panel2.Size = New System.Drawing.Size(1078, 35)
         Me.Panel2.TabIndex = 0
         '
         'Label42
@@ -317,7 +317,7 @@ Partial Class Evaluaciones
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1072, 730)
+        Me.ClientSize = New System.Drawing.Size(1078, 699)
         Me.Controls.Add(Me.Panel14)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

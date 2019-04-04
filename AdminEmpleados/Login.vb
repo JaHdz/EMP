@@ -48,6 +48,7 @@
             If loResult Is Nothing Then
                 Wait.Close()
                 MessageBox.Show("Datos incorrectos")
+                pass.Text = ""
             Else
                 Dim Principal As New Principal
                 Principal.NEmp = loResult("User")
@@ -96,7 +97,7 @@
             End If
             Wait.Close()
         Else
-            ErrorProvider.SetError(user, "Para restaurar su contraseña debe ingresar su usuario y despues precionar 'Olvide Mi Contraseña'")
+            ErrorProvider.SetError(user, "Para restaurar su contraseña debe ingresar su usuario y despues presionar 'Olvidé mi contraseña'")
         End If
     End Sub
 
