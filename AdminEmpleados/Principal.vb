@@ -1,4 +1,6 @@
 ﻿
+Imports System.Deployment.Application
+
 Public Class Principal
     Private bit As Boolean
     Private X As Integer
@@ -9,8 +11,13 @@ Public Class Principal
     Private SelectedOption As String = ""
     Private CurrentOption As String = ""
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If Debugger.IsAttached Then
+            Text = "EASY - Employee Administrator System     --Development Mode--"
+        Else
+            Text = "EASY - Employee Administrator System v" + ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString()
+        End If
         LoadMenu()
-        Dim x = PNL_INFO.Controls
+        Dim x = Pnl_Info.Controls
         SelectedOption = "Empleados"
         btn_emp.PerformClick()
         lbl_user.Text = NEmp + " | " + NName
@@ -70,7 +77,7 @@ Public Class Principal
                     fName = "Administration"
             End Select
             CurrentMenu.Add(fName, f)
-            PNL_INFO.Controls.Add(f)
+            Pnl_Info.Controls.Add(f)
         Next
     End Sub
 

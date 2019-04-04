@@ -27,10 +27,10 @@
     <InstallUrl>http://www.turing-sw.dreamhosters.com/EASY/</InstallUrl>
     <ProductName>EASY</ProductName>
     <PublisherName>TURING SOFTWARE</PublisherName>
-    <MinimumRequiredVersion>1.0.3.4</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.3.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>default.htm</WebPage>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>1.0.3.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -89,6 +89,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Resources\EASY.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">

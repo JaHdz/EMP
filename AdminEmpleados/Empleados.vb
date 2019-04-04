@@ -335,6 +335,7 @@ Public Class Empleados
         Next
     End Sub
     Public Sub Limp()
+        EMPLEADO_ID = 0
         For Each Tab As TabPage In MenuEmp.TabPages
             For Each Container As Control In Tab.Controls
                 If Container.GetType() Is GetType(Panel) Then
