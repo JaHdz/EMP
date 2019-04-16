@@ -254,7 +254,7 @@ Partial Class Administration
         Me.tab_admin.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tab_admin.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.tab_admin.Location = New System.Drawing.Point(0, 0)
-        Me.tab_admin.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tab_admin.Margin = New System.Windows.Forms.Padding(2)
         Me.tab_admin.Name = "tab_admin"
         Me.tab_admin.SelectedIndex = 0
         Me.tab_admin.Size = New System.Drawing.Size(1078, 699)
@@ -266,9 +266,9 @@ Partial Class Administration
         Me.tab_users.Controls.Add(Me.pnl_per)
         Me.tab_users.Font = New System.Drawing.Font("Microsoft YaHei UI", 7.2!)
         Me.tab_users.Location = New System.Drawing.Point(4, 27)
-        Me.tab_users.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tab_users.Margin = New System.Windows.Forms.Padding(2)
         Me.tab_users.Name = "tab_users"
-        Me.tab_users.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tab_users.Padding = New System.Windows.Forms.Padding(2)
         Me.tab_users.Size = New System.Drawing.Size(1070, 668)
         Me.tab_users.TabIndex = 0
         Me.tab_users.Text = "USUARIOS"
@@ -347,7 +347,7 @@ Partial Class Administration
         Me.pnl_per.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnl_per.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pnl_per.Location = New System.Drawing.Point(2, 2)
-        Me.pnl_per.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnl_per.Margin = New System.Windows.Forms.Padding(2)
         Me.pnl_per.Name = "pnl_per"
         Me.pnl_per.Size = New System.Drawing.Size(1066, 217)
         Me.pnl_per.TabIndex = 32
@@ -356,7 +356,7 @@ Partial Class Administration
         '
         Me.txt_pass2.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.txt_pass2.Location = New System.Drawing.Point(197, 147)
-        Me.txt_pass2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_pass2.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_pass2.Name = "txt_pass2"
         Me.txt_pass2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_pass2.Size = New System.Drawing.Size(252, 25)
@@ -376,7 +376,7 @@ Partial Class Administration
         '
         Me.txt_pass.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.txt_pass.Location = New System.Drawing.Point(197, 118)
-        Me.txt_pass.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_pass.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_pass.Name = "txt_pass"
         Me.txt_pass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_pass.Size = New System.Drawing.Size(252, 25)
@@ -387,7 +387,7 @@ Partial Class Administration
         Me.txt_user.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_user.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.txt_user.Location = New System.Drawing.Point(196, 89)
-        Me.txt_user.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_user.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_user.Name = "txt_user"
         Me.txt_user.Size = New System.Drawing.Size(252, 25)
         Me.txt_user.TabIndex = 1
@@ -471,7 +471,7 @@ Partial Class Administration
         Me.panel7.Dock = System.Windows.Forms.DockStyle.Top
         Me.panel7.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.panel7.Location = New System.Drawing.Point(0, 0)
-        Me.panel7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panel7.Margin = New System.Windows.Forms.Padding(2)
         Me.panel7.Name = "panel7"
         Me.panel7.Size = New System.Drawing.Size(1062, 35)
         Me.panel7.TabIndex = 0
@@ -515,9 +515,9 @@ Partial Class Administration
         Me.tab_capacitaciones.Controls.Add(Me.Panel1)
         Me.tab_capacitaciones.Font = New System.Drawing.Font("Microsoft YaHei UI", 7.2!)
         Me.tab_capacitaciones.Location = New System.Drawing.Point(4, 27)
-        Me.tab_capacitaciones.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tab_capacitaciones.Margin = New System.Windows.Forms.Padding(2)
         Me.tab_capacitaciones.Name = "tab_capacitaciones"
-        Me.tab_capacitaciones.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tab_capacitaciones.Padding = New System.Windows.Forms.Padding(2)
         Me.tab_capacitaciones.Size = New System.Drawing.Size(1070, 668)
         Me.tab_capacitaciones.TabIndex = 1
         Me.tab_capacitaciones.Text = "CAPACITACIONES"
@@ -588,7 +588,7 @@ Partial Class Administration
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(2, 2)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1066, 217)
         Me.Panel1.TabIndex = 73
@@ -598,7 +598,7 @@ Partial Class Administration
         Me.TXT_CAP_DESC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TXT_CAP_DESC.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.TXT_CAP_DESC.Location = New System.Drawing.Point(439, 62)
-        Me.TXT_CAP_DESC.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TXT_CAP_DESC.Margin = New System.Windows.Forms.Padding(2)
         Me.TXT_CAP_DESC.Name = "TXT_CAP_DESC"
         Me.TXT_CAP_DESC.Size = New System.Drawing.Size(252, 25)
         Me.TXT_CAP_DESC.TabIndex = 1
@@ -608,7 +608,7 @@ Partial Class Administration
         Me.TXT_CAPCODIGO.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TXT_CAPCODIGO.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.TXT_CAPCODIGO.Location = New System.Drawing.Point(89, 62)
-        Me.TXT_CAPCODIGO.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TXT_CAPCODIGO.Margin = New System.Windows.Forms.Padding(2)
         Me.TXT_CAPCODIGO.Name = "TXT_CAPCODIGO"
         Me.TXT_CAPCODIGO.Size = New System.Drawing.Size(252, 25)
         Me.TXT_CAPCODIGO.TabIndex = 0
@@ -642,7 +642,7 @@ Partial Class Administration
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1062, 35)
         Me.Panel2.TabIndex = 0
@@ -685,9 +685,9 @@ Partial Class Administration
         Me.tab_depto.Controls.Add(Me.Panel3)
         Me.tab_depto.Font = New System.Drawing.Font("Microsoft YaHei UI", 7.2!)
         Me.tab_depto.Location = New System.Drawing.Point(4, 27)
-        Me.tab_depto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tab_depto.Margin = New System.Windows.Forms.Padding(2)
         Me.tab_depto.Name = "tab_depto"
-        Me.tab_depto.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tab_depto.Padding = New System.Windows.Forms.Padding(2)
         Me.tab_depto.Size = New System.Drawing.Size(1070, 668)
         Me.tab_depto.TabIndex = 2
         Me.tab_depto.Text = "DEPARTAMENTOS"
@@ -758,7 +758,7 @@ Partial Class Administration
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel3.Location = New System.Drawing.Point(2, 2)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1066, 217)
         Me.Panel3.TabIndex = 75
@@ -768,7 +768,7 @@ Partial Class Administration
         Me.txt_coddes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_coddes.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.txt_coddes.Location = New System.Drawing.Point(451, 52)
-        Me.txt_coddes.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_coddes.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_coddes.Name = "txt_coddes"
         Me.txt_coddes.Size = New System.Drawing.Size(252, 25)
         Me.txt_coddes.TabIndex = 1
@@ -778,7 +778,7 @@ Partial Class Administration
         Me.txt_depcod.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_depcod.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.txt_depcod.Location = New System.Drawing.Point(101, 52)
-        Me.txt_depcod.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_depcod.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_depcod.Name = "txt_depcod"
         Me.txt_depcod.Size = New System.Drawing.Size(252, 25)
         Me.txt_depcod.TabIndex = 0
@@ -812,7 +812,7 @@ Partial Class Administration
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1062, 35)
         Me.Panel4.TabIndex = 0
@@ -855,9 +855,9 @@ Partial Class Administration
         Me.tab_Equipo.Controls.Add(Me.Panel5)
         Me.tab_Equipo.Font = New System.Drawing.Font("Microsoft YaHei UI", 7.2!)
         Me.tab_Equipo.Location = New System.Drawing.Point(4, 27)
-        Me.tab_Equipo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tab_Equipo.Margin = New System.Windows.Forms.Padding(2)
         Me.tab_Equipo.Name = "tab_Equipo"
-        Me.tab_Equipo.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tab_Equipo.Padding = New System.Windows.Forms.Padding(2)
         Me.tab_Equipo.Size = New System.Drawing.Size(1070, 668)
         Me.tab_Equipo.TabIndex = 3
         Me.tab_Equipo.Text = "EQUIPO"
@@ -955,7 +955,7 @@ Partial Class Administration
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel5.Location = New System.Drawing.Point(2, 2)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1066, 217)
         Me.Panel5.TabIndex = 75
@@ -1003,7 +1003,7 @@ Partial Class Administration
         Me.txt_eqcost.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_eqcost.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.txt_eqcost.Location = New System.Drawing.Point(112, 80)
-        Me.txt_eqcost.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_eqcost.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_eqcost.Name = "txt_eqcost"
         Me.txt_eqcost.Size = New System.Drawing.Size(252, 25)
         Me.txt_eqcost.TabIndex = 2
@@ -1023,7 +1023,7 @@ Partial Class Administration
         Me.txt_eqdesc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_eqdesc.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.txt_eqdesc.Location = New System.Drawing.Point(476, 81)
-        Me.txt_eqdesc.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_eqdesc.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_eqdesc.Name = "txt_eqdesc"
         Me.txt_eqdesc.Size = New System.Drawing.Size(252, 25)
         Me.txt_eqdesc.TabIndex = 1
@@ -1033,7 +1033,7 @@ Partial Class Administration
         Me.txt_eqcod.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_eqcod.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.txt_eqcod.Location = New System.Drawing.Point(112, 51)
-        Me.txt_eqcod.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_eqcod.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_eqcod.Name = "txt_eqcod"
         Me.txt_eqcod.Size = New System.Drawing.Size(252, 25)
         Me.txt_eqcod.TabIndex = 0
@@ -1067,7 +1067,7 @@ Partial Class Administration
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel6.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel6.Location = New System.Drawing.Point(0, 0)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(1062, 35)
         Me.Panel6.TabIndex = 0
@@ -1110,9 +1110,9 @@ Partial Class Administration
         Me.tab_evaluacion.Controls.Add(Me.Panel8)
         Me.tab_evaluacion.Font = New System.Drawing.Font("Microsoft YaHei UI", 7.2!)
         Me.tab_evaluacion.Location = New System.Drawing.Point(4, 27)
-        Me.tab_evaluacion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tab_evaluacion.Margin = New System.Windows.Forms.Padding(2)
         Me.tab_evaluacion.Name = "tab_evaluacion"
-        Me.tab_evaluacion.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tab_evaluacion.Padding = New System.Windows.Forms.Padding(2)
         Me.tab_evaluacion.Size = New System.Drawing.Size(1070, 668)
         Me.tab_evaluacion.TabIndex = 4
         Me.tab_evaluacion.Text = "EVALUACIONES"
@@ -1184,7 +1184,7 @@ Partial Class Administration
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel8.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel8.Location = New System.Drawing.Point(2, 2)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(1066, 217)
         Me.Panel8.TabIndex = 75
@@ -1194,7 +1194,7 @@ Partial Class Administration
         Me.txt_eval_des.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_eval_des.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.txt_eval_des.Location = New System.Drawing.Point(459, 54)
-        Me.txt_eval_des.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_eval_des.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_eval_des.Name = "txt_eval_des"
         Me.txt_eval_des.Size = New System.Drawing.Size(252, 25)
         Me.txt_eval_des.TabIndex = 1
@@ -1204,7 +1204,7 @@ Partial Class Administration
         Me.txt_evalcod.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_evalcod.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.txt_evalcod.Location = New System.Drawing.Point(109, 54)
-        Me.txt_evalcod.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_evalcod.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_evalcod.Name = "txt_evalcod"
         Me.txt_evalcod.Size = New System.Drawing.Size(252, 25)
         Me.txt_evalcod.TabIndex = 0
@@ -1238,7 +1238,7 @@ Partial Class Administration
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel9.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel9.Location = New System.Drawing.Point(0, 0)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(1062, 35)
         Me.Panel9.TabIndex = 0
@@ -1281,9 +1281,9 @@ Partial Class Administration
         Me.tab_puesto.Controls.Add(Me.Panel10)
         Me.tab_puesto.Font = New System.Drawing.Font("Microsoft YaHei UI", 7.2!)
         Me.tab_puesto.Location = New System.Drawing.Point(4, 27)
-        Me.tab_puesto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tab_puesto.Margin = New System.Windows.Forms.Padding(2)
         Me.tab_puesto.Name = "tab_puesto"
-        Me.tab_puesto.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tab_puesto.Padding = New System.Windows.Forms.Padding(2)
         Me.tab_puesto.Size = New System.Drawing.Size(1070, 668)
         Me.tab_puesto.TabIndex = 5
         Me.tab_puesto.Text = "PUESTO"
@@ -1364,7 +1364,7 @@ Partial Class Administration
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel10.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel10.Location = New System.Drawing.Point(2, 2)
-        Me.Panel10.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(1066, 217)
         Me.Panel10.TabIndex = 77
@@ -1385,7 +1385,7 @@ Partial Class Administration
         Me.txt_PuestoDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_PuestoDescripcion.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.txt_PuestoDescripcion.Location = New System.Drawing.Point(444, 52)
-        Me.txt_PuestoDescripcion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_PuestoDescripcion.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_PuestoDescripcion.Name = "txt_PuestoDescripcion"
         Me.txt_PuestoDescripcion.Size = New System.Drawing.Size(252, 25)
         Me.txt_PuestoDescripcion.TabIndex = 1
@@ -1395,7 +1395,7 @@ Partial Class Administration
         Me.txt_PuestoNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_PuestoNombre.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.txt_PuestoNombre.Location = New System.Drawing.Point(94, 52)
-        Me.txt_PuestoNombre.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_PuestoNombre.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_PuestoNombre.Name = "txt_PuestoNombre"
         Me.txt_PuestoNombre.Size = New System.Drawing.Size(252, 25)
         Me.txt_PuestoNombre.TabIndex = 0
@@ -1429,7 +1429,7 @@ Partial Class Administration
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel11.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel11.Location = New System.Drawing.Point(0, 0)
-        Me.Panel11.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel11.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(1062, 35)
         Me.Panel11.TabIndex = 0
@@ -1472,9 +1472,9 @@ Partial Class Administration
         Me.tsb_super.Controls.Add(Me.Panel12)
         Me.tsb_super.Font = New System.Drawing.Font("Microsoft YaHei UI", 7.2!)
         Me.tsb_super.Location = New System.Drawing.Point(4, 27)
-        Me.tsb_super.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tsb_super.Margin = New System.Windows.Forms.Padding(2)
         Me.tsb_super.Name = "tsb_super"
-        Me.tsb_super.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tsb_super.Padding = New System.Windows.Forms.Padding(2)
         Me.tsb_super.Size = New System.Drawing.Size(1070, 668)
         Me.tsb_super.TabIndex = 6
         Me.tsb_super.Text = "SUPERVISOR"
@@ -1548,7 +1548,7 @@ Partial Class Administration
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel12.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel12.Location = New System.Drawing.Point(2, 2)
-        Me.Panel12.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(1066, 217)
         Me.Panel12.TabIndex = 73
@@ -1612,7 +1612,7 @@ Partial Class Administration
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel13.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel13.Location = New System.Drawing.Point(0, 0)
-        Me.Panel13.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel13.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(1062, 35)
         Me.Panel13.TabIndex = 0
@@ -1656,9 +1656,9 @@ Partial Class Administration
         Me.tab_tipo.Controls.Add(Me.Panel14)
         Me.tab_tipo.Font = New System.Drawing.Font("Microsoft YaHei UI", 7.2!)
         Me.tab_tipo.Location = New System.Drawing.Point(4, 27)
-        Me.tab_tipo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tab_tipo.Margin = New System.Windows.Forms.Padding(2)
         Me.tab_tipo.Name = "tab_tipo"
-        Me.tab_tipo.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tab_tipo.Padding = New System.Windows.Forms.Padding(2)
         Me.tab_tipo.Size = New System.Drawing.Size(1070, 668)
         Me.tab_tipo.TabIndex = 7
         Me.tab_tipo.Text = "TIPO DE EMPLEADOS"
@@ -1731,7 +1731,7 @@ Partial Class Administration
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel14.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel14.Location = New System.Drawing.Point(2, 2)
-        Me.Panel14.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(1066, 217)
         Me.Panel14.TabIndex = 79
@@ -1741,7 +1741,7 @@ Partial Class Administration
         Me.txt_DescTE.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_DescTE.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.txt_DescTE.Location = New System.Drawing.Point(430, 66)
-        Me.txt_DescTE.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_DescTE.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_DescTE.Name = "txt_DescTE"
         Me.txt_DescTE.Size = New System.Drawing.Size(252, 25)
         Me.txt_DescTE.TabIndex = 1
@@ -1751,7 +1751,7 @@ Partial Class Administration
         Me.txt_codigoTE.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_codigoTE.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.txt_codigoTE.Location = New System.Drawing.Point(80, 66)
-        Me.txt_codigoTE.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_codigoTE.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_codigoTE.Name = "txt_codigoTE"
         Me.txt_codigoTE.Size = New System.Drawing.Size(252, 25)
         Me.txt_codigoTE.TabIndex = 0
@@ -1785,7 +1785,7 @@ Partial Class Administration
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel15.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel15.Location = New System.Drawing.Point(0, 0)
-        Me.Panel15.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel15.Name = "Panel15"
         Me.Panel15.Size = New System.Drawing.Size(1062, 35)
         Me.Panel15.TabIndex = 0
@@ -1824,8 +1824,7 @@ Partial Class Administration
         '
         'Administration
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.ClientSize = New System.Drawing.Size(1078, 699)
         Me.Controls.Add(Me.tab_admin)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

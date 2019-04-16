@@ -5,7 +5,7 @@
     'Dim objcon As New Consultas
 
     Private Sub Cerrar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles cerrar.Click
-        Me.Close()
+        Application.Exit()
     End Sub
 
     Private Sub header_MouseMove(ByVal sender As Object, ByVal e As MouseEventArgs) Handles header.MouseMove
@@ -50,9 +50,6 @@
                 MessageBox.Show("Datos incorrectos")
                 pass.Text = ""
             Else
-                Dim Principal As New Principal
-                Principal.NEmp = loResult("User")
-                Principal.NName = loResult("Name")
                 If chkRecordar.Checked Then
                     If My.Settings.LastDate = Date.MinValue Then
                         My.Settings.Username = user.Text
@@ -69,9 +66,10 @@
                     My.Settings.Save()
                 End If
                 Wait.Close()
-                Me.Hide()
-                Principal.ShowDialog(Me)
-                Me.Close()
+                Hide()
+                Dim Main As New Principal(loResult("User"), loResult("Name"))
+                Main.Show()
+                Close()
             End If
         End If
     End Sub
