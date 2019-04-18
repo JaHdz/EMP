@@ -23,7 +23,6 @@ Partial Class Evaluaciones
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Evaluaciones))
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dgv_equipo_Eval = New System.Windows.Forms.DataGridView()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel14 = New System.Windows.Forms.Panel()
@@ -49,7 +48,6 @@ Partial Class Evaluaciones
         Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_User = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel1.SuspendLayout()
         CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel14.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -59,27 +57,16 @@ Partial Class Evaluaciones
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.dgv_equipo_Eval)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!)
-        Me.Panel1.Location = New System.Drawing.Point(0, 287)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1078, 412)
-        Me.Panel1.TabIndex = 1
-        '
         'dgv_equipo_Eval
         '
         Me.dgv_equipo_Eval.AllowUserToAddRows = False
         Me.dgv_equipo_Eval.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_equipo_Eval.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DELETE, Me.ID_EvEmp, Me.ID_Codigo, Me.ID_Emp, Me.Fecha, Me.Estatus, Me.ID_User})
         Me.dgv_equipo_Eval.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.dgv_equipo_Eval.Location = New System.Drawing.Point(0, 0)
+        Me.dgv_equipo_Eval.Location = New System.Drawing.Point(0, 358)
         Me.dgv_equipo_Eval.Name = "dgv_equipo_Eval"
         Me.dgv_equipo_Eval.RowHeadersVisible = False
-        Me.dgv_equipo_Eval.Size = New System.Drawing.Size(1078, 412)
+        Me.dgv_equipo_Eval.Size = New System.Drawing.Size(1078, 341)
         Me.dgv_equipo_Eval.TabIndex = 76
         '
         'DataGridViewImageColumn1
@@ -90,6 +77,7 @@ Partial Class Evaluaciones
         '
         'Panel14
         '
+        Me.Panel14.Controls.Add(Me.dgv_equipo_Eval)
         Me.Panel14.Controls.Add(Me.Panel2)
         Me.Panel14.Controls.Add(Me.TXT_commen)
         Me.Panel14.Controls.Add(Me.label8)
@@ -107,7 +95,7 @@ Partial Class Evaluaciones
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
         Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(1078, 287)
+        Me.Panel14.Size = New System.Drawing.Size(1078, 699)
         Me.Panel14.TabIndex = 81
         '
         'Panel2
@@ -138,8 +126,9 @@ Partial Class Evaluaciones
         '
         'CANCEL
         '
+        Me.CANCEL.Dock = System.Windows.Forms.DockStyle.Right
         Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(1020, 0)
+        Me.CANCEL.Location = New System.Drawing.Point(1008, 0)
         Me.CANCEL.Name = "CANCEL"
         Me.CANCEL.Size = New System.Drawing.Size(35, 35)
         Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -148,8 +137,9 @@ Partial Class Evaluaciones
         '
         'SAVE
         '
+        Me.SAVE.Dock = System.Windows.Forms.DockStyle.Right
         Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.SAVE.Location = New System.Drawing.Point(979, 0)
+        Me.SAVE.Location = New System.Drawing.Point(1043, 0)
         Me.SAVE.Name = "SAVE"
         Me.SAVE.Size = New System.Drawing.Size(35, 35)
         Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -320,12 +310,10 @@ Partial Class Evaluaciones
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1078, 699)
         Me.Controls.Add(Me.Panel14)
-        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Evaluaciones"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Evaluaciones"
-        Me.Panel1.ResumeLayout(False)
         CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
@@ -338,8 +326,6 @@ Partial Class Evaluaciones
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents dgv_equipo_Eval As DataGridView
     Private WithEvents Panel14 As Panel

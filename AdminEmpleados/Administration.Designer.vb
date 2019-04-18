@@ -25,9 +25,13 @@ Partial Class Administration
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Administration))
         Me.tab_admin = New System.Windows.Forms.TabControl()
         Me.tab_users = New System.Windows.Forms.TabPage()
-        Me.PnlUser = New System.Windows.Forms.Panel()
-        Me.dgv_equipo_emp = New System.Windows.Forms.DataGridView()
         Me.pnl_per = New System.Windows.Forms.Panel()
+        Me.dgv_equipo_emp = New System.Windows.Forms.DataGridView()
+        Me.UPDATE = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_User = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UserName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Activo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Emp_US = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_pass2 = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txt_pass = New System.Windows.Forms.TextBox()
@@ -46,6 +50,11 @@ Partial Class Administration
         Me.tab_capacitaciones = New System.Windows.Forms.TabPage()
         Me.pnlCapacitaciones = New System.Windows.Forms.Panel()
         Me.DGV_CAT = New System.Windows.Forms.DataGridView()
+        Me.UPDATEC = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Cap = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CA_Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CA_Desc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CA_Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TXT_CAP_DESC = New System.Windows.Forms.TextBox()
         Me.TXT_CAPCODIGO = New System.Windows.Forms.TextBox()
@@ -58,6 +67,11 @@ Partial Class Administration
         Me.tab_depto = New System.Windows.Forms.TabPage()
         Me.pnlDepartamentos = New System.Windows.Forms.Panel()
         Me.dgv_depto = New System.Windows.Forms.DataGridView()
+        Me.UPDATED = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Depto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.txt_coddes = New System.Windows.Forms.TextBox()
         Me.txt_depcod = New System.Windows.Forms.TextBox()
@@ -70,6 +84,14 @@ Partial Class Administration
         Me.tab_Equipo = New System.Windows.Forms.TabPage()
         Me.pnlUsuarios = New System.Windows.Forms.Panel()
         Me.dgv_eq = New System.Windows.Forms.DataGridView()
+        Me.UPDATEEQ = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Equipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcione = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Costo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estatuse = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_DeptoC = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Deptoo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.lblDpto = New System.Windows.Forms.Label()
         Me.pbSearchDpto = New System.Windows.Forms.PictureBox()
@@ -88,6 +110,11 @@ Partial Class Administration
         Me.tab_evaluacion = New System.Windows.Forms.TabPage()
         Me.PnlEvaluaciones = New System.Windows.Forms.Panel()
         Me.dgv_eval = New System.Windows.Forms.DataGridView()
+        Me.UPDATEE = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Evalua = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EV_Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EV_Descipcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EV_Estatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.txt_eval_des = New System.Windows.Forms.TextBox()
         Me.txt_evalcod = New System.Windows.Forms.TextBox()
@@ -100,6 +127,12 @@ Partial Class Administration
         Me.tab_puesto = New System.Windows.Forms.TabPage()
         Me.PnlPuesto = New System.Windows.Forms.Panel()
         Me.dgv_Puesto = New System.Windows.Forms.DataGridView()
+        Me.UPDATEPU = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Puesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombrep = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcionp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Riesgo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estatusp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.cb_PuestoRiesgo = New System.Windows.Forms.CheckBox()
         Me.txt_PuestoDescripcion = New System.Windows.Forms.TextBox()
@@ -113,6 +146,11 @@ Partial Class Administration
         Me.tsb_super = New System.Windows.Forms.TabPage()
         Me.PnlSupervisores = New System.Windows.Forms.Panel()
         Me.dgv_super = New System.Windows.Forms.DataGridView()
+        Me.UPDATESU = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Super = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ActivoS = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.TXT_EMP_SUPERname = New System.Windows.Forms.Label()
         Me.Label38 = New System.Windows.Forms.Label()
@@ -126,6 +164,11 @@ Partial Class Administration
         Me.tab_tipo = New System.Windows.Forms.TabPage()
         Me.PnlTipoEmpleados = New System.Windows.Forms.Panel()
         Me.dgv_te = New System.Windows.Forms.DataGridView()
+        Me.UPDATETE = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_TE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Codigote = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcionte = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estatuste = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.txt_DescTE = New System.Windows.Forms.TextBox()
         Me.txt_codigoTE = New System.Windows.Forms.TextBox()
@@ -135,55 +178,10 @@ Partial Class Administration
         Me.Label42 = New System.Windows.Forms.Label()
         Me.pb_saveTE = New System.Windows.Forms.PictureBox()
         Me.pb_cancelTE = New System.Windows.Forms.PictureBox()
-        Me.UPDATE = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_User = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UserName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Activo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Emp_US = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UPDATEC = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Cap = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CA_Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CA_Desc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CA_Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UPDATED = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Depto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UPDATEEQ = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Equipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcione = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Costo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estatuse = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_DeptoC = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Deptoo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UPDATEE = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Evalua = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EV_Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EV_Descipcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EV_Estatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UPDATEPU = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Puesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombrep = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcionp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Riesgo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estatusp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UPDATESU = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Super = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ActivoS = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UPDATETE = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_TE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Codigote = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcionte = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estatuste = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tab_admin.SuspendLayout()
         Me.tab_users.SuspendLayout()
-        Me.PnlUser.SuspendLayout()
-        CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_per.SuspendLayout()
+        CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel7.SuspendLayout()
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -262,7 +260,6 @@ Partial Class Administration
         '
         'tab_users
         '
-        Me.tab_users.Controls.Add(Me.PnlUser)
         Me.tab_users.Controls.Add(Me.pnl_per)
         Me.tab_users.Font = New System.Drawing.Font("Microsoft YaHei UI", 7.2!)
         Me.tab_users.Location = New System.Drawing.Point(4, 27)
@@ -274,30 +271,10 @@ Partial Class Administration
         Me.tab_users.Text = "USUARIOS"
         Me.tab_users.UseVisualStyleBackColor = True
         '
-        'PnlUser
-        '
-        Me.PnlUser.Controls.Add(Me.dgv_equipo_emp)
-        Me.PnlUser.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PnlUser.Location = New System.Drawing.Point(2, 196)
-        Me.PnlUser.Name = "PnlUser"
-        Me.PnlUser.Size = New System.Drawing.Size(1066, 470)
-        Me.PnlUser.TabIndex = 33
-        '
-        'dgv_equipo_emp
-        '
-        Me.dgv_equipo_emp.AllowUserToAddRows = False
-        Me.dgv_equipo_emp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_equipo_emp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATE, Me.ID_User, Me.UserName, Me.Activo, Me.ID_Emp_US})
-        Me.dgv_equipo_emp.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgv_equipo_emp.Location = New System.Drawing.Point(0, 0)
-        Me.dgv_equipo_emp.Name = "dgv_equipo_emp"
-        Me.dgv_equipo_emp.RowHeadersVisible = False
-        Me.dgv_equipo_emp.Size = New System.Drawing.Size(1066, 470)
-        Me.dgv_equipo_emp.TabIndex = 72
-        '
         'pnl_per
         '
         Me.pnl_per.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pnl_per.Controls.Add(Me.dgv_equipo_emp)
         Me.pnl_per.Controls.Add(Me.txt_pass2)
         Me.pnl_per.Controls.Add(Me.Label10)
         Me.pnl_per.Controls.Add(Me.txt_pass)
@@ -310,13 +287,61 @@ Partial Class Administration
         Me.pnl_per.Controls.Add(Me.txt_numero)
         Me.pnl_per.Controls.Add(Me.lbl_num)
         Me.pnl_per.Controls.Add(Me.panel7)
-        Me.pnl_per.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnl_per.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnl_per.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pnl_per.Location = New System.Drawing.Point(2, 2)
         Me.pnl_per.Margin = New System.Windows.Forms.Padding(2)
         Me.pnl_per.Name = "pnl_per"
-        Me.pnl_per.Size = New System.Drawing.Size(1066, 217)
+        Me.pnl_per.Size = New System.Drawing.Size(1066, 664)
         Me.pnl_per.TabIndex = 32
+        '
+        'dgv_equipo_emp
+        '
+        Me.dgv_equipo_emp.AllowUserToAddRows = False
+        Me.dgv_equipo_emp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_equipo_emp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATE, Me.ID_User, Me.UserName, Me.Activo, Me.ID_Emp_US})
+        Me.dgv_equipo_emp.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.dgv_equipo_emp.Location = New System.Drawing.Point(0, 327)
+        Me.dgv_equipo_emp.Name = "dgv_equipo_emp"
+        Me.dgv_equipo_emp.RowHeadersVisible = False
+        Me.dgv_equipo_emp.Size = New System.Drawing.Size(1062, 333)
+        Me.dgv_equipo_emp.TabIndex = 72
+        '
+        'UPDATE
+        '
+        Me.UPDATE.HeaderText = "Baja"
+        Me.UPDATE.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
+        Me.UPDATE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.UPDATE.Name = "UPDATE"
+        '
+        'ID_User
+        '
+        Me.ID_User.DataPropertyName = "ID_User"
+        Me.ID_User.HeaderText = "ID"
+        Me.ID_User.Name = "ID_User"
+        Me.ID_User.Visible = False
+        Me.ID_User.Width = 200
+        '
+        'UserName
+        '
+        Me.UserName.DataPropertyName = "UserName"
+        Me.UserName.HeaderText = "USUARIO"
+        Me.UserName.Name = "UserName"
+        Me.UserName.Width = 500
+        '
+        'Activo
+        '
+        Me.Activo.DataPropertyName = "Activo"
+        Me.Activo.HeaderText = "ESTATUS"
+        Me.Activo.Name = "Activo"
+        Me.Activo.Width = 200
+        '
+        'ID_Emp_US
+        '
+        Me.ID_Emp_US.DataPropertyName = "ID_Emp"
+        Me.ID_Emp_US.HeaderText = "NO EMPLEADO"
+        Me.ID_Emp_US.Name = "ID_Emp_US"
+        Me.ID_Emp_US.Width = 300
         '
         'txt_pass2
         '
@@ -444,9 +469,9 @@ Partial Class Administration
         '
         'SAVE
         '
-        Me.SAVE.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.SAVE.Dock = System.Windows.Forms.DockStyle.Right
         Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.SAVE.Location = New System.Drawing.Point(982, -1)
+        Me.SAVE.Location = New System.Drawing.Point(992, 0)
         Me.SAVE.Name = "SAVE"
         Me.SAVE.Size = New System.Drawing.Size(35, 35)
         Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -467,8 +492,9 @@ Partial Class Administration
         '
         'CANCEL
         '
+        Me.CANCEL.Dock = System.Windows.Forms.DockStyle.Right
         Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(1023, -1)
+        Me.CANCEL.Location = New System.Drawing.Point(1027, 0)
         Me.CANCEL.Name = "CANCEL"
         Me.CANCEL.Size = New System.Drawing.Size(35, 35)
         Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -509,6 +535,41 @@ Partial Class Administration
         Me.DGV_CAT.RowHeadersVisible = False
         Me.DGV_CAT.Size = New System.Drawing.Size(1066, 470)
         Me.DGV_CAT.TabIndex = 74
+        '
+        'UPDATEC
+        '
+        Me.UPDATEC.HeaderText = "Baja"
+        Me.UPDATEC.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
+        Me.UPDATEC.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.UPDATEC.Name = "UPDATEC"
+        '
+        'ID_Cap
+        '
+        Me.ID_Cap.DataPropertyName = "ID_Cap"
+        Me.ID_Cap.HeaderText = "ID"
+        Me.ID_Cap.Name = "ID_Cap"
+        Me.ID_Cap.Visible = False
+        '
+        'CA_Codigo
+        '
+        Me.CA_Codigo.DataPropertyName = "CA_Codigo"
+        Me.CA_Codigo.HeaderText = "CODIGO"
+        Me.CA_Codigo.Name = "CA_Codigo"
+        Me.CA_Codigo.Width = 200
+        '
+        'CA_Desc
+        '
+        Me.CA_Desc.DataPropertyName = "CA_Desc"
+        Me.CA_Desc.HeaderText = "DESCRIPCION"
+        Me.CA_Desc.Name = "CA_Desc"
+        Me.CA_Desc.Width = 700
+        '
+        'CA_Status
+        '
+        Me.CA_Status.DataPropertyName = "CA_Status"
+        Me.CA_Status.HeaderText = "ESTATUS"
+        Me.CA_Status.Name = "CA_Status"
+        Me.CA_Status.Width = 700
         '
         'Panel1
         '
@@ -594,8 +655,9 @@ Partial Class Administration
         '
         'PictureBox1
         '
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
         Me.PictureBox1.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.PictureBox1.Location = New System.Drawing.Point(982, -2)
+        Me.PictureBox1.Location = New System.Drawing.Point(992, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(35, 35)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -604,8 +666,9 @@ Partial Class Administration
         '
         'PictureBox2
         '
+        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Right
         Me.PictureBox2.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.PictureBox2.Location = New System.Drawing.Point(1023, -2)
+        Me.PictureBox2.Location = New System.Drawing.Point(1027, 0)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(35, 35)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -646,6 +709,41 @@ Partial Class Administration
         Me.dgv_depto.RowHeadersVisible = False
         Me.dgv_depto.Size = New System.Drawing.Size(1066, 470)
         Me.dgv_depto.TabIndex = 76
+        '
+        'UPDATED
+        '
+        Me.UPDATED.HeaderText = "Baja"
+        Me.UPDATED.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
+        Me.UPDATED.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.UPDATED.Name = "UPDATED"
+        '
+        'ID_Depto
+        '
+        Me.ID_Depto.DataPropertyName = "ID_Depto"
+        Me.ID_Depto.HeaderText = "ID"
+        Me.ID_Depto.Name = "ID_Depto"
+        Me.ID_Depto.Visible = False
+        '
+        'Codigo
+        '
+        Me.Codigo.DataPropertyName = "Codigo"
+        Me.Codigo.HeaderText = "CODIGO"
+        Me.Codigo.Name = "Codigo"
+        Me.Codigo.Width = 200
+        '
+        'Descripcion
+        '
+        Me.Descripcion.DataPropertyName = "Descripcion"
+        Me.Descripcion.HeaderText = "DESCRIPCION"
+        Me.Descripcion.Name = "Descripcion"
+        Me.Descripcion.Width = 700
+        '
+        'Estatus
+        '
+        Me.Estatus.DataPropertyName = "Estatus"
+        Me.Estatus.HeaderText = "ESTATUS"
+        Me.Estatus.Name = "Estatus"
+        Me.Estatus.Width = 700
         '
         'Panel3
         '
@@ -731,8 +829,9 @@ Partial Class Administration
         '
         'save_cod
         '
+        Me.save_cod.Dock = System.Windows.Forms.DockStyle.Right
         Me.save_cod.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.save_cod.Location = New System.Drawing.Point(982, -1)
+        Me.save_cod.Location = New System.Drawing.Point(992, 0)
         Me.save_cod.Name = "save_cod"
         Me.save_cod.Size = New System.Drawing.Size(35, 35)
         Me.save_cod.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -741,8 +840,9 @@ Partial Class Administration
         '
         'cancel_code
         '
+        Me.cancel_code.Dock = System.Windows.Forms.DockStyle.Right
         Me.cancel_code.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.cancel_code.Location = New System.Drawing.Point(1023, -1)
+        Me.cancel_code.Location = New System.Drawing.Point(1027, 0)
         Me.cancel_code.Name = "cancel_code"
         Me.cancel_code.Size = New System.Drawing.Size(35, 35)
         Me.cancel_code.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -783,6 +883,62 @@ Partial Class Administration
         Me.dgv_eq.RowHeadersVisible = False
         Me.dgv_eq.Size = New System.Drawing.Size(1066, 470)
         Me.dgv_eq.TabIndex = 77
+        '
+        'UPDATEEQ
+        '
+        Me.UPDATEEQ.HeaderText = "Baja"
+        Me.UPDATEEQ.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
+        Me.UPDATEEQ.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.UPDATEEQ.Name = "UPDATEEQ"
+        '
+        'ID_Equipo
+        '
+        Me.ID_Equipo.DataPropertyName = "ID_Equipo"
+        Me.ID_Equipo.HeaderText = "ID"
+        Me.ID_Equipo.Name = "ID_Equipo"
+        Me.ID_Equipo.Visible = False
+        '
+        'Nombre
+        '
+        Me.Nombre.DataPropertyName = "Nombre"
+        Me.Nombre.HeaderText = "CODIGO"
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.Width = 200
+        '
+        'Descripcione
+        '
+        Me.Descripcione.DataPropertyName = "Descripcion"
+        Me.Descripcione.HeaderText = "DESCRIPCION"
+        Me.Descripcione.Name = "Descripcione"
+        Me.Descripcione.Width = 500
+        '
+        'Costo
+        '
+        Me.Costo.DataPropertyName = "Costo"
+        Me.Costo.HeaderText = "COSTO"
+        Me.Costo.Name = "Costo"
+        Me.Costo.Width = 200
+        '
+        'Estatuse
+        '
+        Me.Estatuse.DataPropertyName = "Estatus"
+        Me.Estatuse.HeaderText = "ESTATUS"
+        Me.Estatuse.Name = "Estatuse"
+        '
+        'ID_DeptoC
+        '
+        Me.ID_DeptoC.DataPropertyName = "ID_Depto"
+        Me.ID_DeptoC.HeaderText = "ID_Depto"
+        Me.ID_DeptoC.Name = "ID_DeptoC"
+        Me.ID_DeptoC.Visible = False
+        '
+        'Deptoo
+        '
+        Me.Deptoo.DataPropertyName = "Deptoo"
+        Me.Deptoo.HeaderText = "DEPTO"
+        Me.Deptoo.Name = "Deptoo"
+        Me.Deptoo.Visible = False
+        Me.Deptoo.Width = 200
         '
         'Panel5
         '
@@ -932,8 +1088,9 @@ Partial Class Administration
         '
         'cancel_eq
         '
+        Me.cancel_eq.Dock = System.Windows.Forms.DockStyle.Right
         Me.cancel_eq.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.cancel_eq.Location = New System.Drawing.Point(1023, -3)
+        Me.cancel_eq.Location = New System.Drawing.Point(992, 0)
         Me.cancel_eq.Name = "cancel_eq"
         Me.cancel_eq.Size = New System.Drawing.Size(35, 35)
         Me.cancel_eq.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -942,8 +1099,9 @@ Partial Class Administration
         '
         'save_eq
         '
+        Me.save_eq.Dock = System.Windows.Forms.DockStyle.Right
         Me.save_eq.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.save_eq.Location = New System.Drawing.Point(982, -3)
+        Me.save_eq.Location = New System.Drawing.Point(1027, 0)
         Me.save_eq.Name = "save_eq"
         Me.save_eq.Size = New System.Drawing.Size(35, 35)
         Me.save_eq.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -984,6 +1142,42 @@ Partial Class Administration
         Me.dgv_eval.RowHeadersVisible = False
         Me.dgv_eval.Size = New System.Drawing.Size(1066, 470)
         Me.dgv_eval.TabIndex = 76
+        '
+        'UPDATEE
+        '
+        Me.UPDATEE.HeaderText = "Baja"
+        Me.UPDATEE.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
+        Me.UPDATEE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.UPDATEE.Name = "UPDATEE"
+        '
+        'ID_Evalua
+        '
+        Me.ID_Evalua.DataPropertyName = "ID_Evalua"
+        Me.ID_Evalua.HeaderText = "ID"
+        Me.ID_Evalua.Name = "ID_Evalua"
+        Me.ID_Evalua.Visible = False
+        '
+        'EV_Codigo
+        '
+        Me.EV_Codigo.DataPropertyName = "EV_Codigo"
+        Me.EV_Codigo.HeaderText = "CODIGO"
+        Me.EV_Codigo.Name = "EV_Codigo"
+        Me.EV_Codigo.Width = 200
+        '
+        'EV_Descipcion
+        '
+        Me.EV_Descipcion.DataPropertyName = "EV_Descipcion"
+        Me.EV_Descipcion.HeaderText = "DESCRIPCION"
+        Me.EV_Descipcion.Name = "EV_Descipcion"
+        Me.EV_Descipcion.Width = 700
+        '
+        'EV_Estatus
+        '
+        Me.EV_Estatus.DataPropertyName = "EV_Estatus"
+        Me.EV_Estatus.HeaderText = "ESTATUS"
+        Me.EV_Estatus.Name = "EV_Estatus"
+        Me.EV_Estatus.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.EV_Estatus.Width = 200
         '
         'Panel8
         '
@@ -1069,8 +1263,9 @@ Partial Class Administration
         '
         'SAVE_EVAL
         '
+        Me.SAVE_EVAL.Dock = System.Windows.Forms.DockStyle.Right
         Me.SAVE_EVAL.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.SAVE_EVAL.Location = New System.Drawing.Point(982, -1)
+        Me.SAVE_EVAL.Location = New System.Drawing.Point(992, 0)
         Me.SAVE_EVAL.Name = "SAVE_EVAL"
         Me.SAVE_EVAL.Size = New System.Drawing.Size(35, 35)
         Me.SAVE_EVAL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1079,8 +1274,9 @@ Partial Class Administration
         '
         'CANCEL_EVAL
         '
+        Me.CANCEL_EVAL.Dock = System.Windows.Forms.DockStyle.Right
         Me.CANCEL_EVAL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL_EVAL.Location = New System.Drawing.Point(1023, -1)
+        Me.CANCEL_EVAL.Location = New System.Drawing.Point(1027, 0)
         Me.CANCEL_EVAL.Name = "CANCEL_EVAL"
         Me.CANCEL_EVAL.Size = New System.Drawing.Size(35, 35)
         Me.CANCEL_EVAL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1121,6 +1317,50 @@ Partial Class Administration
         Me.dgv_Puesto.RowHeadersVisible = False
         Me.dgv_Puesto.Size = New System.Drawing.Size(1066, 470)
         Me.dgv_Puesto.TabIndex = 78
+        '
+        'UPDATEPU
+        '
+        Me.UPDATEPU.HeaderText = "Baja"
+        Me.UPDATEPU.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
+        Me.UPDATEPU.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.UPDATEPU.Name = "UPDATEPU"
+        '
+        'ID_Puesto
+        '
+        Me.ID_Puesto.DataPropertyName = "ID_Puesto"
+        Me.ID_Puesto.HeaderText = "ID"
+        Me.ID_Puesto.Name = "ID_Puesto"
+        Me.ID_Puesto.Visible = False
+        '
+        'Nombrep
+        '
+        Me.Nombrep.DataPropertyName = "Nombre"
+        Me.Nombrep.HeaderText = "CODIGO"
+        Me.Nombrep.Name = "Nombrep"
+        Me.Nombrep.Width = 200
+        '
+        'Descripcionp
+        '
+        Me.Descripcionp.DataPropertyName = "Descripcion"
+        Me.Descripcionp.HeaderText = "DESCRIPCION"
+        Me.Descripcionp.Name = "Descripcionp"
+        Me.Descripcionp.Width = 500
+        '
+        'Riesgo
+        '
+        Me.Riesgo.DataPropertyName = "Riesgo"
+        Me.Riesgo.HeaderText = "RIESGO"
+        Me.Riesgo.Name = "Riesgo"
+        Me.Riesgo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Riesgo.Width = 200
+        '
+        'Estatusp
+        '
+        Me.Estatusp.DataPropertyName = "Estatus"
+        Me.Estatusp.HeaderText = "ESTATUS"
+        Me.Estatusp.Name = "Estatusp"
+        Me.Estatusp.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Estatusp.Width = 200
         '
         'Panel10
         '
@@ -1218,8 +1458,9 @@ Partial Class Administration
         '
         'btn_CancelPuesto
         '
+        Me.btn_CancelPuesto.Dock = System.Windows.Forms.DockStyle.Right
         Me.btn_CancelPuesto.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.btn_CancelPuesto.Location = New System.Drawing.Point(1023, -1)
+        Me.btn_CancelPuesto.Location = New System.Drawing.Point(992, 0)
         Me.btn_CancelPuesto.Name = "btn_CancelPuesto"
         Me.btn_CancelPuesto.Size = New System.Drawing.Size(35, 35)
         Me.btn_CancelPuesto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1228,8 +1469,9 @@ Partial Class Administration
         '
         'btn_SavePuesto
         '
+        Me.btn_SavePuesto.Dock = System.Windows.Forms.DockStyle.Right
         Me.btn_SavePuesto.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.btn_SavePuesto.Location = New System.Drawing.Point(982, -1)
+        Me.btn_SavePuesto.Location = New System.Drawing.Point(1027, 0)
         Me.btn_SavePuesto.Name = "btn_SavePuesto"
         Me.btn_SavePuesto.Size = New System.Drawing.Size(35, 35)
         Me.btn_SavePuesto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1270,6 +1512,43 @@ Partial Class Administration
         Me.dgv_super.RowHeadersVisible = False
         Me.dgv_super.Size = New System.Drawing.Size(1066, 470)
         Me.dgv_super.TabIndex = 74
+        '
+        'UPDATESU
+        '
+        Me.UPDATESU.HeaderText = "Baja"
+        Me.UPDATESU.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
+        Me.UPDATESU.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.UPDATESU.Name = "UPDATESU"
+        '
+        'ID_Super
+        '
+        Me.ID_Super.DataPropertyName = "ID_Super"
+        Me.ID_Super.HeaderText = "ID"
+        Me.ID_Super.Name = "ID_Super"
+        Me.ID_Super.Visible = False
+        Me.ID_Super.Width = 200
+        '
+        'ID_Emp
+        '
+        Me.ID_Emp.DataPropertyName = "ID_Emp"
+        Me.ID_Emp.HeaderText = "NO.EMPLEADO"
+        Me.ID_Emp.Name = "ID_Emp"
+        Me.ID_Emp.Width = 200
+        '
+        'Name
+        '
+        Me.Name.DataPropertyName = "Name"
+        Me.Name.HeaderText = "NOMBRE"
+        Me.Name.Name = "Name"
+        Me.Name.Width = 600
+        '
+        'ActivoS
+        '
+        Me.ActivoS.DataPropertyName = "Activo"
+        Me.ActivoS.HeaderText = "ESTATUS"
+        Me.ActivoS.Name = "ActivoS"
+        Me.ActivoS.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ActivoS.Width = 200
         '
         'Panel12
         '
@@ -1354,9 +1633,9 @@ Partial Class Administration
         '
         'btn_savesuper
         '
-        Me.btn_savesuper.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btn_savesuper.Dock = System.Windows.Forms.DockStyle.Right
         Me.btn_savesuper.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.btn_savesuper.Location = New System.Drawing.Point(979, -1)
+        Me.btn_savesuper.Location = New System.Drawing.Point(992, 0)
         Me.btn_savesuper.Name = "btn_savesuper"
         Me.btn_savesuper.Size = New System.Drawing.Size(35, 35)
         Me.btn_savesuper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1377,8 +1656,9 @@ Partial Class Administration
         '
         'btn_cancelsuper
         '
+        Me.btn_cancelsuper.Dock = System.Windows.Forms.DockStyle.Right
         Me.btn_cancelsuper.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.btn_cancelsuper.Location = New System.Drawing.Point(1020, -1)
+        Me.btn_cancelsuper.Location = New System.Drawing.Point(1027, 0)
         Me.btn_cancelsuper.Name = "btn_cancelsuper"
         Me.btn_cancelsuper.Size = New System.Drawing.Size(35, 35)
         Me.btn_cancelsuper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1419,6 +1699,43 @@ Partial Class Administration
         Me.dgv_te.RowHeadersVisible = False
         Me.dgv_te.Size = New System.Drawing.Size(1066, 470)
         Me.dgv_te.TabIndex = 80
+        '
+        'UPDATETE
+        '
+        Me.UPDATETE.HeaderText = "Baja"
+        Me.UPDATETE.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
+        Me.UPDATETE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.UPDATETE.Name = "UPDATETE"
+        '
+        'ID_TE
+        '
+        Me.ID_TE.DataPropertyName = "ID_TE"
+        Me.ID_TE.HeaderText = "ID"
+        Me.ID_TE.Name = "ID_TE"
+        Me.ID_TE.Visible = False
+        '
+        'Codigote
+        '
+        Me.Codigote.DataPropertyName = "Codigo"
+        Me.Codigote.HeaderText = "CODIGO"
+        Me.Codigote.Name = "Codigote"
+        Me.Codigote.Width = 200
+        '
+        'Descripcionte
+        '
+        Me.Descripcionte.DataPropertyName = "Descripcion"
+        Me.Descripcionte.HeaderText = "DESCRIPCION"
+        Me.Descripcionte.Name = "Descripcionte"
+        Me.Descripcionte.Width = 700
+        '
+        'Estatuste
+        '
+        Me.Estatuste.DataPropertyName = "Estatus"
+        Me.Estatuste.HeaderText = "ESTATUS"
+        Me.Estatuste.Name = "Estatuste"
+        Me.Estatuste.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Estatuste.Visible = False
+        Me.Estatuste.Width = 200
         '
         'Panel14
         '
@@ -1504,8 +1821,9 @@ Partial Class Administration
         '
         'pb_saveTE
         '
+        Me.pb_saveTE.Dock = System.Windows.Forms.DockStyle.Right
         Me.pb_saveTE.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.pb_saveTE.Location = New System.Drawing.Point(982, -2)
+        Me.pb_saveTE.Location = New System.Drawing.Point(992, 0)
         Me.pb_saveTE.Name = "pb_saveTE"
         Me.pb_saveTE.Size = New System.Drawing.Size(35, 35)
         Me.pb_saveTE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1514,329 +1832,14 @@ Partial Class Administration
         '
         'pb_cancelTE
         '
+        Me.pb_cancelTE.Dock = System.Windows.Forms.DockStyle.Right
         Me.pb_cancelTE.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.pb_cancelTE.Location = New System.Drawing.Point(1023, -2)
+        Me.pb_cancelTE.Location = New System.Drawing.Point(1027, 0)
         Me.pb_cancelTE.Name = "pb_cancelTE"
         Me.pb_cancelTE.Size = New System.Drawing.Size(35, 35)
         Me.pb_cancelTE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pb_cancelTE.TabIndex = 93
         Me.pb_cancelTE.TabStop = False
-        '
-        'UPDATE
-        '
-        Me.UPDATE.HeaderText = "Baja"
-        Me.UPDATE.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
-        Me.UPDATE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.UPDATE.Name = "UPDATE"
-        '
-        'ID_User
-        '
-        Me.ID_User.DataPropertyName = "ID_User"
-        Me.ID_User.HeaderText = "ID"
-        Me.ID_User.Name = "ID_User"
-        Me.ID_User.Visible = False
-        Me.ID_User.Width = 200
-        '
-        'UserName
-        '
-        Me.UserName.DataPropertyName = "UserName"
-        Me.UserName.HeaderText = "USUARIO"
-        Me.UserName.Name = "UserName"
-        Me.UserName.Width = 500
-        '
-        'Activo
-        '
-        Me.Activo.DataPropertyName = "Activo"
-        Me.Activo.HeaderText = "ESTATUS"
-        Me.Activo.Name = "Activo"
-        Me.Activo.Width = 200
-        '
-        'ID_Emp_US
-        '
-        Me.ID_Emp_US.DataPropertyName = "ID_Emp"
-        Me.ID_Emp_US.HeaderText = "NO EMPLEADO"
-        Me.ID_Emp_US.Name = "ID_Emp_US"
-        Me.ID_Emp_US.Width = 300
-        '
-        'UPDATEC
-        '
-        Me.UPDATEC.HeaderText = "Baja"
-        Me.UPDATEC.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
-        Me.UPDATEC.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.UPDATEC.Name = "UPDATEC"
-        '
-        'ID_Cap
-        '
-        Me.ID_Cap.DataPropertyName = "ID_Cap"
-        Me.ID_Cap.HeaderText = "ID"
-        Me.ID_Cap.Name = "ID_Cap"
-        Me.ID_Cap.Visible = False
-        '
-        'CA_Codigo
-        '
-        Me.CA_Codigo.DataPropertyName = "CA_Codigo"
-        Me.CA_Codigo.HeaderText = "CODIGO"
-        Me.CA_Codigo.Name = "CA_Codigo"
-        Me.CA_Codigo.Width = 200
-        '
-        'CA_Desc
-        '
-        Me.CA_Desc.DataPropertyName = "CA_Desc"
-        Me.CA_Desc.HeaderText = "DESCRIPCION"
-        Me.CA_Desc.Name = "CA_Desc"
-        Me.CA_Desc.Width = 700
-        '
-        'CA_Status
-        '
-        Me.CA_Status.DataPropertyName = "CA_Status"
-        Me.CA_Status.HeaderText = "ESTATUS"
-        Me.CA_Status.Name = "CA_Status"
-        Me.CA_Status.Width = 700
-        '
-        'UPDATED
-        '
-        Me.UPDATED.HeaderText = "Baja"
-        Me.UPDATED.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
-        Me.UPDATED.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.UPDATED.Name = "UPDATED"
-        '
-        'ID_Depto
-        '
-        Me.ID_Depto.DataPropertyName = "ID_Depto"
-        Me.ID_Depto.HeaderText = "ID"
-        Me.ID_Depto.Name = "ID_Depto"
-        Me.ID_Depto.Visible = False
-        '
-        'Codigo
-        '
-        Me.Codigo.DataPropertyName = "Codigo"
-        Me.Codigo.HeaderText = "CODIGO"
-        Me.Codigo.Name = "Codigo"
-        Me.Codigo.Width = 200
-        '
-        'Descripcion
-        '
-        Me.Descripcion.DataPropertyName = "Descripcion"
-        Me.Descripcion.HeaderText = "DESCRIPCION"
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.Width = 700
-        '
-        'Estatus
-        '
-        Me.Estatus.DataPropertyName = "Estatus"
-        Me.Estatus.HeaderText = "ESTATUS"
-        Me.Estatus.Name = "Estatus"
-        Me.Estatus.Width = 700
-        '
-        'UPDATEEQ
-        '
-        Me.UPDATEEQ.HeaderText = "Baja"
-        Me.UPDATEEQ.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
-        Me.UPDATEEQ.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.UPDATEEQ.Name = "UPDATEEQ"
-        '
-        'ID_Equipo
-        '
-        Me.ID_Equipo.DataPropertyName = "ID_Equipo"
-        Me.ID_Equipo.HeaderText = "ID"
-        Me.ID_Equipo.Name = "ID_Equipo"
-        Me.ID_Equipo.Visible = False
-        '
-        'Nombre
-        '
-        Me.Nombre.DataPropertyName = "Nombre"
-        Me.Nombre.HeaderText = "CODIGO"
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.Width = 200
-        '
-        'Descripcione
-        '
-        Me.Descripcione.DataPropertyName = "Descripcion"
-        Me.Descripcione.HeaderText = "DESCRIPCION"
-        Me.Descripcione.Name = "Descripcione"
-        Me.Descripcione.Width = 500
-        '
-        'Costo
-        '
-        Me.Costo.DataPropertyName = "Costo"
-        Me.Costo.HeaderText = "COSTO"
-        Me.Costo.Name = "Costo"
-        Me.Costo.Width = 200
-        '
-        'Estatuse
-        '
-        Me.Estatuse.DataPropertyName = "Estatus"
-        Me.Estatuse.HeaderText = "ESTATUS"
-        Me.Estatuse.Name = "Estatuse"
-        '
-        'ID_DeptoC
-        '
-        Me.ID_DeptoC.DataPropertyName = "ID_Depto"
-        Me.ID_DeptoC.HeaderText = "ID_Depto"
-        Me.ID_DeptoC.Name = "ID_DeptoC"
-        Me.ID_DeptoC.Visible = False
-        '
-        'Deptoo
-        '
-        Me.Deptoo.DataPropertyName = "Deptoo"
-        Me.Deptoo.HeaderText = "DEPTO"
-        Me.Deptoo.Name = "Deptoo"
-        Me.Deptoo.Visible = False
-        Me.Deptoo.Width = 200
-        '
-        'UPDATEE
-        '
-        Me.UPDATEE.HeaderText = "Baja"
-        Me.UPDATEE.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
-        Me.UPDATEE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.UPDATEE.Name = "UPDATEE"
-        '
-        'ID_Evalua
-        '
-        Me.ID_Evalua.DataPropertyName = "ID_Evalua"
-        Me.ID_Evalua.HeaderText = "ID"
-        Me.ID_Evalua.Name = "ID_Evalua"
-        Me.ID_Evalua.Visible = False
-        '
-        'EV_Codigo
-        '
-        Me.EV_Codigo.DataPropertyName = "EV_Codigo"
-        Me.EV_Codigo.HeaderText = "CODIGO"
-        Me.EV_Codigo.Name = "EV_Codigo"
-        Me.EV_Codigo.Width = 200
-        '
-        'EV_Descipcion
-        '
-        Me.EV_Descipcion.DataPropertyName = "EV_Descipcion"
-        Me.EV_Descipcion.HeaderText = "DESCRIPCION"
-        Me.EV_Descipcion.Name = "EV_Descipcion"
-        Me.EV_Descipcion.Width = 700
-        '
-        'EV_Estatus
-        '
-        Me.EV_Estatus.DataPropertyName = "EV_Estatus"
-        Me.EV_Estatus.HeaderText = "ESTATUS"
-        Me.EV_Estatus.Name = "EV_Estatus"
-        Me.EV_Estatus.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.EV_Estatus.Width = 200
-        '
-        'UPDATEPU
-        '
-        Me.UPDATEPU.HeaderText = "Baja"
-        Me.UPDATEPU.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
-        Me.UPDATEPU.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.UPDATEPU.Name = "UPDATEPU"
-        '
-        'ID_Puesto
-        '
-        Me.ID_Puesto.DataPropertyName = "ID_Puesto"
-        Me.ID_Puesto.HeaderText = "ID"
-        Me.ID_Puesto.Name = "ID_Puesto"
-        Me.ID_Puesto.Visible = False
-        '
-        'Nombrep
-        '
-        Me.Nombrep.DataPropertyName = "Nombre"
-        Me.Nombrep.HeaderText = "CODIGO"
-        Me.Nombrep.Name = "Nombrep"
-        Me.Nombrep.Width = 200
-        '
-        'Descripcionp
-        '
-        Me.Descripcionp.DataPropertyName = "Descripcion"
-        Me.Descripcionp.HeaderText = "DESCRIPCION"
-        Me.Descripcionp.Name = "Descripcionp"
-        Me.Descripcionp.Width = 500
-        '
-        'Riesgo
-        '
-        Me.Riesgo.DataPropertyName = "Riesgo"
-        Me.Riesgo.HeaderText = "RIESGO"
-        Me.Riesgo.Name = "Riesgo"
-        Me.Riesgo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Riesgo.Width = 200
-        '
-        'Estatusp
-        '
-        Me.Estatusp.DataPropertyName = "Estatus"
-        Me.Estatusp.HeaderText = "ESTATUS"
-        Me.Estatusp.Name = "Estatusp"
-        Me.Estatusp.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Estatusp.Width = 200
-        '
-        'UPDATESU
-        '
-        Me.UPDATESU.HeaderText = "Baja"
-        Me.UPDATESU.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
-        Me.UPDATESU.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.UPDATESU.Name = "UPDATESU"
-        '
-        'ID_Super
-        '
-        Me.ID_Super.DataPropertyName = "ID_Super"
-        Me.ID_Super.HeaderText = "ID"
-        Me.ID_Super.Name = "ID_Super"
-        Me.ID_Super.Visible = False
-        Me.ID_Super.Width = 200
-        '
-        'ID_Emp
-        '
-        Me.ID_Emp.DataPropertyName = "ID_Emp"
-        Me.ID_Emp.HeaderText = "NO.EMPLEADO"
-        Me.ID_Emp.Name = "ID_Emp"
-        Me.ID_Emp.Width = 200
-        '
-        'Name
-        '
-        Me.Name.DataPropertyName = "Name"
-        Me.Name.HeaderText = "NOMBRE"
-        Me.Name.Name = "Name"
-        Me.Name.Width = 600
-        '
-        'ActivoS
-        '
-        Me.ActivoS.DataPropertyName = "Activo"
-        Me.ActivoS.HeaderText = "ESTATUS"
-        Me.ActivoS.Name = "ActivoS"
-        Me.ActivoS.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ActivoS.Width = 200
-        '
-        'UPDATETE
-        '
-        Me.UPDATETE.HeaderText = "Baja"
-        Me.UPDATETE.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
-        Me.UPDATETE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.UPDATETE.Name = "UPDATETE"
-        '
-        'ID_TE
-        '
-        Me.ID_TE.DataPropertyName = "ID_TE"
-        Me.ID_TE.HeaderText = "ID"
-        Me.ID_TE.Name = "ID_TE"
-        Me.ID_TE.Visible = False
-        '
-        'Codigote
-        '
-        Me.Codigote.DataPropertyName = "Codigo"
-        Me.Codigote.HeaderText = "CODIGO"
-        Me.Codigote.Name = "Codigote"
-        Me.Codigote.Width = 200
-        '
-        'Descripcionte
-        '
-        Me.Descripcionte.DataPropertyName = "Descripcion"
-        Me.Descripcionte.HeaderText = "DESCRIPCION"
-        Me.Descripcionte.Name = "Descripcionte"
-        Me.Descripcionte.Width = 700
-        '
-        'Estatuste
-        '
-        Me.Estatuste.DataPropertyName = "Estatus"
-        Me.Estatuste.HeaderText = "ESTATUS"
-        Me.Estatuste.Name = "Estatuste"
-        Me.Estatuste.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Estatuste.Visible = False
-        Me.Estatuste.Width = 200
         '
         'Administration
         '
@@ -1844,14 +1847,14 @@ Partial Class Administration
         Me.ClientSize = New System.Drawing.Size(1078, 699)
         Me.Controls.Add(Me.tab_admin)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Name = "Administration"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Admin"
         Me.tab_admin.ResumeLayout(False)
         Me.tab_users.ResumeLayout(False)
-        Me.PnlUser.ResumeLayout(False)
-        CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_per.ResumeLayout(False)
         Me.pnl_per.PerformLayout()
+        CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel7.ResumeLayout(False)
         Me.panel7.PerformLayout()
@@ -2035,7 +2038,6 @@ Partial Class Administration
     Friend WithEvents PnlPuesto As Panel
     Friend WithEvents PnlSupervisores As Panel
     Friend WithEvents PnlTipoEmpleados As Panel
-    Friend WithEvents PnlUser As Panel
     Friend WithEvents pbSearchDpto As PictureBox
     Friend WithEvents txtDpto As TextBox
     Friend WithEvents Label1 As Label

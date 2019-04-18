@@ -188,8 +188,9 @@ Partial Class Equipo
         '
         'pb_Report
         '
+        Me.pb_Report.Dock = System.Windows.Forms.DockStyle.Right
         Me.pb_Report.Image = Global.AdminEmpleados.My.Resources.Resources.AssignedTools_80px
-        Me.pb_Report.Location = New System.Drawing.Point(942, -2)
+        Me.pb_Report.Location = New System.Drawing.Point(969, 0)
         Me.pb_Report.Name = "pb_Report"
         Me.pb_Report.Size = New System.Drawing.Size(35, 35)
         Me.pb_Report.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -198,8 +199,9 @@ Partial Class Equipo
         '
         'CANCEL
         '
+        Me.CANCEL.Dock = System.Windows.Forms.DockStyle.Right
         Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(1024, -3)
+        Me.CANCEL.Location = New System.Drawing.Point(1004, 0)
         Me.CANCEL.Name = "CANCEL"
         Me.CANCEL.Size = New System.Drawing.Size(35, 35)
         Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -208,8 +210,9 @@ Partial Class Equipo
         '
         'SAVE
         '
+        Me.SAVE.Dock = System.Windows.Forms.DockStyle.Right
         Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Tools_80px
-        Me.SAVE.Location = New System.Drawing.Point(983, -3)
+        Me.SAVE.Location = New System.Drawing.Point(1039, 0)
         Me.SAVE.Name = "SAVE"
         Me.SAVE.Size = New System.Drawing.Size(35, 35)
         Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

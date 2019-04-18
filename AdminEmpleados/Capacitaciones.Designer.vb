@@ -24,7 +24,6 @@ Partial Class Capacitaciones
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Capacitaciones))
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dgv_equipo_Eval = New System.Windows.Forms.DataGridView()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel14 = New System.Windows.Forms.Panel()
@@ -51,7 +50,6 @@ Partial Class Capacitaciones
         Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Comentario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel1.SuspendLayout()
         CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel14.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -61,17 +59,6 @@ Partial Class Capacitaciones
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.dgv_equipo_Eval)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!)
-        Me.Panel1.Location = New System.Drawing.Point(0, 287)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1078, 412)
-        Me.Panel1.TabIndex = 1
-        '
         'dgv_equipo_Eval
         '
         Me.dgv_equipo_Eval.AllowUserToAddRows = False
@@ -79,11 +66,11 @@ Partial Class Capacitaciones
         Me.dgv_equipo_Eval.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_equipo_Eval.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_equipo_Eval.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DELETE, Me.ID_Cap_Emp, Me.ID_Cap, Me.ID_Emp, Me.Fecha, Me.Comentario})
-        Me.dgv_equipo_Eval.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgv_equipo_Eval.Location = New System.Drawing.Point(0, 0)
+        Me.dgv_equipo_Eval.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.dgv_equipo_Eval.Location = New System.Drawing.Point(0, 388)
         Me.dgv_equipo_Eval.Name = "dgv_equipo_Eval"
         Me.dgv_equipo_Eval.RowHeadersVisible = False
-        Me.dgv_equipo_Eval.Size = New System.Drawing.Size(1078, 412)
+        Me.dgv_equipo_Eval.Size = New System.Drawing.Size(1078, 311)
         Me.dgv_equipo_Eval.TabIndex = 0
         '
         'DataGridViewImageColumn1
@@ -94,6 +81,7 @@ Partial Class Capacitaciones
         '
         'Panel14
         '
+        Me.Panel14.Controls.Add(Me.dgv_equipo_Eval)
         Me.Panel14.Controls.Add(Me.lbl_ingreso)
         Me.Panel14.Controls.Add(Me.TXT_FECHA)
         Me.Panel14.Controls.Add(Me.Panel2)
@@ -108,12 +96,12 @@ Partial Class Capacitaciones
         Me.Panel14.Controls.Add(Me.buscar_EN)
         Me.Panel14.Controls.Add(Me.Label92)
         Me.Panel14.Controls.Add(Me.lbl_emp)
-        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel14.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
         Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(1078, 282)
+        Me.Panel14.Size = New System.Drawing.Size(1078, 699)
         Me.Panel14.TabIndex = 0
         '
         'lbl_ingreso
@@ -164,8 +152,9 @@ Partial Class Capacitaciones
         'SAVE
         '
         Me.SAVE.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SAVE.Dock = System.Windows.Forms.DockStyle.Right
         Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Training_80px
-        Me.SAVE.Location = New System.Drawing.Point(1031, 0)
+        Me.SAVE.Location = New System.Drawing.Point(1008, 0)
         Me.SAVE.Name = "SAVE"
         Me.SAVE.Size = New System.Drawing.Size(35, 35)
         Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -175,8 +164,9 @@ Partial Class Capacitaciones
         'CANCEL
         '
         Me.CANCEL.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CANCEL.Dock = System.Windows.Forms.DockStyle.Right
         Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(1092, 0)
+        Me.CANCEL.Location = New System.Drawing.Point(1043, 0)
         Me.CANCEL.Name = "CANCEL"
         Me.CANCEL.Size = New System.Drawing.Size(35, 35)
         Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -343,12 +333,10 @@ Partial Class Capacitaciones
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1078, 699)
         Me.Controls.Add(Me.Panel14)
-        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Capacitaciones"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Capacitaciones"
-        Me.Panel1.ResumeLayout(False)
         CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
@@ -361,8 +349,6 @@ Partial Class Capacitaciones
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents dgv_equipo_Eval As DataGridView
     Private WithEvents Panel14 As Panel
