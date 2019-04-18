@@ -355,7 +355,7 @@ Partial Class Administration
         'txt_pass2
         '
         Me.txt_pass2.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.txt_pass2.Location = New System.Drawing.Point(197, 147)
+        Me.txt_pass2.Location = New System.Drawing.Point(223, 147)
         Me.txt_pass2.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_pass2.Name = "txt_pass2"
         Me.txt_pass2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -375,7 +375,7 @@ Partial Class Administration
         'txt_pass
         '
         Me.txt_pass.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.txt_pass.Location = New System.Drawing.Point(197, 118)
+        Me.txt_pass.Location = New System.Drawing.Point(223, 118)
         Me.txt_pass.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_pass.Name = "txt_pass"
         Me.txt_pass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -386,7 +386,7 @@ Partial Class Administration
         '
         Me.txt_user.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_user.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.txt_user.Location = New System.Drawing.Point(196, 89)
+        Me.txt_user.Location = New System.Drawing.Point(222, 89)
         Me.txt_user.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_user.Name = "txt_user"
         Me.txt_user.Size = New System.Drawing.Size(252, 25)
@@ -417,7 +417,7 @@ Partial Class Administration
         Me.lbl_emp.AutoSize = True
         Me.lbl_emp.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.lbl_emp.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.lbl_emp.Location = New System.Drawing.Point(535, 62)
+        Me.lbl_emp.Location = New System.Drawing.Point(561, 62)
         Me.lbl_emp.Name = "lbl_emp"
         Me.lbl_emp.Size = New System.Drawing.Size(0, 18)
         Me.lbl_emp.TabIndex = 86
@@ -427,7 +427,7 @@ Partial Class Administration
         Me.Empleado.AutoSize = True
         Me.Empleado.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
         Me.Empleado.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Empleado.Location = New System.Drawing.Point(454, 62)
+        Me.Empleado.Location = New System.Drawing.Point(480, 62)
         Me.Empleado.Name = "Empleado"
         Me.Empleado.Size = New System.Drawing.Size(67, 18)
         Me.Empleado.TabIndex = 85
@@ -437,7 +437,7 @@ Partial Class Administration
         '
         Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
         Me.buscar_EN.Image = CType(resources.GetObject("buscar_EN.Image"), System.Drawing.Image)
-        Me.buscar_EN.Location = New System.Drawing.Point(423, 59)
+        Me.buscar_EN.Location = New System.Drawing.Point(449, 59)
         Me.buscar_EN.Name = "buscar_EN"
         Me.buscar_EN.Size = New System.Drawing.Size(25, 25)
         Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -447,7 +447,7 @@ Partial Class Administration
         'txt_numero
         '
         Me.txt_numero.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.txt_numero.Location = New System.Drawing.Point(197, 59)
+        Me.txt_numero.Location = New System.Drawing.Point(223, 59)
         Me.txt_numero.Name = "txt_numero"
         Me.txt_numero.Size = New System.Drawing.Size(216, 25)
         Me.txt_numero.TabIndex = 0
@@ -597,7 +597,7 @@ Partial Class Administration
         '
         Me.TXT_CAP_DESC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TXT_CAP_DESC.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.TXT_CAP_DESC.Location = New System.Drawing.Point(439, 62)
+        Me.TXT_CAP_DESC.Location = New System.Drawing.Point(458, 62)
         Me.TXT_CAP_DESC.Margin = New System.Windows.Forms.Padding(2)
         Me.TXT_CAP_DESC.Name = "TXT_CAP_DESC"
         Me.TXT_CAP_DESC.Size = New System.Drawing.Size(252, 25)
@@ -607,7 +607,7 @@ Partial Class Administration
         '
         Me.TXT_CAPCODIGO.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TXT_CAPCODIGO.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.TXT_CAPCODIGO.Location = New System.Drawing.Point(89, 62)
+        Me.TXT_CAPCODIGO.Location = New System.Drawing.Point(96, 62)
         Me.TXT_CAPCODIGO.Margin = New System.Windows.Forms.Padding(2)
         Me.TXT_CAPCODIGO.Name = "TXT_CAPCODIGO"
         Me.TXT_CAPCODIGO.Size = New System.Drawing.Size(252, 25)
@@ -617,7 +617,7 @@ Partial Class Administration
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.Label15.Location = New System.Drawing.Point(346, 65)
+        Me.Label15.Location = New System.Drawing.Point(353, 65)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(88, 18)
         Me.Label15.TabIndex = 88

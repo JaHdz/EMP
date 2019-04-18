@@ -291,6 +291,31 @@ Partial Class Empleados
         Me.txt_baja = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.pnl_cont = New System.Windows.Forms.Panel()
+        Me.buscar_depto = New System.Windows.Forms.PictureBox()
+        Me.depto = New System.Windows.Forms.TextBox()
+        Me.depto2 = New System.Windows.Forms.TextBox()
+        Me.Buscar_PUESTO = New System.Windows.Forms.PictureBox()
+        Me.panel11 = New System.Windows.Forms.Panel()
+        Me.label14 = New System.Windows.Forms.Label()
+        Me.Buscar_tipo = New System.Windows.Forms.PictureBox()
+        Me.lbl_ingreso = New System.Windows.Forms.Label()
+        Me.Txt_correo = New System.Windows.Forms.TextBox()
+        Me.lbl_clase = New System.Windows.Forms.Label()
+        Me.txt_tipo2 = New System.Windows.Forms.TextBox()
+        Me.lbl_super = New System.Windows.Forms.Label()
+        Me.correo = New System.Windows.Forms.Label()
+        Me.txt_SALARY = New System.Windows.Forms.TextBox()
+        Me.lbl_puesto = New System.Windows.Forms.Label()
+        Me.txt_tipo = New System.Windows.Forms.TextBox()
+        Me.lbl_sali = New System.Windows.Forms.Label()
+        Me.txt_FECHAINGRESO = New System.Windows.Forms.DateTimePicker()
+        Me.Buscar_Super = New System.Windows.Forms.PictureBox()
+        Me.txt_PUESTO = New System.Windows.Forms.TextBox()
+        Me.txt_PUESTO2 = New System.Windows.Forms.TextBox()
+        Me.txt_SUPER2 = New System.Windows.Forms.TextBox()
+        Me.txt_SUPER = New System.Windows.Forms.TextBox()
+        Me.lbl_depto = New System.Windows.Forms.Label()
         Me.pnl_per = New System.Windows.Forms.Panel()
         Me.txtCdDomicilio = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -346,31 +371,6 @@ Partial Class Empleados
         Me.MenuEmp = New System.Windows.Forms.TabControl()
         Me.BwEmpleados = New System.ComponentModel.BackgroundWorker()
         Me.datosFamiliaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.lbl_depto = New System.Windows.Forms.Label()
-        Me.txt_SUPER = New System.Windows.Forms.TextBox()
-        Me.txt_SUPER2 = New System.Windows.Forms.TextBox()
-        Me.txt_PUESTO2 = New System.Windows.Forms.TextBox()
-        Me.txt_PUESTO = New System.Windows.Forms.TextBox()
-        Me.Buscar_Super = New System.Windows.Forms.PictureBox()
-        Me.txt_FECHAINGRESO = New System.Windows.Forms.DateTimePicker()
-        Me.lbl_sali = New System.Windows.Forms.Label()
-        Me.txt_tipo = New System.Windows.Forms.TextBox()
-        Me.lbl_puesto = New System.Windows.Forms.Label()
-        Me.txt_SALARY = New System.Windows.Forms.TextBox()
-        Me.correo = New System.Windows.Forms.Label()
-        Me.lbl_super = New System.Windows.Forms.Label()
-        Me.txt_tipo2 = New System.Windows.Forms.TextBox()
-        Me.lbl_clase = New System.Windows.Forms.Label()
-        Me.Txt_correo = New System.Windows.Forms.TextBox()
-        Me.lbl_ingreso = New System.Windows.Forms.Label()
-        Me.Buscar_tipo = New System.Windows.Forms.PictureBox()
-        Me.panel11 = New System.Windows.Forms.Panel()
-        Me.label14 = New System.Windows.Forms.Label()
-        Me.Buscar_PUESTO = New System.Windows.Forms.PictureBox()
-        Me.depto2 = New System.Windows.Forms.TextBox()
-        Me.depto = New System.Windows.Forms.TextBox()
-        Me.buscar_depto = New System.Windows.Forms.PictureBox()
-        Me.pnl_cont = New System.Windows.Forms.Panel()
         Me.Tam_Es.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.btn_SERPT, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -433,6 +433,12 @@ Partial Class Empleados
         Me.GroupBox1.SuspendLayout()
         Me.panel13.SuspendLayout()
         CType(Me.PbOptions, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_cont.SuspendLayout()
+        CType(Me.buscar_depto, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Buscar_PUESTO, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panel11.SuspendLayout()
+        CType(Me.Buscar_tipo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Buscar_Super, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_per.SuspendLayout()
         CType(Me.PbSearchEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_ciudad, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -443,12 +449,6 @@ Partial Class Empleados
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuEmp.SuspendLayout()
         CType(Me.datosFamiliaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Buscar_Super, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Buscar_tipo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.panel11.SuspendLayout()
-        CType(Me.Buscar_PUESTO, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.buscar_depto, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnl_cont.SuspendLayout()
         Me.SuspendLayout()
         '
         'OpenFileDialog1
@@ -3181,6 +3181,279 @@ Partial Class Empleados
         Me.Label7.TabIndex = 2
         Me.Label7.Text = "Fecha de Baja: "
         '
+        'pnl_cont
+        '
+        Me.pnl_cont.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pnl_cont.Controls.Add(Me.buscar_depto)
+        Me.pnl_cont.Controls.Add(Me.depto)
+        Me.pnl_cont.Controls.Add(Me.depto2)
+        Me.pnl_cont.Controls.Add(Me.Buscar_PUESTO)
+        Me.pnl_cont.Controls.Add(Me.panel11)
+        Me.pnl_cont.Controls.Add(Me.Buscar_tipo)
+        Me.pnl_cont.Controls.Add(Me.lbl_ingreso)
+        Me.pnl_cont.Controls.Add(Me.Txt_correo)
+        Me.pnl_cont.Controls.Add(Me.lbl_clase)
+        Me.pnl_cont.Controls.Add(Me.txt_tipo2)
+        Me.pnl_cont.Controls.Add(Me.lbl_super)
+        Me.pnl_cont.Controls.Add(Me.correo)
+        Me.pnl_cont.Controls.Add(Me.txt_SALARY)
+        Me.pnl_cont.Controls.Add(Me.lbl_puesto)
+        Me.pnl_cont.Controls.Add(Me.txt_tipo)
+        Me.pnl_cont.Controls.Add(Me.lbl_sali)
+        Me.pnl_cont.Controls.Add(Me.txt_FECHAINGRESO)
+        Me.pnl_cont.Controls.Add(Me.Buscar_Super)
+        Me.pnl_cont.Controls.Add(Me.txt_PUESTO)
+        Me.pnl_cont.Controls.Add(Me.txt_PUESTO2)
+        Me.pnl_cont.Controls.Add(Me.txt_SUPER2)
+        Me.pnl_cont.Controls.Add(Me.txt_SUPER)
+        Me.pnl_cont.Controls.Add(Me.lbl_depto)
+        Me.pnl_cont.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pnl_cont.Location = New System.Drawing.Point(2, 359)
+        Me.pnl_cont.Margin = New System.Windows.Forms.Padding(2)
+        Me.pnl_cont.Name = "pnl_cont"
+        Me.pnl_cont.Size = New System.Drawing.Size(1068, 134)
+        Me.pnl_cont.TabIndex = 1
+        '
+        'buscar_depto
+        '
+        Me.buscar_depto.BackgroundImage = CType(resources.GetObject("buscar_depto.BackgroundImage"), System.Drawing.Image)
+        Me.buscar_depto.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.buscar_depto.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.buscar_depto.Location = New System.Drawing.Point(1001, 40)
+        Me.buscar_depto.Name = "buscar_depto"
+        Me.buscar_depto.Size = New System.Drawing.Size(25, 25)
+        Me.buscar_depto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.buscar_depto.TabIndex = 60
+        Me.buscar_depto.TabStop = False
+        '
+        'depto
+        '
+        Me.depto.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.depto.Location = New System.Drawing.Point(747, 40)
+        Me.depto.Name = "depto"
+        Me.depto.Size = New System.Drawing.Size(1, 25)
+        Me.depto.TabIndex = 7
+        '
+        'depto2
+        '
+        Me.depto2.Enabled = False
+        Me.depto2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.depto2.Location = New System.Drawing.Point(788, 40)
+        Me.depto2.Name = "depto2"
+        Me.depto2.Size = New System.Drawing.Size(213, 25)
+        Me.depto2.TabIndex = 3
+        Me.depto2.TabStop = False
+        '
+        'Buscar_PUESTO
+        '
+        Me.Buscar_PUESTO.BackgroundImage = CType(resources.GetObject("Buscar_PUESTO.BackgroundImage"), System.Drawing.Image)
+        Me.Buscar_PUESTO.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Buscar_PUESTO.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.Buscar_PUESTO.Location = New System.Drawing.Point(670, 40)
+        Me.Buscar_PUESTO.Name = "Buscar_PUESTO"
+        Me.Buscar_PUESTO.Size = New System.Drawing.Size(25, 25)
+        Me.Buscar_PUESTO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Buscar_PUESTO.TabIndex = 57
+        Me.Buscar_PUESTO.TabStop = False
+        '
+        'panel11
+        '
+        Me.panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.panel11.Controls.Add(Me.label14)
+        Me.panel11.Dock = System.Windows.Forms.DockStyle.Top
+        Me.panel11.Location = New System.Drawing.Point(0, 0)
+        Me.panel11.Margin = New System.Windows.Forms.Padding(2)
+        Me.panel11.Name = "panel11"
+        Me.panel11.Size = New System.Drawing.Size(1064, 35)
+        Me.panel11.TabIndex = 0
+        '
+        'label14
+        '
+        Me.label14.AutoSize = True
+        Me.label14.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label14.ForeColor = System.Drawing.Color.White
+        Me.label14.Location = New System.Drawing.Point(2, 6)
+        Me.label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.label14.Name = "label14"
+        Me.label14.Size = New System.Drawing.Size(109, 21)
+        Me.label14.TabIndex = 0
+        Me.label14.Text = "Contratacion"
+        '
+        'Buscar_tipo
+        '
+        Me.Buscar_tipo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Buscar_tipo.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.Buscar_tipo.Location = New System.Drawing.Point(670, 71)
+        Me.Buscar_tipo.Name = "Buscar_tipo"
+        Me.Buscar_tipo.Size = New System.Drawing.Size(25, 25)
+        Me.Buscar_tipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Buscar_tipo.TabIndex = 54
+        Me.Buscar_tipo.TabStop = False
+        '
+        'lbl_ingreso
+        '
+        Me.lbl_ingreso.AutoSize = True
+        Me.lbl_ingreso.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_ingreso.Location = New System.Drawing.Point(62, 43)
+        Me.lbl_ingreso.Name = "lbl_ingreso"
+        Me.lbl_ingreso.Size = New System.Drawing.Size(60, 18)
+        Me.lbl_ingreso.TabIndex = 0
+        Me.lbl_ingreso.Text = "Ingreso:"
+        '
+        'Txt_correo
+        '
+        Me.Txt_correo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.Txt_correo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_correo.Location = New System.Drawing.Point(127, 102)
+        Me.Txt_correo.Name = "Txt_correo"
+        Me.Txt_correo.Size = New System.Drawing.Size(238, 25)
+        Me.Txt_correo.TabIndex = 15
+        '
+        'lbl_clase
+        '
+        Me.lbl_clase.AutoSize = True
+        Me.lbl_clase.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_clase.Location = New System.Drawing.Point(409, 74)
+        Me.lbl_clase.Name = "lbl_clase"
+        Me.lbl_clase.Size = New System.Drawing.Size(42, 18)
+        Me.lbl_clase.TabIndex = 10
+        Me.lbl_clase.Text = "Tipo:"
+        '
+        'txt_tipo2
+        '
+        Me.txt_tipo2.Enabled = False
+        Me.txt_tipo2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_tipo2.Location = New System.Drawing.Point(457, 71)
+        Me.txt_tipo2.Name = "txt_tipo2"
+        Me.txt_tipo2.Size = New System.Drawing.Size(213, 25)
+        Me.txt_tipo2.TabIndex = 11
+        Me.txt_tipo2.TabStop = False
+        '
+        'lbl_super
+        '
+        Me.lbl_super.AutoSize = True
+        Me.lbl_super.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_super.Location = New System.Drawing.Point(62, 74)
+        Me.lbl_super.Name = "lbl_super"
+        Me.lbl_super.Size = New System.Drawing.Size(59, 18)
+        Me.lbl_super.TabIndex = 8
+        Me.lbl_super.Text = "Superv.:"
+        '
+        'correo
+        '
+        Me.correo.AutoSize = True
+        Me.correo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.correo.Location = New System.Drawing.Point(62, 105)
+        Me.correo.Name = "correo"
+        Me.correo.Size = New System.Drawing.Size(57, 18)
+        Me.correo.TabIndex = 14
+        Me.correo.Text = "E-mail:"
+        '
+        'txt_SALARY
+        '
+        Me.txt_SALARY.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_SALARY.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_SALARY.Location = New System.Drawing.Point(788, 69)
+        Me.txt_SALARY.Name = "txt_SALARY"
+        Me.txt_SALARY.Size = New System.Drawing.Size(238, 25)
+        Me.txt_SALARY.TabIndex = 13
+        '
+        'lbl_puesto
+        '
+        Me.lbl_puesto.AutoSize = True
+        Me.lbl_puesto.Cursor = System.Windows.Forms.Cursors.Default
+        Me.lbl_puesto.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_puesto.Location = New System.Drawing.Point(397, 43)
+        Me.lbl_puesto.Name = "lbl_puesto"
+        Me.lbl_puesto.Size = New System.Drawing.Size(54, 18)
+        Me.lbl_puesto.TabIndex = 2
+        Me.lbl_puesto.Text = "Puesto:"
+        '
+        'txt_tipo
+        '
+        Me.txt_tipo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_tipo.Location = New System.Drawing.Point(485, 74)
+        Me.txt_tipo.Name = "txt_tipo"
+        Me.txt_tipo.Size = New System.Drawing.Size(1, 25)
+        Me.txt_tipo.TabIndex = 25
+        '
+        'lbl_sali
+        '
+        Me.lbl_sali.AutoSize = True
+        Me.lbl_sali.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_sali.Location = New System.Drawing.Point(727, 68)
+        Me.lbl_sali.Name = "lbl_sali"
+        Me.lbl_sali.Size = New System.Drawing.Size(57, 18)
+        Me.lbl_sali.TabIndex = 12
+        Me.lbl_sali.Text = "Salario:"
+        '
+        'txt_FECHAINGRESO
+        '
+        Me.txt_FECHAINGRESO.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_FECHAINGRESO.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.txt_FECHAINGRESO.Location = New System.Drawing.Point(127, 40)
+        Me.txt_FECHAINGRESO.Name = "txt_FECHAINGRESO"
+        Me.txt_FECHAINGRESO.Size = New System.Drawing.Size(238, 25)
+        Me.txt_FECHAINGRESO.TabIndex = 1
+        '
+        'Buscar_Super
+        '
+        Me.Buscar_Super.BackgroundImage = CType(resources.GetObject("Buscar_Super.BackgroundImage"), System.Drawing.Image)
+        Me.Buscar_Super.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Buscar_Super.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.Buscar_Super.Location = New System.Drawing.Point(340, 71)
+        Me.Buscar_Super.Name = "Buscar_Super"
+        Me.Buscar_Super.Size = New System.Drawing.Size(25, 25)
+        Me.Buscar_Super.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Buscar_Super.TabIndex = 51
+        Me.Buscar_Super.TabStop = False
+        '
+        'txt_PUESTO
+        '
+        Me.txt_PUESTO.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_PUESTO.Location = New System.Drawing.Point(485, 40)
+        Me.txt_PUESTO.Name = "txt_PUESTO"
+        Me.txt_PUESTO.Size = New System.Drawing.Size(1, 25)
+        Me.txt_PUESTO.TabIndex = 4
+        '
+        'txt_PUESTO2
+        '
+        Me.txt_PUESTO2.Enabled = False
+        Me.txt_PUESTO2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_PUESTO2.Location = New System.Drawing.Point(457, 40)
+        Me.txt_PUESTO2.Name = "txt_PUESTO2"
+        Me.txt_PUESTO2.Size = New System.Drawing.Size(213, 25)
+        Me.txt_PUESTO2.TabIndex = 5
+        Me.txt_PUESTO2.TabStop = False
+        '
+        'txt_SUPER2
+        '
+        Me.txt_SUPER2.Enabled = False
+        Me.txt_SUPER2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_SUPER2.Location = New System.Drawing.Point(127, 71)
+        Me.txt_SUPER2.Name = "txt_SUPER2"
+        Me.txt_SUPER2.Size = New System.Drawing.Size(213, 25)
+        Me.txt_SUPER2.TabIndex = 9
+        Me.txt_SUPER2.TabStop = False
+        '
+        'txt_SUPER
+        '
+        Me.txt_SUPER.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_SUPER.Location = New System.Drawing.Point(146, 75)
+        Me.txt_SUPER.Name = "txt_SUPER"
+        Me.txt_SUPER.Size = New System.Drawing.Size(1, 25)
+        Me.txt_SUPER.TabIndex = 24
+        '
+        'lbl_depto
+        '
+        Me.lbl_depto.AutoSize = True
+        Me.lbl_depto.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_depto.Location = New System.Drawing.Point(732, 43)
+        Me.lbl_depto.Name = "lbl_depto"
+        Me.lbl_depto.Size = New System.Drawing.Size(50, 18)
+        Me.lbl_depto.TabIndex = 6
+        Me.lbl_depto.Text = "Depto:"
+        '
         'pnl_per
         '
         Me.pnl_per.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
@@ -3768,279 +4041,6 @@ Partial Class Empleados
         '
         Me.datosFamiliaBindingSource.DataMember = "Datos_Familia"
         '
-        'lbl_depto
-        '
-        Me.lbl_depto.AutoSize = True
-        Me.lbl_depto.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_depto.Location = New System.Drawing.Point(732, 43)
-        Me.lbl_depto.Name = "lbl_depto"
-        Me.lbl_depto.Size = New System.Drawing.Size(50, 18)
-        Me.lbl_depto.TabIndex = 6
-        Me.lbl_depto.Text = "Depto:"
-        '
-        'txt_SUPER
-        '
-        Me.txt_SUPER.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SUPER.Location = New System.Drawing.Point(146, 75)
-        Me.txt_SUPER.Name = "txt_SUPER"
-        Me.txt_SUPER.Size = New System.Drawing.Size(1, 25)
-        Me.txt_SUPER.TabIndex = 24
-        '
-        'txt_SUPER2
-        '
-        Me.txt_SUPER2.Enabled = False
-        Me.txt_SUPER2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SUPER2.Location = New System.Drawing.Point(127, 71)
-        Me.txt_SUPER2.Name = "txt_SUPER2"
-        Me.txt_SUPER2.Size = New System.Drawing.Size(213, 25)
-        Me.txt_SUPER2.TabIndex = 9
-        Me.txt_SUPER2.TabStop = False
-        '
-        'txt_PUESTO2
-        '
-        Me.txt_PUESTO2.Enabled = False
-        Me.txt_PUESTO2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_PUESTO2.Location = New System.Drawing.Point(457, 40)
-        Me.txt_PUESTO2.Name = "txt_PUESTO2"
-        Me.txt_PUESTO2.Size = New System.Drawing.Size(213, 25)
-        Me.txt_PUESTO2.TabIndex = 5
-        Me.txt_PUESTO2.TabStop = False
-        '
-        'txt_PUESTO
-        '
-        Me.txt_PUESTO.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_PUESTO.Location = New System.Drawing.Point(485, 40)
-        Me.txt_PUESTO.Name = "txt_PUESTO"
-        Me.txt_PUESTO.Size = New System.Drawing.Size(1, 25)
-        Me.txt_PUESTO.TabIndex = 4
-        '
-        'Buscar_Super
-        '
-        Me.Buscar_Super.BackgroundImage = CType(resources.GetObject("Buscar_Super.BackgroundImage"), System.Drawing.Image)
-        Me.Buscar_Super.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Buscar_Super.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.Buscar_Super.Location = New System.Drawing.Point(340, 71)
-        Me.Buscar_Super.Name = "Buscar_Super"
-        Me.Buscar_Super.Size = New System.Drawing.Size(25, 25)
-        Me.Buscar_Super.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Buscar_Super.TabIndex = 51
-        Me.Buscar_Super.TabStop = False
-        '
-        'txt_FECHAINGRESO
-        '
-        Me.txt_FECHAINGRESO.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_FECHAINGRESO.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txt_FECHAINGRESO.Location = New System.Drawing.Point(127, 40)
-        Me.txt_FECHAINGRESO.Name = "txt_FECHAINGRESO"
-        Me.txt_FECHAINGRESO.Size = New System.Drawing.Size(238, 25)
-        Me.txt_FECHAINGRESO.TabIndex = 1
-        '
-        'lbl_sali
-        '
-        Me.lbl_sali.AutoSize = True
-        Me.lbl_sali.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_sali.Location = New System.Drawing.Point(727, 68)
-        Me.lbl_sali.Name = "lbl_sali"
-        Me.lbl_sali.Size = New System.Drawing.Size(57, 18)
-        Me.lbl_sali.TabIndex = 12
-        Me.lbl_sali.Text = "Salario:"
-        '
-        'txt_tipo
-        '
-        Me.txt_tipo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_tipo.Location = New System.Drawing.Point(485, 74)
-        Me.txt_tipo.Name = "txt_tipo"
-        Me.txt_tipo.Size = New System.Drawing.Size(1, 25)
-        Me.txt_tipo.TabIndex = 25
-        '
-        'lbl_puesto
-        '
-        Me.lbl_puesto.AutoSize = True
-        Me.lbl_puesto.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lbl_puesto.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_puesto.Location = New System.Drawing.Point(397, 43)
-        Me.lbl_puesto.Name = "lbl_puesto"
-        Me.lbl_puesto.Size = New System.Drawing.Size(54, 18)
-        Me.lbl_puesto.TabIndex = 2
-        Me.lbl_puesto.Text = "Puesto:"
-        '
-        'txt_SALARY
-        '
-        Me.txt_SALARY.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SALARY.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SALARY.Location = New System.Drawing.Point(788, 69)
-        Me.txt_SALARY.Name = "txt_SALARY"
-        Me.txt_SALARY.Size = New System.Drawing.Size(238, 25)
-        Me.txt_SALARY.TabIndex = 13
-        '
-        'correo
-        '
-        Me.correo.AutoSize = True
-        Me.correo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.correo.Location = New System.Drawing.Point(62, 105)
-        Me.correo.Name = "correo"
-        Me.correo.Size = New System.Drawing.Size(57, 18)
-        Me.correo.TabIndex = 14
-        Me.correo.Text = "E-mail:"
-        '
-        'lbl_super
-        '
-        Me.lbl_super.AutoSize = True
-        Me.lbl_super.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_super.Location = New System.Drawing.Point(62, 74)
-        Me.lbl_super.Name = "lbl_super"
-        Me.lbl_super.Size = New System.Drawing.Size(59, 18)
-        Me.lbl_super.TabIndex = 8
-        Me.lbl_super.Text = "Superv.:"
-        '
-        'txt_tipo2
-        '
-        Me.txt_tipo2.Enabled = False
-        Me.txt_tipo2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_tipo2.Location = New System.Drawing.Point(457, 71)
-        Me.txt_tipo2.Name = "txt_tipo2"
-        Me.txt_tipo2.Size = New System.Drawing.Size(213, 25)
-        Me.txt_tipo2.TabIndex = 11
-        Me.txt_tipo2.TabStop = False
-        '
-        'lbl_clase
-        '
-        Me.lbl_clase.AutoSize = True
-        Me.lbl_clase.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_clase.Location = New System.Drawing.Point(409, 74)
-        Me.lbl_clase.Name = "lbl_clase"
-        Me.lbl_clase.Size = New System.Drawing.Size(42, 18)
-        Me.lbl_clase.TabIndex = 10
-        Me.lbl_clase.Text = "Tipo:"
-        '
-        'Txt_correo
-        '
-        Me.Txt_correo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.Txt_correo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_correo.Location = New System.Drawing.Point(127, 102)
-        Me.Txt_correo.Name = "Txt_correo"
-        Me.Txt_correo.Size = New System.Drawing.Size(238, 25)
-        Me.Txt_correo.TabIndex = 15
-        '
-        'lbl_ingreso
-        '
-        Me.lbl_ingreso.AutoSize = True
-        Me.lbl_ingreso.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_ingreso.Location = New System.Drawing.Point(62, 43)
-        Me.lbl_ingreso.Name = "lbl_ingreso"
-        Me.lbl_ingreso.Size = New System.Drawing.Size(60, 18)
-        Me.lbl_ingreso.TabIndex = 0
-        Me.lbl_ingreso.Text = "Ingreso:"
-        '
-        'Buscar_tipo
-        '
-        Me.Buscar_tipo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Buscar_tipo.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.Buscar_tipo.Location = New System.Drawing.Point(670, 71)
-        Me.Buscar_tipo.Name = "Buscar_tipo"
-        Me.Buscar_tipo.Size = New System.Drawing.Size(25, 25)
-        Me.Buscar_tipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Buscar_tipo.TabIndex = 54
-        Me.Buscar_tipo.TabStop = False
-        '
-        'panel11
-        '
-        Me.panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.panel11.Controls.Add(Me.label14)
-        Me.panel11.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panel11.Location = New System.Drawing.Point(0, 0)
-        Me.panel11.Margin = New System.Windows.Forms.Padding(2)
-        Me.panel11.Name = "panel11"
-        Me.panel11.Size = New System.Drawing.Size(1064, 35)
-        Me.panel11.TabIndex = 0
-        '
-        'label14
-        '
-        Me.label14.AutoSize = True
-        Me.label14.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label14.ForeColor = System.Drawing.Color.White
-        Me.label14.Location = New System.Drawing.Point(2, 6)
-        Me.label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.label14.Name = "label14"
-        Me.label14.Size = New System.Drawing.Size(109, 21)
-        Me.label14.TabIndex = 0
-        Me.label14.Text = "Contratacion"
-        '
-        'Buscar_PUESTO
-        '
-        Me.Buscar_PUESTO.BackgroundImage = CType(resources.GetObject("Buscar_PUESTO.BackgroundImage"), System.Drawing.Image)
-        Me.Buscar_PUESTO.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Buscar_PUESTO.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.Buscar_PUESTO.Location = New System.Drawing.Point(670, 40)
-        Me.Buscar_PUESTO.Name = "Buscar_PUESTO"
-        Me.Buscar_PUESTO.Size = New System.Drawing.Size(25, 25)
-        Me.Buscar_PUESTO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Buscar_PUESTO.TabIndex = 57
-        Me.Buscar_PUESTO.TabStop = False
-        '
-        'depto2
-        '
-        Me.depto2.Enabled = False
-        Me.depto2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.depto2.Location = New System.Drawing.Point(788, 40)
-        Me.depto2.Name = "depto2"
-        Me.depto2.Size = New System.Drawing.Size(213, 25)
-        Me.depto2.TabIndex = 3
-        Me.depto2.TabStop = False
-        '
-        'depto
-        '
-        Me.depto.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.depto.Location = New System.Drawing.Point(747, 40)
-        Me.depto.Name = "depto"
-        Me.depto.Size = New System.Drawing.Size(1, 25)
-        Me.depto.TabIndex = 7
-        '
-        'buscar_depto
-        '
-        Me.buscar_depto.BackgroundImage = CType(resources.GetObject("buscar_depto.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_depto.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.buscar_depto.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_depto.Location = New System.Drawing.Point(1001, 40)
-        Me.buscar_depto.Name = "buscar_depto"
-        Me.buscar_depto.Size = New System.Drawing.Size(25, 25)
-        Me.buscar_depto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_depto.TabIndex = 60
-        Me.buscar_depto.TabStop = False
-        '
-        'pnl_cont
-        '
-        Me.pnl_cont.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.pnl_cont.Controls.Add(Me.buscar_depto)
-        Me.pnl_cont.Controls.Add(Me.depto)
-        Me.pnl_cont.Controls.Add(Me.depto2)
-        Me.pnl_cont.Controls.Add(Me.Buscar_PUESTO)
-        Me.pnl_cont.Controls.Add(Me.panel11)
-        Me.pnl_cont.Controls.Add(Me.Buscar_tipo)
-        Me.pnl_cont.Controls.Add(Me.lbl_ingreso)
-        Me.pnl_cont.Controls.Add(Me.Txt_correo)
-        Me.pnl_cont.Controls.Add(Me.lbl_clase)
-        Me.pnl_cont.Controls.Add(Me.txt_tipo2)
-        Me.pnl_cont.Controls.Add(Me.lbl_super)
-        Me.pnl_cont.Controls.Add(Me.correo)
-        Me.pnl_cont.Controls.Add(Me.txt_SALARY)
-        Me.pnl_cont.Controls.Add(Me.lbl_puesto)
-        Me.pnl_cont.Controls.Add(Me.txt_tipo)
-        Me.pnl_cont.Controls.Add(Me.lbl_sali)
-        Me.pnl_cont.Controls.Add(Me.txt_FECHAINGRESO)
-        Me.pnl_cont.Controls.Add(Me.Buscar_Super)
-        Me.pnl_cont.Controls.Add(Me.txt_PUESTO)
-        Me.pnl_cont.Controls.Add(Me.txt_PUESTO2)
-        Me.pnl_cont.Controls.Add(Me.txt_SUPER2)
-        Me.pnl_cont.Controls.Add(Me.txt_SUPER)
-        Me.pnl_cont.Controls.Add(Me.lbl_depto)
-        Me.pnl_cont.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnl_cont.Location = New System.Drawing.Point(2, 359)
-        Me.pnl_cont.Margin = New System.Windows.Forms.Padding(2)
-        Me.pnl_cont.Name = "pnl_cont"
-        Me.pnl_cont.Size = New System.Drawing.Size(1068, 134)
-        Me.pnl_cont.TabIndex = 1
-        '
         'Empleados
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -4143,6 +4143,14 @@ Partial Class Empleados
         Me.panel13.ResumeLayout(False)
         Me.panel13.PerformLayout()
         CType(Me.PbOptions, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnl_cont.ResumeLayout(False)
+        Me.pnl_cont.PerformLayout()
+        CType(Me.buscar_depto, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Buscar_PUESTO, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.panel11.ResumeLayout(False)
+        Me.panel11.PerformLayout()
+        CType(Me.Buscar_tipo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Buscar_Super, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_per.ResumeLayout(False)
         Me.pnl_per.PerformLayout()
         CType(Me.PbSearchEmployee, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4155,14 +4163,6 @@ Partial Class Empleados
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuEmp.ResumeLayout(False)
         CType(Me.datosFamiliaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Buscar_Super, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Buscar_tipo, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.panel11.ResumeLayout(False)
-        Me.panel11.PerformLayout()
-        CType(Me.Buscar_PUESTO, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.buscar_depto, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnl_cont.ResumeLayout(False)
-        Me.pnl_cont.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

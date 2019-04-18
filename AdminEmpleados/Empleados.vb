@@ -430,7 +430,7 @@ Public Class Empleados
         'Try
         If txt_numero.Text <> "" Then
             Select Case PbOptions.Tag
-                Case "Alta"
+                Case "ALTA"
                     objcon.Altas(txt_numero.Text, 1)
                     MessageBox.Show("Se dio de Alta correctamente a este Empleado")
                     Llenar()
@@ -439,7 +439,7 @@ Public Class Empleados
                     seg.Checked = True
                     CB_CLIENTE.Checked = False
                     CB_PROV.Checked = False
-                Case "Baja"
+                Case "BAJA"
                     objcon.Altas(txt_numero.Text, 0)
                     objcon.Bajas(txt_numero.Text, 0, commen.Text, seg.Checked, NEmp, CB_PROV.Checked, CB_CLIENTE.Checked)
                     MessageBox.Show("Se dio de Baja correctamente a este Empleado")
@@ -839,7 +839,7 @@ Public Class Empleados
 
 
             If loResult > 0 Then
-                If ReferenceEquals(PB_IMAGE_VIVIENDA.Image, My.Resources.AddImage) Then
+                If Not ReferenceEquals(PB_IMAGE_VIVIENDA.Image, My.Resources.AddImage) Then
                     ldParameters = New Dictionary(Of String, Object) From {{"Employee", ES.EMP_ID}, {"HousePicture", ES.IMG}, {"EmployeePicture", foto.Image}}
                     Wait = New Wait With {.Parameters = ldParameters, .Operation = BackgroundOperations.AddImage}
                     Wait.ShowDialog()
@@ -1306,7 +1306,7 @@ Public Class Empleados
                     Select Case gr.Columns(e.ColumnIndex).Name
                         Case "btnCEliminar"
                             If MessageBox.Show("Seguro que desea Eliminar este registro?", "Eliminar Familiar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                Id = gr.Rows(e.RowIndex).Cells(1).Value
+                                Id = gr.Rows(e.RowIndex).Cells(2).Value
                                 objcon.DELETE_Familia(Id)
                             End If
                     End Select
