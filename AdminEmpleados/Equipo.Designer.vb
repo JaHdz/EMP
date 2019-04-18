@@ -26,15 +26,6 @@ Partial Class Equipo
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pnlEquipo = New System.Windows.Forms.Panel()
         Me.dgv_equipo_emp = New System.Windows.Forms.DataGridView()
-        Me.UPDATE = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Assig = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Equipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Regreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha_R = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Comentario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_User = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.pnl_comen = New System.Windows.Forms.Panel()
         Me.gbComentarios = New System.Windows.Forms.GroupBox()
@@ -56,6 +47,15 @@ Partial Class Equipo
         Me.Empleado = New System.Windows.Forms.Label()
         Me.lbl_emp = New System.Windows.Forms.Label()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.UPDATE = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Assig = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Equipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Regreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fecha_R = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Comentario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_User = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.pnlEquipo.SuspendLayout()
         CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -102,66 +102,6 @@ Partial Class Equipo
         Me.dgv_equipo_emp.RowHeadersVisible = False
         Me.dgv_equipo_emp.Size = New System.Drawing.Size(1078, 399)
         Me.dgv_equipo_emp.TabIndex = 71
-        '
-        'UPDATE
-        '
-        Me.UPDATE.HeaderText = "Regresar"
-        Me.UPDATE.Name = "UPDATE"
-        '
-        'ID_Assig
-        '
-        Me.ID_Assig.DataPropertyName = "ID_Assig"
-        Me.ID_Assig.HeaderText = "ID"
-        Me.ID_Assig.Name = "ID_Assig"
-        Me.ID_Assig.Visible = False
-        Me.ID_Assig.Width = 50
-        '
-        'ID_Equipo
-        '
-        Me.ID_Equipo.DataPropertyName = "ID_Equipo"
-        Me.ID_Equipo.HeaderText = "EQUIPO"
-        Me.ID_Equipo.Name = "ID_Equipo"
-        '
-        'ID_Emp
-        '
-        Me.ID_Emp.DataPropertyName = "ID_Emp"
-        Me.ID_Emp.HeaderText = "EMPLEADO"
-        Me.ID_Emp.Name = "ID_Emp"
-        '
-        'Fecha
-        '
-        Me.Fecha.DataPropertyName = "Fecha"
-        Me.Fecha.HeaderText = "FECHA"
-        Me.Fecha.Name = "Fecha"
-        Me.Fecha.Width = 150
-        '
-        'Regreso
-        '
-        Me.Regreso.DataPropertyName = "Regreso"
-        Me.Regreso.HeaderText = "REGRESO?"
-        Me.Regreso.Name = "Regreso"
-        Me.Regreso.Width = 150
-        '
-        'Fecha_R
-        '
-        Me.Fecha_R.DataPropertyName = "Fecha_R"
-        Me.Fecha_R.HeaderText = "FECHA REGRESO"
-        Me.Fecha_R.Name = "Fecha_R"
-        Me.Fecha_R.Width = 150
-        '
-        'Comentario
-        '
-        Me.Comentario.DataPropertyName = "Comentario"
-        Me.Comentario.HeaderText = "COMENTARIO"
-        Me.Comentario.Name = "Comentario"
-        Me.Comentario.Width = 300
-        '
-        'ID_User
-        '
-        Me.ID_User.DataPropertyName = "ID_User"
-        Me.ID_User.HeaderText = "NO EMPLEADO"
-        Me.ID_User.Name = "ID_User"
-        Me.ID_User.Width = 150
         '
         'Panel14
         '
@@ -248,8 +188,9 @@ Partial Class Equipo
         '
         'pb_Report
         '
+        Me.pb_Report.Dock = System.Windows.Forms.DockStyle.Right
         Me.pb_Report.Image = Global.AdminEmpleados.My.Resources.Resources.AssignedTools_80px
-        Me.pb_Report.Location = New System.Drawing.Point(942, -2)
+        Me.pb_Report.Location = New System.Drawing.Point(969, 0)
         Me.pb_Report.Name = "pb_Report"
         Me.pb_Report.Size = New System.Drawing.Size(35, 35)
         Me.pb_Report.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -258,8 +199,9 @@ Partial Class Equipo
         '
         'CANCEL
         '
+        Me.CANCEL.Dock = System.Windows.Forms.DockStyle.Right
         Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(1024, -3)
+        Me.CANCEL.Location = New System.Drawing.Point(1004, 0)
         Me.CANCEL.Name = "CANCEL"
         Me.CANCEL.Size = New System.Drawing.Size(35, 35)
         Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -268,8 +210,9 @@ Partial Class Equipo
         '
         'SAVE
         '
+        Me.SAVE.Dock = System.Windows.Forms.DockStyle.Right
         Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Tools_80px
-        Me.SAVE.Location = New System.Drawing.Point(983, -3)
+        Me.SAVE.Location = New System.Drawing.Point(1039, 0)
         Me.SAVE.Name = "SAVE"
         Me.SAVE.Size = New System.Drawing.Size(35, 35)
         Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -389,6 +332,68 @@ Partial Class Equipo
         Me.DataGridViewImageColumn1.HeaderText = ""
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         '
+        'UPDATE
+        '
+        Me.UPDATE.HeaderText = "Regresar"
+        Me.UPDATE.Image = Global.AdminEmpleados.My.Resources.Resources.Undo_80px
+        Me.UPDATE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.UPDATE.Name = "UPDATE"
+        '
+        'ID_Assig
+        '
+        Me.ID_Assig.DataPropertyName = "ID_Assig"
+        Me.ID_Assig.HeaderText = "ID"
+        Me.ID_Assig.Name = "ID_Assig"
+        Me.ID_Assig.Visible = False
+        Me.ID_Assig.Width = 50
+        '
+        'ID_Equipo
+        '
+        Me.ID_Equipo.DataPropertyName = "ID_Equipo"
+        Me.ID_Equipo.HeaderText = "EQUIPO"
+        Me.ID_Equipo.Name = "ID_Equipo"
+        '
+        'ID_Emp
+        '
+        Me.ID_Emp.DataPropertyName = "ID_Emp"
+        Me.ID_Emp.HeaderText = "EMPLEADO"
+        Me.ID_Emp.Name = "ID_Emp"
+        '
+        'Fecha
+        '
+        Me.Fecha.DataPropertyName = "Fecha"
+        Me.Fecha.HeaderText = "FECHA"
+        Me.Fecha.Name = "Fecha"
+        Me.Fecha.Width = 150
+        '
+        'Regreso
+        '
+        Me.Regreso.DataPropertyName = "Regreso"
+        Me.Regreso.HeaderText = "REGRESO?"
+        Me.Regreso.Name = "Regreso"
+        Me.Regreso.Width = 150
+        '
+        'Fecha_R
+        '
+        Me.Fecha_R.DataPropertyName = "Fecha_R"
+        Me.Fecha_R.HeaderText = "FECHA REGRESO"
+        Me.Fecha_R.Name = "Fecha_R"
+        Me.Fecha_R.Width = 150
+        '
+        'Comentario
+        '
+        Me.Comentario.DataPropertyName = "Comentario"
+        Me.Comentario.HeaderText = "COMENTARIO"
+        Me.Comentario.Name = "Comentario"
+        Me.Comentario.Width = 300
+        '
+        'ID_User
+        '
+        Me.ID_User.DataPropertyName = "ID_User"
+        Me.ID_User.HeaderText = "NO EMPLEADO"
+        Me.ID_User.Name = "ID_User"
+        Me.ID_User.Width = 150
+        '
         'Equipo
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -440,6 +445,9 @@ Partial Class Equipo
     Friend WithEvents pb_Report As PictureBox
     Friend WithEvents pnl_comen As Panel
     Friend WithEvents cUPDATE As DataGridViewImageColumn
+    Friend WithEvents pnlEquipo As Panel
+    Friend WithEvents gbComentarios As GroupBox
+    Friend WithEvents UPDATE As DataGridViewImageColumn
     Friend WithEvents ID_Assig As DataGridViewTextBoxColumn
     Friend WithEvents ID_Equipo As DataGridViewTextBoxColumn
     Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
@@ -448,7 +456,4 @@ Partial Class Equipo
     Friend WithEvents Fecha_R As DataGridViewTextBoxColumn
     Friend WithEvents Comentario As DataGridViewTextBoxColumn
     Friend WithEvents ID_User As DataGridViewTextBoxColumn
-    Friend WithEvents pnlEquipo As Panel
-    Friend WithEvents gbComentarios As GroupBox
-    Friend WithEvents UPDATE As DataGridViewImageColumn
 End Class
