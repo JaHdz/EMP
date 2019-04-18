@@ -31,32 +31,27 @@ Public Class CstmTabControl
     End Sub
 
     Private Sub LoadTabs()
-        Try
-            If Dictionary IsNot Nothing Then
-                For Each kvp As KeyValuePair(Of Integer, Form) In Dictionary
-                    Dim Name As Integer = kvp.Key
-                    Dim Frm As Form = kvp.Value
-                    Select Case Name
-                        Case Tab.Empleados
-                            wfhEmpleados.Child = Frm
-                        Case Tab.Equipos
-                            wfhEquipos.Child = Frm
-                        Case Tab.Capacitaciones
-                            wfhCapacitaciones.Child = Frm
-                        Case Tab.Evaluaciones
-                            wfhEvaluaciones.Child = Frm
-                        Case Tab.ExamenesMedicos
-                            wfhExamenes.Child = Frm
-                        Case Tab.Administracion
-                            wfhAdministracion.Child = Frm
-                    End Select
-                    Frm.Show()
-                Next
-            End If
-        Catch ex As Exception
-
-        End Try
-
+        If Dictionary IsNot Nothing Then
+            For Each kvp As KeyValuePair(Of Integer, Form) In Dictionary
+                Dim Name As Integer = kvp.Key
+                Dim Frm As Form = kvp.Value
+                Select Case Name
+                    Case Tab.Empleados
+                        wfhEmpleados.Child = Frm
+                    Case Tab.Equipos
+                        wfhEquipos.Child = Frm
+                    Case Tab.Capacitaciones
+                        wfhCapacitaciones.Child = Frm
+                    Case Tab.Evaluaciones
+                        wfhEvaluaciones.Child = Frm
+                    Case Tab.ExamenesMedicos
+                        wfhExamenes.Child = Frm
+                    Case Tab.Administracion
+                        wfhAdministracion.Child = Frm
+                End Select
+                Frm.Show()
+            Next
+        End If
     End Sub
     Private Sub UserControl_Initialized(sender As Object, e As EventArgs)
         TabMenu.SelectedIndex = Tab.Empleados

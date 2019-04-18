@@ -179,7 +179,7 @@
                     Wait.Close()
                     MessageBox.Show(result)
                 Else
-                    ErrorProvider.SetError(TxtOlvPass2, "Las contraseñas coinciden. Intente de nuevo.")
+                    ErrorProvider.SetError(TxtOlvPass2, "Las contraseñas no coinciden. Intente de nuevo.")
                     TxtOlvPass1.Text = ""
                     TxtOlvPass2.Text = ""
                 End If
