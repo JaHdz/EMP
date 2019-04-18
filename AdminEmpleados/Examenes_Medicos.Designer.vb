@@ -89,6 +89,7 @@ Partial Class Examenes_Medicos
         Me.dgv_equipo_Eval.AllowUserToAddRows = False
         Me.dgv_equipo_Eval.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_equipo_Eval.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DELETE, Me.ID_EM, Me.ID_Emp, Me.EM_Estudio, Me.EM_Resultado, Me.EM_Fecha, Me.EM_FechaProximo})
+        Me.dgv_equipo_Eval.Cursor = System.Windows.Forms.Cursors.WaitCursor
         Me.dgv_equipo_Eval.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgv_equipo_Eval.Location = New System.Drawing.Point(0, 0)
         Me.dgv_equipo_Eval.Name = "dgv_equipo_Eval"

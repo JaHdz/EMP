@@ -196,7 +196,7 @@
                         Case "UPDATEE"
                             If MessageBox.Show("Seguro que desea dar de baja esta Evaluacion?", "Baja Evaluacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
                                 If dgv_eval.Rows(e.RowIndex).Cells(4).Value.ToString = "True" Then
-                                    If objcon.DELETE_ADMIN_EVALUATIONS(2) = False Then
+                                    If objcon.DELETE_ADMIN_EVALUATIONS(gr(2, e.RowIndex()).Value.ToString()) = False Then
                                         MessageBox.Show("No se puede eliminar esta evaluación ya que fue impartida a uno o varios empleados")
                                     End If
                                 Else
