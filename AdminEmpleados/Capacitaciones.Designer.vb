@@ -26,12 +26,6 @@ Partial Class Capacitaciones
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Capacitaciones))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dgv_equipo_Eval = New System.Windows.Forms.DataGridView()
-        Me.DELETE = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Cap_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Cap = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Comentario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.lbl_ingreso = New System.Windows.Forms.Label()
@@ -51,6 +45,12 @@ Partial Class Capacitaciones
         Me.buscar_EN = New System.Windows.Forms.PictureBox()
         Me.Label92 = New System.Windows.Forms.Label()
         Me.lbl_emp = New System.Windows.Forms.Label()
+        Me.DELETE = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Cap_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Cap = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Comentario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel14.SuspendLayout()
@@ -85,47 +85,6 @@ Partial Class Capacitaciones
         Me.dgv_equipo_Eval.RowHeadersVisible = False
         Me.dgv_equipo_Eval.Size = New System.Drawing.Size(1078, 412)
         Me.dgv_equipo_Eval.TabIndex = 0
-        '
-        'DELETE
-        '
-        Me.DELETE.HeaderText = "Eliminar"
-        Me.DELETE.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
-        Me.DELETE.Name = "DELETE"
-        '
-        'ID_Cap_Emp
-        '
-        Me.ID_Cap_Emp.DataPropertyName = "ID_Cap_Emp"
-        Me.ID_Cap_Emp.HeaderText = "ID"
-        Me.ID_Cap_Emp.Name = "ID_Cap_Emp"
-        Me.ID_Cap_Emp.Width = 50
-        '
-        'ID_Cap
-        '
-        Me.ID_Cap.DataPropertyName = "ID_Cap"
-        Me.ID_Cap.HeaderText = "CAPACITACION"
-        Me.ID_Cap.Name = "ID_Cap"
-        Me.ID_Cap.Width = 200
-        '
-        'ID_Emp
-        '
-        Me.ID_Emp.DataPropertyName = "ID_Emp"
-        Me.ID_Emp.HeaderText = "EMPLEADO"
-        Me.ID_Emp.Name = "ID_Emp"
-        Me.ID_Emp.Width = 200
-        '
-        'Fecha
-        '
-        Me.Fecha.DataPropertyName = "Fecha"
-        Me.Fecha.HeaderText = "FECHA"
-        Me.Fecha.Name = "Fecha"
-        Me.Fecha.Width = 200
-        '
-        'Comentario
-        '
-        Me.Comentario.DataPropertyName = "Comentario"
-        Me.Comentario.HeaderText = "COMENTARIO"
-        Me.Comentario.Name = "Comentario"
-        Me.Comentario.Width = 800
         '
         'DataGridViewImageColumn1
         '
@@ -336,6 +295,48 @@ Partial Class Capacitaciones
         Me.lbl_emp.Size = New System.Drawing.Size(0, 18)
         Me.lbl_emp.TabIndex = 81
         '
+        'DELETE
+        '
+        Me.DELETE.HeaderText = "Eliminar"
+        Me.DELETE.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
+        Me.DELETE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.DELETE.Name = "DELETE"
+        '
+        'ID_Cap_Emp
+        '
+        Me.ID_Cap_Emp.DataPropertyName = "ID_Cap_Emp"
+        Me.ID_Cap_Emp.HeaderText = "ID"
+        Me.ID_Cap_Emp.Name = "ID_Cap_Emp"
+        Me.ID_Cap_Emp.Width = 50
+        '
+        'ID_Cap
+        '
+        Me.ID_Cap.DataPropertyName = "ID_Cap"
+        Me.ID_Cap.HeaderText = "CAPACITACION"
+        Me.ID_Cap.Name = "ID_Cap"
+        Me.ID_Cap.Width = 200
+        '
+        'ID_Emp
+        '
+        Me.ID_Emp.DataPropertyName = "ID_Emp"
+        Me.ID_Emp.HeaderText = "EMPLEADO"
+        Me.ID_Emp.Name = "ID_Emp"
+        Me.ID_Emp.Width = 200
+        '
+        'Fecha
+        '
+        Me.Fecha.DataPropertyName = "Fecha"
+        Me.Fecha.HeaderText = "FECHA"
+        Me.Fecha.Name = "Fecha"
+        Me.Fecha.Width = 200
+        '
+        'Comentario
+        '
+        Me.Comentario.DataPropertyName = "Comentario"
+        Me.Comentario.HeaderText = "COMENTARIO"
+        Me.Comentario.Name = "Comentario"
+        Me.Comentario.Width = 800
+        '
         'Capacitaciones
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -364,12 +365,6 @@ Partial Class Capacitaciones
     Friend WithEvents Panel1 As Panel
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents dgv_equipo_Eval As DataGridView
-    Friend WithEvents DELETE As DataGridViewImageColumn
-    Friend WithEvents ID_Cap_Emp As DataGridViewTextBoxColumn
-    Friend WithEvents ID_Cap As DataGridViewTextBoxColumn
-    Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
-    Friend WithEvents Fecha As DataGridViewTextBoxColumn
-    Friend WithEvents Comentario As DataGridViewTextBoxColumn
     Private WithEvents Panel14 As Panel
     Friend WithEvents lbl_ingreso As Label
     Friend WithEvents TXT_FECHA As DateTimePicker
@@ -388,4 +383,10 @@ Partial Class Capacitaciones
     Friend WithEvents buscar_EN As PictureBox
     Friend WithEvents Label92 As Label
     Friend WithEvents lbl_emp As Label
+    Friend WithEvents DELETE As DataGridViewImageColumn
+    Friend WithEvents ID_Cap_Emp As DataGridViewTextBoxColumn
+    Friend WithEvents ID_Cap As DataGridViewTextBoxColumn
+    Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
+    Friend WithEvents Fecha As DataGridViewTextBoxColumn
+    Friend WithEvents Comentario As DataGridViewTextBoxColumn
 End Class

@@ -25,13 +25,6 @@ Partial Class Evaluaciones
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Evaluaciones))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dgv_equipo_Eval = New System.Windows.Forms.DataGridView()
-        Me.DELETE = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_EvEmp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_User = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -49,6 +42,13 @@ Partial Class Evaluaciones
         Me.buscar_EN = New System.Windows.Forms.PictureBox()
         Me.lbl_emp = New System.Windows.Forms.Label()
         Me.Empleado = New System.Windows.Forms.Label()
+        Me.DELETE = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_EvEmp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_User = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel14.SuspendLayout()
@@ -81,54 +81,6 @@ Partial Class Evaluaciones
         Me.dgv_equipo_Eval.RowHeadersVisible = False
         Me.dgv_equipo_Eval.Size = New System.Drawing.Size(1078, 412)
         Me.dgv_equipo_Eval.TabIndex = 76
-        '
-        'DELETE
-        '
-        Me.DELETE.HeaderText = "Eliminar"
-        Me.DELETE.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
-        Me.DELETE.Name = "DELETE"
-        '
-        'ID_EvEmp
-        '
-        Me.ID_EvEmp.DataPropertyName = "ID_EvEmp"
-        Me.ID_EvEmp.HeaderText = "ID"
-        Me.ID_EvEmp.Name = "ID_EvEmp"
-        Me.ID_EvEmp.Width = 50
-        '
-        'ID_Codigo
-        '
-        Me.ID_Codigo.DataPropertyName = "ID_Codigo"
-        Me.ID_Codigo.HeaderText = "EVALUACION"
-        Me.ID_Codigo.Name = "ID_Codigo"
-        Me.ID_Codigo.Width = 200
-        '
-        'ID_Emp
-        '
-        Me.ID_Emp.DataPropertyName = "ID_Emp"
-        Me.ID_Emp.HeaderText = "EMPLEADO"
-        Me.ID_Emp.Name = "ID_Emp"
-        Me.ID_Emp.Width = 200
-        '
-        'Fecha
-        '
-        Me.Fecha.DataPropertyName = "Fecha"
-        Me.Fecha.HeaderText = "FECHA"
-        Me.Fecha.Name = "Fecha"
-        Me.Fecha.Width = 200
-        '
-        'Estatus
-        '
-        Me.Estatus.DataPropertyName = "Estatus"
-        Me.Estatus.HeaderText = "COMENTARIO"
-        Me.Estatus.Name = "Estatus"
-        Me.Estatus.Width = 600
-        '
-        'ID_User
-        '
-        Me.ID_User.DataPropertyName = "ID_User"
-        Me.ID_User.HeaderText = "CAPTURO"
-        Me.ID_User.Name = "ID_User"
-        Me.ID_User.Width = 200
         '
         'DataGridViewImageColumn1
         '
@@ -313,6 +265,55 @@ Partial Class Evaluaciones
         Me.Empleado.TabIndex = 59
         Me.Empleado.Text = "Empleado: "
         '
+        'DELETE
+        '
+        Me.DELETE.HeaderText = "Eliminar"
+        Me.DELETE.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
+        Me.DELETE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.DELETE.Name = "DELETE"
+        '
+        'ID_EvEmp
+        '
+        Me.ID_EvEmp.DataPropertyName = "ID_EvEmp"
+        Me.ID_EvEmp.HeaderText = "ID"
+        Me.ID_EvEmp.Name = "ID_EvEmp"
+        Me.ID_EvEmp.Width = 50
+        '
+        'ID_Codigo
+        '
+        Me.ID_Codigo.DataPropertyName = "ID_Codigo"
+        Me.ID_Codigo.HeaderText = "EVALUACION"
+        Me.ID_Codigo.Name = "ID_Codigo"
+        Me.ID_Codigo.Width = 200
+        '
+        'ID_Emp
+        '
+        Me.ID_Emp.DataPropertyName = "ID_Emp"
+        Me.ID_Emp.HeaderText = "EMPLEADO"
+        Me.ID_Emp.Name = "ID_Emp"
+        Me.ID_Emp.Width = 200
+        '
+        'Fecha
+        '
+        Me.Fecha.DataPropertyName = "Fecha"
+        Me.Fecha.HeaderText = "FECHA"
+        Me.Fecha.Name = "Fecha"
+        Me.Fecha.Width = 200
+        '
+        'Estatus
+        '
+        Me.Estatus.DataPropertyName = "Estatus"
+        Me.Estatus.HeaderText = "COMENTARIO"
+        Me.Estatus.Name = "Estatus"
+        Me.Estatus.Width = 600
+        '
+        'ID_User
+        '
+        Me.ID_User.DataPropertyName = "ID_User"
+        Me.ID_User.HeaderText = "CAPTURO"
+        Me.ID_User.Name = "ID_User"
+        Me.ID_User.Width = 200
+        '
         'Evaluaciones
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -341,13 +342,6 @@ Partial Class Evaluaciones
     Friend WithEvents Panel1 As Panel
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents dgv_equipo_Eval As DataGridView
-    Friend WithEvents DELETE As DataGridViewImageColumn
-    Friend WithEvents ID_EvEmp As DataGridViewTextBoxColumn
-    Friend WithEvents ID_Codigo As DataGridViewTextBoxColumn
-    Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
-    Friend WithEvents Fecha As DataGridViewTextBoxColumn
-    Friend WithEvents Estatus As DataGridViewTextBoxColumn
-    Friend WithEvents ID_User As DataGridViewTextBoxColumn
     Private WithEvents Panel14 As Panel
     Private WithEvents Panel2 As Panel
     Private WithEvents Label42 As Label
@@ -364,4 +358,11 @@ Partial Class Evaluaciones
     Friend WithEvents buscar_EN As PictureBox
     Friend WithEvents lbl_emp As Label
     Friend WithEvents Empleado As Label
+    Friend WithEvents DELETE As DataGridViewImageColumn
+    Friend WithEvents ID_EvEmp As DataGridViewTextBoxColumn
+    Friend WithEvents ID_Codigo As DataGridViewTextBoxColumn
+    Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
+    Friend WithEvents Fecha As DataGridViewTextBoxColumn
+    Friend WithEvents Estatus As DataGridViewTextBoxColumn
+    Friend WithEvents ID_User As DataGridViewTextBoxColumn
 End Class

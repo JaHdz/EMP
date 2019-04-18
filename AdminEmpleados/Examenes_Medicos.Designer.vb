@@ -26,13 +26,6 @@ Partial Class Examenes_Medicos
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PnlExamenes = New System.Windows.Forms.Panel()
         Me.dgv_equipo_Eval = New System.Windows.Forms.DataGridView()
-        Me.DELETE = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_EM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EM_Estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EM_Resultado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EM_Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EM_FechaProximo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.TXT_EST = New System.Windows.Forms.TextBox()
         Me.txt_resultado = New System.Windows.Forms.TextBox()
@@ -52,6 +45,13 @@ Partial Class Examenes_Medicos
         Me.Label92 = New System.Windows.Forms.Label()
         Me.lbl_emp = New System.Windows.Forms.Label()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.DELETE = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_EM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EM_Estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EM_Resultado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EM_Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EM_FechaProximo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.PnlExamenes.SuspendLayout()
         CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -97,54 +97,6 @@ Partial Class Examenes_Medicos
         Me.dgv_equipo_Eval.Size = New System.Drawing.Size(1078, 475)
         Me.dgv_equipo_Eval.TabIndex = 89
         Me.dgv_equipo_Eval.UseWaitCursor = True
-        '
-        'DELETE
-        '
-        Me.DELETE.HeaderText = "Eliminar"
-        Me.DELETE.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
-        Me.DELETE.Name = "DELETE"
-        '
-        'ID_EM
-        '
-        Me.ID_EM.DataPropertyName = "ID_EM"
-        Me.ID_EM.HeaderText = "ID"
-        Me.ID_EM.Name = "ID_EM"
-        Me.ID_EM.Visible = False
-        '
-        'ID_Emp
-        '
-        Me.ID_Emp.DataPropertyName = "ID_Emp"
-        Me.ID_Emp.HeaderText = "EMPLEADO"
-        Me.ID_Emp.Name = "ID_Emp"
-        Me.ID_Emp.Width = 200
-        '
-        'EM_Estudio
-        '
-        Me.EM_Estudio.DataPropertyName = "EM_Estudio"
-        Me.EM_Estudio.HeaderText = "ESTUDIO"
-        Me.EM_Estudio.Name = "EM_Estudio"
-        Me.EM_Estudio.Width = 200
-        '
-        'EM_Resultado
-        '
-        Me.EM_Resultado.DataPropertyName = "EM_Resultado"
-        Me.EM_Resultado.HeaderText = "RESULTADO"
-        Me.EM_Resultado.Name = "EM_Resultado"
-        Me.EM_Resultado.Width = 400
-        '
-        'EM_Fecha
-        '
-        Me.EM_Fecha.DataPropertyName = "EM_Fecha"
-        Me.EM_Fecha.HeaderText = "FECHA"
-        Me.EM_Fecha.Name = "EM_Fecha"
-        Me.EM_Fecha.Width = 300
-        '
-        'EM_FechaProximo
-        '
-        Me.EM_FechaProximo.DataPropertyName = "EM_FechaProximo"
-        Me.EM_FechaProximo.HeaderText = "FECHA PROXIMA"
-        Me.EM_FechaProximo.Name = "EM_FechaProximo"
-        Me.EM_FechaProximo.Width = 300
         '
         'Panel14
         '
@@ -350,6 +302,55 @@ Partial Class Examenes_Medicos
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.Width = 50
         '
+        'DELETE
+        '
+        Me.DELETE.HeaderText = "Eliminar"
+        Me.DELETE.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
+        Me.DELETE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.DELETE.Name = "DELETE"
+        '
+        'ID_EM
+        '
+        Me.ID_EM.DataPropertyName = "ID_EM"
+        Me.ID_EM.HeaderText = "ID"
+        Me.ID_EM.Name = "ID_EM"
+        Me.ID_EM.Visible = False
+        '
+        'ID_Emp
+        '
+        Me.ID_Emp.DataPropertyName = "ID_Emp"
+        Me.ID_Emp.HeaderText = "EMPLEADO"
+        Me.ID_Emp.Name = "ID_Emp"
+        Me.ID_Emp.Width = 200
+        '
+        'EM_Estudio
+        '
+        Me.EM_Estudio.DataPropertyName = "EM_Estudio"
+        Me.EM_Estudio.HeaderText = "ESTUDIO"
+        Me.EM_Estudio.Name = "EM_Estudio"
+        Me.EM_Estudio.Width = 200
+        '
+        'EM_Resultado
+        '
+        Me.EM_Resultado.DataPropertyName = "EM_Resultado"
+        Me.EM_Resultado.HeaderText = "RESULTADO"
+        Me.EM_Resultado.Name = "EM_Resultado"
+        Me.EM_Resultado.Width = 400
+        '
+        'EM_Fecha
+        '
+        Me.EM_Fecha.DataPropertyName = "EM_Fecha"
+        Me.EM_Fecha.HeaderText = "FECHA"
+        Me.EM_Fecha.Name = "EM_Fecha"
+        Me.EM_Fecha.Width = 300
+        '
+        'EM_FechaProximo
+        '
+        Me.EM_FechaProximo.DataPropertyName = "EM_FechaProximo"
+        Me.EM_FechaProximo.HeaderText = "FECHA PROXIMA"
+        Me.EM_FechaProximo.Name = "EM_FechaProximo"
+        Me.EM_FechaProximo.Width = 300
+        '
         'Examenes_Medicos
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -394,6 +395,7 @@ Partial Class Examenes_Medicos
     Private WithEvents Panel14 As Panel
     Private WithEvents Panel2 As Panel
     Private WithEvents Label42 As Label
+    Friend WithEvents PnlExamenes As Panel
     Friend WithEvents DELETE As DataGridViewImageColumn
     Friend WithEvents ID_EM As DataGridViewTextBoxColumn
     Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
@@ -401,5 +403,4 @@ Partial Class Examenes_Medicos
     Friend WithEvents EM_Resultado As DataGridViewTextBoxColumn
     Friend WithEvents EM_Fecha As DataGridViewTextBoxColumn
     Friend WithEvents EM_FechaProximo As DataGridViewTextBoxColumn
-    Friend WithEvents PnlExamenes As Panel
 End Class
