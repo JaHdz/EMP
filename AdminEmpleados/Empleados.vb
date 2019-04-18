@@ -177,13 +177,13 @@ Public Class Empleados
     Private Sub txt_numero_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_numero.KeyPress
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
-    Private Sub txt_PUESTO_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_PUESTO.KeyPress
+    Private Sub txt_PUESTO_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
-    Private Sub txt_SUPER_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SUPER.KeyPress
+    Private Sub txt_SUPER_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
-    Private Sub txt_CLASE_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_tipo.KeyPress
+    Private Sub txt_CLASE_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
     Private Sub Txt_SALARY_KeyPress(sender As Object, e As KeyPressEventArgs)
@@ -335,6 +335,7 @@ Public Class Empleados
         Next
     End Sub
     Public Sub Limp()
+        MenuEmp.SelectedIndex = 0
         EMPLEADO_ID = 0
         For Each Tab As TabPage In MenuEmp.TabPages
             For Each Container As Control In Tab.Controls
@@ -367,7 +368,6 @@ Public Class Empleados
         EMPLEADO_ES = 0
         dgv_OI.DataSource = objcon.Consulta_OI(0)
         dgv_Ref.DataSource = objcon.Consulta_REF(0)
-        MenuEmp.SelectedIndex = 0
         SAVE.Image = My.Resources.Save_80px
         btn_SESave.Image = My.Resources.Save_80px
         AddToolTips()
@@ -609,7 +609,7 @@ Public Class Empleados
             Wait.Close()
         End If
     End Sub
-    Private Sub txt_PUESTO_Leave(sender As Object, e As EventArgs) Handles txt_PUESTO.Leave
+    Private Sub txt_PUESTO_Leave(sender As Object, e As EventArgs)
         If (txt_PUESTO.Text <> "") Then
             Dim ldParameters As New Dictionary(Of String, Object) From {{"Field", txt_PUESTO.Text}, {"Type", "PU"}}
             Dim Wait As New Wait With {
@@ -628,7 +628,7 @@ Public Class Empleados
             Wait.Close()
         End If
     End Sub
-    Private Sub txt_SUPER_Leave(sender As Object, e As EventArgs) Handles txt_SUPER.Leave
+    Private Sub txt_SUPER_Leave(sender As Object, e As EventArgs)
         If (txt_SUPER.Text <> "") Then
             Dim ldParameters As New Dictionary(Of String, Object) From {{"Field", txt_SUPER.Text}, {"Type", "SU"}}
             Dim Wait As New Wait With {
@@ -648,7 +648,7 @@ Public Class Empleados
         End If
     End Sub
 
-    Private Sub txt_tipo_Leave(sender As Object, e As EventArgs) Handles txt_tipo.Leave
+    Private Sub txt_tipo_Leave(sender As Object, e As EventArgs)
         If (txt_tipo.Text <> "") Then
             Dim ldParameters As New Dictionary(Of String, Object) From {{"Field", txt_tipo.Text}, {"Type", "TI"}}
             Dim Wait As New Wait With {
@@ -705,13 +705,13 @@ Public Class Empleados
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.ValidateIncome
                     }
-                    Wait.ShowDialog()
-                    Dim loResult As Dictionary(Of String, Object) = Wait.Result
-                    If loResult("Valid") = False Then
-                        MessageBox.Show("Este registro ya Existe.")
-                    End If
-                    dgv_OI.DataSource = loResult("Source")
-                    Wait.Close()
+                Wait.ShowDialog()
+                Dim loResult As Dictionary(Of String, Object) = Wait.Result
+                If loResult("Valid") = False Then
+                    MessageBox.Show("Este registro ya Existe.")
+                End If
+                dgv_OI.DataSource = loResult("Source")
+                Wait.Close()
 
                 txt_RefOcu.Text = ""
                 txt_RefNom.Text = ""
@@ -1035,7 +1035,7 @@ Public Class Empleados
             End If
         End If
     End Sub
-    Private Sub depto_Leave(sender As Object, e As EventArgs) Handles depto.Leave
+    Private Sub depto_Leave(sender As Object, e As EventArgs)
         If (depto.Text <> "") Then
             V2 = objcon.S_catalago(depto.Text, "DE")
             If (V2 = "" Or V2 Is Nothing) Then
@@ -1470,7 +1470,7 @@ Public Class Empleados
     End Sub
 
     Private Sub TxtMoney_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_GFCole.KeyPress, Txt_GFDesp.KeyPress, txt_GFRenta.KeyPress, txt_GFServ.KeyPress,
-                                                                                     txt_OTCantidad.KeyPress, txt_antSALARIO.KeyPress, txt_SALARY.KeyPress
+                                                                                     txt_OTCantidad.KeyPress, txt_antSALARIO.KeyPress
         Dim TxtBoxMoney As TextBox = CType(sender, TextBox)
         If Not TxtBoxMoney.Text.Contains(".") Then
             e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)

@@ -132,7 +132,6 @@ Public Class Wait
     End Sub
 
     Private Sub BwWait_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BwWait.RunWorkerCompleted
-        Threading.Thread.Sleep(500)
         Hide()
     End Sub
 End Class
