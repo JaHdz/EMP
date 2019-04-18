@@ -75,10 +75,11 @@ Partial Class Evaluaciones
         Me.dgv_equipo_Eval.AllowUserToAddRows = False
         Me.dgv_equipo_Eval.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_equipo_Eval.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DELETE, Me.ID_EvEmp, Me.ID_Codigo, Me.ID_Emp, Me.Fecha, Me.Estatus, Me.ID_User})
+        Me.dgv_equipo_Eval.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.dgv_equipo_Eval.Location = New System.Drawing.Point(0, 0)
         Me.dgv_equipo_Eval.Name = "dgv_equipo_Eval"
         Me.dgv_equipo_Eval.RowHeadersVisible = False
-        Me.dgv_equipo_Eval.Size = New System.Drawing.Size(1072, 412)
+        Me.dgv_equipo_Eval.Size = New System.Drawing.Size(1078, 412)
         Me.dgv_equipo_Eval.TabIndex = 76
         '
         'DELETE
