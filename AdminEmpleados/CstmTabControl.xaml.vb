@@ -62,7 +62,6 @@ Public Class CstmTabControl
         CurrentOption = Tab.Empleados
     End Sub
 
-
     Private Sub TabMenu_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles TabMenu.SelectionChanged
         Dim selectedtab = TabMenu.SelectedIndex
         If selectedtab <> CurrentOption Then
