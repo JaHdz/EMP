@@ -25,6 +25,10 @@
                                         <Setter TargetName="Border" Property="Background" Value="#cfd1d2" />
                                         <Setter TargetName="Border" Property="TextElement.FontWeight" Value="Bold"/>
                                     </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="Border" Property="Background" Value="#cfd1d2" />
+                                        <Setter TargetName="Border" Property="TextElement.FontWeight" Value="Bold"/>
+                                    </Trigger>
                                     <Trigger Property="IsSelected" Value="False">
                                         <Setter TargetName="Border" Property="Background" Value="#f0f0f0" />
                                     </Trigger>
@@ -58,7 +62,7 @@
             <TabItem x:Name="tbAdmin" Header="ADMINISTRACION" Height="50">
                 <WindowsFormsHost Name="wfhAdministracion" />
             </TabItem>
-            <TabItem x:Name="tbLogout"  Height="50">
+            <TabItem x:Name="tbLogout"  Height="50" >
                 <TabItem.Header>
                     <Label Content="CERRAR SESION" HorizontalAlignment="Left"  MouseLeftButtonDown="Logout_Click" Padding="0" />
                 </TabItem.Header>

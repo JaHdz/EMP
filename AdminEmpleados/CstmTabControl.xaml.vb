@@ -32,11 +32,14 @@ Public Class CstmTabControl
 
     Private Sub LoadTabs()
         If Dictionary IsNot Nothing Then
+            Logo.Cursor = Cursors.None
+            tbLogout.Cursor = Cursors.Hand
             For Each kvp As KeyValuePair(Of Integer, Form) In Dictionary
                 Dim Name As Integer = kvp.Key
                 Dim Frm As Form = kvp.Value
                 Select Case Name
                     Case Tab.Empleados
+                        tbEmployee.Cursor = Cursors.Hand
                         wfhEmpleados.Child = Frm
                     Case Tab.Equipos
                         wfhEquipos.Child = Frm
@@ -49,6 +52,7 @@ Public Class CstmTabControl
                     Case Tab.Administracion
                         wfhAdministracion.Child = Frm
                 End Select
+                TabMenu.Items(Name).Cursor = Cursors.Hand
                 Frm.Show()
             Next
         End If
