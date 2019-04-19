@@ -225,7 +225,7 @@ Namespace My.Resources
         '''</summary>
         Friend ReadOnly Property Blue_button() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Blue-button", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Blue_button", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
