@@ -80,7 +80,7 @@ Public Class CstmTabControl
     Private Sub Logout_Click(sender As Object, e As MouseButtonEventArgs)
         If MessageBox.Show("¿Desea cerrar sesion?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                            MessageBoxDefaultButton.Button1) = DialogResult.Yes Then
-            If RedirectToForm IsNot Nothing AndAlso RedirectToForm IsNot Nothing Then
+            If ParentForm IsNot Nothing AndAlso RedirectToForm IsNot Nothing Then
                 RedirectToForm.Show()
                 ParentForm.ObLogout = True
                 ParentForm.Close()
