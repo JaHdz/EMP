@@ -16,8 +16,15 @@
         If (txt_numero.Text <> "") Then
             NEmp = Convert.ToInt16(objcon.Emp_Exist(txt_numero.Text))
             If (NEmp > 0) Then
-                Dim Employee As New Cls_Emp
-                lbl_emp.Text = txt_numero.Text + " | " + Employee.Emp_Name + " " + Employee.Emp_APat + " " + Employee.Emp_AMat
+                Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", txt_numero.Text}}
+                Dim Wait As New Wait With {
+                .Parameters = ldParameters,
+                .Operation = BackgroundOperations.GetEmployeeInfo
+            }
+                Wait.ShowDialog()
+                Dim Result As Cls_Emp = Wait.Result
+                Wait.Close()
+                lbl_emp.Text = txt_numero.Text + " | " + Result.Emp_Name + " " + Result.Emp_APat + " " + Result.Emp_AMat
                 dgv_equipo_emp.DataSource = objcon.Consulta_USER()
             Else
                 MessageBox.Show("Numero de empleado no existe")

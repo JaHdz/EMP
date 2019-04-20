@@ -23,8 +23,8 @@ Partial Class Empleados
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Tam_Es = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -50,12 +50,6 @@ Partial Class Empleados
         Me.txt_GFCole = New System.Windows.Forms.TextBox()
         Me.PnlReferencias = New System.Windows.Forms.Panel()
         Me.dgv_Ref = New System.Windows.Forms.DataGridView()
-        Me.btnEReferencia = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.REID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NOMBRE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TIPO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.OCUPACION = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TIEMPO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label52 = New System.Windows.Forms.Label()
         Me.txt_TC = New System.Windows.Forms.TextBox()
         Me.txt_RefOcu = New System.Windows.Forms.TextBox()
@@ -98,10 +92,6 @@ Partial Class Empleados
         Me.txt_OIParen = New System.Windows.Forms.TextBox()
         Me.Label65 = New System.Windows.Forms.Label()
         Me.dgv_OI = New System.Windows.Forms.DataGridView()
-        Me.btnEIngresos = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.IOID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PARENTESCO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CANTIDAD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.btn_OI = New System.Windows.Forms.PictureBox()
         Me.Label60 = New System.Windows.Forms.Label()
@@ -148,9 +138,6 @@ Partial Class Empleados
         Me.panel20 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.dgv_Enf = New System.Windows.Forms.DataGridView()
-        Me.btnEnELiminar = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Enf = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Text = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_enfNAME = New System.Windows.Forms.TextBox()
         Me.label47 = New System.Windows.Forms.Label()
         Me.panel21 = New System.Windows.Forms.Panel()
@@ -160,15 +147,6 @@ Partial Class Empleados
         Me.panel18 = New System.Windows.Forms.Panel()
         Me.PnlContacto = New System.Windows.Forms.Panel()
         Me.dgv_contacto = New System.Windows.Forms.DataGridView()
-        Me.btnCOEliminar = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.label45 = New System.Windows.Forms.Label()
         Me.txt_conPAREN = New System.Windows.Forms.TextBox()
         Me.label41 = New System.Windows.Forms.Label()
@@ -188,17 +166,6 @@ Partial Class Empleados
         Me.panel16 = New System.Windows.Forms.Panel()
         Me.pnlAntecedentes = New System.Windows.Forms.Panel()
         Me.dgv_ant = New System.Windows.Forms.DataGridView()
-        Me.btnAEliminar = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Ant = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID__Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_FInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_FFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_NEmpresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_Cargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_Salario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_Tel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_Motivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_Contacto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_antMT = New System.Windows.Forms.TextBox()
         Me.txt_antNAME = New System.Windows.Forms.TextBox()
         Me.txt_antTEL = New System.Windows.Forms.TextBox()
@@ -222,16 +189,6 @@ Partial Class Empleados
         Me.panel3 = New System.Windows.Forms.Panel()
         Me.PnlOffsprings = New System.Windows.Forms.Panel()
         Me.dgv_Hijos = New System.Windows.Forms.DataGridView()
-        Me.btnHEliminar = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.label26 = New System.Windows.Forms.Label()
         Me.txt_hijoNACION = New System.Windows.Forms.TextBox()
         Me.txt_hijoFN = New System.Windows.Forms.DateTimePicker()
@@ -254,17 +211,6 @@ Partial Class Empleados
         Me.label25 = New System.Windows.Forms.Label()
         Me.txt_esNacion = New System.Windows.Forms.TextBox()
         Me.dgv_esposa = New System.Windows.Forms.DataGridView()
-        Me.btnCEliminar = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Persona = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_APat = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_AMat = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_Nacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_FNac = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_Genero = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_EdoCivil = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_esName = New System.Windows.Forms.TextBox()
         Me.txt_esAM = New System.Windows.Forms.TextBox()
         Me.txt_esFN = New System.Windows.Forms.DateTimePicker()
@@ -371,6 +317,60 @@ Partial Class Empleados
         Me.MenuEmp = New System.Windows.Forms.TabControl()
         Me.BwEmpleados = New System.ComponentModel.BackgroundWorker()
         Me.datosFamiliaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.btnCEliminar = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Persona = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fam_Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fam_Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fam_APat = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fam_AMat = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fam_Nacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fam_FNac = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fam_Genero = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fam_EdoCivil = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnHEliminar = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAEliminar = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Ant = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID__Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ant_FInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ant_FFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ant_NEmpresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ant_Cargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ant_Salario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ant_Tel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ant_Motivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ant_Contacto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnCOEliminar = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnEnELiminar = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Enf = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Text = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnEIngresos = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.IOID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PARENTESCO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CANTIDAD = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnEReferencia = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.REID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NOMBRE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TIPO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.OCUPACION = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TIEMPO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tam_Es.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.btn_SERPT, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -534,7 +534,7 @@ Partial Class Empleados
         Me.PnlObservaciones.Location = New System.Drawing.Point(2, 1175)
         Me.PnlObservaciones.Margin = New System.Windows.Forms.Padding(2)
         Me.PnlObservaciones.Name = "PnlObservaciones"
-        Me.PnlObservaciones.Size = New System.Drawing.Size(1032, 111)
+        Me.PnlObservaciones.Size = New System.Drawing.Size(1015, 111)
         Me.PnlObservaciones.TabIndex = 73
         '
         'txt_commen
@@ -545,7 +545,7 @@ Partial Class Empleados
         Me.txt_commen.Location = New System.Drawing.Point(0, 35)
         Me.txt_commen.Multiline = True
         Me.txt_commen.Name = "txt_commen"
-        Me.txt_commen.Size = New System.Drawing.Size(1028, 72)
+        Me.txt_commen.Size = New System.Drawing.Size(1011, 72)
         Me.txt_commen.TabIndex = 31
         '
         'Panel26
@@ -557,7 +557,7 @@ Partial Class Empleados
         Me.Panel26.Location = New System.Drawing.Point(0, 0)
         Me.Panel26.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(1028, 35)
+        Me.Panel26.Size = New System.Drawing.Size(1011, 35)
         Me.Panel26.TabIndex = 0
         '
         'Label71
@@ -601,7 +601,7 @@ Partial Class Empleados
         Me.PnlGastos.Location = New System.Drawing.Point(0, 1075)
         Me.PnlGastos.Margin = New System.Windows.Forms.Padding(2)
         Me.PnlGastos.Name = "PnlGastos"
-        Me.PnlGastos.Size = New System.Drawing.Size(1032, 78)
+        Me.PnlGastos.Size = New System.Drawing.Size(1015, 78)
         Me.PnlGastos.TabIndex = 72
         '
         'Label64
@@ -642,7 +642,7 @@ Partial Class Empleados
         Me.Panel30.Location = New System.Drawing.Point(0, 0)
         Me.Panel30.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(1028, 35)
+        Me.Panel30.Size = New System.Drawing.Size(1011, 35)
         Me.Panel30.TabIndex = 0
         '
         'Label74
@@ -734,7 +734,7 @@ Partial Class Empleados
         Me.PnlReferencias.Location = New System.Drawing.Point(0, 841)
         Me.PnlReferencias.Margin = New System.Windows.Forms.Padding(2)
         Me.PnlReferencias.Name = "PnlReferencias"
-        Me.PnlReferencias.Size = New System.Drawing.Size(1032, 216)
+        Me.PnlReferencias.Size = New System.Drawing.Size(1015, 216)
         Me.PnlReferencias.TabIndex = 71
         '
         'dgv_Ref
@@ -746,50 +746,8 @@ Partial Class Empleados
         Me.dgv_Ref.Location = New System.Drawing.Point(0, 114)
         Me.dgv_Ref.Name = "dgv_Ref"
         Me.dgv_Ref.RowHeadersVisible = False
-        Me.dgv_Ref.Size = New System.Drawing.Size(1028, 98)
+        Me.dgv_Ref.Size = New System.Drawing.Size(1011, 98)
         Me.dgv_Ref.TabIndex = 54
-        '
-        'btnEReferencia
-        '
-        Me.btnEReferencia.FillWeight = 11.0!
-        Me.btnEReferencia.HeaderText = ""
-        Me.btnEReferencia.Name = "btnEReferencia"
-        Me.btnEReferencia.Width = 48
-        '
-        'REID
-        '
-        Me.REID.DataPropertyName = "ID_Ref"
-        Me.REID.HeaderText = "ID"
-        Me.REID.Name = "REID"
-        Me.REID.Visible = False
-        '
-        'NOMBRE
-        '
-        Me.NOMBRE.DataPropertyName = "Ref_Nombre"
-        Me.NOMBRE.HeaderText = "NOMBRE"
-        Me.NOMBRE.Name = "NOMBRE"
-        Me.NOMBRE.Width = 200
-        '
-        'TIPO
-        '
-        Me.TIPO.DataPropertyName = "Ref_TRelacion"
-        Me.TIPO.HeaderText = "TIPO DE RELACION"
-        Me.TIPO.Name = "TIPO"
-        Me.TIPO.Width = 300
-        '
-        'OCUPACION
-        '
-        Me.OCUPACION.DataPropertyName = "Ref_Ocupacion"
-        Me.OCUPACION.HeaderText = "OCUPACION"
-        Me.OCUPACION.Name = "OCUPACION"
-        Me.OCUPACION.Width = 200
-        '
-        'TIEMPO
-        '
-        Me.TIEMPO.DataPropertyName = "Ref_TiempoC"
-        Me.TIEMPO.HeaderText = "TIEMPO DE CONOCERLO"
-        Me.TIEMPO.Name = "TIEMPO"
-        Me.TIEMPO.Width = 400
         '
         'Label52
         '
@@ -876,7 +834,7 @@ Partial Class Empleados
         Me.Panel10.Location = New System.Drawing.Point(0, 0)
         Me.Panel10.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(1028, 35)
+        Me.Panel10.Size = New System.Drawing.Size(1011, 35)
         Me.Panel10.TabIndex = 0
         '
         'Btn_AddRef
@@ -884,7 +842,7 @@ Partial Class Empleados
         Me.Btn_AddRef.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Btn_AddRef.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Btn_AddRef.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Reference_80px
-        Me.Btn_AddRef.Location = New System.Drawing.Point(972, 0)
+        Me.Btn_AddRef.Location = New System.Drawing.Point(955, 0)
         Me.Btn_AddRef.Name = "Btn_AddRef"
         Me.Btn_AddRef.Size = New System.Drawing.Size(35, 35)
         Me.Btn_AddRef.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -932,7 +890,7 @@ Partial Class Empleados
         Me.PnlActividades.Controls.Add(Me.Panel36)
         Me.PnlActividades.Location = New System.Drawing.Point(0, 405)
         Me.PnlActividades.Name = "PnlActividades"
-        Me.PnlActividades.Size = New System.Drawing.Size(1032, 245)
+        Me.PnlActividades.Size = New System.Drawing.Size(1015, 245)
         Me.PnlActividades.TabIndex = 51
         '
         'Label90
@@ -1152,7 +1110,7 @@ Partial Class Empleados
         Me.Panel36.Location = New System.Drawing.Point(0, 0)
         Me.Panel36.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel36.Name = "Panel36"
-        Me.Panel36.Size = New System.Drawing.Size(1032, 35)
+        Me.Panel36.Size = New System.Drawing.Size(1015, 35)
         Me.Panel36.TabIndex = 28
         '
         'Label84
@@ -1182,7 +1140,7 @@ Partial Class Empleados
         Me.PnlIngresos.Location = New System.Drawing.Point(0, 655)
         Me.PnlIngresos.Margin = New System.Windows.Forms.Padding(2)
         Me.PnlIngresos.Name = "PnlIngresos"
-        Me.PnlIngresos.Size = New System.Drawing.Size(1032, 182)
+        Me.PnlIngresos.Size = New System.Drawing.Size(1015, 182)
         Me.PnlIngresos.TabIndex = 51
         '
         'Label63
@@ -1232,36 +1190,8 @@ Partial Class Empleados
         Me.dgv_OI.Location = New System.Drawing.Point(0, 71)
         Me.dgv_OI.Name = "dgv_OI"
         Me.dgv_OI.RowHeadersVisible = False
-        Me.dgv_OI.Size = New System.Drawing.Size(1028, 107)
+        Me.dgv_OI.Size = New System.Drawing.Size(1011, 107)
         Me.dgv_OI.TabIndex = 55
-        '
-        'btnEIngresos
-        '
-        Me.btnEIngresos.FillWeight = 11.0!
-        Me.btnEIngresos.HeaderText = ""
-        Me.btnEIngresos.Name = "btnEIngresos"
-        Me.btnEIngresos.Width = 48
-        '
-        'IOID
-        '
-        Me.IOID.DataPropertyName = "ID_OIng"
-        Me.IOID.HeaderText = "ID"
-        Me.IOID.Name = "IOID"
-        Me.IOID.Visible = False
-        '
-        'PARENTESCO
-        '
-        Me.PARENTESCO.DataPropertyName = "OIng_Desc"
-        Me.PARENTESCO.HeaderText = "PARENTESCO"
-        Me.PARENTESCO.Name = "PARENTESCO"
-        Me.PARENTESCO.Width = 500
-        '
-        'CANTIDAD
-        '
-        Me.CANTIDAD.DataPropertyName = "OIng_Cantidad"
-        Me.CANTIDAD.HeaderText = "CANTIDAD"
-        Me.CANTIDAD.Name = "CANTIDAD"
-        Me.CANTIDAD.Width = 600
         '
         'Panel14
         '
@@ -1273,7 +1203,7 @@ Partial Class Empleados
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
         Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(1028, 35)
+        Me.Panel14.Size = New System.Drawing.Size(1011, 35)
         Me.Panel14.TabIndex = 0
         '
         'btn_OI
@@ -1281,7 +1211,7 @@ Partial Class Empleados
         Me.btn_OI.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_OI.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_OI.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Income_80px
-        Me.btn_OI.Location = New System.Drawing.Point(972, 0)
+        Me.btn_OI.Location = New System.Drawing.Point(955, 0)
         Me.btn_OI.Name = "btn_OI"
         Me.btn_OI.Size = New System.Drawing.Size(35, 35)
         Me.btn_OI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1322,7 +1252,7 @@ Partial Class Empleados
         Me.PnlDatos.Controls.Add(Me.Label49)
         Me.PnlDatos.Location = New System.Drawing.Point(486, 289)
         Me.PnlDatos.Name = "PnlDatos"
-        Me.PnlDatos.Size = New System.Drawing.Size(546, 110)
+        Me.PnlDatos.Size = New System.Drawing.Size(529, 110)
         Me.PnlDatos.TabIndex = 50
         '
         'Panel6
@@ -1333,7 +1263,7 @@ Partial Class Empleados
         Me.Panel6.Location = New System.Drawing.Point(0, 0)
         Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(546, 35)
+        Me.Panel6.Size = New System.Drawing.Size(529, 35)
         Me.Panel6.TabIndex = 0
         '
         'Label53
@@ -1476,7 +1406,7 @@ Partial Class Empleados
         Me.PnlVivienda.Controls.Add(Me.Panel15)
         Me.PnlVivienda.Location = New System.Drawing.Point(0, 0)
         Me.PnlVivienda.Name = "PnlVivienda"
-        Me.PnlVivienda.Size = New System.Drawing.Size(1032, 283)
+        Me.PnlVivienda.Size = New System.Drawing.Size(1015, 283)
         Me.PnlVivienda.TabIndex = 0
         '
         'GrpServicios
@@ -1730,7 +1660,7 @@ Partial Class Empleados
         Me.Panel15.Location = New System.Drawing.Point(0, 0)
         Me.Panel15.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(1032, 35)
+        Me.Panel15.Size = New System.Drawing.Size(1015, 35)
         Me.Panel15.TabIndex = 1
         '
         'Label5
@@ -1796,29 +1726,6 @@ Partial Class Empleados
         Me.dgv_Enf.RowTemplate.Height = 24
         Me.dgv_Enf.Size = New System.Drawing.Size(1066, 390)
         Me.dgv_Enf.TabIndex = 34
-        '
-        'btnEnELiminar
-        '
-        Me.btnEnELiminar.FillWeight = 18.13706!
-        Me.btnEnELiminar.HeaderText = ""
-        Me.btnEnELiminar.Name = "btnEnELiminar"
-        Me.btnEnELiminar.Width = 48
-        '
-        'ID_Enf
-        '
-        Me.ID_Enf.DataPropertyName = "ID_Enf"
-        Me.ID_Enf.HeaderText = "ID"
-        Me.ID_Enf.Name = "ID_Enf"
-        Me.ID_Enf.Visible = False
-        '
-        'Text
-        '
-        Me.Text.DataPropertyName = "Text"
-        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black
-        Me.Text.DefaultCellStyle = DataGridViewCellStyle14
-        Me.Text.HeaderText = "Enfermedad"
-        Me.Text.Name = "Text"
-        Me.Text.Width = 1400
         '
         'txt_enfNAME
         '
@@ -1935,67 +1842,6 @@ Partial Class Empleados
         Me.dgv_contacto.RowTemplate.Height = 24
         Me.dgv_contacto.Size = New System.Drawing.Size(1066, 386)
         Me.dgv_contacto.TabIndex = 50
-        '
-        'btnCOEliminar
-        '
-        Me.btnCOEliminar.FillWeight = 18.13706!
-        Me.btnCOEliminar.HeaderText = ""
-        Me.btnCOEliminar.Name = "btnCOEliminar"
-        Me.btnCOEliminar.Width = 48
-        '
-        'Column3
-        '
-        Me.Column3.DataPropertyName = "ID_CEmergencia"
-        Me.Column3.HeaderText = "ID"
-        Me.Column3.Name = "Column3"
-        Me.Column3.Visible = False
-        '
-        'Column4
-        '
-        Me.Column4.DataPropertyName = "ID_Emp"
-        Me.Column4.HeaderText = "Empleado"
-        Me.Column4.Name = "Column4"
-        Me.Column4.Visible = False
-        '
-        'Column5
-        '
-        Me.Column5.DataPropertyName = "CE_Nombre"
-        Me.Column5.HeaderText = "Nombre"
-        Me.Column5.Name = "Column5"
-        '
-        'Column6
-        '
-        Me.Column6.DataPropertyName = "CE_APat"
-        Me.Column6.HeaderText = "Apellido Paterno"
-        Me.Column6.Name = "Column6"
-        Me.Column6.Width = 200
-        '
-        'Column7
-        '
-        Me.Column7.DataPropertyName = "CE_AMat"
-        Me.Column7.HeaderText = "Apellido Materno"
-        Me.Column7.Name = "Column7"
-        Me.Column7.Width = 200
-        '
-        'Column8
-        '
-        Me.Column8.DataPropertyName = "CE_Parentesco"
-        Me.Column8.HeaderText = "Parentesco"
-        Me.Column8.Name = "Column8"
-        '
-        'Column9
-        '
-        Me.Column9.DataPropertyName = "CE_Telefono"
-        Me.Column9.HeaderText = "Telefono"
-        Me.Column9.Name = "Column9"
-        Me.Column9.Width = 200
-        '
-        'Column10
-        '
-        Me.Column10.DataPropertyName = "CE_Celular"
-        Me.Column10.HeaderText = "Celular"
-        Me.Column10.Name = "Column10"
-        Me.Column10.Width = 200
         '
         'label45
         '
@@ -2209,77 +2055,6 @@ Partial Class Empleados
         Me.dgv_ant.RowHeadersVisible = False
         Me.dgv_ant.Size = New System.Drawing.Size(1066, 337)
         Me.dgv_ant.TabIndex = 51
-        '
-        'btnAEliminar
-        '
-        Me.btnAEliminar.FillWeight = 18.13706!
-        Me.btnAEliminar.HeaderText = ""
-        Me.btnAEliminar.Name = "btnAEliminar"
-        Me.btnAEliminar.Width = 48
-        '
-        'ID_Ant
-        '
-        Me.ID_Ant.DataPropertyName = "ID_Ant"
-        Me.ID_Ant.HeaderText = "ID"
-        Me.ID_Ant.Name = "ID_Ant"
-        Me.ID_Ant.Visible = False
-        '
-        'ID__Emp
-        '
-        Me.ID__Emp.DataPropertyName = "ID_Emp"
-        Me.ID__Emp.HeaderText = "Empleado"
-        Me.ID__Emp.Name = "ID__Emp"
-        Me.ID__Emp.Visible = False
-        '
-        'Ant_FInicio
-        '
-        Me.Ant_FInicio.DataPropertyName = "Ant_FInicio"
-        Me.Ant_FInicio.HeaderText = "Fecha Inicio"
-        Me.Ant_FInicio.Name = "Ant_FInicio"
-        Me.Ant_FInicio.Width = 200
-        '
-        'Ant_FFin
-        '
-        Me.Ant_FFin.DataPropertyName = "Ant_FFin"
-        Me.Ant_FFin.HeaderText = "Fecha Final"
-        Me.Ant_FFin.Name = "Ant_FFin"
-        Me.Ant_FFin.Width = 200
-        '
-        'Ant_NEmpresa
-        '
-        Me.Ant_NEmpresa.DataPropertyName = "Ant_NEmpresa"
-        Me.Ant_NEmpresa.HeaderText = "Empresa"
-        Me.Ant_NEmpresa.Name = "Ant_NEmpresa"
-        '
-        'Ant_Cargo
-        '
-        Me.Ant_Cargo.DataPropertyName = "Ant_Cargo"
-        Me.Ant_Cargo.HeaderText = "Cargo"
-        Me.Ant_Cargo.Name = "Ant_Cargo"
-        '
-        'Ant_Salario
-        '
-        Me.Ant_Salario.DataPropertyName = "Ant_Salario"
-        Me.Ant_Salario.HeaderText = "Salario"
-        Me.Ant_Salario.Name = "Ant_Salario"
-        '
-        'Ant_Tel
-        '
-        Me.Ant_Tel.DataPropertyName = "Ant_Tel"
-        Me.Ant_Tel.HeaderText = "Telefono"
-        Me.Ant_Tel.Name = "Ant_Tel"
-        '
-        'Ant_Motivo
-        '
-        Me.Ant_Motivo.DataPropertyName = "Ant_Motivo"
-        Me.Ant_Motivo.HeaderText = "Motivo"
-        Me.Ant_Motivo.Name = "Ant_Motivo"
-        '
-        'Ant_Contacto
-        '
-        Me.Ant_Contacto.DataPropertyName = "Ant_Contacto"
-        Me.Ant_Contacto.HeaderText = "Contacto"
-        Me.Ant_Contacto.Name = "Ant_Contacto"
         '
         'txt_antMT
         '
@@ -2532,75 +2307,6 @@ Partial Class Empleados
         Me.dgv_Hijos.Size = New System.Drawing.Size(1066, 182)
         Me.dgv_Hijos.TabIndex = 52
         '
-        'btnHEliminar
-        '
-        Me.btnHEliminar.FillWeight = 18.13706!
-        Me.btnHEliminar.HeaderText = ""
-        Me.btnHEliminar.Name = "btnHEliminar"
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ID_Persona"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Visible = False
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "ID_Emp"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Empleado"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.Visible = False
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Fam_Tipo"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Tipo"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.Visible = False
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Fam_Nombre"
-        Me.DataGridViewTextBoxColumn4.FillWeight = 48.45185!
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Nombre"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Fam_APat"
-        Me.DataGridViewTextBoxColumn5.FillWeight = 48.45185!
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Apellido Paterno"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Fam_AMat"
-        Me.DataGridViewTextBoxColumn6.FillWeight = 48.45185!
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Apellido Materno"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Fam_Nacion"
-        Me.DataGridViewTextBoxColumn7.FillWeight = 48.45185!
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Nacionalidad"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "Fam_FNac"
-        Me.DataGridViewTextBoxColumn8.FillWeight = 48.45185!
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Fecha Nacimiento"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "Fam_Genero"
-        Me.DataGridViewTextBoxColumn9.FillWeight = 48.45185!
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Genero"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        '
         'label26
         '
         Me.label26.AutoSize = True
@@ -2848,82 +2554,6 @@ Partial Class Empleados
         Me.dgv_esposa.Size = New System.Drawing.Size(1066, 145)
         Me.dgv_esposa.TabIndex = 51
         '
-        'btnCEliminar
-        '
-        Me.btnCEliminar.FillWeight = 11.02631!
-        Me.btnCEliminar.HeaderText = ""
-        Me.btnCEliminar.Name = "btnCEliminar"
-        '
-        'ID_Persona
-        '
-        Me.ID_Persona.DataPropertyName = "ID_Persona"
-        Me.ID_Persona.HeaderText = "ID"
-        Me.ID_Persona.Name = "ID_Persona"
-        Me.ID_Persona.Visible = False
-        '
-        'ID_Emp
-        '
-        Me.ID_Emp.DataPropertyName = "ID_Emp"
-        Me.ID_Emp.HeaderText = "Empleado"
-        Me.ID_Emp.Name = "ID_Emp"
-        Me.ID_Emp.Visible = False
-        '
-        'Fam_Tipo
-        '
-        Me.Fam_Tipo.DataPropertyName = "Fam_Tipo"
-        Me.Fam_Tipo.HeaderText = "Tipo"
-        Me.Fam_Tipo.Name = "Fam_Tipo"
-        Me.Fam_Tipo.Visible = False
-        '
-        'Fam_Nombre
-        '
-        Me.Fam_Nombre.DataPropertyName = "Fam_Nombre"
-        Me.Fam_Nombre.FillWeight = 29.45599!
-        Me.Fam_Nombre.HeaderText = "Nombre"
-        Me.Fam_Nombre.Name = "Fam_Nombre"
-        '
-        'Fam_APat
-        '
-        Me.Fam_APat.DataPropertyName = "Fam_APat"
-        Me.Fam_APat.FillWeight = 29.45599!
-        Me.Fam_APat.HeaderText = "Apellido Paterno"
-        Me.Fam_APat.Name = "Fam_APat"
-        '
-        'Fam_AMat
-        '
-        Me.Fam_AMat.DataPropertyName = "Fam_AMat"
-        Me.Fam_AMat.FillWeight = 29.45599!
-        Me.Fam_AMat.HeaderText = "Apellido Materno"
-        Me.Fam_AMat.Name = "Fam_AMat"
-        '
-        'Fam_Nacion
-        '
-        Me.Fam_Nacion.DataPropertyName = "Fam_Nacion"
-        Me.Fam_Nacion.FillWeight = 29.45599!
-        Me.Fam_Nacion.HeaderText = "Nacionalidad"
-        Me.Fam_Nacion.Name = "Fam_Nacion"
-        '
-        'Fam_FNac
-        '
-        Me.Fam_FNac.DataPropertyName = "Fam_FNac"
-        Me.Fam_FNac.FillWeight = 29.45599!
-        Me.Fam_FNac.HeaderText = "Fecha Nacimiento"
-        Me.Fam_FNac.Name = "Fam_FNac"
-        '
-        'Fam_Genero
-        '
-        Me.Fam_Genero.DataPropertyName = "Fam_Genero"
-        Me.Fam_Genero.FillWeight = 29.45599!
-        Me.Fam_Genero.HeaderText = "Genero"
-        Me.Fam_Genero.Name = "Fam_Genero"
-        '
-        'Fam_EdoCivil
-        '
-        Me.Fam_EdoCivil.DataPropertyName = "Fam_EdoCivil"
-        Me.Fam_EdoCivil.FillWeight = 29.45599!
-        Me.Fam_EdoCivil.HeaderText = "Estado Civil"
-        Me.Fam_EdoCivil.Name = "Fam_EdoCivil"
-        '
         'txt_esName
         '
         Me.txt_esName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
@@ -3134,8 +2764,9 @@ Partial Class Empleados
         'PbOptions
         '
         Me.PbOptions.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PbOptions.Dock = System.Windows.Forms.DockStyle.Right
         Me.PbOptions.Image = Global.AdminEmpleados.My.Resources.Resources.Alta_80px
-        Me.PbOptions.Location = New System.Drawing.Point(1020, 0)
+        Me.PbOptions.Location = New System.Drawing.Point(980, 0)
         Me.PbOptions.Name = "PbOptions"
         Me.PbOptions.Size = New System.Drawing.Size(35, 35)
         Me.PbOptions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3146,9 +2777,10 @@ Partial Class Empleados
         'lbl_option
         '
         Me.lbl_option.AutoSize = True
+        Me.lbl_option.Dock = System.Windows.Forms.DockStyle.Right
         Me.lbl_option.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_option.ForeColor = System.Drawing.Color.White
-        Me.lbl_option.Location = New System.Drawing.Point(959, 5)
+        Me.lbl_option.Location = New System.Drawing.Point(1015, 0)
         Me.lbl_option.Name = "lbl_option"
         Me.lbl_option.Size = New System.Drawing.Size(49, 21)
         Me.lbl_option.TabIndex = 45
@@ -4082,6 +3714,390 @@ Partial Class Empleados
         '
         Me.datosFamiliaBindingSource.DataMember = "Datos_Familia"
         '
+        'btnCEliminar
+        '
+        Me.btnCEliminar.FillWeight = 11.02631!
+        Me.btnCEliminar.HeaderText = ""
+        Me.btnCEliminar.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
+        Me.btnCEliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.btnCEliminar.Name = "btnCEliminar"
+        '
+        'ID_Persona
+        '
+        Me.ID_Persona.DataPropertyName = "ID_Persona"
+        Me.ID_Persona.HeaderText = "ID"
+        Me.ID_Persona.Name = "ID_Persona"
+        Me.ID_Persona.Visible = False
+        '
+        'ID_Emp
+        '
+        Me.ID_Emp.DataPropertyName = "ID_Emp"
+        Me.ID_Emp.HeaderText = "Empleado"
+        Me.ID_Emp.Name = "ID_Emp"
+        Me.ID_Emp.Visible = False
+        '
+        'Fam_Tipo
+        '
+        Me.Fam_Tipo.DataPropertyName = "Fam_Tipo"
+        Me.Fam_Tipo.HeaderText = "Tipo"
+        Me.Fam_Tipo.Name = "Fam_Tipo"
+        Me.Fam_Tipo.Visible = False
+        '
+        'Fam_Nombre
+        '
+        Me.Fam_Nombre.DataPropertyName = "Fam_Nombre"
+        Me.Fam_Nombre.FillWeight = 29.45599!
+        Me.Fam_Nombre.HeaderText = "Nombre"
+        Me.Fam_Nombre.Name = "Fam_Nombre"
+        '
+        'Fam_APat
+        '
+        Me.Fam_APat.DataPropertyName = "Fam_APat"
+        Me.Fam_APat.FillWeight = 29.45599!
+        Me.Fam_APat.HeaderText = "Apellido Paterno"
+        Me.Fam_APat.Name = "Fam_APat"
+        '
+        'Fam_AMat
+        '
+        Me.Fam_AMat.DataPropertyName = "Fam_AMat"
+        Me.Fam_AMat.FillWeight = 29.45599!
+        Me.Fam_AMat.HeaderText = "Apellido Materno"
+        Me.Fam_AMat.Name = "Fam_AMat"
+        '
+        'Fam_Nacion
+        '
+        Me.Fam_Nacion.DataPropertyName = "Fam_Nacion"
+        Me.Fam_Nacion.FillWeight = 29.45599!
+        Me.Fam_Nacion.HeaderText = "Nacionalidad"
+        Me.Fam_Nacion.Name = "Fam_Nacion"
+        '
+        'Fam_FNac
+        '
+        Me.Fam_FNac.DataPropertyName = "Fam_FNac"
+        Me.Fam_FNac.FillWeight = 29.45599!
+        Me.Fam_FNac.HeaderText = "Fecha Nacimiento"
+        Me.Fam_FNac.Name = "Fam_FNac"
+        '
+        'Fam_Genero
+        '
+        Me.Fam_Genero.DataPropertyName = "Fam_Genero"
+        Me.Fam_Genero.FillWeight = 29.45599!
+        Me.Fam_Genero.HeaderText = "Genero"
+        Me.Fam_Genero.Name = "Fam_Genero"
+        '
+        'Fam_EdoCivil
+        '
+        Me.Fam_EdoCivil.DataPropertyName = "Fam_EdoCivil"
+        Me.Fam_EdoCivil.FillWeight = 29.45599!
+        Me.Fam_EdoCivil.HeaderText = "Estado Civil"
+        Me.Fam_EdoCivil.Name = "Fam_EdoCivil"
+        '
+        'btnHEliminar
+        '
+        Me.btnHEliminar.FillWeight = 18.13706!
+        Me.btnHEliminar.HeaderText = ""
+        Me.btnHEliminar.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
+        Me.btnHEliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.btnHEliminar.Name = "btnHEliminar"
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ID_Persona"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.Visible = False
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "ID_Emp"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Empleado"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.Visible = False
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Fam_Tipo"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Tipo"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.Visible = False
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Fam_Nombre"
+        Me.DataGridViewTextBoxColumn4.FillWeight = 48.45185!
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Nombre"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Fam_APat"
+        Me.DataGridViewTextBoxColumn5.FillWeight = 48.45185!
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Apellido Paterno"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Fam_AMat"
+        Me.DataGridViewTextBoxColumn6.FillWeight = 48.45185!
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Apellido Materno"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Fam_Nacion"
+        Me.DataGridViewTextBoxColumn7.FillWeight = 48.45185!
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Nacionalidad"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "Fam_FNac"
+        Me.DataGridViewTextBoxColumn8.FillWeight = 48.45185!
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Fecha Nacimiento"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.DataPropertyName = "Fam_Genero"
+        Me.DataGridViewTextBoxColumn9.FillWeight = 48.45185!
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Genero"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        '
+        'btnAEliminar
+        '
+        Me.btnAEliminar.FillWeight = 18.13706!
+        Me.btnAEliminar.HeaderText = ""
+        Me.btnAEliminar.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
+        Me.btnAEliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.btnAEliminar.Name = "btnAEliminar"
+        Me.btnAEliminar.Width = 48
+        '
+        'ID_Ant
+        '
+        Me.ID_Ant.DataPropertyName = "ID_Ant"
+        Me.ID_Ant.HeaderText = "ID"
+        Me.ID_Ant.Name = "ID_Ant"
+        Me.ID_Ant.Visible = False
+        '
+        'ID__Emp
+        '
+        Me.ID__Emp.DataPropertyName = "ID_Emp"
+        Me.ID__Emp.HeaderText = "Empleado"
+        Me.ID__Emp.Name = "ID__Emp"
+        Me.ID__Emp.Visible = False
+        '
+        'Ant_FInicio
+        '
+        Me.Ant_FInicio.DataPropertyName = "Ant_FInicio"
+        Me.Ant_FInicio.HeaderText = "Fecha Inicio"
+        Me.Ant_FInicio.Name = "Ant_FInicio"
+        Me.Ant_FInicio.Width = 200
+        '
+        'Ant_FFin
+        '
+        Me.Ant_FFin.DataPropertyName = "Ant_FFin"
+        Me.Ant_FFin.HeaderText = "Fecha Final"
+        Me.Ant_FFin.Name = "Ant_FFin"
+        Me.Ant_FFin.Width = 200
+        '
+        'Ant_NEmpresa
+        '
+        Me.Ant_NEmpresa.DataPropertyName = "Ant_NEmpresa"
+        Me.Ant_NEmpresa.HeaderText = "Empresa"
+        Me.Ant_NEmpresa.Name = "Ant_NEmpresa"
+        '
+        'Ant_Cargo
+        '
+        Me.Ant_Cargo.DataPropertyName = "Ant_Cargo"
+        Me.Ant_Cargo.HeaderText = "Cargo"
+        Me.Ant_Cargo.Name = "Ant_Cargo"
+        '
+        'Ant_Salario
+        '
+        Me.Ant_Salario.DataPropertyName = "Ant_Salario"
+        Me.Ant_Salario.HeaderText = "Salario"
+        Me.Ant_Salario.Name = "Ant_Salario"
+        '
+        'Ant_Tel
+        '
+        Me.Ant_Tel.DataPropertyName = "Ant_Tel"
+        Me.Ant_Tel.HeaderText = "Telefono"
+        Me.Ant_Tel.Name = "Ant_Tel"
+        '
+        'Ant_Motivo
+        '
+        Me.Ant_Motivo.DataPropertyName = "Ant_Motivo"
+        Me.Ant_Motivo.HeaderText = "Motivo"
+        Me.Ant_Motivo.Name = "Ant_Motivo"
+        '
+        'Ant_Contacto
+        '
+        Me.Ant_Contacto.DataPropertyName = "Ant_Contacto"
+        Me.Ant_Contacto.HeaderText = "Contacto"
+        Me.Ant_Contacto.Name = "Ant_Contacto"
+        '
+        'btnCOEliminar
+        '
+        Me.btnCOEliminar.FillWeight = 18.13706!
+        Me.btnCOEliminar.HeaderText = ""
+        Me.btnCOEliminar.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
+        Me.btnCOEliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.btnCOEliminar.Name = "btnCOEliminar"
+        Me.btnCOEliminar.Width = 48
+        '
+        'Column3
+        '
+        Me.Column3.DataPropertyName = "ID_CEmergencia"
+        Me.Column3.HeaderText = "ID"
+        Me.Column3.Name = "Column3"
+        Me.Column3.Visible = False
+        '
+        'Column4
+        '
+        Me.Column4.DataPropertyName = "ID_Emp"
+        Me.Column4.HeaderText = "Empleado"
+        Me.Column4.Name = "Column4"
+        Me.Column4.Visible = False
+        '
+        'Column5
+        '
+        Me.Column5.DataPropertyName = "CE_Nombre"
+        Me.Column5.HeaderText = "Nombre"
+        Me.Column5.Name = "Column5"
+        '
+        'Column6
+        '
+        Me.Column6.DataPropertyName = "CE_APat"
+        Me.Column6.HeaderText = "Apellido Paterno"
+        Me.Column6.Name = "Column6"
+        Me.Column6.Width = 200
+        '
+        'Column7
+        '
+        Me.Column7.DataPropertyName = "CE_AMat"
+        Me.Column7.HeaderText = "Apellido Materno"
+        Me.Column7.Name = "Column7"
+        Me.Column7.Width = 200
+        '
+        'Column8
+        '
+        Me.Column8.DataPropertyName = "CE_Parentesco"
+        Me.Column8.HeaderText = "Parentesco"
+        Me.Column8.Name = "Column8"
+        '
+        'Column9
+        '
+        Me.Column9.DataPropertyName = "CE_Telefono"
+        Me.Column9.HeaderText = "Telefono"
+        Me.Column9.Name = "Column9"
+        Me.Column9.Width = 200
+        '
+        'Column10
+        '
+        Me.Column10.DataPropertyName = "CE_Celular"
+        Me.Column10.HeaderText = "Celular"
+        Me.Column10.Name = "Column10"
+        Me.Column10.Width = 200
+        '
+        'btnEnELiminar
+        '
+        Me.btnEnELiminar.FillWeight = 18.13706!
+        Me.btnEnELiminar.HeaderText = ""
+        Me.btnEnELiminar.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
+        Me.btnEnELiminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.btnEnELiminar.Name = "btnEnELiminar"
+        Me.btnEnELiminar.Width = 48
+        '
+        'ID_Enf
+        '
+        Me.ID_Enf.DataPropertyName = "ID_Enf"
+        Me.ID_Enf.HeaderText = "ID"
+        Me.ID_Enf.Name = "ID_Enf"
+        Me.ID_Enf.Visible = False
+        '
+        'Text
+        '
+        Me.Text.DataPropertyName = "Text"
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.Text.DefaultCellStyle = DataGridViewCellStyle1
+        Me.Text.HeaderText = "Enfermedad"
+        Me.Text.Name = "Text"
+        Me.Text.Width = 1400
+        '
+        'btnEIngresos
+        '
+        Me.btnEIngresos.FillWeight = 11.0!
+        Me.btnEIngresos.HeaderText = ""
+        Me.btnEIngresos.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
+        Me.btnEIngresos.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.btnEIngresos.Name = "btnEIngresos"
+        Me.btnEIngresos.Width = 48
+        '
+        'IOID
+        '
+        Me.IOID.DataPropertyName = "ID_OIng"
+        Me.IOID.HeaderText = "ID"
+        Me.IOID.Name = "IOID"
+        Me.IOID.Visible = False
+        '
+        'PARENTESCO
+        '
+        Me.PARENTESCO.DataPropertyName = "OIng_Desc"
+        Me.PARENTESCO.HeaderText = "PARENTESCO"
+        Me.PARENTESCO.Name = "PARENTESCO"
+        Me.PARENTESCO.Width = 500
+        '
+        'CANTIDAD
+        '
+        Me.CANTIDAD.DataPropertyName = "OIng_Cantidad"
+        Me.CANTIDAD.HeaderText = "CANTIDAD"
+        Me.CANTIDAD.Name = "CANTIDAD"
+        Me.CANTIDAD.Width = 600
+        '
+        'btnEReferencia
+        '
+        Me.btnEReferencia.FillWeight = 11.0!
+        Me.btnEReferencia.HeaderText = ""
+        Me.btnEReferencia.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
+        Me.btnEReferencia.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.btnEReferencia.Name = "btnEReferencia"
+        Me.btnEReferencia.Width = 48
+        '
+        'REID
+        '
+        Me.REID.DataPropertyName = "ID_Ref"
+        Me.REID.HeaderText = "ID"
+        Me.REID.Name = "REID"
+        Me.REID.Visible = False
+        '
+        'NOMBRE
+        '
+        Me.NOMBRE.DataPropertyName = "Ref_Nombre"
+        Me.NOMBRE.HeaderText = "NOMBRE"
+        Me.NOMBRE.Name = "NOMBRE"
+        Me.NOMBRE.Width = 200
+        '
+        'TIPO
+        '
+        Me.TIPO.DataPropertyName = "Ref_TRelacion"
+        Me.TIPO.HeaderText = "TIPO DE RELACION"
+        Me.TIPO.Name = "TIPO"
+        Me.TIPO.Width = 300
+        '
+        'OCUPACION
+        '
+        Me.OCUPACION.DataPropertyName = "Ref_Ocupacion"
+        Me.OCUPACION.HeaderText = "OCUPACION"
+        Me.OCUPACION.Name = "OCUPACION"
+        Me.OCUPACION.Width = 200
+        '
+        'TIEMPO
+        '
+        Me.TIEMPO.DataPropertyName = "Ref_TiempoC"
+        Me.TIEMPO.HeaderText = "TIEMPO DE CONOCERLO"
+        Me.TIEMPO.Name = "TIEMPO"
+        Me.TIEMPO.Width = 400
+        '
         'Empleados
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -4360,59 +4376,16 @@ Partial Class Empleados
     Private WithEvents CB_PROV As CheckBox
     Friend WithEvents lbl_option As Label
     Friend WithEvents pnlAntecedentes As Panel
-    Friend WithEvents btnAEliminar As DataGridViewImageColumn
-    Friend WithEvents ID_Ant As DataGridViewTextBoxColumn
-    Friend WithEvents ID__Emp As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_FInicio As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_FFin As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_NEmpresa As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Cargo As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Salario As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Tel As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Motivo As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Contacto As DataGridViewTextBoxColumn
     Friend WithEvents PnlOffsprings As Panel
-    Friend WithEvents btnCEliminar As DataGridViewImageColumn
-    Friend WithEvents ID_Persona As DataGridViewTextBoxColumn
-    Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_Tipo As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_APat As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_AMat As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_Nacion As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_FNac As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_Genero As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_EdoCivil As DataGridViewTextBoxColumn
     Friend WithEvents Panel8 As Panel
-    Friend WithEvents btnEnELiminar As DataGridViewImageColumn
-    Friend WithEvents ID_Enf As DataGridViewTextBoxColumn
     Friend WithEvents cText As DataGridViewTextBoxColumn
     Friend WithEvents PnlContacto As Panel
-    Friend WithEvents btnCOEliminar As DataGridViewImageColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
-    Friend WithEvents Column9 As DataGridViewTextBoxColumn
-    Friend WithEvents Column10 As DataGridViewTextBoxColumn
     Friend WithEvents PbSearchEmployee As PictureBox
     Friend WithEvents BwEmpleados As System.ComponentModel.BackgroundWorker
     Friend WithEvents txtCdDomicilio As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents txt_hijoNACION As TextBox
-    Friend WithEvents btnHEliminar As DataGridViewImageColumn
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
     Private WithEvents Panel1 As Panel
     Friend WithEvents btn_SERPT As PictureBox
     Friend WithEvents btn_SESave As PictureBox
@@ -4436,12 +4409,6 @@ Partial Class Empleados
     Friend WithEvents txt_GFCole As TextBox
     Private WithEvents PnlReferencias As Panel
     Friend WithEvents dgv_Ref As DataGridView
-    Friend WithEvents btnEReferencia As DataGridViewImageColumn
-    Friend WithEvents REID As DataGridViewTextBoxColumn
-    Friend WithEvents NOMBRE As DataGridViewTextBoxColumn
-    Friend WithEvents TIPO As DataGridViewTextBoxColumn
-    Friend WithEvents OCUPACION As DataGridViewTextBoxColumn
-    Friend WithEvents TIEMPO As DataGridViewTextBoxColumn
     Friend WithEvents Label52 As Label
     Friend WithEvents txt_TC As TextBox
     Friend WithEvents txt_RefOcu As TextBox
@@ -4484,10 +4451,6 @@ Partial Class Empleados
     Friend WithEvents txt_OIParen As TextBox
     Friend WithEvents Label65 As Label
     Friend WithEvents dgv_OI As DataGridView
-    Friend WithEvents btnEIngresos As DataGridViewImageColumn
-    Friend WithEvents IOID As DataGridViewTextBoxColumn
-    Friend WithEvents PARENTESCO As DataGridViewTextBoxColumn
-    Friend WithEvents CANTIDAD As DataGridViewTextBoxColumn
     Private WithEvents Panel14 As Panel
     Friend WithEvents btn_OI As PictureBox
     Private WithEvents Label60 As Label
@@ -4530,7 +4493,6 @@ Partial Class Empleados
     Friend WithEvents cb_Terreno As CheckBox
     Private WithEvents Panel15 As Panel
     Private WithEvents Label5 As Label
-    Friend WithEvents Text As DataGridViewTextBoxColumn
     Private WithEvents pnl_cont As Panel
     Friend WithEvents buscar_depto As PictureBox
     Friend WithEvents depto As TextBox
@@ -4556,4 +4518,58 @@ Partial Class Empleados
     Friend WithEvents txt_SUPER2 As TextBox
     Friend WithEvents txt_SUPER As TextBox
     Friend WithEvents lbl_depto As Label
+    Friend WithEvents btnEReferencia As DataGridViewImageColumn
+    Friend WithEvents REID As DataGridViewTextBoxColumn
+    Friend WithEvents NOMBRE As DataGridViewTextBoxColumn
+    Friend WithEvents TIPO As DataGridViewTextBoxColumn
+    Friend WithEvents OCUPACION As DataGridViewTextBoxColumn
+    Friend WithEvents TIEMPO As DataGridViewTextBoxColumn
+    Friend WithEvents btnEIngresos As DataGridViewImageColumn
+    Friend WithEvents IOID As DataGridViewTextBoxColumn
+    Friend WithEvents PARENTESCO As DataGridViewTextBoxColumn
+    Friend WithEvents CANTIDAD As DataGridViewTextBoxColumn
+    Friend WithEvents btnEnELiminar As DataGridViewImageColumn
+    Friend WithEvents ID_Enf As DataGridViewTextBoxColumn
+    Friend WithEvents Text As DataGridViewTextBoxColumn
+    Friend WithEvents btnCOEliminar As DataGridViewImageColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents Column10 As DataGridViewTextBoxColumn
+    Friend WithEvents btnAEliminar As DataGridViewImageColumn
+    Friend WithEvents ID_Ant As DataGridViewTextBoxColumn
+    Friend WithEvents ID__Emp As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_FInicio As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_FFin As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_NEmpresa As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_Cargo As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_Salario As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_Tel As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_Motivo As DataGridViewTextBoxColumn
+    Friend WithEvents Ant_Contacto As DataGridViewTextBoxColumn
+    Friend WithEvents btnHEliminar As DataGridViewImageColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+    Friend WithEvents btnCEliminar As DataGridViewImageColumn
+    Friend WithEvents ID_Persona As DataGridViewTextBoxColumn
+    Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_Tipo As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_Nombre As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_APat As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_AMat As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_Nacion As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_FNac As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_Genero As DataGridViewTextBoxColumn
+    Friend WithEvents Fam_EdoCivil As DataGridViewTextBoxColumn
 End Class
