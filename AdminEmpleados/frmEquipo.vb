@@ -1,4 +1,4 @@
-﻿Public Class Equipo
+﻿Public Class frmEquipo
 
     Dim objcon As New Consultas
     Dim V1 As String

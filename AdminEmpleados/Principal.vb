@@ -35,7 +35,7 @@ Public Class Principal
                 Case 1
                     f = New Empleados(NEmp, NName) With {.TopLevel = False, .AutoSize = True}
                 Case 2
-                    f = New Equipo(NEmp, NName) With {.TopLevel = False, .AutoSize = False}
+                    f = New frmEquipo(NEmp, NName) With {.TopLevel = False, .AutoSize = False}
                 Case 3
                     f = New Capacitaciones(NEmp) With {.TopLevel = False, .AutoSize = False}
                 Case 4

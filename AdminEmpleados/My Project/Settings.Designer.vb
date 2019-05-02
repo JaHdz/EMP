@@ -104,11 +104,11 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=TURING;Initial Catalog=EmpleadosDB;User ID=developer;Password=P@$$w0r"& _ 
-            "d")>  _
-        Public ReadOnly Property EmpleadosDBConnectionString() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=TURING;Initial Catalog=EmpleadosDB;User ID=developer;Integrated Secur"& _ 
+            "ity=True")>  _
+        Public ReadOnly Property DBConnectionString() As String
             Get
-                Return CType(Me("EmpleadosDBConnectionString"),String)
+                Return CType(Me("DBConnectionString"),String)
             End Get
         End Property
     End Class

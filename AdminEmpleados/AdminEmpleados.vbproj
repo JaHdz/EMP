@@ -152,7 +152,33 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ASSIGNED_EQUIPMENT.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Email.vb" />
+    <Compile Include="Classes\AntecedenteLaboral.vb" />
+    <Compile Include="Classes\Bajas.vb" />
+    <Compile Include="Classes\Capacitacion.vb" />
+    <Compile Include="Classes\CapacitacionDeEmpleado.vb" />
+    <Compile Include="Classes\Ciudad.vb" />
+    <Compile Include="Classes\ContactoDeEmergencia.vb" />
+    <Compile Include="Classes\Departamento.vb" />
+    <Compile Include="Classes\Empleado.vb" />
+    <Compile Include="Classes\Enfermedad.vb" />
+    <Compile Include="Classes\Entidad.vb" />
+    <Compile Include="Classes\Equipo.vb" />
+    <Compile Include="Classes\EquipoAsignado.vb" />
+    <Compile Include="Classes\EquipoObservacion.vb" />
+    <Compile Include="Classes\EstudioSocioeconomico.vb" />
+    <Compile Include="Classes\Evaluacion.vb" />
+    <Compile Include="Classes\EvaluacionDeEmpleado.vb" />
+    <Compile Include="Classes\ExamenMedico.vb" />
+    <Compile Include="Classes\Familiar.vb" />
+    <Compile Include="Classes\Imagen.vb" />
+    <Compile Include="Classes\Internal\Connections.vb" />
+    <Compile Include="Classes\Internal\Email.vb" />
+    <Compile Include="Classes\OtroIngreso.vb" />
+    <Compile Include="Classes\Puesto.vb" />
+    <Compile Include="Classes\Referencia.vb" />
+    <Compile Include="Classes\Supervisor.vb" />
+    <Compile Include="Classes\Tipo.vb" />
+    <Compile Include="Classes\Usuario.vb" />
     <Compile Include="CstmTabControl.xaml.vb">
       <DependentUpon>CstmTabControl.xaml</DependentUpon>
     </Compile>
@@ -170,17 +196,17 @@
     <Compile Include="Classes\Cls_Emp.vb" />
     <Compile Include="Classes\Cls_ES.vb" />
     <Compile Include="Classes\Consultas.vb" />
-    <Compile Include="Classes\CURP.vb" />
+    <Compile Include="Classes\Internal\CURP.vb" />
     <Compile Include="Empleados.Designer.vb">
       <DependentUpon>Empleados.vb</DependentUpon>
     </Compile>
     <Compile Include="Empleados.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Equipo.Designer.vb">
-      <DependentUpon>Equipo.vb</DependentUpon>
+    <Compile Include="frmEquipo.Designer.vb">
+      <DependentUpon>frmEquipo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Equipo.vb">
+    <Compile Include="frmEquipo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Evaluaciones.Designer.vb">
@@ -229,7 +255,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Classes\NSS.vb" />
+    <Compile Include="Classes\Internal\NSS.vb" />
     <Compile Include="Reportes.Designer.vb">
       <DependentUpon>Reportes.vb</DependentUpon>
     </Compile>
@@ -266,6 +292,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Administration.resx">
       <DependentUpon>Administration.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Capacitaciones.resx">
       <DependentUpon>Capacitaciones.vb</DependentUpon>
@@ -273,8 +300,8 @@
     <EmbeddedResource Include="Empleados.resx">
       <DependentUpon>Empleados.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Equipo.resx">
-      <DependentUpon>Equipo.vb</DependentUpon>
+    <EmbeddedResource Include="frmEquipo.resx">
+      <DependentUpon>frmEquipo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Evaluaciones.resx">
       <DependentUpon>Evaluaciones.vb</DependentUpon>
@@ -436,9 +463,6 @@
     <None Include="Resources\Minus_80px.png" />
     <None Include="Resources\Checked_80px.png" />
     <None Include="Resources\Cancel_80px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
