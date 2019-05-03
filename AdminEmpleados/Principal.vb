@@ -2,19 +2,12 @@
 Imports System.Deployment.Application
 
 Public Class Principal
-    Public NEmp As String
-    Public NName As String
     Public ObLogout As Boolean = False
     Private Dictionary As Dictionary(Of Integer, Form)
     Public Sub New()
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
-    End Sub
-    Public Sub New(EmpNumber As Integer, EmpName As String)
-        MyClass.New()
-        NEmp = EmpNumber
-        NName = EmpName
         LoadHeader()
         LoadMenu()
     End Sub
@@ -24,7 +17,7 @@ Public Class Principal
         Else
             Text = "EASY - Employee Administrator System v" + ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString()
         End If
-        lbl_user.Text = NEmp + " | " + NName
+        lbl_user.Text = UsuarioLogeado.NumeroDeEmpleado.ToString() + " | " + UsuarioLogeado.Nombre
     End Sub
 
     Public Sub LoadMenu()
@@ -33,23 +26,22 @@ Public Class Principal
             Dim f As New Form
             Select Case i
                 Case 1
-                    f = New Empleados(NEmp, NName) With {.TopLevel = False, .AutoSize = True}
+                    f = New Empleados() With {.TopLevel = False, .AutoSize = True}
                 Case 2
-                    f = New frmEquipo(NEmp, NName) With {.TopLevel = False, .AutoSize = False}
+                    f = New frmEquipo() With {.TopLevel = False, .AutoSize = False}
                 Case 3
-                    f = New Capacitaciones(NEmp) With {.TopLevel = False, .AutoSize = False}
+                    f = New Capacitaciones() With {.TopLevel = False, .AutoSize = False}
                 Case 4
-                    f = New Evaluaciones(NEmp) With {.TopLevel = False, .AutoSize = False}
+                    f = New Evaluaciones() With {.TopLevel = False, .AutoSize = False}
                 Case 5
-                    f = New Examenes_Medicos(NEmp) With {.TopLevel = False, .AutoSize = False}
+                    f = New Examenes_Medicos() With {.TopLevel = False, .AutoSize = False}
                 Case 6
-                    f = New Administration(NEmp) With {.TopLevel = False, .AutoSize = False}
+                    f = New Administration() With {.TopLevel = False, .AutoSize = False}
             End Select
             Dictionary.Add(i, f)
         Next
         Elmhst.Child = New CstmTabControl(Dictionary) With {.ParentForm = Me, .RedirectToForm = New Login}
     End Sub
-
 
     Private Sub Principal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If Not ObLogout Then

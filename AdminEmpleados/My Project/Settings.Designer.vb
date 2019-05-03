@@ -101,15 +101,16 @@ Namespace My
             End Set
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=TURING;Initial Catalog=EmpleadosDB;User ID=developer;Integrated Secur"& _ 
-            "ity=True")>  _
-        Public ReadOnly Property DBConnectionString() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property DBConnectionString() As String
             Get
                 Return CType(Me("DBConnectionString"),String)
             End Get
+            Set
+                Me("DBConnectionString") = value
+            End Set
         End Property
     End Class
 End Namespace

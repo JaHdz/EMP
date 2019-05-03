@@ -22,7 +22,6 @@ Public Class Email
                 HTML = HTML.Replace("#COMPANY#", "Turing Software " + Now.Year.ToString())
                 HTML = HTML.Replace("#CODE#", Code)
 
-
                 Email.Subject = "EASY: " & Title
                 Email.Body = HTML
                 Email.IsBodyHtml = True

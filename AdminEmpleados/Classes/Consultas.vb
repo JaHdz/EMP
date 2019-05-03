@@ -1290,15 +1290,7 @@ Public Class Consultas
     End Function
 
     Public Sub SetResetKey(Username As String, Resetkey As String)
-        Using con As New SqlConnection(ConnectionString())
-            con.Open()
-            Dim cmd As SqlCommand = con.CreateCommand
-            cmd.CommandType = CommandType.StoredProcedure
-            cmd.Parameters.Add(New SqlParameter("@USERNAME", Username))
-            cmd.Parameters.Add(New SqlParameter("@RESETKEY", Resetkey))
-            cmd.CommandText = "SP_SETRESETKEY"
-            cmd.ExecuteNonQuery()
-        End Using
+
     End Sub
 
     Public Function ValidResetKey(Username As String, Resetkey As String) As Boolean

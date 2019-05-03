@@ -3,15 +3,10 @@
     Dim objcon As New Consultas
     Dim V1 As String
     Dim V2 As String
-    Dim NEmpUser As Integer
     Private Sub txt_numero_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_numero.KeyPress
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
 
-    Sub New(ByVal emp As Integer)
-        InitializeComponent()
-        NEmpUser = emp
-    End Sub
     Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
         If (txt_numero.Text <> "") Then
             NEmp = Convert.ToInt16(objcon.Emp_Exist(txt_numero.Text))

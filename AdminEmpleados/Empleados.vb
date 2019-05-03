@@ -10,12 +10,9 @@ Public Class Empleados
     Dim EMPLEADO_ID As Int64
     Dim EMPLEADO_ES As Int64
     Dim id As Integer
-    Dim NEmp As Integer
-    Dim NName As String
     Dim tooltip As New ToolTip
-    Sub New(ByVal emp As Integer, name As String)
+    Sub New()
         InitializeComponent()
-        NEmp = emp
     End Sub
 
     Private Sub AddToolTips()
@@ -441,7 +438,7 @@ Public Class Empleados
                     CB_PROV.Checked = False
                 Case "BAJA"
                     objcon.Altas(txt_numero.Text, 0)
-                    objcon.Bajas(txt_numero.Text, 0, commen.Text, seg.Checked, NEmp, CB_PROV.Checked, CB_CLIENTE.Checked)
+                    objcon.Bajas(txt_numero.Text, 0, commen.Text, seg.Checked, UsuarioLogeado.NumeroDeEmpleado, CB_PROV.Checked, CB_CLIENTE.Checked)
                     MessageBox.Show("Se dio de Baja correctamente a este Empleado")
                     txt_activo.Text = ""
                     txt_baja.Text = ""
@@ -824,7 +821,7 @@ Public Class Empleados
             ES.FS_SERVICES = txt_GFServ.Text
             ES.SES_HOBBIES = Txt_pasatiempos.Text
             ES.SES_RELIGION = txt_Religion.Text
-            ES.SES_VERIFIER = NEmp
+            ES.SES_VERIFIER = UsuarioLogeado.Nombre
             ES.SES_OBSERVATIONS = txt_commen.Text
             ES.IMG = PB_IMAGE_VIVIENDA.Image
 
@@ -1282,7 +1279,7 @@ Public Class Empleados
             Dim Reportes As New Reportes With {
                     .ReportOption = ReportOptions.SocialeconomicStudy,
                     .Emp = Convert.ToInt64(txt_numero.Text),
-                    .User = NName
+                    .User = UsuarioLogeado.Nombre
                 }
             Reportes.ShowDialog()
         End If

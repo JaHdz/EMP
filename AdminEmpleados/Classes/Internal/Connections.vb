@@ -1,26 +1,29 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Threading
 
-Module Connections
-    Dim Count As Integer = 0
+Friend Module Connections
     Private LastConn As String = String.Empty
-    Private ReadOnly ConnectionPool As New Dictionary(Of String, String) From {
+    Private ReadOnly DeveloperConnectionPool As New Dictionary(Of String, String) From {
         {"Developer1", "Data Source=MX1018-PF15YZS7;Initial Catalog=EmpleadosDB;Integrated Security=True"},'XAVI
         {"Developer2", "Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=EmpleadosDB;Integrated Security=True"}'STEPH
     }
-    Private TestedConnections As New Dictionary(Of String, String)
+    Private ReadOnly RuntimeConnections As New Dictionary(Of String, String) From {
+        {"Production", "Data Source=TURING;Initial Catalog=EmpleadosDB;User ID=developer;Integrated Security=True"}'Production DB    
+    }
     Public Function ConnectionString() As String
         If LastConn = String.Empty Then
             If Debugger.IsAttached() Then
-                For Each kvp As KeyValuePair(Of String, String) In ConnectionPool
+                For Each kvp As KeyValuePair(Of String, String) In DeveloperConnectionPool
                     Dim ltThread = New Thread(AddressOf TryConnection)
                     ltThread.Start(kvp.Value)
                     Thread.Sleep(500)
                 Next
             Else
-                LastConn = My.Settings.DBConnectionString
+                LastConn = RuntimeConnections("Production")
+                My.Settings.DBConnectionString = LastConn
             End If
         End If
+        My.Settings.Save()
         Return LastConn
     End Function
     Public Sub TryConnection(CurrentDbTesting As String)
@@ -28,6 +31,7 @@ Module Connections
             Try
                 Conn.Open()
                 LastConn = CurrentDbTesting
+                My.Settings.DBConnectionString = LastConn
             Catch ex As Exception
             End Try
         End Using

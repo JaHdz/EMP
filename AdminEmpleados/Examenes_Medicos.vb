@@ -3,11 +3,7 @@
     Dim V1 As String
     Dim V2 As String
     Dim NEmp As Integer
-    Dim NEmpUser As Integer
-    Sub New(ByVal emp As Integer)
-        InitializeComponent()
-        NEmpUser = emp
-    End Sub
+
     Public Sub llenar_buscador(tipo As String)
         Dim popup As New frmPopUp(tipo)
         Dim dialogresult__1 As DialogResult = popup.ShowDialog()

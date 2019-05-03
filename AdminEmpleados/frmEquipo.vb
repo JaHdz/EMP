@@ -4,13 +4,6 @@
     Dim V1 As String
     Dim V2 As String
     Dim NEmp As Integer
-    Dim NName As String
-    Dim NEmpUser As Integer
-    Sub New(ByVal emp As Integer, name As String)
-        InitializeComponent()
-        NEmpUser = emp
-        NName = name
-    End Sub
     Public Sub llenar_buscador(tipo As String)
         Dim popup As New frmPopUp(tipo)
         Dim dialogresult__1 As DialogResult = popup.ShowDialog()
@@ -82,7 +75,7 @@
 
     Private Sub SAVE_Click(sender As Object, e As EventArgs) Handles SAVE.Click
         If (Eq.Text <> "" Or txt_numero.Text <> "") Then
-            If objcon.Add_EQUIPMENT_ASSIGNED(0, Eq.Text, txt_numero.Text, TXT_FECHA.Text, 0, "01/01/1900", NEmpUser, TXT_commen.Text) = True Then
+            If objcon.Add_EQUIPMENT_ASSIGNED(0, Eq.Text, txt_numero.Text, TXT_FECHA.Text, 0, "01/01/1900", UsuarioLogeado.Nombre, TXT_commen.Text) = True Then
             Else
                 MessageBox.Show("Este registro ya Existe.")
             End If
@@ -154,7 +147,7 @@
                 Dim Reportes As New Reportes With {
                     .ReportOption = ReportOptions.AssignedEquipment,
                     .Emp = Convert.ToInt64(txt_numero.Text),
-                    .User = NName
+                    .User = UsuarioLogeado.Nombre
                 }
                 Reportes.ShowDialog()
 
