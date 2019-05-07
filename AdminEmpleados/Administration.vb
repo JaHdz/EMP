@@ -3,32 +3,8 @@
     Dim objcon As New Consultas
     Dim V1 As String
     Dim V2 As String
-    Private Sub txt_numero_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_numero.KeyPress
-        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
-    End Sub
-
-    Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
-        If (txt_numero.Text <> "") Then
-            NEmp = Convert.ToInt16(objcon.Emp_Exist(txt_numero.Text))
-            If (NEmp > 0) Then
-                Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", txt_numero.Text}}
-                Dim Wait As New Wait With {
-                .Parameters = ldParameters,
-                .Operation = BackgroundOperations.GetEmployeeInfo
-            }
-                Wait.ShowDialog()
-                Dim Result As Cls_Emp = Wait.Result
-                Wait.Close()
-                lbl_emp.Text = txt_numero.Text + " | " + Result.Emp_Name + " " + Result.Emp_APat + " " + Result.Emp_AMat
-                dgv_equipo_emp.DataSource = objcon.Consulta_USER()
-            Else
-                MessageBox.Show("Numero de empleado no existe")
-                txt_numero.Text = ""
-                lbl_emp.Text = ""
-                txt_numero.Focus()
-            End If
-        End If
-    End Sub
+    Dim Resultado As Object
+    Dim Usuario As Usuario
 
     Private Sub CANCEL_Click(sender As Object, e As EventArgs) Handles CANCEL.Click, PictureBox2.Click, cancel_code.Click, cancel_eq.Click, CANCEL_EVAL.Click, btn_CancelPuesto.Click,
                                                                        btn_cancelsuper.Click, pb_cancelTE.Click
@@ -40,53 +16,70 @@
         Next
     End Sub
 
-    Private Sub dgv_equipo_emp_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_equipo_emp.CellClick
-        Dim gr As New DataGridView
-        gr = sender
-        If e.RowIndex <> -1 Then
-            Select Case e.ColumnIndex
-                Case Is > -1
-                    Select Case gr.Columns(e.ColumnIndex).Name
-                        Case "UPDATE"
-                            If MessageBox.Show("Seguro que desea desactivar este usuario?", "Desactivar Usuario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                If dgv_equipo_emp.Rows(e.RowIndex).Cells(5).Value.ToString = "False" Then
-                                    If objcon.Add_USERS(dgv_equipo_emp.Rows(e.RowIndex).Cells(1).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(3).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(4).Value, 1, 1, dgv_equipo_emp.Rows(e.RowIndex).Cells(2).Value) = True Then
-                                    Else
-                                        MessageBox.Show("Este registro ya Existe.")
-                                    End If
-                                Else
-                                    If objcon.Add_USERS(dgv_equipo_emp.Rows(e.RowIndex).Cells(1).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(3).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(4).Value, 0, 0, dgv_equipo_emp.Rows(e.RowIndex).Cells(2).Value) = True Then
-                                    Else
-                                        MessageBox.Show("Este registro ya Existe.")
-                                    End If
-                                End If
-                            End If
-                    End Select
-            End Select
-            Dim dt As New DataTable
-            dt = objcon.Consulta_USER()
-            dgv_equipo_emp.DataSource = dt
+    Private Sub dgv_equipo_emp_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUsuarios.CellClick
+        If e.ColumnIndex = 0 Then
+            If MessageBox.Show("Esta a punto de eliminar un usuario, ¿Esta seguro que desea eliminar este usuario?", "Eliminar Usuario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+                Usuario = CType(dgvUsuarios.CurrentRow.DataBoundItem, Usuario)
+                If Usuario.Eliminar(dgvUsuarios.DataSource) Then
+                    dgvUsuarios.Refresh()
+                End If
+            End If
         End If
+        'Dim gr As New DataGridView
+        'gr = sender
+        'If e.RowIndex <> -1 Then
+        '    Select Case e.ColumnIndex
+        '        Case Is > -1
+        '            Select Case gr.Columns(e.ColumnIndex).Name
+        '                Case "UPDATE"
+        '                    If MessageBox.Show("Seguro que desea desactivar este usuario?", "Desactivar Usuario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+        '                        If dgvUsuarios.Rows(e.RowIndex).Cells(5).Value.ToString = "False" Then
+        '                            If objcon.Add_USERS(dgvUsuarios.Rows(e.RowIndex).Cells(1).Value, dgvUsuarios.Rows(e.RowIndex).Cells(3).Value, dgvUsuarios.Rows(e.RowIndex).Cells(4).Value, 1, 1, dgvUsuarios.Rows(e.RowIndex).Cells(2).Value) = True Then
+        '                            Else
+        '                                MessageBox.Show("Este registro ya Existe.")
+        '                            End If
+        '                        Else
+        '                            If objcon.Add_USERS(dgvUsuarios.Rows(e.RowIndex).Cells(1).Value, dgvUsuarios.Rows(e.RowIndex).Cells(3).Value, dgvUsuarios.Rows(e.RowIndex).Cells(4).Value, 0, 0, dgvUsuarios.Rows(e.RowIndex).Cells(2).Value) = True Then
+        '                            Else
+        '                                MessageBox.Show("Este registro ya Existe.")
+        '                            End If
+        '                        End If
+        '                    End If
+        '            End Select
+        '    End Select
+        '    Dim dt As New DataTable
+        '    dt = objcon.Consulta_USER()
+        '    dgvUsuarios.DataSource = dt
+        'End If
     End Sub
 
     Private Sub SAVE_Click(sender As Object, e As EventArgs) Handles SAVE.Click
-        If txt_numero.Text = "" Or txt_pass.Text = "" Or txt_user.Text = "" Or txt_pass2.Text = "" Then
-            MessageBox.Show("Debe llenar todos los campos")
-        Else
-            If txt_pass.Text <> txt_pass2.Text Then
-                MessageBox.Show("Las conraseñas no coinciden.")
-            Else
-                If objcon.Add_USERS(0, txt_user.Text, txt_pass.Text, 1, 1, txt_numero.Text) = True Then
-                Else
-                    MessageBox.Show("Este registro ya Existe.")
-                End If
-                dgv_equipo_emp.DataSource = objcon.Consulta_USER()
+        If SAVE.Tag = Operacion.Registrar.ToString() Then
+            Usuario = New Usuario(0, txt_numero.Text, txt_user.Text, Encrypt(txt_pass.Text), 1, 1, "", "", Encrypt(txt_pass2.Text))
+            If Usuario.Registrar(dgvUsuarios.DataSource) Then
+                dgvUsuarios.Refresh()
+                Usuario = Nothing
                 txt_pass.Text = ""
                 txt_pass2.Text = ""
                 txt_numero.Text = ""
                 txt_user.Text = ""
+                txtEmpleado.Text = ""
                 txt_numero.Focus()
             End If
+        Else
+            With Usuario
+                Usuario = New Usuario(.ID, .NumeroDeEmpleado, .UserName, Encrypt(txt_pass.Text), .Activo, .Acceso, .Nombre, .ResetKey, Encrypt(txt_pass2.Text))
+                If Usuario.Actualizar(dgvUsuarios.DataSource) Then
+                    Usuario = Nothing
+                    txt_user.Enabled = True
+                    txt_pass.Text = ""
+                    txt_pass2.Text = ""
+                    txt_numero.Text = ""
+                    txt_user.Text = ""
+                    txtEmpleado.Text = ""
+                    txt_numero.Focus()
+                End If
+            End With
         End If
     End Sub
 
@@ -309,14 +302,39 @@
         End If
     End Sub
 
-    Private Sub buscar_EN_Click(sender As Object, e As EventArgs) Handles buscar_EN.Click
+    Private Sub Buscar_EN_Click(sender As Object, e As EventArgs) Handles buscar_EN.Click
         llenar_buscador("EMP")
-        If (V1 <> "" And V2 <> "") Then
-            txt_numero.Focus()
+        Dim Empleado As Empleado = CType(Resultado, Empleado)
+        If Empleado IsNot Nothing Then
+            txt_numero.Text = Empleado.ID.ToString()
+            txtEmpleado.Text = Empleado.NombreCompleto
+            Usuario = Empleado.Usuario
+            If Usuario IsNot Nothing Then
+                SAVE.Tag = Operacion.Actualizar.ToString()
+                SAVE.Image = My.Resources.Updates_80
+                txt_user.Enabled = False
+                txt_user.Text = Usuario.UserName
+                txt_pass.Text = Usuario.Password
+                txt_pass2.Text = Usuario.Password
+            Else
+                SAVE.Tag = Operacion.Registrar.ToString()
+                SAVE.Image = My.Resources.Save_80px
+                txt_user.Enabled = True
+                txt_user.Focus()
+                txt_user.Text = ""
+                txt_pass.Text = ""
+                txt_pass2.Text = ""
+            End If
         Else
-            txt_numero.Focus()
+            SAVE.Tag = Operacion.Registrar.ToString()
+            SAVE.Image = My.Resources.Save_80px
+            Usuario = Nothing
+            txt_numero.Text = ""
+            txtEmpleado.Text = ""
+            txt_user.Text = ""
+            txt_pass.Text = ""
+            txt_pass2.Text = ""
         End If
-        txt_numero.Text = V1
     End Sub
 
     Private Sub TXT_EMP_SUPER_Leave(sender As Object, e As EventArgs) Handles TXT_EMP_SUPER.Leave
@@ -342,14 +360,16 @@
     End Sub
 
     Public Sub llenar_buscador(tipo As String)
-        Dim popup As New frmPopUp(tipo)
-        Dim dialogresult__1 As DialogResult = popup.ShowDialog()
-        V1 = popup.Variable
-        V2 = popup.Variable2
+        Dim popup As New FrmPopUp(tipo)
+        Dim PopUpDialog As DialogResult = popup.ShowDialog()
+        Resultado = popup.Result
+        'V1 = popup.Variable
+        'V2 = popup.Variable2
         popup.Close()
     End Sub
     Private Sub BUSCAR_EMP_SUPER_Click(sender As Object, e As EventArgs) Handles BUSCAR_EMP_SUPER.Click
         llenar_buscador("EMP")
+
         If (V1 <> "" And V2 <> "") Then
             TXT_EMP_SUPER.Focus()
         Else
@@ -460,7 +480,7 @@
     End Sub
 
     Private Sub Admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        dgv_equipo_emp.DataSource = objcon.Consulta_USER()
+        dgvUsuarios.DataSource = New Usuario().CargarListado
         DGV_CAT.DataSource = objcon.Consulta_Cap()
         dgv_depto.DataSource = objcon.Consulta_depto()
         dgv_eq.DataSource = objcon.Consulta_EQ()

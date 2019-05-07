@@ -7,6 +7,9 @@ Public Class Supervisor
 #End Region
 
 #Region "Funciones y Metodos"
+    Public Sub New()
+        MyBase.New()
+    End Sub
     Public Sub New(ByVal liID As Integer, ByVal liEmpleado As Integer?, ByVal lbActivo As Boolean, ByVal lsNombre As String)
         ID = liID
         Empleado = liEmpleado

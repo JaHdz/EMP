@@ -5,7 +5,7 @@
     Dim V2 As String
     Dim NEmp As Integer
     Public Sub llenar_buscador(tipo As String)
-        Dim popup As New frmPopUp(tipo)
+        Dim popup As New FrmPopUp(tipo)
         Dim dialogresult__1 As DialogResult = popup.ShowDialog()
         V1 = popup.Variable
         V2 = popup.Variable2

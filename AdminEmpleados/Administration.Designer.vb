@@ -26,12 +26,9 @@ Partial Class Administration
         Me.tab_admin = New System.Windows.Forms.TabControl()
         Me.tab_users = New System.Windows.Forms.TabPage()
         Me.pnl_per = New System.Windows.Forms.Panel()
-        Me.dgv_equipo_emp = New System.Windows.Forms.DataGridView()
+        Me.txtEmpleado = New System.Windows.Forms.TextBox()
+        Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
         Me.UPDATE = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_User = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UserName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Activo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Emp_US = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_pass2 = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txt_pass = New System.Windows.Forms.TextBox()
@@ -39,7 +36,6 @@ Partial Class Administration
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lbl_emp = New System.Windows.Forms.Label()
-        Me.Empleado = New System.Windows.Forms.Label()
         Me.buscar_EN = New System.Windows.Forms.PictureBox()
         Me.txt_numero = New System.Windows.Forms.TextBox()
         Me.lbl_num = New System.Windows.Forms.Label()
@@ -181,7 +177,7 @@ Partial Class Administration
         Me.tab_admin.SuspendLayout()
         Me.tab_users.SuspendLayout()
         Me.pnl_per.SuspendLayout()
-        CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel7.SuspendLayout()
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -274,7 +270,8 @@ Partial Class Administration
         'pnl_per
         '
         Me.pnl_per.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.pnl_per.Controls.Add(Me.dgv_equipo_emp)
+        Me.pnl_per.Controls.Add(Me.txtEmpleado)
+        Me.pnl_per.Controls.Add(Me.dgvUsuarios)
         Me.pnl_per.Controls.Add(Me.txt_pass2)
         Me.pnl_per.Controls.Add(Me.Label10)
         Me.pnl_per.Controls.Add(Me.txt_pass)
@@ -282,7 +279,6 @@ Partial Class Administration
         Me.pnl_per.Controls.Add(Me.Label9)
         Me.pnl_per.Controls.Add(Me.Label8)
         Me.pnl_per.Controls.Add(Me.lbl_emp)
-        Me.pnl_per.Controls.Add(Me.Empleado)
         Me.pnl_per.Controls.Add(Me.buscar_EN)
         Me.pnl_per.Controls.Add(Me.txt_numero)
         Me.pnl_per.Controls.Add(Me.lbl_num)
@@ -295,17 +291,30 @@ Partial Class Administration
         Me.pnl_per.Size = New System.Drawing.Size(1066, 664)
         Me.pnl_per.TabIndex = 32
         '
-        'dgv_equipo_emp
+        'txtEmpleado
         '
-        Me.dgv_equipo_emp.AllowUserToAddRows = False
-        Me.dgv_equipo_emp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_equipo_emp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATE, Me.ID_User, Me.UserName, Me.Activo, Me.ID_Emp_US})
-        Me.dgv_equipo_emp.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.dgv_equipo_emp.Location = New System.Drawing.Point(0, 327)
-        Me.dgv_equipo_emp.Name = "dgv_equipo_emp"
-        Me.dgv_equipo_emp.RowHeadersVisible = False
-        Me.dgv_equipo_emp.Size = New System.Drawing.Size(1062, 333)
-        Me.dgv_equipo_emp.TabIndex = 72
+        Me.txtEmpleado.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtEmpleado.Enabled = False
+        Me.txtEmpleado.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txtEmpleado.Location = New System.Drawing.Point(222, 58)
+        Me.txtEmpleado.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtEmpleado.Name = "txtEmpleado"
+        Me.txtEmpleado.Size = New System.Drawing.Size(252, 25)
+        Me.txtEmpleado.TabIndex = 92
+        '
+        'dgvUsuarios
+        '
+        Me.dgvUsuarios.AllowUserToAddRows = False
+        Me.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATE})
+        Me.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.dgvUsuarios.Location = New System.Drawing.Point(0, 327)
+        Me.dgvUsuarios.Name = "dgvUsuarios"
+        Me.dgvUsuarios.RowHeadersVisible = False
+        Me.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvUsuarios.Size = New System.Drawing.Size(1062, 333)
+        Me.dgvUsuarios.TabIndex = 72
         '
         'UPDATE
         '
@@ -313,35 +322,6 @@ Partial Class Administration
         Me.UPDATE.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
         Me.UPDATE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
         Me.UPDATE.Name = "UPDATE"
-        '
-        'ID_User
-        '
-        Me.ID_User.DataPropertyName = "ID_User"
-        Me.ID_User.HeaderText = "ID"
-        Me.ID_User.Name = "ID_User"
-        Me.ID_User.Visible = False
-        Me.ID_User.Width = 200
-        '
-        'UserName
-        '
-        Me.UserName.DataPropertyName = "UserName"
-        Me.UserName.HeaderText = "USUARIO"
-        Me.UserName.Name = "UserName"
-        Me.UserName.Width = 500
-        '
-        'Activo
-        '
-        Me.Activo.DataPropertyName = "Activo"
-        Me.Activo.HeaderText = "ESTATUS"
-        Me.Activo.Name = "Activo"
-        Me.Activo.Width = 200
-        '
-        'ID_Emp_US
-        '
-        Me.ID_Emp_US.DataPropertyName = "ID_Emp"
-        Me.ID_Emp_US.HeaderText = "NO EMPLEADO"
-        Me.ID_Emp_US.Name = "ID_Emp_US"
-        Me.ID_Emp_US.Width = 300
         '
         'txt_pass2
         '
@@ -413,22 +393,11 @@ Partial Class Administration
         Me.lbl_emp.Size = New System.Drawing.Size(0, 18)
         Me.lbl_emp.TabIndex = 86
         '
-        'Empleado
-        '
-        Me.Empleado.AutoSize = True
-        Me.Empleado.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.Empleado.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Empleado.Location = New System.Drawing.Point(480, 62)
-        Me.Empleado.Name = "Empleado"
-        Me.Empleado.Size = New System.Drawing.Size(67, 18)
-        Me.Empleado.TabIndex = 85
-        Me.Empleado.Text = "Nombre: "
-        '
         'buscar_EN
         '
         Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
         Me.buscar_EN.Image = CType(resources.GetObject("buscar_EN.Image"), System.Drawing.Image)
-        Me.buscar_EN.Location = New System.Drawing.Point(449, 59)
+        Me.buscar_EN.Location = New System.Drawing.Point(479, 58)
         Me.buscar_EN.Name = "buscar_EN"
         Me.buscar_EN.Size = New System.Drawing.Size(25, 25)
         Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -437,21 +406,24 @@ Partial Class Administration
         '
         'txt_numero
         '
+        Me.txt_numero.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txt_numero.Enabled = False
         Me.txt_numero.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.txt_numero.Location = New System.Drawing.Point(223, 59)
+        Me.txt_numero.Location = New System.Drawing.Point(190, 61)
         Me.txt_numero.Name = "txt_numero"
-        Me.txt_numero.Size = New System.Drawing.Size(216, 25)
+        Me.txt_numero.Size = New System.Drawing.Size(10, 18)
         Me.txt_numero.TabIndex = 0
+        Me.txt_numero.Visible = False
         '
         'lbl_num
         '
         Me.lbl_num.AutoSize = True
         Me.lbl_num.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.lbl_num.Location = New System.Drawing.Point(129, 62)
+        Me.lbl_num.Location = New System.Drawing.Point(115, 62)
         Me.lbl_num.Name = "lbl_num"
-        Me.lbl_num.Size = New System.Drawing.Size(62, 18)
+        Me.lbl_num.Size = New System.Drawing.Size(76, 18)
         Me.lbl_num.TabIndex = 83
-        Me.lbl_num.Text = "Numero:"
+        Me.lbl_num.Text = "Empleado:"
         '
         'panel7
         '
@@ -477,6 +449,7 @@ Partial Class Administration
         Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.SAVE.TabIndex = 92
         Me.SAVE.TabStop = False
+        Me.SAVE.Tag = "Registrar"
         '
         'label12
         '
@@ -1853,7 +1826,7 @@ Partial Class Administration
         Me.tab_users.ResumeLayout(False)
         Me.pnl_per.ResumeLayout(False)
         Me.pnl_per.PerformLayout()
-        CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel7.ResumeLayout(False)
         Me.panel7.PerformLayout()
@@ -1941,7 +1914,6 @@ Partial Class Administration
     Private WithEvents panel7 As Panel
     Private WithEvents label12 As Label
     Friend WithEvents lbl_emp As Label
-    Friend WithEvents Empleado As Label
     Friend WithEvents buscar_EN As PictureBox
     Friend WithEvents txt_numero As TextBox
     Friend WithEvents lbl_num As Label
@@ -1953,7 +1925,7 @@ Partial Class Administration
     Friend WithEvents Label8 As Label
     Friend WithEvents SAVE As PictureBox
     Friend WithEvents CANCEL As PictureBox
-    Friend WithEvents dgv_equipo_emp As DataGridView
+    Friend WithEvents dgvUsuarios As DataGridView
     Friend WithEvents DGV_CAT As DataGridView
     Private WithEvents Panel1 As Panel
     Friend WithEvents TXT_CAP_DESC As TextBox
@@ -2041,11 +2013,6 @@ Partial Class Administration
     Friend WithEvents txtDpto As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents lblDpto As Label
-    Friend WithEvents UPDATE As DataGridViewImageColumn
-    Friend WithEvents ID_User As DataGridViewTextBoxColumn
-    Friend WithEvents UserName As DataGridViewTextBoxColumn
-    Friend WithEvents Activo As DataGridViewTextBoxColumn
-    Friend WithEvents ID_Emp_US As DataGridViewTextBoxColumn
     Friend WithEvents UPDATEC As DataGridViewImageColumn
     Friend WithEvents ID_Cap As DataGridViewTextBoxColumn
     Friend WithEvents CA_Codigo As DataGridViewTextBoxColumn
@@ -2085,4 +2052,6 @@ Partial Class Administration
     Friend WithEvents Codigote As DataGridViewTextBoxColumn
     Friend WithEvents Descripcionte As DataGridViewTextBoxColumn
     Friend WithEvents Estatuste As DataGridViewTextBoxColumn
+    Friend WithEvents txtEmpleado As TextBox
+    Friend WithEvents UPDATE As DataGridViewImageColumn
 End Class

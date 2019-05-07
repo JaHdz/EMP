@@ -7,6 +7,9 @@ Public Class Tipo
 #End Region
 
 #Region "Funciones y Metodos"
+    Public Sub New()
+        MyBase.New()
+    End Sub
     Public Sub New(ByVal liID_TE As integer, ByVal lsCodigo As string, ByVal lsDescripcion As string, ByVal lbEstatus As boolean?)
         ID = liID_TE
         Codigo = lsCodigo

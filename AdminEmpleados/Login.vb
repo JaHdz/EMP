@@ -58,7 +58,7 @@
     End Sub
 
     Private Sub Login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
-        Usuario = New Usuario(0, 0, user.Text, Encrypt(pass.Text), Nothing, Nothing, "")
+        Usuario = New Usuario(0, 0, user.Text, Encrypt(pass.Text), Nothing, Nothing, "", "")
         If Usuario.IniciarSesion() Then
             If chkRecordar.Checked Then
                 If My.Settings.LastDate = Date.MinValue Then
@@ -77,6 +77,7 @@
             End If
             Dim Main As New Principal()
             Main.Show()
+            Close()
         End If
     End Sub
 
@@ -90,7 +91,7 @@
 
     Private Sub Lnk_Password_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnk_Password.LinkClicked
         Clear()
-        Usuario = New Usuario(0, 0, user.Text, pass.Text, Nothing, Nothing, "")
+        Usuario = New Usuario(0, 0, user.Text, pass.Text, Nothing, Nothing, "", "")
         If Usuario.SolicitarCambioDeContraseña() Then
             PnlResetKey.Visible = True
             PnlLogin.Visible = False

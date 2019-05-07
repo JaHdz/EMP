@@ -21,9 +21,9 @@ Friend Module Connections
             Else
                 LastConn = RuntimeConnections("Production")
                 My.Settings.DBConnectionString = LastConn
+                My.Settings.Save()
             End If
         End If
-        My.Settings.Save()
         Return LastConn
     End Function
     Public Sub TryConnection(CurrentDbTesting As String)
@@ -32,6 +32,7 @@ Friend Module Connections
                 Conn.Open()
                 LastConn = CurrentDbTesting
                 My.Settings.DBConnectionString = LastConn
+                My.Settings.Save()
             Catch ex As Exception
             End Try
         End Using

@@ -1001,17 +1001,7 @@ Public Class Consultas
 
 
     Public Function Consulta_USER() As DataTable
-        Using con As New SqlConnection(ConnectionString())
-            con.Open()
-            Dim cmd As New SqlCommand("Consulta_users", con)
-            cmd.CommandType = CommandType.StoredProcedure
-            Dim dt As New DataTable()
-            Dim DataAdapter As SqlDataAdapter
-            DataAdapter = New SqlDataAdapter
-            DataAdapter.SelectCommand = cmd
-            DataAdapter.Fill(dt)
-            Return dt
-        End Using
+
     End Function
 
     Public Function Consulta_depto() As DataTable

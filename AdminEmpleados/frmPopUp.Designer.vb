@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmPopUp
+Partial Class FrmPopUp
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -125,10 +125,12 @@ Partial Class frmPopUp
         '
         Me.dgv_Pop.AllowUserToAddRows = False
         Me.dgv_Pop.AllowUserToDeleteRows = False
-        Me.dgv_Pop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgv_Pop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.dgv_Pop.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.dgv_Pop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_Pop.Cursor = System.Windows.Forms.Cursors.Hand
         Me.dgv_Pop.Location = New System.Drawing.Point(22, 63)
+        Me.dgv_Pop.MultiSelect = False
         Me.dgv_Pop.Name = "dgv_Pop"
         Me.dgv_Pop.ReadOnly = True
         Me.dgv_Pop.RowHeadersVisible = False
@@ -136,7 +138,7 @@ Partial Class frmPopUp
         Me.dgv_Pop.Size = New System.Drawing.Size(363, 258)
         Me.dgv_Pop.TabIndex = 36
         '
-        'frmPopUp
+        'FrmPopUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -144,10 +146,9 @@ Partial Class frmPopUp
         Me.Controls.Add(Me.Panel8)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.Name = "frmPopUp"
+        Me.Name = "FrmPopUp"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmPopUp"
-        Me.TopMost = True
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
         CType(Me.btn_salir, System.ComponentModel.ISupportInitialize).EndInit()

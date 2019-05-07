@@ -173,6 +173,7 @@
     <Compile Include="Classes\Imagen.vb" />
     <Compile Include="Classes\Internal\Connections.vb" />
     <Compile Include="Classes\Internal\Email.vb" />
+    <Compile Include="Classes\Internal\Enumeraciones.vb" />
     <Compile Include="Classes\Internal\Security.vb" />
     <Compile Include="Classes\OtroIngreso.vb" />
     <Compile Include="Classes\Puesto.vb" />
