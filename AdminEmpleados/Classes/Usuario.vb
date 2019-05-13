@@ -4,20 +4,20 @@ Imports System.Data.SqlClient
 Public Class Usuario
 #Region "Propiedades"
     <Browsable(False)>
-    Public Property ID As Integer
-    Public Property NumeroDeEmpleado As Integer
-    Public Property Nombre As String
-    Public Property UserName As String
+    Public Property ID As New Integer
+    Public Property NumeroDeEmpleado As New Integer
+    Public Property Nombre As String = ""
+    Public Property UserName As String = ""
     <Browsable(False)>
-    Public Property Password As String
+    Public Property Password As String = ""
     <Browsable(False)>
-    Public Property Activo As Boolean?
+    Public Property Activo As Boolean? = True
     <Browsable(False)>
-    Public Property Acceso As Integer?
+    Public Property Acceso As New Integer
     <Browsable(False)>
-    Public Property ResetKey As String
-    Private Property CorreoElectronico As String
-    Private Property Password2 As String
+    Public Property ResetKey As String = ""
+    Private Property CorreoElectronico As String = ""
+    Private Property Password2 As String = ""
 
 #End Region
 
@@ -40,13 +40,18 @@ Public Class Usuario
         End If
     End Sub
 
-    Public Function CargarListado() As List(Of Usuario)
+    Public Function CargarListado(Optional FiltrarInactivos As Boolean = False) As List(Of Usuario)
         Dim Result As New List(Of Usuario)
         Using con As New SqlConnection(ConnectionString())
             con.Open()
-            Dim cmd As New SqlCommand("Consulta_users", con) With {
-                .CommandType = CommandType.StoredProcedure
-            }
+            Dim cmd As New SqlCommand("UDSP_USERS", con) With {.CommandType = CommandType.StoredProcedure}
+            cmd.Parameters.Add(New SqlParameter("@ID", ID))
+            cmd.Parameters.Add(New SqlParameter("@USERNAME", UserName))
+            cmd.Parameters.Add(New SqlParameter("@PASSWORD", Password))
+            cmd.Parameters.Add(New SqlParameter("@ACTIVE", Activo))
+            cmd.Parameters.Add(New SqlParameter("@ACCESS", Acceso))
+            cmd.Parameters.Add(New SqlParameter("@ID_EMP", NumeroDeEmpleado))
+            cmd.Parameters.Add(New SqlParameter("@OPTION", Operacion.BuscarTodos))
             Using Reader As SqlDataReader = cmd.ExecuteReader()
                 While Reader.Read()
                     Dim loUsuario As New Usuario(Reader("ID_User"), Reader("ID_Emp"), Reader("UserName"), Reader("Password"), Reader("Activo"), Reader("Acceso"), Reader("Nom"), Reader("ResetKey"))
@@ -65,8 +70,14 @@ Public Class Usuario
                 con.Open()
                 Dim cmd As SqlCommand = con.CreateCommand
                 cmd.CommandType = CommandType.StoredProcedure
-                cmd.CommandText = "SP_UserandPass"
-                cmd.Parameters.AddWithValue("@user", UserName)
+                cmd.Parameters.Add(New SqlParameter("@ID", ID))
+                cmd.Parameters.Add(New SqlParameter("@USERNAME", UserName))
+                cmd.Parameters.Add(New SqlParameter("@PASSWORD", Password))
+                cmd.Parameters.Add(New SqlParameter("@ACTIVE", Activo))
+                cmd.Parameters.Add(New SqlParameter("@ACCESS", Acceso))
+                cmd.Parameters.Add(New SqlParameter("@ID_EMP", NumeroDeEmpleado))
+                cmd.Parameters.Add(New SqlParameter("@OPTION", Operacion.IniciarSesion))
+                cmd.CommandText = "UDSP_USERS"
                 Using Reader As SqlDataReader = cmd.ExecuteReader()
                     If Reader.Read() Then
                         If Password = Reader("pass").ToString Then
@@ -92,7 +103,7 @@ Public Class Usuario
             Mensaje = "Los campos no pueden estar vacios"
         End If
         If Not String.IsNullOrWhiteSpace(Mensaje) Then
-            MsgBox(Mensaje, MsgBoxStyle.Exclamation, "Error al iniciar sesión")
+            MessageBox.Show(Mensaje, "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
         Return Result
     End Function
@@ -236,8 +247,7 @@ Public Class Usuario
             If Password = Password2 Then
                 Using con As New SqlConnection(ConnectionString())
                     con.Open()
-                    Dim cmd As SqlCommand = con.CreateCommand
-                    cmd.CommandType = CommandType.StoredProcedure
+                    Dim cmd As New SqlCommand("UDSP_USERS", con) With {.CommandType = CommandType.StoredProcedure}
                     cmd.Parameters.Add(New SqlParameter("@ID", ID))
                     cmd.Parameters.Add(New SqlParameter("@USERNAME", UserName))
                     cmd.Parameters.Add(New SqlParameter("@PASSWORD", Password))
@@ -248,7 +258,7 @@ Public Class Usuario
                     cmd.CommandText = "UDSP_USERS"
                     cmd.ExecuteNonQuery()
                     Result = True
-                    Listado = CargarListado()
+                    Listado = CargarListado(True)
                 End Using
             Else
                 Mensaje = "Las contraseñas no coinciden, Intente de nuevo."
@@ -271,8 +281,7 @@ Public Class Usuario
         Dim Result As Boolean = False
         Using con As New SqlConnection(ConnectionString())
             con.Open()
-            Dim cmd As SqlCommand = con.CreateCommand
-            cmd.CommandType = CommandType.StoredProcedure
+            Dim cmd As New SqlCommand("UDSP_USERS", con) With {.CommandType = CommandType.StoredProcedure}
             cmd.Parameters.Add(New SqlParameter("@ID", ID))
             cmd.Parameters.Add(New SqlParameter("@USERNAME", UserName))
             cmd.Parameters.Add(New SqlParameter("@PASSWORD", Password))
@@ -283,7 +292,7 @@ Public Class Usuario
             cmd.CommandText = "UDSP_USERS"
             cmd.ExecuteNonQuery()
             Result = True
-            Listado = CargarListado()
+            Listado = CargarListado(True)
         End Using
         Return Result
     End Function
@@ -296,8 +305,7 @@ Public Class Usuario
         If UsuarioLogeado.UserName <> UserName Then
             Using con As New SqlConnection(ConnectionString())
                 con.Open()
-                Dim cmd As SqlCommand = con.CreateCommand
-                cmd.CommandType = CommandType.StoredProcedure
+                Dim cmd As New SqlCommand("UDSP_USERS", con) With {.CommandType = CommandType.StoredProcedure}
                 cmd.Parameters.Add(New SqlParameter("@ID", ID))
                 cmd.Parameters.Add(New SqlParameter("@USERNAME", UserName))
                 cmd.Parameters.Add(New SqlParameter("@PASSWORD", Password))
@@ -308,7 +316,7 @@ Public Class Usuario
                 cmd.CommandText = "UDSP_USERS"
                 cmd.ExecuteNonQuery()
                 Result = True
-                Listado = CargarListado()
+                Listado = CargarListado(True)
             End Using
         Else
             Mensaje = "No puedes eliminar tu propio usuario"
@@ -337,10 +345,14 @@ Public Class Usuario
         If Not String.IsNullOrWhiteSpace(ID) Then
             Using con As New SqlConnection(ConnectionString())
                 con.Open()
-                Dim cmd As New SqlCommand("Buscar_user", con) With {
-                    .CommandType = CommandType.StoredProcedure
-                }
+                Dim cmd As New SqlCommand("UDSP_USERS", con) With {.CommandType = CommandType.StoredProcedure}
                 cmd.Parameters.Add(New SqlParameter("@ID", ID))
+                cmd.Parameters.Add(New SqlParameter("@USERNAME", UserName))
+                cmd.Parameters.Add(New SqlParameter("@PASSWORD", Password))
+                cmd.Parameters.Add(New SqlParameter("@ACTIVE", Activo))
+                cmd.Parameters.Add(New SqlParameter("@ACCESS", Acceso))
+                cmd.Parameters.Add(New SqlParameter("@ID_EMP", NumeroDeEmpleado))
+                cmd.Parameters.Add(New SqlParameter("@OPTION", Operacion.Buscar))
                 Using Reader As SqlDataReader = cmd.ExecuteReader()
                     If Reader.Read() Then
                         Usuario = New Usuario(Reader("ID_User"), Reader("ID_Emp"), Reader("UserName"), Reader("Password"), Reader("Activo"), Reader("Acceso"), Reader("Nom"), Reader("ResetKey"))

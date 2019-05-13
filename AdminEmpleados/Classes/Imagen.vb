@@ -1,7 +1,7 @@
 Public Class Imagen
 #Region "Propiedades"
-		Public Property ID_Images As integer 
-		Public Property ID_Emp As integer?
+    Public Property ID_Images As Integer
+    Public Property ID_Emp As integer?
     Public Property Img_Emp As Byte()
     Public Property Img_Dom As Byte()
 #End Region

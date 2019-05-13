@@ -58,7 +58,7 @@
     End Sub
 
     Private Sub Login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
-        Usuario = New Usuario(0, 0, user.Text, Encrypt(pass.Text), Nothing, Nothing, "", "")
+        Usuario = New Usuario(0, 0, user.Text, Encrypt(pass.Text), 1, 1, "", "")
         If Usuario.IniciarSesion() Then
             If chkRecordar.Checked Then
                 If My.Settings.LastDate = Date.MinValue Then

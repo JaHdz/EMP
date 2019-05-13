@@ -36,7 +36,7 @@ Public Class Principal
                 Case 5
                     f = New Examenes_Medicos() With {.TopLevel = False, .AutoSize = False}
                 Case 6
-                    f = New Administration() With {.TopLevel = False, .AutoSize = False}
+                    f = New frmAdministration() With {.TopLevel = False, .AutoSize = False}
             End Select
             Dictionary.Add(i, f)
         Next

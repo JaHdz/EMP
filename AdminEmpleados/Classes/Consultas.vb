@@ -999,11 +999,6 @@ Public Class Consultas
         End Using
     End Function
 
-
-    Public Function Consulta_USER() As DataTable
-
-    End Function
-
     Public Function Consulta_depto() As DataTable
         Using con As New SqlConnection(ConnectionString())
             con.Open()

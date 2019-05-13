@@ -3,74 +3,74 @@ Imports System.Data.SqlClient
 
 Public Class Empleado
 #Region "Propiedades"
-    Public Property ID As Integer
-    Public Property Nombre As String
-    Public Property ApellidoPaterno As String
-    Public Property ApellidoMaterno As String
+    Public Property ID As New Integer
+    Public Property Nombre As String = String.Empty
+    Public Property ApellidoPaterno As String = String.Empty
+    Public Property ApellidoMaterno As String = String.Empty
     <Browsable(False)>
-    Public Property Domicilio As String
+    Public Property Domicilio As String = String.Empty
     <Browsable(False)>
-    Public Property Colonia As String
+    Public Property Colonia As String = String.Empty
     <Browsable(False)>
-    Public Property CiudadEstado As String
+    Public Property CiudadEstado As String = String.Empty
     <Browsable(False)>
-    Public Property CodigoPostal As String
+    Public Property CodigoPostal As String = String.Empty
     <Browsable(False)>
-    Public Property Celular As String
+    Public Property Celular As String = String.Empty
     <Browsable(False)>
-    Public Property Telefono As String
+    Public Property Telefono As String = String.Empty
     <Browsable(False)>
-    Public Property EstadoCivil As String
+    Public Property EstadoCivil As String = String.Empty
     <Browsable(False)>
-    Public Property Nacionalidad As String
+    Public Property Nacionalidad As String = String.Empty
     <Browsable(False)>
-    Public Property CiudadNatal As String
+    Public Property CiudadNatal As String = String.Empty
     <Browsable(False)>
-    Public Property EntidadNatal As String
+    Public Property EntidadNatal As String = String.Empty
     <Browsable(False)>
-    Public Property Salario As Decimal
+    Public Property Salario As New Decimal
     <Browsable(False)>
-    Public Property NivelEducativo As String
+    Public Property NivelEducativo As String = String.Empty
     <Browsable(False)>
-    Public Property Email As String
-    Public Property FechaDeNacimiento As Date
+    Public Property Email As String = String.Empty
+    Public Property FechaDeNacimiento As New Date
     <Browsable(False)>
-    Public Property RFC As String
+    Public Property RFC As String = String.Empty
     <Browsable(False)>
-    Public Property NSS As String
-    Public Property Sexo As String
-    Public Property FechaDeAlta As Date
+    Public Property NSS As String = String.Empty
+    Public Property Sexo As String = String.Empty
+    Public Property FechaDeAlta As New Date
     <Browsable(False)>
-    Public Property CURP As String
+    Public Property CURP As String = String.Empty
     <Browsable(False)>
-    Public Property Tipo As Tipo
+    Public Property Tipo As New Tipo
     <Browsable(False)>
-    Public Property Supervisor As Supervisor
+    Public Property Supervisor As New Supervisor
     <Browsable(False)>
-    Public Property FechaEfectiva As Date
+    Public Property FechaEfectiva As New Date
     <Browsable(False)>
-    Public Property Departamento As Departamento
+    Public Property Departamento As New Departamento
     <Browsable(False)>
-    Public Property Puesto As Puesto
+    Public Property Puesto As New Puesto
     <Browsable(False)>
-    Public Property Usuario As Usuario
-    Public Property EsActivo As Boolean
+    Public Property Usuario As New Usuario
+    Public Property EsActivo As Boolean = True
     <Browsable(False)>
-    Public Property EsSupervisor As Boolean
+    Public Property EsSupervisor As Boolean = True
     <Browsable(False)>
-    Public Property Foto As Image
+    Public Property Foto As Image = Nothing
     <Browsable(False)>
-    Public Property FechaDeBaja As Date?
+    Public Property FechaDeBaja As New Date?
     <Browsable(False)>
-    Public Property MotivoDeBaja As String
+    Public Property MotivoDeBaja As String = String.Empty
     <Browsable(False)>
-    Public Property Alerta As Boolean
+    Public Property Alerta As Boolean = False
     <Browsable(False)>
-    Public Property NotificarProveedores As Boolean
+    Public Property NotificarProveedores As Boolean = False
     <Browsable(False)>
-    Public Property NotificarClientes As Boolean
+    Public Property NotificarClientes As Boolean = False
     <Browsable(False)>
-    Public Property NombreCompleto As String
+    Public Property NombreCompleto As String = String.Empty
 
 
 
@@ -138,11 +138,13 @@ Public Class Empleado
             Using Reader As SqlDataReader = cmd.ExecuteReader()
                 While Reader.Read()
                     Dim loEmpleado As New Empleado(
-                        Reader("ID_Emp"), Reader("Emp_Name"), Reader("Emp_APat"), Reader("Emp_AMat"), Reader("Emp_Domicilio"), Reader("Emp_Col"), Reader("Emp_CiudadEstado"), Reader("Emp_CP"),
-                        Reader("Emp_Cel"), Reader("Emp_Tel"), Reader("Emp_EdoCivil"), Reader("Emp_Nacionalidad"), Reader("Emp_Ciudad"), Reader("Emp_EN"), Reader("Emp_Salario"), Reader("Emp_NEducativo"),
-                        Reader("Emp_Email"), Reader("Emp_FNac"), Reader("Emp_RFC"), Reader("Emp_NSS"), Reader("Emp_FAlta"), Reader("Emp_Sexo"), Reader("Emp_Curp"), New Tipo(), New Supervisor(),
-                        Reader("Emp_FEfectiva"), New Departamento(), New Puesto(), New Usuario().Buscar(Reader("ID_User").ToString()), Reader("Emp_Activo"), Reader("EsSupervisor"), CargarImagen(Reader("Img_Emp")), Reader("Fecha_Baja"),
-                        Reader("Motivo"), Reader("Alerta"), Reader("NProv"), Reader("NClientes")
+                        Reader("ID_Emp"), Reader("Emp_Name"), Reader("Emp_APat"), Reader("Emp_AMat"), Reader("Emp_Domicilio"), Reader("Emp_Col"),
+                        Reader("Emp_CiudadEstado"), Reader("Emp_CP"), Reader("Emp_Cel"), Reader("Emp_Tel"), Reader("Emp_EdoCivil"), Reader("Emp_Nacionalidad"),
+                        Reader("Emp_Ciudad"), Reader("Emp_EN"), Reader("Emp_Salario"), Reader("Emp_NEducativo"), Reader("Emp_Email"), Reader("Emp_FNac"),
+                        Reader("Emp_RFC"), Reader("Emp_NSS"), Reader("Emp_FAlta"), Reader("Emp_Sexo"), Reader("Emp_Curp"), New Tipo().Buscar(Reader("Emp_Tipo").ToString()),
+                        New Supervisor().Buscar(Reader("Emp_Sup").ToString()), Reader("Emp_FEfectiva"), New Departamento().Buscar(Reader("ID_Depto").ToString()),
+                        New Puesto().Buscar(Reader("ID_Puesto").ToString()), New Usuario().Buscar(Reader("ID_User").ToString()), Reader("Emp_Activo"),
+                        Reader("EsSupervisor"), CargarImagen(Reader("Img_Emp")), Reader("Fecha_Baja"), Reader("Motivo"), Reader("Alerta"), Reader("NProv"), Reader("NClientes")
                         )
                     Result.Add(loEmpleado)
                 End While
