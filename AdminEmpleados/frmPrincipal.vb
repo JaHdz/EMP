@@ -1,7 +1,7 @@
 ﻿
 Imports System.Deployment.Application
 
-Public Class Principal
+Public Class frmPrincipal
     Public ObLogout As Boolean = False
     Private Dictionary As Dictionary(Of Integer, Form)
     Public Sub New()
@@ -26,21 +26,21 @@ Public Class Principal
             Dim f As New Form
             Select Case i
                 Case 1
-                    f = New Empleados() With {.TopLevel = False, .AutoSize = True}
+                    f = New frmEmpleados() With {.TopLevel = False, .AutoSize = True}
                 Case 2
                     f = New frmEquipo() With {.TopLevel = False, .AutoSize = False}
                 Case 3
-                    f = New Capacitaciones() With {.TopLevel = False, .AutoSize = False}
+                    f = New frmCapacitaciones() With {.TopLevel = False, .AutoSize = False}
                 Case 4
-                    f = New Evaluaciones() With {.TopLevel = False, .AutoSize = False}
+                    f = New frmEvaluaciones() With {.TopLevel = False, .AutoSize = False}
                 Case 5
-                    f = New Examenes_Medicos() With {.TopLevel = False, .AutoSize = False}
+                    f = New frmExamenesMedicos() With {.TopLevel = False, .AutoSize = False}
                 Case 6
                     f = New frmAdministration() With {.TopLevel = False, .AutoSize = False}
             End Select
             Dictionary.Add(i, f)
         Next
-        Elmhst.Child = New CstmTabControl(Dictionary) With {.ParentForm = Me, .RedirectToForm = New Login}
+        Elmhst.Child = New CstmTabControl(Dictionary) With {.ParentForm = Me, .RedirectToForm = New frmLogin}
     End Sub
 
     Private Sub Principal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

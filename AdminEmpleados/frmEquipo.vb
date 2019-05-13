@@ -20,7 +20,7 @@
             NEmp = Convert.ToInt16(objcon.Emp_Exist(txt_numero.Text))
             If (NEmp > 0) Then
                 Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", txt_numero.Text}}
-                Dim Wait As New Wait With {
+                Dim Wait As New frmWait With {
                 .Parameters = ldParameters,
                 .Operation = BackgroundOperations.GetEmployeeInfo
             }
@@ -141,10 +141,10 @@
                 Else
                     objcon.Add_commen(txt_numero.Text, TXT_commen.Text)
                 End If
-                Dim Wait As New Wait()
+                Dim Wait As New frmWait()
                 Wait.Operation = BackgroundOperations.JustShowScreen
                 Wait.ShowDialog()
-                Dim Reportes As New Reportes With {
+                Dim Reportes As New frmReportes With {
                     .ReportOption = ReportOptions.AssignedEquipment,
                     .Emp = Convert.ToInt64(txt_numero.Text),
                     .User = UsuarioLogeado.Nombre

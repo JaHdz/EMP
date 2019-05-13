@@ -189,20 +189,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RECEIVER.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Capacitaciones.Designer.vb">
-      <DependentUpon>Capacitaciones.vb</DependentUpon>
+    <Compile Include="frmCapacitaciones.Designer.vb">
+      <DependentUpon>frmCapacitaciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Capacitaciones.vb">
+    <Compile Include="frmCapacitaciones.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Classes\Cls_Emp.vb" />
     <Compile Include="Classes\Cls_ES.vb" />
     <Compile Include="Classes\Consultas.vb" />
     <Compile Include="Classes\Internal\CURP.vb" />
-    <Compile Include="Empleados.Designer.vb">
-      <DependentUpon>Empleados.vb</DependentUpon>
+    <Compile Include="frmEmpleados.Designer.vb">
+      <DependentUpon>frmEmpleados.vb</DependentUpon>
     </Compile>
-    <Compile Include="Empleados.vb">
+    <Compile Include="frmEmpleados.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmEquipo.Designer.vb">
@@ -211,29 +211,29 @@
     <Compile Include="frmEquipo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Evaluaciones.Designer.vb">
-      <DependentUpon>Evaluaciones.vb</DependentUpon>
+    <Compile Include="frmEvaluaciones.Designer.vb">
+      <DependentUpon>frmEvaluaciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Evaluaciones.vb">
+    <Compile Include="frmEvaluaciones.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Examenes_Medicos.Designer.vb">
-      <DependentUpon>Examenes_Medicos.vb</DependentUpon>
+    <Compile Include="frmExamenesMedicos.Designer.vb">
+      <DependentUpon>frmExamenesMedicos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Examenes_Medicos.vb">
+    <Compile Include="frmExamenesMedicos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.vb">
-      <DependentUpon>Login.vb</DependentUpon>
+    <Compile Include="frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="Login.vb">
+    <Compile Include="frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principal.vb">
+    <Compile Include="frmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principal.Designer.vb">
-      <DependentUpon>Principal.vb</DependentUpon>
+    <Compile Include="frmPrincipal.Designer.vb">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPopUp.Designer.vb">
@@ -258,10 +258,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Classes\Internal\NSS.vb" />
-    <Compile Include="Reportes.Designer.vb">
-      <DependentUpon>Reportes.vb</DependentUpon>
+    <Compile Include="frmReportes.Designer.vb">
+      <DependentUpon>frmReportes.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reportes.vb">
+    <Compile Include="frmReportes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\Datasets\SES_INFO.Designer.vb">
@@ -284,10 +284,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SES_FAMILY.xsd</DependentUpon>
     </Compile>
-    <Compile Include="wait.Designer.vb">
-      <DependentUpon>wait.vb</DependentUpon>
+    <Compile Include="frmWait.Designer.vb">
+      <DependentUpon>frmWait.vb</DependentUpon>
     </Compile>
-    <Compile Include="wait.vb">
+    <Compile Include="frmWait.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -296,26 +296,26 @@
       <DependentUpon>frmAdministration.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Capacitaciones.resx">
-      <DependentUpon>Capacitaciones.vb</DependentUpon>
+    <EmbeddedResource Include="frmCapacitaciones.resx">
+      <DependentUpon>frmCapacitaciones.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empleados.resx">
-      <DependentUpon>Empleados.vb</DependentUpon>
+    <EmbeddedResource Include="frmEmpleados.resx">
+      <DependentUpon>frmEmpleados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEquipo.resx">
       <DependentUpon>frmEquipo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Evaluaciones.resx">
-      <DependentUpon>Evaluaciones.vb</DependentUpon>
+    <EmbeddedResource Include="frmEvaluaciones.resx">
+      <DependentUpon>frmEvaluaciones.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Examenes_Medicos.resx">
-      <DependentUpon>Examenes_Medicos.vb</DependentUpon>
+    <EmbeddedResource Include="frmExamenesMedicos.resx">
+      <DependentUpon>frmExamenesMedicos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.vb</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Principal.resx">
-      <DependentUpon>Principal.vb</DependentUpon>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPopUp.resx">
       <DependentUpon>frmPopUp.vb</DependentUpon>
@@ -326,16 +326,16 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes.resx">
-      <DependentUpon>Reportes.vb</DependentUpon>
+    <EmbeddedResource Include="frmReportes.resx">
+      <DependentUpon>frmReportes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\EquipoEntregado.rdlc" />
     <EmbeddedResource Include="Reports\EstudioSocioeconomico.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="wait.resx">
-      <DependentUpon>wait.vb</DependentUpon>
+    <EmbeddedResource Include="frmWait.resx">
+      <DependentUpon>frmWait.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

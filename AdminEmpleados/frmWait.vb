@@ -28,7 +28,7 @@
     GetFamily
 End Enum
 
-Public Class Wait
+Public Class frmWait
     Public Operation As BackgroundOperations
     Public Result As New Object
     Public Parameters As Dictionary(Of String, Object)

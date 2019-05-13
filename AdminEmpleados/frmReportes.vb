@@ -1,6 +1,6 @@
 ﻿Imports Microsoft.Reporting.WinForms
 
-Public Class Reportes
+Public Class frmReportes
     Private bit As Boolean
     Private X As Integer
     Private Y As Integer

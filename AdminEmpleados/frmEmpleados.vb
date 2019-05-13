@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 Imports System.Text.RegularExpressions
 
-Public Class Empleados
+Public Class frmEmpleados
     Dim V1 As String
     Dim V2 As String
     Dim aux As Integer
@@ -43,7 +43,7 @@ Public Class Empleados
 
         If txt_numero.Text <> "" Then
             Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", numero}}
-            Dim Wait As New Wait With {
+            Dim Wait As New frmWait With {
                 .Parameters = ldParameters,
                 .Operation = BackgroundOperations.EmployeeExits
             }
@@ -72,7 +72,7 @@ Public Class Empleados
     End Sub
     Public Sub Llenar()
         Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", txt_numero.Text}}
-        Dim Wait As New Wait With {
+        Dim Wait As New frmWait With {
                 .Parameters = ldParameters,
                 .Operation = BackgroundOperations.GetEmployeeInfo
             }
@@ -343,7 +343,7 @@ Public Class Empleados
         Next
         pnl_estatus.Visible = False
 
-        Dim Wait As New Wait With {
+        Dim Wait As New frmWait With {
             .Operation = BackgroundOperations.GetLatestEmployeeNumber
         }
         Wait.ShowDialog()
@@ -383,7 +383,7 @@ Public Class Empleados
             Else
                 If EXISTE = False Then
                     Dim ldParameters As New Dictionary(Of String, Object) From {{"CURPorNSS", txt_SS.Text}}
-                    Dim Wait As New Wait With {
+                    Dim Wait As New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.ValidateCURPandNSS
                     }
@@ -407,7 +407,7 @@ Public Class Empleados
             Else
                 If EXISTE = False Then
                     Dim ldParameters As New Dictionary(Of String, Object) From {{"CURPorNSS", txt_CURP.Text}}
-                    Dim Wait As New Wait With {
+                    Dim Wait As New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.ValidateCURPandNSS
                     }
@@ -512,7 +512,7 @@ Public Class Empleados
     End Sub
     Private Sub Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AddToolTips()
-        Dim Wait As New Wait With {
+        Dim Wait As New frmWait With {
             .Operation = BackgroundOperations.GetLatestEmployeeNumber
         }
         Wait.ShowDialog()
@@ -590,7 +590,7 @@ Public Class Empleados
     Private Sub txt_EN_Leave(sender As Object, e As EventArgs) Handles txt_EN.Leave
         If (txt_EN.Text <> "") Then
             Dim ldParameters As New Dictionary(Of String, Object) From {{"Field", txt_EN.Text}, {"Type", "EN"}}
-            Dim Wait As New Wait With {
+            Dim Wait As New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.ValidateEnPuSuTi
                     }
@@ -609,7 +609,7 @@ Public Class Empleados
     Private Sub txt_PUESTO_Leave(sender As Object, e As EventArgs)
         If (txt_PUESTO.Text <> "") Then
             Dim ldParameters As New Dictionary(Of String, Object) From {{"Field", txt_PUESTO.Text}, {"Type", "PU"}}
-            Dim Wait As New Wait With {
+            Dim Wait As New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.ValidateEnPuSuTi
                     }
@@ -628,7 +628,7 @@ Public Class Empleados
     Private Sub txt_SUPER_Leave(sender As Object, e As EventArgs)
         If (txt_SUPER.Text <> "") Then
             Dim ldParameters As New Dictionary(Of String, Object) From {{"Field", txt_SUPER.Text}, {"Type", "SU"}}
-            Dim Wait As New Wait With {
+            Dim Wait As New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.ValidateEnPuSuTi
                     }
@@ -648,7 +648,7 @@ Public Class Empleados
     Private Sub txt_tipo_Leave(sender As Object, e As EventArgs)
         If (txt_tipo.Text <> "") Then
             Dim ldParameters As New Dictionary(Of String, Object) From {{"Field", txt_tipo.Text}, {"Type", "TI"}}
-            Dim Wait As New Wait With {
+            Dim Wait As New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.ValidateEnPuSuTi
                     }
@@ -672,7 +672,7 @@ Public Class Empleados
             Else
                 Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", EMPLEADO_ES}, {"REFID", 0}, {"Name", txt_RefNom.Text},
                         {"Ocupation", txt_RefOcu.Text}, {"Relationship", Txt_TR.Text}, {"Time", txt_TC.Text}}
-                Dim Wait As New Wait With {
+                Dim Wait As New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.ValidateReference
                     }
@@ -698,7 +698,7 @@ Public Class Empleados
                 MessageBox.Show("Favor de llenar todos los campos")
             Else
                 Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", EMPLEADO_ES}, {"ICMID", 0}, {"Relationship", txt_OIParen.Text}, {"Amount", txt_OTCantidad.Text}}
-                Dim Wait As New Wait With {
+                Dim Wait As New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.ValidateIncome
                     }
@@ -826,7 +826,7 @@ Public Class Empleados
             ES.IMG = PB_IMAGE_VIVIENDA.Image
 
             Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", ES}}
-            Dim Wait As New Wait With {
+            Dim Wait As New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.AddSocialEconomicStudy
                     }
@@ -838,7 +838,7 @@ Public Class Empleados
             If loResult > 0 Then
                 If Not ReferenceEquals(PB_IMAGE_VIVIENDA.Image, My.Resources.AddImage) Then
                     ldParameters = New Dictionary(Of String, Object) From {{"Employee", ES.EMP_ID}, {"HousePicture", ES.IMG}, {"EmployeePicture", foto.Image}}
-                    Wait = New Wait With {.Parameters = ldParameters, .Operation = BackgroundOperations.AddImage}
+                    Wait = New frmWait With {.Parameters = ldParameters, .Operation = BackgroundOperations.AddImage}
                     Wait.ShowDialog()
                     Wait.Close()
                 End If
@@ -848,7 +848,7 @@ Public Class Empleados
                         If Not row.IsNewRow Then
                             ldParameters = New Dictionary(Of String, Object) From {{"ES", loResult}, {"REFID", row.Cells(1).Value.ToString}, {"Name", row.Cells(2).Value.ToString},
                                        {"Ocupation", row.Cells(3).Value.ToString}, {"Relationship", row.Cells(4).Value.ToString}, {"Time", row.Cells(5).Value.ToString}}
-                            Wait = New Wait With {
+                            Wait = New frmWait With {
                                 .Parameters = ldParameters,
                                 .Operation = BackgroundOperations.ValidateReference
                             }
@@ -867,7 +867,7 @@ Public Class Empleados
                         If Not row.IsNewRow Then
                             ldParameters = New Dictionary(Of String, Object) From {{"ES", loResult}, {"ICMID", row.Cells(1).Value.ToString}, {"Relationship", row.Cells(2).Value.ToString},
                                              {"Amount", Convert.ToDouble(row.Cells(3).Value.ToString)}}
-                            Wait = New Wait With {
+                            Wait = New frmWait With {
                                     .Parameters = ldParameters,
                                     .Operation = BackgroundOperations.ValidateIncome
                                 }
@@ -899,7 +899,7 @@ Public Class Empleados
             If txt_enfNAME.Text = "" Then
             Else
                 Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}, {"Condition", txt_enfNAME.Text}}
-                Dim Wait As New Wait With {
+                Dim Wait As New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.AddMedicalConditions
                     }
@@ -922,7 +922,7 @@ Public Class Empleados
             Else
                 Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}, {"Name", txt_conNAME.Text}, {"FLastname", txt_conAP.Text}, {"SLastname", txt_conAM.Text},
                  {"Relationship", txt_conPAREN.Text}, {"Phone", txt_conTEL.Text}, {"Cellphone", txt_conCEL.Text}}
-                Dim Wait As New Wait With {
+                Dim Wait As New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.AddContact
                     }
@@ -951,7 +951,7 @@ Public Class Empleados
             Else
                 Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}, {"Start", txt_antFI.Text}, {"End", txt_antFF.Text}, {"Company", txt_antEMP.Text},
                  {"Position", txt_antCARGO.Text}, {"Wage", txt_antSALARIO.Text}, {"Phone", txt_antTEL.Text}, {"Reason", txt_antMT.Text}, {"Contact", txt_antNAME.Text}}
-                Dim Wait As New Wait With {
+                Dim Wait As New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.AddJobHistory
                     }
@@ -983,7 +983,7 @@ Public Class Empleados
                 Else
                     Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}, {"Type", "CONYUGE"}, {"Name", txt_esName.Text}, {"FLastname", txt_esAP.Text},
                         {"SLastname", txt_esAM.Text}, {"Nationality", txt_esNacion.Text}, {"Birthday", txt_esFN.Text}, {"Sex", cb_esSexo.SelectedItem.ToString()}}
-                    Dim Wait As New Wait With {
+                    Dim Wait As New frmWait With {
                             .Parameters = ldParameters,
                             .Operation = BackgroundOperations.AddFamilyMember
                         }
@@ -1012,7 +1012,7 @@ Public Class Empleados
             Else
                 Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}, {"Type", "HIJO"}, {"Name", txt_hijoNAME.Text}, {"FLastname", txt_hijoAP.Text},
                     {"SLastname", txt_hijoAM.Text}, {"Nationality", txt_hijoNACION.Text}, {"Birthday", txt_hijoFN.Text}, {"Sex", txt_hijoSEXO.SelectedItem.ToString()}}
-                Dim Wait As New Wait With {
+                Dim Wait As New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.AddFamilyMember
                     }
@@ -1083,7 +1083,7 @@ Public Class Empleados
     End Sub
     Private Sub llenarFamilia()
         Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}}
-        Dim Wait As New Wait With {
+        Dim Wait As New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.GetFamily
                     }
@@ -1095,7 +1095,7 @@ Public Class Empleados
     End Sub
     Private Sub llenarAL()
         Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}}
-        Dim Wait As New Wait With {
+        Dim Wait As New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.GetJobHistory
                     }
@@ -1107,7 +1107,7 @@ Public Class Empleados
     End Sub
     Private Sub llenarContacto()
         Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}}
-        Dim Wait As New Wait With {
+        Dim Wait As New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.GetContact
                     }
@@ -1118,7 +1118,7 @@ Public Class Empleados
     End Sub
     Private Sub llenarEnfermedades()
         Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}}
-        Dim Wait As New Wait With {
+        Dim Wait As New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.GetMedicalConditions
                     }
@@ -1129,7 +1129,7 @@ Public Class Empleados
     End Sub
     Private Sub llenarSE()
         Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}}
-        Dim Wait As New Wait With {
+        Dim Wait As New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.GetSocialEconomicStudy
                     }
@@ -1197,7 +1197,7 @@ Public Class Empleados
             EMPLEADO_ES = 0
         End If
         ldParameters = New Dictionary(Of String, Object) From {{"ES", EMPLEADO_ES}}
-        Wait = New Wait With {
+        Wait = New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.GetIncome
                     }
@@ -1205,7 +1205,7 @@ Public Class Empleados
         Dim loResult2 = Wait.Result
         Wait.Close()
         dgv_OI.DataSource = loResult2
-        Wait = New Wait With {
+        Wait = New frmWait With {
                         .Parameters = ldParameters,
                         .Operation = BackgroundOperations.GetReference
                     }
@@ -1273,10 +1273,10 @@ Public Class Empleados
 
     Private Sub btn_SERPT_Click(sender As Object, e As EventArgs) Handles btn_SERPT.Click
         If txt_numero.Text <> "" Then
-            Dim Wait As New Wait()
+            Dim Wait As New frmWait()
             Wait.Operation = BackgroundOperations.JustShowScreen
             Wait.Show()
-            Dim Reportes As New Reportes With {
+            Dim Reportes As New frmReportes With {
                     .ReportOption = ReportOptions.SocialeconomicStudy,
                     .Emp = Convert.ToInt64(txt_numero.Text),
                     .User = UsuarioLogeado.Nombre
@@ -1453,7 +1453,7 @@ Public Class Empleados
             SAVE.Image = My.Resources.Updates_80
             tooltip.SetToolTip(SAVE, "Actualizar Información del empleado")
         Else
-            Dim Wait As New Wait With {
+            Dim Wait As New frmWait With {
             .Operation = BackgroundOperations.GetLatestEmployeeNumber
         }
             Wait.ShowDialog()

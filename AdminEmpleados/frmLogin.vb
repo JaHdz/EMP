@@ -1,4 +1,4 @@
-﻿Public Class Login
+﻿Public Class frmLogin
     Private bit As Boolean
     Private X As Integer
     Private Y As Integer
@@ -75,7 +75,7 @@
                 My.Settings.RememberMe = False
                 My.Settings.Save()
             End If
-            Dim Main As New Principal()
+            Dim Main As New frmPrincipal()
             Main.Show()
             Close()
         End If

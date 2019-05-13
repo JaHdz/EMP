@@ -3,7 +3,7 @@ Imports System.Windows.Controls
 Imports System.Windows.Input
 
 Public Class CstmTabControl
-    Public Property ParentForm() As Principal
+    Public Property ParentForm() As frmPrincipal
     Public Property RedirectToForm() As Form
     Public Property Dictionary As Dictionary(Of Integer, Form)
     Private CurrentOption As Tab
