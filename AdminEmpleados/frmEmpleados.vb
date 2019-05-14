@@ -495,8 +495,8 @@ Public Class frmEmpleados
     Public Sub llenar_buscador(tipo As String)
         Dim popup As New FrmPopUp(tipo)
         Dim dialogresult__1 As DialogResult = popup.ShowDialog()
-        V1 = popup.Variable
-        V2 = popup.Variable2
+        'V1 = popup.Variable
+        'V2 = popup.Variable2
         popup.Close()
     End Sub
     Public Sub Limpiartxt(ByVal form As Windows.Forms.Form)

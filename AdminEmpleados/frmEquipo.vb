@@ -7,8 +7,8 @@
     Public Sub llenar_buscador(tipo As String)
         Dim popup As New FrmPopUp(tipo)
         Dim dialogresult__1 As DialogResult = popup.ShowDialog()
-        V1 = popup.Variable
-        V2 = popup.Variable2
+        'V1 = popup.Variable
+        'V2 = popup.Variable2
         popup.Close()
     End Sub
     Private Sub txt_numero_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_numero.KeyPress

@@ -11,7 +11,7 @@
     Public Enum BuscarPor
         Empleado = 0
         Departamento = 1
-
+        Evaluacion = 2
     End Enum
 
 End Module

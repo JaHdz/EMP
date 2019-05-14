@@ -1,10 +1,7 @@
 ﻿Public Class FrmPopUp
     Private Buscar As Integer
     Dim FiltrarInactivos As Boolean
-    Public Variable As String
-    Public Variable2 As String
     Public Result As Object
-    Dim dt As New DataTable
     Dim ListadoDeObjetos As IEnumerable(Of Object)
     Dim ListadoFiltrado As IEnumerable(Of Object)
 
@@ -27,6 +24,8 @@
                         Result = CType(dgv_Pop.CurrentRow.DataBoundItem, Empleado)
                     Case BuscarPor.Departamento
                         Result = CType(dgv_Pop.CurrentRow.DataBoundItem, Departamento)
+                    Case BuscarPor.Evaluacion
+                        Result = CType(dgv_Pop.CurrentRow.DataBoundItem, Evaluacion)
                 End Select
 
                 Close()
@@ -40,6 +39,8 @@
                 ListadoDeObjetos = New Empleado().CargarListado(FiltrarInactivos)
             Case BuscarPor.Departamento
                 ListadoDeObjetos = New Departamento().CargarListado(FiltrarInactivos)
+            Case BuscarPor.Evaluacion
+                ListadoDeObjetos = New Evaluacion().CargarListado(FiltrarInactivos)
         End Select
         dgv_Pop.DataSource = ListadoDeObjetos
     End Sub
@@ -51,6 +52,8 @@
                     ListadoFiltrado = CType(ListadoDeObjetos, List(Of Empleado)).FindAll(Function(X) X.ID Like "*" + txt_codi.Text.ToUpper + "*" OrElse X.NombreCompleto.ToUpper() Like "*" + txt_codi.Text.ToUpper + "*")
                 Case BuscarPor.Departamento
                     ListadoFiltrado = CType(ListadoDeObjetos, List(Of Departamento)).FindAll(Function(X) X.ID Like "*" + txt_codi.Text.ToUpper + "*" OrElse X.Codigo.ToUpper() Like "*" + txt_codi.Text.ToUpper + "*")
+                Case BuscarPor.Evaluacion
+                    ListadoFiltrado = CType(ListadoDeObjetos, List(Of Evaluacion)).FindAll(Function(X) X.ID Like "*" + txt_codi.Text.ToUpper + "*" OrElse X.Codigo.ToUpper() Like "*" + txt_codi.Text.ToUpper + "*")
             End Select
             dgv_Pop.DataSource = ListadoFiltrado
         Else

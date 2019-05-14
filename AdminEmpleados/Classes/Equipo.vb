@@ -1,7 +1,9 @@
+Imports System.ComponentModel
 Imports System.Data.SqlClient
 
 Public Class Equipo
 #Region "Propiedades"
+    <Browsable(False)>
     Public Property ID As New Integer
     Public Property Nombre As String = String.Empty
     Public Property Descripcion As String = String.Empty
