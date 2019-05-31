@@ -1,7 +1,7 @@
 ﻿Public Class frmEvaluaciones
     Dim Resultado As Object
     Public Sub Llenar_buscador(tipo As String)
-        Dim popup As New FrmPopUp(tipo)
+        Dim popup As New frmPopUpCatalogo(tipo)
         Dim dialogresult As DialogResult = popup.ShowDialog()
         Resultado = popup.Result
         popup.Close()
@@ -36,12 +36,6 @@
                 Dim EvaluacionDeEmpleado = New EvaluacionDeEmpleado(Vista.ID, 0, Vista.Empleado, Vista.Fecha, Vista.Comentario, 0)
                 If EvaluacionDeEmpleado.Eliminar(dgv_Evaluaciones.DataSource) Then
                     dgv_Evaluaciones.Refresh()
-                    txt_numero.Text = ""
-                    EV.Text = ""
-                    EV2.Text = ""
-                    dtpFecha.ResetText()
-                    TXT_commen.Text = ""
-                    txtEmpleado.Text = ""
                 End If
             End If
         End If
@@ -49,10 +43,10 @@
 
     Private Sub Buscar_EN_Click_1(sender As Object, e As EventArgs) Handles buscar_EN.Click
         Llenar_buscador(BuscarPor.Empleado)
-        Dim Empleado As Empleado = CType(Resultado, Empleado)
+        Dim Empleado As Empleado.Vista = CType(Resultado, Empleado.Vista)
         If Empleado IsNot Nothing Then
             txt_numero.Text = Empleado.ID.ToString()
-            txtEmpleado.Text = Empleado.NombreCompleto
+            txtEmpleado.Text = String.Concat(Empleado.Nombre, " ", Empleado.ApellidoPaterno, " ", Empleado.ApellidoMaterno)
             dgv_Evaluaciones.DataSource = New EvaluacionDeEmpleado(0, 0, txt_numero.Text, Now(), "", UsuarioLogeado.ID).CargarListado(txt_numero.Text)
         End If
     End Sub

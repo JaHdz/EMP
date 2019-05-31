@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmEquipo
+Partial Class FrmEquipo
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,52 +22,42 @@ Partial Class frmEquipo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEquipo))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEquipo))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pnlEquipo = New System.Windows.Forms.Panel()
-        Me.dgv_equipo_emp = New System.Windows.Forms.DataGridView()
+        Me.dgvEquipoEmp = New System.Windows.Forms.DataGridView()
         Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.pnl_comen = New System.Windows.Forms.Panel()
-        Me.gbComentarios = New System.Windows.Forms.GroupBox()
-        Me.TXT_commen = New System.Windows.Forms.TextBox()
+        Me.txtEmpleadoNombre = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label42 = New System.Windows.Forms.Label()
+        Me.lbl_ingreso = New System.Windows.Forms.Label()
+        Me.TXT_FECHA = New System.Windows.Forms.DateTimePicker()
+        Me.txtEmpleadoNumero = New System.Windows.Forms.TextBox()
+        Me.txtEquipoNumero = New System.Windows.Forms.TextBox()
+        Me.lbl_num = New System.Windows.Forms.Label()
+        Me.txtEquipoNombre = New System.Windows.Forms.TextBox()
+        Me.Label92 = New System.Windows.Forms.Label()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.RegresarEquipo = New System.Windows.Forms.DataGridViewImageColumn()
         Me.pb_Report = New System.Windows.Forms.PictureBox()
         Me.CANCEL = New System.Windows.Forms.PictureBox()
         Me.SAVE = New System.Windows.Forms.PictureBox()
-        Me.lbl_ingreso = New System.Windows.Forms.Label()
-        Me.TXT_FECHA = New System.Windows.Forms.DateTimePicker()
         Me.buscar_eq = New System.Windows.Forms.PictureBox()
-        Me.txt_numero = New System.Windows.Forms.TextBox()
-        Me.Eq = New System.Windows.Forms.TextBox()
-        Me.lbl_num = New System.Windows.Forms.Label()
-        Me.eq2 = New System.Windows.Forms.TextBox()
         Me.buscar_EN = New System.Windows.Forms.PictureBox()
-        Me.Label92 = New System.Windows.Forms.Label()
-        Me.Empleado = New System.Windows.Forms.Label()
-        Me.lbl_emp = New System.Windows.Forms.Label()
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.UPDATE = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Assig = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Equipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Regreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha_R = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Comentario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_User = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.gbComentarios = New System.Windows.Forms.GroupBox()
+        Me.TXT_commen = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.pnlEquipo.SuspendLayout()
-        CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvEquipoEmp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel14.SuspendLayout()
-        Me.pnl_comen.SuspendLayout()
-        Me.gbComentarios.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.pb_Report, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_eq, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbComentarios.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -84,41 +74,44 @@ Partial Class frmEquipo
         '
         'pnlEquipo
         '
-        Me.pnlEquipo.Controls.Add(Me.dgv_equipo_emp)
+        Me.pnlEquipo.Controls.Add(Me.dgvEquipoEmp)
         Me.pnlEquipo.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.pnlEquipo.Location = New System.Drawing.Point(0, 300)
         Me.pnlEquipo.Name = "pnlEquipo"
         Me.pnlEquipo.Size = New System.Drawing.Size(1078, 399)
         Me.pnlEquipo.TabIndex = 81
         '
-        'dgv_equipo_emp
+        'dgvEquipoEmp
         '
-        Me.dgv_equipo_emp.AllowUserToAddRows = False
-        Me.dgv_equipo_emp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_equipo_emp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATE, Me.ID_Assig, Me.ID_Equipo, Me.ID_Emp, Me.Fecha, Me.Regreso, Me.Fecha_R, Me.Comentario, Me.ID_User})
-        Me.dgv_equipo_emp.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgv_equipo_emp.Location = New System.Drawing.Point(0, 0)
-        Me.dgv_equipo_emp.Name = "dgv_equipo_emp"
-        Me.dgv_equipo_emp.RowHeadersVisible = False
-        Me.dgv_equipo_emp.Size = New System.Drawing.Size(1078, 399)
-        Me.dgv_equipo_emp.TabIndex = 71
+        Me.dgvEquipoEmp.AllowUserToAddRows = False
+        Me.dgvEquipoEmp.AllowUserToDeleteRows = False
+        Me.dgvEquipoEmp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvEquipoEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvEquipoEmp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.RegresarEquipo})
+        Me.dgvEquipoEmp.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvEquipoEmp.Location = New System.Drawing.Point(0, 0)
+        Me.dgvEquipoEmp.Name = "dgvEquipoEmp"
+        Me.dgvEquipoEmp.ReadOnly = True
+        Me.dgvEquipoEmp.RowHeadersVisible = False
+        Me.dgvEquipoEmp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvEquipoEmp.Size = New System.Drawing.Size(1078, 399)
+        Me.dgvEquipoEmp.TabIndex = 71
         '
         'Panel14
         '
         Me.Panel14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel14.Controls.Add(Me.pnl_comen)
+        Me.Panel14.Controls.Add(Me.gbComentarios)
+        Me.Panel14.Controls.Add(Me.txtEmpleadoNombre)
         Me.Panel14.Controls.Add(Me.Panel2)
         Me.Panel14.Controls.Add(Me.lbl_ingreso)
         Me.Panel14.Controls.Add(Me.TXT_FECHA)
         Me.Panel14.Controls.Add(Me.buscar_eq)
-        Me.Panel14.Controls.Add(Me.txt_numero)
-        Me.Panel14.Controls.Add(Me.Eq)
+        Me.Panel14.Controls.Add(Me.txtEmpleadoNumero)
+        Me.Panel14.Controls.Add(Me.txtEquipoNumero)
         Me.Panel14.Controls.Add(Me.lbl_num)
-        Me.Panel14.Controls.Add(Me.eq2)
+        Me.Panel14.Controls.Add(Me.txtEquipoNombre)
         Me.Panel14.Controls.Add(Me.buscar_EN)
         Me.Panel14.Controls.Add(Me.Label92)
-        Me.Panel14.Controls.Add(Me.Empleado)
-        Me.Panel14.Controls.Add(Me.lbl_emp)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel14.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
@@ -127,36 +120,15 @@ Partial Class frmEquipo
         Me.Panel14.Size = New System.Drawing.Size(1078, 699)
         Me.Panel14.TabIndex = 80
         '
-        'pnl_comen
+        'txtEmpleadoNombre
         '
-        Me.pnl_comen.Controls.Add(Me.gbComentarios)
-        Me.pnl_comen.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.pnl_comen.Location = New System.Drawing.Point(32, 190)
-        Me.pnl_comen.Name = "pnl_comen"
-        Me.pnl_comen.Size = New System.Drawing.Size(931, 130)
-        Me.pnl_comen.TabIndex = 72
-        Me.pnl_comen.Visible = False
-        '
-        'gbComentarios
-        '
-        Me.gbComentarios.Controls.Add(Me.TXT_commen)
-        Me.gbComentarios.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gbComentarios.Location = New System.Drawing.Point(0, 0)
-        Me.gbComentarios.Name = "gbComentarios"
-        Me.gbComentarios.Size = New System.Drawing.Size(931, 130)
-        Me.gbComentarios.TabIndex = 73
-        Me.gbComentarios.TabStop = False
-        Me.gbComentarios.Text = "Comentarios"
-        '
-        'TXT_commen
-        '
-        Me.TXT_commen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TXT_commen.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TXT_commen.Location = New System.Drawing.Point(3, 21)
-        Me.TXT_commen.Multiline = True
-        Me.TXT_commen.Name = "TXT_commen"
-        Me.TXT_commen.Size = New System.Drawing.Size(925, 106)
-        Me.TXT_commen.TabIndex = 3
+        Me.txtEmpleadoNombre.Enabled = False
+        Me.txtEmpleadoNombre.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txtEmpleadoNombre.Location = New System.Drawing.Point(171, 53)
+        Me.txtEmpleadoNombre.Name = "txtEmpleadoNombre"
+        Me.txtEmpleadoNombre.Size = New System.Drawing.Size(209, 25)
+        Me.txtEmpleadoNombre.TabIndex = 73
+        Me.txtEmpleadoNombre.TabStop = False
         '
         'Panel2
         '
@@ -186,6 +158,97 @@ Partial Class frmEquipo
         Me.Label42.Text = "Asignar Equipo"
         Me.Label42.UseWaitCursor = True
         '
+        'lbl_ingreso
+        '
+        Me.lbl_ingreso.AutoSize = True
+        Me.lbl_ingreso.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!)
+        Me.lbl_ingreso.Location = New System.Drawing.Point(86, 121)
+        Me.lbl_ingreso.Name = "lbl_ingreso"
+        Me.lbl_ingreso.Size = New System.Drawing.Size(71, 21)
+        Me.lbl_ingreso.TabIndex = 67
+        Me.lbl_ingreso.Text = "Ingreso:"
+        '
+        'TXT_FECHA
+        '
+        Me.TXT_FECHA.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.TXT_FECHA.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.TXT_FECHA.Location = New System.Drawing.Point(163, 119)
+        Me.TXT_FECHA.Name = "TXT_FECHA"
+        Me.TXT_FECHA.Size = New System.Drawing.Size(240, 25)
+        Me.TXT_FECHA.TabIndex = 2
+        '
+        'txtEmpleadoNumero
+        '
+        Me.txtEmpleadoNumero.Enabled = False
+        Me.txtEmpleadoNumero.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txtEmpleadoNumero.Location = New System.Drawing.Point(155, 53)
+        Me.txtEmpleadoNumero.Name = "txtEmpleadoNumero"
+        Me.txtEmpleadoNumero.Size = New System.Drawing.Size(10, 25)
+        Me.txtEmpleadoNumero.TabIndex = 0
+        Me.txtEmpleadoNumero.Visible = False
+        '
+        'txtEquipoNumero
+        '
+        Me.txtEquipoNumero.Enabled = False
+        Me.txtEquipoNumero.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txtEquipoNumero.Location = New System.Drawing.Point(155, 84)
+        Me.txtEquipoNumero.Name = "txtEquipoNumero"
+        Me.txtEquipoNumero.Size = New System.Drawing.Size(10, 25)
+        Me.txtEquipoNumero.TabIndex = 1
+        Me.txtEquipoNumero.Visible = False
+        '
+        'lbl_num
+        '
+        Me.lbl_num.AutoSize = True
+        Me.lbl_num.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!)
+        Me.lbl_num.Location = New System.Drawing.Point(67, 55)
+        Me.lbl_num.Name = "lbl_num"
+        Me.lbl_num.Size = New System.Drawing.Size(90, 21)
+        Me.lbl_num.TabIndex = 13
+        Me.lbl_num.Text = "Empleado:"
+        '
+        'txtEquipoNombre
+        '
+        Me.txtEquipoNombre.Enabled = False
+        Me.txtEquipoNombre.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txtEquipoNombre.Location = New System.Drawing.Point(171, 84)
+        Me.txtEquipoNombre.Name = "txtEquipoNombre"
+        Me.txtEquipoNombre.Size = New System.Drawing.Size(209, 25)
+        Me.txtEquipoNombre.TabIndex = 64
+        Me.txtEquipoNombre.TabStop = False
+        '
+        'Label92
+        '
+        Me.Label92.AutoSize = True
+        Me.Label92.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!)
+        Me.Label92.Location = New System.Drawing.Point(90, 86)
+        Me.Label92.Name = "Label92"
+        Me.Label92.Size = New System.Drawing.Size(67, 21)
+        Me.Label92.TabIndex = 63
+        Me.Label92.Text = "Equipo:"
+        '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.HeaderText = ""
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        '
+        'DataGridViewImageColumn2
+        '
+        Me.DataGridViewImageColumn2.HeaderText = "Regresar"
+        Me.DataGridViewImageColumn2.Image = Global.AdminEmpleados.My.Resources.Resources.Undo_80px
+        Me.DataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.DataGridViewImageColumn2.Name = "DataGridViewImageColumn2"
+        Me.DataGridViewImageColumn2.ReadOnly = True
+        Me.DataGridViewImageColumn2.Width = 1075
+        '
+        'RegresarEquipo
+        '
+        Me.RegresarEquipo.HeaderText = "Regresar"
+        Me.RegresarEquipo.Image = Global.AdminEmpleados.My.Resources.Resources.Undo_80px
+        Me.RegresarEquipo.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.RegresarEquipo.Name = "RegresarEquipo"
+        Me.RegresarEquipo.ReadOnly = True
+        '
         'pb_Report
         '
         Me.pb_Report.Dock = System.Windows.Forms.DockStyle.Right
@@ -196,6 +259,7 @@ Partial Class frmEquipo
         Me.pb_Report.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pb_Report.TabIndex = 71
         Me.pb_Report.TabStop = False
+        Me.pb_Report.Visible = False
         '
         'CANCEL
         '
@@ -219,198 +283,62 @@ Partial Class frmEquipo
         Me.SAVE.TabIndex = 0
         Me.SAVE.TabStop = False
         '
-        'lbl_ingreso
-        '
-        Me.lbl_ingreso.AutoSize = True
-        Me.lbl_ingreso.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.lbl_ingreso.Location = New System.Drawing.Point(38, 119)
-        Me.lbl_ingreso.Name = "lbl_ingreso"
-        Me.lbl_ingreso.Size = New System.Drawing.Size(60, 18)
-        Me.lbl_ingreso.TabIndex = 67
-        Me.lbl_ingreso.Text = "Ingreso:"
-        '
-        'TXT_FECHA
-        '
-        Me.TXT_FECHA.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.TXT_FECHA.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.TXT_FECHA.Location = New System.Drawing.Point(117, 114)
-        Me.TXT_FECHA.Name = "TXT_FECHA"
-        Me.TXT_FECHA.Size = New System.Drawing.Size(245, 25)
-        Me.TXT_FECHA.TabIndex = 2
-        '
         'buscar_eq
         '
         Me.buscar_eq.BackgroundImage = CType(resources.GetObject("buscar_eq.BackgroundImage"), System.Drawing.Image)
         Me.buscar_eq.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_eq.Location = New System.Drawing.Point(332, 82)
+        Me.buscar_eq.Location = New System.Drawing.Point(386, 84)
         Me.buscar_eq.Name = "buscar_eq"
-        Me.buscar_eq.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_eq.Size = New System.Drawing.Size(25, 25)
         Me.buscar_eq.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.buscar_eq.TabIndex = 65
         Me.buscar_eq.TabStop = False
-        '
-        'txt_numero
-        '
-        Me.txt_numero.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.txt_numero.Location = New System.Drawing.Point(117, 52)
-        Me.txt_numero.Name = "txt_numero"
-        Me.txt_numero.Size = New System.Drawing.Size(209, 25)
-        Me.txt_numero.TabIndex = 0
-        '
-        'Eq
-        '
-        Me.Eq.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.Eq.Location = New System.Drawing.Point(117, 83)
-        Me.Eq.Name = "Eq"
-        Me.Eq.Size = New System.Drawing.Size(39, 25)
-        Me.Eq.TabIndex = 1
-        '
-        'lbl_num
-        '
-        Me.lbl_num.AutoSize = True
-        Me.lbl_num.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.lbl_num.Location = New System.Drawing.Point(35, 55)
-        Me.lbl_num.Name = "lbl_num"
-        Me.lbl_num.Size = New System.Drawing.Size(62, 18)
-        Me.lbl_num.TabIndex = 13
-        Me.lbl_num.Text = "Numero:"
-        '
-        'eq2
-        '
-        Me.eq2.Enabled = False
-        Me.eq2.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.eq2.Location = New System.Drawing.Point(162, 83)
-        Me.eq2.Name = "eq2"
-        Me.eq2.Size = New System.Drawing.Size(164, 25)
-        Me.eq2.TabIndex = 64
-        Me.eq2.TabStop = False
         '
         'buscar_EN
         '
         Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
         Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_EN.Location = New System.Drawing.Point(332, 52)
+        Me.buscar_EN.Location = New System.Drawing.Point(386, 53)
         Me.buscar_EN.Name = "buscar_EN"
-        Me.buscar_EN.Size = New System.Drawing.Size(30, 28)
+        Me.buscar_EN.Size = New System.Drawing.Size(25, 25)
         Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.buscar_EN.TabIndex = 53
         Me.buscar_EN.TabStop = False
         '
-        'Label92
+        'gbComentarios
         '
-        Me.Label92.AutoSize = True
-        Me.Label92.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.Label92.Location = New System.Drawing.Point(38, 90)
-        Me.Label92.Name = "Label92"
-        Me.Label92.Size = New System.Drawing.Size(59, 18)
-        Me.Label92.TabIndex = 63
-        Me.Label92.Text = "Equipo:"
+        Me.gbComentarios.Controls.Add(Me.TXT_commen)
+        Me.gbComentarios.Location = New System.Drawing.Point(423, 56)
+        Me.gbComentarios.Name = "gbComentarios"
+        Me.gbComentarios.Size = New System.Drawing.Size(531, 91)
+        Me.gbComentarios.TabIndex = 74
+        Me.gbComentarios.TabStop = False
+        Me.gbComentarios.Text = "Comentarios:"
         '
-        'Empleado
+        'TXT_commen
         '
-        Me.Empleado.AutoSize = True
-        Me.Empleado.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.Empleado.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Empleado.Location = New System.Drawing.Point(386, 55)
-        Me.Empleado.Name = "Empleado"
-        Me.Empleado.Size = New System.Drawing.Size(81, 18)
-        Me.Empleado.TabIndex = 54
-        Me.Empleado.Text = "Empleado: "
+        Me.TXT_commen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TXT_commen.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TXT_commen.Location = New System.Drawing.Point(3, 24)
+        Me.TXT_commen.Multiline = True
+        Me.TXT_commen.Name = "TXT_commen"
+        Me.TXT_commen.Size = New System.Drawing.Size(525, 64)
+        Me.TXT_commen.TabIndex = 3
         '
-        'lbl_emp
-        '
-        Me.lbl_emp.AutoSize = True
-        Me.lbl_emp.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.lbl_emp.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.lbl_emp.Location = New System.Drawing.Point(493, 55)
-        Me.lbl_emp.Name = "lbl_emp"
-        Me.lbl_emp.Size = New System.Drawing.Size(0, 18)
-        Me.lbl_emp.TabIndex = 55
-        '
-        'DataGridViewImageColumn1
-        '
-        Me.DataGridViewImageColumn1.HeaderText = ""
-        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
-        '
-        'UPDATE
-        '
-        Me.UPDATE.HeaderText = "Regresar"
-        Me.UPDATE.Image = Global.AdminEmpleados.My.Resources.Resources.Undo_80px
-        Me.UPDATE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.UPDATE.Name = "UPDATE"
-        '
-        'ID_Assig
-        '
-        Me.ID_Assig.DataPropertyName = "ID_Assig"
-        Me.ID_Assig.HeaderText = "ID"
-        Me.ID_Assig.Name = "ID_Assig"
-        Me.ID_Assig.Visible = False
-        Me.ID_Assig.Width = 50
-        '
-        'ID_Equipo
-        '
-        Me.ID_Equipo.DataPropertyName = "ID_Equipo"
-        Me.ID_Equipo.HeaderText = "EQUIPO"
-        Me.ID_Equipo.Name = "ID_Equipo"
-        '
-        'ID_Emp
-        '
-        Me.ID_Emp.DataPropertyName = "ID_Emp"
-        Me.ID_Emp.HeaderText = "EMPLEADO"
-        Me.ID_Emp.Name = "ID_Emp"
-        '
-        'Fecha
-        '
-        Me.Fecha.DataPropertyName = "Fecha"
-        Me.Fecha.HeaderText = "FECHA"
-        Me.Fecha.Name = "Fecha"
-        Me.Fecha.Width = 150
-        '
-        'Regreso
-        '
-        Me.Regreso.DataPropertyName = "Regreso"
-        Me.Regreso.HeaderText = "REGRESO?"
-        Me.Regreso.Name = "Regreso"
-        Me.Regreso.Width = 150
-        '
-        'Fecha_R
-        '
-        Me.Fecha_R.DataPropertyName = "Fecha_R"
-        Me.Fecha_R.HeaderText = "FECHA REGRESO"
-        Me.Fecha_R.Name = "Fecha_R"
-        Me.Fecha_R.Width = 150
-        '
-        'Comentario
-        '
-        Me.Comentario.DataPropertyName = "Comentario"
-        Me.Comentario.HeaderText = "COMENTARIO"
-        Me.Comentario.Name = "Comentario"
-        Me.Comentario.Width = 300
-        '
-        'ID_User
-        '
-        Me.ID_User.DataPropertyName = "ID_User"
-        Me.ID_User.HeaderText = "NO EMPLEADO"
-        Me.ID_User.Name = "ID_User"
-        Me.ID_User.Width = 150
-        '
-        'Equipo
+        'FrmEquipo
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.ClientSize = New System.Drawing.Size(1078, 699)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Equipo"
+        Me.Name = "FrmEquipo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Equipo"
         Me.Panel1.ResumeLayout(False)
         Me.pnlEquipo.ResumeLayout(False)
-        CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvEquipoEmp, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
-        Me.pnl_comen.ResumeLayout(False)
-        Me.gbComentarios.ResumeLayout(False)
-        Me.gbComentarios.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.pb_Report, System.ComponentModel.ISupportInitialize).EndInit()
@@ -418,42 +346,35 @@ Partial Class frmEquipo
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_eq, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbComentarios.ResumeLayout(False)
+        Me.gbComentarios.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents txt_numero As TextBox
+    Friend WithEvents txtEmpleadoNumero As TextBox
     Friend WithEvents lbl_num As Label
     Friend WithEvents buscar_EN As PictureBox
-    Friend WithEvents lbl_emp As Label
-    Friend WithEvents Empleado As Label
     Friend WithEvents buscar_eq As PictureBox
-    Friend WithEvents Eq As TextBox
-    Friend WithEvents eq2 As TextBox
+    Friend WithEvents txtEquipoNumero As TextBox
+    Friend WithEvents txtEquipoNombre As TextBox
     Friend WithEvents Label92 As Label
     Friend WithEvents SAVE As PictureBox
     Friend WithEvents CANCEL As PictureBox
     Friend WithEvents lbl_ingreso As Label
     Friend WithEvents TXT_FECHA As DateTimePicker
-    Friend WithEvents dgv_equipo_emp As DataGridView
-    Friend WithEvents TXT_commen As TextBox
+    Friend WithEvents dgvEquipoEmp As DataGridView
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Private WithEvents Panel14 As Panel
     Private WithEvents Panel2 As Panel
     Private WithEvents Label42 As Label
     Friend WithEvents pb_Report As PictureBox
-    Friend WithEvents pnl_comen As Panel
     Friend WithEvents cUPDATE As DataGridViewImageColumn
     Friend WithEvents pnlEquipo As Panel
+    Friend WithEvents RegresarEquipo As DataGridViewImageColumn
+    Friend WithEvents txtEmpleadoNombre As TextBox
     Friend WithEvents gbComentarios As GroupBox
-    Friend WithEvents UPDATE As DataGridViewImageColumn
-    Friend WithEvents ID_Assig As DataGridViewTextBoxColumn
-    Friend WithEvents ID_Equipo As DataGridViewTextBoxColumn
-    Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
-    Friend WithEvents Fecha As DataGridViewTextBoxColumn
-    Friend WithEvents Regreso As DataGridViewTextBoxColumn
-    Friend WithEvents Fecha_R As DataGridViewTextBoxColumn
-    Friend WithEvents Comentario As DataGridViewTextBoxColumn
-    Friend WithEvents ID_User As DataGridViewTextBoxColumn
+    Friend WithEvents TXT_commen As TextBox
+    Friend WithEvents DataGridViewImageColumn2 As DataGridViewImageColumn
 End Class

@@ -1,7 +1,7 @@
 ﻿Public Class frmExamenesMedicos
     Dim Resultado As Object
     Public Sub Llenarbuscador(tipo As Integer)
-        Dim popup As New FrmPopUp(tipo)
+        Dim popup As New frmPopUpCatalogo(tipo)
         Dim PopUpDialog As DialogResult = popup.ShowDialog()
         Resultado = popup.Result
         popup.Close()
@@ -9,10 +9,10 @@
 
     Private Sub Buscar_EN_Click(sender As Object, e As EventArgs) Handles buscar_EN.Click
         Llenarbuscador(BuscarPor.Empleado)
-        Dim Empleado As Empleado = CType(Resultado, Empleado)
+        Dim Empleado As Empleado.Vista = CType(Resultado, Empleado.Vista)
         If Empleado IsNot Nothing Then
             txt_numero.Text = Empleado.ID.ToString()
-            txtNombre.Text = Empleado.NombreCompleto
+            txtNombre.Text = String.Concat(Empleado.Nombre, " ", Empleado.ApellidoPaterno, " ", Empleado.ApellidoMaterno)
             dgv_Examenes.DataSource = New ExamenMedico(0, txt_numero.Text, 0, 0, Now(), Now()).CargarListado(txt_numero.Text)
         End If
     End Sub

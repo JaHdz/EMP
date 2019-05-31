@@ -23,7 +23,6 @@ Partial Class frmEmpleados
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEmpleados))
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Tam_Es = New System.Windows.Forms.TabPage()
@@ -147,10 +146,7 @@ Partial Class frmEmpleados
         Me.Tab_Enfer = New System.Windows.Forms.TabPage()
         Me.panel20 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.dgv_Enf = New System.Windows.Forms.DataGridView()
-        Me.btnEnELiminar = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Enf = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Text = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvEnfermedades = New System.Windows.Forms.DataGridView()
         Me.txt_enfNAME = New System.Windows.Forms.TextBox()
         Me.label47 = New System.Windows.Forms.Label()
         Me.panel21 = New System.Windows.Forms.Panel()
@@ -158,23 +154,15 @@ Partial Class frmEmpleados
         Me.label19 = New System.Windows.Forms.Label()
         Me.Tab_Cont = New System.Windows.Forms.TabPage()
         Me.panel18 = New System.Windows.Forms.Panel()
+        Me.txt_conTEL = New AdminEmpleados.NumericTextbox()
+        Me.txt_conCEL = New AdminEmpleados.NumericTextbox()
         Me.PnlContacto = New System.Windows.Forms.Panel()
-        Me.dgv_contacto = New System.Windows.Forms.DataGridView()
+        Me.dgvContactos = New System.Windows.Forms.DataGridView()
         Me.btnCOEliminar = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.label45 = New System.Windows.Forms.Label()
         Me.txt_conPAREN = New System.Windows.Forms.TextBox()
         Me.label41 = New System.Windows.Forms.Label()
-        Me.txt_conCEL = New System.Windows.Forms.TextBox()
         Me.label40 = New System.Windows.Forms.Label()
-        Me.txt_conTEL = New System.Windows.Forms.TextBox()
         Me.txt_conNAME = New System.Windows.Forms.TextBox()
         Me.txt_conAM = New System.Windows.Forms.TextBox()
         Me.txt_conAP = New System.Windows.Forms.TextBox()
@@ -186,26 +174,16 @@ Partial Class frmEmpleados
         Me.label18 = New System.Windows.Forms.Label()
         Me.Tab_AL = New System.Windows.Forms.TabPage()
         Me.panel16 = New System.Windows.Forms.Panel()
+        Me.txt_antSALARIO = New AdminEmpleados.NumericTextbox()
         Me.pnlAntecedentes = New System.Windows.Forms.Panel()
-        Me.dgv_ant = New System.Windows.Forms.DataGridView()
+        Me.dgvAntecedentesLaborales = New System.Windows.Forms.DataGridView()
         Me.btnAEliminar = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Ant = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID__Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_FInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_FFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_NEmpresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_Cargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_Salario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_Tel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_Motivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ant_Contacto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_antMT = New System.Windows.Forms.TextBox()
         Me.txt_antNAME = New System.Windows.Forms.TextBox()
         Me.txt_antTEL = New System.Windows.Forms.TextBox()
         Me.label37 = New System.Windows.Forms.Label()
         Me.label38 = New System.Windows.Forms.Label()
         Me.label39 = New System.Windows.Forms.Label()
-        Me.txt_antSALARIO = New System.Windows.Forms.TextBox()
         Me.txt_antCARGO = New System.Windows.Forms.TextBox()
         Me.txt_antEMP = New System.Windows.Forms.TextBox()
         Me.label34 = New System.Windows.Forms.Label()
@@ -221,17 +199,8 @@ Partial Class frmEmpleados
         Me.Tab_Familia = New System.Windows.Forms.TabPage()
         Me.panel3 = New System.Windows.Forms.Panel()
         Me.PnlOffsprings = New System.Windows.Forms.Panel()
-        Me.dgv_Hijos = New System.Windows.Forms.DataGridView()
+        Me.dgvHijos = New System.Windows.Forms.DataGridView()
         Me.btnHEliminar = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.label26 = New System.Windows.Forms.Label()
         Me.txt_hijoNACION = New System.Windows.Forms.TextBox()
         Me.txt_hijoFN = New System.Windows.Forms.DateTimePicker()
@@ -241,7 +210,7 @@ Partial Class frmEmpleados
         Me.txt_hijoAP = New System.Windows.Forms.TextBox()
         Me.label28 = New System.Windows.Forms.Label()
         Me.label29 = New System.Windows.Forms.Label()
-        Me.txt_hijoSEXO = New System.Windows.Forms.ComboBox()
+        Me.cbHijosSexo = New System.Windows.Forms.ComboBox()
         Me.label30 = New System.Windows.Forms.Label()
         Me.label31 = New System.Windows.Forms.Label()
         Me.panel5 = New System.Windows.Forms.Panel()
@@ -253,18 +222,8 @@ Partial Class frmEmpleados
         Me.btn_esSAVE = New System.Windows.Forms.PictureBox()
         Me.label25 = New System.Windows.Forms.Label()
         Me.txt_esNacion = New System.Windows.Forms.TextBox()
-        Me.dgv_esposa = New System.Windows.Forms.DataGridView()
+        Me.dgvEsposa = New System.Windows.Forms.DataGridView()
         Me.btnCEliminar = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ID_Persona = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_APat = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_AMat = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_Nacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_FNac = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_Genero = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_EdoCivil = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_esName = New System.Windows.Forms.TextBox()
         Me.txt_esAM = New System.Windows.Forms.TextBox()
         Me.txt_esFN = New System.Windows.Forms.DateTimePicker()
@@ -273,7 +232,7 @@ Partial Class frmEmpleados
         Me.label23 = New System.Windows.Forms.Label()
         Me.label20 = New System.Windows.Forms.Label()
         Me.label21 = New System.Windows.Forms.Label()
-        Me.cb_esSexo = New System.Windows.Forms.ComboBox()
+        Me.cbConyugeSexo = New System.Windows.Forms.ComboBox()
         Me.label22 = New System.Windows.Forms.Label()
         Me.Tab_DP = New System.Windows.Forms.TabPage()
         Me.pnl_estatus = New System.Windows.Forms.Panel()
@@ -292,77 +251,77 @@ Partial Class frmEmpleados
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.pnl_cont = New System.Windows.Forms.Panel()
+        Me.txtSalario = New AdminEmpleados.NumericTextbox()
         Me.buscar_depto = New System.Windows.Forms.PictureBox()
-        Me.depto = New System.Windows.Forms.TextBox()
-        Me.depto2 = New System.Windows.Forms.TextBox()
+        Me.txtDeptoCodigo = New System.Windows.Forms.TextBox()
+        Me.txtDepto = New System.Windows.Forms.TextBox()
         Me.Buscar_PUESTO = New System.Windows.Forms.PictureBox()
         Me.panel11 = New System.Windows.Forms.Panel()
         Me.label14 = New System.Windows.Forms.Label()
         Me.Buscar_tipo = New System.Windows.Forms.PictureBox()
         Me.lbl_ingreso = New System.Windows.Forms.Label()
-        Me.Txt_correo = New System.Windows.Forms.TextBox()
+        Me.txtCorreo = New System.Windows.Forms.TextBox()
         Me.lbl_clase = New System.Windows.Forms.Label()
-        Me.txt_tipo2 = New System.Windows.Forms.TextBox()
+        Me.txtTipo = New System.Windows.Forms.TextBox()
         Me.lbl_super = New System.Windows.Forms.Label()
         Me.correo = New System.Windows.Forms.Label()
-        Me.txt_SALARY = New System.Windows.Forms.TextBox()
         Me.lbl_puesto = New System.Windows.Forms.Label()
-        Me.txt_tipo = New System.Windows.Forms.TextBox()
+        Me.txtTipoCodigo = New System.Windows.Forms.TextBox()
         Me.lbl_sali = New System.Windows.Forms.Label()
-        Me.txt_FECHAINGRESO = New System.Windows.Forms.DateTimePicker()
+        Me.dtpFechaDeIngreso = New System.Windows.Forms.DateTimePicker()
         Me.Buscar_Super = New System.Windows.Forms.PictureBox()
-        Me.txt_PUESTO = New System.Windows.Forms.TextBox()
-        Me.txt_PUESTO2 = New System.Windows.Forms.TextBox()
-        Me.txt_SUPER2 = New System.Windows.Forms.TextBox()
-        Me.txt_SUPER = New System.Windows.Forms.TextBox()
+        Me.txtPuestoCodigo = New System.Windows.Forms.TextBox()
+        Me.txtPuesto = New System.Windows.Forms.TextBox()
+        Me.txtSupervisor = New System.Windows.Forms.TextBox()
+        Me.txtSupervisorCodigo = New System.Windows.Forms.TextBox()
         Me.lbl_depto = New System.Windows.Forms.Label()
         Me.pnl_per = New System.Windows.Forms.Panel()
+        Me.txtTelefono = New AdminEmpleados.NumericTextbox()
+        Me.txtCodigoPostal = New AdminEmpleados.NumericTextbox()
+        Me.txtNSS = New AdminEmpleados.NumericTextbox()
+        Me.txtCelular = New AdminEmpleados.NumericTextbox()
         Me.txtCdDomicilio = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.PbSearchEmployee = New System.Windows.Forms.PictureBox()
         Me.buscar_ciudad = New System.Windows.Forms.PictureBox()
-        Me.foto = New System.Windows.Forms.PictureBox()
-        Me.cuidad = New System.Windows.Forms.TextBox()
+        Me.pbFotoEmpleado = New System.Windows.Forms.PictureBox()
+        Me.txtCiudadCodigo = New System.Windows.Forms.TextBox()
         Me.lbl_rfc = New System.Windows.Forms.Label()
         Me.lbl_ss = New System.Windows.Forms.Label()
-        Me.CP = New System.Windows.Forms.TextBox()
         Me.LBL_CP = New System.Windows.Forms.Label()
-        Me.txt_CURP = New System.Windows.Forms.TextBox()
-        Me.cuidad2 = New System.Windows.Forms.TextBox()
-        Me.EC = New System.Windows.Forms.ComboBox()
+        Me.txtCURP = New System.Windows.Forms.TextBox()
+        Me.txtCiudad = New System.Windows.Forms.TextBox()
+        Me.cbEstadoCivil = New System.Windows.Forms.ComboBox()
         Me.Label92 = New System.Windows.Forms.Label()
-        Me.txt_SS = New System.Windows.Forms.TextBox()
-        Me.ddl_educacion = New System.Windows.Forms.ComboBox()
+        Me.cbNivelEducativo = New System.Windows.Forms.ComboBox()
         Me.Label54 = New System.Windows.Forms.Label()
         Me.lbl_curp = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.colonia = New System.Windows.Forms.TextBox()
+        Me.txtColonia = New System.Windows.Forms.TextBox()
         Me.Label55 = New System.Windows.Forms.Label()
-        Me.domicilio = New System.Windows.Forms.TextBox()
+        Me.txtDomicilio = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txt_RFC = New System.Windows.Forms.TextBox()
-        Me.Celular = New System.Windows.Forms.TextBox()
+        Me.txtRFC = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lbl_sex = New System.Windows.Forms.Label()
-        Me.txt_telefono = New System.Windows.Forms.TextBox()
         Me.LBL_ESTADOCIVIL = New System.Windows.Forms.Label()
         Me.lbl_fn = New System.Windows.Forms.Label()
-        Me.nacion = New System.Windows.Forms.TextBox()
+        Me.txtNacionalidad = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txt_FECHA = New System.Windows.Forms.DateTimePicker()
-        Me.CB_SEXO = New System.Windows.Forms.ComboBox()
+        Me.dtpFechaDeNacimiento = New System.Windows.Forms.DateTimePicker()
+        Me.cbSexo = New System.Windows.Forms.ComboBox()
         Me.lbl_nac = New System.Windows.Forms.Label()
         Me.panel7 = New System.Windows.Forms.Panel()
         Me.SAVE = New System.Windows.Forms.PictureBox()
         Me.CANCEL = New System.Windows.Forms.PictureBox()
         Me.lbl_emp = New System.Windows.Forms.Label()
         Me.label12 = New System.Windows.Forms.Label()
-        Me.txt_EN2 = New System.Windows.Forms.TextBox()
-        Me.txt_numero = New System.Windows.Forms.TextBox()
-        Me.txt_EN = New System.Windows.Forms.TextBox()
-        Me.txt_NOM = New System.Windows.Forms.TextBox()
-        Me.txt_AM = New System.Windows.Forms.TextBox()
-        Me.txt_AP = New System.Windows.Forms.TextBox()
+        Me.txtEntidad = New System.Windows.Forms.TextBox()
+        Me.txtNumero = New System.Windows.Forms.TextBox()
+        Me.txtEntidadCodigo = New System.Windows.Forms.TextBox()
+        Me.txtNombres = New System.Windows.Forms.TextBox()
+        Me.txtAMaterno = New System.Windows.Forms.TextBox()
+        Me.txtAPaterno = New System.Windows.Forms.TextBox()
         Me.buscar_EN = New System.Windows.Forms.PictureBox()
         Me.lbl_num = New System.Windows.Forms.Label()
         Me.lbl_ap = New System.Windows.Forms.Label()
@@ -371,6 +330,9 @@ Partial Class frmEmpleados
         Me.MenuEmp = New System.Windows.Forms.TabControl()
         Me.BwEmpleados = New System.ComponentModel.BackgroundWorker()
         Me.datosFamiliaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.btnEnELiminar = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ID_Enf = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmpleadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Tam_Es.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.btn_SERPT, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -403,31 +365,31 @@ Partial Class frmEmpleados
         Me.Tab_Enfer.SuspendLayout()
         Me.panel20.SuspendLayout()
         Me.Panel8.SuspendLayout()
-        CType(Me.dgv_Enf, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvEnfermedades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel21.SuspendLayout()
         CType(Me.btn_enfADD, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Tab_Cont.SuspendLayout()
         Me.panel18.SuspendLayout()
         Me.PnlContacto.SuspendLayout()
-        CType(Me.dgv_contacto, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvContactos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel19.SuspendLayout()
         CType(Me.btn_conADD, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Tab_AL.SuspendLayout()
         Me.panel16.SuspendLayout()
         Me.pnlAntecedentes.SuspendLayout()
-        CType(Me.dgv_ant, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvAntecedentesLaborales, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel17.SuspendLayout()
         CType(Me.btn_antSave, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Tab_Familia.SuspendLayout()
         Me.panel3.SuspendLayout()
         Me.PnlOffsprings.SuspendLayout()
-        CType(Me.dgv_Hijos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvHijos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel5.SuspendLayout()
         CType(Me.btn_hijoADD, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel2.SuspendLayout()
         Me.panel4.SuspendLayout()
         CType(Me.btn_esSAVE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgv_esposa, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvEsposa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Tab_DP.SuspendLayout()
         Me.pnl_estatus.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -442,13 +404,14 @@ Partial Class frmEmpleados
         Me.pnl_per.SuspendLayout()
         CType(Me.PbSearchEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_ciudad, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.foto, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbFotoEmpleado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel7.SuspendLayout()
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuEmp.SuspendLayout()
         CType(Me.datosFamiliaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmpleadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'OpenFileDialog1
@@ -482,7 +445,6 @@ Partial Class frmEmpleados
         Me.Panel1.Controls.Add(Me.PnlDatos)
         Me.Panel1.Controls.Add(Me.PnlTransporte)
         Me.Panel1.Controls.Add(Me.PnlVivienda)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(3, 3)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
@@ -494,7 +456,7 @@ Partial Class frmEmpleados
         '
         Me.btn_SERPT.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_SERPT.Image = Global.AdminEmpleados.My.Resources.Resources.Accounting_80px
-        Me.btn_SERPT.Location = New System.Drawing.Point(867, 1290)
+        Me.btn_SERPT.Location = New System.Drawing.Point(867, 2027)
         Me.btn_SERPT.Name = "btn_SERPT"
         Me.btn_SERPT.Size = New System.Drawing.Size(35, 35)
         Me.btn_SERPT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -505,7 +467,7 @@ Partial Class frmEmpleados
         '
         Me.btn_SESave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_SESave.Image = Global.AdminEmpleados.My.Resources.Resources.Save_80px
-        Me.btn_SESave.Location = New System.Drawing.Point(905, 1290)
+        Me.btn_SESave.Location = New System.Drawing.Point(905, 2027)
         Me.btn_SESave.Name = "btn_SESave"
         Me.btn_SESave.Size = New System.Drawing.Size(35, 35)
         Me.btn_SESave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -516,7 +478,7 @@ Partial Class frmEmpleados
         '
         Me.btn_SECancel.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_SECancel.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.btn_SECancel.Location = New System.Drawing.Point(943, 1290)
+        Me.btn_SECancel.Location = New System.Drawing.Point(943, 2027)
         Me.btn_SECancel.Name = "btn_SECancel"
         Me.btn_SECancel.Size = New System.Drawing.Size(35, 35)
         Me.btn_SECancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -534,7 +496,7 @@ Partial Class frmEmpleados
         Me.PnlObservaciones.Location = New System.Drawing.Point(2, 1175)
         Me.PnlObservaciones.Margin = New System.Windows.Forms.Padding(2)
         Me.PnlObservaciones.Name = "PnlObservaciones"
-        Me.PnlObservaciones.Size = New System.Drawing.Size(913, 111)
+        Me.PnlObservaciones.Size = New System.Drawing.Size(544, 111)
         Me.PnlObservaciones.TabIndex = 73
         '
         'txt_commen
@@ -545,7 +507,7 @@ Partial Class frmEmpleados
         Me.txt_commen.Location = New System.Drawing.Point(0, 35)
         Me.txt_commen.Multiline = True
         Me.txt_commen.Name = "txt_commen"
-        Me.txt_commen.Size = New System.Drawing.Size(909, 72)
+        Me.txt_commen.Size = New System.Drawing.Size(540, 72)
         Me.txt_commen.TabIndex = 31
         '
         'Panel26
@@ -557,7 +519,7 @@ Partial Class frmEmpleados
         Me.Panel26.Location = New System.Drawing.Point(0, 0)
         Me.Panel26.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(909, 35)
+        Me.Panel26.Size = New System.Drawing.Size(540, 35)
         Me.Panel26.TabIndex = 0
         '
         'Label71
@@ -601,7 +563,7 @@ Partial Class frmEmpleados
         Me.PnlGastos.Location = New System.Drawing.Point(0, 1075)
         Me.PnlGastos.Margin = New System.Windows.Forms.Padding(2)
         Me.PnlGastos.Name = "PnlGastos"
-        Me.PnlGastos.Size = New System.Drawing.Size(913, 78)
+        Me.PnlGastos.Size = New System.Drawing.Size(544, 78)
         Me.PnlGastos.TabIndex = 72
         '
         'Label64
@@ -642,7 +604,7 @@ Partial Class frmEmpleados
         Me.Panel30.Location = New System.Drawing.Point(0, 0)
         Me.Panel30.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(909, 35)
+        Me.Panel30.Size = New System.Drawing.Size(540, 35)
         Me.Panel30.TabIndex = 0
         '
         'Label74
@@ -731,10 +693,10 @@ Partial Class frmEmpleados
         Me.PnlReferencias.Controls.Add(Me.Label48)
         Me.PnlReferencias.Controls.Add(Me.Panel10)
         Me.PnlReferencias.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PnlReferencias.Location = New System.Drawing.Point(0, 841)
+        Me.PnlReferencias.Location = New System.Drawing.Point(561, 1093)
         Me.PnlReferencias.Margin = New System.Windows.Forms.Padding(2)
         Me.PnlReferencias.Name = "PnlReferencias"
-        Me.PnlReferencias.Size = New System.Drawing.Size(913, 216)
+        Me.PnlReferencias.Size = New System.Drawing.Size(544, 216)
         Me.PnlReferencias.TabIndex = 71
         '
         'dgv_Ref
@@ -746,7 +708,7 @@ Partial Class frmEmpleados
         Me.dgv_Ref.Location = New System.Drawing.Point(0, 114)
         Me.dgv_Ref.Name = "dgv_Ref"
         Me.dgv_Ref.RowHeadersVisible = False
-        Me.dgv_Ref.Size = New System.Drawing.Size(909, 98)
+        Me.dgv_Ref.Size = New System.Drawing.Size(540, 98)
         Me.dgv_Ref.TabIndex = 54
         '
         'btnEReferencia
@@ -878,7 +840,7 @@ Partial Class frmEmpleados
         Me.Panel10.Location = New System.Drawing.Point(0, 0)
         Me.Panel10.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(909, 35)
+        Me.Panel10.Size = New System.Drawing.Size(540, 35)
         Me.Panel10.TabIndex = 0
         '
         'Btn_AddRef
@@ -886,7 +848,7 @@ Partial Class frmEmpleados
         Me.Btn_AddRef.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Btn_AddRef.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Btn_AddRef.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Reference_80px
-        Me.Btn_AddRef.Location = New System.Drawing.Point(853, 0)
+        Me.Btn_AddRef.Location = New System.Drawing.Point(419, 0)
         Me.Btn_AddRef.Name = "Btn_AddRef"
         Me.Btn_AddRef.Size = New System.Drawing.Size(35, 35)
         Me.Btn_AddRef.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -934,7 +896,7 @@ Partial Class frmEmpleados
         Me.PnlActividades.Controls.Add(Me.Panel36)
         Me.PnlActividades.Location = New System.Drawing.Point(0, 405)
         Me.PnlActividades.Name = "PnlActividades"
-        Me.PnlActividades.Size = New System.Drawing.Size(913, 245)
+        Me.PnlActividades.Size = New System.Drawing.Size(544, 245)
         Me.PnlActividades.TabIndex = 51
         '
         'Label90
@@ -1154,7 +1116,7 @@ Partial Class frmEmpleados
         Me.Panel36.Location = New System.Drawing.Point(0, 0)
         Me.Panel36.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel36.Name = "Panel36"
-        Me.Panel36.Size = New System.Drawing.Size(913, 35)
+        Me.Panel36.Size = New System.Drawing.Size(544, 35)
         Me.Panel36.TabIndex = 28
         '
         'Label84
@@ -1184,7 +1146,7 @@ Partial Class frmEmpleados
         Me.PnlIngresos.Location = New System.Drawing.Point(0, 655)
         Me.PnlIngresos.Margin = New System.Windows.Forms.Padding(2)
         Me.PnlIngresos.Name = "PnlIngresos"
-        Me.PnlIngresos.Size = New System.Drawing.Size(913, 182)
+        Me.PnlIngresos.Size = New System.Drawing.Size(544, 182)
         Me.PnlIngresos.TabIndex = 51
         '
         'Label63
@@ -1234,7 +1196,7 @@ Partial Class frmEmpleados
         Me.dgv_OI.Location = New System.Drawing.Point(0, 71)
         Me.dgv_OI.Name = "dgv_OI"
         Me.dgv_OI.RowHeadersVisible = False
-        Me.dgv_OI.Size = New System.Drawing.Size(909, 107)
+        Me.dgv_OI.Size = New System.Drawing.Size(540, 107)
         Me.dgv_OI.TabIndex = 55
         '
         'btnEIngresos
@@ -1277,7 +1239,7 @@ Partial Class frmEmpleados
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
         Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(909, 35)
+        Me.Panel14.Size = New System.Drawing.Size(540, 35)
         Me.Panel14.TabIndex = 0
         '
         'btn_OI
@@ -1285,7 +1247,7 @@ Partial Class frmEmpleados
         Me.btn_OI.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_OI.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_OI.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Income_80px
-        Me.btn_OI.Location = New System.Drawing.Point(853, 0)
+        Me.btn_OI.Location = New System.Drawing.Point(419, 0)
         Me.btn_OI.Name = "btn_OI"
         Me.btn_OI.Size = New System.Drawing.Size(35, 35)
         Me.btn_OI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1324,9 +1286,9 @@ Partial Class frmEmpleados
         Me.PnlDatos.Controls.Add(Me.Label50)
         Me.PnlDatos.Controls.Add(Me.Txt_pasatiempos)
         Me.PnlDatos.Controls.Add(Me.Label49)
-        Me.PnlDatos.Location = New System.Drawing.Point(486, 289)
+        Me.PnlDatos.Location = New System.Drawing.Point(561, 293)
         Me.PnlDatos.Name = "PnlDatos"
-        Me.PnlDatos.Size = New System.Drawing.Size(427, 110)
+        Me.PnlDatos.Size = New System.Drawing.Size(439, 110)
         Me.PnlDatos.TabIndex = 50
         '
         'Panel6
@@ -1337,7 +1299,7 @@ Partial Class frmEmpleados
         Me.Panel6.Location = New System.Drawing.Point(0, 0)
         Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(427, 35)
+        Me.Panel6.Size = New System.Drawing.Size(439, 35)
         Me.Panel6.TabIndex = 0
         '
         'Label53
@@ -1397,7 +1359,7 @@ Partial Class frmEmpleados
         Me.PnlTransporte.Controls.Add(Me.cb_Trans)
         Me.PnlTransporte.Controls.Add(Me.cb_Taxi)
         Me.PnlTransporte.Controls.Add(Me.cb_Vehi)
-        Me.PnlTransporte.Location = New System.Drawing.Point(0, 289)
+        Me.PnlTransporte.Location = New System.Drawing.Point(567, 938)
         Me.PnlTransporte.Name = "PnlTransporte"
         Me.PnlTransporte.Size = New System.Drawing.Size(480, 110)
         Me.PnlTransporte.TabIndex = 1
@@ -1471,16 +1433,14 @@ Partial Class frmEmpleados
         '
         'PnlVivienda
         '
-        Me.PnlVivienda.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PnlVivienda.Controls.Add(Me.GrpServicios)
         Me.PnlVivienda.Controls.Add(Me.PB_IMAGE_VIVIENDA)
         Me.PnlVivienda.Controls.Add(Me.GrpMaterial)
         Me.PnlVivienda.Controls.Add(Me.GrpTIpo)
         Me.PnlVivienda.Controls.Add(Me.Panel15)
-        Me.PnlVivienda.Location = New System.Drawing.Point(0, 0)
+        Me.PnlVivienda.Location = New System.Drawing.Point(563, 609)
         Me.PnlVivienda.Name = "PnlVivienda"
-        Me.PnlVivienda.Size = New System.Drawing.Size(913, 283)
+        Me.PnlVivienda.Size = New System.Drawing.Size(488, 283)
         Me.PnlVivienda.TabIndex = 0
         '
         'GrpServicios
@@ -1734,7 +1694,7 @@ Partial Class frmEmpleados
         Me.Panel15.Location = New System.Drawing.Point(0, 0)
         Me.Panel15.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(913, 35)
+        Me.Panel15.Size = New System.Drawing.Size(488, 35)
         Me.Panel15.TabIndex = 1
         '
         'Label5
@@ -1780,51 +1740,25 @@ Partial Class frmEmpleados
         '
         'Panel8
         '
-        Me.Panel8.Controls.Add(Me.dgv_Enf)
+        Me.Panel8.Controls.Add(Me.dgvEnfermedades)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel8.Location = New System.Drawing.Point(0, 197)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(1066, 390)
         Me.Panel8.TabIndex = 35
         '
-        'dgv_Enf
+        'dgvEnfermedades
         '
-        Me.dgv_Enf.AllowUserToAddRows = False
-        Me.dgv_Enf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_Enf.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.btnEnELiminar, Me.ID_Enf, Me.Text})
-        Me.dgv_Enf.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgv_Enf.Location = New System.Drawing.Point(0, 0)
-        Me.dgv_Enf.Margin = New System.Windows.Forms.Padding(2)
-        Me.dgv_Enf.Name = "dgv_Enf"
-        Me.dgv_Enf.RowHeadersVisible = False
-        Me.dgv_Enf.RowTemplate.Height = 24
-        Me.dgv_Enf.Size = New System.Drawing.Size(1066, 390)
-        Me.dgv_Enf.TabIndex = 34
-        '
-        'btnEnELiminar
-        '
-        Me.btnEnELiminar.FillWeight = 18.13706!
-        Me.btnEnELiminar.HeaderText = ""
-        Me.btnEnELiminar.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
-        Me.btnEnELiminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.btnEnELiminar.Name = "btnEnELiminar"
-        Me.btnEnELiminar.Width = 48
-        '
-        'ID_Enf
-        '
-        Me.ID_Enf.DataPropertyName = "ID_Enf"
-        Me.ID_Enf.HeaderText = "ID"
-        Me.ID_Enf.Name = "ID_Enf"
-        Me.ID_Enf.Visible = False
-        '
-        'Text
-        '
-        Me.Text.DataPropertyName = "Text"
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.Text.DefaultCellStyle = DataGridViewCellStyle1
-        Me.Text.HeaderText = "Enfermedad"
-        Me.Text.Name = "Text"
-        Me.Text.Width = 1400
+        Me.dgvEnfermedades.AllowUserToAddRows = False
+        Me.dgvEnfermedades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvEnfermedades.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvEnfermedades.Location = New System.Drawing.Point(0, 0)
+        Me.dgvEnfermedades.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgvEnfermedades.Name = "dgvEnfermedades"
+        Me.dgvEnfermedades.RowHeadersVisible = False
+        Me.dgvEnfermedades.RowTemplate.Height = 24
+        Me.dgvEnfermedades.Size = New System.Drawing.Size(1066, 390)
+        Me.dgvEnfermedades.TabIndex = 34
         '
         'txt_enfNAME
         '
@@ -1898,13 +1832,13 @@ Partial Class frmEmpleados
         Me.panel18.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.panel18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.panel18.Controls.Add(Me.txt_conTEL)
+        Me.panel18.Controls.Add(Me.txt_conCEL)
         Me.panel18.Controls.Add(Me.PnlContacto)
         Me.panel18.Controls.Add(Me.label45)
         Me.panel18.Controls.Add(Me.txt_conPAREN)
         Me.panel18.Controls.Add(Me.label41)
-        Me.panel18.Controls.Add(Me.txt_conCEL)
         Me.panel18.Controls.Add(Me.label40)
-        Me.panel18.Controls.Add(Me.txt_conTEL)
         Me.panel18.Controls.Add(Me.txt_conNAME)
         Me.panel18.Controls.Add(Me.txt_conAM)
         Me.panel18.Controls.Add(Me.txt_conAP)
@@ -1919,28 +1853,49 @@ Partial Class frmEmpleados
         Me.panel18.Size = New System.Drawing.Size(1070, 581)
         Me.panel18.TabIndex = 1
         '
+        'txt_conTEL
+        '
+        Me.txt_conTEL.AcceptsDecimals = False
+        Me.txt_conTEL.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txt_conTEL.Location = New System.Drawing.Point(471, 90)
+        Me.txt_conTEL.Name = "txt_conTEL"
+        Me.txt_conTEL.Size = New System.Drawing.Size(209, 25)
+        Me.txt_conTEL.TabIndex = 53
+        '
+        'txt_conCEL
+        '
+        Me.txt_conCEL.AcceptsDecimals = False
+        Me.txt_conCEL.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txt_conCEL.Location = New System.Drawing.Point(794, 90)
+        Me.txt_conCEL.Name = "txt_conCEL"
+        Me.txt_conCEL.Size = New System.Drawing.Size(209, 25)
+        Me.txt_conCEL.TabIndex = 52
+        '
         'PnlContacto
         '
-        Me.PnlContacto.Controls.Add(Me.dgv_contacto)
+        Me.PnlContacto.Controls.Add(Me.dgvContactos)
         Me.PnlContacto.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PnlContacto.Location = New System.Drawing.Point(0, 191)
         Me.PnlContacto.Name = "PnlContacto"
         Me.PnlContacto.Size = New System.Drawing.Size(1066, 386)
         Me.PnlContacto.TabIndex = 51
         '
-        'dgv_contacto
+        'dgvContactos
         '
-        Me.dgv_contacto.AllowUserToAddRows = False
-        Me.dgv_contacto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_contacto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.btnCOEliminar, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9, Me.Column10})
-        Me.dgv_contacto.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgv_contacto.Location = New System.Drawing.Point(0, 0)
-        Me.dgv_contacto.Margin = New System.Windows.Forms.Padding(2)
-        Me.dgv_contacto.Name = "dgv_contacto"
-        Me.dgv_contacto.RowHeadersVisible = False
-        Me.dgv_contacto.RowTemplate.Height = 24
-        Me.dgv_contacto.Size = New System.Drawing.Size(1066, 386)
-        Me.dgv_contacto.TabIndex = 50
+        Me.dgvContactos.AllowUserToAddRows = False
+        Me.dgvContactos.AllowUserToDeleteRows = False
+        Me.dgvContactos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvContactos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvContactos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.btnCOEliminar})
+        Me.dgvContactos.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvContactos.Location = New System.Drawing.Point(0, 0)
+        Me.dgvContactos.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgvContactos.Name = "dgvContactos"
+        Me.dgvContactos.ReadOnly = True
+        Me.dgvContactos.RowHeadersVisible = False
+        Me.dgvContactos.RowTemplate.Height = 24
+        Me.dgvContactos.Size = New System.Drawing.Size(1066, 386)
+        Me.dgvContactos.TabIndex = 50
         '
         'btnCOEliminar
         '
@@ -1949,61 +1904,7 @@ Partial Class frmEmpleados
         Me.btnCOEliminar.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
         Me.btnCOEliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
         Me.btnCOEliminar.Name = "btnCOEliminar"
-        Me.btnCOEliminar.Width = 48
-        '
-        'Column3
-        '
-        Me.Column3.DataPropertyName = "ID_CEmergencia"
-        Me.Column3.HeaderText = "ID"
-        Me.Column3.Name = "Column3"
-        Me.Column3.Visible = False
-        '
-        'Column4
-        '
-        Me.Column4.DataPropertyName = "ID_Emp"
-        Me.Column4.HeaderText = "Empleado"
-        Me.Column4.Name = "Column4"
-        Me.Column4.Visible = False
-        '
-        'Column5
-        '
-        Me.Column5.DataPropertyName = "CE_Nombre"
-        Me.Column5.HeaderText = "Nombre"
-        Me.Column5.Name = "Column5"
-        '
-        'Column6
-        '
-        Me.Column6.DataPropertyName = "CE_APat"
-        Me.Column6.HeaderText = "Apellido Paterno"
-        Me.Column6.Name = "Column6"
-        Me.Column6.Width = 200
-        '
-        'Column7
-        '
-        Me.Column7.DataPropertyName = "CE_AMat"
-        Me.Column7.HeaderText = "Apellido Materno"
-        Me.Column7.Name = "Column7"
-        Me.Column7.Width = 200
-        '
-        'Column8
-        '
-        Me.Column8.DataPropertyName = "CE_Parentesco"
-        Me.Column8.HeaderText = "Parentesco"
-        Me.Column8.Name = "Column8"
-        '
-        'Column9
-        '
-        Me.Column9.DataPropertyName = "CE_Telefono"
-        Me.Column9.HeaderText = "Telefono"
-        Me.Column9.Name = "Column9"
-        Me.Column9.Width = 200
-        '
-        'Column10
-        '
-        Me.Column10.DataPropertyName = "CE_Celular"
-        Me.Column10.HeaderText = "Celular"
-        Me.Column10.Name = "Column10"
-        Me.Column10.Width = 200
+        Me.btnCOEliminar.ReadOnly = True
         '
         'label45
         '
@@ -2034,15 +1935,6 @@ Partial Class frmEmpleados
         Me.label41.TabIndex = 46
         Me.label41.Text = "Celular:"
         '
-        'txt_conCEL
-        '
-        Me.txt_conCEL.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_conCEL.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_conCEL.Location = New System.Drawing.Point(794, 90)
-        Me.txt_conCEL.Name = "txt_conCEL"
-        Me.txt_conCEL.Size = New System.Drawing.Size(209, 25)
-        Me.txt_conCEL.TabIndex = 45
-        '
         'label40
         '
         Me.label40.AutoSize = True
@@ -2052,15 +1944,6 @@ Partial Class frmEmpleados
         Me.label40.Size = New System.Drawing.Size(68, 18)
         Me.label40.TabIndex = 44
         Me.label40.Text = "Telefono:"
-        '
-        'txt_conTEL
-        '
-        Me.txt_conTEL.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_conTEL.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_conTEL.Location = New System.Drawing.Point(471, 90)
-        Me.txt_conTEL.Name = "txt_conTEL"
-        Me.txt_conTEL.Size = New System.Drawing.Size(209, 25)
-        Me.txt_conTEL.TabIndex = 43
         '
         'txt_conNAME
         '
@@ -2172,6 +2055,7 @@ Partial Class frmEmpleados
         Me.panel16.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.panel16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.panel16.Controls.Add(Me.txt_antSALARIO)
         Me.panel16.Controls.Add(Me.pnlAntecedentes)
         Me.panel16.Controls.Add(Me.txt_antMT)
         Me.panel16.Controls.Add(Me.txt_antNAME)
@@ -2179,7 +2063,6 @@ Partial Class frmEmpleados
         Me.panel16.Controls.Add(Me.label37)
         Me.panel16.Controls.Add(Me.label38)
         Me.panel16.Controls.Add(Me.label39)
-        Me.panel16.Controls.Add(Me.txt_antSALARIO)
         Me.panel16.Controls.Add(Me.txt_antCARGO)
         Me.panel16.Controls.Add(Me.txt_antEMP)
         Me.panel16.Controls.Add(Me.label34)
@@ -2197,26 +2080,38 @@ Partial Class frmEmpleados
         Me.panel16.Size = New System.Drawing.Size(1070, 548)
         Me.panel16.TabIndex = 1
         '
+        'txt_antSALARIO
+        '
+        Me.txt_antSALARIO.AcceptsDecimals = True
+        Me.txt_antSALARIO.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txt_antSALARIO.Location = New System.Drawing.Point(184, 102)
+        Me.txt_antSALARIO.Name = "txt_antSALARIO"
+        Me.txt_antSALARIO.Size = New System.Drawing.Size(209, 25)
+        Me.txt_antSALARIO.TabIndex = 53
+        '
         'pnlAntecedentes
         '
-        Me.pnlAntecedentes.Controls.Add(Me.dgv_ant)
+        Me.pnlAntecedentes.Controls.Add(Me.dgvAntecedentesLaborales)
         Me.pnlAntecedentes.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.pnlAntecedentes.Location = New System.Drawing.Point(0, 207)
         Me.pnlAntecedentes.Name = "pnlAntecedentes"
         Me.pnlAntecedentes.Size = New System.Drawing.Size(1066, 337)
         Me.pnlAntecedentes.TabIndex = 52
         '
-        'dgv_ant
+        'dgvAntecedentesLaborales
         '
-        Me.dgv_ant.AllowUserToAddRows = False
-        Me.dgv_ant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_ant.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.btnAEliminar, Me.ID_Ant, Me.ID__Emp, Me.Ant_FInicio, Me.Ant_FFin, Me.Ant_NEmpresa, Me.Ant_Cargo, Me.Ant_Salario, Me.Ant_Tel, Me.Ant_Motivo, Me.Ant_Contacto})
-        Me.dgv_ant.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgv_ant.Location = New System.Drawing.Point(0, 0)
-        Me.dgv_ant.Name = "dgv_ant"
-        Me.dgv_ant.RowHeadersVisible = False
-        Me.dgv_ant.Size = New System.Drawing.Size(1066, 337)
-        Me.dgv_ant.TabIndex = 51
+        Me.dgvAntecedentesLaborales.AllowUserToAddRows = False
+        Me.dgvAntecedentesLaborales.AllowUserToDeleteRows = False
+        Me.dgvAntecedentesLaborales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvAntecedentesLaborales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvAntecedentesLaborales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.btnAEliminar})
+        Me.dgvAntecedentesLaborales.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvAntecedentesLaborales.Location = New System.Drawing.Point(0, 0)
+        Me.dgvAntecedentesLaborales.Name = "dgvAntecedentesLaborales"
+        Me.dgvAntecedentesLaborales.ReadOnly = True
+        Me.dgvAntecedentesLaborales.RowHeadersVisible = False
+        Me.dgvAntecedentesLaborales.Size = New System.Drawing.Size(1066, 337)
+        Me.dgvAntecedentesLaborales.TabIndex = 51
         '
         'btnAEliminar
         '
@@ -2225,71 +2120,7 @@ Partial Class frmEmpleados
         Me.btnAEliminar.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
         Me.btnAEliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
         Me.btnAEliminar.Name = "btnAEliminar"
-        Me.btnAEliminar.Width = 48
-        '
-        'ID_Ant
-        '
-        Me.ID_Ant.DataPropertyName = "ID_Ant"
-        Me.ID_Ant.HeaderText = "ID"
-        Me.ID_Ant.Name = "ID_Ant"
-        Me.ID_Ant.Visible = False
-        '
-        'ID__Emp
-        '
-        Me.ID__Emp.DataPropertyName = "ID_Emp"
-        Me.ID__Emp.HeaderText = "Empleado"
-        Me.ID__Emp.Name = "ID__Emp"
-        Me.ID__Emp.Visible = False
-        '
-        'Ant_FInicio
-        '
-        Me.Ant_FInicio.DataPropertyName = "Ant_FInicio"
-        Me.Ant_FInicio.HeaderText = "Fecha Inicio"
-        Me.Ant_FInicio.Name = "Ant_FInicio"
-        Me.Ant_FInicio.Width = 200
-        '
-        'Ant_FFin
-        '
-        Me.Ant_FFin.DataPropertyName = "Ant_FFin"
-        Me.Ant_FFin.HeaderText = "Fecha Final"
-        Me.Ant_FFin.Name = "Ant_FFin"
-        Me.Ant_FFin.Width = 200
-        '
-        'Ant_NEmpresa
-        '
-        Me.Ant_NEmpresa.DataPropertyName = "Ant_NEmpresa"
-        Me.Ant_NEmpresa.HeaderText = "Empresa"
-        Me.Ant_NEmpresa.Name = "Ant_NEmpresa"
-        '
-        'Ant_Cargo
-        '
-        Me.Ant_Cargo.DataPropertyName = "Ant_Cargo"
-        Me.Ant_Cargo.HeaderText = "Cargo"
-        Me.Ant_Cargo.Name = "Ant_Cargo"
-        '
-        'Ant_Salario
-        '
-        Me.Ant_Salario.DataPropertyName = "Ant_Salario"
-        Me.Ant_Salario.HeaderText = "Salario"
-        Me.Ant_Salario.Name = "Ant_Salario"
-        '
-        'Ant_Tel
-        '
-        Me.Ant_Tel.DataPropertyName = "Ant_Tel"
-        Me.Ant_Tel.HeaderText = "Telefono"
-        Me.Ant_Tel.Name = "Ant_Tel"
-        '
-        'Ant_Motivo
-        '
-        Me.Ant_Motivo.DataPropertyName = "Ant_Motivo"
-        Me.Ant_Motivo.HeaderText = "Motivo"
-        Me.Ant_Motivo.Name = "Ant_Motivo"
-        '
-        'Ant_Contacto
-        '
-        Me.Ant_Contacto.DataPropertyName = "Ant_Contacto"
-        Me.Ant_Contacto.HeaderText = "Contacto"
-        Me.Ant_Contacto.Name = "Ant_Contacto"
+        Me.btnAEliminar.ReadOnly = True
         '
         'txt_antMT
         '
@@ -2348,15 +2179,6 @@ Partial Class frmEmpleados
         Me.label39.Size = New System.Drawing.Size(57, 18)
         Me.label39.TabIndex = 32
         Me.label39.Text = "Motivo:"
-        '
-        'txt_antSALARIO
-        '
-        Me.txt_antSALARIO.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_antSALARIO.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_antSALARIO.Location = New System.Drawing.Point(185, 102)
-        Me.txt_antSALARIO.Name = "txt_antSALARIO"
-        Me.txt_antSALARIO.Size = New System.Drawing.Size(208, 25)
-        Me.txt_antSALARIO.TabIndex = 23
         '
         'txt_antCARGO
         '
@@ -2508,7 +2330,7 @@ Partial Class frmEmpleados
         Me.panel3.Controls.Add(Me.txt_hijoAP)
         Me.panel3.Controls.Add(Me.label28)
         Me.panel3.Controls.Add(Me.label29)
-        Me.panel3.Controls.Add(Me.txt_hijoSEXO)
+        Me.panel3.Controls.Add(Me.cbHijosSexo)
         Me.panel3.Controls.Add(Me.label30)
         Me.panel3.Controls.Add(Me.label31)
         Me.panel3.Controls.Add(Me.panel5)
@@ -2520,27 +2342,27 @@ Partial Class frmEmpleados
         '
         'PnlOffsprings
         '
-        Me.PnlOffsprings.Controls.Add(Me.dgv_Hijos)
+        Me.PnlOffsprings.Controls.Add(Me.dgvHijos)
         Me.PnlOffsprings.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PnlOffsprings.Location = New System.Drawing.Point(0, 101)
         Me.PnlOffsprings.Name = "PnlOffsprings"
         Me.PnlOffsprings.Size = New System.Drawing.Size(1066, 182)
         Me.PnlOffsprings.TabIndex = 53
         '
-        'dgv_Hijos
+        'dgvHijos
         '
-        Me.dgv_Hijos.AllowUserToAddRows = False
-        Me.dgv_Hijos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgv_Hijos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_Hijos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.btnHEliminar, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9})
-        Me.dgv_Hijos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgv_Hijos.Location = New System.Drawing.Point(0, 0)
-        Me.dgv_Hijos.Margin = New System.Windows.Forms.Padding(2)
-        Me.dgv_Hijos.Name = "dgv_Hijos"
-        Me.dgv_Hijos.RowHeadersVisible = False
-        Me.dgv_Hijos.RowTemplate.Height = 24
-        Me.dgv_Hijos.Size = New System.Drawing.Size(1066, 182)
-        Me.dgv_Hijos.TabIndex = 52
+        Me.dgvHijos.AllowUserToAddRows = False
+        Me.dgvHijos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvHijos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvHijos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.btnHEliminar})
+        Me.dgvHijos.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvHijos.Location = New System.Drawing.Point(0, 0)
+        Me.dgvHijos.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgvHijos.Name = "dgvHijos"
+        Me.dgvHijos.RowHeadersVisible = False
+        Me.dgvHijos.RowTemplate.Height = 24
+        Me.dgvHijos.Size = New System.Drawing.Size(1066, 182)
+        Me.dgvHijos.TabIndex = 52
         '
         'btnHEliminar
         '
@@ -2549,69 +2371,6 @@ Partial Class frmEmpleados
         Me.btnHEliminar.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
         Me.btnHEliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
         Me.btnHEliminar.Name = "btnHEliminar"
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ID_Persona"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Visible = False
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "ID_Emp"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Empleado"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.Visible = False
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Fam_Tipo"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Tipo"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.Visible = False
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Fam_Nombre"
-        Me.DataGridViewTextBoxColumn4.FillWeight = 48.45185!
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Nombre"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Fam_APat"
-        Me.DataGridViewTextBoxColumn5.FillWeight = 48.45185!
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Apellido Paterno"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Fam_AMat"
-        Me.DataGridViewTextBoxColumn6.FillWeight = 48.45185!
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Apellido Materno"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Fam_Nacion"
-        Me.DataGridViewTextBoxColumn7.FillWeight = 48.45185!
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Nacionalidad"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "Fam_FNac"
-        Me.DataGridViewTextBoxColumn8.FillWeight = 48.45185!
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Fecha Nacimiento"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "Fam_Genero"
-        Me.DataGridViewTextBoxColumn9.FillWeight = 48.45185!
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Genero"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
         '
         'label26
         '
@@ -2698,16 +2457,16 @@ Partial Class frmEmpleados
         Me.label29.TabIndex = 38
         Me.label29.Text = "Apellido Mat.:"
         '
-        'txt_hijoSEXO
+        'cbHijosSexo
         '
-        Me.txt_hijoSEXO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.txt_hijoSEXO.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_hijoSEXO.FormattingEnabled = True
-        Me.txt_hijoSEXO.Items.AddRange(New Object() {"FEMENINO", "MASCULINO"})
-        Me.txt_hijoSEXO.Location = New System.Drawing.Point(176, 70)
-        Me.txt_hijoSEXO.Name = "txt_hijoSEXO"
-        Me.txt_hijoSEXO.Size = New System.Drawing.Size(200, 26)
-        Me.txt_hijoSEXO.TabIndex = 36
+        Me.cbHijosSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbHijosSexo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbHijosSexo.FormattingEnabled = True
+        Me.cbHijosSexo.Items.AddRange(New Object() {"FEMENINO", "MASCULINO"})
+        Me.cbHijosSexo.Location = New System.Drawing.Point(176, 70)
+        Me.cbHijosSexo.Name = "cbHijosSexo"
+        Me.cbHijosSexo.Size = New System.Drawing.Size(200, 26)
+        Me.cbHijosSexo.TabIndex = 36
         '
         'label30
         '
@@ -2773,7 +2532,7 @@ Partial Class frmEmpleados
         Me.panel2.Controls.Add(Me.panel4)
         Me.panel2.Controls.Add(Me.label25)
         Me.panel2.Controls.Add(Me.txt_esNacion)
-        Me.panel2.Controls.Add(Me.dgv_esposa)
+        Me.panel2.Controls.Add(Me.dgvEsposa)
         Me.panel2.Controls.Add(Me.txt_esName)
         Me.panel2.Controls.Add(Me.txt_esAM)
         Me.panel2.Controls.Add(Me.txt_esFN)
@@ -2782,7 +2541,7 @@ Partial Class frmEmpleados
         Me.panel2.Controls.Add(Me.label23)
         Me.panel2.Controls.Add(Me.label20)
         Me.panel2.Controls.Add(Me.label21)
-        Me.panel2.Controls.Add(Me.cb_esSexo)
+        Me.panel2.Controls.Add(Me.cbConyugeSexo)
         Me.panel2.Controls.Add(Me.label22)
         Me.panel2.Location = New System.Drawing.Point(0, 0)
         Me.panel2.Margin = New System.Windows.Forms.Padding(2)
@@ -2845,20 +2604,20 @@ Partial Class frmEmpleados
         Me.txt_esNacion.Size = New System.Drawing.Size(192, 25)
         Me.txt_esNacion.TabIndex = 31
         '
-        'dgv_esposa
+        'dgvEsposa
         '
-        Me.dgv_esposa.AllowUserToAddRows = False
-        Me.dgv_esposa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgv_esposa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_esposa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.btnCEliminar, Me.ID_Persona, Me.ID_Emp, Me.Fam_Tipo, Me.Fam_Nombre, Me.Fam_APat, Me.Fam_AMat, Me.Fam_Nacion, Me.Fam_FNac, Me.Fam_Genero, Me.Fam_EdoCivil})
-        Me.dgv_esposa.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.dgv_esposa.Location = New System.Drawing.Point(0, 129)
-        Me.dgv_esposa.Margin = New System.Windows.Forms.Padding(2)
-        Me.dgv_esposa.Name = "dgv_esposa"
-        Me.dgv_esposa.RowHeadersVisible = False
-        Me.dgv_esposa.RowTemplate.Height = 24
-        Me.dgv_esposa.Size = New System.Drawing.Size(1066, 145)
-        Me.dgv_esposa.TabIndex = 51
+        Me.dgvEsposa.AllowUserToAddRows = False
+        Me.dgvEsposa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvEsposa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvEsposa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.btnCEliminar})
+        Me.dgvEsposa.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.dgvEsposa.Location = New System.Drawing.Point(0, 129)
+        Me.dgvEsposa.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgvEsposa.Name = "dgvEsposa"
+        Me.dgvEsposa.RowHeadersVisible = False
+        Me.dgvEsposa.RowTemplate.Height = 24
+        Me.dgvEsposa.Size = New System.Drawing.Size(1066, 145)
+        Me.dgvEsposa.TabIndex = 51
         '
         'btnCEliminar
         '
@@ -2867,76 +2626,6 @@ Partial Class frmEmpleados
         Me.btnCEliminar.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
         Me.btnCEliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
         Me.btnCEliminar.Name = "btnCEliminar"
-        '
-        'ID_Persona
-        '
-        Me.ID_Persona.DataPropertyName = "ID_Persona"
-        Me.ID_Persona.HeaderText = "ID"
-        Me.ID_Persona.Name = "ID_Persona"
-        Me.ID_Persona.Visible = False
-        '
-        'ID_Emp
-        '
-        Me.ID_Emp.DataPropertyName = "ID_Emp"
-        Me.ID_Emp.HeaderText = "Empleado"
-        Me.ID_Emp.Name = "ID_Emp"
-        Me.ID_Emp.Visible = False
-        '
-        'Fam_Tipo
-        '
-        Me.Fam_Tipo.DataPropertyName = "Fam_Tipo"
-        Me.Fam_Tipo.HeaderText = "Tipo"
-        Me.Fam_Tipo.Name = "Fam_Tipo"
-        Me.Fam_Tipo.Visible = False
-        '
-        'Fam_Nombre
-        '
-        Me.Fam_Nombre.DataPropertyName = "Fam_Nombre"
-        Me.Fam_Nombre.FillWeight = 29.45599!
-        Me.Fam_Nombre.HeaderText = "Nombre"
-        Me.Fam_Nombre.Name = "Fam_Nombre"
-        '
-        'Fam_APat
-        '
-        Me.Fam_APat.DataPropertyName = "Fam_APat"
-        Me.Fam_APat.FillWeight = 29.45599!
-        Me.Fam_APat.HeaderText = "Apellido Paterno"
-        Me.Fam_APat.Name = "Fam_APat"
-        '
-        'Fam_AMat
-        '
-        Me.Fam_AMat.DataPropertyName = "Fam_AMat"
-        Me.Fam_AMat.FillWeight = 29.45599!
-        Me.Fam_AMat.HeaderText = "Apellido Materno"
-        Me.Fam_AMat.Name = "Fam_AMat"
-        '
-        'Fam_Nacion
-        '
-        Me.Fam_Nacion.DataPropertyName = "Fam_Nacion"
-        Me.Fam_Nacion.FillWeight = 29.45599!
-        Me.Fam_Nacion.HeaderText = "Nacionalidad"
-        Me.Fam_Nacion.Name = "Fam_Nacion"
-        '
-        'Fam_FNac
-        '
-        Me.Fam_FNac.DataPropertyName = "Fam_FNac"
-        Me.Fam_FNac.FillWeight = 29.45599!
-        Me.Fam_FNac.HeaderText = "Fecha Nacimiento"
-        Me.Fam_FNac.Name = "Fam_FNac"
-        '
-        'Fam_Genero
-        '
-        Me.Fam_Genero.DataPropertyName = "Fam_Genero"
-        Me.Fam_Genero.FillWeight = 29.45599!
-        Me.Fam_Genero.HeaderText = "Genero"
-        Me.Fam_Genero.Name = "Fam_Genero"
-        '
-        'Fam_EdoCivil
-        '
-        Me.Fam_EdoCivil.DataPropertyName = "Fam_EdoCivil"
-        Me.Fam_EdoCivil.FillWeight = 29.45599!
-        Me.Fam_EdoCivil.HeaderText = "Estado Civil"
-        Me.Fam_EdoCivil.Name = "Fam_EdoCivil"
         '
         'txt_esName
         '
@@ -3014,16 +2703,15 @@ Partial Class frmEmpleados
         Me.label21.TabIndex = 21
         Me.label21.Text = "Apellido Mat.:"
         '
-        'cb_esSexo
+        'cbConyugeSexo
         '
-        Me.cb_esSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cb_esSexo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_esSexo.FormattingEnabled = True
-        Me.cb_esSexo.Items.AddRange(New Object() {"FEMENINO", "MASCULINO"})
-        Me.cb_esSexo.Location = New System.Drawing.Point(178, 70)
-        Me.cb_esSexo.Name = "cb_esSexo"
-        Me.cb_esSexo.Size = New System.Drawing.Size(200, 26)
-        Me.cb_esSexo.TabIndex = 19
+        Me.cbConyugeSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbConyugeSexo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbConyugeSexo.FormattingEnabled = True
+        Me.cbConyugeSexo.Location = New System.Drawing.Point(178, 70)
+        Me.cbConyugeSexo.Name = "cbConyugeSexo"
+        Me.cbConyugeSexo.Size = New System.Drawing.Size(200, 26)
+        Me.cbConyugeSexo.TabIndex = 19
         '
         'label22
         '
@@ -3100,7 +2788,7 @@ Partial Class frmEmpleados
         '
         Me.seg.AutoSize = True
         Me.seg.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.seg.Location = New System.Drawing.Point(219, 18)
+        Me.seg.Location = New System.Drawing.Point(197, 18)
         Me.seg.Margin = New System.Windows.Forms.Padding(2)
         Me.seg.Name = "seg"
         Me.seg.Size = New System.Drawing.Size(90, 22)
@@ -3112,7 +2800,7 @@ Partial Class frmEmpleados
         '
         Me.CB_PROV.AutoSize = True
         Me.CB_PROV.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CB_PROV.Location = New System.Drawing.Point(113, 18)
+        Me.CB_PROV.Location = New System.Drawing.Point(91, 18)
         Me.CB_PROV.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_PROV.Name = "CB_PROV"
         Me.CB_PROV.Size = New System.Drawing.Size(102, 22)
@@ -3168,7 +2856,7 @@ Partial Class frmEmpleados
         Me.lbl_option.Name = "lbl_option"
         Me.lbl_option.Size = New System.Drawing.Size(49, 21)
         Me.lbl_option.TabIndex = 45
-        Me.lbl_option.Tag = "ALTA"
+        Me.lbl_option.Tag = ""
         Me.lbl_option.Text = "ALTA"
         Me.lbl_option.Visible = False
         '
@@ -3237,28 +2925,28 @@ Partial Class frmEmpleados
         Me.pnl_cont.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnl_cont.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pnl_cont.Controls.Add(Me.txtSalario)
         Me.pnl_cont.Controls.Add(Me.buscar_depto)
-        Me.pnl_cont.Controls.Add(Me.depto)
-        Me.pnl_cont.Controls.Add(Me.depto2)
+        Me.pnl_cont.Controls.Add(Me.txtDeptoCodigo)
+        Me.pnl_cont.Controls.Add(Me.txtDepto)
         Me.pnl_cont.Controls.Add(Me.Buscar_PUESTO)
         Me.pnl_cont.Controls.Add(Me.panel11)
         Me.pnl_cont.Controls.Add(Me.Buscar_tipo)
         Me.pnl_cont.Controls.Add(Me.lbl_ingreso)
-        Me.pnl_cont.Controls.Add(Me.Txt_correo)
+        Me.pnl_cont.Controls.Add(Me.txtCorreo)
         Me.pnl_cont.Controls.Add(Me.lbl_clase)
-        Me.pnl_cont.Controls.Add(Me.txt_tipo2)
+        Me.pnl_cont.Controls.Add(Me.txtTipo)
         Me.pnl_cont.Controls.Add(Me.lbl_super)
         Me.pnl_cont.Controls.Add(Me.correo)
-        Me.pnl_cont.Controls.Add(Me.txt_SALARY)
         Me.pnl_cont.Controls.Add(Me.lbl_puesto)
-        Me.pnl_cont.Controls.Add(Me.txt_tipo)
+        Me.pnl_cont.Controls.Add(Me.txtTipoCodigo)
         Me.pnl_cont.Controls.Add(Me.lbl_sali)
-        Me.pnl_cont.Controls.Add(Me.txt_FECHAINGRESO)
+        Me.pnl_cont.Controls.Add(Me.dtpFechaDeIngreso)
         Me.pnl_cont.Controls.Add(Me.Buscar_Super)
-        Me.pnl_cont.Controls.Add(Me.txt_PUESTO)
-        Me.pnl_cont.Controls.Add(Me.txt_PUESTO2)
-        Me.pnl_cont.Controls.Add(Me.txt_SUPER2)
-        Me.pnl_cont.Controls.Add(Me.txt_SUPER)
+        Me.pnl_cont.Controls.Add(Me.txtPuestoCodigo)
+        Me.pnl_cont.Controls.Add(Me.txtPuesto)
+        Me.pnl_cont.Controls.Add(Me.txtSupervisor)
+        Me.pnl_cont.Controls.Add(Me.txtSupervisorCodigo)
         Me.pnl_cont.Controls.Add(Me.lbl_depto)
         Me.pnl_cont.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pnl_cont.Location = New System.Drawing.Point(2, 359)
@@ -3266,6 +2954,15 @@ Partial Class frmEmpleados
         Me.pnl_cont.Name = "pnl_cont"
         Me.pnl_cont.Size = New System.Drawing.Size(1068, 134)
         Me.pnl_cont.TabIndex = 1
+        '
+        'txtSalario
+        '
+        Me.txtSalario.AcceptsDecimals = True
+        Me.txtSalario.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txtSalario.Location = New System.Drawing.Point(788, 71)
+        Me.txtSalario.Name = "txtSalario"
+        Me.txtSalario.Size = New System.Drawing.Size(238, 25)
+        Me.txtSalario.TabIndex = 61
         '
         'buscar_depto
         '
@@ -3279,23 +2976,23 @@ Partial Class frmEmpleados
         Me.buscar_depto.TabIndex = 60
         Me.buscar_depto.TabStop = False
         '
-        'depto
+        'txtDeptoCodigo
         '
-        Me.depto.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.depto.Location = New System.Drawing.Point(747, 40)
-        Me.depto.Name = "depto"
-        Me.depto.Size = New System.Drawing.Size(1, 25)
-        Me.depto.TabIndex = 7
+        Me.txtDeptoCodigo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDeptoCodigo.Location = New System.Drawing.Point(782, 40)
+        Me.txtDeptoCodigo.Name = "txtDeptoCodigo"
+        Me.txtDeptoCodigo.Size = New System.Drawing.Size(1, 25)
+        Me.txtDeptoCodigo.TabIndex = 7
         '
-        'depto2
+        'txtDepto
         '
-        Me.depto2.Enabled = False
-        Me.depto2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.depto2.Location = New System.Drawing.Point(788, 40)
-        Me.depto2.Name = "depto2"
-        Me.depto2.Size = New System.Drawing.Size(213, 25)
-        Me.depto2.TabIndex = 3
-        Me.depto2.TabStop = False
+        Me.txtDepto.Enabled = False
+        Me.txtDepto.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDepto.Location = New System.Drawing.Point(788, 40)
+        Me.txtDepto.Name = "txtDepto"
+        Me.txtDepto.Size = New System.Drawing.Size(213, 25)
+        Me.txtDepto.TabIndex = 3
+        Me.txtDepto.TabStop = False
         '
         'Buscar_PUESTO
         '
@@ -3353,14 +3050,14 @@ Partial Class frmEmpleados
         Me.lbl_ingreso.TabIndex = 0
         Me.lbl_ingreso.Text = "Ingreso:"
         '
-        'Txt_correo
+        'txtCorreo
         '
-        Me.Txt_correo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.Txt_correo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_correo.Location = New System.Drawing.Point(127, 102)
-        Me.Txt_correo.Name = "Txt_correo"
-        Me.Txt_correo.Size = New System.Drawing.Size(238, 25)
-        Me.Txt_correo.TabIndex = 15
+        Me.txtCorreo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtCorreo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCorreo.Location = New System.Drawing.Point(127, 102)
+        Me.txtCorreo.Name = "txtCorreo"
+        Me.txtCorreo.Size = New System.Drawing.Size(238, 25)
+        Me.txtCorreo.TabIndex = 15
         '
         'lbl_clase
         '
@@ -3372,15 +3069,15 @@ Partial Class frmEmpleados
         Me.lbl_clase.TabIndex = 10
         Me.lbl_clase.Text = "Tipo:"
         '
-        'txt_tipo2
+        'txtTipo
         '
-        Me.txt_tipo2.Enabled = False
-        Me.txt_tipo2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_tipo2.Location = New System.Drawing.Point(457, 71)
-        Me.txt_tipo2.Name = "txt_tipo2"
-        Me.txt_tipo2.Size = New System.Drawing.Size(213, 25)
-        Me.txt_tipo2.TabIndex = 11
-        Me.txt_tipo2.TabStop = False
+        Me.txtTipo.Enabled = False
+        Me.txtTipo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTipo.Location = New System.Drawing.Point(457, 71)
+        Me.txtTipo.Name = "txtTipo"
+        Me.txtTipo.Size = New System.Drawing.Size(213, 25)
+        Me.txtTipo.TabIndex = 11
+        Me.txtTipo.TabStop = False
         '
         'lbl_super
         '
@@ -3402,15 +3099,6 @@ Partial Class frmEmpleados
         Me.correo.TabIndex = 14
         Me.correo.Text = "E-mail:"
         '
-        'txt_SALARY
-        '
-        Me.txt_SALARY.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SALARY.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SALARY.Location = New System.Drawing.Point(788, 69)
-        Me.txt_SALARY.Name = "txt_SALARY"
-        Me.txt_SALARY.Size = New System.Drawing.Size(238, 25)
-        Me.txt_SALARY.TabIndex = 13
-        '
         'lbl_puesto
         '
         Me.lbl_puesto.AutoSize = True
@@ -3422,32 +3110,32 @@ Partial Class frmEmpleados
         Me.lbl_puesto.TabIndex = 2
         Me.lbl_puesto.Text = "Puesto:"
         '
-        'txt_tipo
+        'txtTipoCodigo
         '
-        Me.txt_tipo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_tipo.Location = New System.Drawing.Point(485, 74)
-        Me.txt_tipo.Name = "txt_tipo"
-        Me.txt_tipo.Size = New System.Drawing.Size(1, 25)
-        Me.txt_tipo.TabIndex = 25
+        Me.txtTipoCodigo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTipoCodigo.Location = New System.Drawing.Point(452, 71)
+        Me.txtTipoCodigo.Name = "txtTipoCodigo"
+        Me.txtTipoCodigo.Size = New System.Drawing.Size(1, 25)
+        Me.txtTipoCodigo.TabIndex = 25
         '
         'lbl_sali
         '
         Me.lbl_sali.AutoSize = True
         Me.lbl_sali.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_sali.Location = New System.Drawing.Point(727, 68)
+        Me.lbl_sali.Location = New System.Drawing.Point(727, 74)
         Me.lbl_sali.Name = "lbl_sali"
         Me.lbl_sali.Size = New System.Drawing.Size(57, 18)
         Me.lbl_sali.TabIndex = 12
         Me.lbl_sali.Text = "Salario:"
         '
-        'txt_FECHAINGRESO
+        'dtpFechaDeIngreso
         '
-        Me.txt_FECHAINGRESO.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_FECHAINGRESO.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txt_FECHAINGRESO.Location = New System.Drawing.Point(127, 40)
-        Me.txt_FECHAINGRESO.Name = "txt_FECHAINGRESO"
-        Me.txt_FECHAINGRESO.Size = New System.Drawing.Size(238, 25)
-        Me.txt_FECHAINGRESO.TabIndex = 1
+        Me.dtpFechaDeIngreso.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpFechaDeIngreso.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaDeIngreso.Location = New System.Drawing.Point(127, 40)
+        Me.dtpFechaDeIngreso.Name = "dtpFechaDeIngreso"
+        Me.dtpFechaDeIngreso.Size = New System.Drawing.Size(238, 25)
+        Me.dtpFechaDeIngreso.TabIndex = 1
         '
         'Buscar_Super
         '
@@ -3461,41 +3149,41 @@ Partial Class frmEmpleados
         Me.Buscar_Super.TabIndex = 51
         Me.Buscar_Super.TabStop = False
         '
-        'txt_PUESTO
+        'txtPuestoCodigo
         '
-        Me.txt_PUESTO.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_PUESTO.Location = New System.Drawing.Point(447, 40)
-        Me.txt_PUESTO.Name = "txt_PUESTO"
-        Me.txt_PUESTO.Size = New System.Drawing.Size(1, 25)
-        Me.txt_PUESTO.TabIndex = 4
+        Me.txtPuestoCodigo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPuestoCodigo.Location = New System.Drawing.Point(447, 40)
+        Me.txtPuestoCodigo.Name = "txtPuestoCodigo"
+        Me.txtPuestoCodigo.Size = New System.Drawing.Size(1, 25)
+        Me.txtPuestoCodigo.TabIndex = 4
         '
-        'txt_PUESTO2
+        'txtPuesto
         '
-        Me.txt_PUESTO2.Enabled = False
-        Me.txt_PUESTO2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_PUESTO2.Location = New System.Drawing.Point(457, 40)
-        Me.txt_PUESTO2.Name = "txt_PUESTO2"
-        Me.txt_PUESTO2.Size = New System.Drawing.Size(213, 25)
-        Me.txt_PUESTO2.TabIndex = 5
-        Me.txt_PUESTO2.TabStop = False
+        Me.txtPuesto.Enabled = False
+        Me.txtPuesto.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPuesto.Location = New System.Drawing.Point(457, 40)
+        Me.txtPuesto.Name = "txtPuesto"
+        Me.txtPuesto.Size = New System.Drawing.Size(213, 25)
+        Me.txtPuesto.TabIndex = 5
+        Me.txtPuesto.TabStop = False
         '
-        'txt_SUPER2
+        'txtSupervisor
         '
-        Me.txt_SUPER2.Enabled = False
-        Me.txt_SUPER2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SUPER2.Location = New System.Drawing.Point(127, 71)
-        Me.txt_SUPER2.Name = "txt_SUPER2"
-        Me.txt_SUPER2.Size = New System.Drawing.Size(213, 25)
-        Me.txt_SUPER2.TabIndex = 9
-        Me.txt_SUPER2.TabStop = False
+        Me.txtSupervisor.Enabled = False
+        Me.txtSupervisor.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSupervisor.Location = New System.Drawing.Point(127, 71)
+        Me.txtSupervisor.Name = "txtSupervisor"
+        Me.txtSupervisor.Size = New System.Drawing.Size(213, 25)
+        Me.txtSupervisor.TabIndex = 9
+        Me.txtSupervisor.TabStop = False
         '
-        'txt_SUPER
+        'txtSupervisorCodigo
         '
-        Me.txt_SUPER.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SUPER.Location = New System.Drawing.Point(146, 75)
-        Me.txt_SUPER.Name = "txt_SUPER"
-        Me.txt_SUPER.Size = New System.Drawing.Size(1, 25)
-        Me.txt_SUPER.TabIndex = 24
+        Me.txtSupervisorCodigo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSupervisorCodigo.Location = New System.Drawing.Point(121, 73)
+        Me.txtSupervisorCodigo.Name = "txtSupervisorCodigo"
+        Me.txtSupervisorCodigo.Size = New System.Drawing.Size(1, 25)
+        Me.txtSupervisorCodigo.TabIndex = 24
         '
         'lbl_depto
         '
@@ -3512,48 +3200,48 @@ Partial Class frmEmpleados
         Me.pnl_per.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnl_per.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pnl_per.Controls.Add(Me.txtTelefono)
+        Me.pnl_per.Controls.Add(Me.txtCodigoPostal)
+        Me.pnl_per.Controls.Add(Me.txtNSS)
+        Me.pnl_per.Controls.Add(Me.txtCelular)
         Me.pnl_per.Controls.Add(Me.txtCdDomicilio)
         Me.pnl_per.Controls.Add(Me.Label13)
         Me.pnl_per.Controls.Add(Me.PbSearchEmployee)
         Me.pnl_per.Controls.Add(Me.buscar_ciudad)
-        Me.pnl_per.Controls.Add(Me.foto)
-        Me.pnl_per.Controls.Add(Me.cuidad)
+        Me.pnl_per.Controls.Add(Me.pbFotoEmpleado)
+        Me.pnl_per.Controls.Add(Me.txtCiudadCodigo)
         Me.pnl_per.Controls.Add(Me.lbl_rfc)
         Me.pnl_per.Controls.Add(Me.lbl_ss)
-        Me.pnl_per.Controls.Add(Me.CP)
         Me.pnl_per.Controls.Add(Me.LBL_CP)
-        Me.pnl_per.Controls.Add(Me.txt_CURP)
-        Me.pnl_per.Controls.Add(Me.cuidad2)
-        Me.pnl_per.Controls.Add(Me.EC)
+        Me.pnl_per.Controls.Add(Me.txtCURP)
+        Me.pnl_per.Controls.Add(Me.txtCiudad)
+        Me.pnl_per.Controls.Add(Me.cbEstadoCivil)
         Me.pnl_per.Controls.Add(Me.Label92)
-        Me.pnl_per.Controls.Add(Me.txt_SS)
-        Me.pnl_per.Controls.Add(Me.ddl_educacion)
+        Me.pnl_per.Controls.Add(Me.cbNivelEducativo)
         Me.pnl_per.Controls.Add(Me.Label54)
         Me.pnl_per.Controls.Add(Me.lbl_curp)
         Me.pnl_per.Controls.Add(Me.Label1)
-        Me.pnl_per.Controls.Add(Me.colonia)
+        Me.pnl_per.Controls.Add(Me.txtColonia)
         Me.pnl_per.Controls.Add(Me.Label55)
-        Me.pnl_per.Controls.Add(Me.domicilio)
+        Me.pnl_per.Controls.Add(Me.txtDomicilio)
         Me.pnl_per.Controls.Add(Me.Label2)
-        Me.pnl_per.Controls.Add(Me.txt_RFC)
-        Me.pnl_per.Controls.Add(Me.Celular)
+        Me.pnl_per.Controls.Add(Me.txtRFC)
         Me.pnl_per.Controls.Add(Me.Label4)
         Me.pnl_per.Controls.Add(Me.lbl_sex)
-        Me.pnl_per.Controls.Add(Me.txt_telefono)
         Me.pnl_per.Controls.Add(Me.LBL_ESTADOCIVIL)
         Me.pnl_per.Controls.Add(Me.lbl_fn)
-        Me.pnl_per.Controls.Add(Me.nacion)
+        Me.pnl_per.Controls.Add(Me.txtNacionalidad)
         Me.pnl_per.Controls.Add(Me.Label3)
-        Me.pnl_per.Controls.Add(Me.txt_FECHA)
-        Me.pnl_per.Controls.Add(Me.CB_SEXO)
+        Me.pnl_per.Controls.Add(Me.dtpFechaDeNacimiento)
+        Me.pnl_per.Controls.Add(Me.cbSexo)
         Me.pnl_per.Controls.Add(Me.lbl_nac)
         Me.pnl_per.Controls.Add(Me.panel7)
-        Me.pnl_per.Controls.Add(Me.txt_EN2)
-        Me.pnl_per.Controls.Add(Me.txt_numero)
-        Me.pnl_per.Controls.Add(Me.txt_EN)
-        Me.pnl_per.Controls.Add(Me.txt_NOM)
-        Me.pnl_per.Controls.Add(Me.txt_AM)
-        Me.pnl_per.Controls.Add(Me.txt_AP)
+        Me.pnl_per.Controls.Add(Me.txtEntidad)
+        Me.pnl_per.Controls.Add(Me.txtNumero)
+        Me.pnl_per.Controls.Add(Me.txtEntidadCodigo)
+        Me.pnl_per.Controls.Add(Me.txtNombres)
+        Me.pnl_per.Controls.Add(Me.txtAMaterno)
+        Me.pnl_per.Controls.Add(Me.txtAPaterno)
         Me.pnl_per.Controls.Add(Me.buscar_EN)
         Me.pnl_per.Controls.Add(Me.lbl_num)
         Me.pnl_per.Controls.Add(Me.lbl_ap)
@@ -3565,6 +3253,42 @@ Partial Class frmEmpleados
         Me.pnl_per.Name = "pnl_per"
         Me.pnl_per.Size = New System.Drawing.Size(1073, 355)
         Me.pnl_per.TabIndex = 1
+        '
+        'txtTelefono
+        '
+        Me.txtTelefono.AcceptsDecimals = False
+        Me.txtTelefono.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txtTelefono.Location = New System.Drawing.Point(378, 289)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(238, 25)
+        Me.txtTelefono.TabIndex = 66
+        '
+        'txtCodigoPostal
+        '
+        Me.txtCodigoPostal.AcceptsDecimals = False
+        Me.txtCodigoPostal.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txtCodigoPostal.Location = New System.Drawing.Point(793, 258)
+        Me.txtCodigoPostal.Name = "txtCodigoPostal"
+        Me.txtCodigoPostal.Size = New System.Drawing.Size(238, 25)
+        Me.txtCodigoPostal.TabIndex = 65
+        '
+        'txtNSS
+        '
+        Me.txtNSS.AcceptsDecimals = False
+        Me.txtNSS.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txtNSS.Location = New System.Drawing.Point(793, 195)
+        Me.txtNSS.Name = "txtNSS"
+        Me.txtNSS.Size = New System.Drawing.Size(238, 25)
+        Me.txtNSS.TabIndex = 64
+        '
+        'txtCelular
+        '
+        Me.txtCelular.AcceptsDecimals = False
+        Me.txtCelular.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txtCelular.Location = New System.Drawing.Point(793, 289)
+        Me.txtCelular.Name = "txtCelular"
+        Me.txtCelular.Size = New System.Drawing.Size(238, 25)
+        Me.txtCelular.TabIndex = 63
         '
         'txtCdDomicilio
         '
@@ -3609,23 +3333,23 @@ Partial Class frmEmpleados
         Me.buscar_ciudad.TabIndex = 61
         Me.buscar_ciudad.TabStop = False
         '
-        'foto
+        'pbFotoEmpleado
         '
-        Me.foto.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.foto.Image = Global.AdminEmpleados.My.Resources.Resources.photoNobody120
-        Me.foto.Location = New System.Drawing.Point(47, 87)
-        Me.foto.Name = "foto"
-        Me.foto.Size = New System.Drawing.Size(180, 200)
-        Me.foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.foto.TabIndex = 29
-        Me.foto.TabStop = False
+        Me.pbFotoEmpleado.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pbFotoEmpleado.Image = Global.AdminEmpleados.My.Resources.Resources.photoNobody120
+        Me.pbFotoEmpleado.Location = New System.Drawing.Point(47, 87)
+        Me.pbFotoEmpleado.Name = "pbFotoEmpleado"
+        Me.pbFotoEmpleado.Size = New System.Drawing.Size(180, 200)
+        Me.pbFotoEmpleado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbFotoEmpleado.TabIndex = 29
+        Me.pbFotoEmpleado.TabStop = False
         '
-        'cuidad
+        'txtCiudadCodigo
         '
-        Me.cuidad.Location = New System.Drawing.Point(750, 144)
-        Me.cuidad.Name = "cuidad"
-        Me.cuidad.Size = New System.Drawing.Size(1, 28)
-        Me.cuidad.TabIndex = 17
+        Me.txtCiudadCodigo.Location = New System.Drawing.Point(788, 132)
+        Me.txtCiudadCodigo.Name = "txtCiudadCodigo"
+        Me.txtCiudadCodigo.Size = New System.Drawing.Size(1, 28)
+        Me.txtCiudadCodigo.TabIndex = 17
         '
         'lbl_rfc
         '
@@ -3647,15 +3371,6 @@ Partial Class frmEmpleados
         Me.lbl_ss.TabIndex = 24
         Me.lbl_ss.Text = "# Seg. Social:"
         '
-        'CP
-        '
-        Me.CP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.CP.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CP.Location = New System.Drawing.Point(793, 258)
-        Me.CP.Name = "CP"
-        Me.CP.Size = New System.Drawing.Size(238, 25)
-        Me.CP.TabIndex = 33
-        '
         'LBL_CP
         '
         Me.LBL_CP.AutoSize = True
@@ -3666,35 +3381,35 @@ Partial Class frmEmpleados
         Me.LBL_CP.TabIndex = 32
         Me.LBL_CP.Text = "Codigo Postal:"
         '
-        'txt_CURP
+        'txtCURP
         '
-        Me.txt_CURP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_CURP.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_CURP.Location = New System.Drawing.Point(378, 164)
-        Me.txt_CURP.Name = "txt_CURP"
-        Me.txt_CURP.Size = New System.Drawing.Size(238, 25)
-        Me.txt_CURP.TabIndex = 19
+        Me.txtCURP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtCURP.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCURP.Location = New System.Drawing.Point(378, 164)
+        Me.txtCURP.Name = "txtCURP"
+        Me.txtCURP.Size = New System.Drawing.Size(238, 25)
+        Me.txtCURP.TabIndex = 19
         '
-        'cuidad2
+        'txtCiudad
         '
-        Me.cuidad2.Enabled = False
-        Me.cuidad2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cuidad2.Location = New System.Drawing.Point(793, 133)
-        Me.cuidad2.Name = "cuidad2"
-        Me.cuidad2.Size = New System.Drawing.Size(215, 25)
-        Me.cuidad2.TabIndex = 9
-        Me.cuidad2.TabStop = False
+        Me.txtCiudad.Enabled = False
+        Me.txtCiudad.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCiudad.Location = New System.Drawing.Point(793, 133)
+        Me.txtCiudad.Name = "txtCiudad"
+        Me.txtCiudad.Size = New System.Drawing.Size(215, 25)
+        Me.txtCiudad.TabIndex = 9
+        Me.txtCiudad.TabStop = False
         '
-        'EC
+        'cbEstadoCivil
         '
-        Me.EC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.EC.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EC.FormattingEnabled = True
-        Me.EC.Items.AddRange(New Object() {"SOLTERO", "CASADO", "DIVORCIADO", "VIUDO", "UNION LIBRE"})
-        Me.EC.Location = New System.Drawing.Point(378, 195)
-        Me.EC.Name = "EC"
-        Me.EC.Size = New System.Drawing.Size(238, 26)
-        Me.EC.TabIndex = 23
+        Me.cbEstadoCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbEstadoCivil.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbEstadoCivil.FormattingEnabled = True
+        Me.cbEstadoCivil.Items.AddRange(New Object() {"SOLTERO", "CASADO", "DIVORCIADO", "VIUDO", "UNION LIBRE"})
+        Me.cbEstadoCivil.Location = New System.Drawing.Point(378, 195)
+        Me.cbEstadoCivil.Name = "cbEstadoCivil"
+        Me.cbEstadoCivil.Size = New System.Drawing.Size(238, 26)
+        Me.cbEstadoCivil.TabIndex = 23
         '
         'Label92
         '
@@ -3706,25 +3421,16 @@ Partial Class frmEmpleados
         Me.Label92.TabIndex = 16
         Me.Label92.Text = "Cd. de Naci.:"
         '
-        'txt_SS
+        'cbNivelEducativo
         '
-        Me.txt_SS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SS.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SS.Location = New System.Drawing.Point(793, 196)
-        Me.txt_SS.Name = "txt_SS"
-        Me.txt_SS.Size = New System.Drawing.Size(238, 25)
-        Me.txt_SS.TabIndex = 25
-        '
-        'ddl_educacion
-        '
-        Me.ddl_educacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ddl_educacion.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ddl_educacion.FormattingEnabled = True
-        Me.ddl_educacion.Items.AddRange(New Object() {"PRIMARIA", "SECUNDARIA", "PREPARATOIA", "LICENCIATURA"})
-        Me.ddl_educacion.Location = New System.Drawing.Point(378, 320)
-        Me.ddl_educacion.Name = "ddl_educacion"
-        Me.ddl_educacion.Size = New System.Drawing.Size(238, 26)
-        Me.ddl_educacion.TabIndex = 39
+        Me.cbNivelEducativo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbNivelEducativo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbNivelEducativo.FormattingEnabled = True
+        Me.cbNivelEducativo.Items.AddRange(New Object() {"PRIMARIA", "SECUNDARIA", "PREPARATOIA", "LICENCIATURA"})
+        Me.cbNivelEducativo.Location = New System.Drawing.Point(378, 320)
+        Me.cbNivelEducativo.Name = "cbNivelEducativo"
+        Me.cbNivelEducativo.Size = New System.Drawing.Size(238, 26)
+        Me.cbNivelEducativo.TabIndex = 39
         '
         'Label54
         '
@@ -3756,14 +3462,14 @@ Partial Class frmEmpleados
         Me.Label1.TabIndex = 28
         Me.Label1.Text = "Colonia:"
         '
-        'colonia
+        'txtColonia
         '
-        Me.colonia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.colonia.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.colonia.Location = New System.Drawing.Point(793, 227)
-        Me.colonia.Name = "colonia"
-        Me.colonia.Size = New System.Drawing.Size(238, 25)
-        Me.colonia.TabIndex = 29
+        Me.txtColonia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtColonia.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtColonia.Location = New System.Drawing.Point(793, 227)
+        Me.txtColonia.Name = "txtColonia"
+        Me.txtColonia.Size = New System.Drawing.Size(238, 25)
+        Me.txtColonia.TabIndex = 29
         '
         'Label55
         '
@@ -3775,14 +3481,14 @@ Partial Class frmEmpleados
         Me.Label55.TabIndex = 34
         Me.Label55.Text = "# Telefono:"
         '
-        'domicilio
+        'txtDomicilio
         '
-        Me.domicilio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.domicilio.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.domicilio.Location = New System.Drawing.Point(378, 227)
-        Me.domicilio.Name = "domicilio"
-        Me.domicilio.Size = New System.Drawing.Size(238, 25)
-        Me.domicilio.TabIndex = 27
+        Me.txtDomicilio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtDomicilio.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDomicilio.Location = New System.Drawing.Point(378, 227)
+        Me.txtDomicilio.Name = "txtDomicilio"
+        Me.txtDomicilio.Size = New System.Drawing.Size(238, 25)
+        Me.txtDomicilio.TabIndex = 27
         '
         'Label2
         '
@@ -3794,23 +3500,14 @@ Partial Class frmEmpleados
         Me.Label2.TabIndex = 26
         Me.Label2.Text = "Domicilio:"
         '
-        'txt_RFC
+        'txtRFC
         '
-        Me.txt_RFC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_RFC.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_RFC.Location = New System.Drawing.Point(793, 164)
-        Me.txt_RFC.Name = "txt_RFC"
-        Me.txt_RFC.Size = New System.Drawing.Size(238, 25)
-        Me.txt_RFC.TabIndex = 21
-        '
-        'Celular
-        '
-        Me.Celular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.Celular.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Celular.Location = New System.Drawing.Point(793, 289)
-        Me.Celular.Name = "Celular"
-        Me.Celular.Size = New System.Drawing.Size(238, 25)
-        Me.Celular.TabIndex = 37
+        Me.txtRFC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtRFC.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRFC.Location = New System.Drawing.Point(793, 164)
+        Me.txtRFC.Name = "txtRFC"
+        Me.txtRFC.Size = New System.Drawing.Size(238, 25)
+        Me.txtRFC.TabIndex = 21
         '
         'Label4
         '
@@ -3832,15 +3529,6 @@ Partial Class frmEmpleados
         Me.lbl_sex.TabIndex = 8
         Me.lbl_sex.Text = "Sexo:"
         '
-        'txt_telefono
-        '
-        Me.txt_telefono.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_telefono.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_telefono.Location = New System.Drawing.Point(378, 289)
-        Me.txt_telefono.Name = "txt_telefono"
-        Me.txt_telefono.Size = New System.Drawing.Size(238, 25)
-        Me.txt_telefono.TabIndex = 35
-        '
         'LBL_ESTADOCIVIL
         '
         Me.LBL_ESTADOCIVIL.AutoSize = True
@@ -3861,14 +3549,14 @@ Partial Class frmEmpleados
         Me.lbl_fn.TabIndex = 10
         Me.lbl_fn.Text = "Fecha de Naci.:"
         '
-        'nacion
+        'txtNacionalidad
         '
-        Me.nacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.nacion.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nacion.Location = New System.Drawing.Point(793, 102)
-        Me.nacion.Name = "nacion"
-        Me.nacion.Size = New System.Drawing.Size(238, 25)
-        Me.nacion.TabIndex = 13
+        Me.txtNacionalidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNacionalidad.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNacionalidad.Location = New System.Drawing.Point(793, 102)
+        Me.txtNacionalidad.Name = "txtNacionalidad"
+        Me.txtNacionalidad.Size = New System.Drawing.Size(238, 25)
+        Me.txtNacionalidad.TabIndex = 13
         '
         'Label3
         '
@@ -3880,25 +3568,24 @@ Partial Class frmEmpleados
         Me.Label3.TabIndex = 12
         Me.Label3.Text = "Nacionalidad:"
         '
-        'txt_FECHA
+        'dtpFechaDeNacimiento
         '
-        Me.txt_FECHA.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_FECHA.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txt_FECHA.Location = New System.Drawing.Point(378, 102)
-        Me.txt_FECHA.Name = "txt_FECHA"
-        Me.txt_FECHA.Size = New System.Drawing.Size(238, 25)
-        Me.txt_FECHA.TabIndex = 11
+        Me.dtpFechaDeNacimiento.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpFechaDeNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaDeNacimiento.Location = New System.Drawing.Point(378, 102)
+        Me.dtpFechaDeNacimiento.Name = "dtpFechaDeNacimiento"
+        Me.dtpFechaDeNacimiento.Size = New System.Drawing.Size(238, 25)
+        Me.dtpFechaDeNacimiento.TabIndex = 11
         '
-        'CB_SEXO
+        'cbSexo
         '
-        Me.CB_SEXO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CB_SEXO.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CB_SEXO.FormattingEnabled = True
-        Me.CB_SEXO.Items.AddRange(New Object() {"FEMENINO", "MASCULINO"})
-        Me.CB_SEXO.Location = New System.Drawing.Point(793, 70)
-        Me.CB_SEXO.Name = "CB_SEXO"
-        Me.CB_SEXO.Size = New System.Drawing.Size(238, 26)
-        Me.CB_SEXO.TabIndex = 9
+        Me.cbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbSexo.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbSexo.FormattingEnabled = True
+        Me.cbSexo.Location = New System.Drawing.Point(793, 70)
+        Me.cbSexo.Name = "cbSexo"
+        Me.cbSexo.Size = New System.Drawing.Size(238, 26)
+        Me.cbSexo.TabIndex = 9
         '
         'lbl_nac
         '
@@ -3972,58 +3659,58 @@ Partial Class frmEmpleados
         Me.label12.TabIndex = 0
         Me.label12.Text = "Personales"
         '
-        'txt_EN2
+        'txtEntidad
         '
-        Me.txt_EN2.Enabled = False
-        Me.txt_EN2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_EN2.Location = New System.Drawing.Point(378, 133)
-        Me.txt_EN2.Name = "txt_EN2"
-        Me.txt_EN2.Size = New System.Drawing.Size(215, 25)
-        Me.txt_EN2.TabIndex = 15
-        Me.txt_EN2.TabStop = False
+        Me.txtEntidad.Enabled = False
+        Me.txtEntidad.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEntidad.Location = New System.Drawing.Point(378, 133)
+        Me.txtEntidad.Name = "txtEntidad"
+        Me.txtEntidad.Size = New System.Drawing.Size(215, 25)
+        Me.txtEntidad.TabIndex = 15
+        Me.txtEntidad.TabStop = False
         '
-        'txt_numero
+        'txtNumero
         '
-        Me.txt_numero.Enabled = False
-        Me.txt_numero.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_numero.Location = New System.Drawing.Point(115, 56)
-        Me.txt_numero.Name = "txt_numero"
-        Me.txt_numero.Size = New System.Drawing.Size(80, 25)
-        Me.txt_numero.TabIndex = 1
+        Me.txtNumero.Enabled = False
+        Me.txtNumero.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNumero.Location = New System.Drawing.Point(115, 56)
+        Me.txtNumero.Name = "txtNumero"
+        Me.txtNumero.Size = New System.Drawing.Size(80, 25)
+        Me.txtNumero.TabIndex = 1
         '
-        'txt_EN
+        'txtEntidadCodigo
         '
-        Me.txt_EN.Location = New System.Drawing.Point(380, 145)
-        Me.txt_EN.Name = "txt_EN"
-        Me.txt_EN.Size = New System.Drawing.Size(1, 28)
-        Me.txt_EN.TabIndex = 7
+        Me.txtEntidadCodigo.Location = New System.Drawing.Point(373, 133)
+        Me.txtEntidadCodigo.Name = "txtEntidadCodigo"
+        Me.txtEntidadCodigo.Size = New System.Drawing.Size(1, 28)
+        Me.txtEntidadCodigo.TabIndex = 7
         '
-        'txt_NOM
+        'txtNombres
         '
-        Me.txt_NOM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_NOM.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_NOM.Location = New System.Drawing.Point(378, 40)
-        Me.txt_NOM.Name = "txt_NOM"
-        Me.txt_NOM.Size = New System.Drawing.Size(238, 25)
-        Me.txt_NOM.TabIndex = 3
+        Me.txtNombres.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNombres.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombres.Location = New System.Drawing.Point(378, 40)
+        Me.txtNombres.Name = "txtNombres"
+        Me.txtNombres.Size = New System.Drawing.Size(238, 25)
+        Me.txtNombres.TabIndex = 3
         '
-        'txt_AM
+        'txtAMaterno
         '
-        Me.txt_AM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_AM.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_AM.Location = New System.Drawing.Point(378, 71)
-        Me.txt_AM.Name = "txt_AM"
-        Me.txt_AM.Size = New System.Drawing.Size(238, 25)
-        Me.txt_AM.TabIndex = 7
+        Me.txtAMaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtAMaterno.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAMaterno.Location = New System.Drawing.Point(378, 71)
+        Me.txtAMaterno.Name = "txtAMaterno"
+        Me.txtAMaterno.Size = New System.Drawing.Size(238, 25)
+        Me.txtAMaterno.TabIndex = 7
         '
-        'txt_AP
+        'txtAPaterno
         '
-        Me.txt_AP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_AP.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_AP.Location = New System.Drawing.Point(793, 40)
-        Me.txt_AP.Name = "txt_AP"
-        Me.txt_AP.Size = New System.Drawing.Size(238, 25)
-        Me.txt_AP.TabIndex = 5
+        Me.txtAPaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtAPaterno.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAPaterno.Location = New System.Drawing.Point(793, 40)
+        Me.txtAPaterno.Name = "txtAPaterno"
+        Me.txtAPaterno.Size = New System.Drawing.Size(238, 25)
+        Me.txtAPaterno.TabIndex = 5
         '
         'buscar_EN
         '
@@ -4098,14 +3785,34 @@ Partial Class frmEmpleados
         '
         Me.datosFamiliaBindingSource.DataMember = "Datos_Familia"
         '
-        'Empleados
+        'btnEnELiminar
+        '
+        Me.btnEnELiminar.FillWeight = 18.13706!
+        Me.btnEnELiminar.HeaderText = ""
+        Me.btnEnELiminar.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
+        Me.btnEnELiminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.btnEnELiminar.Name = "btnEnELiminar"
+        Me.btnEnELiminar.Width = 48
+        '
+        'ID_Enf
+        '
+        Me.ID_Enf.DataPropertyName = "ID_Enf"
+        Me.ID_Enf.HeaderText = "ID"
+        Me.ID_Enf.Name = "ID_Enf"
+        Me.ID_Enf.Visible = False
+        '
+        'EmpleadoBindingSource
+        '
+        Me.EmpleadoBindingSource.DataSource = GetType(AdminEmpleados.Empleado)
+        '
+        'frmEmpleados
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.ClientSize = New System.Drawing.Size(1078, 629)
         Me.Controls.Add(Me.MenuEmp)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.Name = "Empleados"
+        Me.Name = "frmEmpleados"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Tam_Es.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
@@ -4158,7 +3865,7 @@ Partial Class frmEmpleados
         Me.panel20.ResumeLayout(False)
         Me.panel20.PerformLayout()
         Me.Panel8.ResumeLayout(False)
-        CType(Me.dgv_Enf, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvEnfermedades, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel21.ResumeLayout(False)
         Me.panel21.PerformLayout()
         CType(Me.btn_enfADD, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4166,7 +3873,7 @@ Partial Class frmEmpleados
         Me.panel18.ResumeLayout(False)
         Me.panel18.PerformLayout()
         Me.PnlContacto.ResumeLayout(False)
-        CType(Me.dgv_contacto, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvContactos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel19.ResumeLayout(False)
         Me.panel19.PerformLayout()
         CType(Me.btn_conADD, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4174,7 +3881,7 @@ Partial Class frmEmpleados
         Me.panel16.ResumeLayout(False)
         Me.panel16.PerformLayout()
         Me.pnlAntecedentes.ResumeLayout(False)
-        CType(Me.dgv_ant, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvAntecedentesLaborales, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel17.ResumeLayout(False)
         Me.panel17.PerformLayout()
         CType(Me.btn_antSave, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4182,7 +3889,7 @@ Partial Class frmEmpleados
         Me.panel3.ResumeLayout(False)
         Me.panel3.PerformLayout()
         Me.PnlOffsprings.ResumeLayout(False)
-        CType(Me.dgv_Hijos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvHijos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel5.ResumeLayout(False)
         Me.panel5.PerformLayout()
         CType(Me.btn_hijoADD, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4191,7 +3898,7 @@ Partial Class frmEmpleados
         Me.panel4.ResumeLayout(False)
         Me.panel4.PerformLayout()
         CType(Me.btn_esSAVE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgv_esposa, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvEsposa, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Tab_DP.ResumeLayout(False)
         Me.pnl_estatus.ResumeLayout(False)
         Me.pnl_estatus.PerformLayout()
@@ -4212,7 +3919,7 @@ Partial Class frmEmpleados
         Me.pnl_per.PerformLayout()
         CType(Me.PbSearchEmployee, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_ciudad, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.foto, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbFotoEmpleado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel7.ResumeLayout(False)
         Me.panel7.PerformLayout()
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4220,6 +3927,7 @@ Partial Class frmEmpleados
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuEmp.ResumeLayout(False)
         CType(Me.datosFamiliaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmpleadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -4230,7 +3938,7 @@ Partial Class frmEmpleados
     Friend WithEvents Tam_Es As TabPage
     Private WithEvents Tab_Enfer As TabPage
     Private WithEvents panel20 As Panel
-    Private WithEvents dgv_Enf As DataGridView
+    Private WithEvents dgvEnfermedades As DataGridView
     Friend WithEvents txt_enfNAME As TextBox
     Friend WithEvents label47 As Label
     Private WithEvents panel21 As Panel
@@ -4238,14 +3946,13 @@ Partial Class frmEmpleados
     Private WithEvents Tab_Cont As TabPage
     Private WithEvents Tab_AL As TabPage
     Private WithEvents panel16 As Panel
-    Friend WithEvents dgv_ant As DataGridView
+    Friend WithEvents dgvAntecedentesLaborales As DataGridView
     Friend WithEvents txt_antMT As TextBox
     Friend WithEvents txt_antNAME As TextBox
     Friend WithEvents txt_antTEL As TextBox
     Friend WithEvents label37 As Label
     Friend WithEvents label38 As Label
     Friend WithEvents label39 As Label
-    Friend WithEvents txt_antSALARIO As TextBox
     Friend WithEvents txt_antCARGO As TextBox
     Friend WithEvents txt_antEMP As TextBox
     Friend WithEvents label34 As Label
@@ -4261,7 +3968,7 @@ Partial Class frmEmpleados
     Private WithEvents panel4 As Panel
     Private WithEvents label10 As Label
     Private WithEvents panel3 As Panel
-    Private WithEvents dgv_Hijos As DataGridView
+    Private WithEvents dgvHijos As DataGridView
     Friend WithEvents label26 As Label
     Friend WithEvents txt_hijoFN As DateTimePicker
     Friend WithEvents label27 As Label
@@ -4270,13 +3977,13 @@ Partial Class frmEmpleados
     Friend WithEvents txt_hijoAP As TextBox
     Friend WithEvents label28 As Label
     Friend WithEvents label29 As Label
-    Friend WithEvents txt_hijoSEXO As ComboBox
+    Friend WithEvents cbHijosSexo As ComboBox
     Friend WithEvents label30 As Label
     Friend WithEvents label31 As Label
     Private WithEvents panel5 As Panel
     Private WithEvents label11 As Label
     Private WithEvents panel2 As Panel
-    Private WithEvents dgv_esposa As DataGridView
+    Private WithEvents dgvEsposa As DataGridView
     Friend WithEvents label25 As Label
     Friend WithEvents txt_esNacion As TextBox
     Friend WithEvents txt_esFN As DateTimePicker
@@ -4286,7 +3993,7 @@ Partial Class frmEmpleados
     Friend WithEvents txt_esAP As TextBox
     Friend WithEvents label20 As Label
     Friend WithEvents label21 As Label
-    Friend WithEvents cb_esSexo As ComboBox
+    Friend WithEvents cbConyugeSexo As ComboBox
     Friend WithEvents label22 As Label
     Friend WithEvents label23 As Label
     Private WithEvents Tab_DP As TabPage
@@ -4304,46 +4011,41 @@ Partial Class frmEmpleados
     Friend WithEvents txt_baja As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents foto As PictureBox
+    Friend WithEvents pbFotoEmpleado As PictureBox
     Private WithEvents pnl_per As Panel
     Friend WithEvents buscar_ciudad As PictureBox
-    Friend WithEvents cuidad As TextBox
-    Friend WithEvents cuidad2 As TextBox
+    Friend WithEvents txtCiudadCodigo As TextBox
+    Friend WithEvents txtCiudad As TextBox
     Friend WithEvents Label92 As Label
-    Friend WithEvents EC As ComboBox
+    Friend WithEvents cbEstadoCivil As ComboBox
     Friend WithEvents Label55 As Label
-    Friend WithEvents txt_telefono As TextBox
-    Friend WithEvents ddl_educacion As ComboBox
+    Friend WithEvents cbNivelEducativo As ComboBox
     Friend WithEvents Label54 As Label
     Friend WithEvents buscar_EN As PictureBox
     Private WithEvents panel7 As Panel
     Private WithEvents label12 As Label
     Friend WithEvents LBL_CP As Label
-    Friend WithEvents txt_numero As TextBox
-    Friend WithEvents CP As TextBox
-    Friend WithEvents txt_NOM As TextBox
+    Friend WithEvents txtNumero As TextBox
+    Friend WithEvents txtNombres As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents txt_AM As TextBox
+    Friend WithEvents txtAMaterno As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents txt_AP As TextBox
+    Friend WithEvents txtAPaterno As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents txt_EN As TextBox
+    Friend WithEvents txtEntidadCodigo As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents colonia As TextBox
-    Friend WithEvents txt_RFC As TextBox
-    Friend WithEvents domicilio As TextBox
-    Friend WithEvents txt_SS As TextBox
-    Friend WithEvents Celular As TextBox
-    Friend WithEvents nacion As TextBox
-    Friend WithEvents txt_CURP As TextBox
+    Friend WithEvents txtColonia As TextBox
+    Friend WithEvents txtRFC As TextBox
+    Friend WithEvents txtDomicilio As TextBox
+    Friend WithEvents txtCURP As TextBox
     Friend WithEvents lbl_num As Label
     Friend WithEvents LBL_ESTADOCIVIL As Label
     Friend WithEvents lbl_ap As Label
-    Friend WithEvents txt_FECHA As DateTimePicker
+    Friend WithEvents dtpFechaDeNacimiento As DateTimePicker
     Friend WithEvents lbl_am As Label
-    Friend WithEvents CB_SEXO As ComboBox
+    Friend WithEvents cbSexo As ComboBox
     Friend WithEvents lbl_nom As Label
-    Friend WithEvents txt_EN2 As TextBox
+    Friend WithEvents txtEntidad As TextBox
     Friend WithEvents lbl_sex As Label
     Friend WithEvents lbl_curp As Label
     Friend WithEvents lbl_fn As Label
@@ -4355,13 +4057,11 @@ Partial Class frmEmpleados
     Friend WithEvents btn_hijoADD As PictureBox
     Private WithEvents panel18 As Panel
     Friend WithEvents btn_conADD As PictureBox
-    Private WithEvents dgv_contacto As DataGridView
+    Private WithEvents dgvContactos As DataGridView
     Friend WithEvents label45 As Label
     Friend WithEvents txt_conPAREN As TextBox
     Friend WithEvents label41 As Label
-    Friend WithEvents txt_conCEL As TextBox
     Friend WithEvents label40 As Label
-    Friend WithEvents txt_conTEL As TextBox
     Friend WithEvents txt_conNAME As TextBox
     Friend WithEvents txt_conAM As TextBox
     Friend WithEvents txt_conAP As TextBox
@@ -4495,28 +4195,27 @@ Partial Class frmEmpleados
     Private WithEvents Label5 As Label
     Private WithEvents pnl_cont As Panel
     Friend WithEvents buscar_depto As PictureBox
-    Friend WithEvents depto As TextBox
-    Friend WithEvents depto2 As TextBox
+    Friend WithEvents txtDeptoCodigo As TextBox
+    Friend WithEvents txtDepto As TextBox
     Friend WithEvents Buscar_PUESTO As PictureBox
     Private WithEvents panel11 As Panel
     Private WithEvents label14 As Label
     Friend WithEvents Buscar_tipo As PictureBox
     Friend WithEvents lbl_ingreso As Label
-    Friend WithEvents Txt_correo As TextBox
+    Friend WithEvents txtCorreo As TextBox
     Friend WithEvents lbl_clase As Label
-    Friend WithEvents txt_tipo2 As TextBox
+    Friend WithEvents txtTipo As TextBox
     Friend WithEvents lbl_super As Label
     Friend WithEvents correo As Label
-    Friend WithEvents txt_SALARY As TextBox
     Friend WithEvents lbl_puesto As Label
-    Friend WithEvents txt_tipo As TextBox
+    Friend WithEvents txtTipoCodigo As TextBox
     Friend WithEvents lbl_sali As Label
-    Friend WithEvents txt_FECHAINGRESO As DateTimePicker
+    Friend WithEvents dtpFechaDeIngreso As DateTimePicker
     Friend WithEvents Buscar_Super As PictureBox
-    Friend WithEvents txt_PUESTO As TextBox
-    Friend WithEvents txt_PUESTO2 As TextBox
-    Friend WithEvents txt_SUPER2 As TextBox
-    Friend WithEvents txt_SUPER As TextBox
+    Friend WithEvents txtPuestoCodigo As TextBox
+    Friend WithEvents txtPuesto As TextBox
+    Friend WithEvents txtSupervisor As TextBox
+    Friend WithEvents txtSupervisorCodigo As TextBox
     Friend WithEvents lbl_depto As Label
     Friend WithEvents btnEReferencia As DataGridViewImageColumn
     Friend WithEvents REID As DataGridViewTextBoxColumn
@@ -4530,46 +4229,18 @@ Partial Class frmEmpleados
     Friend WithEvents CANTIDAD As DataGridViewTextBoxColumn
     Friend WithEvents btnEnELiminar As DataGridViewImageColumn
     Friend WithEvents ID_Enf As DataGridViewTextBoxColumn
-    Friend WithEvents Text As DataGridViewTextBoxColumn
-    Friend WithEvents btnCOEliminar As DataGridViewImageColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
-    Friend WithEvents Column9 As DataGridViewTextBoxColumn
-    Friend WithEvents Column10 As DataGridViewTextBoxColumn
-    Friend WithEvents btnAEliminar As DataGridViewImageColumn
-    Friend WithEvents ID_Ant As DataGridViewTextBoxColumn
-    Friend WithEvents ID__Emp As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_FInicio As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_FFin As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_NEmpresa As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Cargo As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Salario As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Tel As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Motivo As DataGridViewTextBoxColumn
-    Friend WithEvents Ant_Contacto As DataGridViewTextBoxColumn
+    Friend WithEvents EmpleadoBindingSource As BindingSource
     Friend WithEvents btnHEliminar As DataGridViewImageColumn
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
     Friend WithEvents btnCEliminar As DataGridViewImageColumn
-    Friend WithEvents ID_Persona As DataGridViewTextBoxColumn
-    Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_Tipo As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_APat As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_AMat As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_Nacion As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_FNac As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_Genero As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_EdoCivil As DataGridViewTextBoxColumn
+    Friend WithEvents btnAEliminar As DataGridViewImageColumn
+    Friend WithEvents btnCOEliminar As DataGridViewImageColumn
+    Friend WithEvents txtSalario As NumericTextbox
+    Friend WithEvents txt_antSALARIO As NumericTextbox
+    Friend WithEvents txtCelular As NumericTextbox
+    Friend WithEvents txt_conCEL As NumericTextbox
+    Friend WithEvents txt_conTEL As NumericTextbox
+    Friend WithEvents txtNSS As NumericTextbox
+    Friend WithEvents txtNacionalidad As TextBox
+    Friend WithEvents txtCodigoPostal As NumericTextbox
+    Friend WithEvents txtTelefono As NumericTextbox
 End Class

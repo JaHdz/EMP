@@ -8,7 +8,7 @@ Public Class Equipo
     Public Property Nombre As String = String.Empty
     Public Property Descripcion As String = String.Empty
     Public Property Costo As New Decimal
-    Public Property EstaActivo As Boolean = 1
+    Public Property EstaActivo As Boolean = True
     Public Property Departamento As New Integer
 #End Region
 
@@ -27,8 +27,9 @@ Public Class Equipo
         Departamento = liDepartamento
     End Sub
 
-    Public Function CargarListado(Optional FiltrarInactivos As Boolean = False) As List(Of Equipo)
-        Dim Result As New List(Of Equipo)
+    Public Function CargarListado(Optional FiltrarInactivos As Boolean = False) As List(Of Vista)
+        Dim Result As New List(Of Vista)
+        Dim listado As New List(Of Equipo)
         Using con As New SqlConnection(ConnectionString())
             con.Open()
             Dim cmd As New SqlCommand("UDSP_EQUIPMENT", con) With {.CommandType = CommandType.StoredProcedure}
@@ -41,18 +42,20 @@ Public Class Equipo
             cmd.Parameters.Add(New SqlParameter("@OPTION", Operacion.BuscarTodos))
             Using Reader As SqlDataReader = cmd.ExecuteReader()
                 While Reader.Read()
-                    Dim loEquipo As New Equipo(Reader("ID_EQUIPO"), Reader("NOMBRE"), Reader("DESCRIPCION"), Reader("COSTO"), Reader("ESTATUS"), Reader("COSTO"))
-                    Result.Add(loEquipo)
+                    Dim loEquipo As New Equipo(Reader("ID_EQUIPO"), Reader("NOMBRE"), Reader("DESCRIPCION"), Reader("COSTO"), Reader("ESTATUS"), Reader("ID_DEPTO"))
+                    listado.Add(loEquipo)
                 End While
             End Using
         End Using
         If FiltrarInactivos = True Then
-            Result = Result.FindAll(Function(X) X.EstaActivo = True)
+            Result = New Vista().GenerarVista(listado.FindAll(Function(X) X.EstaActivo = FiltrarInactivos))
+        Else
+            Result = New Vista().GenerarVista(listado)
         End If
         Return Result
     End Function
 
-    Public Function Registrar(ByRef Listado As List(Of Equipo)) As Boolean
+    Public Function Registrar(ByRef Listado As List(Of Vista)) As Boolean
         Dim Result As Boolean = False
         Dim Mensaje = String.Empty
         Dim IconoDeMensaje As MessageBoxIcon
@@ -91,7 +94,7 @@ Public Class Equipo
         Return Result
     End Function
 
-    Public Function Actualizar(ByRef Listado As List(Of Equipo)) As Boolean
+    Public Function Actualizar(ByRef Listado As List(Of Vista)) As Boolean
         Dim Result As Boolean = False
         Using con As New SqlConnection(ConnectionString())
             con.Open()
@@ -110,7 +113,7 @@ Public Class Equipo
         Return Result
     End Function
 
-    Private Function VerificarExistencia(ByRef Listado As List(Of Equipo)) As Boolean
+    Private Function VerificarExistencia(ByRef Listado As List(Of Vista)) As Boolean
         Dim Result As Boolean = Listado.Any(Function(X) X.Nombre = Nombre And X.Departamento = Departamento)
         Return Result
     End Function
@@ -138,5 +141,41 @@ Public Class Equipo
         Return Result
     End Function
 #End Region
+    Public Class Vista
+#Region "Propiedades"
+        Public Property EstaActivo As Boolean = True
+        <Browsable(False)>
+        Public Property ID As New Integer
+        Public Property Nombre As String = String.Empty
+        Public Property Descripcion As String = String.Empty
+        Public Property Costo As New Decimal
+        <Browsable(False)>
+        Public Property DepartamentoID As New Integer
+        Public Property Departamento As String = String.Empty
+
+        Public Sub New()
+            MyBase.New()
+        End Sub
+
+        Public Sub New(ByVal EvalEquipo As Equipo)
+            EstaActivo = EvalEquipo.EstaActivo
+            ID = EvalEquipo.ID
+            Nombre = EvalEquipo.Nombre
+            Descripcion = EvalEquipo.Descripcion
+            Costo = EvalEquipo.Costo
+            DepartamentoID = EvalEquipo.Departamento
+            Dim Dpto = New Departamento().Buscar(DepartamentoID)
+            Departamento = Dpto.Descripcion
+        End Sub
+
+        Public Function GenerarVista(ByVal Listado As List(Of Equipo)) As List(Of Vista)
+            Dim Resultado As New List(Of Vista)
+            For Each Eval In Listado
+                Resultado.Add(New Vista(Eval))
+            Next
+            Return Resultado
+        End Function
+#End Region
+    End Class
 End Class
 

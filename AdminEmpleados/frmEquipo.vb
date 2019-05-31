@@ -1,164 +1,88 @@
-﻿Public Class frmEquipo
-
-    Dim objcon As New Consultas
-    Dim V1 As String
-    Dim V2 As String
-    Dim NEmp As Integer
-    Public Sub llenar_buscador(tipo As String)
-        Dim popup As New FrmPopUp(tipo)
-        Dim dialogresult__1 As DialogResult = popup.ShowDialog()
-        'V1 = popup.Variable
-        'V2 = popup.Variable2
+﻿Public Class FrmEquipo
+    Dim Resultado As Object
+    Dim loEmpleado As New Empleado.Vista()
+    Dim loEquipoAsignado As New List(Of EquipoAsignado)
+    Public Sub Llenar_buscador(tipo As String)
+        Dim popup As New frmPopUpCatalogo(tipo)
+        Dim dialogresult As DialogResult = popup.ShowDialog()
+        Resultado = popup.Result
         popup.Close()
     End Sub
-    Private Sub txt_numero_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_numero.KeyPress
-        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
-    End Sub
-    Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
-        pnl_comen.Visible = False
-        If (txt_numero.Text <> "") Then
-            NEmp = Convert.ToInt16(objcon.Emp_Exist(txt_numero.Text))
-            If (NEmp > 0) Then
-                Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", txt_numero.Text}}
-                Dim Wait As New frmWait With {
-                .Parameters = ldParameters,
-                .Operation = BackgroundOperations.GetEmployeeInfo
-            }
-                Wait.ShowDialog()
-                Dim Result As Cls_Emp = Wait.Result
-                Wait.Close()
-                lbl_emp.Text = txt_numero.Text + " | " + Result.Emp_Name + " " + Result.Emp_APat + " " + Result.Emp_AMat
-                dgv_equipo_emp.DataSource = objcon.Consulta_EAsignado(txt_numero.Text)
-            Else
-                MessageBox.Show("Numero de empleado no existe")
-                txt_numero.Text = ""
-                lbl_emp.Text = ""
-            End If
-        End If
-        pnl_comen.Visible = False
-        TXT_commen.Text = ""
+
+    Public Sub ComentarioPopUp()
+        Dim popup As New frmPopUpComentario()
+        Dim dialogresult As DialogResult = popup.ShowDialog()
+        Resultado = popup.Result
+        popup.Close()
     End Sub
 
-    Private Sub buscar_EN_Click(sender As Object, e As EventArgs) Handles buscar_EN.Click
-        llenar_buscador("EMP")
-        If (V1 <> "" And V2 <> "") Then
-            txt_numero.Focus()
-        Else
-            txt_numero.Focus()
-        End If
-        txt_numero.Text = V1
-    End Sub
-
-    Private Sub Eq_Leave(sender As Object, e As EventArgs) Handles Eq.Leave
-        If (Eq.Text <> "") Then
-            V2 = objcon.S_catalago(Eq.Text, "EQ")
-            If (V2 = "" Or V2 Is Nothing) Then
-                MessageBox.Show("No existe")
-                Eq.Text = ""
-                Eq.Focus()
-            Else
-                eq2.Text = V2
-            End If
+    Private Sub Buscar_EN_Click(sender As Object, e As EventArgs) Handles buscar_EN.Click
+        Llenar_buscador(BuscarPor.Empleado)
+        dim loEmpleado = CType(Resultado, Empleado.Vista)
+        If loEmpleado IsNot Nothing Then
+            txtEmpleadoNumero.Text = loEmpleado.ID.ToString()
+            txtEmpleadoNombre.Text = String.Concat(loEmpleado.Nombre, " ", loEmpleado.ApellidoPaterno, " ", loEmpleado.ApellidoMaterno)
+            dgvEquipoEmp.DataSource = New EquipoAsignado().CargarListado(txtEmpleadoNumero.Text, True)
+            pb_Report.Visible = True
         End If
     End Sub
 
-    Private Sub buscar_eq_Click(sender As Object, e As EventArgs) Handles buscar_eq.Click
-        llenar_buscador("EQ")
-        If (V1 <> "" And V2 <> "") Then
-            Eq.Focus()
-        Else
-            Eq.Focus()
+    Private Sub Buscar_eq_Click(sender As Object, e As EventArgs) Handles buscar_eq.Click
+        Llenar_buscador(BuscarPor.Equipo)
+        Dim Equipo As Equipo.Vista = CType(Resultado, Equipo.Vista)
+        If Equipo IsNot Nothing Then
+            txtEquipoNumero.Text = Equipo.ID.ToString()
+            txtEquipoNombre.Text = Equipo.Nombre + " : " + Equipo.Descripcion
         End If
-        Eq.Text = V1
-        eq2.Text = V2
     End Sub
 
-    Private Sub SAVE_Click(sender As Object, e As EventArgs) Handles SAVE.Click
-        If (Eq.Text <> "" Or txt_numero.Text <> "") Then
-            If objcon.Add_EQUIPMENT_ASSIGNED(0, Eq.Text, txt_numero.Text, TXT_FECHA.Text, 0, "01/01/1900", UsuarioLogeado.Nombre, TXT_commen.Text) = True Then
-            Else
-                MessageBox.Show("Este registro ya Existe.")
-            End If
-            dgv_equipo_emp.DataSource = objcon.Consulta_EAsignado(txt_numero.Text)
-            txt_numero.Text = ""
-            Eq.Text = ""
-            eq2.Text = ""
-            TXT_FECHA.Text = ""
+    Private Sub Save_Click(sender As Object, e As EventArgs) Handles SAVE.Click
+        Dim EquipoAsignado As New EquipoAsignado(0, txtEquipoNumero.Text, txtEmpleadoNumero.Text, TXT_FECHA.Value, False, "1753-01-01", TXT_commen.Text,
+                                                 UsuarioLogeado.ID)
+        If EquipoAsignado.Registrar(dgvEquipoEmp.DataSource) Then
+            dgvEquipoEmp.Refresh()
+            txtEquipoNombre.Text = ""
+            txtEquipoNumero.Text = ""
             TXT_commen.Text = ""
-            lbl_emp.Text = ""
-            txt_numero.Focus()
-            pnl_comen.Visible = False
+            TXT_FECHA.ResetText()
         End If
     End Sub
 
-    Private Sub CANCEL_Click(sender As Object, e As EventArgs) Handles CANCEL.Click
-        txt_numero.Text = ""
+    Private Sub Cancel_Click(sender As Object, e As EventArgs) Handles CANCEL.Click
+        txtEmpleadoNumero.Text = ""
+        txtEmpleadoNombre.Text = ""
         TXT_FECHA.ResetText()
-        Eq.Text = ""
-        eq2.Text = ""
+        txtEquipoNumero.Text = ""
+        txtEquipoNombre.Text = ""
         TXT_commen.Text = ""
-        dgv_equipo_emp.DataSource = Nothing
+        loEmpleado = Nothing
+        pb_Report.Visible = False
+        dgvEquipoEmp.DataSource = Nothing
     End Sub
 
-    Private Sub Equipo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TXT_FECHA.Text = Date.Now.ToShortDateString
-    End Sub
-
-    Private Sub dgv_equipo_emp_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_equipo_emp.CellClick
-        Dim Id As Integer
-        Dim gr As New DataGridView
-        gr = sender
-        If e.RowIndex <> -1 Then
-            Select Case e.ColumnIndex
-                Case Is > -1
-                    Select Case gr.Columns(e.ColumnIndex).Name
-                        Case "UPDATE"
-                            If MessageBox.Show("Seguro que desea regresar el equipo?", "Regresar Equipo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                Id = dgv_equipo_emp.Rows(e.RowIndex).Cells(3).Value
-                                If dgv_equipo_emp.Rows(e.RowIndex).Cells(5).Value.ToString = "False" Then
-                                    If objcon.Add_EQUIPMENT_ASSIGNED(dgv_equipo_emp.Rows(e.RowIndex).Cells(1).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(2).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(3).Value, dgv_equipo_emp.Rows(e.RowIndex).Cells(4).Value, True, Date.Now, dgv_equipo_emp.Rows(e.RowIndex).Cells(8).Value, TXT_commen.Text) = True Then
-                                    Else
-                                        MessageBox.Show("Este registro ya Existe.")
-                                    End If
-                                End If
-                            End If
-                    End Select
-            End Select
-            Dim dt As New DataTable
-            If txt_numero.Text <> "" Then
-                dt = objcon.Consulta_EAsignado(txt_numero.Text)
-            Else
-                dt = objcon.Consulta_EAsignado(Id)
-            End If
-            dgv_equipo_emp.DataSource = dt
-        End If
-    End Sub
-
-    Private Sub pb_Report_Click(sender As Object, e As EventArgs) Handles pb_Report.Click
-        If txt_numero.Text <> "" Then
-            If pnl_comen.Visible = True Then
-                If TXT_commen.Text = "" Then
+    Private Sub DgvEquipoEmp_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEquipoEmp.CellClick
+        If e.ColumnIndex = 0 Then
+            If MessageBox.Show("Esta a punto de dar de baja una capacitación, ¿Esta seguro que desea continuar?", "Desactivar capacitación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+                Dim Vista As EquipoAsignado.Vista = CType(dgvEquipoEmp.CurrentRow.DataBoundItem, EquipoAsignado.Vista)
+                Dim EquipoAsignado = New EquipoAsignado(Vista.ID, Vista.EquipoID, Vista.Empleado, Vista.Fecha, True, Now(), Vista.Comentario, UsuarioLogeado.ID)
+                ComentarioPopUp()
+                Dim loResultado = CType(Resultado, String)
+                If Not String.IsNullOrWhiteSpace(loResultado) Then
+                    If EquipoAsignado.Actualizar(dgvEquipoEmp.DataSource) Then
+                        dgvEquipoEmp.Refresh()
+                        Dim Observacion As New EquipoObservacion(0, Vista.Empleado, loResultado, Today())
+                        Observacion.Registrar()
+                    End If
                 Else
-                    objcon.Add_commen(txt_numero.Text, TXT_commen.Text)
+                    MessageBox.Show("Se debe escribir un comentario con las observaciones del equipo retornado", "Observaciones", MessageBoxButtons.OK)
                 End If
-                Dim Wait As New frmWait()
-                Wait.Operation = BackgroundOperations.JustShowScreen
-                Wait.ShowDialog()
-                Dim Reportes As New frmReportes With {
-                    .ReportOption = ReportOptions.AssignedEquipment,
-                    .Emp = Convert.ToInt64(txt_numero.Text),
-                    .User = UsuarioLogeado.Nombre
-                }
-                Reportes.ShowDialog()
-
-                pnl_comen.Visible = False
-                TXT_commen.Text = ""
-            Else
-                pnl_comen.Visible = True
-                MessageBox.Show("Ingrese un commentario.")
             End If
         End If
     End Sub
 
-
+    Private Sub Pb_Report_Click(sender As Object, e As EventArgs) Handles pb_Report.Click
+        Dim Parametros As New Dictionary(Of String, Object) From {{"Empleado", loEmpleado}, {"Equipo", New EquipoAsignado().CargarListado(loEmpleado.ID, True)}}
+        Dim Reporte As New FrmReportes(Parametros, ReportOptions.AssignedEquipment)
+        Reporte.ShowDialog()
+    End Sub
 End Class

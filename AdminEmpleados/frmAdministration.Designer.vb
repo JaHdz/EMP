@@ -28,7 +28,6 @@ Partial Class frmAdministration
         Me.pnl_per = New System.Windows.Forms.Panel()
         Me.txtEmpleado = New System.Windows.Forms.TextBox()
         Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
-        Me.UPDATE = New System.Windows.Forms.DataGridViewImageColumn()
         Me.txt_pass2 = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txt_pass = New System.Windows.Forms.TextBox()
@@ -142,6 +141,7 @@ Partial Class frmAdministration
         Me.Label42 = New System.Windows.Forms.Label()
         Me.pb_saveTE = New System.Windows.Forms.PictureBox()
         Me.pb_cancelTE = New System.Windows.Forms.PictureBox()
+        Me.EliminarUsuario = New System.Windows.Forms.DataGridViewImageColumn()
         Me.tab_admin.SuspendLayout()
         Me.tab_users.SuspendLayout()
         Me.pnl_per.SuspendLayout()
@@ -276,7 +276,7 @@ Partial Class frmAdministration
         Me.dgvUsuarios.AllowUserToDeleteRows = False
         Me.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATE})
+        Me.dgvUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.EliminarUsuario})
         Me.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.dgvUsuarios.Location = New System.Drawing.Point(0, 327)
         Me.dgvUsuarios.Name = "dgvUsuarios"
@@ -285,14 +285,6 @@ Partial Class frmAdministration
         Me.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvUsuarios.Size = New System.Drawing.Size(1062, 333)
         Me.dgvUsuarios.TabIndex = 72
-        '
-        'UPDATE
-        '
-        Me.UPDATE.HeaderText = "Baja"
-        Me.UPDATE.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
-        Me.UPDATE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.UPDATE.Name = "UPDATE"
-        Me.UPDATE.ReadOnly = True
         '
         'txt_pass2
         '
@@ -1590,6 +1582,14 @@ Partial Class frmAdministration
         Me.pb_cancelTE.TabIndex = 93
         Me.pb_cancelTE.TabStop = False
         '
+        'EliminarUsuario
+        '
+        Me.EliminarUsuario.HeaderText = "Baja"
+        Me.EliminarUsuario.Image = Global.AdminEmpleados.My.Resources.Resources.Baja_80px
+        Me.EliminarUsuario.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.EliminarUsuario.Name = "EliminarUsuario"
+        Me.EliminarUsuario.ReadOnly = True
+        '
         'frmAdministration
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -1789,7 +1789,6 @@ Partial Class frmAdministration
     Friend WithEvents Label1 As Label
     Friend WithEvents lblDpto As Label
     Friend WithEvents txtEmpleado As TextBox
-    Friend WithEvents UPDATE As DataGridViewImageColumn
     Friend WithEvents UPDATEPU As DataGridViewImageColumn
     Friend WithEvents UPDATETE As DataGridViewImageColumn
     Friend WithEvents UPDATESU As DataGridViewImageColumn
@@ -1799,4 +1798,5 @@ Partial Class frmAdministration
     Friend WithEvents UPDATEE As DataGridViewImageColumn
     Friend WithEvents UPDATEC As DataGridViewImageColumn
     Friend WithEvents UPDATED As DataGridViewImageColumn
+    Friend WithEvents EliminarUsuario As DataGridViewImageColumn
 End Class

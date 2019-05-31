@@ -1,34 +1,48 @@
 ﻿Imports Microsoft.Reporting.WinForms
 
-Public Class frmReportes
+Public Class FrmReportes
     Private bit As Boolean
     Private X As Integer
     Private Y As Integer
-    Public ReportOption As Integer
-    Public Emp As Integer
-    Public User As String
+    Private liOpcion As ReportOptions
+    Private loParametros As Dictionary(Of String, Object)
+    Public Sub New(ByVal Parametros As Dictionary(Of String, Object), ByVal Opcion As ReportOptions)
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        loParametros = Parametros
+        liOpcion = Opcion
+    End Sub
     Private Sub Reportes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         RvReports.Reset()
         RvReports.ProcessingMode = ProcessingMode.Local
 
-        Select Case ReportOption
+        Select Case liOpcion
             Case ReportOptions.SocialeconomicStudy
-                Lbl_Title.Text = "Reporte de Estudio Socioeconomico"
-                RvReports.LocalReport.ReportEmbeddedResource = "AdminEmpleados.EstudioSocioeconomico.rdlc"
-                RvReports.LocalReport.DataSources.Clear()
-                Dim INFO As DataTable = New Cls_ES().GetInfo(Emp)
-                Dim SESID = INFO.Rows(0).Item(0).ToString()
-                RvReports.LocalReport.DataSources.Add(New ReportDataSource("SES_INFO", INFO))
-                RvReports.LocalReport.DataSources.Add(New ReportDataSource("SES_REFERENCES", New Cls_ES().GetReferences(SESID)))
-                RvReports.LocalReport.DataSources.Add(New ReportDataSource("SES_FAMILY", New Cls_ES().GetFamily(Emp)))
-                RvReports.LocalReport.DataSources.Add(New ReportDataSource("SES_OTHERINCOMES", New Cls_ES().GetOtherIncomes(SESID)))
+                'Lbl_Title.Text = "Reporte de Estudio Socioeconomico"
+                'RvReports.LocalReport.ReportEmbeddedResource = "AdminEmpleados.EstudioSocioeconomico.rdlc"
+                'RvReports.LocalReport.DataSources.Clear()
+                'Dim INFO As DataTable = New Cls_ES().GetInfo(Empleado.ID)
+                'Dim SESID = INFO.Rows(0).Item(0).ToString()
+                'RvReports.LocalReport.DataSources.Add(New ReportDataSource("SES_INFO", INFO))
+                'RvReports.LocalReport.DataSources.Add(New ReportDataSource("SES_REFERENCES", New Cls_ES().GetReferences(SESID)))
+                'RvReports.LocalReport.DataSources.Add(New ReportDataSource("SES_FAMILY", New Cls_ES().GetFamily(Empleado.ID)))
+                'RvReports.LocalReport.DataSources.Add(New ReportDataSource("SES_OTHERINCOMES", New Cls_ES().GetOtherIncomes(SESID)))
             Case ReportOptions.AssignedEquipment
                 Lbl_Title.Text = "Reporte de Equipo Entregado"
-                RvReports.LocalReport.ReportEmbeddedResource = "AdminEmpleados.EquipoEntregado.rdlc"
-                RvReports.LocalReport.DataSources.Clear()
-                RvReports.LocalReport.DataSources.Add(New ReportDataSource("ASSIGNED_EQUIPMENT", New Cls_Emp().GetAssignedEquipment(Emp)))
-                RvReports.LocalReport.DataSources.Add(New ReportDataSource("RECEIVER", New Cls_Emp().GetEquipmentReceiver(0, User)))
+                'RvReports.LocalReport.ReportEmbeddedResource = "AdminEmpleados.EquipoEntregado.rdlc"
+                'RvReports.LocalReport.DataSources.Clear()
+                'RvReports.LocalReport.DataSources.Add(New ReportDataSource("ASSIGNED_EQUIPMENT", New Cls_Emp().GetAssignedEquipment(Empleado.ID)))
+                'RvReports.LocalReport.DataSources.Add(New ReportDataSource("RECEIVER", New Cls_Emp().GetEquipmentReceiver(UsuarioLogeado.ID, UsuarioLogeado.Nombre)))
+                Dim llEmpleado As New List(Of Empleado) From {CType(loParametros("Empleado"), Empleado)}
 
+                RvReports.LocalReport.ReportEmbeddedResource = "AdminEmpleados.EquipoAsignado.rdlc"
+                RvReports.LocalReport.DataSources.Clear()
+
+                RvReports.LocalReport.DataSources.Add(New ReportDataSource("Empleado", llEmpleado))
+                RvReports.LocalReport.DataSources.Add(New ReportDataSource("Equipo", loParametros("Equipo")))
+                'RvReports.LocalReport.DataSources.Add(New ReportDataSource("USUARIO", UsuarioLogeado))
         End Select
         RvReports.RefreshReport()
     End Sub
@@ -57,8 +71,3 @@ Public Class frmReportes
         bit = False
     End Sub
 End Class
-Public Enum ReportOptions
-    None = 0
-    SocialeconomicStudy = 1
-    AssignedEquipment = 2
-End Enum

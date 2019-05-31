@@ -75,6 +75,7 @@
                 My.Settings.RememberMe = False
                 My.Settings.Save()
             End If
+            CargarCatalogos()
             Dim Main As New frmPrincipal()
             Main.Show()
             Close()

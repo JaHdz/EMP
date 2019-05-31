@@ -28,7 +28,7 @@ Public Class frmPrincipal
                 Case 1
                     f = New frmEmpleados() With {.TopLevel = False, .AutoSize = True}
                 Case 2
-                    f = New frmEquipo() With {.TopLevel = False, .AutoSize = False}
+                    f = New FrmEquipo() With {.TopLevel = False, .AutoSize = False}
                 Case 3
                     f = New frmCapacitaciones() With {.TopLevel = False, .AutoSize = False}
                 Case 4

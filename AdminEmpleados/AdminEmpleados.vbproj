@@ -141,6 +141,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Internal\CatalogosEstaticos.vb" />
+    <Compile Include="Classes\Internal\EstadoCivil.vb" />
+    <Compile Include="Classes\Internal\NivelEducativo.vb" />
+    <Compile Include="Classes\Internal\Sexo.vb" />
+    <Compile Include="Custom Controls\NumericTextbox.Designer.vb">
+      <DependentUpon>NumericTextbox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\NumericTextbox.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="frmAdministration.Designer.vb">
       <DependentUpon>frmAdministration.vb</DependentUpon>
     </Compile>
@@ -153,15 +163,15 @@
       <DependentUpon>ASSIGNED_EQUIPMENT.xsd</DependentUpon>
     </Compile>
     <Compile Include="Classes\AntecedenteLaboral.vb" />
-    <Compile Include="Classes\Bajas.vb" />
+    <Compile Include="Classes\Estatus.vb" />
     <Compile Include="Classes\Capacitacion.vb" />
     <Compile Include="Classes\CapacitacionDeEmpleado.vb" />
-    <Compile Include="Classes\Ciudad.vb" />
+    <Compile Include="Classes\Internal\Ciudad.vb" />
     <Compile Include="Classes\ContactoDeEmergencia.vb" />
     <Compile Include="Classes\Departamento.vb" />
     <Compile Include="Classes\Empleado.vb" />
     <Compile Include="Classes\Enfermedad.vb" />
-    <Compile Include="Classes\Entidad.vb" />
+    <Compile Include="Classes\Internal\Entidad.vb" />
     <Compile Include="Classes\Equipo.vb" />
     <Compile Include="Classes\EquipoAsignado.vb" />
     <Compile Include="Classes\EquipoObservacion.vb" />
@@ -181,8 +191,14 @@
     <Compile Include="Classes\Supervisor.vb" />
     <Compile Include="Classes\Tipo.vb" />
     <Compile Include="Classes\Usuario.vb" />
-    <Compile Include="CstmTabControl.xaml.vb">
+    <Compile Include="Custom Controls\CstmTabControl.xaml.vb">
       <DependentUpon>CstmTabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmPopUpComentario.Designer.vb">
+      <DependentUpon>frmPopUpComentario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPopUpComentario.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\Datasets\RECEIVER.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -236,10 +252,10 @@
       <DependentUpon>frmPrincipal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPopUp.Designer.vb">
-      <DependentUpon>frmPopUp.vb</DependentUpon>
+    <Compile Include="frmPopUpCatalogo.Designer.vb">
+      <DependentUpon>frmPopUpCatalogo.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmPopUp.vb">
+    <Compile Include="frmPopUpCatalogo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -292,6 +308,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Custom Controls\NumericTextbox.resx">
+      <DependentUpon>NumericTextbox.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdministration.resx">
       <DependentUpon>frmAdministration.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -314,11 +333,14 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPopUpComentario.resx">
+      <DependentUpon>frmPopUpComentario.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPopUp.resx">
-      <DependentUpon>frmPopUp.vb</DependentUpon>
+    <EmbeddedResource Include="frmPopUpCatalogo.resx">
+      <DependentUpon>frmPopUpCatalogo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -329,6 +351,7 @@
     <EmbeddedResource Include="frmReportes.resx">
       <DependentUpon>frmReportes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EquipoAsignado.rdlc" />
     <EmbeddedResource Include="Reports\EquipoEntregado.rdlc" />
     <EmbeddedResource Include="Reports\EstudioSocioeconomico.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -351,6 +374,9 @@
       <DependentUpon>ASSIGNED_EQUIPMENT.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
+    <None Include="My Project\DataSources\Empleado.datasource" />
+    <None Include="My Project\DataSources\EquipoAsignado.Vista.datasource" />
+    <None Include="My Project\DataSources\Usuario.datasource" />
     <None Include="Reports\Datasets\RECEIVER.xsc">
       <DependentUpon>RECEIVER.xsd</DependentUpon>
     </None>
@@ -479,10 +505,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="CstmTabControl.xaml">
+    <Page Include="Custom Controls\CstmTabControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

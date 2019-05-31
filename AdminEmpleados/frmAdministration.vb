@@ -21,7 +21,7 @@
     End Sub
 
     Private Sub LlenarBuscador(tipo As String)
-        Dim popup As New FrmPopUp(tipo)
+        Dim popup As New frmPopUpCatalogo(tipo)
         Dim PopUpDialog As DialogResult = popup.ShowDialog()
         Resultado = popup.Result
         popup.Close()
@@ -76,10 +76,10 @@
 
     Private Sub Buscar_EN_Click(sender As Object, e As EventArgs) Handles buscar_EN.Click
         LlenarBuscador(BuscarPor.Empleado)
-        Dim Empleado As Empleado = CType(Resultado, Empleado)
+        Dim Empleado As Empleado.Vista = CType(Resultado, Empleado.Vista)
         If Empleado IsNot Nothing Then
             txt_numero.Text = Empleado.ID.ToString()
-            txtEmpleado.Text = Empleado.NombreCompleto
+            txtEmpleado.Text = String.Concat(Empleado.Nombre, " ", Empleado.ApellidoPaterno, " ", Empleado.ApellidoMaterno)
             Usuario = Empleado.Usuario
             If Usuario IsNot Nothing Then
                 SAVE.Tag = Operacion.Actualizar.ToString()
@@ -258,10 +258,10 @@
 #Region "Supervisor"
     Private Sub BUSCAR_EMP_SUPER_Click(sender As Object, e As EventArgs) Handles BUSCAR_EMP_SUPER.Click
         LlenarBuscador(BuscarPor.Empleado)
-        Dim Empleado As Empleado = CType(Resultado, Empleado)
+        Dim Empleado As Empleado.Vista = CType(Resultado, Empleado.Vista)
         If Empleado IsNot Nothing Then
             TXT_EMP_SUPER.Text = Empleado.ID.ToString()
-            TxtEmpSuper.Text = Empleado.NombreCompleto
+            TxtEmpSuper.Text = String.Concat(Empleado.Nombre, " ", Empleado.ApellidoPaterno, " ", Empleado.ApellidoMaterno)
         End If
     End Sub
 

@@ -1,5 +1,4 @@
-﻿Imports System.IO
-Imports System.Text.RegularExpressions
+﻿Imports System.Text.RegularExpressions
 
 Public Class frmEmpleados
     Dim V1 As String
@@ -10,15 +9,65 @@ Public Class frmEmpleados
     Dim EMPLEADO_ID As Int64
     Dim EMPLEADO_ES As Int64
     Dim id As Integer
+
+    Dim ErrorProvider As New ErrorProvider
     Dim tooltip As New ToolTip
+    Dim Resultado As Object
+    Dim Empleado As Empleado
+    Dim Familiares As List(Of Familiar.Vista)
     Sub New()
         InitializeComponent()
+        CargarCombos()
+        AsignarFechas()
+    End Sub
+
+    Private Sub Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        AddToolTips()
+        Dim Wait As New frmWait With {
+            .Operation = BackgroundOperations.GetLatestEmployeeNumber
+        }
+        Wait.ShowDialog()
+        txtNumero.Text = Wait.Result.ToString()
+        Wait.Close()
+        txtNombres.Focus()
+    End Sub
+
+    Private Sub CargarCombos()
+        cbSexo.DataSource = New Sexo().CargarListado()
+        cbSexo.DisplayMember = "Nombre"
+        cbSexo.ValueMember = "ID"
+
+        cbConyugeSexo.DataSource = New Sexo().CargarListado()
+        cbConyugeSexo.DisplayMember = "Nombre"
+        cbConyugeSexo.ValueMember = "ID"
+
+        cbHijosSexo.DataSource = New Sexo().CargarListado()
+        cbHijosSexo.DisplayMember = "Nombre"
+        cbHijosSexo.ValueMember = "ID"
+
+        cbEstadoCivil.DataSource = EstadosCiviles
+        cbEstadoCivil.DisplayMember = "Descripcion"
+        cbEstadoCivil.ValueMember = "Descripcion"
+
+        cbNivelEducativo.DataSource = NivelesEducativos
+        cbNivelEducativo.DisplayMember = "Descripcion"
+        cbNivelEducativo.ValueMember = "Descripcion"
+    End Sub
+
+    Private Sub AsignarFechas()
+        dtpFechaDeNacimiento.MaxDate = New Date(Now.Year() - 16, 12, 31)
+        dtpFechaDeNacimiento.Value = Today().AddYears(-16)
+        txt_esFN.MaxDate = New Date(Now.Year() - 16, 12, 31)
+        txt_esFN.Value = Today().AddYears(-16)
+        txt_hijoFN.MaxDate = Today()
+        txt_antFI.MaxDate = Today()
+        txt_antFF.MaxDate = Today()
     End Sub
 
     Private Sub AddToolTips()
         tooltip.SetToolTip(SAVE, "Guardar Información de un nuevo empleado")
         tooltip.SetToolTip(CANCEL, "Cancelar operación")
-        tooltip.SetToolTip(foto, "Haz doble clic para agregar una nueva imagen")
+        tooltip.SetToolTip(pbFotoEmpleado, "Haz doble clic para agregar una nueva imagen")
         tooltip.SetToolTip(PbOptions, "Dar de baja a este empleado")
         tooltip.SetToolTip(btn_esSAVE, "Agregar cónyuge")
         tooltip.SetToolTip(btn_hijoADD, "Agregar hijos")
@@ -33,263 +82,525 @@ Public Class frmEmpleados
         tooltip.SetToolTip(btn_SECancel, "Cancelar operación")
     End Sub
 
-    Private Sub Numeroleave()
-        Dim numero As String
-        numero = txt_numero.Text
-        txt_activo.Text = ""
-        txt_baja.Text = ""
-        lbl_option.Visible = True
-        PbOptions.Visible = True
+    Public Sub Llenar_buscador(tipo As BuscarPor, Optional Otro As Object = Nothing)
+        Dim popup As New frmPopUpCatalogo(tipo, True, Otro)
+        Dim dialogresult__1 As DialogResult = popup.ShowDialog()
+        Resultado = popup.Result
+        popup.Close()
+    End Sub
 
-        If txt_numero.Text <> "" Then
-            Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", numero}}
-            Dim Wait As New frmWait With {
-                .Parameters = ldParameters,
-                .Operation = BackgroundOperations.EmployeeExits
-            }
-            Wait.ShowDialog()
-            Dim Result As Boolean = Wait.Result
-            Wait.Close()
-            If Result = True Then
-                Llenar()
-                EXISTE = True
-                lbl_emp.Text = numero + " | " + txt_NOM.Text + " " + txt_AP.Text + " " + txt_AM.Text
-                EMPLEADO_ID = numero
-                PbOptions.Tag = "BAJA"
-                tooltip.SetToolTip(PbOptions, "Dar de baja a este empleado")
+    Public Sub CargarImagen(control As PictureBox)
+        Dim IMAGEN As String
+        OpenFileDialog1.ShowDialog()
+        If OpenFileDialog1.FileName <> "" And OpenFileDialog1.FileName <> "OpenFileDialog1" Then
+            IMAGEN = OpenFileDialog1.FileName
+            Dim largo As Integer = IMAGEN.Length
+            If IsValidFormat(Mid(RTrim(IMAGEN), largo - 2, largo).ToLower()) OrElse
+                IsValidFormat(Mid(RTrim(IMAGEN), largo - 3, largo).ToLower()) Then
+                control.Load(IMAGEN)
             Else
-                Limp()
-                lbl_emp.Text = ""
-                EMPLEADO_ID = 0
-                txt_numero.Text = numero
-                EXISTE = False
-                PbOptions.Tag = "ALTA"
-                tooltip.SetToolTip(PbOptions, "Dar de alta nuevamente a este empleado")
+                MsgBox("Formato no valido") : Exit Sub
             End If
-        Else
-            txt_numero.Focus()
         End If
     End Sub
-    Public Sub Llenar()
-        Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", txt_numero.Text}}
-        Dim Wait As New frmWait With {
-                .Parameters = ldParameters,
-                .Operation = BackgroundOperations.GetEmployeeInfo
-            }
-        Wait.ShowDialog()
-        Dim Result As Cls_Emp = Wait.Result
-        Wait.Close()
-        If (Result IsNot Nothing) Then
-            txt_AP.Text = Result.Emp_APat
-            txt_AM.Text = Result.Emp_AMat
-            txt_NOM.Text = Result.Emp_Name
-            ddl_educacion.SelectedItem = Result.Emp_NEducativo
-            txt_FECHA.Text = Result.Emp_FNac.ToShortDateString()
-            txt_RFC.Text = Result.Emp_RFC
-            txt_SS.Text = Result.Emp_NSS
-            txt_CURP.Text = Result.Emp_Curp
-            Celular.Text = Result.Emp_Cel
-            txt_telefono.Text = Result.Emp_Tel
-            EC.Text = Result.Emp_EdoCivil
-            nacion.Text = Result.Emp_Nacionalidad
-            domicilio.Text = Result.Emp_Domicilio
-            colonia.Text = Result.Emp_Col
-            txtCdDomicilio.Text = Result.Emp_CiudadEstado
-            CP.Text = Result.Emp_CP
-            txt_FECHAINGRESO.Text = Result.Emp_FEfectiva.ToShortDateString()
-            txt_SALARY.Text = Result.Emp_Salario
-            Txt_correo.Text = Result.Emp_Email
-            txt_baja.Text = If(IsDBNull(Result.Emp_Activo), "", Result.Emp_Activo)
-            seg.Checked = If(IsDBNull(Result.Baja.Alerta), False, True)
-            CB_PROV.Checked = If(IsDBNull(Result.Baja.NotificarProveedores), False, True)
-            CB_CLIENTE.Checked = If(IsDBNull(Result.Baja.NotificarClientes), False, True)
-            commen.Text = Result.Baja.Motivo
-            txt_EN.Text = Result.Emp_EN
-            txt_PUESTO.Text = Result.ID_Puesto
-            txt_tipo.Text = Result.Emp_Tipo
-            txt_SUPER.Text = Result.Emp_Sup
-            cuidad.Text = Result.Emp_Ciudad
-            depto.Text = Result.ID_Depto
-            foto.Image = Result.Img
 
-            If txt_EN.Text <> "" Then
-                V2 = objcon.S_catalago(txt_EN.Text, "EN")
-                txt_EN2.Text = If(V2 = "" Or V2 Is Nothing, "", V2)
+    Private Function IsValidFormat(Ext As String) As Boolean
+        IsValidFormat = False
+        If Ext <> "gif" And Ext <> "bmp" And Ext <> "jpg" And Ext <> "jpeg" And Ext <> "png" Then
+            IsValidFormat = False
+        Else
+            IsValidFormat = True
+        End If
+    End Function
+
+    Public Function EmailValido(Correo As String) As Boolean
+        If String.IsNullOrWhiteSpace(Correo) Then
+            Return True
+        Else
+            Dim IndiceArroba As Integer = Correo.IndexOf("@")
+            If IndiceArroba > -1 Then
+                If Correo.IndexOf(".", IndiceArroba) > IndiceArroba Then
+                    Return True
+                End If
             End If
+        End If
+        Return False
+    End Function
 
-            If (cuidad.Text <> "") Then
-                V2 = objcon.S_catalago(cuidad.Text, "CI")
-                cuidad2.Text = If(V2 = "" Or V2 Is Nothing, "", V2)
-            End If
+    Private Sub MenuEmp_Selecting(sender As Object, e As TabControlCancelEventArgs)
 
-            If (depto.Text <> "") Then
-                V2 = objcon.S_catalago(depto.Text, "DE")
-                depto2.Text = If(V2 = "" Or V2 Is Nothing, "", V2)
-            End If
+    End Sub
 
-            If (txt_PUESTO.Text <> "") Then
-                V2 = objcon.S_catalago(txt_PUESTO.Text, "PU")
-                txt_PUESTO2.Text = If(V2 = "" Or V2 Is Nothing, "", V2)
-            End If
+    Private Sub LlenarDatosEstudioSocioeconomico()
 
-            If (txt_SUPER.Text <> "") Then
-                V2 = objcon.S_catalago(txt_SUPER.Text, "SU")
-                txt_SUPER2.Text = If(V2 = "" Or V2 Is Nothing, "", V2)
-            End If
+    End Sub
 
-            If (txt_tipo.Text <> "") Then
-                V2 = objcon.S_catalago(txt_tipo.Text, "TI")
-                txt_tipo2.Text = If(V2 = "" Or V2 Is Nothing, "", V2)
-            End If
+#Region "Datos personales"
 
-            If Result.Emp_Sexo = "M" Then
-                CB_SEXO.SelectedIndex = 1
-            End If
+    Private Sub PbSearchEmployee_Click(sender As Object, e As EventArgs) Handles PbSearchEmployee.Click
+        Llenar_buscador(BuscarPor.Empleado)
+        If Resultado IsNot Nothing Then
+            Dim vista = CType(Resultado, Empleado.Vista)
+            Empleado = New Empleado().Buscar(vista.ID)
+            LlenarDatosPersonales()
+            pnl_estatus.Visible = True
+            SAVE.Tag = Operacion.Actualizar
+            SAVE.Image = My.Resources.Updates_80
+            tooltip.SetToolTip(SAVE, "Actualizar Información del empleado")
+            LlenarDatosFamiliares()
+            LlenarDatosAntesedentesLaborales()
+            LlenarDatosContactosDeEmergencia()
+            LlenarDatosMedicos()
+            LlenarDatosEstudioSocioeconomico()
+        Else
+            pnl_estatus.Visible = False
+            SAVE.Image = My.Resources.Save_80px
+            SAVE.Tag = Operacion.Registrar
+            tooltip.SetToolTip(SAVE, "Guardar Información de un nuevo empleado")
+        End If
+    End Sub
 
-            If Result.Emp_Sexo = "F" Then
-                CB_SEXO.SelectedIndex = 0
-            End If
-
-            txt_activo.Text = If(Result.Emp_Activo = True, "SI", "NO")
-
-            If Result.Emp_Activo = True Then
+    Private Sub LlenarDatosPersonales()
+        With Empleado
+            pbFotoEmpleado.Image = .Foto
+            txtNumero.Text = .ID
+            txtNombres.Text = .Nombre
+            txtAPaterno.Text = .ApellidoPaterno
+            txtAMaterno.Text = .ApellidoMaterno
+            cbSexo.SelectedValue = .Sexo
+            dtpFechaDeNacimiento.Value = .FechaDeNacimiento
+            txtNacionalidad.Text = .Nacionalidad
+            Dim Entidad As Entidad = New Entidad().Buscar(.EntidadNatal)
+            txtEntidadCodigo.Text = Entidad.Codigo
+            txtEntidad.Text = Entidad.Nombre
+            Dim Ciudad As Ciudad = New Ciudad().Buscar(.CiudadNatal, Entidad.Codigo)
+            txtCiudadCodigo.Text = Ciudad.Codigo
+            txtCiudad.Text = Ciudad.Nombre
+            txtCURP.Text = .CURP
+            txtRFC.Text = .RFC
+            cbEstadoCivil.SelectedValue = .EstadoCivil
+            txtNSS.Text = .NSS
+            txtDomicilio.Text = .Domicilio
+            txtColonia.Text = .Colonia
+            txtCdDomicilio.Text = .CiudadEstado
+            txtCodigoPostal.Text = .CodigoPostal
+            txtTelefono.Text = .Telefono
+            txtCelular.Text = .Celular
+            cbNivelEducativo.SelectedValue = .NivelEducativo
+            dtpFechaDeIngreso.Value = .FechaEfectiva
+            Dim Puesto As Puesto = .Puesto
+            txtPuestoCodigo.Text = Puesto.ID
+            txtPuesto.Text = Puesto.Nombre
+            Dim Departamento As Departamento = .Departamento
+            txtDeptoCodigo.Text = Departamento.ID
+            txtDepto.Text = Departamento.Descripcion
+            Dim Supervisor As Supervisor = .Supervisor
+            txtSupervisorCodigo.Text = Supervisor.ID
+            txtSupervisor.Text = Supervisor.Nombre
+            Dim Tipo As Tipo = .Tipo
+            txtTipoCodigo.Text = Tipo.ID
+            txtTipo.Text = Tipo.Descripcion
+            txtSalario.Text = .Salario
+            txtCorreo.Text = .Email
+            If .EsActivo Then
                 txt_baja.Text = ""
-                seg.Checked = False
-                CB_CLIENTE.Checked = False
-                CB_PROV.Checked = False
-                commen.Text = ""
-
+                txt_activo.Text = "SI"
                 lbl_option.Text = "BAJA"
                 PbOptions.Image = My.Resources.Baja_80px
             Else
-                txt_baja.Text = Result.Baja.Fecha_Baja.ToShortDateString()
+                txt_baja.Text = .FechaDeBaja.ToShortDateString()
                 lbl_option.Text = "ALTA"
                 PbOptions.Image = My.Resources.Alta_80px
+                txt_activo.Text = "NO"
             End If
+            seg.Checked = False
+            CB_CLIENTE.Checked = .NotificarClientes
+            CB_PROV.Checked = .NotificarProveedores
+            commen.Text = .MotivoDeBaja
             lbl_option.Visible = True
             PbOptions.Tag = lbl_option.Text
             PbOptions.Visible = True
-        End If
+        End With
     End Sub
-    Private Sub txt_numero_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_numero.KeyPress
-        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
-    End Sub
-    Private Sub txt_PUESTO_KeyPress(sender As Object, e As KeyPressEventArgs)
-        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
-    End Sub
-    Private Sub txt_SUPER_KeyPress(sender As Object, e As KeyPressEventArgs)
-        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
-    End Sub
-    Private Sub txt_CLASE_KeyPress(sender As Object, e As KeyPressEventArgs)
-        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
-    End Sub
-    Private Sub Txt_SALARY_KeyPress(sender As Object, e As KeyPressEventArgs)
-        If Not txt_SALARY.Text.Contains(".") Then
-            e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
-        Else
-            e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
-        End If
-    End Sub
-    Private Sub txt_SS_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SS.KeyPress
-        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
-    End Sub
-    Public Function validateEmail(emailAddress) As Boolean
-        Dim email As New Regex("([\w-+]+(?:\.[\w-+]+)*@(?:[\w-]+\.)+[a-zA-Z]{2,7})")
-        If (Txt_correo.Text = "") Then
-            Return True
-        Else
-            If email.IsMatch(emailAddress) Then
-                Return True
-            Else
-                Return False
-            End If
-        End If
-    End Function
-    Private Sub SAVE_Click(sender As Object, e As EventArgs) Handles SAVE.Click
-        'Try
-        For Each ctrl In pnl_per.Controls
-            If (ctrl.GetType() Is GetType(TextBox)) Then
-                Dim txt As TextBox = CType(ctrl, TextBox)
-                If String.IsNullOrWhiteSpace(txt.Text) Then
-                    MessageBox.Show("Favor de llenar todos los campos en la seccion 'Personales'")
-                    Exit Sub
-                End If
-            End If
-        Next
 
-        For Each ctrl In pnl_cont.Controls
-            If (ctrl.GetType() Is GetType(TextBox)) Then
-                Dim txt As TextBox = CType(ctrl, TextBox)
-                If String.IsNullOrWhiteSpace(txt.Text) Then
-                    MessageBox.Show("Favor de llenar todos los campos en la seccion 'Contratacion'")
-                    Exit Sub
-                End If
-            End If
-        Next
-        SAVE_F()
-        lbl_emp.Text = ""
-        lbl_emp.Text = txt_numero.Text + " | " + txt_NOM.Text + " " + txt_AP.Text + " " + txt_AM.Text
-        EMPLEADO_ID = txt_numero.Text
-        'Catch ex As Exception
-        '    MsgBox(ex.Message.ToString, MsgBoxStyle.Critical)
-        'End Try
+    Private Sub PbFotoEmpleado_DoubleClick(sender As Object, e As EventArgs) Handles pbFotoEmpleado.DoubleClick
+        CargarImagen(pbFotoEmpleado)
     End Sub
-    Private Sub SAVE_F()
-        If validateEmail(Txt_correo.Text) = True Then
-            Dim InfoEmp As New Cls_Emp
-            Dim objEmp As New Consultas
-            InfoEmp.Emp_AMat = txt_AM.Text
-            InfoEmp.Emp_APat = txt_AP.Text
-            InfoEmp.Emp_Name = txt_NOM.Text
-            InfoEmp.Emp_Sexo = CB_SEXO.SelectedItem.ToString
-            InfoEmp.Emp_NEducativo = ddl_educacion.SelectedItem.ToString
-            InfoEmp.Emp_FNac = Convert.ToDateTime(txt_FECHA.Text)
-            InfoEmp.Emp_EN = txt_EN.Text
-            InfoEmp.Emp_RFC = txt_RFC.Text
-            InfoEmp.Emp_NSS = txt_SS.Text
-            InfoEmp.Emp_Curp = txt_CURP.Text
-            InfoEmp.Emp_Cel = Celular.Text
-            InfoEmp.Emp_Tel = txt_telefono.Text
-            InfoEmp.Emp_EdoCivil = EC.SelectedItem.ToString
-            InfoEmp.Emp_Nacionalidad = nacion.Text
-            InfoEmp.Emp_Domicilio = domicilio.Text
-            InfoEmp.Emp_Col = colonia.Text
-            InfoEmp.Emp_CiudadEstado = txtCdDomicilio.Text
-            InfoEmp.Emp_CP = CP.Text
-            InfoEmp.Emp_FEfectiva = Convert.ToDateTime(txt_FECHAINGRESO.Text)
-            InfoEmp.ID_Puesto = Convert.ToInt64(txt_PUESTO.Text)
-            InfoEmp.Emp_Salario = Convert.ToDouble(txt_SALARY.Text)
-            InfoEmp.ID_Depto = depto.Text
-            InfoEmp.Emp_Sup = txt_SUPER.Text
-            InfoEmp.Emp_Tipo = txt_tipo.Text
-            InfoEmp.Emp_Activo = 1
-            InfoEmp.Emp_Ciudad = cuidad.Text
-            InfoEmp.Emp_Email = Txt_correo.Text
-            InfoEmp.Img = foto.Image
-            InfoEmp.Baja.NotificarClientes = CB_CLIENTE.Checked
-            InfoEmp.Baja.NotificarProveedores = CB_PROV.Checked
-            If (EXISTE = False) Then
-                If (txt_numero.Text = "" Or txt_AP.Text = "" Or txt_NOM.Text = "" Or txt_EN.Text = "" Or txt_RFC.Text = "" Or txt_SS.Text = "" Or
-                  txt_SALARY.Text = "" Or txt_CURP.Text = "" Or txt_FECHAINGRESO.Text = "" Or txt_tipo.Text = "" Or txt_PUESTO.Text = "" Or depto.Text = "" Or txt_SUPER.Text = "" Or txt_FECHA.Text = "") Then
-                    MessageBox.Show("Favor de llenar todos los campos")
-                Else
-                    objEmp.UpInsert_colabora(InfoEmp)
-                    Limp()
-                    MessageBox.Show("Empleado agregado satisfactoriamente")
-                End If
-            Else
-                If MessageBox.Show("SE VA A MODIFICAR ESTE EMPLEADO", "My Application",
-                      MessageBoxButtons.YesNo, MessageBoxIcon.Question) _
-                      = DialogResult.Yes Then
-                    InfoEmp.ID_Emp = txt_numero.Text
-                    objEmp.UpInsert_colabora(InfoEmp)
-                    Limp()
-                    MessageBox.Show("Empleado Actualizado Satisfactoriamente")
-                End If
-            End If
-        Else
-            MsgBox("Email no es Valido")
+
+    Private Sub Buscar_PUESTO_Click(sender As Object, e As EventArgs) Handles Buscar_PUESTO.Click
+        Llenar_buscador(BuscarPor.Puesto)
+        If Resultado IsNot Nothing Then
+            Dim Puesto As Puesto = CType(Resultado, Puesto)
+            txtPuestoCodigo.Text = Puesto.ID
+            txtPuesto.Text = Puesto.Nombre
         End If
+    End Sub
+
+    Private Sub Buscar_Super_Click(sender As Object, e As EventArgs) Handles Buscar_Super.Click
+        Llenar_buscador(BuscarPor.Supervisor)
+        If Resultado IsNot Nothing Then
+            Dim Supervisor As Supervisor = CType(Resultado, Supervisor)
+            txtSupervisorCodigo.Text = Supervisor.ID
+            txtSupervisor.Text = Supervisor.Nombre
+        End If
+    End Sub
+
+    Private Sub Buscar_tipo_Click(sender As Object, e As EventArgs) Handles Buscar_tipo.Click
+        Llenar_buscador(BuscarPor.TipoDeEmpleado)
+        If Resultado IsNot Nothing Then
+            Dim Tipo As Tipo = CType(Resultado, Tipo)
+            txtTipoCodigo.Text = Tipo.Codigo
+            txtTipo.Text = Tipo.Descripcion
+        End If
+    End Sub
+
+    Private Sub Buscar_depto_Click(sender As Object, e As EventArgs) Handles buscar_depto.Click
+        Llenar_buscador(BuscarPor.Departamento)
+        If Resultado IsNot Nothing Then
+            Dim Departamento As Departamento = CType(Resultado, Departamento)
+            txtDeptoCodigo.Text = Departamento.Codigo
+            txtDepto.Text = Departamento.Descripcion
+        End If
+    End Sub
+
+    Private Sub Buscar_EN_Click(sender As Object, e As EventArgs) Handles buscar_EN.Click
+        Llenar_buscador(BuscarPor.Entidad)
+        If Resultado IsNot Nothing Then
+            Dim Entidad As Entidad = CType(Resultado, Entidad)
+            txtEntidadCodigo.Text = Entidad.Codigo
+            txtEntidad.Text = Entidad.Nombre
+            txtCiudad.Text = ""
+            txtCiudadCodigo.Text = ""
+        End If
+    End Sub
+
+    Private Sub Buscar_ciudad_Click(sender As Object, e As EventArgs) Handles buscar_ciudad.Click
+        If txtEntidadCodigo.Text = "" Then
+            MessageBox.Show("Primero debe elegir una entidad.")
+        Else
+            Llenar_buscador(BuscarPor.Ciudad, txtEntidadCodigo.Text)
+            If Resultado IsNot Nothing Then
+                Dim Ciudad As Ciudad = CType(Resultado, Ciudad)
+                txtCiudadCodigo.Text = Ciudad.Codigo
+                txtCiudad.Text = Ciudad.Nombre
+            End If
+        End If
+    End Sub
+
+    Private Sub TxtCorreo_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtCorreo.Validating
+        If Not EmailValido(txtCorreo.Text) Then
+            ErrorProvider.SetError(txtCorreo, "Correo electronico invalido")
+        Else
+            ErrorProvider.SetError(txtCorreo, String.Empty)
+        End If
+    End Sub
+
+    Private Sub TxtNSS_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtNSS.Validating
+        If Not NSS.IsValid(txtNSS.Text) Then
+            ErrorProvider.SetError(txtNSS, "Número de Seguro Social '" + txtNSS.Text + "' no valido, por favor verifique sea correcto")
+        Else
+            ErrorProvider.SetError(txtNSS, "")
+        End If
+    End Sub
+
+    Private Sub TxtCURP_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtCURP.Validating
+        If Not CURP.IsValid(txtCURP.Text) Then
+            ErrorProvider.SetError(txtCURP, "Número de CURP :'" + txtCURP.Text + "' no valido, por favor verifique sea correcto")
+        Else
+            ErrorProvider.SetError(txtCURP, "")
+        End If
+    End Sub
+
+    Private Sub CANCEL_Click(sender As Object, e As EventArgs) Handles CANCEL.Click
+        Limp()
+    End Sub
+
+    Private Sub OptionPress(sender As Object, e As EventArgs) Handles PbOptions.Click
+        If Empleado IsNot Nothing Then
+            Select Case Empleado.EsActivo
+                Case True
+                    If Empleado.CambiarEstatus(Operacion.Baja) Then
+                        LlenarDatosPersonales()
+                    End If
+                Case False
+                    If Empleado.CambiarEstatus(Operacion.Alta) Then
+                        LlenarDatosPersonales()
+                    End If
+            End Select
+        End If
+    End Sub
+
+    Private Sub SAVE_Click(sender As Object, e As EventArgs) Handles SAVE.Click
+        If ErrorProvider.GetError(txtCorreo) = String.Empty Then
+            Dim loEmpleado As New Empleado(0, txtNombres.Text, txtAPaterno.Text, txtAMaterno.Text, txtDomicilio.Text, txtColonia.Text, txtCdDomicilio.Text,
+                               txtCodigoPostal.Text, txtCelular.Text, txtTelefono.Text, cbEstadoCivil.SelectedValue, txtNacionalidad.Text,
+                               txtCiudadCodigo.Text, txtEntidadCodigo.Text, txtSalario.Text, cbNivelEducativo.SelectedValue, txtCorreo.Text,
+                               dtpFechaDeNacimiento.Value, txtRFC.Text, txtNSS.Text, Today, cbSexo.SelectedValue, txtCURP.Text,
+                               New Tipo().Buscar(txtTipoCodigo.Text), New Supervisor().Buscar(txtSupervisorCodigo.Text), dtpFechaDeIngreso.Value,
+                               New Departamento().Buscar(txtDeptoCodigo.Text), New Puesto().Buscar(txtPuestoCodigo.Text), New Usuario(), True, False,
+                               pbFotoEmpleado.Image, DateTimePicker.MinimumDateTime, String.Empty, False, False, False, False)
+            Select Case SAVE.Tag
+                Case Operacion.Registrar
+                    If loEmpleado.Registrar() Then
+                        Empleado = loEmpleado
+                        LlenarDatosPersonales()
+                    End If
+                Case Operacion.Actualizar
+                    loEmpleado.ID = Empleado.ID
+                    loEmpleado.Usuario = Empleado.Usuario
+                    loEmpleado.FechaDeAlta = Empleado.FechaDeAlta
+                    If loEmpleado.Actualizar() Then
+                        Empleado = loEmpleado
+                        LlenarDatosPersonales()
+                    End If
+            End Select
+        End If
+    End Sub
+
+    Private Sub Commen_TextChanged(sender As Object, e As EventArgs) Handles commen.TextChanged
+        If Empleado IsNot Nothing Then
+            If Not String.IsNullOrWhiteSpace(commen.Text) Then
+                Empleado.MotivoDeBaja = commen.Text
+            End If
+        End If
+    End Sub
+
+    Private Sub CB_CLIENTE_CheckedChanged(sender As Object, e As EventArgs) Handles CB_CLIENTE.CheckedChanged
+        If Empleado IsNot Nothing Then
+            Empleado.NotificarClientes = CB_CLIENTE.Checked
+        End If
+    End Sub
+
+    Private Sub CB_PROV_CheckedChanged(sender As Object, e As EventArgs) Handles CB_PROV.CheckedChanged
+        If Empleado IsNot Nothing Then
+            Empleado.NotificarProveedores = CB_PROV.Checked
+        End If
+    End Sub
+
+    Private Sub Seg_CheckedChanged(sender As Object, e As EventArgs) Handles seg.CheckedChanged
+        If Empleado IsNot Nothing Then
+            Empleado.NotificarSeguridad = seg.Checked
+        End If
+    End Sub
+#End Region
+
+#Region "Datos Familiares"
+
+    Private Sub LlenarDatosFamiliares()
+        Familiares = New Familiar().CargarListado(Empleado.ID)
+        RefrescarFamiliares()
+    End Sub
+
+    Private Sub RefrescarFamiliares()
+        dgvEsposa.DataSource = Familiares.FindAll(Function(x) x.Tipo = "CONYUGE")
+        dgvHijos.DataSource = Familiares.FindAll(Function(x) x.Tipo = "HIJO")
+    End Sub
+
+    Private Sub Btn_esSAVE_Click(sender As Object, e As EventArgs) Handles btn_esSAVE.Click
+        If Empleado IsNot Nothing Then
+            If New Familiar(0, Empleado.ID, "CONYUGE", txt_esName.Text, txt_esAP.Text, txt_esAM.Text, txtNacionalidad.Text,
+                                                    txt_esFN.Value, cbConyugeSexo.SelectedValue).Registrar(Familiares) Then
+                RefrescarFamiliares()
+                txt_esName.Text = ""
+                txt_esAP.Text = ""
+                txt_esAM.Text = ""
+                txtNacionalidad.Text = ""
+                txt_esFN.ResetText()
+                cbConyugeSexo.SelectedIndex = -1
+            End If
+        End If
+    End Sub
+
+    Private Sub Btn_hijoADD_Click(sender As Object, e As EventArgs) Handles btn_hijoADD.Click
+        If Empleado IsNot Nothing Then
+            If New Familiar(0, Empleado.ID, "HIJO", txt_hijoNAME.Text, txt_hijoAP.Text, txt_hijoAM.Text, txt_hijoNACION.Text,
+                                            txt_hijoFN.Value, cbHijosSexo.SelectedValue).Registrar(Familiares) Then
+                RefrescarFamiliares()
+                txt_hijoNAME.Text = ""
+                txt_hijoAP.Text = ""
+                txt_hijoAM.Text = ""
+                txt_hijoNACION.Text = ""
+                txt_hijoFN.ResetText()
+                cbHijosSexo.SelectedIndex = -1
+            End If
+        End If
+    End Sub
+
+    Private Sub EliminarFamiliar(pFamiliar As Familiar.Vista)
+        With pFamiliar
+            Dim loFamiliar As Familiar = New Familiar(.ID, .Empleado, .Tipo, .Nombre, .ApellidoPaterno, .ApellidoMaterno, .Nacionalidad, .FechaDeNacimineto, .Sexo)
+            If loFamiliar.Eliminar(Familiares) Then
+                RefrescarFamiliares()
+            End If
+        End With
+    End Sub
+
+    Private Sub dgv_esposa_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEsposa.CellClick
+        If e.ColumnIndex = 0 Then
+            EliminarFamiliar(CType(dgvEsposa.CurrentRow.DataBoundItem, Familiar.Vista))
+        End If
+    End Sub
+
+    Private Sub dgv_Hijos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvHijos.CellClick
+        If e.ColumnIndex = 0 Then
+            EliminarFamiliar(CType(dgvHijos.CurrentRow.DataBoundItem, Familiar.Vista))
+        End If
+    End Sub
+
+#End Region
+
+#Region "Antesedentes Laborales"
+
+    Private Sub LlenarDatosAntesedentesLaborales()
+        dgvAntecedentesLaborales.DataSource = New AntecedenteLaboral().CargarListado(Empleado.ID)
+    End Sub
+
+    Private Sub Btn_antSave_Click(sender As Object, e As EventArgs) Handles btn_antSave.Click
+        If Empleado IsNot Nothing Then
+            If New AntecedenteLaboral(0, Empleado.ID, txt_antFI.Value, txt_antFF.Value, txt_antEMP.Text, txt_antCARGO.Text,
+                                     txt_antSALARIO.Text, txt_antTEL.Text, txt_antMT.Text,
+                                     txt_antNAME.Text).Registrar(dgvAntecedentesLaborales.DataSource) Then
+                dgvAntecedentesLaborales.Refresh()
+                txt_antFI.ResetText()
+                txt_antFF.ResetText()
+                txt_antEMP.Text = ""
+                txt_antCARGO.Text = ""
+                txt_antSALARIO.Text = ""
+                txt_antTEL.Text = ""
+                txt_antMT.Text = ""
+                txt_antNAME.Text = ""
+            End If
+        End If
+    End Sub
+
+    Private Sub dgv_ant_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvAntecedentesLaborales.CellClick
+        If e.ColumnIndex = 0 Then
+            If CType(dgvAntecedentesLaborales.CurrentRow.DataBoundItem, AntecedenteLaboral).Eliminar(dgvAntecedentesLaborales.DataSource) Then
+                dgvAntecedentesLaborales.Refresh()
+            End If
+        End If
+
+    End Sub
+
+#End Region
+
+#Region "Contactos"
+    Private Sub LlenarDatosContactosDeEmergencia()
+        dgvContactos.DataSource = New ContactoDeEmergencia().CargarListado(Empleado.ID)
+    End Sub
+
+    Private Sub Btn_conADD_Click(sender As Object, e As EventArgs) Handles btn_conADD.Click
+        If Empleado IsNot Nothing Then
+            If New ContactoDeEmergencia(0, Empleado.ID, txt_conNAME.Text, txt_conAP.Text, txt_conAM.Text, txt_conPAREN.Text,
+                                                       txt_conTEL.Text, txt_conCEL.Text).Registrar(dgvContactos.DataSource) Then
+                dgvContactos.Refresh()
+                txt_conAM.Text = ""
+                txt_conAP.Text = ""
+                txt_conCEL.Text = ""
+                txt_conPAREN.Text = ""
+                txt_conNAME.Text = ""
+                txt_conTEL.Text = ""
+            End If
+        End If
+
+    End Sub
+
+    Private Sub dgv_contacto_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvContactos.CellClick
+        If e.ColumnIndex = 0 Then
+            If CType(dgvContactos.CurrentRow.DataBoundItem, ContactoDeEmergencia).Eliminar(dgvContactos.DataSource) Then
+                dgvContactos.Refresh()
+            End If
+        End If
+    End Sub
+
+#End Region
+
+#Region "Datos Medicos"
+    Private Sub LlenarDatosMedicos()
+        dgvEnfermedades.DataSource = New Enfermedad().CargarListado(Empleado.ID)
+    End Sub
+
+    Private Sub Btn_enfADD_Click(sender As Object, e As EventArgs) Handles btn_enfADD.Click
+        If Empleado IsNot Nothing Then
+            If New Enfermedad(0, Empleado.ID, txt_enfNAME.Text).Registrar(dgvEnfermedades.DataSource) Then
+                dgvEnfermedades.Refresh()
+                txt_enfNAME.Text = ""
+            End If
+        End If
+    End Sub
+
+    Private Sub Dgv_Enf_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEnfermedades.CellClick
+        If e.ColumnIndex = 0 Then
+            If CType(dgvContactos.CurrentRow.DataBoundItem, Enfermedad).Eliminar(dgvEnfermedades.DataSource) Then
+                dgvEnfermedades.Refresh()
+            End If
+        End If
+    End Sub
+
+#End Region
+
+#Region "Estudio Socioeconomico"
+
+#End Region
+
+
+
+    Private Sub SAVE_F()
+        ''If ValidateEmail(txtCorreo.Text) = True Then
+        'Dim InfoEmp As New Cls_Emp
+        'Dim objEmp As New Consultas
+        'InfoEmp.Emp_AMat = txtAMaterno.Text
+        'InfoEmp.Emp_APat = txtAPaterno.Text
+        'InfoEmp.Emp_Name = txtNombres.Text
+        'InfoEmp.Emp_Sexo = cbSexo.SelectedItem.ToString
+        'InfoEmp.Emp_NEducativo = cbNivelEducativo.SelectedItem.ToString
+        'InfoEmp.Emp_FNac = Convert.ToDateTime(dtpFechaDeNacimiento.Text)
+        'InfoEmp.Emp_EN = txtEntidadCodigo.Text
+        'InfoEmp.Emp_RFC = txtRFC.Text
+        'InfoEmp.Emp_NSS = txtNSS.Text
+        'InfoEmp.Emp_Curp = txtCURP.Text
+        'InfoEmp.Emp_Cel = txtCelular.Text
+        'InfoEmp.Emp_Tel = txtTelefono.Text
+        'InfoEmp.Emp_EdoCivil = cbEstadoCivil.SelectedItem.ToString
+        'InfoEmp.Emp_Nacionalidad = txtNacionalidad.Text
+        'InfoEmp.Emp_Domicilio = txtDomicilio.Text
+        'InfoEmp.Emp_Col = txtColonia.Text
+        'InfoEmp.Emp_CiudadEstado = txtCdDomicilio.Text
+        'InfoEmp.Emp_CP = txtCodigoPostal.Text
+        'InfoEmp.Emp_FEfectiva = Convert.ToDateTime(dtpFechaDeIngreso.Text)
+        'InfoEmp.ID_Puesto = Convert.ToInt64(txtPuestoCodigo.Text)
+        'InfoEmp.Emp_Salario = Convert.ToDouble(txtSalario.Text)
+        'InfoEmp.ID_Depto = txtDeptoCodigo.Text
+        'InfoEmp.Emp_Sup = txtSupervisorCodigo.Text
+        'InfoEmp.Emp_Tipo = txtTipoCodigo.Text
+        'InfoEmp.Emp_Activo = 1
+        'InfoEmp.Emp_Ciudad = txtCiudadCodigo.Text
+        'InfoEmp.Emp_Email = txtCorreo.Text
+        'InfoEmp.Img = pbFotoEmpleado.Image
+        'InfoEmp.Baja.NotificarClientes = CB_CLIENTE.Checked
+        'InfoEmp.Baja.NotificarProveedores = CB_PROV.Checked
+        'If (EXISTE = False) Then
+        '    If (txtNumero.Text = "" Or txtAPaterno.Text = "" Or txtNombres.Text = "" Or txtEntidadCodigo.Text = "" Or txtRFC.Text = "" Or txtNSS.Text = "" Or
+        '          txtSalario.Text = "" Or txtCURP.Text = "" Or dtpFechaDeIngreso.Text = "" Or txtTipoCodigo.Text = "" Or txtPuestoCodigo.Text = "" Or txtDeptoCodigo.Text = "" Or txtSupervisorCodigo.Text = "" Or dtpFechaDeNacimiento.Text = "") Then
+        '        MessageBox.Show("Favor de llenar todos los campos")
+        '    Else
+        '        objEmp.UpInsert_colabora(InfoEmp)
+        '        Limp()
+        '        MessageBox.Show("Empleado agregado satisfactoriamente")
+        '    End If
+        'Else
+        '    If MessageBox.Show("SE VA A MODIFICAR ESTE EMPLEADO", "My Application",
+        '              MessageBoxButtons.YesNo, MessageBoxIcon.Question) _
+        '              = DialogResult.Yes Then
+        '        InfoEmp.ID_Emp = txtNumero.Text
+        '        objEmp.UpInsert_colabora(InfoEmp)
+        '        Limp()
+        '        MessageBox.Show("Empleado Actualizado Satisfactoriamente")
+        '    End If
+        'End If
+        ''Else
+        ''    MsgBox("Email no es Valido")
+        ''End If
     End Sub
 
     Private Sub ClearSubControls(Parent As Control)
@@ -347,20 +658,20 @@ Public Class frmEmpleados
             .Operation = BackgroundOperations.GetLatestEmployeeNumber
         }
         Wait.ShowDialog()
-        txt_numero.Text = Wait.Result.ToString()
+        txtNumero.Text = Wait.Result.ToString()
         Wait.Close()
 
-        txt_numero.Text = objcon.NUMERO_EMPLEADO.ToString()
-        txt_numero.Focus()
+        txtNumero.Text = objcon.NUMERO_EMPLEADO.ToString()
+        txtNumero.Focus()
 
         lbl_emp.Text = ""
         PbOptions.Tag = ""
-        foto.Image = My.Resources.photoNobody120
-        foto.Visible = True
-        llenarFamilia()
-        llenarAL()
-        llenarContacto()
-        llenarEnfermedades()
+        pbFotoEmpleado.Image = My.Resources.photoNobody120
+        pbFotoEmpleado.Visible = True
+        'llenarFamilia()
+        'llenarAL()
+        'llenarContacto()
+        'llenarEnfermedades()
         PB_IMAGE_VIVIENDA.Image = My.Resources.AddImage
         EMPLEADO_ES = 0
         dgv_OI.DataSource = objcon.Consulta_OI(0)
@@ -370,192 +681,20 @@ Public Class frmEmpleados
         AddToolTips()
     End Sub
 
-    Private Sub Altas_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
-        If e.KeyCode = 13 Then My.Computer.Keyboard.SendKeys("{tab}")
-    End Sub
 
-    Private Sub txt_SS_Leave(sender As Object, e As EventArgs) Handles txt_SS.Leave
-        If (txt_SS.Text <> "" And txt_SS.Text <> "0") Then
-            If Not NSS.IsValid(txt_SS.Text) Then
-                MsgBox("Número de seguro social '" + txt_SS.Text + "' no valido, por favor verifique sea correcto")
-                txt_SS.Text = ""
-                txt_SS.Focus()
-            Else
-                If EXISTE = False Then
-                    Dim ldParameters As New Dictionary(Of String, Object) From {{"CURPorNSS", txt_SS.Text}}
-                    Dim Wait As New frmWait With {
-                        .Parameters = ldParameters,
-                        .Operation = BackgroundOperations.ValidateCURPandNSS
-                    }
-                    Wait.ShowDialog()
-                    Dim loResult = Wait.Result
-                    If loResult <> 0 Then
-                        txt_numero.Text = loResult
-                        Numeroleave()
-                    End If
-                    Wait.Close()
-                End If
-            End If
-        End If
-    End Sub
-    Private Sub txt_CURP_Leave(sender As Object, e As EventArgs) Handles txt_CURP.Leave
-        If (txt_CURP.Text <> "" And txt_CURP.Text <> "0") Then
-            If Not CURP.IsValid(txt_CURP.Text) Then
-                MsgBox("Número de CURP '" + txt_CURP.Text + "' no valido, por favor verifique sea correcto")
-                txt_CURP.Text = ""
-                txt_CURP.Focus()
-            Else
-                If EXISTE = False Then
-                    Dim ldParameters As New Dictionary(Of String, Object) From {{"CURPorNSS", txt_CURP.Text}}
-                    Dim Wait As New frmWait With {
-                        .Parameters = ldParameters,
-                        .Operation = BackgroundOperations.ValidateCURPandNSS
-                    }
-                    Wait.ShowDialog()
-                    Dim loResult = Wait.Result
-                    If loResult <> 0 Then
-                        txt_numero.Text = loResult
-                        Numeroleave()
-                    End If
-                    Wait.Close()
-                End If
-            End If
-        End If
-    End Sub
 
-    Private Sub OptionPress(sender As Object, e As EventArgs) Handles PbOptions.Click
-        'Try
-        If txt_numero.Text <> "" Then
-            Select Case PbOptions.Tag
-                Case "ALTA"
-                    objcon.Altas(txt_numero.Text, 1)
-                    MessageBox.Show("Se dio de Alta correctamente a este Empleado")
-                    Llenar()
-                    txt_activo.Text = ""
-                    txt_baja.Text = ""
-                    seg.Checked = True
-                    CB_CLIENTE.Checked = False
-                    CB_PROV.Checked = False
-                Case "BAJA"
-                    objcon.Altas(txt_numero.Text, 0)
-                    objcon.Bajas(txt_numero.Text, 0, commen.Text, seg.Checked, UsuarioLogeado.NumeroDeEmpleado, CB_PROV.Checked, CB_CLIENTE.Checked)
-                    MessageBox.Show("Se dio de Baja correctamente a este Empleado")
-                    txt_activo.Text = ""
-                    txt_baja.Text = ""
-                    Llenar()
-            End Select
-        Else
-            MessageBox.Show("Numero de Empleado invalido.")
-        End If
-        'Catch ex As Exception
-        '    MsgBox(ex.Message.ToString, MsgBoxStyle.Critical)
-        'End Try
-    End Sub
 
-    Private Sub buscar_EN_Click(sender As Object, e As EventArgs) Handles buscar_EN.Click
-        llenar_buscador("EN")
-        If (V1 <> "" And V2 <> "") Then
-            cuidad.Focus()
-        Else
-            txt_EN.Focus()
-        End If
-        txt_EN.Text = V1
-        txt_EN2.Text = V2
-    End Sub
-    Private Sub Buscar_PUESTO_Click(sender As Object, e As EventArgs) Handles Buscar_PUESTO.Click
-        llenar_buscador("PU")
-        If (V1 <> "" And V2 <> "") Then
-            txt_SALARY.Focus()
-        Else
-            txt_PUESTO.Focus()
-        End If
-        txt_PUESTO.Text = V1
-        txt_PUESTO2.Text = V2
-    End Sub
-    Private Sub Buscar_Super_Click(sender As Object, e As EventArgs) Handles Buscar_Super.Click
-        llenar_buscador("SU")
-        If (V1 <> "" And V2 <> "") Then
-            txt_tipo.Focus()
-        Else
-            txt_SUPER.Focus()
-        End If
-        txt_SUPER.Text = V1
-        txt_SUPER2.Text = V2
-    End Sub
-    Private Sub Buscar_tipo_Click(sender As Object, e As EventArgs) Handles Buscar_tipo.Click
-        llenar_buscador("TI")
-        If (V1 <> "" And V2 <> "") Then
-            SAVE.Focus()
-        Else
-            txt_tipo.Focus()
-        End If
-        txt_tipo.Text = V1
-        txt_tipo2.Text = V2
-    End Sub
-    Public Sub llenar_buscador(tipo As String)
-        Dim popup As New FrmPopUp(tipo)
-        Dim dialogresult__1 As DialogResult = popup.ShowDialog()
-        'V1 = popup.Variable
-        'V2 = popup.Variable2
-        popup.Close()
-    End Sub
-    Public Sub Limpiartxt(ByVal form As Windows.Forms.Form)
-        'Try
-        txt_activo.Text = ""
-        txt_baja.Text = ""
-        lbl_option.Visible = False
-        PbOptions.Visible = False
-        PbOptions.Tag = ""
-        'Catch ex As Exception
-        '    MsgBox(ex.Message.ToString, MsgBoxStyle.Critical)
-        'End Try
-    End Sub
-    Private Sub Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        AddToolTips()
-        Dim Wait As New frmWait With {
-            .Operation = BackgroundOperations.GetLatestEmployeeNumber
-        }
-        Wait.ShowDialog()
-        txt_numero.Text = Wait.Result.ToString()
-        Wait.Close()
-        txt_AP.Focus()
 
-        SAVE.Visible = True
-        foto.Image = AdminEmpleados.My.Resources.Resources.photoNobody120
-        foto.Visible = True
-        Me.FormBorderStyle = FormBorderStyle.None
-        Me.Dock = DockStyle.Fill
-        Me.TransparencyKey = System.Drawing.Color.FromArgb(121, 121, 121)
 
-    End Sub
 
-    Public Sub CargarImagen(control As PictureBox)
-        Dim IMAGEN As String
-        OpenFileDialog1.ShowDialog()
-        If OpenFileDialog1.FileName <> "" And OpenFileDialog1.FileName <> "OpenFileDialog1" Then
-            IMAGEN = OpenFileDialog1.FileName
-            Dim largo As Integer = IMAGEN.Length
-            If IsValidFormat(Mid(RTrim(IMAGEN), largo - 2, largo).ToLower()) OrElse
-                IsValidFormat(Mid(RTrim(IMAGEN), largo - 3, largo).ToLower()) Then
-                control.Load(IMAGEN)
-            Else
-                MsgBox("Formato no valido") : Exit Sub
-            End If
-        End If
-    End Sub
 
-    Private Function IsValidFormat(Ext As String) As Boolean
-        IsValidFormat = False
-        If Ext <> "gif" And Ext <> "bmp" And Ext <> "jpg" And Ext <> "jpeg" And Ext <> "png" Then
-            IsValidFormat = False
-        Else
-            IsValidFormat = True
-        End If
-    End Function
 
-    Private Sub ln_img_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
-        CargarImagen(foto)
-    End Sub
+
+
+
+
+
+
     Private Sub txt_OTCantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_OTCantidad.KeyPress
         If Not txt_OTCantidad.Text.Contains(".") Then
             e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
@@ -563,106 +702,21 @@ Public Class frmEmpleados
             e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
         End If
     End Sub
+
     Private Sub txt_GFRenta_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
+
     Private Sub txt_GFCole_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
+
     Private Sub Txt_GFDesp_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
+
     Private Sub txt_GFServ_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
-    End Sub
-    Private Sub CP_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CP.KeyPress
-        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
-    End Sub
-    Private Sub txt_telefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_telefono.KeyPress
-        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
-    End Sub
-    Private Sub Celular_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Celular.KeyPress
-        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
-    End Sub
-    Private Sub CANCEL_Click(sender As Object, e As EventArgs) Handles CANCEL.Click
-        Limp()
-    End Sub
-    Private Sub txt_EN_Leave(sender As Object, e As EventArgs) Handles txt_EN.Leave
-        If (txt_EN.Text <> "") Then
-            Dim ldParameters As New Dictionary(Of String, Object) From {{"Field", txt_EN.Text}, {"Type", "EN"}}
-            Dim Wait As New frmWait With {
-                        .Parameters = ldParameters,
-                        .Operation = BackgroundOperations.ValidateEnPuSuTi
-                    }
-            Wait.ShowDialog()
-            Dim loResult = Wait.Result
-            If loResult IsNot Nothing Or Not String.IsNullOrWhiteSpace(loResult) Then
-                txt_EN2.Text = loResult
-            Else
-                MessageBox.Show("No existe")
-                txt_EN.Text = ""
-                txt_EN.Focus()
-            End If
-            Wait.Close()
-        End If
-    End Sub
-    Private Sub txt_PUESTO_Leave(sender As Object, e As EventArgs)
-        If (txt_PUESTO.Text <> "") Then
-            Dim ldParameters As New Dictionary(Of String, Object) From {{"Field", txt_PUESTO.Text}, {"Type", "PU"}}
-            Dim Wait As New frmWait With {
-                        .Parameters = ldParameters,
-                        .Operation = BackgroundOperations.ValidateEnPuSuTi
-                    }
-            Wait.ShowDialog()
-            Dim loResult = Wait.Result
-            If loResult IsNot Nothing Or Not String.IsNullOrWhiteSpace(loResult) Then
-                txt_PUESTO2.Text = loResult
-            Else
-                MessageBox.Show("No existe")
-                txt_PUESTO.Text = ""
-                txt_PUESTO.Focus()
-            End If
-            Wait.Close()
-        End If
-    End Sub
-    Private Sub txt_SUPER_Leave(sender As Object, e As EventArgs)
-        If (txt_SUPER.Text <> "") Then
-            Dim ldParameters As New Dictionary(Of String, Object) From {{"Field", txt_SUPER.Text}, {"Type", "SU"}}
-            Dim Wait As New frmWait With {
-                        .Parameters = ldParameters,
-                        .Operation = BackgroundOperations.ValidateEnPuSuTi
-                    }
-            Wait.ShowDialog()
-            Dim loResult = Wait.Result
-            If loResult IsNot Nothing Or Not String.IsNullOrWhiteSpace(loResult) Then
-                txt_SUPER.Text = loResult
-            Else
-                MessageBox.Show("No existe")
-                txt_SUPER.Text = ""
-                txt_SUPER.Focus()
-            End If
-            Wait.Close()
-        End If
-    End Sub
-
-    Private Sub txt_tipo_Leave(sender As Object, e As EventArgs)
-        If (txt_tipo.Text <> "") Then
-            Dim ldParameters As New Dictionary(Of String, Object) From {{"Field", txt_tipo.Text}, {"Type", "TI"}}
-            Dim Wait As New frmWait With {
-                        .Parameters = ldParameters,
-                        .Operation = BackgroundOperations.ValidateEnPuSuTi
-                    }
-            Wait.ShowDialog()
-            Dim loResult = Wait.Result
-            If loResult IsNot Nothing Or Not String.IsNullOrWhiteSpace(loResult) Then
-                txt_SUPER.Text = loResult
-            Else
-                MessageBox.Show("No existe")
-                txt_tipo.Text = ""
-                txt_tipo.Focus()
-            End If
-            Wait.Close()
-        End If
     End Sub
 
     Private Sub Btn_AddRef_Click(sender As Object, e As EventArgs) Handles Btn_AddRef.Click
@@ -837,7 +891,7 @@ Public Class frmEmpleados
 
             If loResult > 0 Then
                 If Not ReferenceEquals(PB_IMAGE_VIVIENDA.Image, My.Resources.AddImage) Then
-                    ldParameters = New Dictionary(Of String, Object) From {{"Employee", ES.EMP_ID}, {"HousePicture", ES.IMG}, {"EmployeePicture", foto.Image}}
+                    ldParameters = New Dictionary(Of String, Object) From {{"Employee", ES.EMP_ID}, {"HousePicture", ES.IMG}, {"EmployeePicture", pbFotoEmpleado.Image}}
                     Wait = New frmWait With {.Parameters = ldParameters, .Operation = BackgroundOperations.AddImage}
                     Wait.ShowDialog()
                     Wait.Close()
@@ -894,239 +948,16 @@ Public Class frmEmpleados
         Limp()
     End Sub
 
-    Private Sub btn_enfADD_Click(sender As Object, e As EventArgs) Handles btn_enfADD.Click
-        If EXISTE = True Then
-            If txt_enfNAME.Text = "" Then
-            Else
-                Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}, {"Condition", txt_enfNAME.Text}}
-                Dim Wait As New frmWait With {
-                        .Parameters = ldParameters,
-                        .Operation = BackgroundOperations.AddMedicalConditions
-                    }
-                Wait.ShowDialog()
-                Wait.Close()
-                Dim loResult = Wait.Result
-                If loResult = False Then
-                    MessageBox.Show("Este registro ya Existe.")
-                End If
-                txt_enfNAME.Text = ""
-                llenarEnfermedades()
-            End If
-        End If
-    End Sub
 
-    Private Sub btn_conADD_Click(sender As Object, e As EventArgs) Handles btn_conADD.Click
-        If EXISTE = True Then
-            If txt_conAM.Text = "" Or txt_conAP.Text = "" Or txt_conCEL.Text = "" Or txt_conPAREN.Text = "" Or txt_conNAME.Text = "" Then
-                MessageBox.Show("Favor de llenar todos los campos")
-            Else
-                Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}, {"Name", txt_conNAME.Text}, {"FLastname", txt_conAP.Text}, {"SLastname", txt_conAM.Text},
-                 {"Relationship", txt_conPAREN.Text}, {"Phone", txt_conTEL.Text}, {"Cellphone", txt_conCEL.Text}}
-                Dim Wait As New frmWait With {
-                        .Parameters = ldParameters,
-                        .Operation = BackgroundOperations.AddContact
-                    }
-                Wait.ShowDialog()
-                Dim loResult = Wait.Result
-                Wait.Close()
-                If loResult = False Then
-                    MessageBox.Show("Este registro ya Existe.")
-                End If
-                txt_conAM.Text = ""
-                txt_conAP.Text = ""
-                txt_conCEL.Text = ""
-                txt_conPAREN.Text = ""
-                txt_conNAME.Text = ""
-                txt_conTEL.Text = ""
-                llenarContacto()
-            End If
-        End If
-    End Sub
 
-    Private Sub btn_antSave_Click(sender As Object, e As EventArgs) Handles btn_antSave.Click
-        If EXISTE = True Then
-            If txt_antCARGO.Text = "" Or txt_antEMP.Text = "" Or txt_antFF.Text = "" Or txt_antFI.Text = "" Or txt_antMT.Text = "" Or
-            txt_antNAME.Text = "" Or txt_antTEL.Text = "" Or txt_antSALARIO.Text = "" Then
-                MessageBox.Show("Favor de llenar todos los campos")
-            Else
-                Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}, {"Start", txt_antFI.Text}, {"End", txt_antFF.Text}, {"Company", txt_antEMP.Text},
-                 {"Position", txt_antCARGO.Text}, {"Wage", txt_antSALARIO.Text}, {"Phone", txt_antTEL.Text}, {"Reason", txt_antMT.Text}, {"Contact", txt_antNAME.Text}}
-                Dim Wait As New frmWait With {
-                        .Parameters = ldParameters,
-                        .Operation = BackgroundOperations.AddJobHistory
-                    }
-                Wait.ShowDialog()
-                Dim loResult = Wait.Result
-                Wait.Close()
-                If loResult = False Then
-                    MessageBox.Show("Este registro ya Existe.")
-                End If
-                txt_antFI.Text = ""
-                txt_antFF.Text = ""
-                txt_antEMP.Text = ""
-                txt_antCARGO.Text = ""
-                txt_antSALARIO.Text = ""
-                txt_antTEL.Text = ""
-                txt_antMT.Text = ""
-                txt_antNAME.Text = ""
-                llenarAL()
-            End If
-        End If
-    End Sub
-    Private Sub btn_esSAVE_Click(sender As Object, e As EventArgs) Handles btn_esSAVE.Click
-        If EXISTE = True Then
-            If dgv_esposa.Rows.Count > 0 Then
-                MessageBox.Show("Solo se puede agregar un registro a este campo.")
-            Else
-                If txt_esAM.Text = "" Or cb_esSexo.SelectedIndex = -1 Or txt_esAP.Text = "" Or txt_esFN.Text = "" Or txt_esNacion.Text = "" Or txt_esName.Text = "" Then
-                    MessageBox.Show("Favor de llenar todos los campos")
-                Else
-                    Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}, {"Type", "CONYUGE"}, {"Name", txt_esName.Text}, {"FLastname", txt_esAP.Text},
-                        {"SLastname", txt_esAM.Text}, {"Nationality", txt_esNacion.Text}, {"Birthday", txt_esFN.Text}, {"Sex", cb_esSexo.SelectedItem.ToString()}}
-                    Dim Wait As New frmWait With {
-                            .Parameters = ldParameters,
-                            .Operation = BackgroundOperations.AddFamilyMember
-                        }
-                    Wait.ShowDialog()
-                    Dim loResult = Wait.Result
-                    Wait.Close()
-                    If loResult = False Then
-                        MessageBox.Show("Este registro ya Existe.")
-                    End If
-                    txt_esAM.Text = ""
-                    txt_esAP.Text = ""
-                    txt_esName.Text = ""
-                    txt_esFN.Text = ""
-                    txt_esNacion.Text = ""
-                    cb_esSexo.SelectedIndex = -1
-                    llenarFamilia()
-                End If
-            End If
-        End If
-    End Sub
-    Private Sub btn_hijoADD_Click(sender As Object, e As EventArgs) Handles btn_hijoADD.Click
-        If EXISTE = True Then
-            If txt_hijoAM.Text = "" Or txt_hijoAP.Text = "" Or txt_hijoNAME.Text = "" Or txt_hijoFN.Text = "" Or txt_hijoNACION.Text = "" Or
-           txt_hijoSEXO.SelectedIndex = -1 Then
-                MessageBox.Show("Favor de llenar todos los campos")
-            Else
-                Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}, {"Type", "HIJO"}, {"Name", txt_hijoNAME.Text}, {"FLastname", txt_hijoAP.Text},
-                    {"SLastname", txt_hijoAM.Text}, {"Nationality", txt_hijoNACION.Text}, {"Birthday", txt_hijoFN.Text}, {"Sex", txt_hijoSEXO.SelectedItem.ToString()}}
-                Dim Wait As New frmWait With {
-                        .Parameters = ldParameters,
-                        .Operation = BackgroundOperations.AddFamilyMember
-                    }
-                Wait.ShowDialog()
-                Dim loResult = Wait.Result
-                Wait.Close()
-                If loResult = False Then
-                    MessageBox.Show("Este registro ya Existe.")
-                End If
-                txt_hijoAM.Text = ""
-                txt_hijoAP.Text = ""
-                txt_hijoNAME.Text = ""
-                txt_hijoFN.Text = ""
-                txt_hijoNACION.Text = ""
-                txt_hijoSEXO.SelectedIndex = -1
-                llenarFamilia()
-            End If
-        End If
-    End Sub
-    Private Sub depto_Leave(sender As Object, e As EventArgs)
-        If (depto.Text <> "") Then
-            V2 = objcon.S_catalago(depto.Text, "DE")
-            If (V2 = "" Or V2 Is Nothing) Then
-                MessageBox.Show("No existe")
-                depto.Text = ""
-                depto.Focus()
-            Else
-                depto2.Text = V2
-            End If
-        End If
-    End Sub
-    Private Sub buscar_depto_Click(sender As Object, e As EventArgs) Handles buscar_depto.Click
-        llenar_buscador("DE")
-        If (V1 <> "" And V2 <> "") Then
-            Txt_correo.Focus()
-        Else
-            depto.Focus()
-        End If
-        depto.Text = V1
-        depto2.Text = V2
-    End Sub
-    Private Sub cuidad_Leave(sender As Object, e As EventArgs) Handles cuidad.Leave
-        If (cuidad.Text <> "") Then
-            V2 = objcon.S_catalago(cuidad.Text, "ci")
-            If (V2 = "" Or V2 Is Nothing) Then
-                MessageBox.Show("No existe")
-                cuidad.Text = ""
-                cuidad.Focus()
-            Else
-                cuidad2.Text = V2
-            End If
-        End If
-    End Sub
-    Private Sub buscar_ciudad_Click(sender As Object, e As EventArgs) Handles buscar_ciudad.Click
-        If txt_EN.Text = "" Then
-            MessageBox.Show("Primero debe elegir una entidad.")
-        Else
-            llenar_buscador("CI," + txt_EN.Text)
-            If (V1 <> "" And V2 <> "") Then
-                txt_RFC.Focus()
-            Else
-                cuidad.Focus()
-            End If
-            cuidad.Text = V1
-            cuidad2.Text = V2
-        End If
 
-    End Sub
-    Private Sub llenarFamilia()
-        Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}}
-        Dim Wait As New frmWait With {
-                        .Parameters = ldParameters,
-                        .Operation = BackgroundOperations.GetFamily
-                    }
-        Wait.ShowDialog()
-        Dim loResult As Dictionary(Of String, Object) = Wait.Result
-        Wait.Close()
-        dgv_esposa.DataSource = loResult("Spouse")
-        dgv_Hijos.DataSource = loResult("Offsprings")
-    End Sub
-    Private Sub llenarAL()
-        Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}}
-        Dim Wait As New frmWait With {
-                        .Parameters = ldParameters,
-                        .Operation = BackgroundOperations.GetJobHistory
-                    }
-        Wait.ShowDialog()
-        Wait.Close()
-        Dim loResult = Wait.Result
-        Wait.Close()
-        dgv_ant.DataSource = loResult
-    End Sub
-    Private Sub llenarContacto()
-        Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}}
-        Dim Wait As New frmWait With {
-                        .Parameters = ldParameters,
-                        .Operation = BackgroundOperations.GetContact
-                    }
-        Wait.ShowDialog()
-        Dim loResult = Wait.Result
-        Wait.Close()
-        dgv_contacto.DataSource = loResult
-    End Sub
-    Private Sub llenarEnfermedades()
-        Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}}
-        Dim Wait As New frmWait With {
-                        .Parameters = ldParameters,
-                        .Operation = BackgroundOperations.GetMedicalConditions
-                    }
-        Wait.ShowDialog()
-        Dim loResult = Wait.Result
-        Wait.Close()
-        dgv_Enf.DataSource = loResult
-    End Sub
+
+
+
+
+
+
+
     Private Sub llenarSE()
         Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}}
         Dim Wait As New frmWait With {
@@ -1276,8 +1107,8 @@ Public Class frmEmpleados
             Dim Wait As New frmWait()
             Wait.Operation = BackgroundOperations.JustShowScreen
             Wait.Show()
-            Dim Reportes As New frmReportes With {
-                    .ReportOption = ReportOptions.SocialeconomicStudy,
+            Dim Reportes As New FrmReportes With( {
+                    .Opcion = ReportOptions.SocialeconomicStudy,
                     .Emp = Convert.ToInt64(txt_numero.Text),
                     .User = UsuarioLogeado.Nombre
                 }
@@ -1285,113 +1116,18 @@ Public Class frmEmpleados
         End If
     End Sub
 
-    Private Sub foto_DoubleClick(sender As Object, e As EventArgs) Handles foto.DoubleClick
-        CargarImagen(foto)
-    End Sub
+
 
     Private Sub PB_IMAGE_VIVIENDA_DoubleClick(sender As Object, e As EventArgs) Handles PB_IMAGE_VIVIENDA.DoubleClick
         CargarImagen(PB_IMAGE_VIVIENDA)
     End Sub
 
-    Private Sub dgv_esposa_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_esposa.CellClick
-        Dim Id As Integer
-        Dim gr As New DataGridView
-        gr = sender
-        If e.RowIndex <> -1 Then
-            Select Case e.ColumnIndex
-                Case Is > -1
-                    Select Case gr.Columns(e.ColumnIndex).Name
-                        Case "btnCEliminar"
-                            If MessageBox.Show("Seguro que desea Eliminar este registro?", "Eliminar Familiar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                Id = gr.Rows(e.RowIndex).Cells(2).Value
-                                objcon.DELETE_Familia(Id)
-                            End If
-                    End Select
-            End Select
-            Dim dt As New DataTable
-            llenarFamilia()
-        End If
-    End Sub
 
-    Private Sub dgv_Hijos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_Hijos.CellClick
-        Dim Id As Integer
-        Dim gr As New DataGridView
-        gr = sender
-        If e.RowIndex <> -1 Then
-            Select Case e.ColumnIndex
-                Case Is > -1
-                    Select Case gr.Columns(e.ColumnIndex).Name
-                        Case "btnHEliminar"
-                            If MessageBox.Show("Seguro que desea Eliminar este registro?", "Eliminar Familiar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                Id = gr.Rows(e.RowIndex).Cells(1).Value
-                                objcon.DELETE_Familia(Id)
-                            End If
-                    End Select
-            End Select
-            Dim dt As New DataTable
-            llenarFamilia()
-        End If
-    End Sub
 
-    Private Sub dgv_ant_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_ant.CellClick
-        Dim Id As Integer
-        Dim gr As New DataGridView
-        gr = sender
-        If e.RowIndex <> -1 Then
-            Select Case e.ColumnIndex
-                Case Is > -1
-                    Select Case gr.Columns(e.ColumnIndex).Name
-                        Case "btnAEliminar"
-                            If MessageBox.Show("Seguro que desea Eliminar este registro?", "Eliminar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                Id = gr.Rows(e.RowIndex).Cells(1).Value
-                                objcon.DELETE_ANTE(Id)
-                            End If
-                    End Select
-            End Select
-            Dim dt As New DataTable
-            llenarAL()
-        End If
-    End Sub
 
-    Private Sub dgv_contacto_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_contacto.CellClick
-        Dim Id As Integer
-        Dim gr As New DataGridView
-        gr = sender
-        If e.RowIndex <> -1 Then
-            Select Case e.ColumnIndex
-                Case Is > -1
-                    Select Case gr.Columns(e.ColumnIndex).Name
-                        Case "btnCOEliminar"
-                            If MessageBox.Show("Seguro que desea Eliminar este registro?", "Eliminar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                Id = gr.Rows(e.RowIndex).Cells(1).Value
-                                objcon.DELETE_CEMERGENCIA(Id)
-                            End If
-                    End Select
-            End Select
-            Dim dt As New DataTable
-            llenarContacto()
-        End If
-    End Sub
 
-    Private Sub dgv_Enf_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_Enf.CellClick
-        Dim Id As Integer
-        Dim gr As New DataGridView
-        gr = sender
-        If e.RowIndex <> -1 Then
-            Select Case e.ColumnIndex
-                Case Is > -1
-                    Select Case gr.Columns(e.ColumnIndex).Name
-                        Case "btnEnELiminar"
-                            If MessageBox.Show("Seguro que desea Eliminar este registro?", "Eliminar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                Id = gr.Rows(e.RowIndex).Cells(1).Value
-                                objcon.DELETE_Enfermedades(Id)
-                            End If
-                    End Select
-            End Select
-            Dim dt As New DataTable
-            llenarEnfermedades()
-        End If
-    End Sub
+
+
 
     Private Sub dgv_OI_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_OI.CellClick
         Dim Id As Integer
@@ -1435,44 +1171,6 @@ Public Class frmEmpleados
             If EMPLEADO_ES <> 0 Then
                 dgv_Ref.DataSource = objcon.Consulta_REF(EMPLEADO_ES)
             End If
-        End If
-    End Sub
-
-    Private Sub PbSearchEmployee_Click(sender As Object, e As EventArgs) Handles PbSearchEmployee.Click
-        tooltip.RemoveAll()
-        llenar_buscador("EMP")
-        If V1 <> "" And V2 <> "" Then
-            txt_numero.Text = V1
-            Numeroleave()
-            llenarFamilia()
-            llenarAL()
-            llenarContacto()
-            llenarEnfermedades()
-            llenarSE()
-            pnl_estatus.Visible = True
-            SAVE.Image = My.Resources.Updates_80
-            tooltip.SetToolTip(SAVE, "Actualizar Información del empleado")
-        Else
-            Dim Wait As New frmWait With {
-            .Operation = BackgroundOperations.GetLatestEmployeeNumber
-        }
-            Wait.ShowDialog()
-            txt_numero.Text = Wait.Result.ToString()
-            Wait.Close()
-            pnl_estatus.Visible = False
-            SAVE.Image = My.Resources.Save_80px
-            tooltip.SetToolTip(SAVE, "Guardar Información de un nuevo empleado")
-        End If
-        txt_NOM.Focus()
-    End Sub
-
-    Private Sub TxtMoney_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_GFCole.KeyPress, Txt_GFDesp.KeyPress, txt_GFRenta.KeyPress, txt_GFServ.KeyPress,
-                                                                                     txt_OTCantidad.KeyPress, txt_antSALARIO.KeyPress
-        Dim TxtBoxMoney As TextBox = CType(sender, TextBox)
-        If Not TxtBoxMoney.Text.Contains(".") Then
-            e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
-        Else
-            e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
         End If
     End Sub
 
@@ -1574,4 +1272,6 @@ Public Class frmEmpleados
             e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
         End If
     End Sub
+
+
 End Class

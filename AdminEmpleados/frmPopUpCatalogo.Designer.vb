@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FrmPopUp
+Partial Class frmPopUpCatalogo
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -75,7 +75,7 @@ Partial Class FrmPopUp
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(349, 379)
+        Me.Label3.Location = New System.Drawing.Point(345, 379)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(43, 17)
         Me.Label3.TabIndex = 42
@@ -86,7 +86,7 @@ Partial Class FrmPopUp
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(82, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(277, 379)
+        Me.Label2.Location = New System.Drawing.Point(272, 379)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(65, 17)
         Me.Label2.TabIndex = 41
@@ -125,7 +125,7 @@ Partial Class FrmPopUp
         '
         Me.dgv_Pop.AllowUserToAddRows = False
         Me.dgv_Pop.AllowUserToDeleteRows = False
-        Me.dgv_Pop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
+        Me.dgv_Pop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgv_Pop.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.dgv_Pop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_Pop.Cursor = System.Windows.Forms.Cursors.Hand
@@ -138,7 +138,7 @@ Partial Class FrmPopUp
         Me.dgv_Pop.Size = New System.Drawing.Size(363, 258)
         Me.dgv_Pop.TabIndex = 36
         '
-        'FrmPopUp
+        'frmPopUpCatalogo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -146,7 +146,7 @@ Partial Class FrmPopUp
         Me.Controls.Add(Me.Panel8)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.Name = "FrmPopUp"
+        Me.Name = "frmPopUpCatalogo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmPopUp"
         Me.Panel8.ResumeLayout(False)
