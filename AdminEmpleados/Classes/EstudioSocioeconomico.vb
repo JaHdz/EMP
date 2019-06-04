@@ -1,82 +1,191 @@
+Imports System.ComponentModel
+Imports System.Data.SqlClient
+Imports System.IO
+
 Public Class EstudioSocioeconomico
 #Region "Propiedades"
-		Public Property ID_EstSocio As integer 
-		Public Property ID_Emp As integer 
-		Public Property Viv_Tipo As string 
-		Public Property Viv_Condiciones As string 
-		Public Property Viv_Luz As boolean 
-		Public Property Viv_Tel As boolean 
-		Public Property Viv_Agua As boolean 
-		Public Property Viv_Drenaje As boolean 
-		Public Property Viv_TubGas As boolean 
-		Public Property Viv_RecBasura As boolean 
-		Public Property Viv_TVCable As boolean 
-		Public Property Viv_Internet As boolean 
-		Public Property Viv_SisSeg As boolean 
-		Public Property Trasn_Metro As boolean 
-		Public Property Trans_Publico As boolean 
-		Public Property Trans_Taxi As boolean 
-		Public Property Trans_VehPropio As boolean 
-		Public Property Act_EvSociales As string 
-		Public Property Act_EvCominitarios As string 
-		Public Property Act_Museos As string 
-		Public Property Act_Teatros As string 
-		Public Property Act_Cines As string 
-		Public Property Act_FesCulturaes As string 
-		Public Property Act_ZonasArq As string 
-		Public Property Act_Vaciones As string 
-		Public Property Act_PlazasPub As string 
-		Public Property Act_ParquesNat As string 
-		Public Property Act_PaquesDiv As string 
-		Public Property GF_Renta As decimal 
-		Public Property GF_Colegio As decimal 
-		Public Property GF_Despensa As decimal 
-		Public Property GF_Servicios As decimal 
-		Public Property ES_Pasatiempos As string 
-		Public Property ES_Religion As string 
-		Public Property ES_Verificador As string 
-		Public Property ES_Observaciones As string 
-	#End Region
+    <Browsable(False)>
+    Public Property ID As New Integer
+    <Browsable(False)>
+    Public Property Empleado As New Integer
+    Public Property TipoDeVivienda As String = String.Empty
+    Public Property CondicionesDeVivienda As String = String.Empty
+    Public Property ServicioLuz As Boolean = False
+    Public Property ServicioTelefono As Boolean = False
+    Public Property ServicioAgua As Boolean = False
+    Public Property ServicioDrenaje As Boolean = False
+    Public Property ServicioGas As Boolean = False
+    Public Property ServicioRecoleccionDeBasura As Boolean = False
+    Public Property ServicioTVCable As Boolean = False
+    Public Property ServicioDeInternet As Boolean = False
+    Public Property ServicioSistemaDeSeguridad As Boolean = False
+    Public Property TransporteMetro As Boolean = False
+    Public Property TransportePublico As Boolean = False
+    Public Property TransporteTaxi As Boolean = False
+    Public Property TransporteVehiculoPropio As Boolean = False
+    Public Property ActividadEventosSociales As String = String.Empty
+    Public Property ActividadEventosCominitarios As String = String.Empty
+    Public Property ActividadMuseos As String = String.Empty
+    Public Property ActividadTeatros As String = String.Empty
+    Public Property ActividadCines As String = String.Empty
+    Public Property ActividadFestivalesCulturales As String = String.Empty
+    Public Property ActividadZonasArqueologicas As String = String.Empty
+    Public Property ActividadVaciones As String = String.Empty
+    Public Property ActividadPlazasPublicas As String = String.Empty
+    Public Property ActividadParquesNaturales As String = String.Empty
+    Public Property ActividadPaquesDeDiversiones As String = String.Empty
+    Public Property GastosFijosRenta As New Decimal
+    Public Property GastosFijosColegio As New Decimal
+    Public Property GastosFijosDespensa As New Decimal
+    Public Property GastosFijosServicios As New Decimal
+    Public Property Pasatiempos As String = String.Empty
+    Public Property Religion As String = String.Empty
+    Public Property Verificador As String = String.Empty
+    Public Property Observaciones As String = String.Empty
+    Public Property FotoVivienda As Image = Nothing
+    Public Property OtrosIngresos As New List(Of OtroIngreso)
+    Public Property Referencias As New List(Of Referencia)
+#End Region
 
-	#Region "Funciones y Metodos"
-	Public Sub New(ByVal liID_EstSocio As integer, ByVal liID_Emp As integer, ByVal lsViv_Tipo As string, ByVal lsViv_Condiciones As string, ByVal lbViv_Luz As boolean, ByVal lbViv_Tel As boolean, ByVal lbViv_Agua As boolean, ByVal lbViv_Drenaje As boolean, ByVal lbViv_TubGas As boolean, ByVal lbViv_RecBasura As boolean, ByVal lbViv_TVCable As boolean, ByVal lbViv_Internet As boolean, ByVal lbViv_SisSeg As boolean, ByVal lbTrasn_Metro As boolean, ByVal lbTrans_Publico As boolean, ByVal lbTrans_Taxi As boolean, ByVal lbTrans_VehPropio As boolean, ByVal lsAct_EvSociales As string, ByVal lsAct_EvCominitarios As string, ByVal lsAct_Museos As string, ByVal lsAct_Teatros As string, ByVal lsAct_Cines As string, ByVal lsAct_FesCulturaes As string, ByVal lsAct_ZonasArq As string, ByVal lsAct_Vaciones As string, ByVal lsAct_PlazasPub As string, ByVal lsAct_ParquesNat As string, ByVal lsAct_PaquesDiv As string, ByVal ldGF_Renta As decimal, ByVal ldGF_Colegio As decimal, ByVal ldGF_Despensa As decimal, ByVal ldGF_Servicios As decimal, ByVal lsES_Pasatiempos As string, ByVal lsES_Religion As string, ByVal lsES_Verificador As string, ByVal lsES_Observaciones As string)
-    ID_EstSocio = liID_EstSocio 
-    ID_Emp = liID_Emp 
-    Viv_Tipo = lsViv_Tipo 
-    Viv_Condiciones = lsViv_Condiciones 
-    Viv_Luz = lbViv_Luz 
-    Viv_Tel = lbViv_Tel 
-    Viv_Agua = lbViv_Agua 
-    Viv_Drenaje = lbViv_Drenaje 
-    Viv_TubGas = lbViv_TubGas 
-    Viv_RecBasura = lbViv_RecBasura 
-    Viv_TVCable = lbViv_TVCable 
-    Viv_Internet = lbViv_Internet 
-    Viv_SisSeg = lbViv_SisSeg 
-    Trasn_Metro = lbTrasn_Metro 
-    Trans_Publico = lbTrans_Publico 
-    Trans_Taxi = lbTrans_Taxi 
-    Trans_VehPropio = lbTrans_VehPropio 
-    Act_EvSociales = lsAct_EvSociales 
-    Act_EvCominitarios = lsAct_EvCominitarios 
-    Act_Museos = lsAct_Museos 
-    Act_Teatros = lsAct_Teatros 
-    Act_Cines = lsAct_Cines 
-    Act_FesCulturaes = lsAct_FesCulturaes 
-    Act_ZonasArq = lsAct_ZonasArq 
-    Act_Vaciones = lsAct_Vaciones 
-    Act_PlazasPub = lsAct_PlazasPub 
-    Act_ParquesNat = lsAct_ParquesNat 
-    Act_PaquesDiv = lsAct_PaquesDiv 
-    GF_Renta = ldGF_Renta 
-    GF_Colegio = ldGF_Colegio 
-    GF_Despensa = ldGF_Despensa 
-    GF_Servicios = ldGF_Servicios 
-    ES_Pasatiempos = lsES_Pasatiempos 
-    ES_Religion = lsES_Religion 
-    ES_Verificador = lsES_Verificador 
-    ES_Observaciones = lsES_Observaciones 
-End Sub
+#Region "Funciones y Metodos"
+    Public Sub New()
+        MyBase.New
+    End Sub
+    Public Sub New(ByVal liID As Integer, ByVal liEmpleado As Integer, ByVal lsTipoDeVivienda As String, ByVal lsCondicionesDeVivienda As String,
+                   ByVal lbServicioLuz As Boolean, ByVal lbServicioTelefono As Boolean, ByVal lbServicioAgua As Boolean,
+                   ByVal lbServicioDrenaje As Boolean, ByVal lbServicioGas As Boolean, ByVal lbServicioRecoleccionDeBasura As Boolean,
+                   ByVal lbServicioTVCable As Boolean, ByVal lbServicioDeInternet As Boolean, ByVal lbServicioSistemaDeSeguridad As Boolean,
+                   ByVal lbTransporteMetro As Boolean, ByVal lbTransportePublico As Boolean, ByVal lbTransporteTaxi As Boolean,
+                   ByVal lbTransporteVehiculoPropio As Boolean, ByVal lsActividadEventosSociales As String,
+                   ByVal lsActividadEventosCominitarios As String, ByVal lsActividadMuseos As String, ByVal lsActividadTeatros As String,
+                   ByVal lsActividadCines As String, ByVal lsActividadFestivalesCulturales As String, ByVal lsActividadZonasArqueologicas As String,
+                   ByVal lsActividadVaciones As String, ByVal lsActividadPlazasPublicas As String, ByVal lsActividadParquesNaturales As String,
+                   ByVal lsActividadPaquesDeDiversiones As String, ByVal ldGastosFijosRenta As Decimal, ByVal ldGastosFijosColegio As Decimal,
+                   ByVal ldGastosFijosDespensa As Decimal, ByVal ldGastosFijosServicios As Decimal, ByVal lsPasatiempos As String,
+                   ByVal lsReligion As String, ByVal lsVerificador As String, ByVal lsObservaciones As String, ByVal liFotoVivienda As Image)
+        ID = liID
+        Empleado = liEmpleado
+        TipoDeVivienda = lsTipoDeVivienda
+        CondicionesDeVivienda = lsCondicionesDeVivienda
+        ServicioLuz = lbServicioLuz
+        ServicioTelefono = lbServicioTelefono
+        ServicioAgua = lbServicioAgua
+        ServicioDrenaje = lbServicioDrenaje
+        ServicioGas = lbServicioGas
+        ServicioRecoleccionDeBasura = lbServicioRecoleccionDeBasura
+        ServicioTVCable = lbServicioTVCable
+        ServicioDeInternet = lbServicioDeInternet
+        ServicioSistemaDeSeguridad = lbServicioSistemaDeSeguridad
+        TransporteMetro = lbTransporteMetro
+        TransportePublico = lbTransportePublico
+        TransporteTaxi = lbTransporteTaxi
+        TransporteVehiculoPropio = lbTransporteVehiculoPropio
+        ActividadEventosSociales = lsActividadEventosSociales
+        ActividadEventosCominitarios = lsActividadEventosCominitarios
+        ActividadMuseos = lsActividadMuseos
+        ActividadTeatros = lsActividadTeatros
+        ActividadCines = lsActividadCines
+        ActividadFestivalesCulturales = lsActividadFestivalesCulturales
+        ActividadZonasArqueologicas = lsActividadZonasArqueologicas
+        ActividadVaciones = lsActividadVaciones
+        ActividadPlazasPublicas = lsActividadPlazasPublicas
+        ActividadParquesNaturales = lsActividadParquesNaturales
+        ActividadPaquesDeDiversiones = lsActividadPaquesDeDiversiones
+        GastosFijosRenta = ldGastosFijosRenta
+        GastosFijosColegio = ldGastosFijosColegio
+        GastosFijosDespensa = ldGastosFijosDespensa
+        GastosFijosServicios = ldGastosFijosServicios
+        Pasatiempos = lsPasatiempos
+        Religion = lsReligion
+        Verificador = lsVerificador
+        Observaciones = lsObservaciones
+        FotoVivienda = liFotoVivienda
+    End Sub
+
+    Public Function Buscar(ByVal Empleado As String) As EstudioSocioeconomico
+        Dim Result As EstudioSocioeconomico = Nothing
+        If Not String.IsNullOrWhiteSpace(Empleado) Then
+            Using con As New SqlConnection(ConnectionString())
+                con.Open()
+                Dim cmd As New SqlCommand("UDSP_SES", con) With {.CommandType = CommandType.StoredProcedure}
+                cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID
+                cmd.Parameters.Add("@EMP_ID", SqlDbType.Int).Value = Empleado
+                cmd.Parameters.Add("@H_TYPE", SqlDbType.NVarChar, 20).Value = TipoDeVivienda
+                cmd.Parameters.Add("@H_CONDITION", SqlDbType.NVarChar, 20).Value = CondicionesDeVivienda
+                cmd.Parameters.Add("@H_ELEC", SqlDbType.Bit).Value = ServicioLuz
+                cmd.Parameters.Add("@H_PHONE", SqlDbType.Bit).Value = ServicioTelefono
+                cmd.Parameters.Add("@H_WATER", SqlDbType.Bit).Value = ServicioAgua
+                cmd.Parameters.Add("@H_SEWER", SqlDbType.Bit).Value = ServicioDrenaje
+                cmd.Parameters.Add("@H_GAS", SqlDbType.Bit).Value = ServicioGas
+                cmd.Parameters.Add("@H_TRASHREC", SqlDbType.Bit).Value = ServicioRecoleccionDeBasura
+                cmd.Parameters.Add("@H_CABLETV", SqlDbType.Bit).Value = ServicioTVCable
+                cmd.Parameters.Add("@H_INTERNET", SqlDbType.Bit).Value = ServicioDeInternet
+                cmd.Parameters.Add("@H_SECURITY", SqlDbType.Bit).Value = ServicioSistemaDeSeguridad
+                cmd.Parameters.Add("@T_METRO", SqlDbType.Bit).Value = TransporteMetro
+                cmd.Parameters.Add("@T_PUBLIC", SqlDbType.Bit).Value = TransportePublico
+                cmd.Parameters.Add("@T_TAX", SqlDbType.Bit).Value = TransporteTaxi
+                cmd.Parameters.Add("@T_CAR", SqlDbType.Bit).Value = TransporteVehiculoPropio
+                cmd.Parameters.Add("@A_SOCIAL", SqlDbType.NVarChar, 20).Value = ActividadEventosSociales
+                cmd.Parameters.Add("@A_COMUNITARY", SqlDbType.NVarChar, 20).Value = ActividadEventosCominitarios
+                cmd.Parameters.Add("@A_MUSEUMS", SqlDbType.NVarChar, 20).Value = ActividadMuseos
+                cmd.Parameters.Add("@A_THEATERS", SqlDbType.NVarChar, 20).Value = ActividadTeatros
+                cmd.Parameters.Add("@A_MOVIES", SqlDbType.NVarChar, 20).Value = ActividadCines
+                cmd.Parameters.Add("@A_FESTIVALS", SqlDbType.NVarChar, 20).Value = ActividadFestivalesCulturales
+                cmd.Parameters.Add("@A_ARCHE", SqlDbType.NVarChar, 20).Value = ActividadZonasArqueologicas
+                cmd.Parameters.Add("@A_VACATIONS", SqlDbType.NVarChar, 20).Value = ActividadVaciones
+                cmd.Parameters.Add("@A_PLAZAS", SqlDbType.NVarChar, 20).Value = ActividadPlazasPublicas
+                cmd.Parameters.Add("@A_NPARK", SqlDbType.NVarChar, 20).Value = ActividadParquesNaturales
+                cmd.Parameters.Add("@A_APARK", SqlDbType.NVarChar, 20).Value = ActividadPaquesDeDiversiones
+                cmd.Parameters.Add("@FS_RENT", SqlDbType.Decimal).Value = GastosFijosRenta
+                cmd.Parameters.Add("@FS_SCHOOL", SqlDbType.Decimal).Value = GastosFijosColegio
+                cmd.Parameters.Add("@FS_GROCERIES", SqlDbType.Decimal).Value = GastosFijosDespensa
+                cmd.Parameters.Add("@FS_SERVICES", SqlDbType.Decimal).Value = GastosFijosServicios
+                cmd.Parameters.Add("@SES_HOBBIES", SqlDbType.NVarChar, 100).Value = Pasatiempos
+                cmd.Parameters.Add("@SES_RELIGION", SqlDbType.NVarChar, 20).Value = Religion
+                cmd.Parameters.Add("@SES_VERIFIER", SqlDbType.NVarChar, 50).Value = Verificador
+                cmd.Parameters.Add("@SES_OBSERVATIONS", SqlDbType.NVarChar, 200).Value = Observaciones
+                If FotoVivienda Is Nothing AndAlso FotoVivienda IsNot My.Resources.AddImage_80px Then
+                    cmd.Parameters.Add("PHOTO", SqlDbType.Image).Value = DBNull.Value
+                Else
+                    cmd.Parameters.Add("PHOTO", SqlDbType.Image).Value = ImagenABytes(FotoVivienda)
+                End If
+                cmd.Parameters.Add("OPTION", SqlDbType.Int).Value = Operacion.Buscar
+                Using Reader As SqlDataReader = cmd.ExecuteReader()
+                    If Reader.Read() Then
+                        Result = New EstudioSocioeconomico(Reader("ID"), Reader("EMP"), Reader("TIPO"), Reader("CON"), Reader("LUZ"),
+                                 Reader("TEL"), Reader("AGU"), Reader("DRE"), Reader("GAS"), Reader("BAS"), Reader("TV"), Reader("INTE"),
+                                 Reader("SEG"), Reader("MET"), Reader("PUB"), Reader("TAX"), Reader("VEH"), Reader("ESO"), Reader("ECO"),
+                                 Reader("MUS"), Reader("TEA"), Reader("CIN"), Reader("FES"), Reader("ZAR"), Reader("VAC"), Reader("PPU"),
+                                 Reader("PNA"), Reader("PDI"), Reader("REN"), Reader("COL"), Reader("DESP"), Reader("SER"), Reader("PAS"),
+                                 Reader("REL"), Reader("VER"), Reader("OBS"), CargarImagen(Reader("IMG")))
+                    End If
+                End Using
+            End Using
+        End If
+        Return Result
+    End Function
+
+
+    Private Function CargarImagen(ArregloDeBytes As Byte()) As Image
+        Dim Result As Image
+        If ArregloDeBytes.Length > 0 Then
+            Dim ms As New MemoryStream(ArregloDeBytes)
+            Result = Image.FromStream(ms)
+        Else
+            Result = My.Resources.AddImage_80px
+        End If
+        Return Result
+    End Function
+
+    Private Function ImagenABytes(ByVal Imagen As Image) As Byte()
+        If Not Imagen Is Nothing Then
+            Dim Bin As New MemoryStream
+            Imagen.Save(Bin, Imaging.ImageFormat.Jpeg)
+            Return Bin.GetBuffer
+        Else
+            Return Nothing
+        End If
+    End Function
 #End Region
 End Class
 

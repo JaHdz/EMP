@@ -145,9 +145,6 @@
   <data name="Add_MedicalCondition_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add_MedicalCondition_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="photoNobody120" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\photoNobody120.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Search_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -193,9 +190,6 @@
   <data name="Add_marriage_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add_marriage_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AddImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AddImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Close_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Close_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -225,5 +219,8 @@
   </data>
   <data name="Updates_80" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Updates_80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddImage_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddImage_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

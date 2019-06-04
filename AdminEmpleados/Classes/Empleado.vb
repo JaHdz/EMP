@@ -139,14 +139,12 @@ Public Class Empleado
             cmd.Parameters.Add("@USER", SqlDbType.Int).Value = Usuario.ID
             cmd.Parameters.Add("@ACTIVE", SqlDbType.Bit).Value = EsActivo
             cmd.Parameters.Add("@ISSUPERVISOR", SqlDbType.Bit).Value = EsSupervisor
-            If Foto Is Nothing OrElse Foto Is My.Resources.photoNobody120 Then
+            If Foto Is Nothing OrElse Foto Is My.Resources.AddImage_80px Then
                 cmd.Parameters.Add("@PHOTO", SqlDbType.Image).Value = DBNull.Value
             Else
                 cmd.Parameters.Add("@PHOTO", SqlDbType.Image).Value = ImagenABytes(Foto)
             End If
-
             cmd.Parameters.Add("@OPTION", SqlDbType.Int).Value = Operacion.BuscarTodos
-
             Using Reader As SqlDataReader = cmd.ExecuteReader()
                 While Reader.Read()
                     Dim loEmpleado As New Empleado(Reader("ID_Emp"), Reader("Emp_Name"), Reader("Emp_APat"), Reader("Emp_AMat"), Reader("Emp_Domicilio"), Reader("Emp_Col"),
@@ -211,7 +209,7 @@ Public Class Empleado
                     cmd.Parameters.Add("@USER", SqlDbType.Int).Value = Usuario.ID
                     cmd.Parameters.Add("@ACTIVE", SqlDbType.Bit).Value = EsActivo
                     cmd.Parameters.Add("@ISSUPERVISOR", SqlDbType.Bit).Value = EsSupervisor
-                    If Foto Is Nothing OrElse Foto Is My.Resources.photoNobody120 Then
+                    If Foto Is Nothing OrElse Foto Is My.Resources.AddImage_80px Then
                         cmd.Parameters.Add("@PHOTO", SqlDbType.Image).Value = DBNull.Value
                     Else
                         cmd.Parameters.Add("@PHOTO", SqlDbType.Image).Value = ImagenABytes(Foto)
@@ -274,7 +272,7 @@ Public Class Empleado
                     cmd.Parameters.Add("@USER", SqlDbType.Int).Value = Usuario.ID
                     cmd.Parameters.Add("@ACTIVE", SqlDbType.Bit).Value = EsActivo
                     cmd.Parameters.Add("@ISSUPERVISOR", SqlDbType.Bit).Value = EsSupervisor
-                    If Foto Is Nothing OrElse Foto Is My.Resources.photoNobody120 Then
+                    If Foto Is Nothing OrElse Foto Is My.Resources.AddImage_80px Then
                         cmd.Parameters.Add("@PHOTO", SqlDbType.Image).Value = DBNull.Value
                     Else
                         cmd.Parameters.Add("@PHOTO", SqlDbType.Image).Value = ImagenABytes(Foto)
@@ -414,7 +412,7 @@ Public Class Empleado
             Dim ms As New MemoryStream(ArregloDeBytes)
             Result = Image.FromStream(ms)
         Else
-            Result = My.Resources.photoNobody120
+            Result = My.Resources.AddImage_80px
         End If
         Return Result
     End Function

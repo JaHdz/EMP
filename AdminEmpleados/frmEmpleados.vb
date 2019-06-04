@@ -13,8 +13,12 @@ Public Class frmEmpleados
     Dim ErrorProvider As New ErrorProvider
     Dim tooltip As New ToolTip
     Dim Resultado As Object
-    Dim Empleado As Empleado
+    Dim Empleado As Empleado = Nothing
+    Dim EstudioSocioeconomico As EstudioSocioeconomico
     Dim Familiares As List(Of Familiar.Vista)
+    Dim OtrosIngresos As List(Of OtroIngreso)
+    Dim Referencias As List(Of Referencia)
+
     Sub New()
         InitializeComponent()
         CargarCombos()
@@ -74,7 +78,7 @@ Public Class frmEmpleados
         tooltip.SetToolTip(btn_antSave, "Agregar atecedentes laborales")
         tooltip.SetToolTip(btn_enfADD, "Agregar un nuevo registro de enfermedades")
         tooltip.SetToolTip(btn_conADD, "Agregar nuevo contacto de emergencia")
-        tooltip.SetToolTip(PB_IMAGE_VIVIENDA, "Haz doble clic para agregar una nueva imagen")
+        tooltip.SetToolTip(pbVivienda, "Haz doble clic para agregar una nueva imagen")
         tooltip.SetToolTip(btn_OI, "Agregar otros ingresos")
         tooltip.SetToolTip(Btn_AddRef, "Agregar una nueva referencia")
         tooltip.SetToolTip(btn_SERPT, "Ver el reporte de Estudio Socioeconomico")
@@ -127,13 +131,15 @@ Public Class frmEmpleados
         Return False
     End Function
 
-    Private Sub MenuEmp_Selecting(sender As Object, e As TabControlCancelEventArgs)
-
+    Private Sub MenuEmp_Selecting(sender As Object, e As TabControlCancelEventArgs) Handles MenuEmp.Selecting
+        If MenuEmp.SelectedIndex <> 0 Then
+            If Empleado Is Nothing Then
+                MenuEmp.SelectedIndex = 0
+                MessageBox.Show("No se encontro un empleado, intente dar de alta uno nuevo o seleccionar uno existente.", "Empleado no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+            End If
+        End If
     End Sub
 
-    Private Sub LlenarDatosEstudioSocioeconomico()
-
-    End Sub
 
 #Region "Datos personales"
 
@@ -162,6 +168,11 @@ Public Class frmEmpleados
 
     Private Sub LlenarDatosPersonales()
         With Empleado
+            If .Foto IsNot My.Resources.AddImage_80px Then
+                pbFotoEmpleado.SizeMode = PictureBoxSizeMode.StretchImage
+            Else
+                pbFotoEmpleado.SizeMode = PictureBoxSizeMode.CenterImage
+            End If
             pbFotoEmpleado.Image = .Foto
             txtNumero.Text = .ID
             txtNombres.Text = .Nombre
@@ -540,79 +551,45 @@ Public Class frmEmpleados
 #End Region
 
 #Region "Estudio Socioeconomico"
+    Private Sub LlenarDatosEstudioSocioeconomico()
+        EstudioSocioeconomico = New EstudioSocioeconomico().Buscar(Empleado.ID)
+        pbVivienda.Image = EstudioSocioeconomico.FotoVivienda
+        pbVivienda.SizeMode = PictureBoxSizeMode.StretchImage
 
+
+
+        LlenarOtrosIngresos(EstudioSocioeconomico.ID)
+        LlenarReferencias(EstudioSocioeconomico.ID)
+    End Sub
+
+    Private Sub LlenarOtrosIngresos(ESID As Integer)
+
+    End Sub
+
+    Private Sub LlenarReferencias(ESID As Integer)
+
+    End Sub
 #End Region
 
 
 
-    Private Sub SAVE_F()
-        ''If ValidateEmail(txtCorreo.Text) = True Then
-        'Dim InfoEmp As New Cls_Emp
-        'Dim objEmp As New Consultas
-        'InfoEmp.Emp_AMat = txtAMaterno.Text
-        'InfoEmp.Emp_APat = txtAPaterno.Text
-        'InfoEmp.Emp_Name = txtNombres.Text
-        'InfoEmp.Emp_Sexo = cbSexo.SelectedItem.ToString
-        'InfoEmp.Emp_NEducativo = cbNivelEducativo.SelectedItem.ToString
-        'InfoEmp.Emp_FNac = Convert.ToDateTime(dtpFechaDeNacimiento.Text)
-        'InfoEmp.Emp_EN = txtEntidadCodigo.Text
-        'InfoEmp.Emp_RFC = txtRFC.Text
-        'InfoEmp.Emp_NSS = txtNSS.Text
-        'InfoEmp.Emp_Curp = txtCURP.Text
-        'InfoEmp.Emp_Cel = txtCelular.Text
-        'InfoEmp.Emp_Tel = txtTelefono.Text
-        'InfoEmp.Emp_EdoCivil = cbEstadoCivil.SelectedItem.ToString
-        'InfoEmp.Emp_Nacionalidad = txtNacionalidad.Text
-        'InfoEmp.Emp_Domicilio = txtDomicilio.Text
-        'InfoEmp.Emp_Col = txtColonia.Text
-        'InfoEmp.Emp_CiudadEstado = txtCdDomicilio.Text
-        'InfoEmp.Emp_CP = txtCodigoPostal.Text
-        'InfoEmp.Emp_FEfectiva = Convert.ToDateTime(dtpFechaDeIngreso.Text)
-        'InfoEmp.ID_Puesto = Convert.ToInt64(txtPuestoCodigo.Text)
-        'InfoEmp.Emp_Salario = Convert.ToDouble(txtSalario.Text)
-        'InfoEmp.ID_Depto = txtDeptoCodigo.Text
-        'InfoEmp.Emp_Sup = txtSupervisorCodigo.Text
-        'InfoEmp.Emp_Tipo = txtTipoCodigo.Text
-        'InfoEmp.Emp_Activo = 1
-        'InfoEmp.Emp_Ciudad = txtCiudadCodigo.Text
-        'InfoEmp.Emp_Email = txtCorreo.Text
-        'InfoEmp.Img = pbFotoEmpleado.Image
-        'InfoEmp.Baja.NotificarClientes = CB_CLIENTE.Checked
-        'InfoEmp.Baja.NotificarProveedores = CB_PROV.Checked
-        'If (EXISTE = False) Then
-        '    If (txtNumero.Text = "" Or txtAPaterno.Text = "" Or txtNombres.Text = "" Or txtEntidadCodigo.Text = "" Or txtRFC.Text = "" Or txtNSS.Text = "" Or
-        '          txtSalario.Text = "" Or txtCURP.Text = "" Or dtpFechaDeIngreso.Text = "" Or txtTipoCodigo.Text = "" Or txtPuestoCodigo.Text = "" Or txtDeptoCodigo.Text = "" Or txtSupervisorCodigo.Text = "" Or dtpFechaDeNacimiento.Text = "") Then
-        '        MessageBox.Show("Favor de llenar todos los campos")
-        '    Else
-        '        objEmp.UpInsert_colabora(InfoEmp)
-        '        Limp()
-        '        MessageBox.Show("Empleado agregado satisfactoriamente")
-        '    End If
-        'Else
-        '    If MessageBox.Show("SE VA A MODIFICAR ESTE EMPLEADO", "My Application",
-        '              MessageBoxButtons.YesNo, MessageBoxIcon.Question) _
-        '              = DialogResult.Yes Then
-        '        InfoEmp.ID_Emp = txtNumero.Text
-        '        objEmp.UpInsert_colabora(InfoEmp)
-        '        Limp()
-        '        MessageBox.Show("Empleado Actualizado Satisfactoriamente")
-        '    End If
-        'End If
-        ''Else
-        ''    MsgBox("Email no es Valido")
-        ''End If
-    End Sub
 
     Private Sub ClearSubControls(Parent As Control)
+        Empleado = Nothing
         For Each ctrl As Control In Parent.Controls
-            If ctrl.GetType() Is GetType(TextBox) Then
+            If ctrl.GetType() Is GetType(TextBox) Or ctrl.GetType() Is GetType(NumericTextbox) Then
                 Dim txt As TextBox = CType(ctrl, TextBox)
                 txt.Text = ""
                 Continue For
             End If
             If ctrl.GetType() Is GetType(DateTimePicker) Then
                 Dim dt As DateTimePicker = CType(ctrl, DateTimePicker)
-                dt.Text = Date.Now
+                If dt.MaxDate = DateTimePicker.MaximumDateTime Then
+                    dt.Value = Today()
+                Else
+                    dt.Value = dt.MaxDate
+                End If
+
                 Continue For
             End If
             If ctrl.GetType() Is GetType(ComboBox) Then
@@ -666,13 +643,13 @@ Public Class frmEmpleados
 
         lbl_emp.Text = ""
         PbOptions.Tag = ""
-        pbFotoEmpleado.Image = My.Resources.photoNobody120
+        pbFotoEmpleado.Image = My.Resources.AddImage_80px
         pbFotoEmpleado.Visible = True
         'llenarFamilia()
         'llenarAL()
         'llenarContacto()
         'llenarEnfermedades()
-        PB_IMAGE_VIVIENDA.Image = My.Resources.AddImage
+        pbVivienda.Image = My.Resources.AddImage_80px
         EMPLEADO_ES = 0
         dgv_OI.DataSource = objcon.Consulta_OI(0)
         dgv_Ref.DataSource = objcon.Consulta_REF(0)
@@ -695,7 +672,7 @@ Public Class frmEmpleados
 
 
 
-    Private Sub txt_OTCantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_OTCantidad.KeyPress
+    Private Sub txt_OTCantidad_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not txt_OTCantidad.Text.Contains(".") Then
             e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
         Else
@@ -719,7 +696,7 @@ Public Class frmEmpleados
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
 
-    Private Sub Btn_AddRef_Click(sender As Object, e As EventArgs) Handles Btn_AddRef.Click
+    Private Sub Btn_AddRef_Click(sender As Object, e As EventArgs)
         If EXISTE = True Then
             If txt_RefNom.Text = "" Or txt_RefOcu.Text = "" Or txt_TC.Text = "" Or Txt_TR.Text = "" Then
                 MessageBox.Show("Favor de llenar todos los campos")
@@ -746,7 +723,7 @@ Public Class frmEmpleados
         End If
     End Sub
 
-    Private Sub btn_OI_Click(sender As Object, e As EventArgs) Handles btn_OI.Click
+    Private Sub btn_OI_Click(sender As Object, e As EventArgs)
         If EXISTE = True Then
             If txt_OTCantidad.Text = "" Or txt_OIParen.Text = "" Then
                 MessageBox.Show("Favor de llenar todos los campos")
@@ -772,35 +749,36 @@ Public Class frmEmpleados
         End If
     End Sub
 
-    Private Sub btn_SESave_Click(sender As Object, e As EventArgs) Handles btn_SESave.Click
+    Private Sub btn_SESave_Click(sender As Object, e As EventArgs)
         If EXISTE = True Then
             Dim ES As New Cls_ES()
             ES.SES_ID = EMPLEADO_ES
             ES.EMP_ID = EMPLEADO_ID
-            If cb_CasaP.Checked = True Then
-                ES.H_TYPE = "CASA PROPIA"
-            End If
-            If cb_Depto.Checked = True Then
-                ES.H_TYPE = "DEPARTAMENTO"
-            End If
-            If cb_Renta.Checked = True Then
-                ES.H_TYPE = "CASA DE RENTA"
-            End If
-            If cb_Terreno.Checked = True Then
-                ES.H_TYPE = "TERRENO"
-            End If
-            If cb_adobe.Checked = True Then
-                ES.H_CONDITION = "ADOBE"
-            End If
-            If cb_block.Checked = True Then
-                ES.H_CONDITION = "BLOCK"
-            End If
-            If cb_Madera.Checked = True Then
-                ES.H_CONDITION = "MADERA"
-            End If
-            If cb_ladrillo.Checked = True Then
-                ES.H_CONDITION = "LADRILLO"
-            End If
+            'ES.H_TYPE = CheckedListBox1.SelectedValue
+            'If cb_CasaP.Checked = True Then
+            '    ES.H_TYPE = "CASA PROPIA"
+            'End If
+            'If cb_Depto.Checked = True Then
+            '    ES.H_TYPE = "DEPARTAMENTO"
+            'End If
+            'If cb_Renta.Checked = True Then
+            '    ES.H_TYPE = "CASA DE RENTA"
+            'End If
+            'If cb_Terreno.Checked = True Then
+            '    ES.H_TYPE = "TERRENO"
+            'End If
+            'If cb_adobe.Checked = True Then
+            '    ES.H_CONDITION = "ADOBE"
+            'End If
+            'If cb_block.Checked = True Then
+            '    ES.H_CONDITION = "BLOCK"
+            'End If
+            'If cb_Madera.Checked = True Then
+            '    ES.H_CONDITION = "MADERA"
+            'End If
+            'If cb_ladrillo.Checked = True Then
+            '    ES.H_CONDITION = "LADRILLO"
+            'End If
             ES.H_ELEC = cb_Luz.Checked
             ES.H_PHONE = cb_LineaTel.Checked
             ES.H_WATER = cb_AguaP.Checked
@@ -877,7 +855,7 @@ Public Class frmEmpleados
             ES.SES_RELIGION = txt_Religion.Text
             ES.SES_VERIFIER = UsuarioLogeado.Nombre
             ES.SES_OBSERVATIONS = txt_commen.Text
-            ES.IMG = PB_IMAGE_VIVIENDA.Image
+            ES.IMG = pbVivienda.Image
 
             Dim ldParameters As New Dictionary(Of String, Object) From {{"ES", ES}}
             Dim Wait As New frmWait With {
@@ -890,7 +868,7 @@ Public Class frmEmpleados
 
 
             If loResult > 0 Then
-                If Not ReferenceEquals(PB_IMAGE_VIVIENDA.Image, My.Resources.AddImage) Then
+                If Not ReferenceEquals(pbVivienda.Image, My.Resources.AddImage_80px) Then
                     ldParameters = New Dictionary(Of String, Object) From {{"Employee", ES.EMP_ID}, {"HousePicture", ES.IMG}, {"EmployeePicture", pbFotoEmpleado.Image}}
                     Wait = New frmWait With {.Parameters = ldParameters, .Operation = BackgroundOperations.AddImage}
                     Wait.ShowDialog()
@@ -937,26 +915,16 @@ Public Class frmEmpleados
                 If MessageBox.Show("Se ha guardado el Estudio Socioeconomico con exito ¿Desea ver el reporte?",
                                    "Estudio Socioeconomico guardado", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                                    MessageBoxDefaultButton.Button1) = DialogResult.Yes Then
-                    btn_SERPT_Click(sender, e)
+                    'btn_SERPT_Click(sender, e)
                 End If
                 Limp()
             End If
         End If
     End Sub
 
-    Private Sub btn_SECancel_Click(sender As Object, e As EventArgs) Handles btn_SECancel.Click
+    Private Sub btn_SECancel_Click(sender As Object, e As EventArgs)
         Limp()
     End Sub
-
-
-
-
-
-
-
-
-
-
 
     Private Sub llenarSE()
         Dim ldParameters As New Dictionary(Of String, Object) From {{"Employee", EMPLEADO_ID}}
@@ -969,24 +937,24 @@ Public Class frmEmpleados
         Wait.Close()
         If loResult IsNot Nothing Then
             Select Case loResult.H_TYPE
-                Case "CASA PROPIA"
-                    cb_CasaP.Checked = True
-                Case "DEPARTAMENTO"
-                    cb_Depto.Checked = True
-                Case "CASA DE RENTA"
-                    cb_Renta.Checked = True
-                Case "TERRENO"
-                    cb_Terreno.Checked = True
+                'Case "CASA PROPIA"
+                '    cb_CasaP.Checked = True
+                'Case "DEPARTAMENTO"
+                '    cb_Depto.Checked = True
+                'Case "CASA DE RENTA"
+                '    cb_Renta.Checked = True
+                'Case "TERRENO"
+                '    cb_Terreno.Checked = True
             End Select
             Select Case loResult.H_CONDITION
-                Case "ADOBE"
-                    cb_adobe.Checked = True
-                Case "BLOCK"
-                    cb_block.Checked = True
-                Case "MADERA"
-                    cb_Madera.Checked = True
-                Case "LADRILLO"
-                    cb_ladrillo.Checked = True
+                'Case "ADOBE"
+                '    cb_adobe.Checked = True
+                'Case "BLOCK"
+                '    cb_block.Checked = True
+                'Case "MADERA"
+                '    cb_Madera.Checked = True
+                'Case "LADRILLO"
+                '    cb_ladrillo.Checked = True
             End Select
             cb_Luz.Checked = loResult.H_ELEC
             cb_LineaTel.Checked = loResult.H_PHONE
@@ -1019,7 +987,7 @@ Public Class frmEmpleados
             Txt_pasatiempos.Text = loResult.SES_HOBBIES
             txt_Religion.Text = loResult.SES_RELIGION
             txt_commen.Text = loResult.SES_OBSERVATIONS
-            PB_IMAGE_VIVIENDA.Image = loResult.IMG
+            pbVivienda.Image = loResult.IMG
             EMPLEADO_ES = loResult.SES_ID
             btn_SESave.Image = My.Resources.Updates_80
             tooltip.SetToolTip(btn_SESave, "Actualizar Estudio Socioeconomico")
@@ -1045,81 +1013,27 @@ Public Class frmEmpleados
         Wait.Close()
         dgv_Ref.DataSource = loResult3
     End Sub
-    Private Sub cb_CasaP_CheckedChanged(sender As Object, e As EventArgs) Handles cb_CasaP.CheckedChanged
-        If cb_CasaP.Checked = True Then
-            cb_Renta.Checked = False
-            cb_Terreno.Checked = False
-            cb_Depto.Checked = False
-        End If
-    End Sub
-    Private Sub cb_Renta_CheckedChanged(sender As Object, e As EventArgs) Handles cb_Renta.CheckedChanged
-        If cb_Renta.Checked = True Then
-            cb_CasaP.Checked = False
-            cb_Terreno.Checked = False
-            cb_Depto.Checked = False
-        End If
-    End Sub
-    Private Sub cb_Terreno_CheckedChanged(sender As Object, e As EventArgs) Handles cb_Terreno.CheckedChanged
-        If cb_Terreno.Checked = True Then
-            cb_Renta.Checked = False
-            cb_CasaP.Checked = False
-            cb_Depto.Checked = False
-        End If
-    End Sub
-    Private Sub cb_Depto_CheckedChanged(sender As Object, e As EventArgs) Handles cb_Depto.CheckedChanged
-        If cb_Depto.Checked = True Then
-            cb_Renta.Checked = False
-            cb_Terreno.Checked = False
-            cb_CasaP.Checked = False
-        End If
-    End Sub
-    Private Sub cb_adobe_CheckedChanged(sender As Object, e As EventArgs) Handles cb_adobe.CheckedChanged
-        If cb_adobe.Checked = True Then
-            cb_ladrillo.Checked = False
-            cb_block.Checked = False
-            cb_Madera.Checked = False
-        End If
-    End Sub
-    Private Sub cb_ladrillo_CheckedChanged(sender As Object, e As EventArgs) Handles cb_ladrillo.CheckedChanged
-        If cb_ladrillo.Checked = True Then
-            cb_adobe.Checked = False
-            cb_block.Checked = False
-            cb_Madera.Checked = False
-        End If
-    End Sub
-    Private Sub cb_block_CheckedChanged(sender As Object, e As EventArgs) Handles cb_block.CheckedChanged
-        If cb_block.Checked = True Then
-            cb_ladrillo.Checked = False
-            cb_adobe.Checked = False
-            cb_Madera.Checked = False
-        End If
-    End Sub
-    Private Sub cb_Madera_CheckedChanged(sender As Object, e As EventArgs) Handles cb_Madera.CheckedChanged
-        If cb_Madera.Checked = True Then
-            cb_ladrillo.Checked = False
-            cb_block.Checked = False
-            cb_adobe.Checked = False
-        End If
-    End Sub
-
-    Private Sub btn_SERPT_Click(sender As Object, e As EventArgs) Handles btn_SERPT.Click
-        If txt_numero.Text <> "" Then
-            Dim Wait As New frmWait()
-            Wait.Operation = BackgroundOperations.JustShowScreen
-            Wait.Show()
-            Dim Reportes As New FrmReportes With( {
-                    .Opcion = ReportOptions.SocialeconomicStudy,
-                    .Emp = Convert.ToInt64(txt_numero.Text),
-                    .User = UsuarioLogeado.Nombre
-                }
-            Reportes.ShowDialog()
-        End If
-    End Sub
 
 
 
-    Private Sub PB_IMAGE_VIVIENDA_DoubleClick(sender As Object, e As EventArgs) Handles PB_IMAGE_VIVIENDA.DoubleClick
-        CargarImagen(PB_IMAGE_VIVIENDA)
+    'Private Sub btn_SERPT_Click(sender As Object, e As EventArgs)
+    '    If txt_numero.Text <> "" Then
+    '        Dim Wait As New frmWait()
+    '        Wait.Operation = BackgroundOperations.JustShowScreen
+    '        Wait.Show()
+    '        Dim Reportes As New FrmReportes With( {
+    '                .Opcion = ReportOptions.SocialeconomicStudy,
+    '                .Emp = Convert.ToInt64(txt_numero.Text),
+    '                .User = UsuarioLogeado.Nombre
+    '            }
+    '        Reportes.ShowDialog()
+    '    End If
+    'End Sub
+
+
+
+    Private Sub PB_IMAGE_VIVIENDA_DoubleClick(sender As Object, e As EventArgs)
+        CargarImagen(pbVivienda)
     End Sub
 
 
@@ -1129,7 +1043,7 @@ Public Class frmEmpleados
 
 
 
-    Private Sub dgv_OI_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_OI.CellClick
+    Private Sub dgv_OI_CellClick(sender As Object, e As DataGridViewCellEventArgs)
         Dim Id As Integer
         Dim gr As New DataGridView
         gr = sender
@@ -1152,7 +1066,7 @@ Public Class frmEmpleados
         End If
     End Sub
 
-    Private Sub dgv_Ref_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_Ref.CellClick
+    Private Sub dgv_Ref_CellClick(sender As Object, e As DataGridViewCellEventArgs)
         Dim Id As Integer
         Dim gr As New DataGridView
         gr = sender
@@ -1174,7 +1088,7 @@ Public Class frmEmpleados
         End If
     End Sub
 
-    Private Sub txt_SE__SOCIALE_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE__SOCIALE.KeyPress
+    Private Sub txt_SE__SOCIALE_KeyPress(sender As Object, e As KeyPressEventArgs)
         Dim txt_SE__SOCIALE As TextBox = CType(sender, TextBox)
         If Not txt_SE__SOCIALE.Text.Contains(".") Then
             e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
@@ -1183,7 +1097,7 @@ Public Class frmEmpleados
         End If
     End Sub
 
-    Private Sub txt_SE_TEATROS_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE_TEATROS.KeyPress
+    Private Sub txt_SE_TEATROS_KeyPress(sender As Object, e As KeyPressEventArgs)
         Dim txt_SE_TEATROS As TextBox = CType(sender, TextBox)
         If Not txt_SE_TEATROS.Text.Contains(".") Then
             e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
@@ -1192,7 +1106,7 @@ Public Class frmEmpleados
         End If
     End Sub
 
-    Private Sub txt_SE_NATURALES_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE_NATURALES.KeyPress
+    Private Sub txt_SE_NATURALES_KeyPress(sender As Object, e As KeyPressEventArgs)
         Dim txt_SE_NATURALES As TextBox = CType(sender, TextBox)
         If Not txt_SE_NATURALES.Text.Contains(".") Then
             e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
@@ -1201,7 +1115,7 @@ Public Class frmEmpleados
         End If
     End Sub
 
-    Private Sub txt_SE_CINES_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE_CINES.KeyPress
+    Private Sub txt_SE_CINES_KeyPress(sender As Object, e As KeyPressEventArgs)
         Dim txt_SE_CINES As TextBox = CType(sender, TextBox)
         If Not txt_SE_CINES.Text.Contains(".") Then
             e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
@@ -1210,7 +1124,7 @@ Public Class frmEmpleados
         End If
     End Sub
 
-    Private Sub txt_SE_PLAZAS_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE_PLAZAS.KeyPress
+    Private Sub txt_SE_PLAZAS_KeyPress(sender As Object, e As KeyPressEventArgs)
         Dim txt_SE_PLAZAS As TextBox = CType(sender, TextBox)
         If Not txt_SE_PLAZAS.Text.Contains(".") Then
             e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
@@ -1219,7 +1133,7 @@ Public Class frmEmpleados
         End If
     End Sub
 
-    Private Sub txt_SE_EVENTOS_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE_EVENTOS.KeyPress
+    Private Sub txt_SE_EVENTOS_KeyPress(sender As Object, e As KeyPressEventArgs)
         Dim txt_SE_EVENTOS As TextBox = CType(sender, TextBox)
         If Not txt_SE_EVENTOS.Text.Contains(".") Then
             e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
@@ -1228,7 +1142,7 @@ Public Class frmEmpleados
         End If
     End Sub
 
-    Private Sub txt_SE_CULTURALES_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE_CULTURALES.KeyPress
+    Private Sub txt_SE_CULTURALES_KeyPress(sender As Object, e As KeyPressEventArgs)
         Dim txt_SE_CULTURALES As TextBox = CType(sender, TextBox)
         If Not txt_SE_CULTURALES.Text.Contains(".") Then
             e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
@@ -1237,7 +1151,7 @@ Public Class frmEmpleados
         End If
     End Sub
 
-    Private Sub txt_SE_VACIONES_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE_VACIONES.KeyPress
+    Private Sub txt_SE_VACIONES_KeyPress(sender As Object, e As KeyPressEventArgs)
         Dim txt_SE_VACIONES As TextBox = CType(sender, TextBox)
         If Not txt_SE_VACIONES.Text.Contains(".") Then
             e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
@@ -1246,7 +1160,7 @@ Public Class frmEmpleados
         End If
     End Sub
 
-    Private Sub txt_SE_MUSEOS_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE_MUSEOS.KeyPress
+    Private Sub txt_SE_MUSEOS_KeyPress(sender As Object, e As KeyPressEventArgs)
         Dim txt_SE_MUSEOS As TextBox = CType(sender, TextBox)
         If Not txt_SE_MUSEOS.Text.Contains(".") Then
             e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
@@ -1255,7 +1169,7 @@ Public Class frmEmpleados
         End If
     End Sub
 
-    Private Sub txt_SE_ZONAS_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SE_ZONAS.KeyPress
+    Private Sub txt_SE_ZONAS_KeyPress(sender As Object, e As KeyPressEventArgs)
         Dim txt_SE_ZONAS As TextBox = CType(sender, TextBox)
         If Not txt_SE_ZONAS.Text.Contains(".") Then
             e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
@@ -1264,7 +1178,7 @@ Public Class frmEmpleados
         End If
     End Sub
 
-    Private Sub txt_se_diversiones_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_se_diversiones.KeyPress
+    Private Sub txt_se_diversiones_KeyPress(sender As Object, e As KeyPressEventArgs)
         Dim txt_se_diversiones As TextBox = CType(sender, TextBox)
         If Not txt_se_diversiones.Text.Contains(".") Then
             e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
@@ -1272,6 +1186,4 @@ Public Class frmEmpleados
             e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
         End If
     End Sub
-
-
 End Class

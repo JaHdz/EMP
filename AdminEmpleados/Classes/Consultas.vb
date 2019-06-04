@@ -312,7 +312,7 @@ Public Class Consultas
                         .Baja = loBaja
                     }
                     If (lector("Img_Emp").ToString() Is Nothing Or lector("Img_Emp").ToString() = "") Then
-                        Employee.Img = My.Resources.photoNobody120
+                        Employee.Img = My.Resources.AddImage_80px
                     Else
                         Dim bytes As Byte() = lector("Img_Emp")
                         Dim ms As New MemoryStream(bytes)
@@ -941,7 +941,7 @@ Public Class Consultas
                     .SES_OBSERVATIONS = lector("ES_Observaciones")
                 }
                 If (lector("Img_Dom").ToString() Is Nothing Or lector("Img_Dom").ToString() = "") Then
-                    SES.IMG = My.Resources.AddImage
+                    SES.IMG = My.Resources.AddImage_80px
                 Else
                     Dim bytes As Byte() = lector("Img_Dom")
                     Dim ms As New MemoryStream(bytes)

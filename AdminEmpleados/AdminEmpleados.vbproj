@@ -151,6 +151,12 @@
     <Compile Include="Custom Controls\NumericTextbox.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Custom Controls\RadioButtonList.Designer.vb">
+      <DependentUpon>RadioButtonList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\RadioButtonList.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="frmAdministration.Designer.vb">
       <DependentUpon>frmAdministration.vb</DependentUpon>
     </Compile>
@@ -311,6 +317,9 @@
     <EmbeddedResource Include="Custom Controls\NumericTextbox.resx">
       <DependentUpon>NumericTextbox.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Custom Controls\RadioButtonList.resx">
+      <DependentUpon>RadioButtonList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdministration.resx">
       <DependentUpon>frmAdministration.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -458,6 +467,7 @@
     <Content Include="images\photoNobody120.gif" />
     <Content Include="images\tenor.gif" />
     <Content Include="images\Up1.png" />
+    <None Include="Resources\AddImage_80px.png" />
     <None Include="Resources\Updates_80.png" />
     <None Include="Resources\AddImage.jpg" />
     <None Include="Resources\Accounting_80px.png" />
