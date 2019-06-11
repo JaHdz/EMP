@@ -124,12 +124,12 @@ Public Class Familiar
     End Function
 
     Private Function CamposEnBlanco() As Boolean
-        If Empleado = 0 AndAlso Not String.IsNullOrWhiteSpace(Tipo) AndAlso Not String.IsNullOrWhiteSpace(Nombre) AndAlso Not String.IsNullOrWhiteSpace(ApellidoPaterno) AndAlso
-            Not String.IsNullOrWhiteSpace(ApellidoMaterno) AndAlso Not String.IsNullOrWhiteSpace(Nacionalidad) AndAlso FechaDeNacimineto <> DateTimePicker.MinimumDateTime AndAlso
-            Not String.IsNullOrWhiteSpace(Sexo) Then
-            Return False
+        If Empleado = 0 OrElse String.IsNullOrWhiteSpace(Tipo) OrElse String.IsNullOrWhiteSpace(Nombre) OrElse String.IsNullOrWhiteSpace(ApellidoPaterno) OrElse
+           String.IsNullOrWhiteSpace(ApellidoMaterno) OrElse String.IsNullOrWhiteSpace(Nacionalidad) OrElse FechaDeNacimineto = DateTimePicker.MinimumDateTime OrElse
+           String.IsNullOrWhiteSpace(Sexo) Then
+            Return True
         End If
-        Return True
+        Return False
     End Function
 
     Private Function VerificarExistenciaDeConyugue(ByRef Listado As List(Of Vista)) As Boolean

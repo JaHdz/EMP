@@ -12,12 +12,13 @@
     End Sub
 
     Public Function CargarListado() As List(Of NivelEducativo)
-        Dim Resultado As New List(Of NivelEducativo)
-        Resultado.Add(New NivelEducativo(0, ""))
-        Resultado.Add(New NivelEducativo(1, "PRIMARIA"))
-        Resultado.Add(New NivelEducativo(2, "SECUNDARIA"))
-        Resultado.Add(New NivelEducativo(3, "PREPARATORIA"))
-        Resultado.Add(New NivelEducativo(4, "LICENCIATURA"))
+        Dim Resultado As New List(Of NivelEducativo) From {
+            New NivelEducativo(0, ""),
+            New NivelEducativo(1, "PRIMARIA"),
+            New NivelEducativo(2, "SECUNDARIA"),
+            New NivelEducativo(3, "PREPARATORIA"),
+            New NivelEducativo(4, "LICENCIATURA")
+        }
 
         Return Resultado
     End Function

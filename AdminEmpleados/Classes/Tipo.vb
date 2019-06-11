@@ -103,16 +103,21 @@ Public Class Tipo
         Return Result
     End Function
 
-    Public Function Buscar(ByVal ID As String) As Tipo
+    Public Function Buscar(ByVal pID As String) As Tipo
         Dim Result As Tipo = Nothing
-        If Not String.IsNullOrWhiteSpace(ID) Then
+        If Not String.IsNullOrWhiteSpace(pID) Then
             Using con As New SqlConnection(ConnectionString())
                 con.Open()
                 Dim cmd As New SqlCommand("UDSP_EMPLOYEE_TYPE", con) With {
                 .CommandType = CommandType.StoredProcedure
             }
-                cmd.Parameters.Add(New SqlParameter("@ID", ID))
-                cmd.Parameters.Add(New SqlParameter("@CODE", Codigo))
+                If IsNumeric(pID) Then
+                    cmd.Parameters.Add(New SqlParameter("@ID", pID))
+                    cmd.Parameters.Add(New SqlParameter("@CODE", Codigo))
+                Else
+                    cmd.Parameters.Add(New SqlParameter("@ID", ID))
+                    cmd.Parameters.Add(New SqlParameter("@CODE", pID))
+                End If
                 cmd.Parameters.Add(New SqlParameter("@DESCRIPTION", Descripcion))
                 cmd.Parameters.Add(New SqlParameter("@ESTATUS", EstaActivo))
                 cmd.Parameters.Add(New SqlParameter("@OPTION", Operacion.Buscar))

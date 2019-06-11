@@ -174,7 +174,7 @@ Public Class Empleado
         'Verificar campos de Datos Personales
         If Not DatosPersonalesEnBlanco() Then
             'Verificar campos de datos de contratacion
-            If Not DatosDeCOntratacionEnBlanco() Then
+            If Not DatosDeContratacionEnBlanco() Then
                 Using con As New SqlConnection(ConnectionString())
                     con.Open()
                     Dim cmd As New SqlCommand("UDSP_EMPLOYEE", con) With {.CommandType = CommandType.StoredProcedure}
@@ -215,7 +215,10 @@ Public Class Empleado
                         cmd.Parameters.Add("@PHOTO", SqlDbType.Image).Value = ImagenABytes(Foto)
                     End If
                     cmd.Parameters.Add(New SqlParameter("@OPTION", Operacion.Registrar))
-                    cmd.ExecuteNonQuery()
+                    Dim Reader As SqlDataReader = cmd.ExecuteReader()
+                    If Reader.Read Then
+                        ID = Reader("ID")
+                    End If
                     Result = True
 
                 End Using
@@ -237,7 +240,7 @@ Public Class Empleado
         'Verificar campos de Datos Personales
         If Not DatosPersonalesEnBlanco() Then
             'Verificar campos de datos de contratacion
-            If Not DatosDeCOntratacionEnBlanco() Then
+            If Not DatosDeContratacionEnBlanco() Then
                 Using con As New SqlConnection(ConnectionString())
                     con.Open()
                     Dim cmd As New SqlCommand("UDSP_EMPLOYEE", con) With {.CommandType = CommandType.StoredProcedure}
@@ -295,22 +298,22 @@ Public Class Empleado
     End Function
 
     Private Function DatosPersonalesEnBlanco() As Boolean
-        If Not String.IsNullOrWhiteSpace(Nombre) AndAlso Not String.IsNullOrWhiteSpace(ApellidoPaterno) AndAlso Not String.IsNullOrWhiteSpace(ApellidoMaterno) AndAlso
-           Not String.IsNullOrWhiteSpace(Sexo) AndAlso Not String.IsNullOrWhiteSpace(Nacionalidad) AndAlso Not String.IsNullOrWhiteSpace(CiudadNatal) AndAlso
-           Not String.IsNullOrWhiteSpace(EntidadNatal) AndAlso Not String.IsNullOrWhiteSpace(CURP) AndAlso Not String.IsNullOrWhiteSpace(RFC) AndAlso
-           Not String.IsNullOrWhiteSpace(EstadoCivil) AndAlso Not String.IsNullOrWhiteSpace(NSS) AndAlso Not String.IsNullOrWhiteSpace(Domicilio) AndAlso
-           Not String.IsNullOrWhiteSpace(Colonia) AndAlso Not String.IsNullOrWhiteSpace(CiudadEstado) AndAlso Not String.IsNullOrWhiteSpace(CodigoPostal) AndAlso
-           Not String.IsNullOrWhiteSpace(NivelEducativo) Then
-            Return False
+        If String.IsNullOrWhiteSpace(Nombre) OrElse String.IsNullOrWhiteSpace(ApellidoPaterno) OrElse String.IsNullOrWhiteSpace(ApellidoMaterno) OrElse
+           String.IsNullOrWhiteSpace(Sexo) OrElse String.IsNullOrWhiteSpace(Nacionalidad) OrElse String.IsNullOrWhiteSpace(CiudadNatal) OrElse
+           String.IsNullOrWhiteSpace(EntidadNatal) OrElse String.IsNullOrWhiteSpace(CURP) OrElse String.IsNullOrWhiteSpace(RFC) OrElse
+           String.IsNullOrWhiteSpace(EstadoCivil) OrElse String.IsNullOrWhiteSpace(NSS) OrElse String.IsNullOrWhiteSpace(Domicilio) OrElse
+           String.IsNullOrWhiteSpace(Colonia) OrElse String.IsNullOrWhiteSpace(CiudadEstado) OrElse String.IsNullOrWhiteSpace(CodigoPostal) OrElse
+           String.IsNullOrWhiteSpace(NivelEducativo) Then
+            Return True
         End If
-        Return True
+        Return False
     End Function
 
-    Private Function DatosDeCOntratacionEnBlanco() As Boolean
-        If Puesto IsNot Nothing AndAlso Not Departamento IsNot Nothing AndAlso Supervisor IsNot Nothing AndAlso Tipo IsNot Nothing AndAlso Not Salario.Equals(0) Then
-            Return False
+    Private Function DatosDeContratacionEnBlanco() As Boolean
+        If Puesto Is Nothing OrElse Departamento Is Nothing OrElse Supervisor Is Nothing OrElse Tipo Is Nothing OrElse Salario = 0 Then
+            Return True
         End If
-        Return True
+        Return False
     End Function
 
     Public Function CambiarEstatus(Opcion As Operacion) As Boolean

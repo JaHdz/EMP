@@ -63,7 +63,7 @@
             If chkRecordar.Checked Then
                 If My.Settings.LastDate = Date.MinValue Then
                     My.Settings.Username = user.Text
-                    My.Settings.Password = New Consultas().Encriptar(pass.Text)
+                    My.Settings.Password = Encrypt(pass.Text)
                     My.Settings.LastDate = Now.ToShortDateString()
                     My.Settings.RememberMe = True
                     My.Settings.Save()

@@ -106,16 +106,22 @@ Public Class Departamento
         Return Result
     End Function
 
-    Public Function Buscar(ByVal ID As String) As Departamento
+    Public Function Buscar(ByVal pID As String) As Departamento
         Dim Result As Departamento = Nothing
-        If Not String.IsNullOrWhiteSpace(ID) Then
+        If Not String.IsNullOrWhiteSpace(pID) Then
             Using con As New SqlConnection(ConnectionString())
                 con.Open()
                 Dim cmd As New SqlCommand("UDSP_DEPTO", con) With {
                 .CommandType = CommandType.StoredProcedure
             }
-                cmd.Parameters.Add(New SqlParameter("@ID", ID))
-                cmd.Parameters.Add(New SqlParameter("@CODIGO", Codigo))
+                If IsNumeric(pID) Then
+                    cmd.Parameters.Add(New SqlParameter("@ID", pID))
+                    cmd.Parameters.Add(New SqlParameter("@CODIGO", Codigo))
+                Else
+                    cmd.Parameters.Add(New SqlParameter("@ID", ID))
+                    cmd.Parameters.Add(New SqlParameter("@CODIGO", pID))
+                End If
+
                 cmd.Parameters.Add(New SqlParameter("@DESCRIPTION", Descripcion))
                 cmd.Parameters.Add(New SqlParameter("@STATUS", EstaActivo))
                 cmd.Parameters.Add(New SqlParameter("@OPTION", Operacion.Buscar))

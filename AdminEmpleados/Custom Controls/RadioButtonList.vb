@@ -1,7 +1,17 @@
 ﻿Public Class RadioButtonList
     Private Ignore As Boolean
     Private _SelectedValue As String = String.Empty
-    Public Property ListOfItems As String() = New String() {}
+    Private _ListOfItems As String() = New String() {}
+
+    Public Property ListOfItems As String()
+        Get
+            Return _ListOfItems
+        End Get
+        Set
+            _ListOfItems = Value
+            GenerateDisplayOptions()
+        End Set
+    End Property
 
     Public Property SelectedValue As String
         Get
@@ -51,8 +61,8 @@
         End If
     End Sub
 
-    Private Sub GenerateDisplayOptions()
-        Dim AxisX As Integer = 37
+    Public Sub GenerateDisplayOptions()
+        Dim AxisX As Integer = 25
         Dim AxisY As Integer = 0
         For Each Value As String In ListOfItems
             Dim Radio As New RadioButton With {
@@ -66,23 +76,14 @@
             Using Cg As Graphics = CreateGraphics()
                 Dim size As SizeF = Cg.MeasureString(Radio.Text, Font)
                 Dim spacing = size.Width + 25
-                If AxisX + spacing >= Me.Width Then
-                    AxisX = 37
-                    AxisY = AxisY + size.Height + 3
-                    Radio.Location = New Point(AxisX, AxisY)
-                End If
                 AxisX = AxisX + spacing
             End Using
-            Me.Controls.Add(Radio)
+            Controls.Add(Radio)
         Next
     End Sub
 
     Private Sub Rbtn_CheckedChanged(sender As Object, e As EventArgs)
         If Ignore Then Exit Sub
         SelectedValue = CType(sender, RadioButton).Text
-    End Sub
-
-    Private Sub RadioButtonList_Load(sender As Object, e As EventArgs) Handles Me.Load
-        GenerateDisplayOptions()
     End Sub
 End Class

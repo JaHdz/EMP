@@ -84,10 +84,10 @@ Public Class Enfermedad
     End Function
 
     Private Function CamposEnBlanco() As Boolean
-        If Empleado <> 0 AndAlso Not String.IsNullOrWhiteSpace(Nombre) Then
-            Return False
+        If Empleado = 0 OrElse String.IsNullOrWhiteSpace(Nombre) Then
+            Return True
         End If
-        Return True
+        Return False
     End Function
 
     Private Function VerificarExistencia(ByRef Listado As List(Of Enfermedad)) As Boolean

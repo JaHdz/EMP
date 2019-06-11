@@ -115,12 +115,12 @@ Public Class ContactoDeEmergencia
     End Function
 
     Private Function CamposEnBlanco() As Boolean
-        If Empleado <> 0 AndAlso Not String.IsNullOrWhiteSpace(Nombre) AndAlso Not String.IsNullOrWhiteSpace(ApellidoPaterno) AndAlso
-            Not String.IsNullOrWhiteSpace(ApellidoMaterno) AndAlso Not String.IsNullOrWhiteSpace(Parentesco) AndAlso
-            (Not String.IsNullOrWhiteSpace(Telefono) And Not String.IsNullOrWhiteSpace(Celular)) Then
-            Return False
+        If Empleado = 0 OrElse String.IsNullOrWhiteSpace(Nombre) OrElse String.IsNullOrWhiteSpace(ApellidoPaterno) OrElse
+           String.IsNullOrWhiteSpace(ApellidoMaterno) OrElse String.IsNullOrWhiteSpace(Parentesco) OrElse
+            (String.IsNullOrWhiteSpace(Telefono) And String.IsNullOrWhiteSpace(Celular)) Then
+            Return True
         End If
-        Return True
+        Return False
     End Function
 
     Private Function VerificarExistencia(ByRef Listado As List(Of ContactoDeEmergencia)) As Boolean

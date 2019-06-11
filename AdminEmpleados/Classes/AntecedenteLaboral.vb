@@ -135,13 +135,12 @@ Public Class AntecedenteLaboral
     End Function
 
     Private Function CamposEnBlanco() As Boolean
-        Dim Result As Boolean = False
-        If Empleado <> 0 AndAlso FechaDeInicio <> DateTimePicker.MinimumDateTime AndAlso FechaDeSalida <> DateTimePicker.MinimumDateTime AndAlso
-            Not String.IsNullOrWhiteSpace(Empresa) AndAlso Not String.IsNullOrWhiteSpace(Puesto) AndAlso Salario <> 0 AndAlso
-            Not String.IsNullOrWhiteSpace(MotivoDeSalida) AndAlso Not String.IsNullOrWhiteSpace(Contacto) Then
-            Result = True
+        If Empleado = 0 OrElse FechaDeInicio = DateTimePicker.MinimumDateTime OrElse FechaDeSalida = DateTimePicker.MinimumDateTime OrElse
+            String.IsNullOrWhiteSpace(Empresa) OrElse String.IsNullOrWhiteSpace(Puesto) OrElse Salario = 0 OrElse
+            String.IsNullOrWhiteSpace(MotivoDeSalida) OrElse String.IsNullOrWhiteSpace(Contacto) Then
+            Return True
         End If
-        Return Result
+        Return False
     End Function
 
     Private Function VerificarExistencia(ByRef Listado As List(Of AntecedenteLaboral)) As Boolean

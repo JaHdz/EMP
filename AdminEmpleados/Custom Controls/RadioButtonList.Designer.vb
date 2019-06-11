@@ -24,7 +24,6 @@ Partial Class RadioButtonList
     Private Sub InitializeComponent()
         Ignore = False
         Me.SuspendLayout()
-        '
         'RadioButtonList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)

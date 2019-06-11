@@ -13,10 +13,11 @@ Public Class Sexo
     End Sub
 
     Public Function CargarListado() As List(Of Sexo)
-        Dim resultado = New List(Of Sexo)
-        resultado.Add(New Sexo("", ""))
-        resultado.Add(New Sexo("M", "MASCULINO"))
-        resultado.Add(New Sexo("F", "FEMENINO"))
+        Dim resultado = New List(Of Sexo) From {
+            New Sexo("", ""),
+            New Sexo("M", "MASCULINO"),
+            New Sexo("F", "FEMENINO")
+        }
         Return resultado
     End Function
 End Class
