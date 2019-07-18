@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!Nombre.Value, "Empleado")+" "+First(Fields!ApellidoPaterno.Value, "Empleado")+" "+First(Fields!ApellidoMaterno.Value, "Empleado")</Value>
+                <Value>=First(Fields!Empleado.Value, "Encabezado")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -17,8 +17,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>0.63182cm</Top>
-        <Left>3.62162cm</Left>
+        <Top>3.17182cm</Top>
+        <Left>4.49474cm</Left>
         <Height>0.6cm</Height>
         <Width>11.28417cm</Width>
         <Style>
@@ -31,237 +31,90 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Tablix Name="Tablix1">
-        <TablixBody>
-          <TablixColumns>
-            <TablixColumn>
-              <Width>2.82411cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>11.60859cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>3.56495cm</Width>
-            </TablixColumn>
-          </TablixColumns>
-          <TablixRows>
-            <TablixRow>
-              <Height>0.6cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox16">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Fecha asignado</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox16</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox17">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Equipo</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox17</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox19">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>¿Regresó el equipo?</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox19</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.6cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Fecha">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=FormatDateTime(Fields!Fecha.Value,DateFormat.ShortDate)</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Fecha</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Equipo">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Equipo.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Equipo</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Regreso">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=IIf(Fields!Regreso.Value=0,"No","Si")</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Regreso</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-          </TablixRows>
-        </TablixBody>
-        <TablixColumnHierarchy>
-          <TablixMembers>
-            <TablixMember />
-            <TablixMember />
-            <TablixMember />
-          </TablixMembers>
-        </TablixColumnHierarchy>
-        <TablixRowHierarchy>
-          <TablixMembers>
-            <TablixMember />
-            <TablixMember />
-          </TablixMembers>
-        </TablixRowHierarchy>
-        <DataSetName>Equipo</DataSetName>
-        <Top>2.27224cm</Top>
-        <Left>0.47307cm</Left>
-        <Height>1.2cm</Height>
-        <Width>17.99765cm</Width>
+      <Image Name="Logo">
+        <Source>Embedded</Source>
+        <Value>Logo</Value>
+        <Sizing>Fit</Sizing>
+        <Top>0.25587in</Top>
+        <Left>0.19526in</Left>
+        <Height>0.52195in</Height>
+        <Width>1.58865in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
-      </Tablix>
+      </Image>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>EQUIPO ASIGNADO</Value>
+                <Style>
+                  <FontSize>18pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>0.57195in</Top>
+        <Left>1.85335in</Left>
+        <Height>0.35417in</Height>
+        <Width>4.08929in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Folio">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="NO. DE FOLIO: "+Format(First(Fields!ID.Value, "Encabezado"),"00000")</Value>
+                <Style>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.64991cm</Top>
+        <Left>11.34745cm</Left>
+        <Height>0.73229cm</Height>
+        <Width>7.18312cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>2.11702in</Height>
     <Style />
@@ -284,93 +137,97 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>f5d5441b-cf54-45c3-a28b-a3fac3b8154d</rd:DataSourceID>
+      <rd:DataSourceID>59038a3e-bbe0-4a86-a678-c245870e98f2</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Empleado">
+    <DataSet Name="Encabezado">
       <Query>
         <DataSourceName>AdminEmpleados</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="ApellidoMaterno">
-          <DataField>ApellidoMaterno</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ApellidoPaterno">
-          <DataField>ApellidoPaterno</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="EsActivo">
-          <DataField>EsActivo</DataField>
+        <Field Name="Activo">
+          <DataField>Activo</DataField>
           <rd:TypeName>System.Boolean</rd:TypeName>
         </Field>
-        <Field Name="FechaDeAlta">
-          <DataField>FechaDeAlta</DataField>
+        <Field Name="AsignadoPor">
+          <DataField>AsignadoPor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AsignadoPorID">
+          <DataField>AsignadoPorID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Empleado">
+          <DataField>Empleado</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmpleadoID">
+          <DataField>EmpleadoID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>AdminEmpleados</rd:DataSetName>
+        <rd:TableName>ValeDeEquipoEncabezado</rd:TableName>
+        <rd:ObjectDataSourceType>AdminEmpleados.ValeDeEquipo+ValeDeEquipoEncabezado, AdminEmpleados, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="Detalle">
+      <Query>
+        <DataSourceName>AdminEmpleados</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Equipo">
+          <DataField>Equipo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EquipoID">
+          <DataField>EquipoID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FechaAsignado">
+          <DataField>FechaAsignado</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="FechaDeNacimiento">
-          <DataField>FechaDeNacimiento</DataField>
+        <Field Name="FechaRetorno">
+          <DataField>FechaRetorno</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="ID">
           <DataField>ID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Nombre">
-          <DataField>Nombre</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Sexo">
-          <DataField>Sexo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>AdminEmpleados</rd:DataSetName>
-        <rd:TableName>Empleado</rd:TableName>
-        <rd:ObjectDataSourceType>AdminEmpleados.Empleado, AdminEmpleados, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="Equipo">
-      <Query>
-        <DataSourceName>AdminEmpleados</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="Comentario">
-          <DataField>Comentario</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Empleado">
-          <DataField>Empleado</DataField>
+        <Field Name="NumeroDeVale">
+          <DataField>NumeroDeVale</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Equipo">
-          <DataField>Equipo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Fecha">
-          <DataField>Fecha</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="FechaDeRetorno">
-          <DataField>FechaDeRetorno</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Regreso">
-          <DataField>Regreso</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>AdminEmpleados</rd:DataSetName>
-        <rd:TableName>Vista</rd:TableName>
-        <rd:ObjectDataSourceType>AdminEmpleados.EquipoAsignado+Vista, AdminEmpleados, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>ValeDeEquipoDetalle</rd:TableName>
+        <rd:ObjectDataSourceType>AdminEmpleados.ValeDeEquipo+ValeDeEquipoDetalle, AdminEmpleados, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
+  <EmbeddedImages>
+    <EmbeddedImage Name="Logo">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>2b8b9038-aabd-4c87-a05d-eb731b714fa5</rd:ReportID>
 </Report>

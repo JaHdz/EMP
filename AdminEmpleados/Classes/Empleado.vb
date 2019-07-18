@@ -272,7 +272,7 @@ Public Class Empleado
                     cmd.Parameters.Add("@START", SqlDbType.DateTime).Value = FechaEfectiva
                     cmd.Parameters.Add("@DEPARMENT", SqlDbType.NVarChar, 10).Value = Departamento.ID
                     cmd.Parameters.Add("@POSITION", SqlDbType.NVarChar, 10).Value = Puesto.ID
-                    cmd.Parameters.Add("@USER", SqlDbType.Int).Value = Usuario.ID
+                    cmd.Parameters.Add("@USER", SqlDbType.Int).Value = If(Usuario IsNot Nothing, Usuario.ID, DBNull.Value)
                     cmd.Parameters.Add("@ACTIVE", SqlDbType.Bit).Value = EsActivo
                     cmd.Parameters.Add("@ISSUPERVISOR", SqlDbType.Bit).Value = EsSupervisor
                     If Foto Is Nothing OrElse Foto Is My.Resources.AddImage_80px Then

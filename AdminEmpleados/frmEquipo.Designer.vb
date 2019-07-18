@@ -27,37 +27,32 @@ Partial Class FrmEquipo
         Me.pnlEquipo = New System.Windows.Forms.Panel()
         Me.dgvEquipoEmp = New System.Windows.Forms.DataGridView()
         Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.lblAsignar = New System.Windows.Forms.Label()
         Me.txtEmpleadoNombre = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label42 = New System.Windows.Forms.Label()
-        Me.lbl_ingreso = New System.Windows.Forms.Label()
-        Me.TXT_FECHA = New System.Windows.Forms.DateTimePicker()
         Me.txtEmpleadoNumero = New System.Windows.Forms.TextBox()
-        Me.txtEquipoNumero = New System.Windows.Forms.TextBox()
         Me.lbl_num = New System.Windows.Forms.Label()
-        Me.txtEquipoNombre = New System.Windows.Forms.TextBox()
-        Me.Label92 = New System.Windows.Forms.Label()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.RegresarEquipo = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.pb_Report = New System.Windows.Forms.PictureBox()
+        Me.btnAsignarEquipo = New System.Windows.Forms.PictureBox()
         Me.CANCEL = New System.Windows.Forms.PictureBox()
-        Me.SAVE = New System.Windows.Forms.PictureBox()
-        Me.buscar_eq = New System.Windows.Forms.PictureBox()
         Me.buscar_EN = New System.Windows.Forms.PictureBox()
-        Me.gbComentarios = New System.Windows.Forms.GroupBox()
-        Me.TXT_commen = New System.Windows.Forms.TextBox()
+        Me.VerVale = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.NumeroDeVale = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmpleadoID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Empleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AsignadoPorID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AsignadoPor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Activo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.pnlEquipo.SuspendLayout()
         CType(Me.dgvEquipoEmp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel14.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.pb_Report, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnAsignarEquipo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SAVE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.buscar_eq, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.gbComentarios.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -87,7 +82,7 @@ Partial Class FrmEquipo
         Me.dgvEquipoEmp.AllowUserToDeleteRows = False
         Me.dgvEquipoEmp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvEquipoEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEquipoEmp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.RegresarEquipo})
+        Me.dgvEquipoEmp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.VerVale, Me.NumeroDeVale, Me.EmpleadoID, Me.Empleado, Me.AsignadoPorID, Me.AsignadoPor, Me.Activo})
         Me.dgvEquipoEmp.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvEquipoEmp.Location = New System.Drawing.Point(0, 0)
         Me.dgvEquipoEmp.Name = "dgvEquipoEmp"
@@ -100,18 +95,13 @@ Partial Class FrmEquipo
         'Panel14
         '
         Me.Panel14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel14.Controls.Add(Me.gbComentarios)
+        Me.Panel14.Controls.Add(Me.lblAsignar)
+        Me.Panel14.Controls.Add(Me.btnAsignarEquipo)
         Me.Panel14.Controls.Add(Me.txtEmpleadoNombre)
         Me.Panel14.Controls.Add(Me.Panel2)
-        Me.Panel14.Controls.Add(Me.lbl_ingreso)
-        Me.Panel14.Controls.Add(Me.TXT_FECHA)
-        Me.Panel14.Controls.Add(Me.buscar_eq)
         Me.Panel14.Controls.Add(Me.txtEmpleadoNumero)
-        Me.Panel14.Controls.Add(Me.txtEquipoNumero)
         Me.Panel14.Controls.Add(Me.lbl_num)
-        Me.Panel14.Controls.Add(Me.txtEquipoNombre)
         Me.Panel14.Controls.Add(Me.buscar_EN)
-        Me.Panel14.Controls.Add(Me.Label92)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel14.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
@@ -120,11 +110,22 @@ Partial Class FrmEquipo
         Me.Panel14.Size = New System.Drawing.Size(1078, 699)
         Me.Panel14.TabIndex = 80
         '
+        'lblAsignar
+        '
+        Me.lblAsignar.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!)
+        Me.lblAsignar.Location = New System.Drawing.Point(363, 49)
+        Me.lblAsignar.Name = "lblAsignar"
+        Me.lblAsignar.Size = New System.Drawing.Size(144, 21)
+        Me.lblAsignar.TabIndex = 75
+        Me.lblAsignar.Text = "Asignar equipo "
+        Me.lblAsignar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblAsignar.Visible = False
+        '
         'txtEmpleadoNombre
         '
         Me.txtEmpleadoNombre.Enabled = False
         Me.txtEmpleadoNombre.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.txtEmpleadoNombre.Location = New System.Drawing.Point(171, 53)
+        Me.txtEmpleadoNombre.Location = New System.Drawing.Point(117, 47)
         Me.txtEmpleadoNombre.Name = "txtEmpleadoNombre"
         Me.txtEmpleadoNombre.Size = New System.Drawing.Size(209, 25)
         Me.txtEmpleadoNombre.TabIndex = 73
@@ -134,9 +135,7 @@ Partial Class FrmEquipo
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Label42)
-        Me.Panel2.Controls.Add(Me.pb_Report)
         Me.Panel2.Controls.Add(Me.CANCEL)
-        Me.Panel2.Controls.Add(Me.SAVE)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
@@ -158,74 +157,25 @@ Partial Class FrmEquipo
         Me.Label42.Text = "Asignar Equipo"
         Me.Label42.UseWaitCursor = True
         '
-        'lbl_ingreso
-        '
-        Me.lbl_ingreso.AutoSize = True
-        Me.lbl_ingreso.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!)
-        Me.lbl_ingreso.Location = New System.Drawing.Point(86, 121)
-        Me.lbl_ingreso.Name = "lbl_ingreso"
-        Me.lbl_ingreso.Size = New System.Drawing.Size(71, 21)
-        Me.lbl_ingreso.TabIndex = 67
-        Me.lbl_ingreso.Text = "Ingreso:"
-        '
-        'TXT_FECHA
-        '
-        Me.TXT_FECHA.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.TXT_FECHA.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.TXT_FECHA.Location = New System.Drawing.Point(163, 119)
-        Me.TXT_FECHA.Name = "TXT_FECHA"
-        Me.TXT_FECHA.Size = New System.Drawing.Size(240, 25)
-        Me.TXT_FECHA.TabIndex = 2
-        '
         'txtEmpleadoNumero
         '
         Me.txtEmpleadoNumero.Enabled = False
         Me.txtEmpleadoNumero.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.txtEmpleadoNumero.Location = New System.Drawing.Point(155, 53)
+        Me.txtEmpleadoNumero.Location = New System.Drawing.Point(101, 47)
         Me.txtEmpleadoNumero.Name = "txtEmpleadoNumero"
         Me.txtEmpleadoNumero.Size = New System.Drawing.Size(10, 25)
         Me.txtEmpleadoNumero.TabIndex = 0
         Me.txtEmpleadoNumero.Visible = False
         '
-        'txtEquipoNumero
-        '
-        Me.txtEquipoNumero.Enabled = False
-        Me.txtEquipoNumero.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.txtEquipoNumero.Location = New System.Drawing.Point(155, 84)
-        Me.txtEquipoNumero.Name = "txtEquipoNumero"
-        Me.txtEquipoNumero.Size = New System.Drawing.Size(10, 25)
-        Me.txtEquipoNumero.TabIndex = 1
-        Me.txtEquipoNumero.Visible = False
-        '
         'lbl_num
         '
         Me.lbl_num.AutoSize = True
         Me.lbl_num.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!)
-        Me.lbl_num.Location = New System.Drawing.Point(67, 55)
+        Me.lbl_num.Location = New System.Drawing.Point(13, 49)
         Me.lbl_num.Name = "lbl_num"
         Me.lbl_num.Size = New System.Drawing.Size(90, 21)
         Me.lbl_num.TabIndex = 13
         Me.lbl_num.Text = "Empleado:"
-        '
-        'txtEquipoNombre
-        '
-        Me.txtEquipoNombre.Enabled = False
-        Me.txtEquipoNombre.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
-        Me.txtEquipoNombre.Location = New System.Drawing.Point(171, 84)
-        Me.txtEquipoNombre.Name = "txtEquipoNombre"
-        Me.txtEquipoNombre.Size = New System.Drawing.Size(209, 25)
-        Me.txtEquipoNombre.TabIndex = 64
-        Me.txtEquipoNombre.TabStop = False
-        '
-        'Label92
-        '
-        Me.Label92.AutoSize = True
-        Me.Label92.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!)
-        Me.Label92.Location = New System.Drawing.Point(90, 86)
-        Me.Label92.Name = "Label92"
-        Me.Label92.Size = New System.Drawing.Size(67, 21)
-        Me.Label92.TabIndex = 63
-        Me.Label92.Text = "Equipo:"
         '
         'DataGridViewImageColumn1
         '
@@ -234,96 +184,112 @@ Partial Class FrmEquipo
         '
         'DataGridViewImageColumn2
         '
+        Me.DataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.DataGridViewImageColumn2.FillWeight = 291.8782!
         Me.DataGridViewImageColumn2.HeaderText = "Regresar"
         Me.DataGridViewImageColumn2.Image = Global.AdminEmpleados.My.Resources.Resources.Undo_80px
         Me.DataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
         Me.DataGridViewImageColumn2.Name = "DataGridViewImageColumn2"
         Me.DataGridViewImageColumn2.ReadOnly = True
-        Me.DataGridViewImageColumn2.Width = 1075
+        Me.DataGridViewImageColumn2.Width = 29
         '
-        'RegresarEquipo
+        'btnAsignarEquipo
         '
-        Me.RegresarEquipo.HeaderText = "Regresar"
-        Me.RegresarEquipo.Image = Global.AdminEmpleados.My.Resources.Resources.Undo_80px
-        Me.RegresarEquipo.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.RegresarEquipo.Name = "RegresarEquipo"
-        Me.RegresarEquipo.ReadOnly = True
-        '
-        'pb_Report
-        '
-        Me.pb_Report.Dock = System.Windows.Forms.DockStyle.Right
-        Me.pb_Report.Image = Global.AdminEmpleados.My.Resources.Resources.AssignedTools_80px
-        Me.pb_Report.Location = New System.Drawing.Point(969, 0)
-        Me.pb_Report.Name = "pb_Report"
-        Me.pb_Report.Size = New System.Drawing.Size(35, 35)
-        Me.pb_Report.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pb_Report.TabIndex = 71
-        Me.pb_Report.TabStop = False
-        Me.pb_Report.Visible = False
+        Me.btnAsignarEquipo.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Tools_80px
+        Me.btnAsignarEquipo.Location = New System.Drawing.Point(513, 47)
+        Me.btnAsignarEquipo.Name = "btnAsignarEquipo"
+        Me.btnAsignarEquipo.Size = New System.Drawing.Size(25, 25)
+        Me.btnAsignarEquipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btnAsignarEquipo.TabIndex = 74
+        Me.btnAsignarEquipo.TabStop = False
+        Me.btnAsignarEquipo.Visible = False
         '
         'CANCEL
         '
         Me.CANCEL.Dock = System.Windows.Forms.DockStyle.Right
         Me.CANCEL.Image = Global.AdminEmpleados.My.Resources.Resources.Cancel_80px
-        Me.CANCEL.Location = New System.Drawing.Point(1004, 0)
+        Me.CANCEL.Location = New System.Drawing.Point(1039, 0)
         Me.CANCEL.Name = "CANCEL"
         Me.CANCEL.Size = New System.Drawing.Size(35, 35)
         Me.CANCEL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.CANCEL.TabIndex = 1
         Me.CANCEL.TabStop = False
         '
-        'SAVE
-        '
-        Me.SAVE.Dock = System.Windows.Forms.DockStyle.Right
-        Me.SAVE.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Tools_80px
-        Me.SAVE.Location = New System.Drawing.Point(1039, 0)
-        Me.SAVE.Name = "SAVE"
-        Me.SAVE.Size = New System.Drawing.Size(35, 35)
-        Me.SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.SAVE.TabIndex = 0
-        Me.SAVE.TabStop = False
-        '
-        'buscar_eq
-        '
-        Me.buscar_eq.BackgroundImage = CType(resources.GetObject("buscar_eq.BackgroundImage"), System.Drawing.Image)
-        Me.buscar_eq.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_eq.Location = New System.Drawing.Point(386, 84)
-        Me.buscar_eq.Name = "buscar_eq"
-        Me.buscar_eq.Size = New System.Drawing.Size(25, 25)
-        Me.buscar_eq.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.buscar_eq.TabIndex = 65
-        Me.buscar_eq.TabStop = False
-        '
         'buscar_EN
         '
         Me.buscar_EN.BackgroundImage = CType(resources.GetObject("buscar_EN.BackgroundImage"), System.Drawing.Image)
         Me.buscar_EN.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
-        Me.buscar_EN.Location = New System.Drawing.Point(386, 53)
+        Me.buscar_EN.Location = New System.Drawing.Point(332, 47)
         Me.buscar_EN.Name = "buscar_EN"
         Me.buscar_EN.Size = New System.Drawing.Size(25, 25)
         Me.buscar_EN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.buscar_EN.TabIndex = 53
         Me.buscar_EN.TabStop = False
         '
-        'gbComentarios
+        'VerVale
         '
-        Me.gbComentarios.Controls.Add(Me.TXT_commen)
-        Me.gbComentarios.Location = New System.Drawing.Point(423, 56)
-        Me.gbComentarios.Name = "gbComentarios"
-        Me.gbComentarios.Size = New System.Drawing.Size(531, 91)
-        Me.gbComentarios.TabIndex = 74
-        Me.gbComentarios.TabStop = False
-        Me.gbComentarios.Text = "Comentarios:"
+        Me.VerVale.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.VerVale.FillWeight = 291.8782!
+        Me.VerVale.HeaderText = "Ver"
+        Me.VerVale.Image = CType(resources.GetObject("VerVale.Image"), System.Drawing.Image)
+        Me.VerVale.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.VerVale.Name = "VerVale"
+        Me.VerVale.ReadOnly = True
+        Me.VerVale.ToolTipText = "Ver vale de equipo asignado"
+        Me.VerVale.Width = 42
         '
-        'TXT_commen
+        'NumeroDeVale
         '
-        Me.TXT_commen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TXT_commen.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TXT_commen.Location = New System.Drawing.Point(3, 24)
-        Me.TXT_commen.Multiline = True
-        Me.TXT_commen.Name = "TXT_commen"
-        Me.TXT_commen.Size = New System.Drawing.Size(525, 64)
-        Me.TXT_commen.TabIndex = 3
+        Me.NumeroDeVale.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.NumeroDeVale.DataPropertyName = "ID"
+        Me.NumeroDeVale.FillWeight = 52.03046!
+        Me.NumeroDeVale.HeaderText = "No. de vale"
+        Me.NumeroDeVale.Name = "NumeroDeVale"
+        Me.NumeroDeVale.ReadOnly = True
+        '
+        'EmpleadoID
+        '
+        Me.EmpleadoID.DataPropertyName = "EmpleadoID"
+        Me.EmpleadoID.HeaderText = "EmpleadoID"
+        Me.EmpleadoID.Name = "EmpleadoID"
+        Me.EmpleadoID.ReadOnly = True
+        Me.EmpleadoID.Visible = False
+        '
+        'Empleado
+        '
+        Me.Empleado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Empleado.DataPropertyName = "Empleado"
+        Me.Empleado.FillWeight = 52.03046!
+        Me.Empleado.HeaderText = "Empleado"
+        Me.Empleado.Name = "Empleado"
+        Me.Empleado.ReadOnly = True
+        '
+        'AsignadoPorID
+        '
+        Me.AsignadoPorID.DataPropertyName = "AsignadoPorID"
+        Me.AsignadoPorID.HeaderText = "AsignadoPorID"
+        Me.AsignadoPorID.Name = "AsignadoPorID"
+        Me.AsignadoPorID.ReadOnly = True
+        Me.AsignadoPorID.Visible = False
+        '
+        'AsignadoPor
+        '
+        Me.AsignadoPor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.AsignadoPor.DataPropertyName = "AsignadoPor"
+        Me.AsignadoPor.FillWeight = 52.03046!
+        Me.AsignadoPor.HeaderText = "Asignado Por"
+        Me.AsignadoPor.Name = "AsignadoPor"
+        Me.AsignadoPor.ReadOnly = True
+        '
+        'Activo
+        '
+        Me.Activo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.Activo.DataPropertyName = "Activo"
+        Me.Activo.FillWeight = 52.03046!
+        Me.Activo.HeaderText = "¿Esta Activo?"
+        Me.Activo.Name = "Activo"
+        Me.Activo.ReadOnly = True
+        Me.Activo.Width = 134
         '
         'FrmEquipo
         '
@@ -341,13 +307,9 @@ Partial Class FrmEquipo
         Me.Panel14.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.pb_Report, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnAsignarEquipo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CANCEL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SAVE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.buscar_eq, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.gbComentarios.ResumeLayout(False)
-        Me.gbComentarios.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -356,25 +318,23 @@ Partial Class FrmEquipo
     Friend WithEvents txtEmpleadoNumero As TextBox
     Friend WithEvents lbl_num As Label
     Friend WithEvents buscar_EN As PictureBox
-    Friend WithEvents buscar_eq As PictureBox
-    Friend WithEvents txtEquipoNumero As TextBox
-    Friend WithEvents txtEquipoNombre As TextBox
-    Friend WithEvents Label92 As Label
-    Friend WithEvents SAVE As PictureBox
     Friend WithEvents CANCEL As PictureBox
-    Friend WithEvents lbl_ingreso As Label
-    Friend WithEvents TXT_FECHA As DateTimePicker
     Friend WithEvents dgvEquipoEmp As DataGridView
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Private WithEvents Panel14 As Panel
     Private WithEvents Panel2 As Panel
     Private WithEvents Label42 As Label
-    Friend WithEvents pb_Report As PictureBox
     Friend WithEvents cUPDATE As DataGridViewImageColumn
     Friend WithEvents pnlEquipo As Panel
-    Friend WithEvents RegresarEquipo As DataGridViewImageColumn
     Friend WithEvents txtEmpleadoNombre As TextBox
-    Friend WithEvents gbComentarios As GroupBox
-    Friend WithEvents TXT_commen As TextBox
     Friend WithEvents DataGridViewImageColumn2 As DataGridViewImageColumn
+    Friend WithEvents lblAsignar As Label
+    Friend WithEvents btnAsignarEquipo As PictureBox
+    Friend WithEvents VerVale As DataGridViewImageColumn
+    Friend WithEvents NumeroDeVale As DataGridViewTextBoxColumn
+    Friend WithEvents EmpleadoID As DataGridViewTextBoxColumn
+    Friend WithEvents Empleado As DataGridViewTextBoxColumn
+    Friend WithEvents AsignadoPorID As DataGridViewTextBoxColumn
+    Friend WithEvents AsignadoPor As DataGridViewTextBoxColumn
+    Friend WithEvents Activo As DataGridViewTextBoxColumn
 End Class

@@ -30,19 +30,13 @@ Public Class FrmReportes
                 'RvReports.LocalReport.DataSources.Add(New ReportDataSource("SES_FAMILY", New Cls_ES().GetFamily(Empleado.ID)))
                 'RvReports.LocalReport.DataSources.Add(New ReportDataSource("SES_OTHERINCOMES", New Cls_ES().GetOtherIncomes(SESID)))
             Case ReportOptions.AssignedEquipment
-                Lbl_Title.Text = "Reporte de Equipo Entregado"
-                'RvReports.LocalReport.ReportEmbeddedResource = "AdminEmpleados.EquipoEntregado.rdlc"
-                'RvReports.LocalReport.DataSources.Clear()
-                'RvReports.LocalReport.DataSources.Add(New ReportDataSource("ASSIGNED_EQUIPMENT", New Cls_Emp().GetAssignedEquipment(Empleado.ID)))
-                'RvReports.LocalReport.DataSources.Add(New ReportDataSource("RECEIVER", New Cls_Emp().GetEquipmentReceiver(UsuarioLogeado.ID, UsuarioLogeado.Nombre)))
-                Dim llEmpleado As New List(Of Empleado) From {CType(loParametros("Empleado"), Empleado)}
-
+                Text = "Reporte de equipo asignado"
                 RvReports.LocalReport.ReportEmbeddedResource = "AdminEmpleados.EquipoAsignado.rdlc"
                 RvReports.LocalReport.DataSources.Clear()
-
-                RvReports.LocalReport.DataSources.Add(New ReportDataSource("Empleado", llEmpleado))
-                RvReports.LocalReport.DataSources.Add(New ReportDataSource("Equipo", loParametros("Equipo")))
-                'RvReports.LocalReport.DataSources.Add(New ReportDataSource("USUARIO", UsuarioLogeado))
+                Dim loVale As ValeDeEquipo = loParametros("ValeDeEquipo")
+                Dim locEncabezado As New List(Of ValeDeEquipo.ValeDeEquipoEncabezado) From {loVale.Encabezado}
+                RvReports.LocalReport.DataSources.Add(New ReportDataSource("Encabezado", ToDataTable(locEncabezado)))
+                RvReports.LocalReport.DataSources.Add(New ReportDataSource("Detalle", ToDataTable(loVale.Detalle)))
         End Select
         RvReports.RefreshReport()
     End Sub

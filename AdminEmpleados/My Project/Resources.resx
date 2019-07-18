@@ -136,6 +136,9 @@
   <data name="Add_Contact_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add_Contact_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Blue_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Blue-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Add_Reference_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add_Reference_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -184,11 +187,14 @@
   <data name="Plus_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plus_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Blue_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\Blue-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AddImage_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddImage_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Add_marriage_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add_marriage_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AssignedTools_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AssignedTools_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Close_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Close_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,8 +202,8 @@
   <data name="Minimize_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Minimize_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AssignedTools_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AssignedTools_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Updates_80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Updates_80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Add_Tools_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add_Tools_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,10 +223,7 @@
   <data name="Add_Family_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add_Family_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Updates_80" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Updates_80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AddImage_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AddImage_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="View_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\View_80px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -273,6 +273,7 @@ Partial Class frmEmpleados
         Me.txtSupervisorCodigo = New System.Windows.Forms.TextBox()
         Me.lbl_depto = New System.Windows.Forms.Label()
         Me.pnl_per = New System.Windows.Forms.Panel()
+        Me.Buscar_nac = New System.Windows.Forms.PictureBox()
         Me.txtTelefono = New AdminEmpleados.NumericTextbox()
         Me.txtCodigoPostal = New AdminEmpleados.NumericTextbox()
         Me.txtNSS = New AdminEmpleados.NumericTextbox()
@@ -403,6 +404,7 @@ Partial Class frmEmpleados
         CType(Me.Buscar_tipo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Buscar_Super, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_per.SuspendLayout()
+        CType(Me.Buscar_nac, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PbSearchEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.buscar_ciudad, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbFotoEmpleado, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -3161,6 +3163,7 @@ Partial Class frmEmpleados
         Me.pnl_per.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnl_per.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pnl_per.Controls.Add(Me.Buscar_nac)
         Me.pnl_per.Controls.Add(Me.txtTelefono)
         Me.pnl_per.Controls.Add(Me.txtCodigoPostal)
         Me.pnl_per.Controls.Add(Me.txtNSS)
@@ -3214,6 +3217,18 @@ Partial Class frmEmpleados
         Me.pnl_per.Name = "pnl_per"
         Me.pnl_per.Size = New System.Drawing.Size(1070, 485)
         Me.pnl_per.TabIndex = 1
+        '
+        'Buscar_nac
+        '
+        Me.Buscar_nac.BackgroundImage = CType(resources.GetObject("Buscar_nac.BackgroundImage"), System.Drawing.Image)
+        Me.Buscar_nac.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Buscar_nac.Image = Global.AdminEmpleados.My.Resources.Resources.Search_80px
+        Me.Buscar_nac.Location = New System.Drawing.Point(1006, 102)
+        Me.Buscar_nac.Name = "Buscar_nac"
+        Me.Buscar_nac.Size = New System.Drawing.Size(25, 25)
+        Me.Buscar_nac.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Buscar_nac.TabIndex = 67
+        Me.Buscar_nac.TabStop = False
         '
         'txtTelefono
         '
@@ -3513,10 +3528,11 @@ Partial Class frmEmpleados
         'txtNacionalidad
         '
         Me.txtNacionalidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNacionalidad.Enabled = False
         Me.txtNacionalidad.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNacionalidad.Location = New System.Drawing.Point(793, 102)
         Me.txtNacionalidad.Name = "txtNacionalidad"
-        Me.txtNacionalidad.Size = New System.Drawing.Size(238, 25)
+        Me.txtNacionalidad.Size = New System.Drawing.Size(215, 25)
         Me.txtNacionalidad.TabIndex = 13
         '
         'Label3
@@ -3864,6 +3880,7 @@ Partial Class frmEmpleados
         CType(Me.Buscar_Super, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_per.ResumeLayout(False)
         Me.pnl_per.PerformLayout()
+        CType(Me.Buscar_nac, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PbSearchEmployee, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.buscar_ciudad, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbFotoEmpleado, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4150,7 +4167,6 @@ Partial Class frmEmpleados
     Friend WithEvents lbl_sex As Label
     Friend WithEvents LBL_ESTADOCIVIL As Label
     Friend WithEvents lbl_fn As Label
-    Friend WithEvents txtNacionalidad As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents dtpFechaDeNacimiento As DateTimePicker
     Friend WithEvents cbSexo As ComboBox
@@ -4182,4 +4198,6 @@ Partial Class frmEmpleados
     Friend WithEvents pnlRow6 As Panel
     Friend WithEvents pnlRow5 As Panel
     Friend WithEvents pnlRow8 As Panel
+    Friend WithEvents txtNacionalidad As TextBox
+    Friend WithEvents Buscar_nac As PictureBox
 End Class

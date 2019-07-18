@@ -21,6 +21,7 @@
         Puesto = 7
         Supervisor = 8
         TipoDeEmpleado = 9
+        Nacionalidad = 10
     End Enum
 
     Public Enum ComentarioPara

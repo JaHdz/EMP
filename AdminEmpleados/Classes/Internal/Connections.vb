@@ -4,11 +4,11 @@ Imports System.Threading
 Friend Module Connections
     Private LastConn As String = String.Empty
     Private ReadOnly DeveloperConnectionPool As New Dictionary(Of String, String) From {
-        {"Developer1", "Data Source=MX1018-PF15YZS7;Initial Catalog=EmpleadosDB;Integrated Security=True"},'XAVI
-        {"Developer2", "Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=EmpleadosDB;Integrated Security=True"}'STEPH
+        {"Developer1", "Data Source=MX1018-PF15YZS7;Initial Catalog=EmpleadosDB;Integrated Security=True;"},'XAVI
+        {"Developer2", "Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=EmpleadosDB;Integrated Security=True;"}'STEPH
     }
     Private ReadOnly RuntimeConnections As New Dictionary(Of String, String) From {
-        {"Production", "Data Source=TURING;Initial Catalog=EmpleadosDB;User ID=developer;Integrated Security=True"}'Production DB    
+        {"Production", "Data Source=TURING;Initial Catalog=EmpleadosDB;User ID=developer;Integrated Security=True;"}'Production DB    
     }
     Public Function ConnectionString() As String
         If LastConn = String.Empty Then

@@ -20,12 +20,7 @@ Public Class frmEmpleados
     End Sub
 
     Private Sub Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'AddToolTips()
-        'Dim Wait As New frmWait With {
-        '    .Operation = BackgroundOperations.GetLatestEmployeeNumber
-        '}
-        'Wait.ShowDialog()
-        'txtNumero.Text = Wait.Result.ToString()
+        AddToolTips()
         txtNombres.Focus()
     End Sub
 
@@ -49,6 +44,7 @@ Public Class frmEmpleados
         cbNivelEducativo.DataSource = NivelesEducativos
         cbNivelEducativo.DisplayMember = "Descripcion"
         cbNivelEducativo.ValueMember = "Descripcion"
+
     End Sub
 
     Private Sub AsignarFechas()
@@ -148,7 +144,6 @@ Public Class frmEmpleados
                 Else
                     dt.Value = dt.MaxDate
                 End If
-
                 Continue For
             End If
             If ctrl.GetType() Is GetType(ComboBox) Then
@@ -159,6 +154,16 @@ Public Class frmEmpleados
             If ctrl.GetType() Is GetType(CheckBox) Then
                 Dim chk As CheckBox = CType(ctrl, CheckBox)
                 chk.Checked = False
+                Continue For
+            End If
+            If ctrl.GetType() Is GetType(RadioButtonList) Then
+                Dim radbtn As RadioButtonList = CType(ctrl, RadioButtonList)
+                radbtn.ResetText()
+                Continue For
+            End If
+            If ctrl.GetType() Is GetType(NumericTextbox) Then
+                Dim numtxt As NumericTextbox = CType(ctrl, NumericTextbox)
+                numtxt.Text = ""
                 Continue For
             End If
             If ctrl.GetType() Is GetType(DataGrid) Then
@@ -179,43 +184,27 @@ Public Class frmEmpleados
         Next
     End Sub
 
-    Public Sub Limp()
-        'MenuEmp.SelectedIndex = 0
-        'EMPLEADO_ID = 0
-        'For Each Tab As TabPage In MenuEmp.TabPages
-        '    For Each Container As Control In Tab.Controls
-        '        If Container.GetType() Is GetType(Panel) Then
-        '            ClearSubControls(Tab)
-        '        End If
-        '    Next
-        'Next
-        'pnl_estatus.Visible = False
-
-        'Dim Wait As New frmWait With {
-        '    .Operation = BackgroundOperations.GetLatestEmployeeNumber
-        '}
-        'Wait.ShowDialog()
-        'txtNumero.Text = Wait.Result.ToString()
-        'Wait.Close()
-
-        'txtNumero.Text = objcon.NUMERO_EMPLEADO.ToString()
-        'txtNumero.Focus()
+    Public Sub LimpiarControles()
+        MenuEmp.SelectedIndex = 0
+        For Each Tab As TabPage In MenuEmp.TabPages
+            For Each Container As Control In Tab.Controls
+                If Container.GetType() Is GetType(Panel) Then
+                    ClearSubControls(Tab)
+                End If
+            Next
+        Next
+        pnl_estatus.Visible = False
 
         'lbl_emp.Text = ""
-        'PbOptions.Tag = ""
-        'pbFotoEmpleado.Image = My.Resources.AddImage_80px
-        'pbFotoEmpleado.Visible = True
-        ''llenarFamilia()
-        ''llenarAL()
-        ''llenarContacto()
-        ''llenarEnfermedades()
-        'pbVivienda.Image = My.Resources.AddImage_80px
-        'EMPLEADO_ES = 0
-        'dgv_OI.DataSource = objcon.Consulta_OI(0)
-        'dgv_Ref.DataSource = objcon.Consulta_REF(0)
-        'SAVE.Image = My.Resources.Save_80px
-        'btn_SESave.Image = My.Resources.Save_80px
-        'AddToolTips()
+        PbOptions.Tag = ""
+        pbFotoEmpleado.Image = My.Resources.AddImage_80px
+        pbFotoEmpleado.SizeMode = PictureBoxSizeMode.CenterImage
+        pbVivienda.Image = My.Resources.AddImage_80px
+        pbVivienda.SizeMode = PictureBoxSizeMode.CenterImage
+        SAVE.Image = My.Resources.Save_80px
+        btn_SESave.Image = My.Resources.Save_80px
+        SAVE.Tag = Operacion.Registrar
+        AddToolTips()
     End Sub
 
 
@@ -237,6 +226,7 @@ Public Class frmEmpleados
             LlenarDatosMedicos()
             LlenarDatosEstudioSocioeconomico()
         Else
+            LimpiarControles()
             pnl_estatus.Visible = False
             SAVE.Image = My.Resources.Save_80px
             SAVE.Tag = Operacion.Registrar
@@ -245,6 +235,7 @@ Public Class frmEmpleados
     End Sub
 
     Private Sub LlenarDatosPersonales()
+
         If Empleado IsNot Nothing Then
             SAVE.Image = My.Resources.Updates_80
             SAVE.Tag = Operacion.Actualizar
@@ -314,6 +305,7 @@ Public Class frmEmpleados
                 PbOptions.Visible = True
             End With
         Else
+            LimpiarControles()
             SAVE.Image = My.Resources.Save_80px
             SAVE.Tag = Operacion.Registrar
         End If
@@ -339,6 +331,14 @@ Public Class frmEmpleados
             Dim Supervisor As Supervisor = CType(Resultado, Supervisor)
             txtSupervisorCodigo.Text = Supervisor.ID
             txtSupervisor.Text = Supervisor.Nombre
+        End If
+    End Sub
+
+    Private Sub Buscar_nac_Click(sender As Object, e As EventArgs) Handles Buscar_nac.Click
+        Llenar_buscador(BuscarPor.Nacionalidad)
+        If Resultado IsNot Nothing Then
+            Dim Nacionalidad As Nacionalidad = CType(Resultado, Nacionalidad)
+            txtNacionalidad.Text = Nacionalidad.Gentilicio
         End If
     End Sub
 
@@ -409,7 +409,7 @@ Public Class frmEmpleados
     End Sub
 
     Private Sub CANCEL_Click(sender As Object, e As EventArgs) Handles CANCEL.Click
-        Limp()
+        LimpiarControles()
     End Sub
 
     Private Sub OptionPress(sender As Object, e As EventArgs) Handles PbOptions.Click
@@ -704,71 +704,71 @@ Public Class frmEmpleados
 
     Private Sub Btn_SESave_Click(sender As Object, e As EventArgs) Handles btn_SESave.Click
         With EstudioSocioeconomico
-            With EstudioSocioeconomico
-                .Empleado = Empleado.ID
-                .FotoVivienda = pbVivienda.Image
-                .TipoDeVivienda = rbtnTipoDeVivienda.SelectedValue
-                .CondicionesDeVivienda = rbtnMaterial.SelectedValue
-                .ServicioLuz = cb_Luz.Checked
-                .ServicioDrenaje = cb_Drenaje.Checked
-                .ServicioRecoleccionDeBasura = cb_Basura.Checked
-                .ServicioAgua = cb_AguaP.Checked
-                .ServicioGas = cb_Tuberia.Checked
-                .ServicioDeInternet = cb_Internet.Checked
-                .ServicioTelefono = cb_LineaTel.Checked
-                .ServicioTVCable = cb_TV.Checked
-                .ServicioSistemaDeSeguridad = cb_SisSeg.Checked
+            .Empleado = Empleado.ID
+            .FotoVivienda = pbVivienda.Image
+            .TipoDeVivienda = rbtnTipoDeVivienda.SelectedValue
+            .CondicionesDeVivienda = rbtnMaterial.SelectedValue
+            .ServicioLuz = cb_Luz.Checked
+            .ServicioDrenaje = cb_Drenaje.Checked
+            .ServicioRecoleccionDeBasura = cb_Basura.Checked
+            .ServicioAgua = cb_AguaP.Checked
+            .ServicioGas = cb_Tuberia.Checked
+            .ServicioDeInternet = cb_Internet.Checked
+            .ServicioTelefono = cb_LineaTel.Checked
+            .ServicioTVCable = cb_TV.Checked
+            .ServicioSistemaDeSeguridad = cb_SisSeg.Checked
 
-                .TransporteMetro = cb_Metro.Checked
-                .TransportePublico = cb_Trans.Checked
-                .TransporteTaxi = cb_Taxi.Checked
-                .TransporteVehiculoPropio = cb_Vehi.Checked
+            .TransporteMetro = cb_Metro.Checked
+            .TransportePublico = cb_Trans.Checked
+            .TransporteTaxi = cb_Taxi.Checked
+            .TransporteVehiculoPropio = cb_Vehi.Checked
 
-                .Pasatiempos = Txt_pasatiempos.Text
-                .Religion = txt_Religion.Text
+            .Pasatiempos = Txt_pasatiempos.Text
+            .Religion = txt_Religion.Text
 
-                .ActividadEventosCominitarios = txt_EventosComunitarios.Text
-                .ActividadEventosSociales = txt_EventosSociales.Text
-                .ActividadFestivalesCulturales = txt_FestivalesCulturales.Text
-                .ActividadTeatros = txt_teatros.Text
-                .ActividadVaciones = txt_Vacaciones.Text
-                .ActividadParquesNaturales = txt_ParquesNaturales.Text
-                .ActividadMuseos = txt_Museos.Text
-                .ActividadCines = txt_Cines.Text
-                .ActividadZonasArqueologicas = txt_ZonasArquelogicas.Text
-                .ActividadPlazasPublicas = txt_PlazasPublicas.Text
-                .ActividadParquesDeDiversiones = txt_ParqueDeDiversiones.Text
+            .ActividadEventosCominitarios = txt_EventosComunitarios.Text
+            .ActividadEventosSociales = txt_EventosSociales.Text
+            .ActividadFestivalesCulturales = txt_FestivalesCulturales.Text
+            .ActividadTeatros = txt_teatros.Text
+            .ActividadVaciones = txt_Vacaciones.Text
+            .ActividadParquesNaturales = txt_ParquesNaturales.Text
+            .ActividadMuseos = txt_Museos.Text
+            .ActividadCines = txt_Cines.Text
+            .ActividadZonasArqueologicas = txt_ZonasArquelogicas.Text
+            .ActividadPlazasPublicas = txt_PlazasPublicas.Text
+            .ActividadParquesDeDiversiones = txt_ParqueDeDiversiones.Text
 
-                .GastosFijosColegio = txt_GFCole.Text
-                .GastosFijosDespensa = Txt_GFDesp.Text
-                .GastosFijosRenta = txt_GFRenta.Text
-                .GastosFijosServicios = txt_GFServ.Text
+            .GastosFijosColegio = txt_GFCole.Text
+            .GastosFijosDespensa = Txt_GFDesp.Text
+            .GastosFijosRenta = txt_GFRenta.Text
+            .GastosFijosServicios = txt_GFServ.Text
 
-                .Observaciones = txt_Observaciones.Text
+            .Observaciones = txt_Observaciones.Text
 
-                If EstudioSocioeconomicoOpcion = Operacion.Registrar Then
-                    If Not .Registrar() Then
-                        Exit Sub
-                    End If
+            If EstudioSocioeconomicoOpcion = Operacion.Registrar Then
+                If Not .Registrar() Then
+                    Exit Sub
                 Else
-                    If Not .Actualizar() Then
-                        Exit Sub
-                    End If
+                    btn_SESave.Image = My.Resources.Updates_80
                 End If
-                OtrosIngresos = New OtroIngreso().CargarListado(.ID)
-                .OperacionDeOtrosIngresos(OtrosIngresos, OtrosIngresosLocal)
-                dgv_OI.Refresh()
+            Else
+                If Not .Actualizar() Then
+                    Exit Sub
+                End If
+            End If
+            OtrosIngresos = New OtroIngreso().CargarListado(.ID)
+            .OperacionDeOtrosIngresos(OtrosIngresos, OtrosIngresosLocal)
+            dgv_OI.Refresh()
 
-                Referencias = New Referencia().CargarListado(.ID)
-                .OperacionDeReferencias(Referencias, ReferenciasLocal)
-                dgv_Ref.Refresh()
-            End With
+            Referencias = New Referencia().CargarListado(.ID)
+            .OperacionDeReferencias(Referencias, ReferenciasLocal)
+            dgv_Ref.Refresh()
         End With
 
     End Sub
 
     Private Sub Btn_SECancel_Click(sender As Object, e As EventArgs) Handles btn_SECancel.Click
-        Limp()
+        LimpiarControles()
     End Sub
 
     Private Sub Btn_SERPT_Click(sender As Object, e As EventArgs) Handles btn_SERPT.Click
@@ -855,6 +855,8 @@ Public Class frmEmpleados
             End If
         End If
     End Sub
+
+
 
 
 #End Region

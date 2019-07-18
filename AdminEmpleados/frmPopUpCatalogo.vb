@@ -1,4 +1,6 @@
-﻿Public Class frmPopUpCatalogo
+﻿Imports AdminEmpleados.ValeDeEquipo
+
+Public Class frmPopUpCatalogo
     Private Buscar As Integer
     Dim FiltrarInactivos As Boolean
     Dim OtroFiltro As Object
@@ -39,6 +41,8 @@
                         Result = CType(dgv_Pop.CurrentRow.DataBoundItem, Supervisor)
                     Case BuscarPor.TipoDeEmpleado
                         Result = CType(dgv_Pop.CurrentRow.DataBoundItem, Tipo)
+                    Case BuscarPor.Nacionalidad
+                        Result = CType(dgv_Pop.CurrentRow.DataBoundItem, Nacionalidad)
                 End Select
                 Close()
             End If
@@ -54,8 +58,16 @@
             Case BuscarPor.Evaluacion
                 ListadoDeObjetos = New Evaluacion().CargarListado(FiltrarInactivos)
             Case BuscarPor.Equipo
-                Dim Equipos = New Equipo().CargarListado(FiltrarInactivos)
-                Dim Asignados = New EquipoAsignado().CargarListado().FindAll(Function(X) X.Regreso = False)
+                Dim Equipos As New List(Of Equipo.Vista)
+                Dim Asignados As New List(Of EquipoAsignado.Vista)
+                If OtroFiltro IsNot Nothing AndAlso OtroFiltro.GetType Is GetType(List(Of ValeDeEquipoDetalle)) Then
+                    Dim EquipoEnVale = CType(OtroFiltro, List(Of ValeDeEquipoDetalle))
+                    Dim loEquipo = New Equipo().CargarListado(FiltrarInactivos)
+                    Equipos = loEquipo.Where(Function(a) Not EquipoEnVale.Any(Function(b) b.EquipoID = a.ID)).ToList()
+                Else
+                    Equipos = New Equipo().CargarListado(FiltrarInactivos)
+                    Asignados = New EquipoAsignado().CargarListado().FindAll(Function(X) X.Regreso = False)
+                End If
                 ListadoDeObjetos = Equipos.Where(Function(a) Not Asignados.Any(Function(b) b.EquipoID = a.ID)).ToList()
             Case BuscarPor.Entidad
                 ListadoDeObjetos = Entidades
@@ -68,6 +80,8 @@
                 ListadoDeObjetos = New Supervisor().CargarListado(FiltrarInactivos)
             Case BuscarPor.TipoDeEmpleado
                 ListadoDeObjetos = New Tipo().CargarListado(FiltrarInactivos)
+            Case BuscarPor.Nacionalidad
+                ListadoDeObjetos = Nacionalidades
         End Select
         dgv_Pop.DataSource = ListadoDeObjetos
     End Sub
@@ -93,6 +107,8 @@
                     ListadoFiltrado = CType(ListadoDeObjetos, List(Of Supervisor)).FindAll(Function(X) X.Empleado Like "*" + txt_codi.Text.ToUpper + "*" OrElse X.Nombre.ToUpper() Like "*" + txt_codi.Text.ToUpper + "*")
                 Case BuscarPor.TipoDeEmpleado
                     ListadoFiltrado = CType(ListadoDeObjetos, List(Of Tipo)).FindAll(Function(X) X.Codigo Like "*" + txt_codi.Text.ToUpper + "*" OrElse X.Descripcion.ToUpper() Like "*" + txt_codi.Text.ToUpper + "*")
+                Case BuscarPor.Nacionalidad
+                    ListadoFiltrado = CType(ListadoDeObjetos, List(Of Nacionalidad)).FindAll(Function(X) X.Pais Like "*" + txt_codi.Text.ToUpper + "*" OrElse X.Gentilicio.ToUpper() Like "*" + txt_codi.Text.ToUpper + "*")
             End Select
             dgv_Pop.DataSource = ListadoFiltrado
         Else
