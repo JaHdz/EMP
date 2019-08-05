@@ -103,22 +103,21 @@ Public Class ValeDeEquipo
     End Function
 
     Public Sub Buscar()
+        Detalle.Add(New ValeDeEquipoDetalle(0, Encabezado.ID, 0, Today, FechaMinima))
 
-
-        'Encabezado.ID = ID
-        'Detalle.Add(New ValeDeEquipoDetalle(0, ID, 0, Today, FechaMinima))
-
-        'Using con As New SqlConnection(ConnectionString())
-        '    con.Open()
-        '    Dim cmd As New SqlCommand("UDSP_EQUIPMENT_VOUCHER_HEADER", con) With {.CommandType = CommandType.StoredProcedure}
-        '    cmd.Parameters.Add(New SqlParameter("@Encabezado", ToDataTable(New List(Of ValeDeEquipoEncabezado) From {Encabezado})) With {.SqlDbType = SqlDbType.Structured})
-        '    cmd.Parameters.Add(New SqlParameter("@OPTION", Operacion.BuscarTodos))
-        '    Using Reader As SqlDataReader = cmd.ExecuteReader()
-        '        If Reader.Read() Then
-        '            Encabezado = New ValeDeEquipoEncabezado(Reader(""), Reader(""), Reader(""), Reader(""))
-        '        End If
-        '    End Using
-        'End Using
+        Using con As New SqlConnection(ConnectionString())
+            con.Open()
+            Dim cmd As New SqlCommand("UDSP_EQUIPMENT_VOUCHER_DETAIL", con) With {.CommandType = CommandType.StoredProcedure}
+            cmd.Parameters.Add(New SqlParameter("@Detalle", ToDataTable(Detalle)) With {.SqlDbType = SqlDbType.Structured})
+            cmd.Parameters.Add(New SqlParameter("@OPTION", Operacion.Buscar))
+            Using Reader As SqlDataReader = cmd.ExecuteReader()
+                Detalle.Clear()
+                While Reader.Read()
+                    Detalle.Add(New ValeDeEquipoDetalle(Reader("DETALLEID"), Reader("VALEID"), Reader("EQUIPO"), Reader("FECHAASIGNADO"),
+                                                        Reader("FECHARETORNO")))
+                End While
+            End Using
+        End Using
     End Sub
 
 

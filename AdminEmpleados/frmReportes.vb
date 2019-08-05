@@ -34,14 +34,15 @@ Public Class FrmReportes
                 RvReports.LocalReport.ReportEmbeddedResource = "AdminEmpleados.EquipoAsignado.rdlc"
                 RvReports.LocalReport.DataSources.Clear()
                 Dim loVale As ValeDeEquipo = loParametros("ValeDeEquipo")
-                Dim locEncabezado As New List(Of ValeDeEquipo.ValeDeEquipoEncabezado) From {loVale.Encabezado}
-                RvReports.LocalReport.DataSources.Add(New ReportDataSource("Encabezado", ToDataTable(locEncabezado)))
+                RvReports.LocalReport.DataSources.Add(New ReportDataSource("Encabezado", ToDataTable(New List(Of ValeDeEquipo.ValeDeEquipoEncabezado) From
+                                                                                                     {loVale.Encabezado})))
                 RvReports.LocalReport.DataSources.Add(New ReportDataSource("Detalle", ToDataTable(loVale.Detalle)))
         End Select
         RvReports.RefreshReport()
     End Sub
+
     Private Sub Cerrar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles cerrar.Click
-        Me.Close()
+        Close()
     End Sub
 
     Private Sub Header_MouseMove(ByVal sender As Object, ByVal e As MouseEventArgs) Handles PnlHeader.MouseMove
