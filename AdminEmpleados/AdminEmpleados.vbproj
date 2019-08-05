@@ -27,10 +27,10 @@
     <InstallUrl>http://www.turing-sw.dreamhosters.com/EASY/</InstallUrl>
     <ProductName>EASY</ProductName>
     <PublisherName>TURING SOFTWARE</PublisherName>
-    <MinimumRequiredVersion>1.0.4.6</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.4.7</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>default.htm</WebPage>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -153,8 +153,20 @@
       <DependentUpon>ASSIGNED_EQUIPMENT.xsd</DependentUpon>
     </Compile>
     <Compile Include="Classes\Email.vb" />
-    <Compile Include="CstmTabControl.xaml.vb">
+    <Compile Include="Custom Controls\CstmTabControl.xaml.vb">
       <DependentUpon>CstmTabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\NumericTextbox.designer.vb">
+      <DependentUpon>NumericTextbox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\NumericTextbox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Custom Controls\RadioButtonList.Designer.vb">
+      <DependentUpon>RadioButtonList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\RadioButtonList.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Reports\Datasets\RECEIVER.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -269,6 +281,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capacitaciones.resx">
       <DependentUpon>Capacitaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom Controls\NumericTextbox.resx">
+      <DependentUpon>NumericTextbox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom Controls\RadioButtonList.resx">
+      <DependentUpon>RadioButtonList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empleados.resx">
       <DependentUpon>Empleados.vb</DependentUpon>
@@ -453,7 +471,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="CstmTabControl.xaml">
+    <Page Include="Custom Controls\CstmTabControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

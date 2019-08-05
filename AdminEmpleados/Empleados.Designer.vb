@@ -23,7 +23,7 @@ Partial Class Empleados
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Tam_Es = New System.Windows.Forms.TabPage()
@@ -37,17 +37,17 @@ Partial Class Empleados
         Me.Label71 = New System.Windows.Forms.Label()
         Me.Label76 = New System.Windows.Forms.Label()
         Me.PnlGastos = New System.Windows.Forms.Panel()
+        Me.Txt_GFDesp = New AdminEmpleados.NumericTextbox()
+        Me.txt_GFServ = New AdminEmpleados.NumericTextbox()
+        Me.txt_GFCole = New AdminEmpleados.NumericTextbox()
+        Me.txt_GFRenta = New AdminEmpleados.NumericTextbox()
         Me.Label64 = New System.Windows.Forms.Label()
-        Me.txt_GFServ = New System.Windows.Forms.TextBox()
         Me.Label73 = New System.Windows.Forms.Label()
         Me.Panel30 = New System.Windows.Forms.Panel()
         Me.Label74 = New System.Windows.Forms.Label()
         Me.Label75 = New System.Windows.Forms.Label()
-        Me.txt_GFRenta = New System.Windows.Forms.TextBox()
         Me.Label72 = New System.Windows.Forms.Label()
         Me.Label62 = New System.Windows.Forms.Label()
-        Me.Txt_GFDesp = New System.Windows.Forms.TextBox()
-        Me.txt_GFCole = New System.Windows.Forms.TextBox()
         Me.PnlReferencias = New System.Windows.Forms.Panel()
         Me.dgv_Ref = New System.Windows.Forms.DataGridView()
         Me.btnEReferencia = New System.Windows.Forms.DataGridViewImageColumn()
@@ -93,8 +93,8 @@ Partial Class Empleados
         Me.Panel36 = New System.Windows.Forms.Panel()
         Me.Label84 = New System.Windows.Forms.Label()
         Me.PnlIngresos = New System.Windows.Forms.Panel()
+        Me.txt_OTCantidad = New AdminEmpleados.NumericTextbox()
         Me.Label63 = New System.Windows.Forms.Label()
-        Me.txt_OTCantidad = New System.Windows.Forms.TextBox()
         Me.txt_OIParen = New System.Windows.Forms.TextBox()
         Me.Label65 = New System.Windows.Forms.Label()
         Me.dgv_OI = New System.Windows.Forms.DataGridView()
@@ -158,6 +158,8 @@ Partial Class Empleados
         Me.label19 = New System.Windows.Forms.Label()
         Me.Tab_Cont = New System.Windows.Forms.TabPage()
         Me.panel18 = New System.Windows.Forms.Panel()
+        Me.txt_conCEL = New AdminEmpleados.NumericTextbox()
+        Me.txt_conTEL = New AdminEmpleados.NumericTextbox()
         Me.PnlContacto = New System.Windows.Forms.Panel()
         Me.dgv_contacto = New System.Windows.Forms.DataGridView()
         Me.btnCOEliminar = New System.Windows.Forms.DataGridViewImageColumn()
@@ -172,9 +174,7 @@ Partial Class Empleados
         Me.label45 = New System.Windows.Forms.Label()
         Me.txt_conPAREN = New System.Windows.Forms.TextBox()
         Me.label41 = New System.Windows.Forms.Label()
-        Me.txt_conCEL = New System.Windows.Forms.TextBox()
         Me.label40 = New System.Windows.Forms.Label()
-        Me.txt_conTEL = New System.Windows.Forms.TextBox()
         Me.txt_conNAME = New System.Windows.Forms.TextBox()
         Me.txt_conAM = New System.Windows.Forms.TextBox()
         Me.txt_conAP = New System.Windows.Forms.TextBox()
@@ -186,6 +186,10 @@ Partial Class Empleados
         Me.label18 = New System.Windows.Forms.Label()
         Me.Tab_AL = New System.Windows.Forms.TabPage()
         Me.panel16 = New System.Windows.Forms.Panel()
+        Me.txt_antTEL = New AdminEmpleados.NumericTextbox()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.txt_antSALARIO = New AdminEmpleados.NumericTextbox()
+        Me.Label58 = New System.Windows.Forms.Label()
         Me.pnlAntecedentes = New System.Windows.Forms.Panel()
         Me.dgv_ant = New System.Windows.Forms.DataGridView()
         Me.btnAEliminar = New System.Windows.Forms.DataGridViewImageColumn()
@@ -201,16 +205,13 @@ Partial Class Empleados
         Me.Ant_Contacto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_antMT = New System.Windows.Forms.TextBox()
         Me.txt_antNAME = New System.Windows.Forms.TextBox()
-        Me.txt_antTEL = New System.Windows.Forms.TextBox()
         Me.label37 = New System.Windows.Forms.Label()
         Me.label38 = New System.Windows.Forms.Label()
         Me.label39 = New System.Windows.Forms.Label()
-        Me.txt_antSALARIO = New System.Windows.Forms.TextBox()
         Me.txt_antCARGO = New System.Windows.Forms.TextBox()
         Me.txt_antEMP = New System.Windows.Forms.TextBox()
         Me.label34 = New System.Windows.Forms.Label()
         Me.label35 = New System.Windows.Forms.Label()
-        Me.label36 = New System.Windows.Forms.Label()
         Me.txt_antFF = New System.Windows.Forms.DateTimePicker()
         Me.label33 = New System.Windows.Forms.Label()
         Me.txt_antFI = New System.Windows.Forms.DateTimePicker()
@@ -264,7 +265,6 @@ Partial Class Empleados
         Me.Fam_Nacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Fam_FNac = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Fam_Genero = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fam_EdoCivil = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_esName = New System.Windows.Forms.TextBox()
         Me.txt_esAM = New System.Windows.Forms.TextBox()
         Me.txt_esFN = New System.Windows.Forms.DateTimePicker()
@@ -292,6 +292,7 @@ Partial Class Empleados
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.pnl_cont = New System.Windows.Forms.Panel()
+        Me.txt_SALARY = New AdminEmpleados.NumericTextbox()
         Me.buscar_depto = New System.Windows.Forms.PictureBox()
         Me.depto = New System.Windows.Forms.TextBox()
         Me.depto2 = New System.Windows.Forms.TextBox()
@@ -305,7 +306,6 @@ Partial Class Empleados
         Me.txt_tipo2 = New System.Windows.Forms.TextBox()
         Me.lbl_super = New System.Windows.Forms.Label()
         Me.correo = New System.Windows.Forms.Label()
-        Me.txt_SALARY = New System.Windows.Forms.TextBox()
         Me.lbl_puesto = New System.Windows.Forms.Label()
         Me.txt_tipo = New System.Windows.Forms.TextBox()
         Me.lbl_sali = New System.Windows.Forms.Label()
@@ -317,6 +317,10 @@ Partial Class Empleados
         Me.txt_SUPER = New System.Windows.Forms.TextBox()
         Me.lbl_depto = New System.Windows.Forms.Label()
         Me.pnl_per = New System.Windows.Forms.Panel()
+        Me.txt_SS = New AdminEmpleados.NumericTextbox()
+        Me.txt_telefono = New AdminEmpleados.NumericTextbox()
+        Me.CP = New AdminEmpleados.NumericTextbox()
+        Me.Celular = New AdminEmpleados.NumericTextbox()
         Me.txtCdDomicilio = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.PbSearchEmployee = New System.Windows.Forms.PictureBox()
@@ -325,13 +329,11 @@ Partial Class Empleados
         Me.cuidad = New System.Windows.Forms.TextBox()
         Me.lbl_rfc = New System.Windows.Forms.Label()
         Me.lbl_ss = New System.Windows.Forms.Label()
-        Me.CP = New System.Windows.Forms.TextBox()
         Me.LBL_CP = New System.Windows.Forms.Label()
         Me.txt_CURP = New System.Windows.Forms.TextBox()
         Me.cuidad2 = New System.Windows.Forms.TextBox()
         Me.EC = New System.Windows.Forms.ComboBox()
         Me.Label92 = New System.Windows.Forms.Label()
-        Me.txt_SS = New System.Windows.Forms.TextBox()
         Me.ddl_educacion = New System.Windows.Forms.ComboBox()
         Me.Label54 = New System.Windows.Forms.Label()
         Me.lbl_curp = New System.Windows.Forms.Label()
@@ -341,10 +343,8 @@ Partial Class Empleados
         Me.domicilio = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_RFC = New System.Windows.Forms.TextBox()
-        Me.Celular = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lbl_sex = New System.Windows.Forms.Label()
-        Me.txt_telefono = New System.Windows.Forms.TextBox()
         Me.LBL_ESTADOCIVIL = New System.Windows.Forms.Label()
         Me.lbl_fn = New System.Windows.Forms.Label()
         Me.nacion = New System.Windows.Forms.TextBox()
@@ -534,7 +534,7 @@ Partial Class Empleados
         Me.PnlObservaciones.Location = New System.Drawing.Point(2, 1175)
         Me.PnlObservaciones.Margin = New System.Windows.Forms.Padding(2)
         Me.PnlObservaciones.Name = "PnlObservaciones"
-        Me.PnlObservaciones.Size = New System.Drawing.Size(998, 111)
+        Me.PnlObservaciones.Size = New System.Drawing.Size(1019, 111)
         Me.PnlObservaciones.TabIndex = 73
         '
         'txt_commen
@@ -545,7 +545,7 @@ Partial Class Empleados
         Me.txt_commen.Location = New System.Drawing.Point(0, 35)
         Me.txt_commen.Multiline = True
         Me.txt_commen.Name = "txt_commen"
-        Me.txt_commen.Size = New System.Drawing.Size(994, 72)
+        Me.txt_commen.Size = New System.Drawing.Size(1015, 72)
         Me.txt_commen.TabIndex = 31
         '
         'Panel26
@@ -557,7 +557,7 @@ Partial Class Empleados
         Me.Panel26.Location = New System.Drawing.Point(0, 0)
         Me.Panel26.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(994, 35)
+        Me.Panel26.Size = New System.Drawing.Size(1015, 35)
         Me.Panel26.TabIndex = 0
         '
         'Label71
@@ -588,50 +588,77 @@ Partial Class Empleados
         Me.PnlGastos.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PnlGastos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PnlGastos.Controls.Add(Me.Label64)
+        Me.PnlGastos.Controls.Add(Me.Txt_GFDesp)
         Me.PnlGastos.Controls.Add(Me.txt_GFServ)
+        Me.PnlGastos.Controls.Add(Me.txt_GFCole)
+        Me.PnlGastos.Controls.Add(Me.txt_GFRenta)
+        Me.PnlGastos.Controls.Add(Me.Label64)
         Me.PnlGastos.Controls.Add(Me.Label73)
         Me.PnlGastos.Controls.Add(Me.Panel30)
-        Me.PnlGastos.Controls.Add(Me.txt_GFRenta)
         Me.PnlGastos.Controls.Add(Me.Label72)
         Me.PnlGastos.Controls.Add(Me.Label62)
-        Me.PnlGastos.Controls.Add(Me.Txt_GFDesp)
-        Me.PnlGastos.Controls.Add(Me.txt_GFCole)
         Me.PnlGastos.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PnlGastos.Location = New System.Drawing.Point(0, 1075)
         Me.PnlGastos.Margin = New System.Windows.Forms.Padding(2)
         Me.PnlGastos.Name = "PnlGastos"
-        Me.PnlGastos.Size = New System.Drawing.Size(998, 78)
+        Me.PnlGastos.Size = New System.Drawing.Size(1021, 78)
         Me.PnlGastos.TabIndex = 72
+        '
+        'Txt_GFDesp
+        '
+        Me.Txt_GFDesp.AcceptsDecimals = True
+        Me.Txt_GFDesp.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.Txt_GFDesp.Location = New System.Drawing.Point(603, 40)
+        Me.Txt_GFDesp.Name = "Txt_GFDesp"
+        Me.Txt_GFDesp.Size = New System.Drawing.Size(95, 25)
+        Me.Txt_GFDesp.TabIndex = 68
+        '
+        'txt_GFServ
+        '
+        Me.txt_GFServ.AcceptsDecimals = True
+        Me.txt_GFServ.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txt_GFServ.Location = New System.Drawing.Point(791, 40)
+        Me.txt_GFServ.Name = "txt_GFServ"
+        Me.txt_GFServ.Size = New System.Drawing.Size(95, 25)
+        Me.txt_GFServ.TabIndex = 69
+        '
+        'txt_GFCole
+        '
+        Me.txt_GFCole.AcceptsDecimals = True
+        Me.txt_GFCole.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txt_GFCole.Location = New System.Drawing.Point(410, 40)
+        Me.txt_GFCole.Name = "txt_GFCole"
+        Me.txt_GFCole.Size = New System.Drawing.Size(95, 25)
+        Me.txt_GFCole.TabIndex = 67
+        '
+        'txt_GFRenta
+        '
+        Me.txt_GFRenta.AcceptsDecimals = True
+        Me.txt_GFRenta.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txt_GFRenta.Location = New System.Drawing.Point(207, 40)
+        Me.txt_GFRenta.Name = "txt_GFRenta"
+        Me.txt_GFRenta.Size = New System.Drawing.Size(95, 25)
+        Me.txt_GFRenta.TabIndex = 65
         '
         'Label64
         '
         Me.Label64.AutoSize = True
         Me.Label64.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label64.Location = New System.Drawing.Point(727, 43)
+        Me.Label64.Location = New System.Drawing.Point(704, 43)
         Me.Label64.Name = "Label64"
-        Me.Label64.Size = New System.Drawing.Size(68, 18)
+        Me.Label64.Size = New System.Drawing.Size(82, 18)
         Me.Label64.TabIndex = 66
-        Me.Label64.Text = "Servicios:"
-        '
-        'txt_GFServ
-        '
-        Me.txt_GFServ.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_GFServ.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_GFServ.Location = New System.Drawing.Point(801, 40)
-        Me.txt_GFServ.Name = "txt_GFServ"
-        Me.txt_GFServ.Size = New System.Drawing.Size(95, 25)
-        Me.txt_GFServ.TabIndex = 30
+        Me.Label64.Text = "Servicios: $"
         '
         'Label73
         '
         Me.Label73.AutoSize = True
         Me.Label73.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label73.Location = New System.Drawing.Point(194, 43)
+        Me.Label73.Location = New System.Drawing.Point(137, 43)
         Me.Label73.Name = "Label73"
-        Me.Label73.Size = New System.Drawing.Size(50, 18)
+        Me.Label73.Size = New System.Drawing.Size(64, 18)
         Me.Label73.TabIndex = 57
-        Me.Label73.Text = "Renta:"
+        Me.Label73.Text = "Renta: $"
         '
         'Panel30
         '
@@ -642,7 +669,7 @@ Partial Class Empleados
         Me.Panel30.Location = New System.Drawing.Point(0, 0)
         Me.Panel30.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(994, 35)
+        Me.Panel30.Size = New System.Drawing.Size(1017, 35)
         Me.Panel30.TabIndex = 0
         '
         'Label74
@@ -668,52 +695,25 @@ Partial Class Empleados
         Me.Label75.Size = New System.Drawing.Size(0, 21)
         Me.Label75.TabIndex = 0
         '
-        'txt_GFRenta
-        '
-        Me.txt_GFRenta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_GFRenta.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_GFRenta.Location = New System.Drawing.Point(250, 40)
-        Me.txt_GFRenta.Name = "txt_GFRenta"
-        Me.txt_GFRenta.Size = New System.Drawing.Size(95, 25)
-        Me.txt_GFRenta.TabIndex = 27
-        '
         'Label72
         '
         Me.Label72.AutoSize = True
         Me.Label72.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label72.Location = New System.Drawing.Point(351, 43)
+        Me.Label72.Location = New System.Drawing.Point(308, 43)
         Me.Label72.Name = "Label72"
-        Me.Label72.Size = New System.Drawing.Size(90, 18)
+        Me.Label72.Size = New System.Drawing.Size(104, 18)
         Me.Label72.TabIndex = 62
-        Me.Label72.Text = "Colegiaturas:"
+        Me.Label72.Text = "Colegiaturas: $"
         '
         'Label62
         '
         Me.Label62.AutoSize = True
         Me.Label62.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label62.Location = New System.Drawing.Point(548, 43)
+        Me.Label62.Location = New System.Drawing.Point(511, 43)
         Me.Label62.Name = "Label62"
-        Me.Label62.Size = New System.Drawing.Size(72, 18)
+        Me.Label62.Size = New System.Drawing.Size(86, 18)
         Me.Label62.TabIndex = 64
-        Me.Label62.Text = "Despensa:"
-        '
-        'Txt_GFDesp
-        '
-        Me.Txt_GFDesp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.Txt_GFDesp.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_GFDesp.Location = New System.Drawing.Point(626, 40)
-        Me.Txt_GFDesp.Name = "Txt_GFDesp"
-        Me.Txt_GFDesp.Size = New System.Drawing.Size(95, 25)
-        Me.Txt_GFDesp.TabIndex = 29
-        '
-        'txt_GFCole
-        '
-        Me.txt_GFCole.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_GFCole.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_GFCole.Location = New System.Drawing.Point(447, 40)
-        Me.txt_GFCole.Name = "txt_GFCole"
-        Me.txt_GFCole.Size = New System.Drawing.Size(95, 25)
-        Me.txt_GFCole.TabIndex = 28
+        Me.Label62.Text = "Despensa: $"
         '
         'PnlReferencias
         '
@@ -734,7 +734,7 @@ Partial Class Empleados
         Me.PnlReferencias.Location = New System.Drawing.Point(0, 841)
         Me.PnlReferencias.Margin = New System.Windows.Forms.Padding(2)
         Me.PnlReferencias.Name = "PnlReferencias"
-        Me.PnlReferencias.Size = New System.Drawing.Size(998, 216)
+        Me.PnlReferencias.Size = New System.Drawing.Size(1021, 216)
         Me.PnlReferencias.TabIndex = 71
         '
         'dgv_Ref
@@ -746,7 +746,7 @@ Partial Class Empleados
         Me.dgv_Ref.Location = New System.Drawing.Point(0, 114)
         Me.dgv_Ref.Name = "dgv_Ref"
         Me.dgv_Ref.RowHeadersVisible = False
-        Me.dgv_Ref.Size = New System.Drawing.Size(994, 98)
+        Me.dgv_Ref.Size = New System.Drawing.Size(1017, 98)
         Me.dgv_Ref.TabIndex = 54
         '
         'btnEReferencia
@@ -878,7 +878,7 @@ Partial Class Empleados
         Me.Panel10.Location = New System.Drawing.Point(0, 0)
         Me.Panel10.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(994, 35)
+        Me.Panel10.Size = New System.Drawing.Size(1017, 35)
         Me.Panel10.TabIndex = 0
         '
         'Btn_AddRef
@@ -886,7 +886,7 @@ Partial Class Empleados
         Me.Btn_AddRef.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Btn_AddRef.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Btn_AddRef.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Reference_80px
-        Me.Btn_AddRef.Location = New System.Drawing.Point(938, 0)
+        Me.Btn_AddRef.Location = New System.Drawing.Point(961, 0)
         Me.Btn_AddRef.Name = "Btn_AddRef"
         Me.Btn_AddRef.Size = New System.Drawing.Size(35, 35)
         Me.Btn_AddRef.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -934,7 +934,7 @@ Partial Class Empleados
         Me.PnlActividades.Controls.Add(Me.Panel36)
         Me.PnlActividades.Location = New System.Drawing.Point(0, 405)
         Me.PnlActividades.Name = "PnlActividades"
-        Me.PnlActividades.Size = New System.Drawing.Size(998, 245)
+        Me.PnlActividades.Size = New System.Drawing.Size(1023, 245)
         Me.PnlActividades.TabIndex = 51
         '
         'Label90
@@ -1154,7 +1154,7 @@ Partial Class Empleados
         Me.Panel36.Location = New System.Drawing.Point(0, 0)
         Me.Panel36.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel36.Name = "Panel36"
-        Me.Panel36.Size = New System.Drawing.Size(998, 35)
+        Me.Panel36.Size = New System.Drawing.Size(1023, 35)
         Me.Panel36.TabIndex = 28
         '
         'Label84
@@ -1165,17 +1165,17 @@ Partial Class Empleados
         Me.Label84.Location = New System.Drawing.Point(2, 6)
         Me.Label84.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label84.Name = "Label84"
-        Me.Label84.Size = New System.Drawing.Size(96, 21)
+        Me.Label84.Size = New System.Drawing.Size(258, 21)
         Me.Label84.TabIndex = 0
-        Me.Label84.Text = "Actividades"
+        Me.Label84.Text = "Actividades (Frecuencia por año)"
         '
         'PnlIngresos
         '
         Me.PnlIngresos.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PnlIngresos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PnlIngresos.Controls.Add(Me.Label63)
         Me.PnlIngresos.Controls.Add(Me.txt_OTCantidad)
+        Me.PnlIngresos.Controls.Add(Me.Label63)
         Me.PnlIngresos.Controls.Add(Me.txt_OIParen)
         Me.PnlIngresos.Controls.Add(Me.Label65)
         Me.PnlIngresos.Controls.Add(Me.dgv_OI)
@@ -1184,27 +1184,27 @@ Partial Class Empleados
         Me.PnlIngresos.Location = New System.Drawing.Point(0, 655)
         Me.PnlIngresos.Margin = New System.Windows.Forms.Padding(2)
         Me.PnlIngresos.Name = "PnlIngresos"
-        Me.PnlIngresos.Size = New System.Drawing.Size(998, 182)
+        Me.PnlIngresos.Size = New System.Drawing.Size(1023, 182)
         Me.PnlIngresos.TabIndex = 51
+        '
+        'txt_OTCantidad
+        '
+        Me.txt_OTCantidad.AcceptsDecimals = True
+        Me.txt_OTCantidad.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txt_OTCantidad.Location = New System.Drawing.Point(550, 40)
+        Me.txt_OTCantidad.Name = "txt_OTCantidad"
+        Me.txt_OTCantidad.Size = New System.Drawing.Size(208, 25)
+        Me.txt_OTCantidad.TabIndex = 70
         '
         'Label63
         '
         Me.Label63.AutoSize = True
         Me.Label63.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label63.Location = New System.Drawing.Point(440, 43)
+        Me.Label63.Location = New System.Drawing.Point(460, 43)
         Me.Label63.Name = "Label63"
-        Me.Label63.Size = New System.Drawing.Size(70, 18)
+        Me.Label63.Size = New System.Drawing.Size(84, 18)
         Me.Label63.TabIndex = 62
-        Me.Label63.Text = "Cantidad:"
-        '
-        'txt_OTCantidad
-        '
-        Me.txt_OTCantidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_OTCantidad.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_OTCantidad.Location = New System.Drawing.Point(516, 40)
-        Me.txt_OTCantidad.Name = "txt_OTCantidad"
-        Me.txt_OTCantidad.Size = New System.Drawing.Size(208, 25)
-        Me.txt_OTCantidad.TabIndex = 16
+        Me.Label63.Text = "Cantidad: $"
         '
         'txt_OIParen
         '
@@ -1234,7 +1234,7 @@ Partial Class Empleados
         Me.dgv_OI.Location = New System.Drawing.Point(0, 71)
         Me.dgv_OI.Name = "dgv_OI"
         Me.dgv_OI.RowHeadersVisible = False
-        Me.dgv_OI.Size = New System.Drawing.Size(994, 107)
+        Me.dgv_OI.Size = New System.Drawing.Size(1019, 107)
         Me.dgv_OI.TabIndex = 55
         '
         'btnEIngresos
@@ -1277,7 +1277,7 @@ Partial Class Empleados
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
         Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(994, 35)
+        Me.Panel14.Size = New System.Drawing.Size(1019, 35)
         Me.Panel14.TabIndex = 0
         '
         'btn_OI
@@ -1285,7 +1285,7 @@ Partial Class Empleados
         Me.btn_OI.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_OI.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_OI.Image = Global.AdminEmpleados.My.Resources.Resources.Add_Income_80px
-        Me.btn_OI.Location = New System.Drawing.Point(938, 0)
+        Me.btn_OI.Location = New System.Drawing.Point(963, 0)
         Me.btn_OI.Name = "btn_OI"
         Me.btn_OI.Size = New System.Drawing.Size(35, 35)
         Me.btn_OI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1326,7 +1326,7 @@ Partial Class Empleados
         Me.PnlDatos.Controls.Add(Me.Label49)
         Me.PnlDatos.Location = New System.Drawing.Point(486, 289)
         Me.PnlDatos.Name = "PnlDatos"
-        Me.PnlDatos.Size = New System.Drawing.Size(512, 110)
+        Me.PnlDatos.Size = New System.Drawing.Size(537, 110)
         Me.PnlDatos.TabIndex = 50
         '
         'Panel6
@@ -1337,7 +1337,7 @@ Partial Class Empleados
         Me.Panel6.Location = New System.Drawing.Point(0, 0)
         Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(512, 35)
+        Me.Panel6.Size = New System.Drawing.Size(537, 35)
         Me.Panel6.TabIndex = 0
         '
         'Label53
@@ -1480,7 +1480,7 @@ Partial Class Empleados
         Me.PnlVivienda.Controls.Add(Me.Panel15)
         Me.PnlVivienda.Location = New System.Drawing.Point(0, 0)
         Me.PnlVivienda.Name = "PnlVivienda"
-        Me.PnlVivienda.Size = New System.Drawing.Size(998, 283)
+        Me.PnlVivienda.Size = New System.Drawing.Size(1023, 283)
         Me.PnlVivienda.TabIndex = 0
         '
         'GrpServicios
@@ -1496,7 +1496,7 @@ Partial Class Empleados
         Me.GrpServicios.Controls.Add(Me.cb_Basura)
         Me.GrpServicios.Location = New System.Drawing.Point(465, 155)
         Me.GrpServicios.Name = "GrpServicios"
-        Me.GrpServicios.Size = New System.Drawing.Size(564, 120)
+        Me.GrpServicios.Size = New System.Drawing.Size(555, 120)
         Me.GrpServicios.TabIndex = 16
         Me.GrpServicios.TabStop = False
         Me.GrpServicios.Text = "Servicios"
@@ -1620,7 +1620,7 @@ Partial Class Empleados
         Me.GrpMaterial.Controls.Add(Me.cb_Madera)
         Me.GrpMaterial.Location = New System.Drawing.Point(465, 95)
         Me.GrpMaterial.Name = "GrpMaterial"
-        Me.GrpMaterial.Size = New System.Drawing.Size(564, 54)
+        Me.GrpMaterial.Size = New System.Drawing.Size(554, 54)
         Me.GrpMaterial.TabIndex = 15
         Me.GrpMaterial.TabStop = False
         Me.GrpMaterial.Text = "Material"
@@ -1677,7 +1677,7 @@ Partial Class Empleados
         Me.GrpTIpo.Controls.Add(Me.cb_Terreno)
         Me.GrpTIpo.Location = New System.Drawing.Point(465, 40)
         Me.GrpTIpo.Name = "GrpTIpo"
-        Me.GrpTIpo.Size = New System.Drawing.Size(564, 51)
+        Me.GrpTIpo.Size = New System.Drawing.Size(554, 51)
         Me.GrpTIpo.TabIndex = 2
         Me.GrpTIpo.TabStop = False
         Me.GrpTIpo.Text = "Tipo"
@@ -1734,7 +1734,7 @@ Partial Class Empleados
         Me.Panel15.Location = New System.Drawing.Point(0, 0)
         Me.Panel15.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(998, 35)
+        Me.Panel15.Size = New System.Drawing.Size(1023, 35)
         Me.Panel15.TabIndex = 1
         '
         'Label5
@@ -1820,8 +1820,8 @@ Partial Class Empleados
         'Text
         '
         Me.Text.DataPropertyName = "Text"
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.Text.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        Me.Text.DefaultCellStyle = DataGridViewCellStyle3
         Me.Text.HeaderText = "Enfermedad"
         Me.Text.Name = "Text"
         Me.Text.Width = 1400
@@ -1898,13 +1898,13 @@ Partial Class Empleados
         Me.panel18.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.panel18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.panel18.Controls.Add(Me.txt_conCEL)
+        Me.panel18.Controls.Add(Me.txt_conTEL)
         Me.panel18.Controls.Add(Me.PnlContacto)
         Me.panel18.Controls.Add(Me.label45)
         Me.panel18.Controls.Add(Me.txt_conPAREN)
         Me.panel18.Controls.Add(Me.label41)
-        Me.panel18.Controls.Add(Me.txt_conCEL)
         Me.panel18.Controls.Add(Me.label40)
-        Me.panel18.Controls.Add(Me.txt_conTEL)
         Me.panel18.Controls.Add(Me.txt_conNAME)
         Me.panel18.Controls.Add(Me.txt_conAM)
         Me.panel18.Controls.Add(Me.txt_conAP)
@@ -1918,6 +1918,24 @@ Partial Class Empleados
         Me.panel18.Name = "panel18"
         Me.panel18.Size = New System.Drawing.Size(1070, 581)
         Me.panel18.TabIndex = 1
+        '
+        'txt_conCEL
+        '
+        Me.txt_conCEL.AcceptsDecimals = False
+        Me.txt_conCEL.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txt_conCEL.Location = New System.Drawing.Point(794, 90)
+        Me.txt_conCEL.Name = "txt_conCEL"
+        Me.txt_conCEL.Size = New System.Drawing.Size(208, 25)
+        Me.txt_conCEL.TabIndex = 68
+        '
+        'txt_conTEL
+        '
+        Me.txt_conTEL.AcceptsDecimals = False
+        Me.txt_conTEL.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txt_conTEL.Location = New System.Drawing.Point(471, 90)
+        Me.txt_conTEL.Name = "txt_conTEL"
+        Me.txt_conTEL.Size = New System.Drawing.Size(208, 25)
+        Me.txt_conTEL.TabIndex = 67
         '
         'PnlContacto
         '
@@ -2034,15 +2052,6 @@ Partial Class Empleados
         Me.label41.TabIndex = 46
         Me.label41.Text = "Celular:"
         '
-        'txt_conCEL
-        '
-        Me.txt_conCEL.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_conCEL.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_conCEL.Location = New System.Drawing.Point(794, 90)
-        Me.txt_conCEL.Name = "txt_conCEL"
-        Me.txt_conCEL.Size = New System.Drawing.Size(209, 25)
-        Me.txt_conCEL.TabIndex = 45
-        '
         'label40
         '
         Me.label40.AutoSize = True
@@ -2052,15 +2061,6 @@ Partial Class Empleados
         Me.label40.Size = New System.Drawing.Size(68, 18)
         Me.label40.TabIndex = 44
         Me.label40.Text = "Telefono:"
-        '
-        'txt_conTEL
-        '
-        Me.txt_conTEL.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_conTEL.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_conTEL.Location = New System.Drawing.Point(471, 90)
-        Me.txt_conTEL.Name = "txt_conTEL"
-        Me.txt_conTEL.Size = New System.Drawing.Size(209, 25)
-        Me.txt_conTEL.TabIndex = 43
         '
         'txt_conNAME
         '
@@ -2172,19 +2172,20 @@ Partial Class Empleados
         Me.panel16.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.panel16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.panel16.Controls.Add(Me.txt_antTEL)
+        Me.panel16.Controls.Add(Me.Label32)
+        Me.panel16.Controls.Add(Me.txt_antSALARIO)
+        Me.panel16.Controls.Add(Me.Label58)
         Me.panel16.Controls.Add(Me.pnlAntecedentes)
         Me.panel16.Controls.Add(Me.txt_antMT)
         Me.panel16.Controls.Add(Me.txt_antNAME)
-        Me.panel16.Controls.Add(Me.txt_antTEL)
         Me.panel16.Controls.Add(Me.label37)
         Me.panel16.Controls.Add(Me.label38)
         Me.panel16.Controls.Add(Me.label39)
-        Me.panel16.Controls.Add(Me.txt_antSALARIO)
         Me.panel16.Controls.Add(Me.txt_antCARGO)
         Me.panel16.Controls.Add(Me.txt_antEMP)
         Me.panel16.Controls.Add(Me.label34)
         Me.panel16.Controls.Add(Me.label35)
-        Me.panel16.Controls.Add(Me.label36)
         Me.panel16.Controls.Add(Me.txt_antFF)
         Me.panel16.Controls.Add(Me.label33)
         Me.panel16.Controls.Add(Me.txt_antFI)
@@ -2196,6 +2197,44 @@ Partial Class Empleados
         Me.panel16.Name = "panel16"
         Me.panel16.Size = New System.Drawing.Size(1070, 548)
         Me.panel16.TabIndex = 1
+        '
+        'txt_antTEL
+        '
+        Me.txt_antTEL.AcceptsDecimals = False
+        Me.txt_antTEL.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txt_antTEL.Location = New System.Drawing.Point(184, 71)
+        Me.txt_antTEL.Name = "txt_antTEL"
+        Me.txt_antTEL.Size = New System.Drawing.Size(208, 25)
+        Me.txt_antTEL.TabIndex = 66
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.Label32.Location = New System.Drawing.Point(161, 105)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(17, 18)
+        Me.Label32.TabIndex = 65
+        Me.Label32.Text = "$"
+        '
+        'txt_antSALARIO
+        '
+        Me.txt_antSALARIO.AcceptsDecimals = True
+        Me.txt_antSALARIO.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txt_antSALARIO.Location = New System.Drawing.Point(184, 102)
+        Me.txt_antSALARIO.Name = "txt_antSALARIO"
+        Me.txt_antSALARIO.Size = New System.Drawing.Size(208, 25)
+        Me.txt_antSALARIO.TabIndex = 64
+        '
+        'Label58
+        '
+        Me.Label58.AutoSize = True
+        Me.Label58.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label58.Location = New System.Drawing.Point(100, 105)
+        Me.Label58.Name = "Label58"
+        Me.Label58.Size = New System.Drawing.Size(57, 18)
+        Me.Label58.TabIndex = 63
+        Me.Label58.Text = "Salario:"
         '
         'pnlAntecedentes
         '
@@ -2310,20 +2349,11 @@ Partial Class Empleados
         Me.txt_antNAME.Size = New System.Drawing.Size(209, 25)
         Me.txt_antNAME.TabIndex = 28
         '
-        'txt_antTEL
-        '
-        Me.txt_antTEL.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_antTEL.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_antTEL.Location = New System.Drawing.Point(184, 71)
-        Me.txt_antTEL.Name = "txt_antTEL"
-        Me.txt_antTEL.Size = New System.Drawing.Size(209, 25)
-        Me.txt_antTEL.TabIndex = 27
-        '
         'label37
         '
         Me.label37.AutoSize = True
         Me.label37.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label37.Location = New System.Drawing.Point(103, 74)
+        Me.label37.Location = New System.Drawing.Point(89, 74)
         Me.label37.Name = "label37"
         Me.label37.Size = New System.Drawing.Size(68, 18)
         Me.label37.TabIndex = 30
@@ -2348,15 +2378,6 @@ Partial Class Empleados
         Me.label39.Size = New System.Drawing.Size(57, 18)
         Me.label39.TabIndex = 32
         Me.label39.Text = "Motivo:"
-        '
-        'txt_antSALARIO
-        '
-        Me.txt_antSALARIO.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_antSALARIO.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_antSALARIO.Location = New System.Drawing.Point(185, 102)
-        Me.txt_antSALARIO.Name = "txt_antSALARIO"
-        Me.txt_antSALARIO.Size = New System.Drawing.Size(208, 25)
-        Me.txt_antSALARIO.TabIndex = 23
         '
         'txt_antCARGO
         '
@@ -2396,16 +2417,6 @@ Partial Class Empleados
         Me.label35.TabIndex = 25
         Me.label35.Text = "Cargo:"
         '
-        'label36
-        '
-        Me.label36.AutoSize = True
-        Me.label36.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label36.Location = New System.Drawing.Point(114, 105)
-        Me.label36.Name = "label36"
-        Me.label36.Size = New System.Drawing.Size(57, 18)
-        Me.label36.TabIndex = 26
-        Me.label36.Text = "Salario:"
-        '
         'txt_antFF
         '
         Me.txt_antFF.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -2438,7 +2449,7 @@ Partial Class Empleados
         '
         Me.label9.AutoSize = True
         Me.label9.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label9.Location = New System.Drawing.Point(65, 43)
+        Me.label9.Location = New System.Drawing.Point(44, 43)
         Me.label9.Name = "label9"
         Me.label9.Size = New System.Drawing.Size(113, 18)
         Me.label9.TabIndex = 18
@@ -2850,7 +2861,7 @@ Partial Class Empleados
         Me.dgv_esposa.AllowUserToAddRows = False
         Me.dgv_esposa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv_esposa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_esposa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.btnCEliminar, Me.ID_Persona, Me.ID_Emp, Me.Fam_Tipo, Me.Fam_Nombre, Me.Fam_APat, Me.Fam_AMat, Me.Fam_Nacion, Me.Fam_FNac, Me.Fam_Genero, Me.Fam_EdoCivil})
+        Me.dgv_esposa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.btnCEliminar, Me.ID_Persona, Me.ID_Emp, Me.Fam_Tipo, Me.Fam_Nombre, Me.Fam_APat, Me.Fam_AMat, Me.Fam_Nacion, Me.Fam_FNac, Me.Fam_Genero})
         Me.dgv_esposa.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.dgv_esposa.Location = New System.Drawing.Point(0, 129)
         Me.dgv_esposa.Margin = New System.Windows.Forms.Padding(2)
@@ -2930,13 +2941,6 @@ Partial Class Empleados
         Me.Fam_Genero.FillWeight = 29.45599!
         Me.Fam_Genero.HeaderText = "Genero"
         Me.Fam_Genero.Name = "Fam_Genero"
-        '
-        'Fam_EdoCivil
-        '
-        Me.Fam_EdoCivil.DataPropertyName = "Fam_EdoCivil"
-        Me.Fam_EdoCivil.FillWeight = 29.45599!
-        Me.Fam_EdoCivil.HeaderText = "Estado Civil"
-        Me.Fam_EdoCivil.Name = "Fam_EdoCivil"
         '
         'txt_esName
         '
@@ -3237,6 +3241,7 @@ Partial Class Empleados
         Me.pnl_cont.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnl_cont.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pnl_cont.Controls.Add(Me.txt_SALARY)
         Me.pnl_cont.Controls.Add(Me.buscar_depto)
         Me.pnl_cont.Controls.Add(Me.depto)
         Me.pnl_cont.Controls.Add(Me.depto2)
@@ -3249,7 +3254,6 @@ Partial Class Empleados
         Me.pnl_cont.Controls.Add(Me.txt_tipo2)
         Me.pnl_cont.Controls.Add(Me.lbl_super)
         Me.pnl_cont.Controls.Add(Me.correo)
-        Me.pnl_cont.Controls.Add(Me.txt_SALARY)
         Me.pnl_cont.Controls.Add(Me.lbl_puesto)
         Me.pnl_cont.Controls.Add(Me.txt_tipo)
         Me.pnl_cont.Controls.Add(Me.lbl_sali)
@@ -3266,6 +3270,15 @@ Partial Class Empleados
         Me.pnl_cont.Name = "pnl_cont"
         Me.pnl_cont.Size = New System.Drawing.Size(1068, 134)
         Me.pnl_cont.TabIndex = 1
+        '
+        'txt_SALARY
+        '
+        Me.txt_SALARY.AcceptsDecimals = True
+        Me.txt_SALARY.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txt_SALARY.Location = New System.Drawing.Point(804, 71)
+        Me.txt_SALARY.Name = "txt_SALARY"
+        Me.txt_SALARY.Size = New System.Drawing.Size(225, 25)
+        Me.txt_SALARY.TabIndex = 61
         '
         'buscar_depto
         '
@@ -3402,15 +3415,6 @@ Partial Class Empleados
         Me.correo.TabIndex = 14
         Me.correo.Text = "E-mail:"
         '
-        'txt_SALARY
-        '
-        Me.txt_SALARY.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SALARY.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SALARY.Location = New System.Drawing.Point(788, 69)
-        Me.txt_SALARY.Name = "txt_SALARY"
-        Me.txt_SALARY.Size = New System.Drawing.Size(238, 25)
-        Me.txt_SALARY.TabIndex = 13
-        '
         'lbl_puesto
         '
         Me.lbl_puesto.AutoSize = True
@@ -3434,11 +3438,11 @@ Partial Class Empleados
         '
         Me.lbl_sali.AutoSize = True
         Me.lbl_sali.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_sali.Location = New System.Drawing.Point(727, 68)
+        Me.lbl_sali.Location = New System.Drawing.Point(727, 74)
         Me.lbl_sali.Name = "lbl_sali"
-        Me.lbl_sali.Size = New System.Drawing.Size(57, 18)
+        Me.lbl_sali.Size = New System.Drawing.Size(71, 18)
         Me.lbl_sali.TabIndex = 12
-        Me.lbl_sali.Text = "Salario:"
+        Me.lbl_sali.Text = "Salario: $"
         '
         'txt_FECHAINGRESO
         '
@@ -3512,6 +3516,10 @@ Partial Class Empleados
         Me.pnl_per.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnl_per.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pnl_per.Controls.Add(Me.txt_SS)
+        Me.pnl_per.Controls.Add(Me.txt_telefono)
+        Me.pnl_per.Controls.Add(Me.CP)
+        Me.pnl_per.Controls.Add(Me.Celular)
         Me.pnl_per.Controls.Add(Me.txtCdDomicilio)
         Me.pnl_per.Controls.Add(Me.Label13)
         Me.pnl_per.Controls.Add(Me.PbSearchEmployee)
@@ -3520,13 +3528,11 @@ Partial Class Empleados
         Me.pnl_per.Controls.Add(Me.cuidad)
         Me.pnl_per.Controls.Add(Me.lbl_rfc)
         Me.pnl_per.Controls.Add(Me.lbl_ss)
-        Me.pnl_per.Controls.Add(Me.CP)
         Me.pnl_per.Controls.Add(Me.LBL_CP)
         Me.pnl_per.Controls.Add(Me.txt_CURP)
         Me.pnl_per.Controls.Add(Me.cuidad2)
         Me.pnl_per.Controls.Add(Me.EC)
         Me.pnl_per.Controls.Add(Me.Label92)
-        Me.pnl_per.Controls.Add(Me.txt_SS)
         Me.pnl_per.Controls.Add(Me.ddl_educacion)
         Me.pnl_per.Controls.Add(Me.Label54)
         Me.pnl_per.Controls.Add(Me.lbl_curp)
@@ -3536,10 +3542,8 @@ Partial Class Empleados
         Me.pnl_per.Controls.Add(Me.domicilio)
         Me.pnl_per.Controls.Add(Me.Label2)
         Me.pnl_per.Controls.Add(Me.txt_RFC)
-        Me.pnl_per.Controls.Add(Me.Celular)
         Me.pnl_per.Controls.Add(Me.Label4)
         Me.pnl_per.Controls.Add(Me.lbl_sex)
-        Me.pnl_per.Controls.Add(Me.txt_telefono)
         Me.pnl_per.Controls.Add(Me.LBL_ESTADOCIVIL)
         Me.pnl_per.Controls.Add(Me.lbl_fn)
         Me.pnl_per.Controls.Add(Me.nacion)
@@ -3565,6 +3569,42 @@ Partial Class Empleados
         Me.pnl_per.Name = "pnl_per"
         Me.pnl_per.Size = New System.Drawing.Size(1073, 355)
         Me.pnl_per.TabIndex = 1
+        '
+        'txt_SS
+        '
+        Me.txt_SS.AcceptsDecimals = False
+        Me.txt_SS.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txt_SS.Location = New System.Drawing.Point(793, 196)
+        Me.txt_SS.Name = "txt_SS"
+        Me.txt_SS.Size = New System.Drawing.Size(238, 25)
+        Me.txt_SS.TabIndex = 66
+        '
+        'txt_telefono
+        '
+        Me.txt_telefono.AcceptsDecimals = False
+        Me.txt_telefono.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.txt_telefono.Location = New System.Drawing.Point(378, 289)
+        Me.txt_telefono.Name = "txt_telefono"
+        Me.txt_telefono.Size = New System.Drawing.Size(238, 25)
+        Me.txt_telefono.TabIndex = 65
+        '
+        'CP
+        '
+        Me.CP.AcceptsDecimals = False
+        Me.CP.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.CP.Location = New System.Drawing.Point(793, 258)
+        Me.CP.Name = "CP"
+        Me.CP.Size = New System.Drawing.Size(238, 25)
+        Me.CP.TabIndex = 64
+        '
+        'Celular
+        '
+        Me.Celular.AcceptsDecimals = False
+        Me.Celular.Font = New System.Drawing.Font("Modern No. 20", 12.0!)
+        Me.Celular.Location = New System.Drawing.Point(793, 289)
+        Me.Celular.Name = "Celular"
+        Me.Celular.Size = New System.Drawing.Size(238, 25)
+        Me.Celular.TabIndex = 63
         '
         'txtCdDomicilio
         '
@@ -3647,15 +3687,6 @@ Partial Class Empleados
         Me.lbl_ss.TabIndex = 24
         Me.lbl_ss.Text = "# Seg. Social:"
         '
-        'CP
-        '
-        Me.CP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.CP.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CP.Location = New System.Drawing.Point(793, 258)
-        Me.CP.Name = "CP"
-        Me.CP.Size = New System.Drawing.Size(238, 25)
-        Me.CP.TabIndex = 33
-        '
         'LBL_CP
         '
         Me.LBL_CP.AutoSize = True
@@ -3705,15 +3736,6 @@ Partial Class Empleados
         Me.Label92.Size = New System.Drawing.Size(90, 18)
         Me.Label92.TabIndex = 16
         Me.Label92.Text = "Cd. de Naci.:"
-        '
-        'txt_SS
-        '
-        Me.txt_SS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_SS.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SS.Location = New System.Drawing.Point(793, 196)
-        Me.txt_SS.Name = "txt_SS"
-        Me.txt_SS.Size = New System.Drawing.Size(238, 25)
-        Me.txt_SS.TabIndex = 25
         '
         'ddl_educacion
         '
@@ -3803,15 +3825,6 @@ Partial Class Empleados
         Me.txt_RFC.Size = New System.Drawing.Size(238, 25)
         Me.txt_RFC.TabIndex = 21
         '
-        'Celular
-        '
-        Me.Celular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.Celular.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Celular.Location = New System.Drawing.Point(793, 289)
-        Me.Celular.Name = "Celular"
-        Me.Celular.Size = New System.Drawing.Size(238, 25)
-        Me.Celular.TabIndex = 37
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -3831,15 +3844,6 @@ Partial Class Empleados
         Me.lbl_sex.Size = New System.Drawing.Size(41, 18)
         Me.lbl_sex.TabIndex = 8
         Me.lbl_sex.Text = "Sexo:"
-        '
-        'txt_telefono
-        '
-        Me.txt_telefono.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_telefono.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_telefono.Location = New System.Drawing.Point(378, 289)
-        Me.txt_telefono.Name = "txt_telefono"
-        Me.txt_telefono.Size = New System.Drawing.Size(238, 25)
-        Me.txt_telefono.TabIndex = 35
         '
         'LBL_ESTADOCIVIL
         '
@@ -4241,16 +4245,13 @@ Partial Class Empleados
     Friend WithEvents dgv_ant As DataGridView
     Friend WithEvents txt_antMT As TextBox
     Friend WithEvents txt_antNAME As TextBox
-    Friend WithEvents txt_antTEL As TextBox
     Friend WithEvents label37 As Label
     Friend WithEvents label38 As Label
     Friend WithEvents label39 As Label
-    Friend WithEvents txt_antSALARIO As TextBox
     Friend WithEvents txt_antCARGO As TextBox
     Friend WithEvents txt_antEMP As TextBox
     Friend WithEvents label34 As Label
     Friend WithEvents label35 As Label
-    Friend WithEvents label36 As Label
     Friend WithEvents txt_antFF As DateTimePicker
     Friend WithEvents label33 As Label
     Friend WithEvents txt_antFI As DateTimePicker
@@ -4312,7 +4313,6 @@ Partial Class Empleados
     Friend WithEvents Label92 As Label
     Friend WithEvents EC As ComboBox
     Friend WithEvents Label55 As Label
-    Friend WithEvents txt_telefono As TextBox
     Friend WithEvents ddl_educacion As ComboBox
     Friend WithEvents Label54 As Label
     Friend WithEvents buscar_EN As PictureBox
@@ -4320,7 +4320,6 @@ Partial Class Empleados
     Private WithEvents label12 As Label
     Friend WithEvents LBL_CP As Label
     Friend WithEvents txt_numero As TextBox
-    Friend WithEvents CP As TextBox
     Friend WithEvents txt_NOM As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txt_AM As TextBox
@@ -4332,8 +4331,6 @@ Partial Class Empleados
     Friend WithEvents colonia As TextBox
     Friend WithEvents txt_RFC As TextBox
     Friend WithEvents domicilio As TextBox
-    Friend WithEvents txt_SS As TextBox
-    Friend WithEvents Celular As TextBox
     Friend WithEvents nacion As TextBox
     Friend WithEvents txt_CURP As TextBox
     Friend WithEvents lbl_num As Label
@@ -4359,9 +4356,7 @@ Partial Class Empleados
     Friend WithEvents label45 As Label
     Friend WithEvents txt_conPAREN As TextBox
     Friend WithEvents label41 As Label
-    Friend WithEvents txt_conCEL As TextBox
     Friend WithEvents label40 As Label
-    Friend WithEvents txt_conTEL As TextBox
     Friend WithEvents txt_conNAME As TextBox
     Friend WithEvents txt_conAM As TextBox
     Friend WithEvents txt_conAP As TextBox
@@ -4397,16 +4392,12 @@ Partial Class Empleados
     Private WithEvents Label76 As Label
     Private WithEvents PnlGastos As Panel
     Friend WithEvents Label64 As Label
-    Friend WithEvents txt_GFServ As TextBox
     Friend WithEvents Label73 As Label
     Private WithEvents Panel30 As Panel
     Private WithEvents Label74 As Label
     Private WithEvents Label75 As Label
-    Friend WithEvents txt_GFRenta As TextBox
     Friend WithEvents Label72 As Label
     Friend WithEvents Label62 As Label
-    Friend WithEvents Txt_GFDesp As TextBox
-    Friend WithEvents txt_GFCole As TextBox
     Private WithEvents PnlReferencias As Panel
     Friend WithEvents dgv_Ref As DataGridView
     Friend WithEvents Label52 As Label
@@ -4447,7 +4438,6 @@ Partial Class Empleados
     Private WithEvents Label84 As Label
     Private WithEvents PnlIngresos As Panel
     Friend WithEvents Label63 As Label
-    Friend WithEvents txt_OTCantidad As TextBox
     Friend WithEvents txt_OIParen As TextBox
     Friend WithEvents Label65 As Label
     Friend WithEvents dgv_OI As DataGridView
@@ -4507,7 +4497,6 @@ Partial Class Empleados
     Friend WithEvents txt_tipo2 As TextBox
     Friend WithEvents lbl_super As Label
     Friend WithEvents correo As Label
-    Friend WithEvents txt_SALARY As TextBox
     Friend WithEvents lbl_puesto As Label
     Friend WithEvents txt_tipo As TextBox
     Friend WithEvents lbl_sali As Label
@@ -4571,5 +4560,20 @@ Partial Class Empleados
     Friend WithEvents Fam_Nacion As DataGridViewTextBoxColumn
     Friend WithEvents Fam_FNac As DataGridViewTextBoxColumn
     Friend WithEvents Fam_Genero As DataGridViewTextBoxColumn
-    Friend WithEvents Fam_EdoCivil As DataGridViewTextBoxColumn
+    Friend WithEvents txt_SALARY As NumericTextbox
+    Friend WithEvents CP As NumericTextbox
+    Friend WithEvents Celular As NumericTextbox
+    Friend WithEvents txt_SS As NumericTextbox
+    Friend WithEvents txt_telefono As NumericTextbox
+    Friend WithEvents Label32 As Label
+    Friend WithEvents txt_antSALARIO As NumericTextbox
+    Friend WithEvents Label58 As Label
+    Friend WithEvents txt_antTEL As NumericTextbox
+    Friend WithEvents txt_conCEL As NumericTextbox
+    Friend WithEvents txt_conTEL As NumericTextbox
+    Friend WithEvents Txt_GFDesp As NumericTextbox
+    Friend WithEvents txt_GFServ As NumericTextbox
+    Friend WithEvents txt_GFCole As NumericTextbox
+    Friend WithEvents txt_GFRenta As NumericTextbox
+    Friend WithEvents txt_OTCantidad As NumericTextbox
 End Class

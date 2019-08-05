@@ -193,7 +193,7 @@ Public Class Empleados
             e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
         End If
     End Sub
-    Private Sub txt_SS_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_SS.KeyPress
+    Private Sub txt_SS_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
     Public Function validateEmail(emailAddress) As Boolean
@@ -377,7 +377,7 @@ Public Class Empleados
         If e.KeyCode = 13 Then My.Computer.Keyboard.SendKeys("{tab}")
     End Sub
 
-    Private Sub txt_SS_Leave(sender As Object, e As EventArgs) Handles txt_SS.Leave
+    Private Sub txt_SS_Leave(sender As Object, e As EventArgs)
         If (txt_SS.Text <> "" And txt_SS.Text <> "0") Then
             If Not NSS.IsValid(txt_SS.Text) Then
                 MsgBox("Número de seguro social '" + txt_SS.Text + "' no valido, por favor verifique sea correcto")
@@ -559,7 +559,7 @@ Public Class Empleados
     Private Sub ln_img_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         CargarImagen(foto)
     End Sub
-    Private Sub txt_OTCantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_OTCantidad.KeyPress
+    Private Sub txt_OTCantidad_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not txt_OTCantidad.Text.Contains(".") Then
             e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
         Else
@@ -578,13 +578,13 @@ Public Class Empleados
     Private Sub txt_GFServ_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
-    Private Sub CP_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CP.KeyPress
+    Private Sub CP_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
-    Private Sub txt_telefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_telefono.KeyPress
+    Private Sub txt_telefono_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
-    Private Sub Celular_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Celular.KeyPress
+    Private Sub Celular_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
     Private Sub CANCEL_Click(sender As Object, e As EventArgs) Handles CANCEL.Click
@@ -1469,8 +1469,7 @@ Public Class Empleados
         txt_NOM.Focus()
     End Sub
 
-    Private Sub TxtMoney_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_GFCole.KeyPress, Txt_GFDesp.KeyPress, txt_GFRenta.KeyPress, txt_GFServ.KeyPress,
-                                                                                     txt_OTCantidad.KeyPress, txt_antSALARIO.KeyPress
+    Private Sub TxtMoney_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_OTCantidad.KeyPress
         Dim TxtBoxMoney As TextBox = CType(sender, TextBox)
         If Not TxtBoxMoney.Text.Contains(".") Then
             e.Handled = Not (IsNumeric(e.KeyChar) Or e.KeyChar = ".") And Not Char.IsControl(e.KeyChar)
