@@ -48,7 +48,7 @@
     Private Sub dgv_equipo_emp_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_equipo_emp.CellClick
         Dim gr As New DataGridView
         gr = sender
-        If e.RowIndex <> -1 Then
+        If e.ColumnIndex = 0 Then
             Select Case e.ColumnIndex
                 Case Is > -1
                     Select Case gr.Columns(e.ColumnIndex).Name
@@ -117,7 +117,7 @@
     Private Sub DGV_CAT_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_CAT.CellClick
         Dim gr As New DataGridView
         gr = sender
-        If e.RowIndex <> -1 Then
+        If e.ColumnIndex = 0 Then
             Select Case e.ColumnIndex
                 Case Is > -1
                     Select Case gr.Columns(e.ColumnIndex).Name
@@ -196,7 +196,7 @@
     Private Sub dgv_eval_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_eval.CellClick
         Dim gr As New DataGridView
         gr = sender
-        If e.RowIndex <> -1 Then
+        If e.ColumnIndex = 0 Then
             Select Case e.ColumnIndex
                 Case Is > -1
                     Select Case gr.Columns(e.ColumnIndex).Name
@@ -225,7 +225,7 @@
     Private Sub dgv_depto_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_depto.CellClick
         Dim gr As New DataGridView
         gr = sender
-        If e.RowIndex <> -1 Then
+        If e.ColumnIndex = 0 Then
             Select Case e.ColumnIndex
                 Case Is > -1
                     Select Case gr.Columns(e.ColumnIndex).Name
@@ -246,7 +246,7 @@
     Private Sub dgv_eq_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_eq.CellClick
         Dim gr As New DataGridView
         gr = sender
-        If e.RowIndex <> -1 Then
+        If e.ColumnIndex = 0 Then
             Select Case e.ColumnIndex
                 Case Is > -1
                     Select Case gr.Columns(e.ColumnIndex).Name
@@ -292,7 +292,7 @@
     Private Sub dgv_Puesto_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_Puesto.CellClick
         Dim gr As New DataGridView
         gr = sender
-        If e.RowIndex <> -1 Then
+        If e.ColumnIndex = 0 Then
             Select Case e.ColumnIndex
                 Case Is > -1
                     Select Case gr.Columns(e.ColumnIndex).Name
@@ -388,7 +388,7 @@
     Private Sub dgv_super_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_super.CellClick
         Dim gr As New DataGridView
         gr = sender
-        If e.RowIndex <> -1 Then
+        If e.ColumnIndex = 0 Then
             Select Case e.ColumnIndex
                 Case Is > -1
                     Select Case gr.Columns(e.ColumnIndex).Name
@@ -432,7 +432,7 @@
     Private Sub dgv_te_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_te.CellClick
         Dim gr As New DataGridView
         gr = sender
-        If e.RowIndex <> -1 Then
+        If e.ColumnIndex = 0 Then
             Select Case e.ColumnIndex
                 Case Is > -1
                     Select Case gr.Columns(e.ColumnIndex).Name
@@ -442,8 +442,6 @@
                                     If objcon.DELETE_ADMIN_TE(dgv_te.Rows(e.RowIndex).Cells(1).Value) = False Then
                                         MessageBox.Show("No se puede eliminar este 'Tipo de Empleado' ya que fue asignado a uno o varios empleados")
                                     End If
-                                Else
-                                    'hacer algo'
                                 End If
                             End If
                     End Select

@@ -49,13 +49,13 @@ Partial Class Equipo
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.UPDATE = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ID_Assig = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ASSIG = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_Equipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EQUIPO_DESC = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Regreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Fecha_R = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Comentario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_User = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Regreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.pnlEquipo.SuspendLayout()
         CType(Me.dgv_equipo_emp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -94,8 +94,9 @@ Partial Class Equipo
         'dgv_equipo_emp
         '
         Me.dgv_equipo_emp.AllowUserToAddRows = False
+        Me.dgv_equipo_emp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv_equipo_emp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_equipo_emp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATE, Me.ID_Assig, Me.ID_Equipo, Me.ID_Emp, Me.Fecha, Me.Regreso, Me.Fecha_R, Me.Comentario, Me.ID_User})
+        Me.dgv_equipo_emp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UPDATE, Me.ID_Assig, Me.ASSIG, Me.ID_Equipo, Me.EQUIPO_DESC, Me.Fecha, Me.Fecha_R, Me.Comentario, Me.Regreso})
         Me.dgv_equipo_emp.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgv_equipo_emp.Location = New System.Drawing.Point(0, 0)
         Me.dgv_equipo_emp.Name = "dgv_equipo_emp"
@@ -345,54 +346,49 @@ Partial Class Equipo
         Me.ID_Assig.HeaderText = "ID"
         Me.ID_Assig.Name = "ID_Assig"
         Me.ID_Assig.Visible = False
-        Me.ID_Assig.Width = 50
+        '
+        'ASSIG
+        '
+        Me.ASSIG.DataPropertyName = "AsigPor"
+        Me.ASSIG.HeaderText = "ASIGNADO POR"
+        Me.ASSIG.Name = "ASSIG"
         '
         'ID_Equipo
         '
         Me.ID_Equipo.DataPropertyName = "ID_Equipo"
-        Me.ID_Equipo.HeaderText = "EQUIPO"
+        Me.ID_Equipo.HeaderText = "ID_EQUIPO"
         Me.ID_Equipo.Name = "ID_Equipo"
+        Me.ID_Equipo.Visible = False
         '
-        'ID_Emp
+        'EQUIPO_DESC
         '
-        Me.ID_Emp.DataPropertyName = "ID_Emp"
-        Me.ID_Emp.HeaderText = "EMPLEADO"
-        Me.ID_Emp.Name = "ID_Emp"
+        Me.EQUIPO_DESC.DataPropertyName = "Equipo"
+        Me.EQUIPO_DESC.HeaderText = "EQUIPO"
+        Me.EQUIPO_DESC.Name = "EQUIPO_DESC"
         '
         'Fecha
         '
         Me.Fecha.DataPropertyName = "Fecha"
         Me.Fecha.HeaderText = "FECHA"
         Me.Fecha.Name = "Fecha"
-        Me.Fecha.Width = 150
-        '
-        'Regreso
-        '
-        Me.Regreso.DataPropertyName = "Regreso"
-        Me.Regreso.HeaderText = "REGRESO?"
-        Me.Regreso.Name = "Regreso"
-        Me.Regreso.Width = 150
         '
         'Fecha_R
         '
         Me.Fecha_R.DataPropertyName = "Fecha_R"
         Me.Fecha_R.HeaderText = "FECHA REGRESO"
         Me.Fecha_R.Name = "Fecha_R"
-        Me.Fecha_R.Width = 150
         '
         'Comentario
         '
         Me.Comentario.DataPropertyName = "Comentario"
         Me.Comentario.HeaderText = "COMENTARIO"
         Me.Comentario.Name = "Comentario"
-        Me.Comentario.Width = 300
         '
-        'ID_User
+        'Regreso
         '
-        Me.ID_User.DataPropertyName = "ID_User"
-        Me.ID_User.HeaderText = "NO EMPLEADO"
-        Me.ID_User.Name = "ID_User"
-        Me.ID_User.Width = 150
+        Me.Regreso.DataPropertyName = "Regreso"
+        Me.Regreso.HeaderText = "REGRESO?"
+        Me.Regreso.Name = "Regreso"
         '
         'Equipo
         '
@@ -449,11 +445,11 @@ Partial Class Equipo
     Friend WithEvents gbComentarios As GroupBox
     Friend WithEvents UPDATE As DataGridViewImageColumn
     Friend WithEvents ID_Assig As DataGridViewTextBoxColumn
+    Friend WithEvents ASSIG As DataGridViewTextBoxColumn
     Friend WithEvents ID_Equipo As DataGridViewTextBoxColumn
-    Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
+    Friend WithEvents EQUIPO_DESC As DataGridViewTextBoxColumn
     Friend WithEvents Fecha As DataGridViewTextBoxColumn
-    Friend WithEvents Regreso As DataGridViewTextBoxColumn
     Friend WithEvents Fecha_R As DataGridViewTextBoxColumn
     Friend WithEvents Comentario As DataGridViewTextBoxColumn
-    Friend WithEvents ID_User As DataGridViewTextBoxColumn
+    Friend WithEvents Regreso As DataGridViewTextBoxColumn
 End Class

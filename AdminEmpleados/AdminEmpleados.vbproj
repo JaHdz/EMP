@@ -27,10 +27,10 @@
     <InstallUrl>http://www.turing-sw.dreamhosters.com/EASY/</InstallUrl>
     <ProductName>EASY</ProductName>
     <PublisherName>TURING SOFTWARE</PublisherName>
-    <MinimumRequiredVersion>1.0.4.7</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.4.9</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>default.htm</WebPage>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

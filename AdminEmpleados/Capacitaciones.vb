@@ -19,7 +19,18 @@
     Private Sub txt_numero_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_numero.KeyPress
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
-    Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
+    'Private Sub txt_numero_Leave(sender As Object, e As EventArgs) Handles txt_numero.Leave
+
+
+    'End Sub
+
+    Private Sub buscar_EN_Click(sender As Object, e As EventArgs) Handles buscar_EN.Click
+        llenar_buscador("EMP")
+        If (V1 <> "" And V2 <> "") Then
+            txt_numero.Text = V1
+        Else
+            txt_numero.Focus()
+        End If
 
         If (txt_numero.Text <> "") Then
             NEmp = Convert.ToInt16(objcon.Emp_Exist(txt_numero.Text))
@@ -33,23 +44,13 @@
                 Dim Result As Cls_Emp = Wait.Result
                 Wait.Close()
                 lbl_emp.Text = txt_numero.Text + " | " + Result.Emp_Name + " " + Result.Emp_APat + " " + Result.Emp_AMat
-                dgv_equipo_Eval.DataSource = objcon.Consulta_CAPACITACION(txt_numero.Text)
+                dgv_capacitacion.DataSource = objcon.Consulta_CAPACITACION(txt_numero.Text)
             Else
                 MessageBox.Show("Numero de empleado no existe")
                 txt_numero.Text = ""
                 lbl_emp.Text = ""
             End If
         End If
-    End Sub
-
-    Private Sub buscar_EN_Click(sender As Object, e As EventArgs) Handles buscar_EN.Click
-        llenar_buscador("EMP")
-        If (V1 <> "" And V2 <> "") Then
-            txt_numero.Focus()
-        Else
-            txt_numero.Focus()
-        End If
-        txt_numero.Text = V1
     End Sub
 
     Private Sub Eq_Leave(sender As Object, e As EventArgs) Handles CAP.Leave
@@ -79,11 +80,10 @@
 
     Private Sub SAVE_Click(sender As Object, e As EventArgs) Handles SAVE.Click
         If (CAP.Text <> "" Or txt_numero.Text <> "") Then
-            If objcon.Add_TRAINING(0, CAP.Text, txt_numero.Text, TXT_FECHA.Text, TXT_commen.Text) = True Then
-            Else
+            If Not objcon.Add_TRAINING(0, CAP.Text, txt_numero.Text, TXT_FECHA.Text, TXT_commen.Text) Then
                 MessageBox.Show("Este registro ya Existe.")
             End If
-            dgv_equipo_Eval.DataSource = objcon.Consulta_CAPACITACION(txt_numero.Text)
+            dgv_capacitacion.DataSource = objcon.Consulta_CAPACITACION(txt_numero.Text)
             txt_numero.Text = ""
             CAP.Text = ""
             CAP2.Text = ""
@@ -101,22 +101,22 @@
         CAP2.Text = ""
         TXT_FECHA.ResetText()
         TXT_commen.Text = ""
-        dgv_equipo_Eval.DataSource = Nothing
+        dgv_capacitacion.DataSource = Nothing
     End Sub
 
 
-    Private Sub dgv_equipo_emp_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_equipo_Eval.CellClick
+    Private Sub dgv_capacitacion_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_capacitacion.CellClick
         Dim id As Integer
         Dim gr As New DataGridView
         gr = sender
-        If e.RowIndex <> -1 Then
+        If e.ColumnIndex = 0 Then
             Select Case e.ColumnIndex
                 Case Is > -1
                     Select Case gr.Columns(e.ColumnIndex).Name
                         Case "DELETE"
                             If MessageBox.Show("Seguro que desea eliminar este registro?", "Eliminar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-                                id = dgv_equipo_Eval.Rows(e.RowIndex).Cells(3).Value
-                                objcon.DELETE_CAPACITACION(dgv_equipo_Eval.Rows(e.RowIndex).Cells(1).Value)
+                                id = dgv_capacitacion.Rows(e.RowIndex).Cells(3).Value
+                                objcon.DELETE_CAPACITACION(dgv_capacitacion.Rows(e.RowIndex).Cells(1).Value)
                             End If
                     End Select
             End Select
@@ -126,7 +126,7 @@
             Else
                 dt = objcon.Consulta_CAPACITACION(id)
             End If
-            dgv_equipo_Eval.DataSource = dt
+            dgv_capacitacion.DataSource = dt
         End If
     End Sub
 

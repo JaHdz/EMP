@@ -22,9 +22,8 @@ Partial Class Capacitaciones
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Capacitaciones))
-        Me.dgv_equipo_Eval = New System.Windows.Forms.DataGridView()
+        Me.dgv_capacitacion = New System.Windows.Forms.DataGridView()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.lbl_ingreso = New System.Windows.Forms.Label()
@@ -47,10 +46,9 @@ Partial Class Capacitaciones
         Me.DELETE = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ID_Cap_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID_Cap = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_Emp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Comentario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_capacitacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel14.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.SAVE, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,19 +57,18 @@ Partial Class Capacitaciones
         CType(Me.buscar_EN, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'dgv_equipo_Eval
+        'dgv_capacitacion
         '
-        Me.dgv_equipo_Eval.AllowUserToAddRows = False
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft YaHei UI", 7.2!)
-        Me.dgv_equipo_Eval.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgv_equipo_Eval.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_equipo_Eval.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DELETE, Me.ID_Cap_Emp, Me.ID_Cap, Me.ID_Emp, Me.Fecha, Me.Comentario})
-        Me.dgv_equipo_Eval.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.dgv_equipo_Eval.Location = New System.Drawing.Point(0, 388)
-        Me.dgv_equipo_Eval.Name = "dgv_equipo_Eval"
-        Me.dgv_equipo_Eval.RowHeadersVisible = False
-        Me.dgv_equipo_Eval.Size = New System.Drawing.Size(1078, 311)
-        Me.dgv_equipo_Eval.TabIndex = 0
+        Me.dgv_capacitacion.AllowUserToAddRows = False
+        Me.dgv_capacitacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_capacitacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DELETE, Me.ID_Cap_Emp, Me.ID_Cap, Me.Fecha, Me.Comentario})
+        Me.dgv_capacitacion.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.dgv_capacitacion.Location = New System.Drawing.Point(0, 388)
+        Me.dgv_capacitacion.Name = "dgv_capacitacion"
+        Me.dgv_capacitacion.RowHeadersVisible = False
+        Me.dgv_capacitacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgv_capacitacion.Size = New System.Drawing.Size(1078, 311)
+        Me.dgv_capacitacion.TabIndex = 0
         '
         'DataGridViewImageColumn1
         '
@@ -81,7 +78,7 @@ Partial Class Capacitaciones
         '
         'Panel14
         '
-        Me.Panel14.Controls.Add(Me.dgv_equipo_Eval)
+        Me.Panel14.Controls.Add(Me.dgv_capacitacion)
         Me.Panel14.Controls.Add(Me.lbl_ingreso)
         Me.Panel14.Controls.Add(Me.TXT_FECHA)
         Me.Panel14.Controls.Add(Me.Panel2)
@@ -287,7 +284,7 @@ Partial Class Capacitaciones
         '
         'DELETE
         '
-        Me.DELETE.HeaderText = "Eliminar"
+        Me.DELETE.HeaderText = "ELIMINAR"
         Me.DELETE.Image = Global.AdminEmpleados.My.Resources.Resources.Trash_Can_80px
         Me.DELETE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
         Me.DELETE.Name = "DELETE"
@@ -297,21 +294,15 @@ Partial Class Capacitaciones
         Me.ID_Cap_Emp.DataPropertyName = "ID_Cap_Emp"
         Me.ID_Cap_Emp.HeaderText = "ID"
         Me.ID_Cap_Emp.Name = "ID_Cap_Emp"
+        Me.ID_Cap_Emp.Visible = False
         Me.ID_Cap_Emp.Width = 50
         '
         'ID_Cap
         '
-        Me.ID_Cap.DataPropertyName = "ID_Cap"
+        Me.ID_Cap.DataPropertyName = "CAP"
         Me.ID_Cap.HeaderText = "CAPACITACION"
         Me.ID_Cap.Name = "ID_Cap"
         Me.ID_Cap.Width = 200
-        '
-        'ID_Emp
-        '
-        Me.ID_Emp.DataPropertyName = "ID_Emp"
-        Me.ID_Emp.HeaderText = "EMPLEADO"
-        Me.ID_Emp.Name = "ID_Emp"
-        Me.ID_Emp.Width = 200
         '
         'Fecha
         '
@@ -337,7 +328,7 @@ Partial Class Capacitaciones
         Me.Name = "Capacitaciones"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Capacitaciones"
-        CType(Me.dgv_equipo_Eval, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_capacitacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
         Me.Panel2.ResumeLayout(False)
@@ -350,7 +341,7 @@ Partial Class Capacitaciones
 
     End Sub
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
-    Friend WithEvents dgv_equipo_Eval As DataGridView
+    Friend WithEvents dgv_capacitacion As DataGridView
     Private WithEvents Panel14 As Panel
     Friend WithEvents lbl_ingreso As Label
     Friend WithEvents TXT_FECHA As DateTimePicker
@@ -372,7 +363,6 @@ Partial Class Capacitaciones
     Friend WithEvents DELETE As DataGridViewImageColumn
     Friend WithEvents ID_Cap_Emp As DataGridViewTextBoxColumn
     Friend WithEvents ID_Cap As DataGridViewTextBoxColumn
-    Friend WithEvents ID_Emp As DataGridViewTextBoxColumn
     Friend WithEvents Fecha As DataGridViewTextBoxColumn
     Friend WithEvents Comentario As DataGridViewTextBoxColumn
 End Class

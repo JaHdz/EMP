@@ -49,11 +49,32 @@
     Private Sub buscar_EN_Click(sender As Object, e As EventArgs) Handles buscar_EN.Click
         llenar_buscador("EMP")
         If (V1 <> "" And V2 <> "") Then
-            txt_numero.Focus()
+            txt_numero.Text = V1
+            pnl_comen.Visible = False
+            NEmp = Convert.ToInt16(objcon.Emp_Exist(txt_numero.Text))
+            If (NEmp > 0) Then
+                Dim ldParameters As New Dictionary(Of String, Object) From {{"EmployeeNumber", txt_numero.Text}}
+                Dim Wait As New Wait With {
+                .Parameters = ldParameters,
+                .Operation = BackgroundOperations.GetEmployeeInfo
+            }
+                Wait.ShowDialog()
+                Dim Result As Cls_Emp = Wait.Result
+                Wait.Close()
+                lbl_emp.Text = txt_numero.Text + " | " + Result.Emp_Name + " " + Result.Emp_APat + " " + Result.Emp_AMat
+                dgv_equipo_emp.DataSource = objcon.Consulta_EAsignado(txt_numero.Text)
+            Else
+                MessageBox.Show("Numero de empleado no existe")
+                txt_numero.Text = ""
+                lbl_emp.Text = ""
+            End If
+            pnl_comen.Visible = False
+            TXT_commen.Text = ""
         Else
             txt_numero.Focus()
         End If
-        txt_numero.Text = V1
+
+
     End Sub
 
     Private Sub Eq_Leave(sender As Object, e As EventArgs) Handles Eq.Leave
