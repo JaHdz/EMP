@@ -44,7 +44,7 @@ Public Class Cls_ES
 
     Public Function GetInfo(Employee As Integer) As DataTable
         GetInfo = New DataTable()
-        Using connection As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+        Using connection As New SqlConnection(My.Settings.DBConnectionString)
             connection.Open()
             Dim cmd As SqlCommand = connection.CreateCommand()
             cmd.CommandType = CommandType.StoredProcedure
@@ -56,7 +56,7 @@ Public Class Cls_ES
     End Function
     Public Function GetReferences(SESID As Integer) As DataTable
         GetReferences = New DataTable()
-        Using connection As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+        Using connection As New SqlConnection(My.Settings.DBConnectionString)
             connection.Open()
             Dim cmd As SqlCommand = connection.CreateCommand()
             cmd.CommandType = CommandType.StoredProcedure
@@ -68,7 +68,7 @@ Public Class Cls_ES
     End Function
     Public Function GetFamily(Employee As Integer) As DataTable
         GetFamily = New DataTable()
-        Using connection As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+        Using connection As New SqlConnection(My.Settings.DBConnectionString)
             connection.Open()
             Dim cmd As SqlCommand = connection.CreateCommand()
             cmd.CommandType = CommandType.StoredProcedure
@@ -80,7 +80,7 @@ Public Class Cls_ES
     End Function
     Public Function GetOtherIncomes(SESID As Integer) As DataTable
         GetOtherIncomes = New DataTable()
-        Using connection As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+        Using connection As New SqlConnection(My.Settings.DBConnectionString)
             connection.Open()
             Dim cmd As SqlCommand = connection.CreateCommand()
             cmd.CommandType = CommandType.StoredProcedure

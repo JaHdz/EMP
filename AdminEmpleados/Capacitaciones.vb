@@ -80,16 +80,14 @@
 
     Private Sub SAVE_Click(sender As Object, e As EventArgs) Handles SAVE.Click
         If (CAP.Text <> "" Or txt_numero.Text <> "") Then
-            If Not objcon.Add_TRAINING(0, CAP.Text, txt_numero.Text, TXT_FECHA.Text, TXT_commen.Text) Then
+            If objcon.Add_TRAINING(0, CAP.Text, txt_numero.Text, TXT_FECHA.Text, TXT_commen.Text) = False Then
                 MessageBox.Show("Este registro ya Existe.")
             End If
             dgv_capacitacion.DataSource = objcon.Consulta_CAPACITACION(txt_numero.Text)
-            txt_numero.Text = ""
             CAP.Text = ""
             CAP2.Text = ""
             TXT_FECHA.Text = Date.Now.ToShortDateString
             TXT_commen.Text = ""
-            lbl_emp.Text = ""
         Else
             MessageBox.Show("Debe ingresar un numero de empleado valido y una Capacitacion.")
         End If

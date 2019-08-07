@@ -948,7 +948,7 @@ Namespace SES_REFERENCESTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.AdminEmpleados.My.MySettings.Default.EmpleadosDBConnectionString
+            Me._connection.ConnectionString = Global.AdminEmpleados.My.MySettings.Default.DBConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

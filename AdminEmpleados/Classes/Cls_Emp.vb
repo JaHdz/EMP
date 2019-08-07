@@ -40,7 +40,7 @@ Public Class Cls_Emp
 
     Public Function GetAssignedEquipment(Employee As Integer) As DataTable
         GetAssignedEquipment = New DataTable()
-        Using connection As New SqlConnection(My.Settings.EmpleadosDBConnectionString)
+        Using connection As New SqlConnection(My.Settings.DBConnectionString)
             connection.Open()
             Dim cmd As SqlCommand = connection.CreateCommand()
             cmd.CommandType = CommandType.Text
