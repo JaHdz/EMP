@@ -30,7 +30,7 @@ Public Class FrmReportes
                 'RvReports.LocalReport.DataSources.Add(New ReportDataSource("SES_FAMILY", New Cls_ES().GetFamily(Empleado.ID)))
                 'RvReports.LocalReport.DataSources.Add(New ReportDataSource("SES_OTHERINCOMES", New Cls_ES().GetOtherIncomes(SESID)))
             Case ReportOptions.AssignedEquipment
-                Text = "Reporte de equipo asignado"
+                Lbl_Title.Text = "Reporte de equipo asignado"
                 RvReports.LocalReport.ReportEmbeddedResource = "AdminEmpleados.EquipoAsignado.rdlc"
                 RvReports.LocalReport.DataSources.Clear()
                 Dim loVale As ValeDeEquipo = loParametros("ValeDeEquipo")
